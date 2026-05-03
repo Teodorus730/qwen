@@ -24,6 +24,10 @@
 
 Они взяли fineweb, обучили fasttext и еще сильнее отфильтровали данные, но щас мы это не берем, потому что пока непонятно, как все это работает (см. статью и комментарии)
 
+### SmolLM-Corpus / Cosmopedia v2
+
+тут синтетические  структурированные тексты лежат, это может быть полезно потому что у нас модель маленькая, а веб сам по себе может быть шумным
+
 ## Статьи
 
 ### [The 1 Billion Token Challenge: Finding the Perfect Pre-training Mix](https://huggingface.co/blog/codelion/optimal-dataset-mixing)
