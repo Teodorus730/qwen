@@ -19,4 +19,9 @@ __pycache__/
 *.tmp
 *.temp
 *.log
+mecw_notebook_graphs/
 
+# для файлов в разработке
+large_corpus_ngram_perplexity_entropy_report.md
+large_corpus_ngram_perplexity_entropy_ru.ipynb
+large_ngram_sweep_metrics.png
