@@ -1,0 +1,22 @@
+# Local execution environments and package/model caches.
+.venv*/
+venv*/
+env*/
+.pip_cache/
+.hf_cache/
+.torch_cache/
+.matplotlib_cache/
+
+# Jupyter local state.
+.ipynb_checkpoints/
+
+# Python/runtime cache files.
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Temporary execution artifacts.
+*.tmp
+*.temp
+*.log
+
