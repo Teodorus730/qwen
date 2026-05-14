@@ -1,0 +1,23 @@
+Ребят, я собрал небольшой черновой прототип для нашей части по chunking.
+
+Что там есть:
+- скрипт `scripts/sample_fineweb_chunks.py`;
+- локальный smoke test без скачивания FineWeb;
+- пример результата в `data_samples/fineweb_chunks_sample.jsonl`;
+- статистика запуска в `data_samples/run_stats.json`;
+- короткая записка `docs/chunking_first_findings.md`.
+
+Что делает:
+берёт документы, чистит текст, режет по абзацам на chunks, считает примерную длину и сохраняет всё в JSONL.
+
+Это пока не обучение и не logprobs. Это первый слой пайплайна:
+`raw dataset -> logical chunks -> structured JSONL`.
+
+Зачем нужно:
+дальше этот JSONL можно передавать в классификацию домена, а потом считать NLL/logprob по effective window и adaptive/full window.
+
+Как проверить:
+`python scripts/sample_fineweb_chunks.py --max-docs 5`
+потом смотреть `data_samples/run_stats.json` и `data_samples/fineweb_chunks_sample.jsonl`.
+
+Для настоящего FineWeb запуска есть флаг `--use-hf-streaming`; локальный sample нужен просто чтобы быстро проверить, что механика работает.
