@@ -109,11 +109,26 @@ def guess_text(row: dict) -> str:
     return ""
 
 
+def guess_source_type(dataset_label: str) -> str:
+    label = str(dataset_label or "").lower()
+    if "fineweb-edu" in label:
+        return "educational"
+    if "fineweb" in label:
+        return "web_general"
+    if "finemath" in label or "openwebmath" in label:
+        return "math"
+    if "cosmopedia" in label or "smollm" in label:
+        return "educational_synthetic"
+    return "unknown"
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--local-input", default="examples/local_docs.jsonl")
     parser.add_argument("--use-hf-streaming", action="store_true")
     parser.add_argument("--dataset", default="HuggingFaceFW/fineweb")
+    parser.add_argument("--dataset-label", default=None)
+    parser.add_argument("--source-type", default=None)
     parser.add_argument("--config", default="sample-10BT")
     parser.add_argument("--split", default="train")
     parser.add_argument("--tokenizer-name", default=None, help="Example: Qwen/Qwen2.5-0.5B")
@@ -134,14 +149,13 @@ def main():
 
     if args.use_hf_streaming:
         rows = iter_hf_streaming(args.dataset, args.config, args.split, args.max_docs)
-        dataset_label = "FineWeb"
-        source_type = "web_general"
+        dataset_label = args.dataset_label or args.dataset
         input_mode = "hf_streaming"
     else:
         rows = iter_local_jsonl(Path(args.local_input), args.max_docs)
-        dataset_label = "local_fineweb_like_sample"
-        source_type = "web_general"
+        dataset_label = args.dataset_label or "local_jsonl"
         input_mode = "local_jsonl"
+    source_type = args.source_type or guess_source_type(dataset_label)
 
     docs_seen = 0
     docs_with_text = 0
@@ -156,6 +170,12 @@ def main():
                 continue
             docs_with_text += 1
 
+            row_dataset = dataset_label
+            row_source_type = source_type
+            if not args.use_hf_streaming:
+                row_dataset = row.get("dataset") or row_dataset
+                row_source_type = row.get("source_type") or (source_type if args.source_type else guess_source_type(row_dataset))
+
             chunks = chunk_document(
                 text=text,
                 counter=counter,
@@ -168,9 +188,9 @@ def main():
                 n_tokens = counter.count(chunk_text)
                 token_counts.append(n_tokens)
                 record = {
-                    "chunk_id": f"{dataset_label}_{doc_id:06d}_{chunk_idx:03d}",
-                    "dataset": dataset_label,
-                    "source_type": source_type,
+                    "chunk_id": f"{row_dataset}_{doc_id:06d}_{chunk_idx:03d}",
+                    "dataset": row_dataset,
+                    "source_type": row_source_type,
                     "domain": None,
                     "field": None,
                     "subfield": None,
