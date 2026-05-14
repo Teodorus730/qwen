@@ -406,64 +406,7 @@ Sweep по `n=1..10`:
 
 ![MECW graph 4](research/mecw_notebook_graphs/graph_04.png)
 
-![MECW graph 5](research/mecw_notebook_graphs/graph_05.png)
 
-## Large-corpus n-gram sweep
-
-Источники:
-
-- `research/large_corpus_ngram_perplexity_entropy_report.md`
-- `research/large_corpus_ngram_perplexity_entropy_ru.ipynb`
-- `research/large_ngram_sweep_metrics.png`
-- [`research/.gitignore`](research/.gitignore)
-
-Эти файлы есть в рабочем дереве, но внесены в `research/.gitignore`. Значит, это важный локальный результат, но не tracked artifact истории репозитория.
-
-### Конфигурация
-
-| Параметр | Значение |
-|---|---|
-| Dataset | `HuggingFaceFW/fineweb-edu` |
-| Config | `sample-10BT` |
-| Split | `train` |
-| Documents | 1,627 |
-| Bytes streamed | 8,001,974 |
-| Model | `Qwen/Qwen2.5-0.5B` |
-| Device | CPU |
-| N values | `[1, 2, 3, 5, 10, 25, 50, 100, 250, 500, 1000]` |
-| Target stream bytes | 8,000,000 |
-| Max model blocks per n | 8 |
-| Model block tokens | 256 |
-
-### Итоговая таблица
-
-| n | Unique | Sampled | CE | PPL | N-gram H bits | Model H bits | Score | Valid |
-|---:|---:|---:|---:|---:|---:|---:|---:|:---|
-| 1 | 14,331 | 50,000 | 7.7895 | 2415.18 | 12.390 | 12.130 | 0.810 | True |
-| 2 | 46,900 | 50,000 | 8.2807 | 3947.08 | 15.445 | 12.133 | 0.757 | True |
-| 3 | 49,774 | 50,000 | 7.5525 | 1905.53 | 15.600 | 2.437 | 0.416 | True |
-| 5 | 49,959 | 50,000 | 7.6331 | 2065.51 | 15.608 | 10.568 | 0.599 | True |
-| 10 | 49,986 | 50,000 | 6.8708 | 963.76 | 15.609 | 10.070 | 0.448 | True |
-| 25 | 49,996 | 50,000 | 6.3325 | 562.56 | 15.609 | 9.829 | 0.344 | True |
-| 50 | 49,999 | 50,000 | 5.8588 | 350.29 | 15.610 | 8.928 | 0.238 | True |
-| 100 | 49,999 | 50,000 | 5.5802 | 265.12 | 15.610 | 4.401 | 0.093 | True |
-| 250 | 50,000 | 50,000 | 5.2932 | 198.98 | 15.610 | 6.464 | 0.083 | True |
-| 500 | 50,000 | 50,000 | 5.4248 | 226.97 | 15.610 | 7.331 | 0.125 | True |
-| 1000 | 50,000 | 50,000 | 5.4794 | 239.71 | 15.610 | 6.700 | 0.122 | True |
-
-Лучший score в этом run: **`n=250`**.
-
-Фактические значения для `n=250`:
-
-- CE: **5.2932**;
-- PPL: **198.98**;
-- model next-token entropy: **6.464 bits**;
-- empirical n-gram entropy: **15.610 bits**;
-- unique n-grams: **50,000**.
-
-![Large n-gram sweep](research/large_ngram_sweep_metrics.png)
-
-Ограничение: 8 MB stream не доказывает универсальность `n=250`. Это результат конкретной связки corpus/model/run: `fineweb-edu sample-10BT` + `Qwen2.5-0.5B` + CPU inference + выбранный score. При увеличении `TARGET_STREAM_BYTES` до 1GB итог может сдвинуться, но сама методика сравнения останется применимой.
 
 ## Метрики оценки pretrain
 
