@@ -4,6 +4,7 @@ venv*/
 env*/
 .pip_cache/
 .hf_cache/
+.datasets_cache/
 .torch_cache/
 .matplotlib_cache/
 
@@ -19,9 +20,10 @@ __pycache__/
 *.tmp
 *.temp
 *.log
-mecw_notebook_graphs/
+large_ngram_sweep_metrics.png
+large_corpus_distribution_assets/
 
-# для файлов в разработке
 large_corpus_ngram_perplexity_entropy_report.md
 large_corpus_ngram_perplexity_entropy_ru.ipynb
-large_ngram_sweep_metrics.png
+
+research.rar
