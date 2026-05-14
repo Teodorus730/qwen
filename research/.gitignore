@@ -1,0 +1,29 @@
+# Local execution environments and package/model caches.
+.venv*/
+venv*/
+env*/
+.pip_cache/
+.hf_cache/
+.datasets_cache/
+.torch_cache/
+.matplotlib_cache/
+
+# Jupyter local state.
+.ipynb_checkpoints/
+
+# Python/runtime cache files.
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Temporary execution artifacts.
+*.tmp
+*.temp
+*.log
+large_ngram_sweep_metrics.png
+large_corpus_distribution_assets/
+
+large_corpus_ngram_perplexity_entropy_report.md
+large_corpus_ngram_perplexity_entropy_ru.ipynb
+
+research.rar
