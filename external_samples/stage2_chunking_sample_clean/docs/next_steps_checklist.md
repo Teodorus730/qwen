@@ -7,6 +7,13 @@
 - [x] local rows can override metadata
 - [x] rule-based baseline exists
 - [x] validation/inspection tools exist
+- [x] stage2 MVP commits completed locally
+- [x] push intentionally postponed
+- [x] synthetic benchmark hardened to 42 documents
+- [x] embedding environment check done
+- [x] lexical nearest-label baseline added
+- [x] real sample plan added
+- [x] NLL scoring plan documented, not implemented
 
 ## Immediate next steps
 
@@ -15,6 +22,10 @@
 - [ ] add tests for classifier rules
 - [ ] add `contains_boilerplate` flag later, maybe
 - [ ] add small real HF streaming sample later, not now
+- [ ] if a local embedding model exists, compare embedding vs rule-based
+- [ ] if no local embedding model exists, decide whether to allow download later
+- [ ] choose first real small dataset sample
+- [ ] only after real labels look sane, start observed-token NLL scoring design/implementation
 
 ## Later
 
