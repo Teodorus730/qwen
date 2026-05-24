@@ -42,39 +42,12 @@ def has_any(text_lower, signals):
     return any(signal in text_lower for signal in signals)
 
 
-def classify_code(text, text_lower):
-    signals = ("```python", "def ", "return", "parameters:", "status_code", "client.get", "```")
-    if has_any(text_lower, signals):
-        return make_label("code", "software", "programming", "documentation", 0.85)
-    return None
+def count_any(text_lower, signals):
+    return sum(1 for signal in signals if signal in text_lower)
 
 
-def classify_math(text, text_lower):
-    signals = ("$$", "\\frac", "\\lim", "f(x)", "derivative", "slope", "formula")
-    if has_any(text_lower, signals):
-        return make_label("math", "stem", "mathematics", "calculus", 0.85)
-    return None
-
-
-def classify_commercial(text, text_lower):
-    signals = ("introducing", "features:", "buy", "offer", "shipping", "product", "customer note")
-    if has_any(text_lower, signals):
-        return make_label("commercial_product", "commercial", "product_page", "retail", 0.8)
-    return None
-
-
-def classify_boilerplate(text, text_lower):
-    signals = ("cookie", "privacy", "terms", "footer", "subscribe", "skip to content", "related links")
-    many_pipe_separators = text.count("|") >= 4
-    if has_any(text_lower, signals) or many_pipe_separators:
-        return make_label("boilerplate_or_noise", "web", "boilerplate_or_navigation", "page_noise", 0.65)
-    return None
-
-
-def classify_forum_qa(text, text_lower):
-    if re.search(r"(?im)^\s*(question|answer|comment):", text):
-        return make_label("forum_qa", "web", "forum_qa", "discussion", 0.75)
-    return None
+def has_word(text_lower, word):
+    return re.search(rf"\b{re.escape(word)}\b", text_lower) is not None
 
 
 def classify_mixed_language(text, text_lower):
@@ -84,7 +57,120 @@ def classify_mixed_language(text, text_lower):
     non_ascii_ratio = non_ascii_chars / max(len(text), 1)
 
     if has_english and (has_cyrillic or non_ascii_ratio >= 0.15):
-        return make_label("unknown", "multilingual", "mixed_language", None, 0.6)
+        return make_label("unknown", "multilingual", "mixed_language", None, 0.7)
+    return None
+
+
+def classify_forum_qa(text, text_lower):
+    if re.search(r"(?im)^\s*(question|answer|comment):", text):
+        return make_label("forum_qa", "web", "forum_qa", "discussion", 0.8)
+    return None
+
+
+def classify_legal_government(text, text_lower):
+    signals = ("public notice", "public hearing", "municipal", "ordinance", "regulation", "compliance", "city clerk")
+    if count_any(text_lower, signals) >= 2:
+        return make_label("legal_government", "government", "legal_notice", "public_information", 0.8)
+    return None
+
+
+def classify_news(text, text_lower):
+    signals = ("officials", "announced", "reported", "according to", "statement", "spokesperson", "update")
+    if count_any(text_lower, signals) >= 3:
+        return make_label("news", "media", "news", "article", 0.78)
+    return None
+
+
+def classify_wiki_reference(text, text_lower):
+    signals = ("overview:", "history:", "classification:", "references:", "definition", "encyclopedia")
+    if count_any(text_lower, signals) >= 3:
+        return make_label("wiki_reference", "reference", "encyclopedic_article", "general", 0.78)
+    return None
+
+
+def classify_commercial(text, text_lower):
+    signals = ("buy", "shipping", "product", "customer note", "price", "warranty", "add to cart", "discount")
+    if count_any(text_lower, signals) >= 2 or "features:" in text_lower:
+        return make_label("commercial_product", "commercial", "product_page", "retail", 0.82)
+    return None
+
+
+def classify_math(text, text_lower):
+    calculus_signals = ("\\lim", "derivative", "slope", "tangent", "limit", "integral", "f(x)")
+    algebra_signals = ("algebra", "variable", "polynomial", "quadratic", "linear equation", "systems of equations")
+    if count_any(text_lower, calculus_signals) >= 2 or "$$" in text:
+        return make_label("math", "stem", "mathematics", "calculus", 0.88)
+    if count_any(text_lower, algebra_signals) >= 2 or (has_word(text_lower, "equation") and has_word(text_lower, "variable")):
+        return make_label("math", "stem", "mathematics", "algebra", 0.84)
+    return None
+
+
+def classify_code(text, text_lower):
+    signals = (
+        "```python",
+        "def ",
+        "parameters:",
+        "returns:",
+        "raises",
+        "status_code",
+        "api endpoint",
+        "usage",
+        "schema",
+        "jsonl",
+        "validate_chunks.py",
+    )
+    fenced_code = "```" in text
+    if count_any(text_lower, signals) >= 2 or fenced_code:
+        return make_label("code", "software", "programming", "documentation", 0.85)
+    return None
+
+
+def classify_biology(text, text_lower):
+    signals = ("biology", "cell", "cells", "photosynthesis", "chloroplast", "chlorophyll", "ecosystem", "organism", "decomposers")
+    if count_any(text_lower, signals) >= 2:
+        return make_label("educational", "science", "biology", "article", 0.78)
+    return None
+
+
+def classify_physics(text, text_lower):
+    signals = ("physics", "force", "motion", "velocity", "acceleration", "energy", "friction", "experiment")
+    if count_any(text_lower, signals) >= 3:
+        return make_label("educational", "science", "physics", "article", 0.78)
+    return None
+
+
+def classify_environmental_science(text, text_lower):
+    signals = (
+        "environmental",
+        "stormwater",
+        "pollution",
+        "water quality",
+        "habitat",
+        "carbon emissions",
+        "climate",
+        "conservation",
+        "wetlands",
+        "runoff",
+    )
+    if count_any(text_lower, signals) >= 2:
+        return make_label("educational", "science", "environmental_science", "article", 0.78)
+    return None
+
+
+def classify_infrastructure(text, text_lower):
+    signals = ("urban", "water systems", "wastewater", "reservoirs", "pipes", "transit", "maintenance crews", "city transit")
+    if count_any(text_lower, signals) >= 2:
+        return make_label("educational", "infrastructure", "urban_systems", "article", 0.76)
+    return None
+
+
+def classify_boilerplate(text, text_lower):
+    signals = ("cookie", "privacy", "terms", "footer", "subscribe", "skip to content", "related links", "manage preferences")
+    signal_count = count_any(text_lower, signals)
+    many_pipe_separators = text.count("|") >= 6
+    repeated_cookie = text_lower.count("accept cookies") >= 2 or text_lower.count("manage preferences") >= 2
+    if repeated_cookie or (many_pipe_separators and signal_count >= 2) or signal_count >= 4:
+        return make_label("boilerplate_or_noise", "web", "boilerplate_or_navigation", "page_noise", 0.7)
     return None
 
 
@@ -95,26 +181,29 @@ def classify_educational(text, text_lower):
         "lesson",
         "measurement",
         "explains",
-        "##",
-        "photosynthesis",
-        "sensor",
-        "temperature",
-        "humidity",
-        "scientific",
-        "science",
+        "teacher",
+        "learn",
+        "article",
     )
     if has_any(text_lower, signals):
-        return make_label("educational", "education", "general_education", "article", 0.65)
+        return make_label("educational", "education", "general_education", "article", 0.62)
     return None
 
 
 RULES = (
-    classify_code,
-    classify_math,
-    classify_commercial,
-    classify_forum_qa,
-    classify_boilerplate,
     classify_mixed_language,
+    classify_forum_qa,
+    classify_legal_government,
+    classify_news,
+    classify_wiki_reference,
+    classify_commercial,
+    classify_math,
+    classify_code,
+    classify_biology,
+    classify_physics,
+    classify_environmental_science,
+    classify_infrastructure,
+    classify_boilerplate,
     classify_educational,
 )
 
@@ -166,11 +255,18 @@ def write_jsonl(path, records):
 
 
 def print_summary(records_read, records_written, source_type_counts, domain_counts, label_method_counts):
+    def dump_counter(counter):
+        return json.dumps(
+            {str(key): value for key, value in counter.items()},
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+
     print(f"records_read: {records_read}")
     print(f"records_written: {records_written}")
-    print(f"counts_by_source_type: {json.dumps(dict(source_type_counts), ensure_ascii=False, sort_keys=True)}")
-    print(f"counts_by_domain: {json.dumps(dict(domain_counts), ensure_ascii=False, sort_keys=True)}")
-    print(f"counts_by_label_method: {json.dumps(dict(label_method_counts), ensure_ascii=False, sort_keys=True)}")
+    print(f"counts_by_source_type: {dump_counter(source_type_counts)}")
+    print(f"counts_by_domain: {dump_counter(domain_counts)}")
+    print(f"counts_by_label_method: {dump_counter(label_method_counts)}")
 
 
 def main():
