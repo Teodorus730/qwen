@@ -1,0 +1,114 @@
+[
+  {
+    "domain": "stem",
+    "field": "mathematics",
+    "subfield": "calculus",
+    "description": "Texts about functions, derivatives, limits, slopes, formulas, mathematical reasoning, and calculus concepts.",
+    "keywords": ["derivative", "limit", "slope", "function", "formula", "equation", "integral"]
+  },
+  {
+    "domain": "stem",
+    "field": "mathematics",
+    "subfield": "algebra",
+    "description": "Texts about variables, equations, factoring, polynomials, systems, and symbolic manipulation.",
+    "keywords": ["variable", "equation", "polynomial", "factor", "linear", "quadratic", "solve"]
+  },
+  {
+    "domain": "software",
+    "field": "programming",
+    "subfield": "documentation",
+    "description": "Programming tutorials, API documentation, code examples, parameters, return values, and developer guidance.",
+    "keywords": ["python", "api", "function", "class", "parameter", "return", "exception", "code"]
+  },
+  {
+    "domain": "commercial",
+    "field": "product_page",
+    "subfield": "retail",
+    "description": "Retail product pages, product descriptions, offers, shipping, prices, features, and purchase calls to action.",
+    "keywords": ["buy", "cart", "shipping", "price", "offer", "product", "features", "warranty"]
+  },
+  {
+    "domain": "web",
+    "field": "boilerplate_or_navigation",
+    "subfield": "page_noise",
+    "description": "Cookie banners, privacy notices, footers, menus, repeated navigation, and low-content web page noise.",
+    "keywords": ["cookie", "privacy", "terms", "footer", "subscribe", "menu", "navigation", "accept all"]
+  },
+  {
+    "domain": "web",
+    "field": "forum_qa",
+    "subfield": "discussion",
+    "description": "Question and answer discussions, forum posts, comments, accepted answers, and conversational troubleshooting.",
+    "keywords": ["question", "answer", "comment", "accepted answer", "thread", "reply", "asked"]
+  },
+  {
+    "domain": "education",
+    "field": "general_education",
+    "subfield": "article",
+    "description": "General educational articles, lessons, explainers, classroom material, and student-facing explanations.",
+    "keywords": ["students", "lesson", "classroom", "explains", "learn", "teacher", "example"]
+  },
+  {
+    "domain": "science",
+    "field": "biology",
+    "subfield": "article",
+    "description": "Biology articles about cells, organisms, ecology, photosynthesis, DNA, evolution, and life sciences.",
+    "keywords": ["cell", "organism", "photosynthesis", "dna", "enzyme", "species", "ecosystem"]
+  },
+  {
+    "domain": "science",
+    "field": "physics",
+    "subfield": "article",
+    "description": "Physics articles about force, motion, energy, waves, electricity, experiments, and physical laws.",
+    "keywords": ["force", "motion", "energy", "wave", "velocity", "acceleration", "experiment"]
+  },
+  {
+    "domain": "science",
+    "field": "environmental_science",
+    "subfield": "article",
+    "description": "Environmental science articles about climate, pollution, ecosystems, emissions, water quality, and conservation.",
+    "keywords": ["climate", "emissions", "pollution", "water quality", "conservation", "carbon", "habitat"]
+  },
+  {
+    "domain": "infrastructure",
+    "field": "urban_systems",
+    "subfield": "article",
+    "description": "Infrastructure explainers about transit, water systems, utilities, roads, maintenance, and urban planning.",
+    "keywords": ["urban", "transit", "pipes", "reservoir", "traffic", "maintenance", "city"]
+  },
+  {
+    "domain": "multilingual",
+    "field": "mixed_language",
+    "subfield": null,
+    "description": "Texts that mix English with Russian or other languages in a way that affects classification.",
+    "keywords": ["english", "russian", "mixed language", "перевод", "русский", "multilingual"]
+  },
+  {
+    "domain": "government",
+    "field": "legal_notice",
+    "subfield": "public_information",
+    "description": "Government notices, public legal information, hearings, compliance notices, and official announcements.",
+    "keywords": ["notice", "public hearing", "regulation", "compliance", "municipal", "agency", "ordinance"]
+  },
+  {
+    "domain": "reference",
+    "field": "encyclopedic_article",
+    "subfield": "general",
+    "description": "Reference or wiki-style articles with neutral summaries, definitions, history, classification, and citations.",
+    "keywords": ["overview", "history", "classification", "references", "citation", "encyclopedia", "definition"]
+  },
+  {
+    "domain": "media",
+    "field": "news",
+    "subfield": "article",
+    "description": "News-like reporting about recent events, officials, statements, dates, updates, and public developments.",
+    "keywords": ["reported", "officials", "announced", "according to", "statement", "journalists", "update"]
+  },
+  {
+    "domain": "unknown",
+    "field": "unknown",
+    "subfield": null,
+    "description": "Fallback label for unclear, ambiguous, or low-confidence text.",
+    "keywords": ["unknown", "unclear", "miscellaneous"]
+  }
+]
