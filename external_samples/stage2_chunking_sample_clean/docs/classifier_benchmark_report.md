@@ -6,11 +6,11 @@ Synthetic local benchmark for validating chunk label plumbing and the simple rul
 
 ## Data
 
-- Synthetic documents: 30.
-- Generated chunks: 30 with current default chunker settings.
+- Synthetic documents: 42.
+- Generated chunks: 42 with current default chunker settings.
 - Categories covered: math calculus, math algebra, code docs, commercial product pages, forum Q&A, biology, physics, environmental science, urban infrastructure, multilingual English/Russian, boilerplate/navigation, wiki/reference, legal/government notices, and news-like articles.
 - Easy cases: direct single-topic examples with obvious keywords.
-- Hard cases: Q&A mentioning cookies, useful articles with footer noise, product pages with educational explanation, math with code, code with formulas, heading-heavy news, table-like content, markdown-heavy docs, and LaTeX-heavy math.
+- Hard cases: Q&A mentioning cookies, useful articles with footer noise, product pages with educational explanation, educational articles mentioning retail words, legal notices with navigation words, news with science words, math with code, code with formulas, heading-heavy news, table-like content, markdown-heavy docs, and LaTeX-heavy math.
 
 ## Pipeline
 
@@ -44,16 +44,16 @@ Final local metrics after rule updates:
 
 Predicted source_type counts:
 
-- `educational`: 9
-- `math`: 5
-- `code`: 4
-- `boilerplate_or_noise`: 2
-- `commercial_product`: 2
-- `forum_qa`: 2
-- `news`: 2
-- `unknown`: 2
-- `legal_government`: 1
-- `wiki_reference`: 1
+- `educational`: 12
+- `math`: 6
+- `code`: 5
+- `boilerplate_or_noise`: 3
+- `commercial_product`: 3
+- `forum_qa`: 3
+- `news`: 3
+- `unknown`: 3
+- `legal_government`: 2
+- `wiki_reference`: 2
 
 Main confusions:
 
@@ -61,13 +61,14 @@ Main confusions:
 - Initial baseline confused product pages with code because `returns` matched the loose `return` signal.
 - Initial baseline over-labeled useful articles with footer/privacy text as boilerplate.
 - Initial baseline had no dedicated wiki/reference, legal/government, news, science-subfield, or infrastructure rules.
+- Hardened benchmark initially confused an educational media-literacy article with a commercial product page because it intentionally used retail words as examples.
 - Final run had no mismatches on this synthetic benchmark.
 
 ## Manual observations
 
-The updated rules work well for obvious local smoke cases. Forum Q&A is checked before boilerplate, so cookie-banner discussions remain forum content. Product pages are detected before environmental/educational content, which helps mixed product explainers. Math rules now distinguish calculus and algebra with small keyword clusters.
+The updated rules work well for obvious local smoke cases. Forum Q&A is checked before boilerplate, so cookie-banner discussions remain forum content. Product pages are detected before environmental/educational content, which helps mixed product explainers. Math rules now distinguish calculus and algebra with small keyword clusters. The hardened pass added cases where keywords appear in the wrong context.
 
-Fragile areas remain: useful text plus boilerplate is still classified as a whole chunk, not as spans; source_type and domain can disagree in real pages; and synthetic keyword coverage is easier than real web text.
+Fragile areas remain: useful text plus boilerplate is still classified as a whole chunk, not as spans; source_type and domain can disagree in real pages; and synthetic keyword coverage is easier than real web text. Perfect accuracy is not required for future revisions if avoiding overfit gives a more honest benchmark.
 
 ## Limitations
 

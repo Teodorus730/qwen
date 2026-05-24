@@ -1,11 +1,11 @@
 {
   "input_mode": "local_jsonl",
-  "docs_seen": 30,
-  "docs_with_text": 30,
-  "chunks_written": 30,
+  "docs_seen": 42,
+  "docs_with_text": 42,
+  "chunks_written": 42,
   "out": "data_samples\\classifier_benchmark_chunks.jsonl",
-  "min_chunk_tokens": 129,
-  "mean_chunk_tokens": 144.87,
+  "min_chunk_tokens": 89,
+  "mean_chunk_tokens": 132.4,
   "max_chunk_tokens": 180,
   "settings": {
     "min_chunk_tokens": 80,
