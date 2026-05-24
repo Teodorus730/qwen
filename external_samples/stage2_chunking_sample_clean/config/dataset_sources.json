@@ -1,0 +1,91 @@
+{
+  "sources": [
+    {
+      "source_id": "fineweb_general",
+      "kind": "hf",
+      "hf_dataset": "HuggingFaceFW/fineweb",
+      "hf_config": "sample-10BT",
+      "split": "train",
+      "dataset_label": "FineWeb",
+      "source_type": "web_general",
+      "enabled_by_default": false,
+      "recommended_max_docs_first_run": 20,
+      "needs_verification": true,
+      "notes": "General web sample. Dataset/config should be verified before running. Use only with explicit network/HF permission."
+    },
+    {
+      "source_id": "fineweb_edu",
+      "kind": "hf",
+      "hf_dataset": null,
+      "hf_config": null,
+      "split": "train",
+      "dataset_label": "FineWeb-Edu",
+      "source_type": "educational",
+      "enabled_by_default": false,
+      "recommended_max_docs_first_run": 20,
+      "needs_verification": true,
+      "notes": "Educational web sample. Dataset id/config must be verified before running."
+    },
+    {
+      "source_id": "finemath",
+      "kind": "hf",
+      "hf_dataset": null,
+      "hf_config": null,
+      "split": "train",
+      "dataset_label": "FineMath",
+      "source_type": "math",
+      "enabled_by_default": false,
+      "recommended_max_docs_first_run": 20,
+      "needs_verification": true,
+      "notes": "Math-oriented sample. Dataset id/config must be verified before running."
+    },
+    {
+      "source_id": "openwebmath",
+      "kind": "hf",
+      "hf_dataset": null,
+      "hf_config": null,
+      "split": "train",
+      "dataset_label": "OpenWebMath",
+      "source_type": "math",
+      "enabled_by_default": false,
+      "recommended_max_docs_first_run": 20,
+      "needs_verification": true,
+      "notes": "Open web math sample. Dataset id/config must be verified before running."
+    },
+    {
+      "source_id": "cosmopedia_or_smollm_corpus",
+      "kind": "hf",
+      "hf_dataset": null,
+      "hf_config": null,
+      "split": "train",
+      "dataset_label": "Cosmopedia-or-SmolLM-Corpus",
+      "source_type": "educational_synthetic",
+      "enabled_by_default": false,
+      "recommended_max_docs_first_run": 20,
+      "needs_verification": true,
+      "notes": "Synthetic educational corpus candidate. Exact dataset id/config must be verified before running."
+    },
+    {
+      "source_id": "local_edge_cases",
+      "kind": "local",
+      "local_path": "examples/local_docs_edge_cases.jsonl",
+      "dataset_label": "local_edge_cases",
+      "source_type": "unknown",
+      "enabled_by_default": true,
+      "recommended_max_docs_first_run": 12,
+      "needs_verification": false,
+      "notes": "Existing local edge-case smoke sample."
+    },
+    {
+      "source_id": "local_classifier_benchmark",
+      "kind": "local",
+      "local_path": "examples/local_docs_classifier_benchmark.jsonl",
+      "dataset_label": "local_classifier_benchmark",
+      "source_type": "unknown",
+      "enabled_by_default": true,
+      "recommended_max_docs_first_run": 42,
+      "needs_verification": false,
+      "notes": "Hardened synthetic benchmark with expected labels."
+    }
+  ]
+}
