@@ -3,3 +3,5 @@ test.md
 .idea/
 data_samples/*
 !data_samples/README.md
+__pycache__/
+*.pyc

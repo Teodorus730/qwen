@@ -72,3 +72,50 @@ raw dataset -> logical chunks -> structured JSONL
 ```
 
 Дальше этот JSONL можно передать в классификацию, а потом в расчёт `NLL_eff`, `NLL_full` и `delta`.
+
+## Current local MVP pipeline
+
+Generate chunk sample:
+
+```bash
+python scripts\sample_fineweb_chunks.py --local-input examples\local_docs_edge_cases.jsonl --max-docs 12 --out data_samples\edge_case_chunks_sample.jsonl --stats-out data_samples\edge_case_run_stats.json
+```
+
+Validate chunk sample:
+
+```bash
+python scripts\validate_chunks.py --input data_samples\edge_case_chunks_sample.jsonl
+```
+
+Rule-based labeling:
+
+```bash
+python scripts\classify_chunks_rule_based.py --input data_samples\edge_case_chunks_sample.jsonl --output data_samples\edge_case_chunks_labeled.jsonl
+```
+
+Validate labeled sample:
+
+```bash
+python scripts\validate_chunks.py --input data_samples\edge_case_chunks_labeled.jsonl --require-labels
+```
+
+Inspect:
+
+```bash
+python scripts\inspect_chunks.py --input data_samples\edge_case_chunks_labeled.jsonl --limit 13
+```
+
+Optional embedding baseline:
+
+```bash
+python scripts\classify_chunks_embedding_baseline.py --help
+python scripts\classify_chunks_embedding_baseline.py --input data_samples\edge_case_chunks_sample.jsonl --labels taxonomy\simple_domain_labels.json --output data_samples\edge_case_chunks_embedding_labeled.jsonl --dry-run
+```
+
+Notes:
+
+- HF streaming is intentionally not part of this local smoke test.
+- Edge cases are synthetic/local and small.
+- Rule-based labels are only a transparent baseline.
+- The embedding baseline is optional and dependency-dependent.
+- Expected labels are only for local benchmark evaluation.
