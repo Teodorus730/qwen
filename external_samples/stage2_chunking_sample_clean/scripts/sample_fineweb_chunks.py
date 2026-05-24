@@ -13,6 +13,15 @@ from pathlib import Path
 from itertools import islice
 
 
+EXPECTED_LABEL_FIELDS = (
+    "expected_source_type",
+    "expected_domain",
+    "expected_field",
+    "expected_subfield",
+    "expected_label_note",
+)
+
+
 def normalize_text(text: str) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
@@ -86,7 +95,7 @@ def chunk_document(text: str, counter: TokenCounter, min_tokens: int, target_tok
 
 
 def iter_local_jsonl(path: Path, max_docs: int):
-    with path.open("r", encoding="utf-8") as f:
+    with path.open("r", encoding="utf-8-sig") as f:
         for i, line in enumerate(f):
             if i >= max_docs:
                 break
@@ -175,6 +184,11 @@ def main():
             if not args.use_hf_streaming:
                 row_dataset = row.get("dataset") or row_dataset
                 row_source_type = row.get("source_type") or (source_type if args.source_type else guess_source_type(row_dataset))
+            expected_metadata = {
+                field: row.get(field)
+                for field in EXPECTED_LABEL_FIELDS
+                if not args.use_hf_streaming and field in row
+            }
 
             chunks = chunk_document(
                 text=text,
@@ -198,6 +212,7 @@ def main():
                     "token_count": n_tokens,
                     "text": chunk_text,
                 }
+                record.update(expected_metadata)
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
                 chunks_written += 1
 
