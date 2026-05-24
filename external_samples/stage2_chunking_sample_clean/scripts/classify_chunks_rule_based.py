@@ -90,6 +90,12 @@ def classify_wiki_reference(text, text_lower):
 
 def classify_commercial(text, text_lower):
     signals = ("buy", "shipping", "product", "customer note", "price", "warranty", "add to cart", "discount")
+    educational_ad_analysis = (
+        ("advertisements" in text_lower or "persuasive language" in text_lower)
+        and has_any(text_lower, ("classroom", "students", "lesson", "teacher"))
+    )
+    if educational_ad_analysis:
+        return None
     if count_any(text_lower, signals) >= 2 or "features:" in text_lower:
         return make_label("commercial_product", "commercial", "product_page", "retail", 0.82)
     return None
