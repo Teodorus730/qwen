@@ -25,7 +25,15 @@ Later, use only 20-100 documents per dataset for the first real sample. Start wi
 
 ## Proposed future commands
 
-Not yet run:
+Use `config/dataset_sources.json` as the planning registry. Inspect planned sources first:
+
+```bash
+python scripts\inspect_dataset_sources.py --registry config\dataset_sources.json
+python scripts\plan_real_sample_run.py --registry config\dataset_sources.json --all --max-docs 20
+python scripts\plan_real_source_pipeline.py --registry config\dataset_sources.json --source fineweb_edu --max-docs 20
+```
+
+HF commands are not yet run:
 
 ```bash
 python scripts\sample_fineweb_chunks.py --use-hf-streaming --dataset HuggingFaceFW/fineweb --config sample-10BT --max-docs 50 --out data_samples\real_small_chunks.jsonl --stats-out data_samples\real_small_run_stats.json
@@ -54,3 +62,10 @@ python scripts\classify_chunks_embedding_baseline.py --input data_samples\real_s
 - Is network/HF access allowed for this run?
 - Should real samples be committed or kept local?
 - Should embedding labels wait until rule-based labels are manually reviewed?
+
+## Related docs
+
+- `docs/dataset_source_registry.md`
+- `docs/real_sample_readiness_checklist.md`
+- `docs/real_samples_output_structure.md`
+- `docs/local_real_like_sample_report.md`

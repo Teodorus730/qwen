@@ -13,6 +13,9 @@
 - [x] embedding environment check done
 - [x] lexical nearest-label baseline added
 - [x] real sample plan added
+- [x] dataset source registry added
+- [x] dry-run real sample planners added
+- [x] local real-like mini sample dry run added
 - [x] NLL scoring plan documented, not implemented
 
 ## Immediate next steps
@@ -25,6 +28,10 @@
 - [ ] if a local embedding model exists, compare embedding vs rule-based
 - [ ] if no local embedding model exists, decide whether to allow download later
 - [ ] choose first real small dataset sample
+- [ ] review `config/dataset_sources.json` before any HF run
+- [ ] run `scripts\inspect_dataset_sources.py` before any HF run
+- [ ] run `scripts\plan_real_source_pipeline.py` before any HF run
+- [ ] follow `docs\real_sample_readiness_checklist.md`
 - [ ] only after real labels look sane, start observed-token NLL scoring design/implementation
 
 ## Later
