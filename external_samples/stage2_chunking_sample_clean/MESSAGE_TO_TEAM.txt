@@ -21,3 +21,34 @@
 потом смотреть `data_samples/run_stats.json` и `data_samples/fineweb_chunks_sample.jsonl`.
 
 Для настоящего FineWeb запуска есть флаг `--use-hf-streaming`; локальный sample нужен просто чтобы быстро проверить, что механика работает.
+
+Night work summary / local MVP pipeline
+
+Stage2 now has a fuller local MVP around the original chunker:
+- local JSONL documents -> paragraph chunks;
+- optional dataset/source_type metadata;
+- optional benchmark expected_* labels;
+- rule-based baseline labels;
+- validation, inspection, evaluation, and local benchmark runner;
+- docs for schema, taxonomy, cleaning, benchmark limits, and future probability profiling.
+
+Main local benchmark files:
+- examples/local_docs_classifier_benchmark.jsonl
+- data_samples/classifier_benchmark_chunks.jsonl
+- data_samples/classifier_benchmark_labeled.jsonl
+- data_samples/classifier_benchmark_run_stats.json
+- docs/classifier_benchmark_report.md
+- docs/local_classifier_benchmark_dataset_card.md
+
+Useful commands:
+- python scripts\run_local_benchmark_pipeline.py
+- python scripts\validate_chunks.py --input data_samples\classifier_benchmark_labeled.jsonl --require-labels
+- python scripts\inspect_chunks.py --input data_samples\classifier_benchmark_labeled.jsonl --limit 13
+- python scripts\evaluate_chunk_labels.py --input data_samples\classifier_benchmark_labeled.jsonl
+- python scripts\smoke_test_rule_based_classifier.py
+
+Important caveats:
+- The rule-based classifier is not final; it is a transparent smoke-test baseline.
+- The embedding baseline is optional and dependency-dependent; it does not install packages or download models.
+- HF streaming was not run during this night work.
+- Probability profiling is only documented/prepared as schema + manifest; no logits, model loading, or training were run.
