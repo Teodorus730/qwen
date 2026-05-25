@@ -1,5 +1,7 @@
 # Embedding baseline readiness
 
+> Current status note, 2026-05-26: this is an older readiness note. Use `minilm_readiness_plan_ru.md` and `classifier_contract_ru.md` as the current MiniLM preparation docs. No dependency install, model download, or embedding inference is approved by this note.
+
 ## Current script
 
 `scripts/classify_chunks_embedding_baseline.py` is an optional nearest-label baseline. It reads chunk JSONL, reads `taxonomy/simple_domain_labels.json`, builds label texts from domain/field/subfield/description/keywords, and can write embedding-based labels.
