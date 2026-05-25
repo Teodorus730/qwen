@@ -8,6 +8,7 @@ The next stage should score labeled chunks with a reference model and store obse
 
 - `data_samples/classifier_benchmark_labeled.jsonl` for local smoke tests.
 - Later, small real sampled chunks only after the local path is stable.
+- First real pilot candidate manifest: `data_samples/real_samples/nll_pilot_candidates.jsonl`.
 
 ## Reference model
 
@@ -41,6 +42,7 @@ Later, the effective window should come from task 1. Full/adaptive window means 
 ## First implementation scope
 
 The first real scoring run should use only 10-50 chunks. It should not run on full FineWeb.
+For the first real pilot, use `data_samples/real_samples/nll_pilot_candidates.jsonl`: it includes both FineWeb-Edu and FineMath chunks, with agreement and disagreement cases from rule-based vs lexical labels.
 
 Classification and model scoring should stay separate:
 
@@ -51,7 +53,10 @@ Classification and model scoring should stay separate:
 
 ```bash
 python scripts/score_observed_token_nll.py --input data_samples/classifier_benchmark_labeled.jsonl --output data_samples/nll_scores_sample.jsonl --model Qwen/Qwen2.5-0.5B --window-sizes 256,512,1024 --max-chunks 20
+python scripts/score_observed_token_nll.py --input data_samples/real_samples/nll_pilot_candidates.jsonl --output data_samples/real_samples/nll_pilot_scores.jsonl --model Qwen/Qwen2.5-0.5B --window-sizes 256,512,1024 --max-chunks 20
 ```
+
+Do not use the candidate manifest as final evaluation; it is a small pilot set for checking the scoring path and comparing FineWeb-Edu vs FineMath behavior.
 
 ## Risks
 
