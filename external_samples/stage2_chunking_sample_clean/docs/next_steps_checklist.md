@@ -16,10 +16,18 @@
 - [x] dataset source registry added
 - [x] dry-run real sample planners added
 - [x] local real-like mini sample dry run added
+- [x] HF dataset verification plan added
+- [x] future HF streaming runbook added
+- [x] HF row adapter design documented
+- [x] first controlled FineWeb-Edu command attempted
 - [x] NLL scoring plan documented, not implemented
 
 ## Immediate next steps
 
+- [ ] decide whether to install/provide `datasets` later for HF streaming
+- [ ] retry only the same FineWeb-Edu tiny sample after dependency approval
+- [ ] verify HF dataset ids/configs/splits online later, only after approval
+- [ ] record verified `text_field` values in `config/dataset_sources.json`
 - [ ] review labeled edge-case output manually
 - [ ] decide whether to commit generated samples
 - [ ] add tests for classifier rules
@@ -32,6 +40,8 @@
 - [ ] run `scripts\inspect_dataset_sources.py` before any HF run
 - [ ] run `scripts\plan_real_source_pipeline.py` before any HF run
 - [ ] follow `docs\real_sample_readiness_checklist.md`
+- [ ] follow `docs\future_hf_streaming_runbook.md` before first HF run
+- [ ] use `docs\real_source_labeling_plan.md` for manual review
 - [ ] only after real labels look sane, start observed-token NLL scoring design/implementation
 
 ## Later

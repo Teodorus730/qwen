@@ -66,6 +66,15 @@ python scripts\classify_chunks_embedding_baseline.py --input data_samples\real_s
 ## Related docs
 
 - `docs/dataset_source_registry.md`
+- `docs/hf_dataset_verification_plan.md`
+- `docs/hf_row_adapter_design.md`
+- `docs/future_hf_streaming_runbook.md`
+- `docs/real_source_labeling_plan.md`
+- `docs/fineweb_edu_tiny_sample_report.md`
 - `docs/real_sample_readiness_checklist.md`
 - `docs/real_samples_output_structure.md`
 - `docs/local_real_like_sample_report.md`
+
+## First FineWeb-Edu attempt status
+
+A controlled `FineWeb-Edu` tiny sample attempt was made with `max_docs=20`, but it failed before streaming because the active Python environment does not have the `datasets` package installed. No alternate HF source was tried and no dependency install was run.

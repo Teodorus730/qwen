@@ -10,6 +10,8 @@
 - `dataset_label` is output metadata written into chunk records.
 - `source_type` is the broad source or format, such as `web_general`, `educational`, `math`, or `unknown`.
 - `domain/field/subfield` are classifier labels produced later by rule-based, lexical, or embedding methods.
+- `text_field` and `id_field` are planned row-adapter metadata. They must be verified for HF sources before streaming.
+- `planned_output_prefix` controls the intended file prefix under `data_samples/real_samples`.
 
 ## Current planned sources
 
@@ -51,3 +53,14 @@ Recommended order, still only after explicit HF/network approval:
 4. Cosmopedia/SmolLM synthetic educational sample.
 
 This is a plan, not an executed run.
+
+## Current HF run blocker
+
+The first controlled FineWeb-Edu command was attempted with `max_docs=20`, but the active Python environment is missing the `datasets` package. The run failed before streaming any rows. See `docs/fineweb_edu_tiny_sample_report.md`.
+
+## Related planning docs
+
+- `docs/hf_dataset_verification_plan.md`
+- `docs/hf_row_adapter_design.md`
+- `docs/future_hf_streaming_runbook.md`
+- `docs/real_source_labeling_plan.md`
