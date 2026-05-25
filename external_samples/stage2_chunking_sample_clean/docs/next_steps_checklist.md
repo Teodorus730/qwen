@@ -29,6 +29,7 @@
 - [ ] manually review FineWeb-Edu tiny sample chunks and label disagreements
 - [ ] use FineMath as the only current MVP math source
 - [ ] keep OpenWebMath as optional later comparison/backup only
+- [ ] review `docs\finemath_tiny_sample_plan.md` before running FineMath
 - [ ] verify HF dataset ids/configs/splits online later, only after approval
 - [ ] record verified `text_field` values in `config/dataset_sources.json`
 - [ ] review labeled edge-case output manually

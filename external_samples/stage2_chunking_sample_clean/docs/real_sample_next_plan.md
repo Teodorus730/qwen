@@ -72,6 +72,7 @@ python scripts\classify_chunks_embedding_baseline.py --input data_samples\real_s
 - `docs/future_hf_streaming_runbook.md`
 - `docs/real_source_labeling_plan.md`
 - `docs/fineweb_edu_tiny_sample_report.md`
+- `docs/finemath_tiny_sample_plan.md`
 - `docs/real_sample_readiness_checklist.md`
 - `docs/real_samples_output_structure.md`
 - `docs/local_real_like_sample_report.md`
@@ -79,3 +80,7 @@ python scripts\classify_chunks_embedding_baseline.py --input data_samples\real_s
 ## First FineWeb-Edu sample status
 
 A controlled `FineWeb-Edu` tiny sample completed with `max_docs=20`. It produced `data_samples\real_samples\fineweb_edu_sample10bt_chunks.jsonl`, rule-based labels, lexical labels, and a short report. Review those outputs manually before trying FineMath. OpenWebMath remains optional later only.
+
+## FineMath next plan
+
+The next HF source should be FineMath with `max_docs=20`, but it has not been run yet. See `docs/finemath_tiny_sample_plan.md`.
