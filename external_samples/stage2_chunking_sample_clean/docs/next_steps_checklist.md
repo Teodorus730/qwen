@@ -1,5 +1,7 @@
 # Next steps checklist
 
+> Current scope note, 2026-05-26: this checklist is historical/useful context, not the primary handoff document. For current stage2 status use `current_status_ru.md`; for source decisions use `source_status_ru.md`; for MiniLM preparation use `minilm_readiness_plan_ru.md`. Current work is chunking + domain labeling. NLL/logprob/effective context is downstream/out of current scope.
+
 ## Done / current
 
 - [x] chunker works on local JSONL
@@ -27,9 +29,14 @@
 ## Immediate next steps
 
 - [x] confirm `datasets` imports in the working Python
+- [x] add Russian stage2 handoff entry docs
+- [x] document source status and data policy
+- [x] define classifier contract for rule-based, lexical, and future embedding outputs
+- [x] separate synthetic benchmark and real-sample validation modes
+- [x] document MiniLM no-download readiness plan
 - [ ] manually review FineWeb-Edu tiny sample chunks and label disagreements
 - [x] use FineMath as the only current MVP math source
-- [ ] keep OpenWebMath as optional later comparison/backup only
+- [x] keep OpenWebMath as optional later comparison/backup only
 - [ ] manually review FineMath tiny sample chunks and label disagreements
 - [ ] verify HF dataset ids/configs/splits online later, only after approval
 - [ ] record verified `text_field` values in `config/dataset_sources.json`
@@ -47,14 +54,14 @@
 - [ ] follow `docs\real_sample_readiness_checklist.md`
 - [ ] follow `docs\future_hf_streaming_runbook.md` before first HF run
 - [ ] use `docs\real_source_labeling_plan.md` for manual review
-- [ ] only after real labels look sane, start observed-token NLL scoring design/implementation
+- [ ] only after current stage2 handoff/MiniLM comparison is complete, revisit observed-token NLL scoring as downstream work
 
 ## Later
 
 - [ ] sentence-transformers embedding baseline
 - [ ] OpenAlex-like taxonomy
 - [ ] MiniLM/e5 nearest-label classification
-- [ ] real FineWeb/FineWeb-Edu/FineMath small streaming samples
+- [ ] any additional real FineWeb/FineWeb-Edu/FineMath small streaming samples after approval
 - [ ] observed-token logprob/NLL pipeline
 - [ ] effective vs full window comparison
 

@@ -1,5 +1,7 @@
 # Real sample next plan
 
+> Status note, 2026-05-26: this is now a historical planning document. FineWeb-Edu and FineMath tiny samples have already been completed. For current source status use `source_status_ru.md`; for validation rules use `validation_modes_ru.md`; for data policy use `data_policy_ru.md`.
+
 ## Goal
 
 Move from synthetic benchmark checks to tiny real samples while keeping the pipeline small, inspectable, and safe.
@@ -14,15 +16,16 @@ Move from synthetic benchmark checks to tiny real samples while keeping the pipe
 
 ## First safe target
 
-Later, use only 20-100 documents per dataset for the first real sample. Start with one dataset and inspect outputs manually before expanding.
+For any future real sample, use only 20-100 documents per dataset for the first run. Start with one dataset and inspect outputs manually before expanding.
 
-## Why not now
+## Why this still requires approval for new sources
 
-- local stage just stabilized;
 - network/HF access needs explicit user approval;
 - dataset names and configs need verification before use;
 - avoid unexpected downloads;
-- generated samples may be noisy and should be reviewed before committing.
+- generated samples may be noisy and should be reviewed before committing;
+- OpenWebMath remains optional_later only;
+- FineMath is already the current MVP math source.
 
 ## Proposed future commands
 
@@ -34,7 +37,7 @@ python scripts\plan_real_sample_run.py --registry config\dataset_sources.json --
 python scripts\plan_real_source_pipeline.py --registry config\dataset_sources.json --source fineweb_edu --max-docs 20
 ```
 
-HF commands are not yet run:
+Example HF commands below are historical/planning examples. Do not run them without explicit approval:
 
 ```bash
 python scripts\sample_fineweb_chunks.py --use-hf-streaming --dataset HuggingFaceFW/fineweb --config sample-10BT --max-docs 50 --out data_samples\real_small_chunks.jsonl --stats-out data_samples\real_small_run_stats.json
@@ -42,7 +45,7 @@ python scripts\classify_chunks_rule_based.py --input data_samples\real_small_chu
 python scripts\inspect_chunks.py --input data_samples\real_small_labeled_rule_based.jsonl --limit 30 --show-text
 ```
 
-Optional embedding labeling later, only if dependencies/model are local:
+Optional embedding labeling later, only after dependency/model approval and local/no-download preflight:
 
 ```bash
 python scripts\classify_chunks_embedding_baseline.py --input data_samples\real_small_chunks.jsonl --labels taxonomy\simple_domain_labels.json --output data_samples\real_small_labeled_embedding.jsonl --model sentence-transformers/all-MiniLM-L6-v2
