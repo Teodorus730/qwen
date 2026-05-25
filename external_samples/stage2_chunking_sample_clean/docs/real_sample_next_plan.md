@@ -83,4 +83,4 @@ A controlled `FineWeb-Edu` tiny sample completed with `max_docs=20`. It produced
 
 ## FineMath next plan
 
-The next HF source should be FineMath with `max_docs=20`, but it has not been run yet. See `docs/finemath_tiny_sample_plan.md`.
+The FineMath tiny sample completed with `max_docs=20`. It produced `data_samples\real_samples\finemath_chunks.jsonl`, rule-based labels, lexical labels, and a short report. See `docs/finemath_tiny_sample_report.md`. OpenWebMath remains optional later only.

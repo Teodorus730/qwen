@@ -60,6 +60,8 @@ This is a plan, not an executed run.
 
 The first controlled FineWeb-Edu tiny sample completed after using a writable local Hugging Face cache. It streamed 20 documents and wrote 44 chunks under `data_samples\real_samples`. See `docs/fineweb_edu_tiny_sample_report.md`.
 
+The first FineMath tiny sample also completed with `max_docs=20`. It wrote 101 chunks under `data_samples\real_samples` and is summarized in `docs/finemath_tiny_sample_report.md`. OpenWebMath remains optional later only.
+
 ## Related planning docs
 
 - `docs/hf_dataset_verification_plan.md`

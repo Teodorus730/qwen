@@ -21,15 +21,16 @@
 - [x] HF row adapter design documented
 - [x] first controlled FineWeb-Edu command attempted
 - [x] first FineWeb-Edu tiny sample completed
+- [x] first FineMath tiny sample completed
 - [x] NLL scoring plan documented, not implemented
 
 ## Immediate next steps
 
 - [x] confirm `datasets` imports in the working Python
 - [ ] manually review FineWeb-Edu tiny sample chunks and label disagreements
-- [ ] use FineMath as the only current MVP math source
+- [x] use FineMath as the only current MVP math source
 - [ ] keep OpenWebMath as optional later comparison/backup only
-- [ ] review `docs\finemath_tiny_sample_plan.md` before running FineMath
+- [ ] manually review FineMath tiny sample chunks and label disagreements
 - [ ] verify HF dataset ids/configs/splits online later, only after approval
 - [ ] record verified `text_field` values in `config/dataset_sources.json`
 - [ ] review labeled edge-case output manually
