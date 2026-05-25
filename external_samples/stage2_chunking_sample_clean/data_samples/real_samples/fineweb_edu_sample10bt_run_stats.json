@@ -1,0 +1,20 @@
+{
+  "input_mode": "hf_streaming",
+  "docs_seen": 20,
+  "docs_with_text": 20,
+  "docs_missing_text_field": 0,
+  "chunks_written": 44,
+  "out": "data_samples\\real_samples\\fineweb_edu_sample10bt_chunks.jsonl",
+  "min_chunk_tokens": 83,
+  "mean_chunk_tokens": 321.07,
+  "max_chunk_tokens": 416,
+  "settings": {
+    "min_chunk_tokens": 80,
+    "target_chunk_tokens": 180,
+    "max_chunk_tokens": 320,
+    "max_docs": 20,
+    "tokenizer_name": null,
+    "text_field_used": "text",
+    "id_field_used": null
+  }
+}
