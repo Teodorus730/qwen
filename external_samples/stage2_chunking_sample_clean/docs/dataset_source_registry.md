@@ -1,5 +1,7 @@
 # Dataset source registry
 
+> Current status note, 2026-05-26: use `source_status_ru.md` as the stage2 source-status summary. This document explains the registry and remains useful, but completed/current decisions are centralized in the Russian status docs.
+
 ## Purpose
 
 `config/dataset_sources.json` lists planned local and future HF sources for tiny stage2 samples. The registry is planning metadata only. It does not download data or start HF streaming.
