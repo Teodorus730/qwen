@@ -2,6 +2,7 @@
   "input_mode": "local_jsonl",
   "docs_seen": 42,
   "docs_with_text": 42,
+  "docs_missing_text_field": 0,
   "chunks_written": 42,
   "out": "data_samples\\classifier_benchmark_chunks.jsonl",
   "min_chunk_tokens": 89,
@@ -12,6 +13,8 @@
     "target_chunk_tokens": 180,
     "max_chunk_tokens": 320,
     "max_docs": 100,
-    "tokenizer_name": null
+    "tokenizer_name": null,
+    "text_field_used": "text",
+    "id_field_used": null
   }
 }

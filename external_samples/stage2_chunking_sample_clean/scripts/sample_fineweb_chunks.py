@@ -118,6 +118,25 @@ def guess_text(row: dict) -> str:
     return ""
 
 
+def extract_text(row: dict, text_field: str | None, input_mode: str, doc_id: int):
+    if text_field:
+        value = row.get(text_field)
+        if isinstance(value, str) and value.strip():
+            return value, False
+        keys = ", ".join(sorted(str(key) for key in row.keys()))
+        print(f"WARNING: skipping doc {doc_id}: missing or empty text field '{text_field}'. row_keys=[{keys}]")
+        return "", True
+
+    if input_mode == "local_jsonl":
+        value = row.get("text")
+        if isinstance(value, str) and value.strip():
+            return value, False
+        print(f"WARNING: skipping doc {doc_id}: missing or empty text field 'text'.")
+        return "", True
+
+    return guess_text(row), False
+
+
 def guess_source_type(dataset_label: str) -> str:
     label = str(dataset_label or "").lower()
     if "fineweb-edu" in label:
@@ -140,6 +159,8 @@ def main():
     parser.add_argument("--source-type", default=None)
     parser.add_argument("--config", default="sample-10BT")
     parser.add_argument("--split", default="train")
+    parser.add_argument("--text-field", default=None)
+    parser.add_argument("--id-field", default=None)
     parser.add_argument("--tokenizer-name", default=None, help="Example: Qwen/Qwen2.5-0.5B")
     parser.add_argument("--max-docs", type=int, default=10)
     parser.add_argument("--min-chunk-tokens", type=int, default=80)
@@ -160,6 +181,8 @@ def main():
         rows = iter_hf_streaming(args.dataset, args.config, args.split, args.max_docs)
         dataset_label = args.dataset_label or args.dataset
         input_mode = "hf_streaming"
+        if not args.text_field:
+            print("WARNING: --text-field not set for HF streaming; using heuristic text/content/body lookup.")
     else:
         rows = iter_local_jsonl(Path(args.local_input), args.max_docs)
         dataset_label = args.dataset_label or "local_jsonl"
@@ -168,13 +191,17 @@ def main():
 
     docs_seen = 0
     docs_with_text = 0
+    docs_missing_text_field = 0
     chunks_written = 0
     token_counts = []
 
     with out_path.open("w", encoding="utf-8") as f:
         for doc_id, row in enumerate(rows):
             docs_seen += 1
-            text = normalize_text(guess_text(row))
+            text_raw, missing_text = extract_text(row, args.text_field, input_mode, doc_id)
+            if missing_text:
+                docs_missing_text_field += 1
+            text = normalize_text(text_raw)
             if not text:
                 continue
             docs_with_text += 1
@@ -189,6 +216,9 @@ def main():
                 for field in EXPECTED_LABEL_FIELDS
                 if not args.use_hf_streaming and field in row
             }
+            source_doc_id = None
+            if args.id_field and args.id_field in row:
+                source_doc_id = row.get(args.id_field)
 
             chunks = chunk_document(
                 text=text,
@@ -212,6 +242,8 @@ def main():
                     "token_count": n_tokens,
                     "text": chunk_text,
                 }
+                if source_doc_id is not None:
+                    record["source_doc_id"] = str(source_doc_id)
                 record.update(expected_metadata)
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
                 chunks_written += 1
@@ -220,6 +252,7 @@ def main():
         "input_mode": input_mode,
         "docs_seen": docs_seen,
         "docs_with_text": docs_with_text,
+        "docs_missing_text_field": docs_missing_text_field,
         "chunks_written": chunks_written,
         "out": str(out_path),
         "min_chunk_tokens": min(token_counts) if token_counts else None,
@@ -231,6 +264,8 @@ def main():
             "max_chunk_tokens": args.max_chunk_tokens,
             "max_docs": args.max_docs,
             "tokenizer_name": args.tokenizer_name,
+            "text_field_used": args.text_field or ("text" if input_mode == "local_jsonl" else "heuristic:text,content,body"),
+            "id_field_used": args.id_field,
         },
     }
 

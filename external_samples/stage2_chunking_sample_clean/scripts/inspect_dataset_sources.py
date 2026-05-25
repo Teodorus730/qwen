@@ -18,6 +18,8 @@ def load_registry(path):
 
 
 def source_kind(source):
+    if source.get("source_kind"):
+        return source.get("source_kind")
     if source.get("kind"):
         return source.get("kind")
     if source.get("local_path"):
@@ -38,8 +40,14 @@ def validate_source(source):
         warnings.append(f"{source.get('source_id', '<missing>')}: missing source_type")
     if kind == "hf" and not source.get("hf_dataset"):
         warnings.append(f"{source.get('source_id')}: hf source with null hf_dataset")
+    if kind == "hf" and source.get("text_field") is None:
+        warnings.append(f"{source.get('source_id')}: hf source with null text_field")
+    if kind == "hf" and source.get("needs_verification"):
+        warnings.append(f"{source.get('source_id')}: source needs online verification before use")
     if kind == "local" and not source.get("local_path"):
         warnings.append(f"{source.get('source_id')}: local source with missing local_path")
+    if kind == "local" and not source.get("text_field"):
+        warnings.append(f"{source.get('source_id')}: local source with missing text_field")
     return warnings
 
 
@@ -59,7 +67,7 @@ def main():
         raise SystemExit(2)
 
     warnings = []
-    print("source_id | kind | dataset_label | source_type | enabled_by_default | recommended_max_docs_first_run | needs_verification")
+    print("source_id | source_kind | dataset_label | source_type | text_field | id_field | enabled_by_default | recommended_max_docs_first_run | needs_verification | planned_output_prefix")
     for source in sources:
         warnings.extend(validate_source(source))
         print(
@@ -69,9 +77,12 @@ def main():
                     source_kind(source),
                     str(source.get("dataset_label")),
                     str(source.get("source_type")),
+                    str(source.get("text_field")),
+                    str(source.get("id_field")),
                     bool_text(source.get("enabled_by_default")),
                     str(source.get("recommended_max_docs_first_run")),
                     bool_text(source.get("needs_verification")),
+                    str(source.get("planned_output_prefix")),
                 ]
             )
         )

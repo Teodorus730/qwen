@@ -19,6 +19,8 @@ def load_sources(path):
 
 
 def kind(source):
+    if source.get("source_kind"):
+        return source.get("source_kind")
     if source.get("kind"):
         return source.get("kind")
     if source.get("local_path"):
@@ -40,7 +42,7 @@ def paths(source_id, out_dir):
 
 
 def sample_command(source, max_docs, out_dir):
-    p = paths(source.get("source_id"), out_dir)
+    p = paths(source.get("planned_output_prefix") or source.get("source_id"), out_dir)
     command = ["python", "scripts\\sample_fineweb_chunks.py"]
     if kind(source) == "local":
         command += ["--local-input", str(source.get("local_path"))]
@@ -53,9 +55,15 @@ def sample_command(source, max_docs, out_dir):
         if source.get("split"):
             command += ["--split", str(source.get("split"))]
     command += [
-        "--max-docs", str(max_docs),
         "--dataset-label", str(source.get("dataset_label")),
         "--source-type", str(source.get("source_type")),
+    ]
+    if source.get("text_field"):
+        command += ["--text-field", str(source.get("text_field"))]
+    if source.get("id_field"):
+        command += ["--id-field", str(source.get("id_field"))]
+    command += [
+        "--max-docs", str(max_docs),
         "--out", str(p["chunks"]),
         "--stats-out", str(p["stats"]),
     ]
@@ -82,11 +90,17 @@ def main():
         raise SystemExit(2)
 
     source_id = source.get("source_id")
-    p = paths(source_id, args.out_dir)
+    output_prefix = source.get("planned_output_prefix") or source_id
+    p = paths(output_prefix, args.out_dir)
     if source.get("needs_verification") or (kind(source) == "hf" and not source.get("hf_dataset")):
         print("WARNING: Do not run until dataset id/config is verified.")
+    if kind(source) == "hf" and source.get("text_field") is None:
+        print("WARNING: HF text_field is null; verify row schema before running.")
     print(f"source_id: {source_id}")
-    print(f"kind: {kind(source)}")
+    print(f"source_kind: {kind(source)}")
+    print(f"text_field: {source.get('text_field')}")
+    print(f"id_field: {source.get('id_field')}")
+    print(f"planned_output_prefix: {output_prefix}")
     print("planned_commands:")
     print_command(sample_command(source, args.max_docs, args.out_dir))
     print_command(["python", "scripts\\validate_chunks.py", "--input", str(p["chunks"])])
