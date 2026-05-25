@@ -8,7 +8,8 @@ Move from synthetic benchmark checks to tiny real samples while keeping the pipe
 
 - FineWeb
 - FineWeb-Edu
-- FineMath / OpenWebMath
+- FineMath
+- OpenWebMath later only as optional comparison/backup, not an active current MVP source
 - Cosmopedia / SmolLM-Corpus
 
 ## First safe target
@@ -75,6 +76,6 @@ python scripts\classify_chunks_embedding_baseline.py --input data_samples\real_s
 - `docs/real_samples_output_structure.md`
 - `docs/local_real_like_sample_report.md`
 
-## First FineWeb-Edu attempt status
+## First FineWeb-Edu sample status
 
-A controlled `FineWeb-Edu` tiny sample attempt was made with `max_docs=20`, but it failed before streaming because the active Python environment does not have the `datasets` package installed. No alternate HF source was tried and no dependency install was run.
+A controlled `FineWeb-Edu` tiny sample completed with `max_docs=20`. It produced `data_samples\real_samples\fineweb_edu_sample10bt_chunks.jsonl`, rule-based labels, lexical labels, and a short report. Review those outputs manually before trying FineMath. OpenWebMath remains optional later only.

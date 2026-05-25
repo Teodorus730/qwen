@@ -17,8 +17,8 @@
 
 - `fineweb_general`: planned HF web-general sample; dataset/config need verification.
 - `fineweb_edu`: planned HF educational web sample; dataset id/config need verification.
-- `finemath`: planned HF math-oriented sample; dataset id/config need verification.
-- `openwebmath`: planned HF math-oriented sample; dataset id/config need verification.
+- `finemath`: current MVP HF math-oriented sample; dataset id/config need verification before a first run.
+- `openwebmath`: optional later comparison/backup only, not an active current planned source.
 - `cosmopedia_or_smollm_corpus`: planned synthetic educational corpus candidate; dataset id/config need verification.
 - `local_edge_cases`: existing local smoke sample.
 - `local_classifier_benchmark`: hardened local synthetic classifier benchmark.
@@ -48,15 +48,17 @@ For all of them, verify dataset id, config, split, licensing notes, and expected
 Recommended order, still only after explicit HF/network approval:
 
 1. FineWeb-Edu or local real-like docs.
-2. FineMath/OpenWebMath tiny sample.
+2. FineMath tiny sample as the only current MVP math source.
 3. FineWeb general tiny sample.
 4. Cosmopedia/SmolLM synthetic educational sample.
 
+OpenWebMath may be reconsidered later as a comparison or backup source, but it is not part of the current MVP source sequence.
+
 This is a plan, not an executed run.
 
-## Current HF run blocker
+## Current HF run note
 
-The first controlled FineWeb-Edu command was attempted with `max_docs=20`, but the active Python environment is missing the `datasets` package. The run failed before streaming any rows. See `docs/fineweb_edu_tiny_sample_report.md`.
+The first controlled FineWeb-Edu tiny sample completed after using a writable local Hugging Face cache. It streamed 20 documents and wrote 44 chunks under `data_samples\real_samples`. See `docs/fineweb_edu_tiny_sample_report.md`.
 
 ## Related planning docs
 

@@ -59,7 +59,7 @@
     },
     {
       "source_id": "openwebmath",
-      "source_kind": "hf",
+      "source_kind": "optional_later",
       "kind": "hf",
       "hf_dataset": "open-web-math/open-web-math",
       "hf_config": null,
@@ -74,7 +74,7 @@
       "license_notes": "needs verification before committing samples",
       "commit_sample_policy": "small_samples_only_after_review",
       "planned_output_prefix": "openwebmath",
-      "notes": "Dataset card indicates text/url/date/metadata-like structure; row schema should still be checked on first run."
+      "notes": "Optional later comparison/backup source only. Current MVP math source is FineMath; do not run OpenWebMath in the current stage."
     },
     {
       "source_id": "cosmopedia_or_smollm_corpus",

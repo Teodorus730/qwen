@@ -20,12 +20,15 @@
 - [x] future HF streaming runbook added
 - [x] HF row adapter design documented
 - [x] first controlled FineWeb-Edu command attempted
+- [x] first FineWeb-Edu tiny sample completed
 - [x] NLL scoring plan documented, not implemented
 
 ## Immediate next steps
 
-- [ ] decide whether to install/provide `datasets` later for HF streaming
-- [ ] retry only the same FineWeb-Edu tiny sample after dependency approval
+- [x] confirm `datasets` imports in the working Python
+- [ ] manually review FineWeb-Edu tiny sample chunks and label disagreements
+- [ ] use FineMath as the only current MVP math source
+- [ ] keep OpenWebMath as optional later comparison/backup only
 - [ ] verify HF dataset ids/configs/splits online later, only after approval
 - [ ] record verified `text_field` values in `config/dataset_sources.json`
 - [ ] review labeled edge-case output manually
