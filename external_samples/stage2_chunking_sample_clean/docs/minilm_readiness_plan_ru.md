@@ -26,15 +26,23 @@ Do not start with BERT fine-tuning in the current MVP because it needs labeled t
 
 `scripts/classify_chunks_embedding_baseline.py` already exists as an optional embedding scaffold.
 
-Known gaps before a real MiniLM run:
+Update after preflight cleanup:
 
-- dependency/model approval is not documented as a strict preflight;
+- output contract now preserves source metadata and writes `domain`, `field`, `subfield`, `confidence`, `label_method`;
+- `label_method` is `embedding_nearest_label_minilm`;
+- batching is supported through `--batch-size`;
+- optional device request is supported through `--device`;
+- output records include `embedding_model`, `taxonomy_path`, `min_confidence`, `batch_size`, `device_requested`, `device_actual`, `text_chars`, `low_confidence`, and `top_k_labels`;
+- dry-run still does not load a model or write output;
+- a fake-model smoke test exists for schema/contract behavior without downloads.
+
+Remaining gaps before a real MiniLM run:
+
 - model loading must be local/no-download;
-- batching and device settings need a final decision;
-- output schema should match `classifier_contract_ru.md`;
-- top-k/low-confidence policy should be explicit;
-- mock tests would be useful before model inference;
-- generated output names must not overwrite rule-based or lexical files.
+- dependency/model approval is still required;
+- local model path/cache must be verified;
+- generated output names must not overwrite rule-based or lexical files;
+- real output quality still needs benchmark and disagreement review.
 
 ## Inputs
 
@@ -65,11 +73,14 @@ Recommended output metadata:
 
 - `label_method`: `embedding_nearest_label_minilm`;
 - `confidence`: cosine similarity or nearest-label score, not probability;
-- `model_name` or model path;
-- taxonomy path/version;
-- threshold;
-- top-k labels if implemented;
-- low-confidence flag if implemented.
+- `embedding_model`: model name or model path;
+- `taxonomy_path`: taxonomy path/version;
+- `min_confidence`: low-confidence threshold;
+- `batch_size`;
+- `device_requested`;
+- `device_actual`;
+- `top_k_labels`;
+- `low_confidence`.
 
 ## No-download workflow
 
@@ -83,6 +94,18 @@ Before real inference:
 6. Run a tiny local benchmark before real samples.
 
 No command should implicitly download a model during routine cleanup.
+
+Safe dry-run:
+
+```bash
+python scripts\classify_chunks_embedding_baseline.py --input data_samples\classifier_benchmark_chunks.jsonl --labels taxonomy\simple_domain_labels.json --output data_samples\classifier_benchmark_labeled_embedding_minilm.jsonl --dry-run --batch-size 8 --top-k 3
+```
+
+Future real run only after approval and verified local model/cache:
+
+```bash
+python scripts\classify_chunks_embedding_baseline.py --input data_samples\classifier_benchmark_chunks.jsonl --labels taxonomy\simple_domain_labels.json --output data_samples\classifier_benchmark_labeled_embedding_minilm.jsonl --model sentence-transformers/all-MiniLM-L6-v2 --batch-size 32 --top-k 3
+```
 
 ## Comparison plan
 
