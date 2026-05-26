@@ -1,0 +1,7 @@
+# Optional dependencies for MiniLM/Sentence-Transformers embedding baseline.
+# Install only after explicit approval.
+sentence-transformers
+torch
+transformers
+huggingface-hub
+numpy
