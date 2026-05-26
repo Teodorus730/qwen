@@ -118,6 +118,8 @@ python scripts\plan_real_source_pipeline.py --registry config\dataset_sources.js
 
 The next technical milestone is an embedding-based nearest-label classifier using MiniLM/Sentence-Transformers style embeddings.
 
+Real MiniLM runs require optional embedding dependencies and an approved local/downloaded model. See `docs/minilm_dependency_strategy.md` and `docs/minilm_local_preflight_report.md` before installing anything or running inference.
+
 Before running it, stage2 needs:
 
 - stable classifier contract;
