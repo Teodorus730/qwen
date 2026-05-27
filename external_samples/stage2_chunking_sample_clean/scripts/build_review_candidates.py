@@ -24,10 +24,16 @@ def iter_jsonl(path):
         raise SystemExit(2)
 
 
-def load_optional_by_chunk_id(path):
-    if path is None:
+def load_optional_by_chunk_id(paths):
+    if not paths:
         return {}
-    return {record.get("chunk_id"): record for record in iter_jsonl(Path(path)) if record.get("chunk_id")}
+    records = {}
+    for path in paths:
+        for record in iter_jsonl(Path(path)):
+            chunk_id = record.get("chunk_id")
+            if chunk_id:
+                records[chunk_id] = record
+    return records
 
 
 def preview(text, chars):
@@ -62,19 +68,23 @@ def select_records(records, max_records, per_dataset, seed):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", required=True)
+    parser.add_argument("--input", nargs="+", required=True)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--rule-based")
-    parser.add_argument("--embedding")
+    parser.add_argument("--rule-based", nargs="*")
+    parser.add_argument("--lexical", nargs="*")
+    parser.add_argument("--embedding", nargs="*")
     parser.add_argument("--max-records", type=int, default=50)
     parser.add_argument("--per-dataset", type=int, default=None)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--text-chars", type=int, default=700)
     args = parser.parse_args()
 
-    records = list(iter_jsonl(Path(args.input)))
+    records = []
+    for input_path in args.input:
+        records.extend(iter_jsonl(Path(input_path)))
     selected = select_records(records, args.max_records, args.per_dataset, args.seed)
     rule_records = load_optional_by_chunk_id(args.rule_based)
+    lexical_records = load_optional_by_chunk_id(args.lexical)
     embedding_records = load_optional_by_chunk_id(args.embedding)
 
     output_path = Path(args.output)
@@ -110,6 +120,15 @@ def main():
                     "subfield": rule_records[chunk_id].get("subfield"),
                     "confidence": rule_records[chunk_id].get("confidence"),
                     "label_method": rule_records[chunk_id].get("label_method"),
+                }
+            if chunk_id in lexical_records:
+                out["lexical_label"] = {
+                    "source_type": lexical_records[chunk_id].get("source_type"),
+                    "domain": lexical_records[chunk_id].get("domain"),
+                    "field": lexical_records[chunk_id].get("field"),
+                    "subfield": lexical_records[chunk_id].get("subfield"),
+                    "confidence": lexical_records[chunk_id].get("confidence"),
+                    "label_method": lexical_records[chunk_id].get("label_method"),
                 }
             if chunk_id in embedding_records:
                 out["embedding_label"] = {

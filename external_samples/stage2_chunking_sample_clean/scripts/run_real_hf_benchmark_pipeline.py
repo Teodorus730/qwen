@@ -16,6 +16,8 @@ def output_prefix_for_docs(output_prefix, docs_path):
     stem = Path(docs_path).stem
     if stem.endswith("_docs"):
         stem = stem[:-5]
+    if output_prefix and stem.startswith(output_prefix):
+        return stem
     return f"{output_prefix}_{stem}"
 
 

@@ -125,6 +125,10 @@ def row_values(row):
     return row.tolist() if hasattr(row, "tolist") else list(row)
 
 
+def clamp_confidence(value):
+    return max(0.0, min(1.0, float(value)))
+
+
 def top_k_predictions(scores, labels, top_k):
     ranked = sorted(enumerate(row_values(scores)), key=lambda item: item[1], reverse=True)
     predictions = []
@@ -135,7 +139,7 @@ def top_k_predictions(scores, labels, top_k):
                 "domain": label.get("domain"),
                 "field": label.get("field"),
                 "subfield": label.get("subfield"),
-                "confidence": float(score),
+                "confidence": clamp_confidence(score),
             }
         )
     return predictions
