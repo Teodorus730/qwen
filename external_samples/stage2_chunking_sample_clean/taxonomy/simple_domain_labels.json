@@ -105,6 +105,69 @@
     "keywords": ["reported", "officials", "announced", "according to", "statement", "journalists", "update"]
   },
   {
+    "domain": "technology",
+    "field": "patents",
+    "subfield": "POS_systems",
+    "description": "Patent-style technical descriptions, claims, and procedures for point-of-sale systems, rentals, transactions, inventory, invoices, cash drawers, and retail terminals.",
+    "keywords": ["patent", "claim", "point of sale", "POS", "rental", "transaction", "invoice", "cash drawer", "terminal"]
+  },
+  {
+    "domain": "technology",
+    "field": "patents",
+    "subfield": "hardware_networking",
+    "description": "Patent-style or technical descriptions of computer hardware, networking interfaces, adapters, terminals, buses, ports, memory, data taps, and communication circuits.",
+    "keywords": ["patent", "LAN", "adapter", "terminal", "bus", "port", "memory", "interface", "circuit", "data tap"]
+  },
+  {
+    "domain": "stem",
+    "field": "mathematics",
+    "subfield": "statistics",
+    "description": "Texts about probability, statistics, distributions, medians, means, forecasting accuracy, model evaluation, holdout sets, and statistical measures.",
+    "keywords": ["statistics", "probability", "median", "mean", "distribution", "forecast", "model", "holdout", "variance", "accuracy"]
+  },
+  {
+    "domain": "stem",
+    "field": "mathematics",
+    "subfield": "arithmetic_measurement",
+    "description": "Texts about arithmetic, unit conversion, measurement, feet, inches, yards, ratios, basic calculations, and word problems involving quantities.",
+    "keywords": ["inches", "feet", "yards", "measurement", "convert", "conversion", "arithmetic", "ratio", "calculate"]
+  },
+  {
+    "domain": "science",
+    "field": "chemistry",
+    "subfield": "article",
+    "description": "Chemistry tutorials and explainers about atoms, molecules, formulas, valence electrons, Lewis structures, elements, compounds, and chemical reasoning.",
+    "keywords": ["chemistry", "atom", "molecule", "formula", "valence", "electron", "Lewis structure", "compound", "element"]
+  },
+  {
+    "domain": "stem",
+    "field": "mathematics",
+    "subfield": "geometry",
+    "description": "Texts about geometric figures, triangles, rectangles, diagrams, areas, shapes, angles, lengths, and geometry word problems.",
+    "keywords": ["geometry", "triangle", "rectangle", "area", "angle", "shape", "diagram", "length", "figure"]
+  },
+  {
+    "domain": "stem",
+    "field": "mathematics",
+    "subfield": "topology",
+    "description": "Advanced mathematics texts about topology, closures, dense and nowhere dense sets, compactness, convergence, metric spaces, and real analysis concepts.",
+    "keywords": ["topology", "closure", "dense", "nowhere dense", "compact", "convergent", "metric", "analysis", "Cauchy"]
+  },
+  {
+    "domain": "humanities",
+    "field": "art_history",
+    "subfield": "article",
+    "description": "Texts about artists, artworks, exhibitions, art movements, art criticism, painting, museums, and art historical context.",
+    "keywords": ["artist", "painting", "Picasso", "museum", "exhibition", "art", "art history", "modernism", "surrealist"]
+  },
+  {
+    "domain": "social_sciences",
+    "field": "social_issues",
+    "subfield": "article",
+    "description": "Texts about social issues, public advocacy, gender, inequality, politics, community movements, violence prevention, and social policy.",
+    "keywords": ["social", "inequality", "gender", "women", "violence", "policy", "advocacy", "community", "rights"]
+  },
+  {
     "domain": "unknown",
     "field": "unknown",
     "subfield": null,
