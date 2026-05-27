@@ -1,0 +1,212 @@
+{
+  "records": 88,
+  "by_dataset": {
+    "FineWeb-Edu": 88
+  },
+  "char_count": {
+    "min": 524,
+    "mean": 1664.2727,
+    "max": 2114
+  },
+  "byte_count": {
+    "min": 524,
+    "mean": 1676.4432,
+    "max": 2122
+  },
+  "line_count": {
+    "min": 1,
+    "mean": 1.4773,
+    "max": 14
+  },
+  "flags": {
+    "has_math_notation": {
+      "count": 0,
+      "share": 0.0
+    },
+    "has_code": {
+      "count": 1,
+      "share": 0.0114
+    },
+    "has_numbers": {
+      "count": 70,
+      "share": 0.7955
+    },
+    "has_table_or_list": {
+      "count": 2,
+      "share": 0.0227
+    },
+    "has_urls_or_links": {
+      "count": 10,
+      "share": 0.1136
+    },
+    "has_boilerplate_markers": {
+      "count": 6,
+      "share": 0.0682
+    }
+  },
+  "noise_level": {
+    "clean": 81,
+    "partial_noise": 7
+  },
+  "top_noise_reasons": {
+    "urls_or_links": 10,
+    "boilerplate_markers": 6,
+    "table_or_list_structure": 2,
+    "many_urls": 1
+  },
+  "examples": {
+    "has_math_notation": [],
+    "has_code": [
+      {
+        "chunk_id": "FineWeb-Edu_000025_001",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "by payment gateway. - Product Details: Product details are mentioned for each item like the shipping charges, price, handling fees, item number which helps in customizing the product for the buyer. - Multiple Options: There are multiple opt"
+      }
+    ],
+    "noise": [
+      {
+        "chunk_id": "FineWeb-Edu_000003_008",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "urls_or_links",
+          "many_urls"
+        ],
+        "preview": "good in-depth article on last year’s landslides in Lewis County. http://seattletimes.nwsource.com/html/localnews/2008048848_logging13m.html An interesting article on the failure of best management practices in development catchment basins c"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000005_001",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers",
+          "urls_or_links"
+        ],
+        "preview": "observed by the Moderate Resolution Imaging Spectroradiometer (MODIS) on NASA’s Terra satellite. Areas with above-average temperatures appear in red and orange, and areas with below-average temperatures appear in shades of blue. Oceans and "
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000008_000",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers",
+          "urls_or_links"
+        ],
+        "preview": "Science Fair Project Encyclopedia |President of the| Historically, Landes was part of Gascony. It was one of the original 83 departments created during the French Revolution on March 4, 1790. It was created from parts of the provinces of Gu"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000010_005",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "rewarding your loyalty overcomes the other things they do that destroys your loyalty. Seems to me they just don’t get it? Jet Blue says they give you more leg room – that’s true if you pay extra for those few rows that have it. How come the"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000020_000",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers",
+          "urls_or_links"
+        ],
+        "preview": "Given that this is the first U.S. presidential election since apps have made their way onto most electronic devices, you might think there would be dozens of worthwhile products available on the topic designed for students. Think again. Sur"
+      }
+    ],
+    "high_symbol_density": [
+      {
+        "chunk_id": "FineWeb-Edu_000001_006",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "of Illustrators, New York - 1. Aldrich, Linda. “John Langley Howard.” American Scene Painting: California, 1930s and 1940s. Irvine, Westphal Publishing: 1991. - 2. Hailey, Gene. “John Langley Howard…Biography and Works.” California Art Rese",
+        "symbol_density": 0.086726
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000012_000",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "[Sex. Syst.—Monoecia, Polyandria. Gen. Char—See ante, p. 318. Sp. Char.—Leaves obovate, oblong; obliquely divided into obtuse lobes; segments, oblong entire; cup hemispherical, tuberculated; acorn ovoid, oblong; fruit in pairs. This tree is",
+        "symbol_density": 0.057708
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000003_008",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "urls_or_links",
+          "many_urls"
+        ],
+        "preview": "good in-depth article on last year’s landslides in Lewis County. http://seattletimes.nwsource.com/html/localnews/2008048848_logging13m.html An interesting article on the failure of best management practices in development catchment basins c",
+        "symbol_density": 0.052091
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000003_000",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "The “presidi” translates as “garrisons” (from the French word, “to equip”), as protectors of traditional food production practices Monday, March 23, 2009 The “presidi” translates as “garrisons” (from the French word, “to equip”), as protect",
+        "symbol_density": 0.049952
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000010_003",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "themselves. If that’s you, and you’ll know if it is, then set another goal today, dream another dream today and make a pledge to be creative and innovative today. Go ahead – you’re never too old! Friday, September 30, 2011 at 5:24 AM Friday",
+        "symbol_density": 0.049559
+      }
+    ],
+    "high_digit_density": [
+      {
+        "chunk_id": "FineWeb-Edu_000001_006",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "of Illustrators, New York - 1. Aldrich, Linda. “John Langley Howard.” American Scene Painting: California, 1930s and 1940s. Irvine, Westphal Publishing: 1991. - 2. Hailey, Gene. “John Langley Howard…Biography and Works.” California Art Rese",
+        "digit_density": 0.072566
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000001_005",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "home San Francisco, California California Palace of the Legion of Honor, CA City of San Francisco, CA IBM Building, New York, NY The Oakland Museum, CA The Phillips Collection, Washington D.C. San Francisco Museum of Modern Art, CA Security",
+        "digit_density": 0.058737
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000001_004",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "statements of social commentary and returned to his roots as a landscape painter. However, this did not prevent the artist from illustrating important issues because he then became one of the first “eco-artists.” Through his painting, Howar",
+        "digit_density": 0.05419
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000002_000",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "Started conversation May 4, 2004 It's incorrect to say that \"gyratory system\" is just the name for a roundabout that has got too big for its boots. In fact it's the original term which was soon displaced when they became common. I'm not sur",
+        "digit_density": 0.04019
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000015_001",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "1865. Other well known names were John Pringle, John Hogg, Charles Murray, John Scott, Charles Sheddon and David Greig the elder. But already there were two factors which between them were to kill the craft of silversmithing in Perth. In 18",
+        "digit_density": 0.033003
+      }
+    ]
+  },
+  "input": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2.jsonl"
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "records": 113,
+  "by_dataset": {
+    "FineWeb": 113
+  },
+  "char_count": {
+    "min": 551,
+    "mean": 1704.8496,
+    "max": 2294
+  },
+  "byte_count": {
+    "min": 551,
+    "mean": 1707.2743,
+    "max": 2313
+  },
+  "line_count": {
+    "min": 1,
+    "mean": 1.8142,
+    "max": 20
+  },
+  "flags": {
+    "has_math_notation": {
+      "count": 0,
+      "share": 0.0
+    },
+    "has_code": {
+      "count": 3,
+      "share": 0.0265
+    },
+    "has_numbers": {
+      "count": 98,
+      "share": 0.8673
+    },
+    "has_table_or_list": {
+      "count": 4,
+      "share": 0.0354
+    },
+    "has_urls_or_links": {
+      "count": 3,
+      "share": 0.0265
+    },
+    "has_boilerplate_markers": {
+      "count": 9,
+      "share": 0.0796
+    }
+  },
+  "noise_level": {
+    "clean": 104,
+    "partial_noise": 8,
+    "mostly_noise": 1
+  },
+  "top_noise_reasons": {
+    "boilerplate_markers": 9,
+    "table_or_list_structure": 4,
+    "urls_or_links": 3,
+    "many_urls": 2
+  },
+  "examples": {
+    "has_math_notation": [],
+    "has_code": [
+      {
+        "chunk_id": "FineWeb_000004_004",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "new construction projects, communicate with your architect and/or contractor about noise reduction options. Some building materials and methods offer greater sound absorption or masking than others. - When you are engaged in construction pr"
+      },
+      {
+        "chunk_id": "FineWeb_000009_025",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "and the areas of the invoice from which data is selected can be outlined by the use of a digitizing pen. Preferably, however, the data tap is programmed to have a \"pass-through\" mode in which data, for example, invoice data, is simply passe"
+      },
+      {
+        "chunk_id": "FineWeb_000009_032",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "set indicating that the teacher program is active. Thereafter, processing proceeds to step S390, in which an initial status indication or flag is set indicating that neither landmarks nor data areas are currently being set or learned. Proce"
+      }
+    ],
+    "noise": [
+      {
+        "chunk_id": "FineWeb_000000_001",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "insurance may have a certificate, but the financial service itself cannot be touched i.e. it is intangible. This makes it tricky to evaluate the quality of service prior to consuming it since there are fewer attributes of quality in compari"
+      },
+      {
+        "chunk_id": "FineWeb_000006_003",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers",
+          "urls_or_links",
+          "many_urls"
+        ],
+        "preview": "Virtual hosting is only available in the professional edition Abyss Web Server X2. Abyss Web Server supports the SSL and TLS protocols and is able to accept secure connections with strong cryptography (up to 256-bit keys) to protect your vi"
+      },
+      {
+        "chunk_id": "FineWeb_000009_032",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "set indicating that the teacher program is active. Thereafter, processing proceeds to step S390, in which an initial status indication or flag is set indicating that neither landmarks nor data areas are currently being set or learned. Proce"
+      },
+      {
+        "chunk_id": "FineWeb_000009_040",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "Upon pressing the function key F10 the transaction currently displayed on the screen is aborted. In accordance with the present invention, upon pressing the \"hot keys\" on the keyboard, that is, the \"Alt\" and the left \"shift\" keys, the main "
+      },
+      {
+        "chunk_id": "FineWeb_000009_042",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "to cover the \"1\" following the \"INVOICE NUMBER\" term on the top line of the screen. This area then is reduced in size, by using the \"SHIFT\" and the arrow keys, as it has been described above, so as to cover only the area reserved for the in"
+      }
+    ],
+    "high_symbol_density": [
+      {
+        "chunk_id": "FineWeb_000015_000",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "|- candidate number||14295| |- NTR Number||NTR3827| |- ISRCTN||ISRCTN wordt niet meer aangevraagd.| |- Date ISRCTN created| |- date ISRCTN requested| |- Date Registered NTR||30-jan-2013| |- Secondary IDs||NL41498.018.12 / 2012_211; CCMO / M",
+        "symbol_density": 0.074354
+      },
+      {
+        "chunk_id": "FineWeb_000008_000",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [
+          "table_or_list_structure"
+        ],
+        "preview": "view full screen Bi-Stretch Bootcut Pant Out of Stock Clean-tailored pants made with an ultra-comfortable bi-stretch cotton twill that retains its shape wear after wear. 94% Cotton, 6% Spandex. Machine wash, cold; tumble dry low. Imported. ",
+        "symbol_density": 0.064163
+      },
+      {
+        "chunk_id": "FineWeb_000029_000",
+        "dataset": "FineWeb",
+        "noise_level": "mostly_noise",
+        "noise_reasons": [
+          "boilerplate_markers",
+          "urls_or_links",
+          "table_or_list_structure",
+          "many_urls"
+        ],
+        "preview": "Fruit is a simple, lightweight Feedly client application. The application is designed to focus on readability and simplicity in use. If you are new to Feedly, 1. Create an account on Feedly at https://feedly.com 2. Subscribe news, blogs, an",
+        "symbol_density": 0.061258
+      },
+      {
+        "chunk_id": "FineWeb_000025_001",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [
+          "urls_or_links"
+        ],
+        "preview": "mad scientist, pushing the boundaries of what's possible and what's sane in a world of food too often mired in tradition and copy-cat-ism. If I might paraphrase Roald Dahl and Gene Wilder just a bit: \"Meine Damen und Herren, der Inventing R",
+        "symbol_density": 0.045833
+      },
+      {
+        "chunk_id": "FineWeb_000009_038",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "type of the transaction. That is, \"R\" indicates a rental, \"S\" indicates a sale, \"C\" indicates a credit and \"F\" indicates a free transaction, such as for a free replacement. The \"Day O\" column indicates the number of days which this movie is",
+        "symbol_density": 0.045503
+      }
+    ],
+    "high_digit_density": [
+      {
+        "chunk_id": "FineWeb_000009_021",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "computer 25, software programs, data taps 204, 205 and 206, the LAN adapter hardware and a modem (not shown) in the master computer. As it is shown in FIG. 7, as well as FIG. 5, each of the data taps has a serial input port 230, a serial ou",
+        "digit_density": 0.080891
+      },
+      {
+        "chunk_id": "FineWeb_000028_000",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "By Alex Irish / June 12th, 2017 The upcoming Knack 2 has gotten a release date amid E3 2017, and will launch on PS4 September 5th for a budget $39.99 price. Once again, it’s being developed by Sony Studio Japan under the guidance of PS4 arc",
+        "digit_density": 0.064632
+      },
+      {
+        "chunk_id": "FineWeb_000009_047",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "to blink. FIG. 10 is a perspective view of the small footprint terminal (\"SFT\") 23, and FIG. 8 is a block diagram of the circuitry of the SFT. The SFT 23 also is shown in FIGS. 1 and 2. The SFT, as shown in FIG. 10, includes a housing 500 w",
+        "digit_density": 0.055586
+      },
+      {
+        "chunk_id": "FineWeb_000009_022",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "the server 202 and the first workstation 208. Printer 213 serves the second workstation 210. If desired, a separate printer can be provided for each data entry station. It should be understood that the LAN adapter 21, modem 13, cash drawer,",
+        "digit_density": 0.05546
+      },
+      {
+        "chunk_id": "FineWeb_000009_029",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "processing proceeds to steps S161 and S162, whereupon processing identical to that of steps S151 and S152, respectively, is performed, except that a \"trapping returns\" flag is set up and return data is saved. If there is not a match of vide",
+        "digit_density": 0.049786
+      }
+    ]
+  },
+  "input": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2.jsonl"
+  ]
+}

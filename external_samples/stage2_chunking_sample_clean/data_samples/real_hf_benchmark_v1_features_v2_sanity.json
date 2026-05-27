@@ -1,0 +1,56 @@
+{
+  "pseudo_gold_records": 120,
+  "feature_records": 396,
+  "joined_records": 120,
+  "missing_feature_chunk_ids": [],
+  "expected_source_type_distribution": {
+    "educational": 39,
+    "reference": 35,
+    "math": 15,
+    "news": 7,
+    "commercial_product": 4,
+    "web_general": 9,
+    "boilerplate_or_noise": 2,
+    "forum_qa": 5,
+    "code": 2,
+    "wiki_reference": 1,
+    "legal_government": 1
+  },
+  "dataset_distribution": {
+    "FineWeb": 40,
+    "FineWeb-Edu": 40,
+    "FineMath": 40
+  },
+  "checks": {
+    "expected_math_has_math_notation": {
+      "count": 15,
+      "matches": 8,
+      "rate": 0.5333
+    },
+    "expected_code_has_code": {
+      "count": 2,
+      "matches": 1,
+      "rate": 0.5
+    },
+    "expected_boilerplate_noise_detected": {
+      "count": 2,
+      "matches": 0,
+      "rate": 0.0
+    },
+    "finemath_has_math_notation": {
+      "count": 40,
+      "matches": 13,
+      "rate": 0.325
+    },
+    "fineweb_has_boilerplate_markers": {
+      "count": 40,
+      "matches": 7,
+      "rate": 0.175
+    },
+    "fineweb_edu_has_boilerplate_markers": {
+      "count": 40,
+      "matches": 2,
+      "rate": 0.05
+    }
+  }
+}

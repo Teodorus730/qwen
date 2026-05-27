@@ -1,0 +1,323 @@
+{
+  "records": 396,
+  "by_dataset": {
+    "FineMath": 195,
+    "FineWeb": 113,
+    "FineWeb-Edu": 88
+  },
+  "char_count": {
+    "min": 165,
+    "mean": 1169.7803,
+    "max": 2294
+  },
+  "byte_count": {
+    "min": 165,
+    "mean": 1175.5606,
+    "max": 2313
+  },
+  "line_count": {
+    "min": 1,
+    "mean": 5.5101,
+    "max": 35
+  },
+  "flags": {
+    "has_math_notation": {
+      "count": 67,
+      "share": 0.1692
+    },
+    "has_code": {
+      "count": 17,
+      "share": 0.0429
+    },
+    "has_numbers": {
+      "count": 341,
+      "share": 0.8611
+    },
+    "has_table_or_list": {
+      "count": 30,
+      "share": 0.0758
+    },
+    "has_urls_or_links": {
+      "count": 18,
+      "share": 0.0455
+    },
+    "has_boilerplate_markers": {
+      "count": 15,
+      "share": 0.0379
+    }
+  },
+  "noise_level": {
+    "clean": 341,
+    "partial_noise": 54,
+    "mostly_noise": 1
+  },
+  "top_noise_reasons": {
+    "high_symbol_density": 45,
+    "high_punctuation_density": 37,
+    "table_or_list_structure": 30,
+    "urls_or_links": 18,
+    "boilerplate_markers": 15,
+    "many_urls": 3,
+    "high_uppercase_ratio": 2
+  },
+  "examples": {
+    "has_math_notation": [
+      {
+        "chunk_id": "FineMath_000002_000",
+        "dataset": "FineMath",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "# trigonometry posted by . express 3 cos x -2 sin x in th eform R cos (x + a) and hence write down the maximum and minimum values of 3 cos x - 2 sin x. • trigonometry - let 3cosx - 2sinx = Rcos(x+a) Rcos(x+a) = R(cosxcosa - sinxsina) = Rcos"
+      },
+      {
+        "chunk_id": "FineMath_000002_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1. ### trig"
+      },
+      {
+        "chunk_id": "FineMath_000002_003",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "expres the following as sums and differences of sines or cosines cos8t * sin2t sin(a+b) = sin(a)cos(b) + cos(a)sin(b) replacing by by -b and using that cos(-b)= cos(b) sin(-b)= -sin(b) gives: sin(a-b) = sin(a)cos(b) - cos(a)sin(b) … 3. ### "
+      },
+      {
+        "chunk_id": "FineMath_000002_004",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Prove that for all real values of a, b, t (theta): (a * cos t + b * sin t)^2 <= a^2 + b^2 I will be happy to critique your work. Start on the left, square it, (a * cos t + b * sin t)^2 = a^2 (1 - sin^2t) + 2ab sin t cost+ b^2 (1 … 4. ### Tr"
+      },
+      {
+        "chunk_id": "FineMath_000002_006",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Let y represent theta Prove: 1 + 1/tan^2y = 1/sin^2y My Answer: LS: = 1 + 1/tan^2y = (sin^2y + cos^2y) + 1 /(sin^2y/cos^2y) = (sin^2y + cos^2y) + 1 x (cos^2y/sin^2y) = (sin^2y + cos^2y) + (sin^2y + cos^2y) (cos^2y/sin^2y) = (sin^2y … 8. ###"
+      }
+    ],
+    "has_code": [
+      {
+        "chunk_id": "FineWeb_000004_004",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "new construction projects, communicate with your architect and/or contractor about noise reduction options. Some building materials and methods offer greater sound absorption or masking than others. - When you are engaged in construction pr"
+      },
+      {
+        "chunk_id": "FineWeb_000009_025",
+        "dataset": "FineWeb",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "and the areas of the invoice from which data is selected can be outlined by the use of a digitizing pen. Preferably, however, the data tap is programmed to have a \"pass-through\" mode in which data, for example, invoice data, is simply passe"
+      },
+      {
+        "chunk_id": "FineWeb_000009_032",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "set indicating that the teacher program is active. Thereafter, processing proceeds to step S390, in which an initial status indication or flag is set indicating that neither landmarks nor data areas are currently being set or learned. Proce"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000025_001",
+        "dataset": "FineWeb-Edu",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "by payment gateway. - Product Details: Product details are mentioned for each item like the shipping charges, price, handling fees, item number which helps in customizing the product for the buyer. - Multiple Options: There are multiple opt"
+      },
+      {
+        "chunk_id": "FineMath_000009_001",
+        "dataset": "FineMath",
+        "noise_level": "clean",
+        "noise_reasons": [
+          "table_or_list_structure"
+        ],
+        "preview": "• The Linsolve function is a placeholder for representing the solution x to the linear system $Ax=b$. • The call Linsolve(A,b) mod n computes the solution vector b if it exists of the linear system $Ax=b$ over a finite ring of characteristi"
+      }
+    ],
+    "noise": [
+      {
+        "chunk_id": "FineWeb_000000_001",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "insurance may have a certificate, but the financial service itself cannot be touched i.e. it is intangible. This makes it tricky to evaluate the quality of service prior to consuming it since there are fewer attributes of quality in compari"
+      },
+      {
+        "chunk_id": "FineWeb_000006_003",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers",
+          "urls_or_links",
+          "many_urls"
+        ],
+        "preview": "Virtual hosting is only available in the professional edition Abyss Web Server X2. Abyss Web Server supports the SSL and TLS protocols and is able to accept secure connections with strong cryptography (up to 256-bit keys) to protect your vi"
+      },
+      {
+        "chunk_id": "FineWeb_000009_032",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "set indicating that the teacher program is active. Thereafter, processing proceeds to step S390, in which an initial status indication or flag is set indicating that neither landmarks nor data areas are currently being set or learned. Proce"
+      },
+      {
+        "chunk_id": "FineWeb_000009_040",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "Upon pressing the function key F10 the transaction currently displayed on the screen is aborted. In accordance with the present invention, upon pressing the \"hot keys\" on the keyboard, that is, the \"Alt\" and the left \"shift\" keys, the main "
+      },
+      {
+        "chunk_id": "FineWeb_000009_042",
+        "dataset": "FineWeb",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "boilerplate_markers"
+        ],
+        "preview": "to cover the \"1\" following the \"INVOICE NUMBER\" term on the top line of the screen. This area then is reduced in size, by using the \"SHIFT\" and the arrow keys, as it has been described above, so as to cover only the area reserved for the in"
+      }
+    ],
+    "high_symbol_density": [
+      {
+        "chunk_id": "FineMath_000006_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "$[asy] unitsize(5mm); defaultpen(linewidth(.8pt)+fontsize(8pt)); draw((6,0)--(0,0)--(0,1)--(6,1)); draw((0,1)--(0,6)--(4,6)--(4,1)); draw((4,6)--(11,6)--(11,3)--(4,3)); draw((11,3)--(11,0)--(6,0)--(6,3)); label(\"1\",(0,0.5),W); label(\"5\",(0,",
+        "symbol_density": 0.490909
+      },
+      {
+        "chunk_id": "FineMath_000009_003",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "> $\\mathrm{alias}\\left(a=\\mathrm{RootOf}\\left({y}^{4}+y+1\\right)\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}\\mathbf{mod}\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}2\\right):$ > $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,a,{a}^{2}\\right],\\left[1,{a}^{2},1\\righ",
+        "symbol_density": 0.449253
+      },
+      {
+        "chunk_id": "FineMath_000009_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vector}\\left(\\left[1,2,",
+        "symbol_density": 0.414545
+      },
+      {
+        "chunk_id": "FineMath_000025_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = - 2y + 1 $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ (2x + 2y - 1) = - 2y + 1 $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = $\\frac{- 2 y + 1}{2 ",
+        "symbol_density": 0.352941
+      },
+      {
+        "chunk_id": "FineMath_000025_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - 1 - $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = 0 Rearrange 2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - $\\frac{\\mathrm{dy}}{\\ma",
+        "symbol_density": 0.340909
+      }
+    ],
+    "high_digit_density": [
+      {
+        "chunk_id": "FineMath_000016_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density",
+          "high_uppercase_ratio"
+        ],
+        "preview": "Simple matrix multiplication(Correlation matrix A = Lower triangular matrix L * Upper Triangular) helps to understand what happens. A11= L11*L11+0*0+0*0+0*0 A21= L21*L11+L22*0+0*0+0*0 A31= L31*L11+L32*0+L33*0+0*0 A41= L41*L11+L42*0+L43*0+L4",
+        "digit_density": 0.340858
+      },
+      {
+        "chunk_id": "FineMath_000016_004",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "The first column calculation: 1.00=sqrt(1) 0.80=0.8/1.00 0.20=0.2/1.00 0.50=0.5/1.00 The second column calculation(numbers rounded two the second decimal): 0.60=sqrt(1-0.80*0.80) 0.57=(0.5-0.2*0.8)/0.6 0.17 = (0.5-0.5*0.8)/0.6 The third col",
+        "digit_density": 0.244306
+      },
+      {
+        "chunk_id": "FineMath_000006_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "$[asy] unitsize(5mm); defaultpen(linewidth(.8pt)+fontsize(8pt)); draw((6,0)--(0,0)--(0,1)--(6,1)); draw((0,1)--(0,6)--(4,6)--(4,1)); draw((4,6)--(11,6)--(11,3)--(4,3)); draw((11,3)--(11,0)--(6,0)--(6,3)); label(\"1\",(0,0.5),W); label(\"5\",(0,",
+        "digit_density": 0.184416
+      },
+      {
+        "chunk_id": "FineMath_000002_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1. ### trig",
+        "digit_density": 0.167382
+      },
+      {
+        "chunk_id": "FineMath_000010_001",
+        "dataset": "FineMath",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "## ››Quick conversion chart of foot of air [0 °C] to microbar 1 foot of air [0 °C] to microbar = 38.64089 microbar 2 foot of air [0 °C] to microbar = 77.28178 microbar 3 foot of air [0 °C] to microbar = 115.92266 microbar 4 foot of air [0 °",
+        "digit_density": 0.162562
+      }
+    ]
+  },
+  "input": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2.jsonl"
+  ]
+}

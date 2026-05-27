@@ -1,0 +1,327 @@
+{
+  "records": 195,
+  "by_dataset": {
+    "FineMath": 195
+  },
+  "char_count": {
+    "min": 165,
+    "mean": 636.559,
+    "max": 1740
+  },
+  "byte_count": {
+    "min": 165,
+    "mean": 641.4,
+    "max": 1740
+  },
+  "line_count": {
+    "min": 1,
+    "mean": 9.4718,
+    "max": 35
+  },
+  "flags": {
+    "has_math_notation": {
+      "count": 67,
+      "share": 0.3436
+    },
+    "has_code": {
+      "count": 13,
+      "share": 0.0667
+    },
+    "has_numbers": {
+      "count": 173,
+      "share": 0.8872
+    },
+    "has_table_or_list": {
+      "count": 24,
+      "share": 0.1231
+    },
+    "has_urls_or_links": {
+      "count": 5,
+      "share": 0.0256
+    },
+    "has_boilerplate_markers": {
+      "count": 0,
+      "share": 0.0
+    }
+  },
+  "noise_level": {
+    "clean": 156,
+    "partial_noise": 39
+  },
+  "top_noise_reasons": {
+    "high_symbol_density": 45,
+    "high_punctuation_density": 37,
+    "table_or_list_structure": 24,
+    "urls_or_links": 5,
+    "high_uppercase_ratio": 2
+  },
+  "examples": {
+    "has_math_notation": [
+      {
+        "chunk_id": "FineMath_000002_000",
+        "dataset": "FineMath",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "# trigonometry posted by . express 3 cos x -2 sin x in th eform R cos (x + a) and hence write down the maximum and minimum values of 3 cos x - 2 sin x. • trigonometry - let 3cosx - 2sinx = Rcos(x+a) Rcos(x+a) = R(cosxcosa - sinxsina) = Rcos"
+      },
+      {
+        "chunk_id": "FineMath_000002_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1. ### trig"
+      },
+      {
+        "chunk_id": "FineMath_000002_003",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "expres the following as sums and differences of sines or cosines cos8t * sin2t sin(a+b) = sin(a)cos(b) + cos(a)sin(b) replacing by by -b and using that cos(-b)= cos(b) sin(-b)= -sin(b) gives: sin(a-b) = sin(a)cos(b) - cos(a)sin(b) … 3. ### "
+      },
+      {
+        "chunk_id": "FineMath_000002_004",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Prove that for all real values of a, b, t (theta): (a * cos t + b * sin t)^2 <= a^2 + b^2 I will be happy to critique your work. Start on the left, square it, (a * cos t + b * sin t)^2 = a^2 (1 - sin^2t) + 2ab sin t cost+ b^2 (1 … 4. ### Tr"
+      },
+      {
+        "chunk_id": "FineMath_000002_006",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Let y represent theta Prove: 1 + 1/tan^2y = 1/sin^2y My Answer: LS: = 1 + 1/tan^2y = (sin^2y + cos^2y) + 1 /(sin^2y/cos^2y) = (sin^2y + cos^2y) + 1 x (cos^2y/sin^2y) = (sin^2y + cos^2y) + (sin^2y + cos^2y) (cos^2y/sin^2y) = (sin^2y … 8. ###"
+      }
+    ],
+    "has_code": [
+      {
+        "chunk_id": "FineMath_000009_001",
+        "dataset": "FineMath",
+        "noise_level": "clean",
+        "noise_reasons": [
+          "table_or_list_structure"
+        ],
+        "preview": "• The Linsolve function is a placeholder for representing the solution x to the linear system $Ax=b$. • The call Linsolve(A,b) mod n computes the solution vector b if it exists of the linear system $Ax=b$ over a finite ring of characteristi"
+      },
+      {
+        "chunk_id": "FineMath_000009_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vector}\\left(\\left[1,2,"
+      },
+      {
+        "chunk_id": "FineMath_000009_003",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "> $\\mathrm{alias}\\left(a=\\mathrm{RootOf}\\left({y}^{4}+y+1\\right)\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}\\mathbf{mod}\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}2\\right):$ > $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,a,{a}^{2}\\right],\\left[1,{a}^{2},1\\righ"
+      },
+      {
+        "chunk_id": "FineMath_000026_019",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Weight of Ant/6Ant Feet=Force for each foot=0.0000067Newtons\\begin{align*}\\mathrm{Weight\\ of\\ Ant}/6 \\;\\mathrm{Ant\\ Feet} = \\mathrm{Force\\ for\\ each\\ foot} = 0.0000067 \\;\\mathrm{Newtons}\\end{align*} per Ant Foot or 6.7×106Newtons\\begin{alig"
+      },
+      {
+        "chunk_id": "FineMath_000026_020",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Then IF the Ant Foot can ONLY support 6.7×106N\\begin{align*}6.7 \\times 10^{-6}\\;\\mathrm{N}\\end{align*}, how many ant feet would be required? Weight of Imaginary object / Force for each Ant Foot 4×104Newtons/6.7×106Newtons per Ant Foot\\begin"
+      }
+    ],
+    "noise": [
+      {
+        "chunk_id": "FineMath_000002_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1. ### trig"
+      },
+      {
+        "chunk_id": "FineMath_000002_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Reduce the following to the sine or cosine of one angle: (i) sin145*cos75 - cos145*sin75 (ii) cos35*cos15 - sin35*sin15 Use the formulae: sin(a+b)= sin(a) cos(b) + cos(a)sin(b) and cos(a+b)= cos(a)cos(b) - sin(a)sin)(b) (1)The quantity … 2."
+      },
+      {
+        "chunk_id": "FineMath_000002_003",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "expres the following as sums and differences of sines or cosines cos8t * sin2t sin(a+b) = sin(a)cos(b) + cos(a)sin(b) replacing by by -b and using that cos(-b)= cos(b) sin(-b)= -sin(b) gives: sin(a-b) = sin(a)cos(b) - cos(a)sin(b) … 3. ### "
+      },
+      {
+        "chunk_id": "FineMath_000002_004",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Prove that for all real values of a, b, t (theta): (a * cos t + b * sin t)^2 <= a^2 + b^2 I will be happy to critique your work. Start on the left, square it, (a * cos t + b * sin t)^2 = a^2 (1 - sin^2t) + 2ab sin t cost+ b^2 (1 … 4. ### Tr"
+      },
+      {
+        "chunk_id": "FineMath_000002_006",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "Let y represent theta Prove: 1 + 1/tan^2y = 1/sin^2y My Answer: LS: = 1 + 1/tan^2y = (sin^2y + cos^2y) + 1 /(sin^2y/cos^2y) = (sin^2y + cos^2y) + 1 x (cos^2y/sin^2y) = (sin^2y + cos^2y) + (sin^2y + cos^2y) (cos^2y/sin^2y) = (sin^2y … 8. ###"
+      }
+    ],
+    "high_symbol_density": [
+      {
+        "chunk_id": "FineMath_000006_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "$[asy] unitsize(5mm); defaultpen(linewidth(.8pt)+fontsize(8pt)); draw((6,0)--(0,0)--(0,1)--(6,1)); draw((0,1)--(0,6)--(4,6)--(4,1)); draw((4,6)--(11,6)--(11,3)--(4,3)); draw((11,3)--(11,0)--(6,0)--(6,3)); label(\"1\",(0,0.5),W); label(\"5\",(0,",
+        "symbol_density": 0.490909
+      },
+      {
+        "chunk_id": "FineMath_000009_003",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "> $\\mathrm{alias}\\left(a=\\mathrm{RootOf}\\left({y}^{4}+y+1\\right)\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}\\mathbf{mod}\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}2\\right):$ > $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,a,{a}^{2}\\right],\\left[1,{a}^{2},1\\righ",
+        "symbol_density": 0.449253
+      },
+      {
+        "chunk_id": "FineMath_000009_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vector}\\left(\\left[1,2,",
+        "symbol_density": 0.414545
+      },
+      {
+        "chunk_id": "FineMath_000025_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = - 2y + 1 $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ (2x + 2y - 1) = - 2y + 1 $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = $\\frac{- 2 y + 1}{2 ",
+        "symbol_density": 0.352941
+      },
+      {
+        "chunk_id": "FineMath_000025_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - 1 - $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = 0 Rearrange 2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - $\\frac{\\mathrm{dy}}{\\ma",
+        "symbol_density": 0.340909
+      }
+    ],
+    "high_digit_density": [
+      {
+        "chunk_id": "FineMath_000016_002",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density",
+          "high_uppercase_ratio"
+        ],
+        "preview": "Simple matrix multiplication(Correlation matrix A = Lower triangular matrix L * Upper Triangular) helps to understand what happens. A11= L11*L11+0*0+0*0+0*0 A21= L21*L11+L22*0+0*0+0*0 A31= L31*L11+L32*0+L33*0+0*0 A41= L41*L11+L42*0+L43*0+L4",
+        "digit_density": 0.340858
+      },
+      {
+        "chunk_id": "FineMath_000016_004",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "The first column calculation: 1.00=sqrt(1) 0.80=0.8/1.00 0.20=0.2/1.00 0.50=0.5/1.00 The second column calculation(numbers rounded two the second decimal): 0.60=sqrt(1-0.80*0.80) 0.57=(0.5-0.2*0.8)/0.6 0.17 = (0.5-0.5*0.8)/0.6 The third col",
+        "digit_density": 0.244306
+      },
+      {
+        "chunk_id": "FineMath_000006_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "$[asy] unitsize(5mm); defaultpen(linewidth(.8pt)+fontsize(8pt)); draw((6,0)--(0,0)--(0,1)--(6,1)); draw((0,1)--(0,6)--(4,6)--(4,1)); draw((4,6)--(11,6)--(11,3)--(4,3)); draw((11,3)--(11,0)--(6,0)--(6,3)); label(\"1\",(0,0.5),W); label(\"5\",(0,",
+        "digit_density": 0.184416
+      },
+      {
+        "chunk_id": "FineMath_000002_001",
+        "dataset": "FineMath",
+        "noise_level": "partial_noise",
+        "noise_reasons": [
+          "high_symbol_density",
+          "high_punctuation_density"
+        ],
+        "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1. ### trig",
+        "digit_density": 0.167382
+      },
+      {
+        "chunk_id": "FineMath_000010_001",
+        "dataset": "FineMath",
+        "noise_level": "clean",
+        "noise_reasons": [],
+        "preview": "## ››Quick conversion chart of foot of air [0 °C] to microbar 1 foot of air [0 °C] to microbar = 38.64089 microbar 2 foot of air [0 °C] to microbar = 77.28178 microbar 3 foot of air [0 °C] to microbar = 115.92266 microbar 4 foot of air [0 °",
+        "digit_density": 0.162562
+      }
+    ]
+  },
+  "input": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2.jsonl"
+  ]
+}
