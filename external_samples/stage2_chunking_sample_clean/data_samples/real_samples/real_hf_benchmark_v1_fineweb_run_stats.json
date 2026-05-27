@@ -1,0 +1,20 @@
+{
+  "input_mode": "local_jsonl",
+  "docs_seen": 30,
+  "docs_with_text": 30,
+  "docs_missing_text_field": 0,
+  "chunks_written": 113,
+  "out": "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_chunks.jsonl",
+  "min_chunk_tokens": 111,
+  "mean_chunk_tokens": 339.74,
+  "max_chunk_tokens": 495,
+  "settings": {
+    "min_chunk_tokens": 80,
+    "target_chunk_tokens": 180,
+    "max_chunk_tokens": 320,
+    "max_docs": 100000,
+    "tokenizer_name": null,
+    "text_field_used": "text",
+    "id_field_used": null
+  }
+}
