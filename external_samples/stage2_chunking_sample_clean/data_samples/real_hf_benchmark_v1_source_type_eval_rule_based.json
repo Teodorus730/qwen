@@ -1,0 +1,324 @@
+{
+  "records_in_gold": 120,
+  "records_compared": 120,
+  "missing_predictions": 0,
+  "source_type_accuracy": 0.1833,
+  "low_confidence_count": 0,
+  "expected_source_type_distribution": {
+    "boilerplate_or_noise": 2,
+    "code": 2,
+    "commercial_product": 4,
+    "educational": 39,
+    "forum_qa": 5,
+    "legal_government": 1,
+    "math": 15,
+    "news": 7,
+    "reference": 35,
+    "web_general": 9,
+    "wiki_reference": 1
+  },
+  "predicted_source_type_distribution": {
+    "commercial_product": 2,
+    "educational": 37,
+    "math": 4,
+    "unknown": 77
+  },
+  "method_counts": {
+    "rule_based_keyword_v1": 43,
+    "rule_based_unknown": 77
+  },
+  "per_dataset_accuracy": {
+    "FineMath": 0.25,
+    "FineWeb": 0.05,
+    "FineWeb-Edu": 0.25
+  },
+  "accuracy_by_expected_source_type": {
+    "boilerplate_or_noise": 0.0,
+    "code": 0.0,
+    "commercial_product": 0.0,
+    "educational": 0.4872,
+    "forum_qa": 0.0,
+    "legal_government": 0.0,
+    "math": 0.2,
+    "news": 0.0,
+    "reference": 0.0,
+    "web_general": 0.0,
+    "wiki_reference": 0.0
+  },
+  "confusion_matrix": [
+    {
+      "expected": "boilerplate_or_noise",
+      "predicted": "unknown",
+      "count": 2
+    },
+    {
+      "expected": "code",
+      "predicted": "unknown",
+      "count": 2
+    },
+    {
+      "expected": "commercial_product",
+      "predicted": "unknown",
+      "count": 4
+    },
+    {
+      "expected": "educational",
+      "predicted": "commercial_product",
+      "count": 1
+    },
+    {
+      "expected": "educational",
+      "predicted": "educational",
+      "count": 19
+    },
+    {
+      "expected": "educational",
+      "predicted": "unknown",
+      "count": 19
+    },
+    {
+      "expected": "forum_qa",
+      "predicted": "math",
+      "count": 1
+    },
+    {
+      "expected": "forum_qa",
+      "predicted": "unknown",
+      "count": 4
+    },
+    {
+      "expected": "legal_government",
+      "predicted": "unknown",
+      "count": 1
+    },
+    {
+      "expected": "math",
+      "predicted": "educational",
+      "count": 2
+    },
+    {
+      "expected": "math",
+      "predicted": "math",
+      "count": 3
+    },
+    {
+      "expected": "math",
+      "predicted": "unknown",
+      "count": 10
+    },
+    {
+      "expected": "news",
+      "predicted": "educational",
+      "count": 3
+    },
+    {
+      "expected": "news",
+      "predicted": "unknown",
+      "count": 4
+    },
+    {
+      "expected": "reference",
+      "predicted": "commercial_product",
+      "count": 1
+    },
+    {
+      "expected": "reference",
+      "predicted": "educational",
+      "count": 9
+    },
+    {
+      "expected": "reference",
+      "predicted": "unknown",
+      "count": 25
+    },
+    {
+      "expected": "web_general",
+      "predicted": "educational",
+      "count": 3
+    },
+    {
+      "expected": "web_general",
+      "predicted": "unknown",
+      "count": 6
+    },
+    {
+      "expected": "wiki_reference",
+      "predicted": "educational",
+      "count": 1
+    }
+  ],
+  "top_mismatch_groups": [
+    {
+      "expected": "reference",
+      "predicted": "unknown",
+      "count": 25
+    },
+    {
+      "expected": "educational",
+      "predicted": "unknown",
+      "count": 19
+    },
+    {
+      "expected": "math",
+      "predicted": "unknown",
+      "count": 10
+    },
+    {
+      "expected": "reference",
+      "predicted": "educational",
+      "count": 9
+    },
+    {
+      "expected": "web_general",
+      "predicted": "unknown",
+      "count": 6
+    },
+    {
+      "expected": "news",
+      "predicted": "unknown",
+      "count": 4
+    },
+    {
+      "expected": "commercial_product",
+      "predicted": "unknown",
+      "count": 4
+    },
+    {
+      "expected": "forum_qa",
+      "predicted": "unknown",
+      "count": 4
+    },
+    {
+      "expected": "web_general",
+      "predicted": "educational",
+      "count": 3
+    },
+    {
+      "expected": "news",
+      "predicted": "educational",
+      "count": 3
+    },
+    {
+      "expected": "math",
+      "predicted": "educational",
+      "count": 2
+    },
+    {
+      "expected": "boilerplate_or_noise",
+      "predicted": "unknown",
+      "count": 2
+    },
+    {
+      "expected": "code",
+      "predicted": "unknown",
+      "count": 2
+    },
+    {
+      "expected": "reference",
+      "predicted": "commercial_product",
+      "count": 1
+    },
+    {
+      "expected": "forum_qa",
+      "predicted": "math",
+      "count": 1
+    },
+    {
+      "expected": "wiki_reference",
+      "predicted": "educational",
+      "count": 1
+    },
+    {
+      "expected": "educational",
+      "predicted": "commercial_product",
+      "count": 1
+    },
+    {
+      "expected": "legal_government",
+      "predicted": "unknown",
+      "count": 1
+    }
+  ],
+  "mismatch_examples": [
+    {
+      "chunk_id": "FineWeb_000012_001",
+      "dataset": "FineWeb",
+      "expected_source_type": "educational",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "thoughts of death, including thoughts of suicide Where to Turn for Help If you have any of the symptoms of depression, get help. Your primary care physician is the best place to start, but not always the quickest. For help in finding a provider, click here If you are having suicidal thoughts, it is "
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000014_000",
+      "dataset": "FineWeb-Edu",
+      "expected_source_type": "reference",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "Human nature and the nature of war Twenty years ago, Canadian military historian and journalist Gwynne Dyer fascinated the public in 45 countries with his award-winning television series on the nature of war. He followed up that success with an equally remarkable book that grew out of the research t"
+    },
+    {
+      "chunk_id": "FineMath_000018_003",
+      "dataset": "FineMath",
+      "expected_source_type": "educational",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "###### Chapter 10. Experimental Design: Statistical Analysis of ... This is halfway between the 10th and 11th scores. Because both are 0, the median gain is 0. Similarly, the median gain on a running play is 3. The median is a particularly useful measure of central tendency when there are extreme sc"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000018_000",
+      "dataset": "FineWeb-Edu",
+      "expected_source_type": "reference",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "The OED “is widely regarded as the accepted authority on the English language. It is an unsurpassed guide to the meaning, history, and pronunciation of 600,000 words— past and present—from across the English-speaking world. As a historical dictionary, the OED is very different from those of current "
+    },
+    {
+      "chunk_id": "FineMath_000002_006",
+      "dataset": "FineMath",
+      "expected_source_type": "math",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "Let y represent theta Prove: 1 + 1/tan^2y = 1/sin^2y My Answer: LS: = 1 + 1/tan^2y = (sin^2y + cos^2y) + 1 /(sin^2y/cos^2y) = (sin^2y + cos^2y) + 1 x (cos^2y/sin^2y) = (sin^2y + cos^2y) + (sin^2y + cos^2y) (cos^2y/sin^2y) = (sin^2y … 8. ### TRIG!"
+    },
+    {
+      "chunk_id": "FineWeb_000009_043",
+      "dataset": "FineWeb",
+      "expected_source_type": "reference",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "allows communication between the master computer and the data tap. In a preferred embodiment, both transmitted and received communications are differentially driven by utilizing RS-422 or RS-485 interfaces. The use of these interfaces allows effective communications over relatively large distances. "
+    },
+    {
+      "chunk_id": "FineMath_000029_009",
+      "dataset": "FineMath",
+      "expected_source_type": "educational",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "A more serious limitation MAPE occurs when your data set can have 0 values. In the context of sports betting if you’re forecasting winning margins and a draw is possible then you can’t use MAPE. This is because if the final scores are level then Yi = 0 so PEi can’t be calculated due to a division by"
+    },
+    {
+      "chunk_id": "FineWeb_000009_051",
+      "dataset": "FineWeb",
+      "expected_source_type": "reference",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "the rental of the first video cassette. These steps are shown by displays 6 and 7 below. ##STR6## Next, the Total key 530 is pressed. As shown below, in Display 8, pressing this key causes the total amount, including tax, to be calculated and displayed. Further, individual subtotals of the rental ch"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000006_000",
+      "dataset": "FineWeb-Edu",
+      "expected_source_type": "news",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "Great apes go through mid-life crisis They may not take up surfing or start second careers as cupcake-makers, but chimpanzees and orangutans seem to go through a ‘mid-life crisis’, just like humans. A study of 508 great apes in captivity shows that the animals’ sense of well-being bottoms out in the"
+    },
+    {
+      "chunk_id": "FineWeb_000006_003",
+      "dataset": "FineWeb",
+      "expected_source_type": "commercial_product",
+      "predicted_source_type": "unknown",
+      "method": "rule_based_unknown",
+      "text_preview": "Virtual hosting is only available in the professional edition Abyss Web Server X2. Abyss Web Server supports the SSL and TLS protocols and is able to accept secure connections with strong cryptography (up to 256-bit keys) to protect your visitors' sensitive data from flowing in clear form over the I"
+    }
+  ]
+}
