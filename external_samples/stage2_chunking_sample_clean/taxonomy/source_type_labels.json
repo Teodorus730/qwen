@@ -1,0 +1,86 @@
+[
+  {
+    "source_type": "math",
+    "description": "Math-first content: equations, proofs, derivations, worked problems, symbolic notation, trigonometry, calculus, statistics, geometry, or measurement problems where the main function is mathematical reasoning.",
+    "positive_keywords": ["equation", "prove", "solve", "derivative", "integral", "sin", "cos", "probability", "statistics", "geometry", "calculate"],
+    "negative_keywords": ["math product", "news about mathematics", "biography of a mathematician"],
+    "examples": ["A trigonometric identity proof", "A statistics homework answer", "A unit conversion word problem"]
+  },
+  {
+    "source_type": "code",
+    "description": "Programming or software-command content with code snippets, API calls, command syntax, stack traces, configuration, or developer documentation as the main format.",
+    "positive_keywords": ["function", "class", "API", "command", "parameter", "return", "exception", "Matrix", "Linsolve", "mod"],
+    "negative_keywords": ["software product marketing", "general article about technology"],
+    "examples": ["A Maple command help page", "A Python API reference", "A code troubleshooting snippet"]
+  },
+  {
+    "source_type": "educational",
+    "description": "Instructional or explanatory material intended to teach a learner: lesson plans, classroom activities, student-facing explainers, tutorials, study notes, and guided learning resources.",
+    "positive_keywords": ["lesson", "students", "teacher", "classroom", "activity", "learn", "tutorial", "worksheet", "guide", "explain"],
+    "negative_keywords": ["neutral encyclopedia entry", "product page", "news report"],
+    "examples": ["A preschool alphabet activity", "A physics lesson plan", "A student election app guide"]
+  },
+  {
+    "source_type": "reference",
+    "description": "Reference-like informative text: neutral descriptions, book/resource entries, patent-style descriptions, catalog records, biographies, historical summaries, and factual background pages not primarily written as lessons.",
+    "positive_keywords": ["overview", "description", "reference", "history", "biography", "patent", "claim", "records", "bibliography", "resource"],
+    "negative_keywords": ["step-by-step classroom lesson", "news update", "retail purchase page"],
+    "examples": ["A patent description", "A library database resource note", "An artist biography"]
+  },
+  {
+    "source_type": "wiki_reference",
+    "description": "Wiki-like or encyclopedia-derived reference content with compact neutral summaries, article stubs, license/citation boilerplate, or explicit Wikipedia-style provenance.",
+    "positive_keywords": ["Wikipedia", "encyclopedia", "licensed", "references", "stub", "GNU Free Documentation License", "article"],
+    "negative_keywords": ["ordinary blog article", "classroom lesson"],
+    "examples": ["A Wikipedia-derived geography stub", "A Science Fair Project Encyclopedia page"]
+  },
+  {
+    "source_type": "web_general",
+    "description": "General web article or blog-like prose that is coherent but not clearly educational, reference, news, forum, product, legal, code, math, or boilerplate.",
+    "positive_keywords": ["blog", "essay", "reflection", "opinion", "personal", "story", "commentary"],
+    "negative_keywords": ["breaking news", "lesson plan", "product page", "forum thread"],
+    "examples": ["A personal essay", "A reflective blog post", "A general lifestyle article"]
+  },
+  {
+    "source_type": "news",
+    "description": "News-like reporting about events, studies, accidents, politics, announcements, public developments, or recent updates, usually with reported facts and attribution.",
+    "positive_keywords": ["reported", "officials", "announced", "study", "according to", "crash", "election", "journal", "Wednesday", "update"],
+    "negative_keywords": ["timeless encyclopedia summary", "classroom activity", "product description"],
+    "examples": ["A local accident report", "A science news story", "An automotive launch article"]
+  },
+  {
+    "source_type": "forum_qa",
+    "description": "Question-and-answer or discussion-thread content with user questions, answers, comments, replies, homework help, troubleshooting, or conversational exchanges.",
+    "positive_keywords": ["question", "answer", "commented", "reply", "asked", "homework", "what am I doing wrong", "accepted answer"],
+    "negative_keywords": ["formal article", "reference page without comments"],
+    "examples": ["A probability homework discussion", "A StackExchange-style algorithm question", "A forum thread about roads"]
+  },
+  {
+    "source_type": "commercial_product",
+    "description": "Commercial product or service page: sales copy, product features, offers, prices, purchase calls to action, warranties, stock status, and retail descriptions.",
+    "positive_keywords": ["buy", "price", "product", "shipping", "out of stock", "warranty", "features", "retail", "cart", "sale"],
+    "negative_keywords": ["noncommercial review article", "technical reference with no purchase intent"],
+    "examples": ["A clothing product page", "A software product feature page", "A retail sales description"]
+  },
+  {
+    "source_type": "boilerplate_or_noise",
+    "description": "Mostly low-content, generated, spammy, navigational, legal/footer, broken, repeated, or SEO-like text where useful primary content is weak or absent.",
+    "positive_keywords": ["cookie", "privacy", "terms", "subscribe", "menu", "footer", "sameday essay", "show more", "report an issue"],
+    "negative_keywords": ["coherent article with only small boilerplate", "clean lesson text"],
+    "examples": ["Low-quality SEO math text", "Navigation/footer-heavy page text", "Spam-like generated prose"]
+  },
+  {
+    "source_type": "legal_government",
+    "description": "Government, legal, public policy, official notice, regulation, public registry, hearing, compliance, or civic administrative information.",
+    "positive_keywords": ["government", "regulation", "public notice", "hearing", "compliance", "agency", "ordinance", "tax", "assessment"],
+    "negative_keywords": ["private blog about politics", "news article about government"],
+    "examples": ["A tax assessment policy page", "A public legal notice", "A clinical registry-style administrative record"]
+  },
+  {
+    "source_type": "unknown",
+    "description": "Fallback when the document genre or format is unclear, too mixed, too short, or not confidently represented by the other source_type labels.",
+    "positive_keywords": ["unknown", "unclear", "ambiguous", "mixed"],
+    "negative_keywords": ["obvious math", "obvious product page", "obvious news report"],
+    "examples": ["Ambiguous mixed web text", "Text without enough context", "Unclear format"]
+  }
+]
