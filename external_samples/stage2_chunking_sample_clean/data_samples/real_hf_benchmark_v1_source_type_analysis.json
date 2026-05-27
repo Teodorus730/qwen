@@ -1,0 +1,653 @@
+{
+  "expected_source_type": {
+    "educational": 39,
+    "reference": 35,
+    "math": 15,
+    "news": 7,
+    "commercial_product": 4,
+    "web_general": 9,
+    "boilerplate_or_noise": 2,
+    "forum_qa": 5,
+    "code": 2,
+    "wiki_reference": 1,
+    "legal_government": 1
+  },
+  "classifiers": {
+    "rule-based": {
+      "pred_dist": {
+        "unknown": 77,
+        "educational": 37,
+        "commercial_product": 2,
+        "math": 4
+      },
+      "accuracy": 0.18333333333333332,
+      "per_dataset": {
+        "FineWeb": 0.05,
+        "FineWeb-Edu": 0.25,
+        "FineMath": 0.25
+      },
+      "top_mismatches": [
+        {
+          "expected": "reference",
+          "predicted": "unknown",
+          "count": 25,
+          "examples": [
+            "FineWeb-Edu_000014_000",
+            "FineWeb-Edu_000018_000",
+            "FineWeb_000009_043"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "unknown",
+          "count": 19,
+          "examples": [
+            "FineWeb_000012_001",
+            "FineMath_000018_003",
+            "FineMath_000029_009"
+          ]
+        },
+        {
+          "expected": "math",
+          "predicted": "unknown",
+          "count": 10,
+          "examples": [
+            "FineMath_000002_006",
+            "FineMath_000002_003",
+            "FineMath_000022_008"
+          ]
+        },
+        {
+          "expected": "reference",
+          "predicted": "educational",
+          "count": 9,
+          "examples": [
+            "FineWeb-Edu_000022_002",
+            "FineWeb_000015_000",
+            "FineWeb_000009_040"
+          ]
+        },
+        {
+          "expected": "web_general",
+          "predicted": "unknown",
+          "count": 6,
+          "examples": [
+            "FineWeb_000022_001",
+            "FineWeb-Edu_000010_008",
+            "FineWeb-Edu_000010_016"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineWeb-Edu_000006_000",
+            "FineWeb_000026_000",
+            "FineWeb_000025_000"
+          ]
+        },
+        {
+          "expected": "commercial_product",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineWeb_000006_003",
+            "FineWeb_000008_000",
+            "FineWeb_000005_000"
+          ]
+        },
+        {
+          "expected": "forum_qa",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineMath_000001_000",
+            "FineWeb-Edu_000002_000",
+            "FineWeb-Edu_000002_002"
+          ]
+        },
+        {
+          "expected": "web_general",
+          "predicted": "educational",
+          "count": 3,
+          "examples": [
+            "FineWeb-Edu_000010_011",
+            "FineWeb-Edu_000010_002",
+            "FineWeb-Edu_000010_013"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "educational",
+          "count": 3,
+          "examples": [
+            "FineWeb-Edu_000023_000",
+            "FineWeb_000026_001",
+            "FineWeb-Edu_000000_000"
+          ]
+        },
+        {
+          "expected": "math",
+          "predicted": "educational",
+          "count": 2,
+          "examples": [
+            "FineMath_000022_011",
+            "FineMath_000022_012"
+          ]
+        },
+        {
+          "expected": "boilerplate_or_noise",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000012_002",
+            "FineMath_000012_001"
+          ]
+        },
+        {
+          "expected": "code",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000009_002",
+            "FineMath_000009_000"
+          ]
+        },
+        {
+          "expected": "reference",
+          "predicted": "commercial_product",
+          "count": 1,
+          "examples": [
+            "FineWeb_000009_052"
+          ]
+        },
+        {
+          "expected": "forum_qa",
+          "predicted": "math",
+          "count": 1,
+          "examples": [
+            "FineMath_000020_001"
+          ]
+        },
+        {
+          "expected": "wiki_reference",
+          "predicted": "educational",
+          "count": 1,
+          "examples": [
+            "FineWeb-Edu_000008_000"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "commercial_product",
+          "count": 1,
+          "examples": [
+            "FineMath_000016_000"
+          ]
+        },
+        {
+          "expected": "legal_government",
+          "predicted": "unknown",
+          "count": 1,
+          "examples": [
+            "FineWeb_000001_001"
+          ]
+        }
+      ]
+    },
+    "lexical_v2": {
+      "pred_dist": {
+        "unknown": 106,
+        "boilerplate_or_noise": 2,
+        "educational": 10,
+        "forum_qa": 1,
+        "news": 1
+      },
+      "accuracy": 0.075,
+      "per_dataset": {
+        "FineWeb": 0.075,
+        "FineWeb-Edu": 0.05,
+        "FineMath": 0.1
+      },
+      "top_mismatches": [
+        {
+          "expected": "reference",
+          "predicted": "unknown",
+          "count": 35,
+          "examples": [
+            "FineWeb-Edu_000014_000",
+            "FineWeb-Edu_000018_000",
+            "FineWeb_000009_043"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "unknown",
+          "count": 28,
+          "examples": [
+            "FineWeb_000012_001",
+            "FineMath_000018_003",
+            "FineWeb-Edu_000013_000"
+          ]
+        },
+        {
+          "expected": "math",
+          "predicted": "unknown",
+          "count": 15,
+          "examples": [
+            "FineMath_000002_006",
+            "FineMath_000002_003",
+            "FineMath_000022_011"
+          ]
+        },
+        {
+          "expected": "web_general",
+          "predicted": "unknown",
+          "count": 9,
+          "examples": [
+            "FineWeb_000022_001",
+            "FineWeb-Edu_000010_011",
+            "FineWeb-Edu_000010_008"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "unknown",
+          "count": 6,
+          "examples": [
+            "FineWeb-Edu_000006_000",
+            "FineWeb-Edu_000023_000",
+            "FineWeb_000026_000"
+          ]
+        },
+        {
+          "expected": "forum_qa",
+          "predicted": "unknown",
+          "count": 5,
+          "examples": [
+            "FineMath_000001_000",
+            "FineWeb-Edu_000002_000",
+            "FineMath_000020_001"
+          ]
+        },
+        {
+          "expected": "commercial_product",
+          "predicted": "boilerplate_or_noise",
+          "count": 2,
+          "examples": [
+            "FineWeb_000006_003",
+            "FineWeb_000006_002"
+          ]
+        },
+        {
+          "expected": "boilerplate_or_noise",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000012_002",
+            "FineMath_000012_001"
+          ]
+        },
+        {
+          "expected": "commercial_product",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineWeb_000008_000",
+            "FineWeb_000005_000"
+          ]
+        },
+        {
+          "expected": "code",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000009_002",
+            "FineMath_000009_000"
+          ]
+        },
+        {
+          "expected": "wiki_reference",
+          "predicted": "unknown",
+          "count": 1,
+          "examples": [
+            "FineWeb-Edu_000008_000"
+          ]
+        },
+        {
+          "expected": "legal_government",
+          "predicted": "unknown",
+          "count": 1,
+          "examples": [
+            "FineWeb_000001_001"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "forum_qa",
+          "count": 1,
+          "examples": [
+            "FineMath_000026_014"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "news",
+          "count": 1,
+          "examples": [
+            "FineWeb-Edu_000020_000"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "educational",
+          "count": 1,
+          "examples": [
+            "FineWeb-Edu_000000_000"
+          ]
+        }
+      ]
+    },
+    "MiniLM_v2": {
+      "pred_dist": {
+        "unknown": 120
+      },
+      "accuracy": 0.0,
+      "per_dataset": {
+        "FineWeb": 0.0,
+        "FineWeb-Edu": 0.0,
+        "FineMath": 0.0
+      },
+      "top_mismatches": [
+        {
+          "expected": "educational",
+          "predicted": "unknown",
+          "count": 39,
+          "examples": [
+            "FineWeb_000012_001",
+            "FineMath_000018_003",
+            "FineWeb-Edu_000013_000"
+          ]
+        },
+        {
+          "expected": "reference",
+          "predicted": "unknown",
+          "count": 35,
+          "examples": [
+            "FineWeb-Edu_000014_000",
+            "FineWeb-Edu_000018_000",
+            "FineWeb_000009_043"
+          ]
+        },
+        {
+          "expected": "math",
+          "predicted": "unknown",
+          "count": 15,
+          "examples": [
+            "FineMath_000002_006",
+            "FineMath_000002_003",
+            "FineMath_000022_011"
+          ]
+        },
+        {
+          "expected": "web_general",
+          "predicted": "unknown",
+          "count": 9,
+          "examples": [
+            "FineWeb_000022_001",
+            "FineWeb-Edu_000010_011",
+            "FineWeb-Edu_000010_008"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "unknown",
+          "count": 7,
+          "examples": [
+            "FineWeb-Edu_000006_000",
+            "FineWeb-Edu_000023_000",
+            "FineWeb_000026_000"
+          ]
+        },
+        {
+          "expected": "forum_qa",
+          "predicted": "unknown",
+          "count": 5,
+          "examples": [
+            "FineMath_000001_000",
+            "FineWeb-Edu_000002_000",
+            "FineMath_000020_001"
+          ]
+        },
+        {
+          "expected": "commercial_product",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineWeb_000006_003",
+            "FineWeb_000008_000",
+            "FineWeb_000005_000"
+          ]
+        },
+        {
+          "expected": "boilerplate_or_noise",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000012_002",
+            "FineMath_000012_001"
+          ]
+        },
+        {
+          "expected": "code",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000009_002",
+            "FineMath_000009_000"
+          ]
+        },
+        {
+          "expected": "wiki_reference",
+          "predicted": "unknown",
+          "count": 1,
+          "examples": [
+            "FineWeb-Edu_000008_000"
+          ]
+        },
+        {
+          "expected": "legal_government",
+          "predicted": "unknown",
+          "count": 1,
+          "examples": [
+            "FineWeb_000001_001"
+          ]
+        }
+      ]
+    },
+    "hybrid_v2": {
+      "pred_dist": {
+        "unknown": 77,
+        "educational": 37,
+        "commercial_product": 2,
+        "math": 4
+      },
+      "accuracy": 0.18333333333333332,
+      "per_dataset": {
+        "FineWeb": 0.05,
+        "FineWeb-Edu": 0.25,
+        "FineMath": 0.25
+      },
+      "top_mismatches": [
+        {
+          "expected": "reference",
+          "predicted": "unknown",
+          "count": 25,
+          "examples": [
+            "FineWeb-Edu_000014_000",
+            "FineWeb-Edu_000018_000",
+            "FineWeb_000009_043"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "unknown",
+          "count": 19,
+          "examples": [
+            "FineWeb_000012_001",
+            "FineMath_000018_003",
+            "FineMath_000029_009"
+          ]
+        },
+        {
+          "expected": "math",
+          "predicted": "unknown",
+          "count": 10,
+          "examples": [
+            "FineMath_000002_006",
+            "FineMath_000002_003",
+            "FineMath_000022_008"
+          ]
+        },
+        {
+          "expected": "reference",
+          "predicted": "educational",
+          "count": 9,
+          "examples": [
+            "FineWeb-Edu_000022_002",
+            "FineWeb_000015_000",
+            "FineWeb_000009_040"
+          ]
+        },
+        {
+          "expected": "web_general",
+          "predicted": "unknown",
+          "count": 6,
+          "examples": [
+            "FineWeb_000022_001",
+            "FineWeb-Edu_000010_008",
+            "FineWeb-Edu_000010_016"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineWeb-Edu_000006_000",
+            "FineWeb_000026_000",
+            "FineWeb_000025_000"
+          ]
+        },
+        {
+          "expected": "commercial_product",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineWeb_000006_003",
+            "FineWeb_000008_000",
+            "FineWeb_000005_000"
+          ]
+        },
+        {
+          "expected": "forum_qa",
+          "predicted": "unknown",
+          "count": 4,
+          "examples": [
+            "FineMath_000001_000",
+            "FineWeb-Edu_000002_000",
+            "FineWeb-Edu_000002_002"
+          ]
+        },
+        {
+          "expected": "web_general",
+          "predicted": "educational",
+          "count": 3,
+          "examples": [
+            "FineWeb-Edu_000010_011",
+            "FineWeb-Edu_000010_002",
+            "FineWeb-Edu_000010_013"
+          ]
+        },
+        {
+          "expected": "news",
+          "predicted": "educational",
+          "count": 3,
+          "examples": [
+            "FineWeb-Edu_000023_000",
+            "FineWeb_000026_001",
+            "FineWeb-Edu_000000_000"
+          ]
+        },
+        {
+          "expected": "math",
+          "predicted": "educational",
+          "count": 2,
+          "examples": [
+            "FineMath_000022_011",
+            "FineMath_000022_012"
+          ]
+        },
+        {
+          "expected": "boilerplate_or_noise",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000012_002",
+            "FineMath_000012_001"
+          ]
+        },
+        {
+          "expected": "code",
+          "predicted": "unknown",
+          "count": 2,
+          "examples": [
+            "FineMath_000009_002",
+            "FineMath_000009_000"
+          ]
+        },
+        {
+          "expected": "reference",
+          "predicted": "commercial_product",
+          "count": 1,
+          "examples": [
+            "FineWeb_000009_052"
+          ]
+        },
+        {
+          "expected": "forum_qa",
+          "predicted": "math",
+          "count": 1,
+          "examples": [
+            "FineMath_000020_001"
+          ]
+        },
+        {
+          "expected": "wiki_reference",
+          "predicted": "educational",
+          "count": 1,
+          "examples": [
+            "FineWeb-Edu_000008_000"
+          ]
+        },
+        {
+          "expected": "educational",
+          "predicted": "commercial_product",
+          "count": 1,
+          "examples": [
+            "FineMath_000016_000"
+          ]
+        },
+        {
+          "expected": "legal_government",
+          "predicted": "unknown",
+          "count": 1,
+          "examples": [
+            "FineWeb_000001_001"
+          ]
+        }
+      ]
+    }
+  }
+}
