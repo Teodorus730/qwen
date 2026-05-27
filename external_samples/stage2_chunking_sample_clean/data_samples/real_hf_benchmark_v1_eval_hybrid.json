@@ -1,0 +1,273 @@
+{
+  "records_in_gold": 120,
+  "records_compared": 120,
+  "missing_predictions": 0,
+  "source_type_accuracy": 0.1833,
+  "domain_accuracy": 0.1417,
+  "field_accuracy": 0.1417,
+  "subfield_accuracy": 0.2333,
+  "full_label_accuracy": 0.1,
+  "mismatches_by_dataset": {
+    "FineMath": 37,
+    "FineWeb": 38,
+    "FineWeb-Edu": 33
+  },
+  "per_dataset": {
+    "FineMath": {
+      "records_compared": 40,
+      "source_type_accuracy": 0.25,
+      "domain_accuracy": 0.075,
+      "field_accuracy": 0.075,
+      "subfield_accuracy": 0.25,
+      "full_label_accuracy": 0.075
+    },
+    "FineWeb": {
+      "records_compared": 40,
+      "source_type_accuracy": 0.05,
+      "domain_accuracy": 0.05,
+      "field_accuracy": 0.05,
+      "subfield_accuracy": 0.1,
+      "full_label_accuracy": 0.05
+    },
+    "FineWeb-Edu": {
+      "records_compared": 40,
+      "source_type_accuracy": 0.25,
+      "domain_accuracy": 0.3,
+      "field_accuracy": 0.3,
+      "subfield_accuracy": 0.35,
+      "full_label_accuracy": 0.175
+    }
+  },
+  "mismatch_examples": [
+    {
+      "chunk_id": "FineWeb_000012_001",
+      "dataset": "FineWeb",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "educational",
+        "domain": "science",
+        "field": "biology",
+        "subfield": "article"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000014_000",
+      "dataset": "FineWeb-Edu",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "reference",
+        "domain": "reference",
+        "field": "encyclopedic_article",
+        "subfield": "general"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineMath_000018_003",
+      "dataset": "FineMath",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "educational",
+        "domain": "stem",
+        "field": "mathematics",
+        "subfield": "algebra"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000018_000",
+      "dataset": "FineWeb-Edu",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "reference",
+        "domain": "reference",
+        "field": "encyclopedic_article",
+        "subfield": "general"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineMath_000002_006",
+      "dataset": "FineMath",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "math",
+        "domain": "stem",
+        "field": "mathematics",
+        "subfield": "algebra"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineWeb_000009_043",
+      "dataset": "FineWeb",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "reference",
+        "domain": "software",
+        "field": "programming",
+        "subfield": "documentation"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineMath_000029_009",
+      "dataset": "FineMath",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "educational",
+        "domain": "stem",
+        "field": "mathematics",
+        "subfield": "algebra"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineWeb_000009_051",
+      "dataset": "FineWeb",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "reference",
+        "domain": "software",
+        "field": "programming",
+        "subfield": "documentation"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000006_000",
+      "dataset": "FineWeb-Edu",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "news",
+        "domain": "science",
+        "field": "biology",
+        "subfield": "article"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    },
+    {
+      "chunk_id": "FineWeb_000006_003",
+      "dataset": "FineWeb",
+      "mismatched_fields": [
+        "source_type",
+        "domain",
+        "field",
+        "subfield"
+      ],
+      "predicted": {
+        "source_type": "unknown",
+        "domain": null,
+        "field": null,
+        "subfield": null
+      },
+      "expected": {
+        "source_type": "commercial_product",
+        "domain": "software",
+        "field": "programming",
+        "subfield": "documentation"
+      },
+      "label_method": "hybrid_rule_fallback_low_confidence"
+    }
+  ]
+}
