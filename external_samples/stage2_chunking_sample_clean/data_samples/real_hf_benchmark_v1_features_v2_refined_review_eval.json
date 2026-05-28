@@ -1,0 +1,450 @@
+{
+  "input": "data_samples\\real_hf_benchmark_v1_features_v2_review_labeled.jsonl",
+  "features": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2_refined.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2_refined.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2_refined.jsonl"
+  ],
+  "records": 30,
+  "dataset_distribution": {
+    "FineMath": 20,
+    "FineWeb": 5,
+    "FineWeb-Edu": 5
+  },
+  "metrics": {
+    "embedded_review_annotation": {
+      "has_math_notation": {
+        "tp": 16,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9412,
+        "f1": 0.9697,
+        "tn": 13,
+        "accuracy": 0.9667,
+        "false_positives": [],
+        "false_negatives": [
+          {
+            "chunk_id": "FineMath_000000_002",
+            "dataset": "FineMath",
+            "preview": "Sugar, which is the common name used for sucrose, has the chemical formula ${\\text{C\"_12\"H\"_22\"O}}_{11}$. Notice that one molecule of sucrose contains • $12$ atoms of carbon • $22$ atoms of hydrogen • $11$ atoms of oxyge",
+            "annotation_has_math_notation": false,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Clear TeX-like chemical formulas and numeric scientific notation; list is useful content."
+          }
+        ]
+      },
+      "has_code": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "tn": 26,
+        "accuracy": 0.9667,
+        "false_positives": [],
+        "false_negatives": [
+          {
+            "chunk_id": "FineMath_000009_000",
+            "dataset": "FineMath",
+            "preview": "Linsolve - Maple Programming Help Home : Support : Online Help : Mathematics : Inert Functions : Linsolve Linsolve inert matrix solve Calling Sequence Linsolve(A, b) mod n Linsolve(A, b, 'r', 't') mod n Parameters A - re",
+            "annotation_has_math_notation": false,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": false,
+            "review_has_code": true,
+            "review_noise_level": "clean",
+            "review_note": "Maple help/API-style function signature and parameters; no real formula beyond command syntax."
+          }
+        ]
+      },
+      "noise_level": {
+        "accuracy": 0.6333,
+        "confusion_matrix": {
+          "clean": {
+            "clean": 19,
+            "partial_noise": 9
+          },
+          "partial_noise": {
+            "clean": 2
+          }
+        },
+        "mismatches": [
+          {
+            "chunk_id": "FineMath_000026_026",
+            "dataset": "FineMath",
+            "preview": "When there is an individual force that is not being balanced by a force of equal magnitude and in the opposite direction. A body is said to be in motion if acted upon by unbalanced forces. Volume The amount of space occu",
+            "annotation_has_math_notation": false,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": false,
+            "review_has_code": false,
+            "review_noise_level": "partial_noise",
+            "review_note": "Useful physics lesson text, but trailing notes/highlights/report issue/image attribution UI makes it partial noise."
+          },
+          {
+            "chunk_id": "FineWeb_000009_042",
+            "dataset": "FineWeb",
+            "preview": "to cover the \"1\" following the \"INVOICE NUMBER\" term on the top line of the screen. This area then is reduced in size, by using the \"SHIFT\" and the arrow keys, as it has been described above, so as to cover only the area",
+            "annotation_has_math_notation": false,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": false,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Patent prose where main menu/template are content, not webpage boilerplate."
+          },
+          {
+            "chunk_id": "FineMath_000002_001",
+            "dataset": "FineMath",
+            "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1.",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Formula-heavy trig answer; symbol density is useful math, not noise."
+          },
+          {
+            "chunk_id": "FineMath_000002_003",
+            "dataset": "FineMath",
+            "preview": "expres the following as sums and differences of sines or cosines cos8t * sin2t sin(a+b) = sin(a)cos(b) + cos(a)sin(b) replacing by by -b and using that cos(-b)= cos(b) sin(-b)= -sin(b) gives: sin(a-b) = sin(a)cos(b) - co",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Trig identities and symbolic expressions; similar-question marker is minor."
+          },
+          {
+            "chunk_id": "FineMath_000002_004",
+            "dataset": "FineMath",
+            "preview": "Prove that for all real values of a, b, t (theta): (a * cos t + b * sin t)^2 <= a^2 + b^2 I will be happy to critique your work. Start on the left, square it, (a * cos t + b * sin t)^2 = a^2 (1 - sin^2t) + 2ab sin t cost",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Trigonometric proof and identities; useful math content."
+          },
+          {
+            "chunk_id": "FineMath_000002_006",
+            "dataset": "FineMath",
+            "preview": "Let y represent theta Prove: 1 + 1/tan^2y = 1/sin^2y My Answer: LS: = 1 + 1/tan^2y = (sin^2y + cos^2y) + 1 /(sin^2y/cos^2y) = (sin^2y + cos^2y) + 1 x (cos^2y/sin^2y) = (sin^2y + cos^2y) + (sin^2y + cos^2y) (cos^2y/sin^2y",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Trig identity proof with symbolic fractions and powers."
+          },
+          {
+            "chunk_id": "FineMath_000002_007",
+            "dataset": "FineMath",
+            "preview": "Posted by hayden on Monday, February 23, 2009 at 4:05pm. sin^6 x + cos^6 x=1 - (3/4)sin^2 2x work on one side only! Responses Trig please help! - Reiny, Monday, February 23, 2009 at 4:27pm LS looks like the sum of cubes ",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "partial_noise",
+            "review_note": "Useful formula, but forum metadata/responses/similar-question boilerplate is mixed in."
+          },
+          {
+            "chunk_id": "FineMath_000002_008",
+            "dataset": "FineMath",
+            "preview": "Find sin(s+t) and (s-t) if cos(s)= 1/5 and sin(t) = 3/5 and s and t are in quadrant 1. =Sin(s)cos(t) + Cos(s)Sin(t) =Sin(1/5)Cos(3/5) + Cos(-1/5)Sin(3/5) = 0.389418 Sin(s-t) =sin(s)cos(t) - cos(s)sin(t) =sin(-3/5)cos(1/5",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Trig symbolic computation and equations; no meaningful noise."
+          },
+          {
+            "chunk_id": "FineMath_000008_001",
+            "dataset": "FineMath",
+            "preview": "Magnification, $m=\\frac{-v}{u}=\\frac{(-10)}{-30}=\\frac{1}{3}$ Speed of image $=m^{2} \\times$ speed of object $=\\frac{1}{9} \\times 9=1 \\mathrm{~cm} \\mathrm{~s}^{-1}$",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Compact formula derivation; symbol-heavy but clean."
+          },
+          {
+            "chunk_id": "FineMath_000009_002",
+            "dataset": "FineMath",
+            "preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vec",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": true,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": true,
+            "review_noise_level": "clean",
+            "review_note": "Maple command/output block with matrices and assignments; code-like and mathematical."
+          },
+          {
+            "chunk_id": "FineMath_000009_003",
+            "dataset": "FineMath",
+            "preview": "> $\\mathrm{alias}\\left(a=\\mathrm{RootOf}\\left({y}^{4}+y+1\\right)\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}\\mathbf{mod}\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}2\\right):$ > $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,a,{a}^{2}\\right],\\l",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": true,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": null,
+            "annotation_has_scientific_formula": null,
+            "annotation_has_api_or_command_syntax": null,
+            "annotation_has_ui_residue": null,
+            "annotation_has_forum_residue": null,
+            "review_has_math_notation": true,
+            "review_has_code": true,
+            "review_noise_level": "clean",
+            "review_note": "Maple command/output block with matrices, RootOf, and symbolic expressions."
+          }
+        ]
+      },
+      "new_field_coverage": {
+        "surface.is_symbol_heavy": {
+          "present": 0,
+          "true": 0
+        },
+        "surface.has_scientific_formula": {
+          "present": 0,
+          "true": 0
+        },
+        "surface.has_api_or_command_syntax": {
+          "present": 0,
+          "true": 0
+        },
+        "quality.has_ui_residue": {
+          "present": 0,
+          "true": 0
+        },
+        "quality.has_forum_residue": {
+          "present": 0,
+          "true": 0
+        }
+      }
+    },
+    "external_features": {
+      "has_math_notation": {
+        "tp": 17,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9444,
+        "recall": 1.0,
+        "f1": 0.9714,
+        "tn": 12,
+        "accuracy": 0.9667,
+        "false_positives": [
+          {
+            "chunk_id": "FineWeb_000009_043",
+            "dataset": "FineWeb",
+            "preview": "allows communication between the master computer and the data tap. In a preferred embodiment, both transmitted and received communications are differentially driven by utilizing RS-422 or RS-485 interfaces. The use of th",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": false,
+            "annotation_has_scientific_formula": true,
+            "annotation_has_api_or_command_syntax": false,
+            "annotation_has_ui_residue": false,
+            "annotation_has_forum_residue": false,
+            "review_has_math_notation": false,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Technical patent/reference prose with interface numbers; useful text, no code."
+          }
+        ],
+        "false_negatives": []
+      },
+      "has_code": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889,
+        "tn": 25,
+        "accuracy": 0.9667,
+        "false_positives": [
+          {
+            "chunk_id": "FineMath_000002_000",
+            "dataset": "FineMath",
+            "preview": "# trigonometry posted by . express 3 cos x -2 sin x in th eform R cos (x + a) and hence write down the maximum and minimum values of 3 cos x - 2 sin x. • trigonometry - let 3cosx - 2sinx = Rcos(x+a) Rcos(x+a) = R(cosxcos",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": true,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": false,
+            "annotation_has_scientific_formula": false,
+            "annotation_has_api_or_command_syntax": true,
+            "annotation_has_ui_residue": false,
+            "annotation_has_forum_residue": false,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Trigonometric symbolic derivation with equations and sqrt notation."
+          }
+        ],
+        "false_negatives": []
+      },
+      "noise_level": {
+        "accuracy": 0.9,
+        "confusion_matrix": {
+          "clean": {
+            "clean": 27,
+            "partial_noise": 1
+          },
+          "partial_noise": {
+            "clean": 2
+          }
+        },
+        "mismatches": [
+          {
+            "chunk_id": "FineMath_000026_026",
+            "dataset": "FineMath",
+            "preview": "When there is an individual force that is not being balanced by a force of equal magnitude and in the opposite direction. A body is said to be in motion if acted upon by unbalanced forces. Volume The amount of space occu",
+            "annotation_has_math_notation": false,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": false,
+            "annotation_has_scientific_formula": false,
+            "annotation_has_api_or_command_syntax": false,
+            "annotation_has_ui_residue": true,
+            "annotation_has_forum_residue": false,
+            "review_has_math_notation": false,
+            "review_has_code": false,
+            "review_noise_level": "partial_noise",
+            "review_note": "Useful physics lesson text, but trailing notes/highlights/report issue/image attribution UI makes it partial noise."
+          },
+          {
+            "chunk_id": "FineWeb_000009_051",
+            "dataset": "FineWeb",
+            "preview": "the rental of the first video cassette. These steps are shown by displays 6 and 7 below. ##STR6## Next, the Total key 530 is pressed. As shown below, in Display 8, pressing this key causes the total amount, including tax",
+            "annotation_has_math_notation": false,
+            "annotation_has_code": false,
+            "annotation_noise_level": "partial_noise",
+            "annotation_is_symbol_heavy": false,
+            "annotation_has_scientific_formula": false,
+            "annotation_has_api_or_command_syntax": false,
+            "annotation_has_ui_residue": true,
+            "annotation_has_forum_residue": true,
+            "review_has_math_notation": false,
+            "review_has_code": false,
+            "review_noise_level": "clean",
+            "review_note": "Patent transaction prose with display markers and dollar amount; not code and not noisy."
+          },
+          {
+            "chunk_id": "FineMath_000002_007",
+            "dataset": "FineMath",
+            "preview": "Posted by hayden on Monday, February 23, 2009 at 4:05pm. sin^6 x + cos^6 x=1 - (3/4)sin^2 2x work on one side only! Responses Trig please help! - Reiny, Monday, February 23, 2009 at 4:27pm LS looks like the sum of cubes ",
+            "annotation_has_math_notation": true,
+            "annotation_has_code": false,
+            "annotation_noise_level": "clean",
+            "annotation_is_symbol_heavy": false,
+            "annotation_has_scientific_formula": false,
+            "annotation_has_api_or_command_syntax": false,
+            "annotation_has_ui_residue": false,
+            "annotation_has_forum_residue": true,
+            "review_has_math_notation": true,
+            "review_has_code": false,
+            "review_noise_level": "partial_noise",
+            "review_note": "Useful formula, but forum metadata/responses/similar-question boilerplate is mixed in."
+          }
+        ]
+      },
+      "new_field_coverage": {
+        "surface.is_symbol_heavy": {
+          "present": 30,
+          "true": 9
+        },
+        "surface.has_scientific_formula": {
+          "present": 30,
+          "true": 10
+        },
+        "surface.has_api_or_command_syntax": {
+          "present": 30,
+          "true": 11
+        },
+        "quality.has_ui_residue": {
+          "present": 30,
+          "true": 6
+        },
+        "quality.has_forum_residue": {
+          "present": 30,
+          "true": 2
+        }
+      }
+    }
+  }
+}

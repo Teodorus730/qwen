@@ -1,0 +1,111 @@
+{
+  "inputs": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2_refined.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2_refined.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2_refined.jsonl"
+  ],
+  "files_checked": 3,
+  "records_checked": 396,
+  "errors_count": 0,
+  "warnings_count": 0,
+  "files": [
+    {
+      "input": "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2_refined.jsonl",
+      "records_checked": 113,
+      "errors_count": 0,
+      "warnings_count": 0,
+      "counts": {
+        "schema_versions": {
+          "annotation_v2_deterministic_features_v2": 113
+        },
+        "datasets": {
+          "FineWeb": 113
+        },
+        "noise_levels": {
+          "clean": 105,
+          "partial_noise": 7,
+          "mostly_noise": 1
+        },
+        "boolean_features": {
+          "has_api_or_command_syntax": 16,
+          "has_ui_residue": 28,
+          "has_numbers": 98,
+          "has_boilerplate_markers": 6,
+          "has_code": 6,
+          "has_urls_or_links": 3,
+          "has_table_or_list": 4,
+          "has_math_notation": 6,
+          "has_scientific_formula": 6,
+          "has_forum_residue": 1
+        }
+      },
+      "errors_sample": [],
+      "warnings_sample": []
+    },
+    {
+      "input": "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2_refined.jsonl",
+      "records_checked": 88,
+      "errors_count": 0,
+      "warnings_count": 0,
+      "counts": {
+        "schema_versions": {
+          "annotation_v2_deterministic_features_v2": 88
+        },
+        "datasets": {
+          "FineWeb-Edu": 88
+        },
+        "noise_levels": {
+          "clean": 79,
+          "partial_noise": 8,
+          "mostly_noise": 1
+        },
+        "boolean_features": {
+          "has_numbers": 70,
+          "has_urls_or_links": 10,
+          "has_api_or_command_syntax": 19,
+          "has_ui_residue": 18,
+          "has_boilerplate_markers": 6,
+          "has_forum_residue": 1,
+          "has_math_notation": 2,
+          "has_scientific_formula": 2,
+          "has_code": 2,
+          "has_table_or_list": 2
+        }
+      },
+      "errors_sample": [],
+      "warnings_sample": []
+    },
+    {
+      "input": "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2_refined.jsonl",
+      "records_checked": 195,
+      "errors_count": 0,
+      "warnings_count": 0,
+      "counts": {
+        "schema_versions": {
+          "annotation_v2_deterministic_features_v2": 195
+        },
+        "datasets": {
+          "FineMath": 195
+        },
+        "noise_levels": {
+          "clean": 189,
+          "partial_noise": 6
+        },
+        "boolean_features": {
+          "has_numbers": 173,
+          "has_math_notation": 97,
+          "has_scientific_formula": 55,
+          "has_table_or_list": 24,
+          "has_urls_or_links": 5,
+          "has_ui_residue": 18,
+          "has_code": 26,
+          "has_api_or_command_syntax": 55,
+          "is_symbol_heavy": 45,
+          "has_forum_residue": 1
+        }
+      },
+      "errors_sample": [],
+      "warnings_sample": []
+    }
+  ]
+}
