@@ -1,0 +1,477 @@
+{
+  "overall": {
+    "records_total": 30,
+    "answered_count": 26,
+    "abstained_count": 4,
+    "correct_answered": 20,
+    "correct_counting_abstain_wrong": 20,
+    "gold_abstained_count": 0,
+    "coverage_rate": 0.866667,
+    "accuracy_on_answered": 0.769231,
+    "accuracy_counting_abstain_wrong": 0.666667
+  },
+  "by_dataset": {
+    "FineWeb-Edu": {
+      "records_total": 30,
+      "answered_count": 26,
+      "abstained_count": 4,
+      "correct_answered": 20,
+      "correct_counting_abstain_wrong": 20,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.866667,
+      "accuracy_on_answered": 0.769231,
+      "accuracy_counting_abstain_wrong": 0.666667
+    }
+  },
+  "by_gold_domain": {
+    "education": {
+      "records_total": 1,
+      "answered_count": 1,
+      "abstained_count": 0,
+      "correct_answered": 1,
+      "correct_counting_abstain_wrong": 1,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 1.0
+    },
+    "government": {
+      "records_total": 2,
+      "answered_count": 1,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.5,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "humanities": {
+      "records_total": 13,
+      "answered_count": 13,
+      "abstained_count": 0,
+      "correct_answered": 9,
+      "correct_counting_abstain_wrong": 9,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.692308,
+      "accuracy_counting_abstain_wrong": 0.692308
+    },
+    "science": {
+      "records_total": 14,
+      "answered_count": 11,
+      "abstained_count": 3,
+      "correct_answered": 10,
+      "correct_counting_abstain_wrong": 10,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.785714,
+      "accuracy_on_answered": 0.909091,
+      "accuracy_counting_abstain_wrong": 0.714286
+    }
+  },
+  "confusion_matrix": {
+    "education": {
+      "education": 1
+    },
+    "government": {
+      "science": 1,
+      "ABSTAIN": 1
+    },
+    "humanities": {
+      "social_sciences": 1,
+      "government": 1,
+      "humanities": 9,
+      "technology": 1,
+      "stem": 1
+    },
+    "science": {
+      "science": 10,
+      "stem": 1,
+      "ABSTAIN": 3
+    }
+  },
+  "top_mismatch_examples": [
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000002_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "government",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.275862,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 3.6
+        },
+        {
+          "domain": "stem",
+          "score": 2.8
+        },
+        {
+          "domain": "government",
+          "score": 2.8
+        },
+        {
+          "domain": "social_sciences",
+          "score": 2.6
+        },
+        {
+          "domain": "commercial",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:medical x4 (+3.6)"
+        ],
+        "stem": [
+          "keyword:statistics x1 (+1.8)",
+          "keyword:average x1 (+1)"
+        ],
+        "government": [
+          "keyword:legal x1 (+1.6)",
+          "keyword:law x1 (+1.2)"
+        ],
+        "social_sciences": [
+          "keyword:gender x1 (+1.8)",
+          "keyword:community x1 (+0.8)"
+        ],
+        "commercial": [
+          "keyword:product x1 (+1)"
+        ]
+      },
+      "text_preview": "Individual differences | Methods | Statistics | Clinical | Educational | Industrial | Professional items | World psychology | In tort law, the standard of care is the degree of prudence and caution required of an individual who is under a duty of care. A breac"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000006_018",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.654971,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.6
+        },
+        {
+          "domain": "science",
+          "score": 2.7
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:probability x2 (+2.8)",
+          "keyword:statistics x1 (+1.8)",
+          "keyword:average x1 (+1)"
+        ],
+        "science": [
+          "keyword:species x1 (+1.3)",
+          "keyword:organisms x1 (+1.4)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "at stations with amphipod test survival between 60 and 80 % (USEPA 1994a (1)). These data indicate that tests with 2. Referenced Documents (purchase separately) The documents listed below are referenced within the subject standard but are not provided as part "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000011_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.618182,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Onuskis (Anishok or Anushishok in Yiddish) lies in the northeastern part of Lithuania, about 5 km. from the Latvian border and about 20 km. northwest of the District Administrative Center Rakishok (Rokiskis). Anishok is situated on a plain between forested hil"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000011_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "government",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.478873,
+      "top_k": [
+        {
+          "domain": "government",
+          "score": 1.7
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "government": [
+          "keyword:government x1 (+1.7)"
+        ],
+        "commercial": [
+          "keyword:store x1 (+0.8)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "five members was elected in 1920. It received administrative and financial support from the Ministry for Jewish Affairs in Kovno. Letters from the Ministry to the committee were written in three languages: Lithuanian, Yiddish and Hebrew. The committee was acti"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000012_026",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "technology",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.878049,
+      "top_k": [
+        {
+          "domain": "technology",
+          "score": 1.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "technology": [
+          "keyword:embodiment x1 (+1.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "made is fundamental to the conceptual background required for thinking of them as free and sharers in a common dignity, as more than just functions of our individual projects or outputs of our desires and wishes.(Meilander's statement, presented to the Nationa"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000013_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.510204,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 1.25
+        },
+        {
+          "domain": "science",
+          "score": 1.2
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:school x1 (+1)",
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ],
+        "science": [
+          "keyword:medical x1 (+1.2)"
+        ]
+      },
+      "text_preview": "\"While I believe that TALENs ease of design and better targeting range will probably make them a preferred option over ZFNs made by publicly available methods, ZFNs' smaller size and the less repetitive nature of their amino acid sequences may give them advant"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000014_001",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "leave everything that involves blood and semen to the veterinarian your risk of getting Brucellosis is very low. If your immune system is compromised, e.g. due to HIV, cancer or immunosuppressant drugs (common after transplants) you should not care for a dog w"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000016_003",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.511628,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 1.1
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:distribution x1 (+1.1)"
+        ],
+        "commercial": [
+          "keyword:service x1 (+0.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "is allowed to continue. This position is supported by evidence of widespread extirpation from all developed areas in the eastern portion of the historic distribution. Similar levels of development are occurring throughout the Fort Morgan Peninsula and real est"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000019_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.4329,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.0
+        },
+        {
+          "domain": "media",
+          "score": 2.5
+        },
+        {
+          "domain": "education",
+          "score": 1.65
+        },
+        {
+          "domain": "science",
+          "score": 1.2
+        },
+        {
+          "domain": "humanities",
+          "score": 1.2
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:unit x3 (+3)",
+          "keyword:units x2 (+2)"
+        ],
+        "media": [
+          "keyword:draft x1 (+1)",
+          "keyword:troopers x1 (+1.5)"
+        ],
+        "education": [
+          "keyword:lesson x1 (+1.4)",
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ],
+        "science": [
+          "keyword:force x1 (+1.2)"
+        ],
+        "humanities": [
+          "keyword:history x1 (+1.2)"
+        ]
+      },
+      "text_preview": "A comprehensive history of the 82nd Airborne Division in World War II, from an officer of that famed unit. Wartime Chief of Staff George Marshall viewed airborne troops, at the division level, as a means to transform the battlefield as a whole, and incorporate"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000020_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "government",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.496552,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 3.6
+        },
+        {
+          "domain": "government",
+          "score": 3.4
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:authorities x4 (+3.6)"
+        ],
+        "government": [
+          "keyword:government x2 (+3.4)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Regions of Ireland SUB-NATIONAL GOVERNANCE IN IRELAND The Republic of Ireland, which covers a land area of 68,895 sq. km and has a population of 4.1 million (2006), has a relatively centralised administration. However, the local and regional levels have import"
+    }
+  ],
+  "missing_predictions": [],
+  "missing_predictions_count": 0,
+  "gold_records_total": 90,
+  "matched_gold_records": 30,
+  "prediction_records_total": 119
+}

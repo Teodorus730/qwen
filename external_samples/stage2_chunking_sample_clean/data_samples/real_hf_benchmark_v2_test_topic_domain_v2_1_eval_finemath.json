@@ -1,0 +1,519 @@
+{
+  "overall": {
+    "records_total": 30,
+    "answered_count": 23,
+    "abstained_count": 7,
+    "correct_answered": 17,
+    "correct_counting_abstain_wrong": 17,
+    "gold_abstained_count": 1,
+    "coverage_rate": 0.766667,
+    "accuracy_on_answered": 0.73913,
+    "accuracy_counting_abstain_wrong": 0.566667
+  },
+  "by_dataset": {
+    "FineMath": {
+      "records_total": 30,
+      "answered_count": 23,
+      "abstained_count": 7,
+      "correct_answered": 17,
+      "correct_counting_abstain_wrong": 17,
+      "gold_abstained_count": 1,
+      "coverage_rate": 0.766667,
+      "accuracy_on_answered": 0.73913,
+      "accuracy_counting_abstain_wrong": 0.566667
+    }
+  },
+  "by_gold_domain": {
+    "humanities": {
+      "records_total": 2,
+      "answered_count": 0,
+      "abstained_count": 2,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "software": {
+      "records_total": 3,
+      "answered_count": 3,
+      "abstained_count": 0,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "stem": {
+      "records_total": 22,
+      "answered_count": 18,
+      "abstained_count": 4,
+      "correct_answered": 17,
+      "correct_counting_abstain_wrong": 17,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.818182,
+      "accuracy_on_answered": 0.944444,
+      "accuracy_counting_abstain_wrong": 0.772727
+    },
+    "technology": {
+      "records_total": 2,
+      "answered_count": 2,
+      "abstained_count": 0,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "unknown": {
+      "records_total": 1,
+      "answered_count": 0,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 1,
+      "coverage_rate": 0.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    }
+  },
+  "confusion_matrix": {
+    "humanities": {
+      "ABSTAIN": 2
+    },
+    "software": {
+      "stem": 3
+    },
+    "stem": {
+      "stem": 17,
+      "ABSTAIN": 4,
+      "commercial": 1
+    },
+    "technology": {
+      "stem": 2
+    },
+    "unknown": {
+      "ABSTAIN": 1
+    }
+  },
+  "top_mismatch_examples": [
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000001_001",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.753846,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 4.9
+        },
+        {
+          "domain": "social_sciences",
+          "score": 0.8
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:graph x3 (+3)",
+          "keyword:problem x1 (+1)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "social_sciences": [
+          "keyword:community x1 (+0.8)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "0 nice one!! answered 03 Jul '14, 16:04 4★suryanit 11●1●3●4 accept rate: 0% 0 Equality will hold for the root node, u need to take care of that case answered 06 Dec '17, 23:21 1 accept rate: 0% 0 Equality will hold for the root node, u need to take care of tha"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000013_005",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.640449,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.7
+        },
+        {
+          "domain": "software",
+          "score": 3.2
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:matrix x2 (+4)",
+          "surface.is_symbol_heavy (+0.8)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "keyword:program x1 (+1)",
+          "surface.has_code (+1.4)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "` ``{ ` ` ``for` `(j = ``0``; j < C; j++) ` ` ``{ ` ` ``System.out.print(mat[i][j]+ ``\" \"``); ` ` ``} ` ` ``System.out.println(); ` ` ``} ` ` ``} ` ` ` ` ``/* Driver program to test above functions */` ` ``public` `static` `void` `main(String[] args) ` ` ``{ `"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000013_014",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.630435,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 8.7
+        },
+        {
+          "domain": "software",
+          "score": 4.6
+        },
+        {
+          "domain": "technology",
+          "score": 0.5
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:matrix x2 (+4)",
+          "keyword:function x2 (+1.8)",
+          "surface.has_math_notation (+1.2)",
+          "surface.is_symbol_heavy (+0.8)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "keyword:function x2 (+2.4)",
+          "surface.has_code (+1.4)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "technology": [
+          "keyword:input x1 (+0.5)"
+        ]
+      },
+      "text_preview": "*/` ` ``public` `static` `void` `printMatrix(``int` `mat[][]){ ` ` ``for` `(``int` `i = ``0``; i < mat.length; i ++){ ` ` ``for` `(``int` `j = ``0``; j < mat[``0``].length; j ++){ ` ` ``System.out.print( mat[i][j] ); ` ` ``} ` ` ``System.out.println(``\"\"``); `"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000018_011",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.506494,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 3.9
+        },
+        {
+          "domain": "software",
+          "score": 3.8
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:function x2 (+1.8)",
+          "surface.has_math_notation (+1.2)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "keyword:function x2 (+2.4)",
+          "surface.has_code (+1.4)"
+        ]
+      },
+      "text_preview": "Recall that in the single-variable case, we can take successive derivatives of the function f(x) to obtain $\\frac{df}{dx}$, $\\frac{d^2 f}{dx^2}$, $\\frac{d^3 f}{dx^3}$ etc. Let’s consider the multivariate case here. Suppose {x, y, z, w} forms a set of coordinat"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_015",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.52459,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 3.2
+        },
+        {
+          "domain": "stem",
+          "score": 2.9
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:product x1 (+1)",
+          "keyword:customer x1 (+1.2)",
+          "keyword:price x1 (+1)"
+        ],
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "surface.is_symbol_heavy (+0.8)",
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "Since he is giving a sachet of Shampoo fee, net price he his taking from customer = 25.5 – 1.5 = Rs 24. Now the profit made = 20% We have 1.2 CP = SP QUESTION: 25 Which one of the following is correct? Solution: This is the basic property of logarithms that Lo"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_017",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.514286,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 3.6
+        },
+        {
+          "domain": "government",
+          "score": 3.4
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:geometry x1 (+1.5)",
+          "surface.has_math_notation (+1.2)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "government": [
+          "keyword:government x2 (+3.4)"
+        ]
+      },
+      "text_preview": "Since Amar paid Rs., 3.8 less than what he should pay, so he will give 42.75 – 40.81 = Rs 1.95. to Akbar & 53 – 51 = Rs 2. to Anthony. QUESTION: 28 Inspired by the 'Golden quadrilateral project', the UP Government recently accomplished a diamond triangular pro"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_024",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.529412,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 0.9
+        },
+        {
+          "domain": "media",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "media": [
+          "keyword:published x1 (+0.8)"
+        ]
+      },
+      "text_preview": "Since, the composers can compose a maximum of 1200 books, so this is the number of books which can be published in day. QUESTION: 37 A contractor employed a certain number of workers to finish constructing a road in a certain scheduled time. Sometime later, wh"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_030",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "A train enters into a tunnel AB at A and exits at B. A jackal is sitting at O in another by pass tunnel AOB, which is connected to AB at A and B, where OA is perpendicular to OB. A cat is sitting at P inside the tunnel AB making the shortest possible distance "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_032",
+      "dataset": "FineMath",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.526316,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 1.0
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:activity x1 (+1)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "Choose the correct synonym of the word in capital letters from the four options given below. RECTITUDE Solution: Rectitude means morally correct behaviour or thinking or INTEGRITY QUESTION: 43 Choose the correct synonym of the word in capital letters from the "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_036",
+      "dataset": "FineMath",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.571429,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 1.2
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:force x1 (+1.2)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "QUESTION: 51 Find out the two words that are nearly the same or opposite in meaning and indicate the correct combination provided in the four options. I. attenuate II. repent III. Make thin IV. Force Solution: Attenuate and make thin are similar QUESTION: 52 C"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000022_003",
+      "dataset": "FineMath",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.623377,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 4.8
+        },
+        {
+          "domain": "technology",
+          "score": 1.7
+        },
+        {
+          "domain": "science",
+          "score": 1.2
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:geometry x1 (+1.5)",
+          "keyword:ratio x1 (+1.2)",
+          "surface.has_math_notation (+1.2)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "technology": [
+          "keyword:interface x1 (+1.2)",
+          "keyword:input x1 (+0.5)"
+        ],
+        "science": [
+          "keyword:energy x1 (+1.2)"
+        ]
+      },
+      "text_preview": "D = \\frac{0.02}{0.05} = 0.4 \\text{ \\ or \\ } 40\\% ## Practical Uses of Duty Cycles In many fields, like electrical engineering, duty cycles are important to provide power efficiently and effectively for a specific situation. Many applications of motors, physica"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000022_004",
+      "dataset": "FineMath",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.6,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 1.8
+        },
+        {
+          "domain": "software",
+          "score": 1.2
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:function x1 (+0.9)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "keyword:function x1 (+1.2)"
+        ]
+      },
+      "text_preview": "When we talk about the pulse width or the frequency, it is in reference to a function known as a rectangular waveform (sometimes also called a square wave). Just like a sound or light wave, these rectangular waveforms have an amplitude, a frequency, and a peri"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_finemath_000029_004",
+      "dataset": "FineMath",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "Kevin. Your message has been successfully submitted and would be delivered to recipients shortly. • Changes have not been saved Press OK to abandon changes or Cancel to continue editing • Your browser is not supported Kindly note that Groups does not support 7"
+    }
+  ],
+  "missing_predictions": [],
+  "missing_predictions_count": 0,
+  "gold_records_total": 90,
+  "matched_gold_records": 30,
+  "prediction_records_total": 245
+}

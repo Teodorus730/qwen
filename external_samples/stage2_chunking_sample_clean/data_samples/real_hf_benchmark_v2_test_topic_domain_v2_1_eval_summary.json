@@ -1,0 +1,1221 @@
+{
+  "overall": {
+    "records_total": 90,
+    "answered_count": 71,
+    "abstained_count": 19,
+    "correct_answered": 44,
+    "correct_counting_abstain_wrong": 44,
+    "gold_abstained_count": 6,
+    "coverage_rate": 0.788889,
+    "accuracy_on_answered": 0.619718,
+    "accuracy_counting_abstain_wrong": 0.488889
+  },
+  "by_dataset": {
+    "FineMath": {
+      "records_total": 30,
+      "answered_count": 23,
+      "abstained_count": 7,
+      "correct_answered": 17,
+      "correct_counting_abstain_wrong": 17,
+      "gold_abstained_count": 1,
+      "coverage_rate": 0.766667,
+      "accuracy_on_answered": 0.73913,
+      "accuracy_counting_abstain_wrong": 0.566667
+    },
+    "FineWeb": {
+      "records_total": 30,
+      "answered_count": 22,
+      "abstained_count": 8,
+      "correct_answered": 7,
+      "correct_counting_abstain_wrong": 7,
+      "gold_abstained_count": 5,
+      "coverage_rate": 0.733333,
+      "accuracy_on_answered": 0.318182,
+      "accuracy_counting_abstain_wrong": 0.233333
+    },
+    "FineWeb-Edu": {
+      "records_total": 30,
+      "answered_count": 26,
+      "abstained_count": 4,
+      "correct_answered": 20,
+      "correct_counting_abstain_wrong": 20,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.866667,
+      "accuracy_on_answered": 0.769231,
+      "accuracy_counting_abstain_wrong": 0.666667
+    }
+  },
+  "by_gold_domain": {
+    "commercial": {
+      "records_total": 12,
+      "answered_count": 9,
+      "abstained_count": 3,
+      "correct_answered": 3,
+      "correct_counting_abstain_wrong": 3,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.75,
+      "accuracy_on_answered": 0.333333,
+      "accuracy_counting_abstain_wrong": 0.25
+    },
+    "education": {
+      "records_total": 2,
+      "answered_count": 2,
+      "abstained_count": 0,
+      "correct_answered": 2,
+      "correct_counting_abstain_wrong": 2,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 1.0
+    },
+    "government": {
+      "records_total": 3,
+      "answered_count": 2,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.666667,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "humanities": {
+      "records_total": 17,
+      "answered_count": 14,
+      "abstained_count": 3,
+      "correct_answered": 10,
+      "correct_counting_abstain_wrong": 10,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.823529,
+      "accuracy_on_answered": 0.714286,
+      "accuracy_counting_abstain_wrong": 0.588235
+    },
+    "media": {
+      "records_total": 3,
+      "answered_count": 2,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.666667,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "science": {
+      "records_total": 18,
+      "answered_count": 15,
+      "abstained_count": 3,
+      "correct_answered": 12,
+      "correct_counting_abstain_wrong": 12,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.833333,
+      "accuracy_on_answered": 0.8,
+      "accuracy_counting_abstain_wrong": 0.666667
+    },
+    "social_sciences": {
+      "records_total": 1,
+      "answered_count": 0,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "software": {
+      "records_total": 3,
+      "answered_count": 3,
+      "abstained_count": 0,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "stem": {
+      "records_total": 22,
+      "answered_count": 18,
+      "abstained_count": 4,
+      "correct_answered": 17,
+      "correct_counting_abstain_wrong": 17,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.818182,
+      "accuracy_on_answered": 0.944444,
+      "accuracy_counting_abstain_wrong": 0.772727
+    },
+    "technology": {
+      "records_total": 3,
+      "answered_count": 2,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.666667,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "unknown": {
+      "records_total": 6,
+      "answered_count": 4,
+      "abstained_count": 2,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 6,
+      "coverage_rate": 0.666667,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    }
+  },
+  "confusion_matrix": {
+    "commercial": {
+      "humanities": 1,
+      "ABSTAIN": 3,
+      "media": 1,
+      "software": 1,
+      "government": 1,
+      "commercial": 3,
+      "science": 1,
+      "stem": 1
+    },
+    "education": {
+      "education": 2
+    },
+    "government": {
+      "commercial": 1,
+      "science": 1,
+      "ABSTAIN": 1
+    },
+    "humanities": {
+      "humanities": 10,
+      "ABSTAIN": 3,
+      "social_sciences": 1,
+      "government": 1,
+      "technology": 1,
+      "stem": 1
+    },
+    "media": {
+      "government": 1,
+      "ABSTAIN": 1,
+      "humanities": 1
+    },
+    "science": {
+      "science": 12,
+      "stem": 3,
+      "ABSTAIN": 3
+    },
+    "social_sciences": {
+      "ABSTAIN": 1
+    },
+    "software": {
+      "stem": 3
+    },
+    "stem": {
+      "stem": 17,
+      "ABSTAIN": 4,
+      "commercial": 1
+    },
+    "technology": {
+      "ABSTAIN": 1,
+      "stem": 2
+    },
+    "unknown": {
+      "social_sciences": 4,
+      "ABSTAIN": 2
+    }
+  },
+  "top_mismatch_examples": [
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000002_000",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.555556,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 1.0
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:volume x1 (+1)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "Read how Transit Wireless became a recipient of industry firm IDC's Smart City North America Award. From New York to California, and everywhere in-between, cities are investing in and adopting technology to make their environments more livable in the modern ag"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000003_000",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "government",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.485714,
+      "top_k": [
+        {
+          "domain": "government",
+          "score": 1.7
+        },
+        {
+          "domain": "software",
+          "score": 1.0
+        },
+        {
+          "domain": "media",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "government": [
+          "keyword:government x1 (+1.7)"
+        ],
+        "software": [
+          "keyword:program x1 (+1)"
+        ],
+        "media": [
+          "keyword:published x1 (+0.8)"
+        ]
+      },
+      "text_preview": "Airbox pak The Publishing Mills 1992 CS ISBN 1879371251 $15.95 Two cassettes cassettes Gary Slick's inability to prove his premise--that Reagan's campaign leaders conspired with the Iranian government to delay the release of American hostages in exchange for m"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000004_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "humanities",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.652361,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 7.6
+        },
+        {
+          "domain": "science",
+          "score": 2.45
+        },
+        {
+          "domain": "stem",
+          "score": 1.6
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:art x3 (+4.8)",
+          "keyword:artist x2 (+2.8)"
+        ],
+        "science": [
+          "surface.has_scientific_formula (+0.7)",
+          "v2_1 formula-heavy science context (+1.75)"
+        ],
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "surface.has_scientific_formula (+0.4)"
+        ]
+      },
+      "text_preview": "ABOUT DIY MISS CUPCAKE XL DIY Miss Cupcake XL is a hollow rotocast vinyl toy, scaled up to 5 Inches [12.7cm] Tall. Made in Mexico w/ Box printed in the USA. Already in Pre-Production, DIY Miss Cupcake XL will be Officially Launched at Designer Con 2018 Nov 16t"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000004_001",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.271186,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 1.6
+        },
+        {
+          "domain": "stem",
+          "score": 1.6
+        },
+        {
+          "domain": "social_sciences",
+          "score": 1.2
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        },
+        {
+          "domain": "science",
+          "score": 0.7
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:art x1 (+1.6)"
+        ],
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "surface.has_scientific_formula (+0.4)"
+        ],
+        "social_sciences": [
+          "keyword:social x1 (+1.2)"
+        ],
+        "commercial": [
+          "keyword:store x1 (+0.8)"
+        ],
+        "science": [
+          "surface.has_scientific_formula (+0.7)"
+        ]
+      },
+      "text_preview": "comeback after a decade long hiatus and launching a Kickstarter during our original launch of DIY Miss Cupcake XL. That was just bad luck. We also cut loose a lot of the extras that pushed our Goal level much higher than it needed to be. THE CUSTOM TOY ART SHO"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000006_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "media",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.75,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 2.4
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:crash x2 (+2.4)"
+        ],
+        "commercial": [
+          "keyword:tax x1 (+0.8)"
+        ]
+      },
+      "text_preview": "2006 doesn’t seem to long ago to me. But maybe that’s just my age. We were peaking out then with home prices escalating so fast and loans so easy to get that EVERYONE were buying homes. Some buying several homes. Over the next few years we did several hundred "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000010_000",
+      "dataset": "FineWeb",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.565217,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 1.3
+        },
+        {
+          "domain": "humanities",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:student x1 (+1.3)"
+        ],
+        "humanities": [
+          "keyword:political x1 (+1)"
+        ]
+      },
+      "text_preview": "We’re kicking off a new series this coming Sunday called UPSIDE DOWN. In the Upside Down series, we are going to look at something Jesus talked a lot about–the Kingdom of God. Many of the people who heard His message firsthand thought that He was talking about"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000011_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "software",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.555556,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 2.5
+        },
+        {
+          "domain": "government",
+          "score": 1.2
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:software x1 (+1.7)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "government": [
+          "keyword:law x1 (+1.2)"
+        ],
+        "commercial": [
+          "keyword:service x1 (+0.8)"
+        ]
+      },
+      "text_preview": "THE FOLLOWING DESCRIBES THE TERMS ON WHICH NETWAITER, LLC (“NETWAITER, WE, US”) OFFERS YOU ACCESS TO OUR SERVICES. Welcome to the User Agreement (the “Agreement”) for NetWaiter, LLC. This Agreement describes the terms and conditions applicable to your use of o"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000011_003",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "government",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.6,
+      "top_k": [
+        {
+          "domain": "government",
+          "score": 2.4
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "government": [
+          "keyword:law x2 (+2.4)"
+        ],
+        "commercial": [
+          "keyword:service x1 (+0.8)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "OUR SUBSIDIARIES, OFFICERS, DIRECTORS, EMPLOYEES AND OUR SUPPLIERS PROVIDE OUR WEBSITE AND SERVICES “AS IS” AND WITHOUT ANY WARRANTY OR CONDITION, EXPRESS, IMPLIED OR STATUTORY. IN NO EVENT SHALL WE, OUR SUBSIDIARIES, OFFICERS, DIRECTORS, AND EMPLOYEES BE LIAB"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000011_005",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "no_domain_evidence",
+      "confidence": 0.2,
+      "top_k": [],
+      "evidence": {},
+      "text_preview": "be enforced. Our failure to act with respect to a breach by you or others does not waive our right to act with respect to subsequent or similar breaches. This Agreement sets forth the entire understanding and agreement between you and NetWaiter with respect to"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000012_000",
+      "dataset": "FineWeb",
+      "gold_domain": "government",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.769231,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 4.0
+        },
+        {
+          "domain": "science",
+          "score": 1.2
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:service x2 (+1.6)",
+          "keyword:customer x2 (+2.4)"
+        ],
+        "science": [
+          "keyword:health x1 (+1.2)"
+        ]
+      },
+      "text_preview": "City Of Orange Water Division The City of Orange Water, under the City Public Works Department, provides water for about 140,094 residents living in the Orange area. Established in 1889, The City of Orange Water obtains approximately 75% of its water from grou"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000014_001",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "no_domain_evidence",
+      "confidence": 0.2,
+      "top_k": [],
+      "evidence": {},
+      "text_preview": "in New York. It was definitely an unforgettable holiday, but my mum wasn’t very happy about it! Is there someplace that you would like to celebrate Christmas if you could? Snow is a must. I don’t think I would enjoy Christmas in a place like Miami, chilling on"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000017_001",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.516854,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 4.6
+        },
+        {
+          "domain": "software",
+          "score": 3.4
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:force x1 (+1.2)",
+          "keyword:weight x1 (+1)",
+          "keyword:energy x1 (+1.2)",
+          "keyword:cell x1 (+1.2)"
+        ],
+        "software": [
+          "keyword:function x1 (+1.2)",
+          "surface.has_code (+1.4)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "stem": [
+          "keyword:function x1 (+0.9)"
+        ]
+      },
+      "text_preview": "of the individual GK within the first couple of weeks of use. Finally the new strapping system has fully replaceable buckles (both male and female parts) and comfort pads to again enhance fit and reduce twisting. The gloves also feature increased protection wh"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000018_003",
+      "dataset": "FineWeb",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.545455,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 2.4
+        },
+        {
+          "domain": "education",
+          "score": 2.0
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:formula x1 (+1.2)",
+          "surface.has_math_notation (+1.2)"
+        ],
+        "education": [
+          "keyword:activity x2 (+2)"
+        ]
+      },
+      "text_preview": "number of beats in 30 seconds and multiply by two. The best time to get a true resting heartbeat is immediately upon waking up in the morning, before getting out of bed. During exercise, you may have to stop what you are doing to find your pulse. However, do y"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000018_004",
+      "dataset": "FineWeb",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.39759,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 3.3
+        },
+        {
+          "domain": "education",
+          "score": 3.0
+        },
+        {
+          "domain": "science",
+          "score": 2.0
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:percent x3 (+3.3)"
+        ],
+        "education": [
+          "keyword:activity x4 (+3)"
+        ],
+        "science": [
+          "keyword:weight x2 (+2)"
+        ]
+      },
+      "text_preview": "and other fluids. - Drink more fluids during the activity than your thirst dictates. It is difficult to drink too much. - Drink plenty of fluids after your workout. - As outside temperatures and humidity increase, gradually decrease your physical activity in t"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000019_000",
+      "dataset": "FineWeb",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.68,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "Hot Mom & Sex Real 100% - Porn.com. A site that provides only perfect body Milfs hot sex women, hlt ladies which are in love with cocks!. Enjoy some hot mature milfs on our FREE HD milf tube page. Hosrny MILF Kayla Syns hot threesome clip. MILF big ass Porn Vi"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000019_001",
+      "dataset": "FineWeb",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.68,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "Mom Sex · Milf Sexy Videos · Real Milfs hot sex Sex milfs hot sex XXX Porn Milf · Mature Tube. How do you keep everyone personally healthy and strategically aligned? Charming moms have just one thing on their dirty mind: steamy mom sex. Tons of categorized hot"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000019_002",
+      "dataset": "FineWeb",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.526316,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 1.0
+        },
+        {
+          "domain": "reference",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:database x1 (+1)"
+        ],
+        "reference": [
+          "keyword:database x1 (+0.9)"
+        ]
+      },
+      "text_preview": "videos..… A fascinating collection of really hot mature clips, all stashed together in a huge list. If youre looking to meet hot UK MILFS (Mums Id Like to Fuck) for sex in your local area the look no further - Welcome to the largest database of UK MILFS. Findi"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000020_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.695652,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 1.6
+        },
+        {
+          "domain": "science",
+          "score": 0.7
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "surface.has_scientific_formula (+0.4)"
+        ],
+        "science": [
+          "surface.has_scientific_formula (+0.7)"
+        ]
+      },
+      "text_preview": "Flower Agate 6 Flower Agate crystal generator. Flower Agate is a type of Agate with Chalcedony inclusions which look like flower blooms. Light pink in colour with white blooms. Flower Agate assists you in reaching your highest potential. It is a stone that all"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000021_001",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "humanities",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.615385,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 1.6
+        },
+        {
+          "domain": "commercial",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:art x1 (+1.6)"
+        ],
+        "commercial": [
+          "keyword:sale x1 (+1)"
+        ]
+      },
+      "text_preview": "mix up thanks to Archie, the Lodge mansion becomes a hot spot, and Mr .Lodge does not feel like playing! Find out what happens in “Cosmo Go!”the fun, new lead story to this comics double digest! Script: Dan Parent Art: Dan Parent, Jim Amash, Glenn Whitmore, Ja"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000022_000",
+      "dataset": "FineWeb",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ]
+      },
+      "text_preview": "Women who can be bought in this office are truly more youthful and great. These escort locales would not ever at any point be hesitant to cooperate with purchasers thus they arranged go out with them way too which turns out to be unquestionably essentially ene"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000022_001",
+      "dataset": "FineWeb",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.414634,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "science",
+          "score": 1.4
+        },
+        {
+          "domain": "education",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "science": [
+          "keyword:climate x1 (+1.4)"
+        ],
+        "education": [
+          "keyword:school x1 (+1)"
+        ]
+      },
+      "text_preview": "cool season the sexual movement is critical for a few people, they could not keep the cool climate conditions and they likewise will require any young woman to fuck, a long time before they go screw they appreciate undeniably more sex engaging like oral sex, j"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000024_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.545455,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 1.2
+        },
+        {
+          "domain": "commercial",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:spain x1 (+1.2)"
+        ],
+        "commercial": [
+          "keyword:sale x1 (+1)"
+        ]
+      },
+      "text_preview": "Engine Works 145312H Big Block Chevy Hydraulic Cam & Lifter Kit 576/576 Lift. Engine Works 145310H Big Block Chevy Hydraulic Cam & Lifter Kit 500/505 Lift. Engine Works 145292H Big Block Chevy Hydraulic Cam & Lifter Kit 544/544 Lift. This listing is currently "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_000029_000",
+      "dataset": "FineWeb",
+      "gold_domain": "social_sciences",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.25641,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 2.0
+        },
+        {
+          "domain": "software",
+          "score": 2.0
+        },
+        {
+          "domain": "social_sciences",
+          "score": 1.8
+        },
+        {
+          "domain": "education",
+          "score": 1.2
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:animal x1 (+1)",
+          "keyword:radius x1 (+1)"
+        ],
+        "software": [
+          "keyword:program x2 (+2)"
+        ],
+        "social_sciences": [
+          "keyword:society x1 (+1)",
+          "keyword:community x1 (+0.8)"
+        ],
+        "education": [
+          "keyword:learning x1 (+1.2)"
+        ],
+        "commercial": [
+          "keyword:store x1 (+0.8)"
+        ]
+      },
+      "text_preview": "Support Cat Adoption and Rescue. Why go to a cat breeder or pet store to buy a cat when you can adopt? ||Contact this shelter/rescue group to see their pets for adoption. Our Featured Cresco, IA Partner: SNAP OF NE IA Cat adoption saves lives. Adopt a cat and "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000002_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "government",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.275862,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 3.6
+        },
+        {
+          "domain": "stem",
+          "score": 2.8
+        },
+        {
+          "domain": "government",
+          "score": 2.8
+        },
+        {
+          "domain": "social_sciences",
+          "score": 2.6
+        },
+        {
+          "domain": "commercial",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:medical x4 (+3.6)"
+        ],
+        "stem": [
+          "keyword:statistics x1 (+1.8)",
+          "keyword:average x1 (+1)"
+        ],
+        "government": [
+          "keyword:legal x1 (+1.6)",
+          "keyword:law x1 (+1.2)"
+        ],
+        "social_sciences": [
+          "keyword:gender x1 (+1.8)",
+          "keyword:community x1 (+0.8)"
+        ],
+        "commercial": [
+          "keyword:product x1 (+1)"
+        ]
+      },
+      "text_preview": "Individual differences | Methods | Statistics | Clinical | Educational | Industrial | Professional items | World psychology | In tort law, the standard of care is the degree of prudence and caution required of an individual who is under a duty of care. A breac"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000006_018",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.654971,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.6
+        },
+        {
+          "domain": "science",
+          "score": 2.7
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:probability x2 (+2.8)",
+          "keyword:statistics x1 (+1.8)",
+          "keyword:average x1 (+1)"
+        ],
+        "science": [
+          "keyword:species x1 (+1.3)",
+          "keyword:organisms x1 (+1.4)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "at stations with amphipod test survival between 60 and 80 % (USEPA 1994a (1)). These data indicate that tests with 2. Referenced Documents (purchase separately) The documents listed below are referenced within the subject standard but are not provided as part "
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000011_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.618182,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Onuskis (Anishok or Anushishok in Yiddish) lies in the northeastern part of Lithuania, about 5 km. from the Latvian border and about 20 km. northwest of the District Administrative Center Rakishok (Rokiskis). Anishok is situated on a plain between forested hil"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000011_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "government",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.478873,
+      "top_k": [
+        {
+          "domain": "government",
+          "score": 1.7
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "government": [
+          "keyword:government x1 (+1.7)"
+        ],
+        "commercial": [
+          "keyword:store x1 (+0.8)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "five members was elected in 1920. It received administrative and financial support from the Ministry for Jewish Affairs in Kovno. Letters from the Ministry to the committee were written in three languages: Lithuanian, Yiddish and Hebrew. The committee was acti"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000012_026",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "technology",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.878049,
+      "top_k": [
+        {
+          "domain": "technology",
+          "score": 1.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "technology": [
+          "keyword:embodiment x1 (+1.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "made is fundamental to the conceptual background required for thinking of them as free and sharers in a common dignity, as more than just functions of our individual projects or outputs of our desires and wishes.(Meilander's statement, presented to the Nationa"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000013_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.510204,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 1.25
+        },
+        {
+          "domain": "science",
+          "score": 1.2
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:school x1 (+1)",
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ],
+        "science": [
+          "keyword:medical x1 (+1.2)"
+        ]
+      },
+      "text_preview": "\"While I believe that TALENs ease of design and better targeting range will probably make them a preferred option over ZFNs made by publicly available methods, ZFNs' smaller size and the less repetitive nature of their amino acid sequences may give them advant"
+    },
+    {
+      "chunk_id": "real_hf_benchmark_v2_test_fineweb_edu_000014_001",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "leave everything that involves blood and semen to the veterinarian your risk of getting Brucellosis is very low. If your immune system is compromised, e.g. due to HIV, cancer or immunosuppressant drugs (common after transplants) you should not care for a dog w"
+    }
+  ],
+  "missing_predictions": [],
+  "missing_predictions_count": 0,
+  "gold_records_total": 90,
+  "matched_gold_records": 90,
+  "prediction_records_total": 416
+}
