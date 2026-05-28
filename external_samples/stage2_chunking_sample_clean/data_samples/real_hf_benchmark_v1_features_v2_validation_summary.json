@@ -1,0 +1,95 @@
+{
+  "inputs": [
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2.jsonl",
+    "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2.jsonl"
+  ],
+  "files_checked": 3,
+  "records_checked": 396,
+  "errors_count": 0,
+  "warnings_count": 0,
+  "files": [
+    {
+      "input": "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2.jsonl",
+      "records_checked": 113,
+      "errors_count": 0,
+      "warnings_count": 0,
+      "counts": {
+        "schema_versions": {
+          "annotation_v2_deterministic_features_v1": 113
+        },
+        "datasets": {
+          "FineWeb": 113
+        },
+        "noise_levels": {
+          "clean": 104,
+          "partial_noise": 8,
+          "mostly_noise": 1
+        },
+        "boolean_features": {
+          "has_numbers": 98,
+          "has_boilerplate_markers": 9,
+          "has_code": 3,
+          "has_urls_or_links": 3,
+          "has_table_or_list": 4
+        }
+      },
+      "errors_sample": [],
+      "warnings_sample": []
+    },
+    {
+      "input": "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_edu_features_v2.jsonl",
+      "records_checked": 88,
+      "errors_count": 0,
+      "warnings_count": 0,
+      "counts": {
+        "schema_versions": {
+          "annotation_v2_deterministic_features_v1": 88
+        },
+        "datasets": {
+          "FineWeb-Edu": 88
+        },
+        "noise_levels": {
+          "clean": 81,
+          "partial_noise": 7
+        },
+        "boolean_features": {
+          "has_numbers": 70,
+          "has_urls_or_links": 10,
+          "has_boilerplate_markers": 6,
+          "has_table_or_list": 2,
+          "has_code": 1
+        }
+      },
+      "errors_sample": [],
+      "warnings_sample": []
+    },
+    {
+      "input": "data_samples\\real_samples\\real_hf_benchmark_v1_finemath_features_v2.jsonl",
+      "records_checked": 195,
+      "errors_count": 0,
+      "warnings_count": 0,
+      "counts": {
+        "schema_versions": {
+          "annotation_v2_deterministic_features_v1": 195
+        },
+        "datasets": {
+          "FineMath": 195
+        },
+        "noise_levels": {
+          "clean": 156,
+          "partial_noise": 39
+        },
+        "boolean_features": {
+          "has_numbers": 173,
+          "has_table_or_list": 24,
+          "has_urls_or_links": 5,
+          "has_math_notation": 67,
+          "has_code": 13
+        }
+      },
+      "errors_sample": [],
+      "warnings_sample": []
+    }
+  ]
+}
