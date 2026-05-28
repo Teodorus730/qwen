@@ -1,0 +1,185 @@
+{
+  "input": "data_samples\\real_hf_benchmark_v1_annotation_v2_pseudo_gold.jsonl",
+  "records_count": 120,
+  "integrity": {
+    "errors_count": 0,
+    "errors_sample": []
+  },
+  "by_dataset": {
+    "FineWeb": 40,
+    "FineWeb-Edu": 40,
+    "FineMath": 40
+  },
+  "review_topic_domain_distribution": {
+    "science": 31,
+    "reference": 6,
+    "stem": 23,
+    "education": 11,
+    "technology": 24,
+    "software": 5,
+    "humanities": 5,
+    "media": 7,
+    "unknown": 3,
+    "social_sciences": 2,
+    "commercial": 2,
+    "government": 1
+  },
+  "review_topic_abstained": {
+    "count": 3,
+    "share": 0.025
+  },
+  "surface": {
+    "review_has_math_notation": {
+      "count": 32,
+      "share": 0.266667
+    },
+    "review_has_code": {
+      "count": 28,
+      "share": 0.233333
+    },
+    "review_is_symbol_heavy": {
+      "count": 11,
+      "share": 0.091667
+    },
+    "review_has_scientific_formula": {
+      "count": 16,
+      "share": 0.133333
+    },
+    "review_has_api_or_command_syntax": {
+      "count": 27,
+      "share": 0.225
+    }
+  },
+  "quality": {
+    "review_noise_level_distribution": {
+      "partial_noise": 41,
+      "clean": 77,
+      "mostly_noise": 2
+    },
+    "review_has_ui_residue": {
+      "count": 46,
+      "share": 0.383333
+    },
+    "review_has_forum_residue": {
+      "count": 4,
+      "share": 0.033333
+    }
+  },
+  "confidence_distribution": {
+    "0.8": 84,
+    "1.0": 18,
+    "0.6": 15,
+    "0.2": 3
+  },
+  "topic_confidence_distribution": {
+    "0.8": 82,
+    "1.0": 20,
+    "0.6": 15,
+    "0.2": 3
+  },
+  "examples": {
+    "abstained_or_unknown_topic": [
+      {
+        "chunk_id": "FineMath_000012_002",
+        "dataset": "FineMath",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "mostly boilerplate/noise; topic not reliable; old review marked boilerplate/noise",
+        "text_preview": "It is simple because the centre is too wide since the triangle, to assume a shape. That would be considered a triangle. sameday essay You can figure out the the negative lengths are corresponding to the span of this rectangle when you think"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000008_000",
+        "dataset": "FineWeb-Edu",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "partial_noise",
+        "review_note": "mostly boilerplate/noise; topic not reliable; UI/navigation residue present",
+        "text_preview": "Science Fair Project Encyclopedia |President of the| Historically, Landes was part of Gascony. It was one of the original 83 departments created during the French Revolution on March 4, 1790. It was created from parts of the provinces of Gu"
+      },
+      {
+        "chunk_id": "FineMath_000012_001",
+        "dataset": "FineMath",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "mostly boilerplate/noise; topic not reliable; old review marked boilerplate/noise",
+        "text_preview": "You may ask your self, how can we find out everything is a triangle in mathematics. In order to figure out a triangle, first we have http://en.wikipedia.com/wiki/Sigiriya to understand what it resembles. This really is a task that is harder"
+      }
+    ],
+    "mixed_or_ambiguous_notes": [
+      {
+        "chunk_id": "FineWeb_000015_000",
+        "dataset": "FineWeb",
+        "review_topic_domain": "science",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "clean",
+        "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable",
+        "text_preview": "|- candidate number||14295| |- NTR Number||NTR3827| |- ISRCTN||ISRCTN wordt niet meer aangevraagd.| |- Date ISRCTN created| |- date ISRCTN requested| |- Date Registered NTR||30-jan-2013| |- Secondary IDs||NL41498.018.12 / 2012_211; CCMO / M"
+      },
+      {
+        "chunk_id": "FineMath_000005_007",
+        "dataset": "FineMath",
+        "review_topic_domain": "science",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "clean",
+        "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable; math/symbol notation reviewed as visible surface feature",
+        "text_preview": "Solution The problem drew in the figure below. 5. A biker sees the image of a motorcycle behind it 1/6 times its original size when the distance between the biker and motorcycle is 30 meters. Determine the radius of curvature of the rear vi"
+      },
+      {
+        "chunk_id": "FineMath_000005_005",
+        "dataset": "FineMath",
+        "review_topic_domain": "science",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "clean",
+        "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable; math/symbol notation reviewed as visible surface feature",
+        "text_preview": "m = – di / do = -(-14.3)/50 = 14.3/50 = 0.3 The image is 0.3 smaller than the object. The image height (hi) : m = hi / ho hi = ho m = (10 cm)(0.3) = 3 cm [irp] 3. On object is 20 cm in front of convex mirror. If the image height is 1/5 time"
+      },
+      {
+        "chunk_id": "FineMath_000015_002",
+        "dataset": "FineMath",
+        "review_topic_domain": "science",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "clean",
+        "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable",
+        "text_preview": "Bromine is a group 17 element on the periodic table. Hence, the valence electrons present in bromine is 7 (see below image). Hence in a IBr4- ion, Valence electrons given by Iodine (I) atom = 7 Valence electrons given by each Bromine (Br) a"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000002_000",
+        "dataset": "FineWeb-Edu",
+        "review_topic_domain": "technology",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "clean",
+        "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable",
+        "text_preview": "Started conversation May 4, 2004 It's incorrect to say that \"gyratory system\" is just the name for a roundabout that has got too big for its boots. In fact it's the original term which was soon displaced when they became common. I'm not sur"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000010_016",
+        "dataset": "FineWeb-Edu",
+        "review_topic_domain": "science",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "partial_noise",
+        "review_note": "coarse topic usable but somewhat ambiguous; UI/navigation residue present",
+        "text_preview": "fashioned sayings? Here in New York last week the mayor and the meteorologists got it wrong – but not by much. The winds blew and the rains fell and, though there was less flooding and damage than predicted here, they made damn sure we were"
+      },
+      {
+        "chunk_id": "FineWeb-Edu_000002_002",
+        "dataset": "FineWeb-Edu",
+        "review_topic_domain": "technology",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "partial_noise",
+        "review_note": "coarse topic usable but somewhat ambiguous; UI/navigation residue present",
+        "text_preview": "both have multiple junctions. So the common usage of the word seems to be to describe overgrown roundabouts (and more specifically, multi-junction ones) in practice. Can you point to any counterexamples in real use? I'm just going on the gy"
+      },
+      {
+        "chunk_id": "FineMath_000026_023",
+        "dataset": "FineMath",
+        "review_topic_domain": "science",
+        "review_topic_confidence": 0.6,
+        "review_noise_level": "clean",
+        "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable; math/symbol notation reviewed as visible surface feature; code/API/command-like syntax reviewed as visible surface feature; symbol/token-dense surface reviewed separately from noise",
+        "text_preview": "Weight of adult in Newtons=888.9Newtons\\begin{align*}\\mathrm{Weight\\ of\\ adult\\ in\\ Newtons} = 888.9 \\;\\mathrm{Newtons}\\end{align*} 888.9Newtons/6.7×106Newtons per Ant Foot\\begin{align*}888.9 \\;\\mathrm{Newtons}/6.7 \\times 10^{-6} \\;\\mathrm{"
+      }
+    ]
+  }
+}
