@@ -9,3 +9,5 @@ __pycache__/
 external_samples/stage2_chunking_sample_clean/data_samples/hf_cache_test/
 
 .venv-embedding/
+
+external_samples/stage2_chunking_sample_clean/.hf_tokenizer_cache/
