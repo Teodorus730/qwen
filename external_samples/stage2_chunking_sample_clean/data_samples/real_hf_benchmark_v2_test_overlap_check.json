@@ -1,0 +1,35 @@
+{
+  "v1_doc_files": [
+    "examples/real_hf_benchmark_v1_finemath_docs.jsonl",
+    "examples/real_hf_benchmark_v1_fineweb_docs.jsonl",
+    "examples/real_hf_benchmark_v1_fineweb_edu_docs.jsonl"
+  ],
+  "v2_doc_files": [
+    "examples/real_hf_benchmark_v2_test_finemath_docs.jsonl",
+    "examples/real_hf_benchmark_v2_test_fineweb_docs.jsonl",
+    "examples/real_hf_benchmark_v2_test_fineweb_edu_docs.jsonl"
+  ],
+  "v1_chunk_files": [
+    "data_samples/real_samples/real_hf_benchmark_v1_finemath_chunks.jsonl",
+    "data_samples/real_samples/real_hf_benchmark_v1_fineweb_chunks.jsonl",
+    "data_samples/real_samples/real_hf_benchmark_v1_fineweb_edu_chunks.jsonl"
+  ],
+  "v2_chunk_files": [
+    "data_samples/real_samples/real_hf_benchmark_v2_test_finemath_chunks.jsonl",
+    "data_samples/real_samples/real_hf_benchmark_v2_test_fineweb_chunks.jsonl",
+    "data_samples/real_samples/real_hf_benchmark_v2_test_fineweb_edu_chunks.jsonl"
+  ],
+  "v1_doc_ids_count": 90,
+  "v2_doc_ids_count": 90,
+  "v1_doc_ids_missing": 0,
+  "v2_doc_ids_missing": 0,
+  "doc_id_overlap_count": 0,
+  "doc_id_overlap_sample": [],
+  "v1_chunk_ids_count": 396,
+  "v2_chunk_ids_count": 416,
+  "v1_chunk_ids_missing": 0,
+  "v2_chunk_ids_missing": 0,
+  "chunk_id_overlap_count": 0,
+  "chunk_id_overlap_sample": [],
+  "status": "pass_no_overlap"
+}
