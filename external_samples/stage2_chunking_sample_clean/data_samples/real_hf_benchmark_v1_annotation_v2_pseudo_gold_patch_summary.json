@@ -1,0 +1,70 @@
+{
+  "records_total": 120,
+  "records_patched": 11,
+  "records_unchanged": 109,
+  "patched_chunk_ids": [
+    "FineWeb-Edu_000014_000",
+    "FineWeb-Edu_000003_003",
+    "FineWeb-Edu_000003_002",
+    "FineWeb-Edu_000014_002",
+    "FineWeb_000023_000",
+    "FineWeb-Edu_000010_002",
+    "FineWeb-Edu_000000_004",
+    "FineWeb-Edu_000010_017",
+    "FineWeb-Edu_000022_000",
+    "FineWeb-Edu_000003_007",
+    "FineWeb_000000_001"
+  ],
+  "domain_changes": {
+    "reference->humanities": 2,
+    "science->social_sciences": 2,
+    "reference->unknown": 1,
+    "education->humanities": 3,
+    "reference->social_sciences": 1,
+    "science->unknown": 1,
+    "education->commercial": 1
+  },
+  "manual_review_decisions_applied": {
+    "revise_gold_domain": 9,
+    "mark_gold_abstained": 2
+  },
+  "recommended_actions_applied": {
+    "pseudo_gold_patch": 11
+  },
+  "records_marked_abstained": 2,
+  "marked_abstained_chunk_ids": [
+    "FineWeb-Edu_000014_002",
+    "FineWeb-Edu_000003_007"
+  ],
+  "old_topic_domain_distribution": {
+    "science": 31,
+    "reference": 6,
+    "stem": 23,
+    "education": 11,
+    "technology": 24,
+    "software": 5,
+    "humanities": 5,
+    "media": 7,
+    "unknown": 3,
+    "social_sciences": 2,
+    "commercial": 2,
+    "government": 1
+  },
+  "patched_topic_domain_distribution": {
+    "science": 28,
+    "humanities": 10,
+    "stem": 23,
+    "reference": 2,
+    "education": 7,
+    "technology": 24,
+    "software": 5,
+    "social_sciences": 5,
+    "media": 7,
+    "unknown": 5,
+    "commercial": 3,
+    "government": 1
+  },
+  "old_abstained_count": 3,
+  "patched_abstained_count": 5,
+  "patch_source": "weak_topic_domain_v2_manual_review"
+}
