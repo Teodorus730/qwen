@@ -24,14 +24,18 @@ def extract_text(row, text_field):
     return ""
 
 
-def reservoir_sample(stream, sample_size, stream_limit, seed, text_field, min_text_chars):
+def reservoir_sample(stream, sample_size, stream_limit, seed, text_field, min_text_chars, skip):
     rng = random.Random(seed)
     sample = []
     eligible_count = 0
+    records_seen_after_skip = 0
 
-    for stream_index, row in enumerate(stream):
-        if stream_index >= stream_limit:
+    for raw_stream_index, row in enumerate(stream):
+        if raw_stream_index < skip:
+            continue
+        if records_seen_after_skip >= stream_limit:
             break
+        records_seen_after_skip += 1
 
         text = extract_text(row, text_field)
         if len(text.strip()) < min_text_chars:
@@ -40,7 +44,7 @@ def reservoir_sample(stream, sample_size, stream_limit, seed, text_field, min_te
         candidate = {
             "row": row,
             "text": text,
-            "stream_index": stream_index,
+            "stream_index": raw_stream_index,
         }
         eligible_count += 1
 
@@ -67,6 +71,8 @@ def main():
     parser.add_argument("--stream-limit", type=int, default=500)
     parser.add_argument("--sample-size", type=int, default=30)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--skip", type=int, default=0)
+    parser.add_argument("--id-prefix", default=None)
     parser.add_argument("--min-text-chars", type=int, default=500)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
@@ -79,6 +85,9 @@ def main():
         raise SystemExit(2)
     if args.stream_limit > MAX_SAFE_STREAM_LIMIT:
         print(f"--stream-limit {args.stream_limit} is above safe cap {MAX_SAFE_STREAM_LIMIT}")
+        raise SystemExit(2)
+    if args.skip < 0:
+        print("--skip must be >= 0")
         raise SystemExit(2)
 
     try:
@@ -97,6 +106,7 @@ def main():
                 "stream_limit": args.stream_limit,
                 "sample_size": args.sample_size,
                 "seed": args.seed,
+                "skip": args.skip,
                 "min_text_chars": args.min_text_chars,
             },
             ensure_ascii=False,
@@ -116,11 +126,12 @@ def main():
         seed=args.seed,
         text_field=args.text_field,
         min_text_chars=args.min_text_chars,
+        skip=args.skip,
     )
 
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    source_prefix = safe_id_part(args.dataset_label)
+    source_prefix = safe_id_part(args.id_prefix or args.dataset_label)
 
     with output_path.open("w", encoding="utf-8") as f:
         for sample_index, item in enumerate(sample):
@@ -133,6 +144,7 @@ def main():
                 "source_split": args.split,
                 "sample_index": sample_index,
                 "stream_index": item["stream_index"],
+                "stream_skip": args.skip,
             }
             if args.config:
                 record["source_config"] = args.config
@@ -144,6 +156,7 @@ def main():
                 "stream_limit": args.stream_limit,
                 "eligible_records_seen": eligible_count,
                 "records_written": len(sample),
+                "skip": args.skip,
                 "output": str(output_path),
             },
             ensure_ascii=False,

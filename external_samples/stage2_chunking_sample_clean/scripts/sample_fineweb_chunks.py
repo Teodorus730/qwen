@@ -161,6 +161,7 @@ def main():
     parser.add_argument("--split", default="train")
     parser.add_argument("--text-field", default=None)
     parser.add_argument("--id-field", default=None)
+    parser.add_argument("--chunk-id-prefix", default=None)
     parser.add_argument("--tokenizer-name", default=None, help="Example: Qwen/Qwen2.5-0.5B")
     parser.add_argument("--max-docs", type=int, default=10)
     parser.add_argument("--min-chunk-tokens", type=int, default=80)
@@ -219,6 +220,7 @@ def main():
             source_doc_id = None
             if args.id_field and args.id_field in row:
                 source_doc_id = row.get(args.id_field)
+            chunk_id_base = str(args.chunk_id_prefix or row_dataset)
 
             chunks = chunk_document(
                 text=text,
@@ -232,7 +234,7 @@ def main():
                 n_tokens = counter.count(chunk_text)
                 token_counts.append(n_tokens)
                 record = {
-                    "chunk_id": f"{row_dataset}_{doc_id:06d}_{chunk_idx:03d}",
+                    "chunk_id": f"{chunk_id_base}_{doc_id:06d}_{chunk_idx:03d}",
                     "dataset": row_dataset,
                     "source_type": row_source_type,
                     "domain": None,
