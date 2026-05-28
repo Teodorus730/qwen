@@ -1,0 +1,351 @@
+{
+  "candidates_count": 36,
+  "by_error_group": {
+    "technology->commercial": 5,
+    "science->social_sciences": 3,
+    "reference->not_reference_or_abstain": 5,
+    "high_confidence_wrong>=0.70": 6,
+    "gold_abstained_classifier_answered": 2,
+    "stem->ABSTAIN": 5,
+    "science->ABSTAIN": 5,
+    "education_media->ABSTAIN": 5
+  },
+  "by_manual_review_decision": {
+    "keep_gold": 19,
+    "ambiguous_keep_for_embedding_bakeoff": 6,
+    "revise_gold_domain": 9,
+    "mark_gold_abstained": 2
+  },
+  "by_recommended_action": {
+    "v2_1_rule_fix": 15,
+    "embedding_bakeoff_later": 8,
+    "pseudo_gold_patch": 11,
+    "v2_1_abstain_policy": 2
+  },
+  "pseudo_gold_patch_count": 11,
+  "v2_1_rule_fix_count": 15,
+  "v2_1_abstain_policy_count": 2,
+  "embedding_bakeoff_later_count": 8,
+  "revised_domain_distribution": {
+    "technology": 5,
+    "science": 7,
+    "social_sciences": 3,
+    "humanities": 5,
+    "unknown": 4,
+    "reference": 1,
+    "commercial": 1,
+    "media": 4,
+    "software": 1,
+    "stem": 5
+  },
+  "revised_abstained_count": 4,
+  "gold_changed_count": 11,
+  "duplicates": [],
+  "integrity_errors": [],
+  "examples_by_decision": {
+    "keep_gold": [
+      {
+        "review_id": "topic_error_review_0000",
+        "chunk_id": "FineWeb_000009_028",
+        "dataset": "FineWeb",
+        "error_group": "technology->commercial",
+        "gold_domain": "technology",
+        "predicted_domain": "commercial",
+        "revised_topic_domain": "technology",
+        "revised_topic_abstained": false,
+        "recommended_action": "v2_1_rule_fix",
+        "review_note": "POS/patent-style technical workflow; commercial rental terms are domain vocabulary inside technical invention text.",
+        "text_preview": "in which the program is operating. If, however, the landmarks have not changed, as indicated by a No at step S131, processing proceeds to step S134. At step S134, the rental information which has been trapped is saved, updated during subsequent interrupt cycles, and ultimately se"
+      },
+      {
+        "review_id": "topic_error_review_0001",
+        "chunk_id": "FineWeb_000009_038",
+        "dataset": "FineWeb",
+        "error_group": "technology->commercial",
+        "gold_domain": "technology",
+        "predicted_domain": "commercial",
+        "revised_topic_domain": "technology",
+        "revised_topic_abstained": false,
+        "recommended_action": "v2_1_rule_fix",
+        "review_note": "POS/patent transaction table; commercial words describe the system behavior, not primary commercial topic.",
+        "text_preview": "type of the transaction. That is, \"R\" indicates a rental, \"S\" indicates a sale, \"C\" indicates a credit and \"F\" indicates a free transaction, such as for a free replacement. The \"Day O\" column indicates the number of days which this movie is rented for, which, in this example is o"
+      },
+      {
+        "review_id": "topic_error_review_0002",
+        "chunk_id": "FineWeb_000009_040",
+        "dataset": "FineWeb",
+        "error_group": "technology->commercial",
+        "gold_domain": "technology",
+        "predicted_domain": "commercial",
+        "revised_topic_domain": "technology",
+        "revised_topic_abstained": false,
+        "recommended_action": "v2_1_rule_fix",
+        "review_note": "Patent-like UI/program flow with function keys and displays; commercial terms are secondary.",
+        "text_preview": "Upon pressing the function key F10 the transaction currently displayed on the screen is aborted. In accordance with the present invention, upon pressing the \"hot keys\" on the keyboard, that is, the \"Alt\" and the left \"shift\" keys, the main menu of the teacher program is displayed"
+      }
+    ],
+    "ambiguous_keep_for_embedding_bakeoff": [
+      {
+        "review_id": "topic_error_review_0005",
+        "chunk_id": "FineWeb-Edu_000000_003",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->social_sciences",
+        "gold_domain": "science",
+        "predicted_domain": "social_sciences",
+        "revised_topic_domain": "science",
+        "revised_topic_abstained": false,
+        "recommended_action": "embedding_bakeoff_later",
+        "review_note": "Climate adaptation plus tribal workforce/public-agency policy; science/social boundary is genuinely mixed.",
+        "text_preview": "tribe is now working closely with researchers from universities such as University of California, Berkeley and the University of California, Davis as well as public agencies so that this traditional knowledge can one day be accepted by mainstream and academic circles dealing with"
+      },
+      {
+        "review_id": "topic_error_review_0017",
+        "chunk_id": "FineMath_000026_005",
+        "dataset": "FineMath",
+        "error_group": "high_confidence_wrong>=0.70",
+        "gold_domain": "science",
+        "predicted_domain": "education",
+        "revised_topic_domain": "science",
+        "revised_topic_abstained": false,
+        "recommended_action": "embedding_bakeoff_later",
+        "review_note": "Force lesson mixes education function and physics topic; keep science for now but review boundary later.",
+        "text_preview": "A field test teacher used a Frayer model for balanced and unbalanced forces for this lesson (refer to Lesson 1 for directions on the use of the Frayer model).  Slide 2  Student Journal Page: 6-1  5. Display Slide 2  “In this image, there are two forces at work: one that is holdin"
+      },
+      {
+        "review_id": "topic_error_review_0028",
+        "chunk_id": "FineMath_000026_012",
+        "dataset": "FineMath",
+        "error_group": "science->ABSTAIN",
+        "gold_domain": "science",
+        "predicted_domain": "unknown",
+        "revised_topic_domain": "science",
+        "revised_topic_abstained": false,
+        "recommended_action": "embedding_bakeoff_later",
+        "review_note": "Classroom experiment about force mixes education function and science topic.",
+        "text_preview": "10. Tell students that over the next day or so, they will be able to refine this question based on how they set up their experiment.  11. Prior to showing slide 9 introduce the Tape Pull activity by having the students answer the question in their journal on page 6–4.  Slide 9  S"
+      }
+    ],
+    "revise_gold_domain": [
+      {
+        "review_id": "topic_error_review_0006",
+        "chunk_id": "FineWeb-Edu_000003_002",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->social_sciences",
+        "gold_domain": "science",
+        "predicted_domain": "social_sciences",
+        "revised_topic_domain": "social_sciences",
+        "revised_topic_abstained": false,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Food shortages, rural economies, politics, corruption, and planning dominate more than natural science.",
+        "text_preview": "which was being assigned to imports (Bii, 2009b). “The country will continue to experience food shortages unless the Government addresses the high cost of farm inputs to motivate farmers to increase production,” said Mr. Jonathan Bii of Uasin Gish (Bartoo & Lucheli, 2009; Bii, 20"
+      },
+      {
+        "review_id": "topic_error_review_0007",
+        "chunk_id": "FineWeb-Edu_000003_003",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->social_sciences",
+        "gold_domain": "science",
+        "predicted_domain": "social_sciences",
+        "revised_topic_domain": "social_sciences",
+        "revised_topic_abstained": false,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Disaster trap/development/social aspects are the primary topic; climate is context.",
+        "text_preview": "certainly brings into focus the social aspects of disasters. The disaster trap theory, likewise, brings into focus the financial bottom line. This perspective is most often discussed in international development and disaster reduction circles. It argues that disasters destroy dev"
+      },
+      {
+        "review_id": "topic_error_review_0008",
+        "chunk_id": "FineWeb-Edu_000000_004",
+        "dataset": "FineWeb-Edu",
+        "error_group": "reference->not_reference_or_abstain",
+        "gold_domain": "reference",
+        "predicted_domain": "software",
+        "revised_topic_domain": "social_sciences",
+        "revised_topic_abstained": false,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Biographical/reference-looking text is semantically about sociology/regional equity/social movements.",
+        "text_preview": "Professor of Sociology and American Studies & Ethnicity at the University of Southern California where he also directs the Program for Environmental and Regional Equity and co-directs USC’s Center for the Study of Immigrant Integration. His most recent books include Just Growth: "
+      }
+    ],
+    "mark_gold_abstained": [
+      {
+        "review_id": "topic_error_review_0010",
+        "chunk_id": "FineWeb-Edu_000014_002",
+        "dataset": "FineWeb-Edu",
+        "error_group": "reference->not_reference_or_abstain",
+        "gold_domain": "reference",
+        "predicted_domain": "unknown",
+        "revised_topic_domain": "unknown",
+        "revised_topic_abstained": true,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Short trailing book-review/political paragraph; topic could be government, humanities, or reference, too little context.",
+        "text_preview": "like the UN and the International Court at the expense of national sovereignty. The problem is to convince the peoples of the world and the politicians in charge that this is what we must learn to do. The end of the Cold War has given us a temporary reprieve. But if we do not use"
+      },
+      {
+        "review_id": "topic_error_review_0030",
+        "chunk_id": "FineWeb-Edu_000003_007",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->ABSTAIN",
+        "gold_domain": "science",
+        "predicted_domain": "unknown",
+        "revised_topic_domain": "unknown",
+        "revised_topic_abstained": true,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Flood/logging/government responsibility text is mixed science/government/social policy; abstain is safer.",
+        "text_preview": "logging practices, but the fact that it was an unprecedented, out of the blue, 500 year storm that caused it. While it is doubtful the slides would have occurred uncut land, that isn’t the only fallacy. When the slide did occur, the costs of repairing roads, treatment plants, and"
+      }
+    ]
+  },
+  "examples_by_action": {
+    "v2_1_rule_fix": [
+      {
+        "review_id": "topic_error_review_0000",
+        "chunk_id": "FineWeb_000009_028",
+        "dataset": "FineWeb",
+        "error_group": "technology->commercial",
+        "gold_domain": "technology",
+        "predicted_domain": "commercial",
+        "revised_topic_domain": "technology",
+        "revised_topic_abstained": false,
+        "recommended_action": "v2_1_rule_fix",
+        "review_note": "POS/patent-style technical workflow; commercial rental terms are domain vocabulary inside technical invention text.",
+        "text_preview": "in which the program is operating. If, however, the landmarks have not changed, as indicated by a No at step S131, processing proceeds to step S134. At step S134, the rental information which has been trapped is saved, updated during subsequent interrupt cycles, and ultimately se"
+      },
+      {
+        "review_id": "topic_error_review_0001",
+        "chunk_id": "FineWeb_000009_038",
+        "dataset": "FineWeb",
+        "error_group": "technology->commercial",
+        "gold_domain": "technology",
+        "predicted_domain": "commercial",
+        "revised_topic_domain": "technology",
+        "revised_topic_abstained": false,
+        "recommended_action": "v2_1_rule_fix",
+        "review_note": "POS/patent transaction table; commercial words describe the system behavior, not primary commercial topic.",
+        "text_preview": "type of the transaction. That is, \"R\" indicates a rental, \"S\" indicates a sale, \"C\" indicates a credit and \"F\" indicates a free transaction, such as for a free replacement. The \"Day O\" column indicates the number of days which this movie is rented for, which, in this example is o"
+      },
+      {
+        "review_id": "topic_error_review_0002",
+        "chunk_id": "FineWeb_000009_040",
+        "dataset": "FineWeb",
+        "error_group": "technology->commercial",
+        "gold_domain": "technology",
+        "predicted_domain": "commercial",
+        "revised_topic_domain": "technology",
+        "revised_topic_abstained": false,
+        "recommended_action": "v2_1_rule_fix",
+        "review_note": "Patent-like UI/program flow with function keys and displays; commercial terms are secondary.",
+        "text_preview": "Upon pressing the function key F10 the transaction currently displayed on the screen is aborted. In accordance with the present invention, upon pressing the \"hot keys\" on the keyboard, that is, the \"Alt\" and the left \"shift\" keys, the main menu of the teacher program is displayed"
+      }
+    ],
+    "embedding_bakeoff_later": [
+      {
+        "review_id": "topic_error_review_0005",
+        "chunk_id": "FineWeb-Edu_000000_003",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->social_sciences",
+        "gold_domain": "science",
+        "predicted_domain": "social_sciences",
+        "revised_topic_domain": "science",
+        "revised_topic_abstained": false,
+        "recommended_action": "embedding_bakeoff_later",
+        "review_note": "Climate adaptation plus tribal workforce/public-agency policy; science/social boundary is genuinely mixed.",
+        "text_preview": "tribe is now working closely with researchers from universities such as University of California, Berkeley and the University of California, Davis as well as public agencies so that this traditional knowledge can one day be accepted by mainstream and academic circles dealing with"
+      },
+      {
+        "review_id": "topic_error_review_0012",
+        "chunk_id": "FineWeb-Edu_000024_000",
+        "dataset": "FineWeb-Edu",
+        "error_group": "reference->not_reference_or_abstain",
+        "gold_domain": "reference",
+        "predicted_domain": "unknown",
+        "revised_topic_domain": "reference",
+        "revised_topic_abstained": false,
+        "recommended_action": "embedding_bakeoff_later",
+        "review_note": "Numbered Sutta catalogue/encyclopedic entry is a true reference-style semantic grouping.",
+        "text_preview": "1. Yodhājīva Sutta. On five kinds of warriors: those who are frightened by a cloud of dust, by the sight of a flag, by tumult, by conflict, and those who fight victoriously; and on five similar kinds of monks. A.iii.87f. 2. Yodhājīva Sutta. On five kinds of warriors: those who go"
+      },
+      {
+        "review_id": "topic_error_review_0017",
+        "chunk_id": "FineMath_000026_005",
+        "dataset": "FineMath",
+        "error_group": "high_confidence_wrong>=0.70",
+        "gold_domain": "science",
+        "predicted_domain": "education",
+        "revised_topic_domain": "science",
+        "revised_topic_abstained": false,
+        "recommended_action": "embedding_bakeoff_later",
+        "review_note": "Force lesson mixes education function and physics topic; keep science for now but review boundary later.",
+        "text_preview": "A field test teacher used a Frayer model for balanced and unbalanced forces for this lesson (refer to Lesson 1 for directions on the use of the Frayer model).  Slide 2  Student Journal Page: 6-1  5. Display Slide 2  “In this image, there are two forces at work: one that is holdin"
+      }
+    ],
+    "pseudo_gold_patch": [
+      {
+        "review_id": "topic_error_review_0006",
+        "chunk_id": "FineWeb-Edu_000003_002",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->social_sciences",
+        "gold_domain": "science",
+        "predicted_domain": "social_sciences",
+        "revised_topic_domain": "social_sciences",
+        "revised_topic_abstained": false,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Food shortages, rural economies, politics, corruption, and planning dominate more than natural science.",
+        "text_preview": "which was being assigned to imports (Bii, 2009b). “The country will continue to experience food shortages unless the Government addresses the high cost of farm inputs to motivate farmers to increase production,” said Mr. Jonathan Bii of Uasin Gish (Bartoo & Lucheli, 2009; Bii, 20"
+      },
+      {
+        "review_id": "topic_error_review_0007",
+        "chunk_id": "FineWeb-Edu_000003_003",
+        "dataset": "FineWeb-Edu",
+        "error_group": "science->social_sciences",
+        "gold_domain": "science",
+        "predicted_domain": "social_sciences",
+        "revised_topic_domain": "social_sciences",
+        "revised_topic_abstained": false,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Disaster trap/development/social aspects are the primary topic; climate is context.",
+        "text_preview": "certainly brings into focus the social aspects of disasters. The disaster trap theory, likewise, brings into focus the financial bottom line. This perspective is most often discussed in international development and disaster reduction circles. It argues that disasters destroy dev"
+      },
+      {
+        "review_id": "topic_error_review_0008",
+        "chunk_id": "FineWeb-Edu_000000_004",
+        "dataset": "FineWeb-Edu",
+        "error_group": "reference->not_reference_or_abstain",
+        "gold_domain": "reference",
+        "predicted_domain": "software",
+        "revised_topic_domain": "social_sciences",
+        "revised_topic_abstained": false,
+        "recommended_action": "pseudo_gold_patch",
+        "review_note": "Biographical/reference-looking text is semantically about sociology/regional equity/social movements.",
+        "text_preview": "Professor of Sociology and American Studies & Ethnicity at the University of Southern California where he also directs the Program for Environmental and Regional Equity and co-directs USC’s Center for the Study of Immigrant Integration. His most recent books include Just Growth: "
+      }
+    ],
+    "v2_1_abstain_policy": [
+      {
+        "review_id": "topic_error_review_0019",
+        "chunk_id": "FineWeb-Edu_000008_000",
+        "dataset": "FineWeb-Edu",
+        "error_group": "gold_abstained_classifier_answered",
+        "gold_domain": "unknown",
+        "predicted_domain": "reference",
+        "revised_topic_domain": "unknown",
+        "revised_topic_abstained": true,
+        "recommended_action": "v2_1_abstain_policy",
+        "review_note": "Mostly copied encyclopedia/footer/license residue; answering reference is understandable but should abstain for noisy chunk.",
+        "text_preview": "Science Fair Project Encyclopedia |President of the| Historically, Landes was part of Gascony. It was one of the original 83 departments created during the French Revolution on March 4, 1790. It was created from parts of the provinces of Guyenne and Gascony. - Prefecture website "
+      },
+      {
+        "review_id": "topic_error_review_0020",
+        "chunk_id": "FineMath_000012_001",
+        "dataset": "FineMath",
+        "error_group": "gold_abstained_classifier_answered",
+        "gold_domain": "unknown",
+        "predicted_domain": "software",
+        "revised_topic_domain": "unknown",
+        "revised_topic_abstained": true,
+        "recommended_action": "v2_1_abstain_policy",
+        "review_note": "Low-quality spammy geometry/URL text; topic evidence is unreliable, so abstention is preferred.",
+        "text_preview": "You may ask your self, how can we find out everything is a triangle in mathematics. In order to figure out a triangle, first we have http://en.wikipedia.com/wiki/Sigiriya to understand what it resembles. This really is a task that is harder because there are many unique shapes th"
+      }
+    ]
+  }
+}
