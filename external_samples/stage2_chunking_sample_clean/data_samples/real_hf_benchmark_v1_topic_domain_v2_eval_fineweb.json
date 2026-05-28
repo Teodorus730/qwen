@@ -1,0 +1,678 @@
+{
+  "overall": {
+    "records_total": 40,
+    "answered_count": 34,
+    "abstained_count": 6,
+    "correct_answered": 24,
+    "correct_counting_abstain_wrong": 24,
+    "gold_abstained_count": 0,
+    "coverage_rate": 0.85,
+    "accuracy_on_answered": 0.705882,
+    "accuracy_counting_abstain_wrong": 0.6
+  },
+  "by_dataset": {
+    "FineWeb": {
+      "records_total": 40,
+      "answered_count": 34,
+      "abstained_count": 6,
+      "correct_answered": 24,
+      "correct_counting_abstain_wrong": 24,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.85,
+      "accuracy_on_answered": 0.705882,
+      "accuracy_counting_abstain_wrong": 0.6
+    }
+  },
+  "by_gold_domain": {
+    "commercial": {
+      "records_total": 2,
+      "answered_count": 1,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.5,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "education": {
+      "records_total": 2,
+      "answered_count": 2,
+      "abstained_count": 0,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "government": {
+      "records_total": 1,
+      "answered_count": 1,
+      "abstained_count": 0,
+      "correct_answered": 1,
+      "correct_counting_abstain_wrong": 1,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 1.0
+    },
+    "media": {
+      "records_total": 6,
+      "answered_count": 4,
+      "abstained_count": 2,
+      "correct_answered": 3,
+      "correct_counting_abstain_wrong": 3,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.666667,
+      "accuracy_on_answered": 0.75,
+      "accuracy_counting_abstain_wrong": 0.5
+    },
+    "science": {
+      "records_total": 6,
+      "answered_count": 5,
+      "abstained_count": 1,
+      "correct_answered": 4,
+      "correct_counting_abstain_wrong": 4,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.833333,
+      "accuracy_on_answered": 0.8,
+      "accuracy_counting_abstain_wrong": 0.666667
+    },
+    "software": {
+      "records_total": 2,
+      "answered_count": 2,
+      "abstained_count": 0,
+      "correct_answered": 2,
+      "correct_counting_abstain_wrong": 2,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 1.0
+    },
+    "technology": {
+      "records_total": 21,
+      "answered_count": 19,
+      "abstained_count": 2,
+      "correct_answered": 14,
+      "correct_counting_abstain_wrong": 14,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.904762,
+      "accuracy_on_answered": 0.736842,
+      "accuracy_counting_abstain_wrong": 0.666667
+    }
+  },
+  "confusion_matrix": {
+    "commercial": {
+      "ABSTAIN": 1,
+      "social_sciences": 1
+    },
+    "education": {
+      "humanities": 1,
+      "commercial": 1
+    },
+    "government": {
+      "government": 1
+    },
+    "media": {
+      "ABSTAIN": 2,
+      "media": 3,
+      "science": 1
+    },
+    "science": {
+      "science": 4,
+      "humanities": 1,
+      "ABSTAIN": 1
+    },
+    "software": {
+      "software": 2
+    },
+    "technology": {
+      "technology": 14,
+      "commercial": 5,
+      "ABSTAIN": 2
+    }
+  },
+  "top_mismatch_examples": [
+    {
+      "chunk_id": "FineWeb_000009_051",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.49635,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 13.6
+        },
+        {
+          "domain": "technology",
+          "score": 11.6
+        },
+        {
+          "domain": "software",
+          "score": 2.2
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:customer x7 (+3.6)",
+          "keyword:rental x3 (+3.9)",
+          "keyword:invoice x3 (+4.5)",
+          "keyword:tax x2 (+1.6)"
+        ],
+        "technology": [
+          "keyword:pos x2 (+3.4)",
+          "keyword:transaction x3 (+4.5)",
+          "keyword:circuit x1 (+1.3)",
+          "keyword:display x5 (+2.4)"
+        ],
+        "software": [
+          "keyword:program x1 (+1)",
+          "keyword:function x1 (+1.2)"
+        ]
+      },
+      "text_preview": "the rental of the first video cassette. These steps are shown by displays 6 and 7 below. ##STR6## Next, the Total key 530 is pressed. As shown below, in Display 8, pressing this key causes the total amount, including tax, to be calculated and displayed. Furthe"
+    },
+    {
+      "chunk_id": "FineWeb_000009_028",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.602564,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 4.7
+        },
+        {
+          "domain": "technology",
+          "score": 2.1
+        },
+        {
+          "domain": "software",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:rental x7 (+3.9)",
+          "keyword:store x1 (+0.8)"
+        ],
+        "technology": [
+          "keyword:display x2 (+1.6)",
+          "keyword:output x1 (+0.5)"
+        ],
+        "software": [
+          "keyword:program x1 (+1)"
+        ]
+      },
+      "text_preview": "in which the program is operating. If, however, the landmarks have not changed, as indicated by a No at step S131, processing proceeds to step S134. At step S134, the rental information which has been trapped is saved, updated during subsequent interrupt cycle"
+    },
+    {
+      "chunk_id": "FineWeb_000022_001",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:draft x1 (+1)"
+        ]
+      },
+      "text_preview": "chills watching that again. Childress was drafted #19 overall in the 1995 Draft by Detroit but only hung around in the league long enough for a cup of coffee. A very small cup. Since leaving the NBA, he has played internationally in Turkey, Australia and Italy"
+    },
+    {
+      "chunk_id": "FineWeb_000009_003",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.505952,
+      "top_k": [
+        {
+          "domain": "technology",
+          "score": 8.5
+        },
+        {
+          "domain": "commercial",
+          "score": 8.3
+        }
+      ],
+      "evidence": {
+        "technology": [
+          "keyword:circuit x1 (+1.3)",
+          "keyword:computer x4 (+2.7)",
+          "keyword:display x9 (+2.4)",
+          "keyword:remote x1 (+0.6)",
+          "keyword:output x3 (+1.5)"
+        ],
+        "commercial": [
+          "keyword:marketing x2 (+4)",
+          "keyword:sale x4 (+3)",
+          "keyword:rental x1 (+1.3)"
+        ]
+      },
+      "text_preview": "a plurality of remote video record marketing locations and for transmitting selected portions of said data to a revenue-sharing computer at a computing location, said system comprising, in combination, a point of sale system at each of a plurality of marketing"
+    },
+    {
+      "chunk_id": "FineWeb_000009_040",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.397436,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 9.3
+        },
+        {
+          "domain": "technology",
+          "score": 6.1
+        },
+        {
+          "domain": "software",
+          "score": 3.2
+        },
+        {
+          "domain": "education",
+          "score": 2.8
+        },
+        {
+          "domain": "science",
+          "score": 2.0
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:customer x1 (+1.2)",
+          "keyword:sale x1 (+1)",
+          "keyword:rental x2 (+2.6)",
+          "keyword:invoice x1 (+1.5)",
+          "keyword:price x3 (+3)"
+        ],
+        "technology": [
+          "keyword:transaction x3 (+4.5)",
+          "keyword:display x2 (+1.6)"
+        ],
+        "software": [
+          "keyword:program x2 (+2)",
+          "keyword:function x1 (+1.2)"
+        ],
+        "education": [
+          "keyword:teacher x2 (+2.8)"
+        ],
+        "science": [
+          "keyword:volume x2 (+2)"
+        ]
+      },
+      "text_preview": "Upon pressing the function key F10 the transaction currently displayed on the screen is aborted. In accordance with the present invention, upon pressing the \"hot keys\" on the keyboard, that is, the \"Alt\" and the left \"shift\" keys, the main menu of the teacher "
+    },
+    {
+      "chunk_id": "FineWeb_000009_052",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.579151,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 15.0
+        },
+        {
+          "domain": "technology",
+          "score": 8.7
+        },
+        {
+          "domain": "software",
+          "score": 2.2
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:product x4 (+3)",
+          "keyword:sale x3 (+3)",
+          "keyword:rental x4 (+3.9)",
+          "keyword:invoice x1 (+1.5)",
+          "keyword:price x2 (+2)",
+          "keyword:tax x1 (+0.8)"
+        ],
+        "technology": [
+          "keyword:transaction x6 (+4.5)",
+          "keyword:computer x2 (+1.8)",
+          "keyword:display x3 (+2.4)"
+        ],
+        "software": [
+          "keyword:program x1 (+1)",
+          "keyword:function x1 (+1.2)"
+        ]
+      },
+      "text_preview": "for late return of the rental cassette. The Total key 530 and the Amount Tendered key 532 can be used in the manner described above to complete the transaction, and the Print button can be used to print an invoice for the further fees. If a video record is bei"
+    },
+    {
+      "chunk_id": "FineWeb_000008_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "no_domain_evidence",
+      "confidence": 0.2,
+      "top_k": [],
+      "evidence": {},
+      "text_preview": "view full screen Bi-Stretch Bootcut Pant Out of Stock Clean-tailored pants made with an ultra-comfortable bi-stretch cotton twill that retains its shape wear after wear. 94% Cotton, 6% Spandex. Machine wash, cold; tumble dry low. Imported. - Our universal fit."
+    },
+    {
+      "chunk_id": "FineWeb_000023_000",
+      "dataset": "FineWeb",
+      "gold_domain": "education",
+      "gold_abstained": false,
+      "predicted_domain": "humanities",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 7.2
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:history x1 (+1.2)",
+          "keyword:art x2 (+3.2)",
+          "keyword:artist x2 (+2.8)"
+        ]
+      },
+      "text_preview": "That day was a watershed in my transition from a talented amateur to a serious artist. I had always subscribed to the mantra \"good enough is not good enough\" in my profession, but until that day I had not done so as an artist. From then on I resolved that I wo"
+    },
+    {
+      "chunk_id": "FineWeb_000025_001",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:store x1 (+0.8)"
+        ]
+      },
+      "text_preview": "mad scientist, pushing the boundaries of what's possible and what's sane in a world of food too often mired in tradition and copy-cat-ism. If I might paraphrase Roald Dahl and Gene Wilder just a bit: \"Meine Damen und Herren, der Inventing Room,\" said Wonka wit"
+    },
+    {
+      "chunk_id": "FineWeb_000007_000",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 2.4
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:medical x2 (+2.4)"
+        ]
+      },
+      "text_preview": "COLUMBUS GROVE, Ohio - A 14-year-old girl was killed and 11 other people were injured when a car struck a church van filled with youngsters in southern Putnam County yesterday, authorities said. Jasmin Wickard of Leipsic, who was riding in a van belonging to t"
+    },
+    {
+      "chunk_id": "FineWeb_000009_038",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.708791,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 12.9
+        },
+        {
+          "domain": "technology",
+          "score": 4.5
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:customer x4 (+3.6)",
+          "keyword:sale x3 (+3)",
+          "keyword:rental x3 (+3.9)",
+          "keyword:tax x3 (+2.4)"
+        ],
+        "technology": [
+          "keyword:transaction x3 (+4.5)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "type of the transaction. That is, \"R\" indicates a rental, \"S\" indicates a sale, \"C\" indicates a credit and \"F\" indicates a free transaction, such as for a free replacement. The \"Day O\" column indicates the number of days which this movie is rented for, which, "
+    },
+    {
+      "chunk_id": "FineWeb_000014_000",
+      "dataset": "FineWeb",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "humanities",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.484848,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 1.6
+        },
+        {
+          "domain": "education",
+          "score": 0.9
+        },
+        {
+          "domain": "social_sciences",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:art x1 (+1.6)"
+        ],
+        "education": [
+          "keyword:training x1 (+0.9)"
+        ],
+        "social_sciences": [
+          "keyword:community x1 (+0.8)"
+        ]
+      },
+      "text_preview": "Rehabilitation Engineering Research Center for Technologies for Successful Aging with Disability The overarching objective of this RERC is to optimize participation through technology (OPTT). OPTT-RERC will enhance the lives of individuals aging with and into "
+    },
+    {
+      "chunk_id": "FineWeb_000004_004",
+      "dataset": "FineWeb",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.329114,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 2.6
+        },
+        {
+          "domain": "media",
+          "score": 2.4
+        },
+        {
+          "domain": "science",
+          "score": 1.2
+        },
+        {
+          "domain": "technology",
+          "score": 0.9
+        },
+        {
+          "domain": "social_sciences",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:function x1 (+1.2)",
+          "surface.has_code (+1.4)"
+        ],
+        "media": [
+          "keyword:television x2 (+2.4)"
+        ],
+        "science": [
+          "keyword:health x1 (+1.2)"
+        ],
+        "technology": [
+          "keyword:computer x1 (+0.9)"
+        ],
+        "social_sciences": [
+          "keyword:community x1 (+0.8)"
+        ]
+      },
+      "text_preview": "new construction projects, communicate with your architect and/or contractor about noise reduction options. Some building materials and methods offer greater sound absorption or masking than others. - When you are engaged in construction projects, or if you wo"
+    },
+    {
+      "chunk_id": "FineWeb_000005_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.68,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "commercial": [
+          "keyword:service x1 (+0.8)"
+        ]
+      },
+      "text_preview": "Black Sheepskin Boots and snow boots for women and men The Black Beauty! Everyone loves the colour Black, why because it is so versatile and can be matched with just about anything in your wardrobe. Black oozes that element of class as this coloured sheepskin "
+    },
+    {
+      "chunk_id": "FineWeb_000009_031",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.456522,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 4.2
+        },
+        {
+          "domain": "education",
+          "score": 4.2
+        },
+        {
+          "domain": "technology",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:program x3 (+3)",
+          "keyword:function x1 (+1.2)"
+        ],
+        "education": [
+          "keyword:teacher x6 (+4.2)"
+        ],
+        "technology": [
+          "keyword:display x1 (+0.8)"
+        ]
+      },
+      "text_preview": "a \"new keyboard\" routine. Subsequently, in step S260 a template file is loaded from disc into memory. This template file may be a default file as, for example, represented by the windows located on the right side of screen No. 4. Alternatively, the template fi"
+    },
+    {
+      "chunk_id": "FineWeb_000000_001",
+      "dataset": "FineWeb",
+      "gold_domain": "education",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 6.2
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:service x9 (+2.4)",
+          "keyword:product x3 (+3)",
+          "keyword:store x1 (+0.8)"
+        ]
+      },
+      "text_preview": "insurance may have a certificate, but the financial service itself cannot be touched i.e. it is intangible. This makes it tricky to evaluate the quality of service prior to consuming it since there are fewer attributes of quality in comparison to a product. On"
+    }
+  ],
+  "missing_predictions": [],
+  "missing_predictions_count": 0,
+  "gold_records_total": 120,
+  "matched_gold_records": 40,
+  "prediction_records_total": 113
+}
