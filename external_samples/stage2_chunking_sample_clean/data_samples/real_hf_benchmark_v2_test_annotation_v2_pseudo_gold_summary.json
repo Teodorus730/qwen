@@ -1,0 +1,152 @@
+{
+  "input": "data_samples\\real_hf_benchmark_v2_test_annotation_v2_pseudo_gold.jsonl",
+  "records_count": 90,
+  "integrity": {
+    "errors_count": 0,
+    "errors_sample": []
+  },
+  "by_dataset": {
+    "FineWeb": 30,
+    "FineWeb-Edu": 30,
+    "FineMath": 30
+  },
+  "review_topic_domain_distribution": {
+    "humanities": 17,
+    "technology": 3,
+    "media": 3,
+    "commercial": 12,
+    "government": 3,
+    "education": 2,
+    "science": 18,
+    "unknown": 6,
+    "social_sciences": 1,
+    "software": 3,
+    "stem": 22
+  },
+  "review_topic_abstained": {
+    "count": 6,
+    "share": 0.066667
+  },
+  "surface": {
+    "review_has_math_notation": {
+      "count": 25,
+      "share": 0.277778
+    },
+    "review_has_code": {
+      "count": 2,
+      "share": 0.022222
+    },
+    "review_is_symbol_heavy": {
+      "count": 11,
+      "share": 0.122222
+    },
+    "review_has_scientific_formula": {
+      "count": 5,
+      "share": 0.055556
+    },
+    "review_has_api_or_command_syntax": {
+      "count": 2,
+      "share": 0.022222
+    }
+  },
+  "quality": {
+    "review_noise_level_distribution": {
+      "clean": 73,
+      "partial_noise": 11,
+      "mostly_noise": 6
+    },
+    "review_has_ui_residue": {
+      "count": 11,
+      "share": 0.122222
+    },
+    "review_has_forum_residue": {
+      "count": 2,
+      "share": 0.022222
+    }
+  },
+  "confidence_distribution": {
+    "0.9": 38,
+    "0.8": 28,
+    "0.7": 4,
+    "0.6": 3,
+    "0.3": 6,
+    "1.0": 11
+  },
+  "topic_confidence_distribution": {
+    "0.9": 38,
+    "0.8": 28,
+    "0.7": 4,
+    "0.6": 3,
+    "0.2": 6,
+    "1.0": 11
+  },
+  "examples": {
+    "abstained_or_unknown_topic": [
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_fineweb_000019_000",
+        "dataset": "FineWeb",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "held_out_v2_test_pseudo_gold: adult spam/SEO noise, not reliable topic",
+        "text_preview": "Hot Mom & Sex Real 100% - Porn.com. A site that provides only perfect body Milfs hot sex women, hlt ladies which are in love with cocks!. Enjoy some hot mature milfs on our FREE HD milf tube page. Hosrny MILF Kayla Syns hot threesome clip. "
+      },
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_fineweb_000019_001",
+        "dataset": "FineWeb",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "held_out_v2_test_pseudo_gold: adult spam/SEO noise, not reliable topic",
+        "text_preview": "Mom Sex · Milf Sexy Videos · Real Milfs hot sex Sex milfs hot sex XXX Porn Milf · Mature Tube. How do you keep everyone personally healthy and strategically aligned? Charming moms have just one thing on their dirty mind: steamy mom sex. Ton"
+      },
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_fineweb_000019_002",
+        "dataset": "FineWeb",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "held_out_v2_test_pseudo_gold: adult spam/SEO noise, not reliable topic",
+        "text_preview": "videos..… A fascinating collection of really hot mature clips, all stashed together in a huge list. If youre looking to meet hot UK MILFS (Mums Id Like to Fuck) for sex in your local area the look no further - Welcome to the largest databas"
+      },
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_fineweb_000022_000",
+        "dataset": "FineWeb",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "held_out_v2_test_pseudo_gold: escort/adult spam, unreliable topic",
+        "text_preview": "Women who can be bought in this office are truly more youthful and great. These escort locales would not ever at any point be hesitant to cooperate with purchasers thus they arranged go out with them way too which turns out to be unquestion"
+      },
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_fineweb_000022_001",
+        "dataset": "FineWeb",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "held_out_v2_test_pseudo_gold: escort/adult spam, unreliable topic",
+        "text_preview": "cool season the sexual movement is critical for a few people, they could not keep the cool climate conditions and they likewise will require any young woman to fuck, a long time before they go screw they appreciate undeniably more sex engag"
+      },
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_finemath_000029_004",
+        "dataset": "FineMath",
+        "review_topic_domain": "unknown",
+        "review_topic_confidence": 0.2,
+        "review_noise_level": "mostly_noise",
+        "review_note": "held_out_v2_test_pseudo_gold: browser/UI submission residue, no reliable topic",
+        "text_preview": "Kevin. Your message has been successfully submitted and would be delivered to recipients shortly. • Changes have not been saved Press OK to abandon changes or Cancel to continue editing • Your browser is not supported Kindly note that Group"
+      }
+    ],
+    "mixed_or_ambiguous_notes": [
+      {
+        "chunk_id": "real_hf_benchmark_v2_test_finemath_000019_005",
+        "dataset": "FineMath",
+        "review_topic_domain": "stem",
+        "review_topic_confidence": 0.9,
+        "review_noise_level": "clean",
+        "review_note": "held_out_v2_test_pseudo_gold: mixed arithmetic/geometry/average problems",
+        "text_preview": "Find out the value of [(2.093+0.089)2 - (2.093-0.089)2] / [(2.093)(0.089)]  Solution:  Let x = 2.093 and y = 0.089. So we have  QUESTION: 8  In a triangle ABC the measure of angle A is 50° and the external bisectors of angle B and angle C m"
+      }
+    ]
+  }
+}
