@@ -1,0 +1,650 @@
+{
+  "overall": {
+    "records_total": 40,
+    "answered_count": 36,
+    "abstained_count": 4,
+    "correct_answered": 27,
+    "correct_counting_abstain_wrong": 27,
+    "gold_abstained_count": 3,
+    "coverage_rate": 0.9,
+    "accuracy_on_answered": 0.75,
+    "accuracy_counting_abstain_wrong": 0.675
+  },
+  "by_dataset": {
+    "FineWeb-Edu": {
+      "records_total": 40,
+      "answered_count": 36,
+      "abstained_count": 4,
+      "correct_answered": 27,
+      "correct_counting_abstain_wrong": 27,
+      "gold_abstained_count": 3,
+      "coverage_rate": 0.9,
+      "accuracy_on_answered": 0.75,
+      "accuracy_counting_abstain_wrong": 0.675
+    }
+  },
+  "by_gold_domain": {
+    "education": {
+      "records_total": 7,
+      "answered_count": 7,
+      "abstained_count": 0,
+      "correct_answered": 5,
+      "correct_counting_abstain_wrong": 5,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.714286,
+      "accuracy_counting_abstain_wrong": 0.714286
+    },
+    "humanities": {
+      "records_total": 9,
+      "answered_count": 8,
+      "abstained_count": 1,
+      "correct_answered": 5,
+      "correct_counting_abstain_wrong": 5,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.888889,
+      "accuracy_on_answered": 0.625,
+      "accuracy_counting_abstain_wrong": 0.555556
+    },
+    "media": {
+      "records_total": 1,
+      "answered_count": 1,
+      "abstained_count": 0,
+      "correct_answered": 1,
+      "correct_counting_abstain_wrong": 1,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 1.0
+    },
+    "reference": {
+      "records_total": 2,
+      "answered_count": 1,
+      "abstained_count": 1,
+      "correct_answered": 1,
+      "correct_counting_abstain_wrong": 1,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.5,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 0.5
+    },
+    "science": {
+      "records_total": 10,
+      "answered_count": 10,
+      "abstained_count": 0,
+      "correct_answered": 8,
+      "correct_counting_abstain_wrong": 8,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.8,
+      "accuracy_counting_abstain_wrong": 0.8
+    },
+    "social_sciences": {
+      "records_total": 5,
+      "answered_count": 5,
+      "abstained_count": 0,
+      "correct_answered": 4,
+      "correct_counting_abstain_wrong": 4,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.8,
+      "accuracy_counting_abstain_wrong": 0.8
+    },
+    "technology": {
+      "records_total": 3,
+      "answered_count": 3,
+      "abstained_count": 0,
+      "correct_answered": 3,
+      "correct_counting_abstain_wrong": 3,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 1.0
+    },
+    "unknown": {
+      "records_total": 3,
+      "answered_count": 1,
+      "abstained_count": 2,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 3,
+      "coverage_rate": 0.333333,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    }
+  },
+  "confusion_matrix": {
+    "education": {
+      "education": 5,
+      "media": 2
+    },
+    "humanities": {
+      "media": 1,
+      "social_sciences": 1,
+      "humanities": 5,
+      "science": 1,
+      "ABSTAIN": 1
+    },
+    "media": {
+      "media": 1
+    },
+    "reference": {
+      "reference": 1,
+      "ABSTAIN": 1
+    },
+    "science": {
+      "science": 8,
+      "government": 1,
+      "stem": 1
+    },
+    "social_sciences": {
+      "social_sciences": 4,
+      "software": 1
+    },
+    "technology": {
+      "technology": 3
+    },
+    "unknown": {
+      "ABSTAIN": 2,
+      "science": 1
+    }
+  },
+  "top_mismatch_examples": [
+    {
+      "chunk_id": "FineWeb-Edu_000014_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "media",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.755245,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 5.4
+        },
+        {
+          "domain": "science",
+          "score": 1.5
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:journalist x1 (+1.4)",
+          "keyword:television x2 (+2.4)",
+          "keyword:published x2 (+1.6)"
+        ],
+        "science": [
+          "keyword:chemical x1 (+1.5)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Human nature and the nature of war Twenty years ago, Canadian military historian and journalist Gwynne Dyer fascinated the public in 45 countries with his award-winning television series on the nature of war. He followed up that success with an equally remarka"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_010",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "education",
+      "gold_abstained": false,
+      "predicted_domain": "media",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.528302,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 1.4
+        },
+        {
+          "domain": "software",
+          "score": 1.0
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:killed x1 (+1.4)"
+        ],
+        "software": [
+          "keyword:program x1 (+1)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "in the USAF Manned Spaceflight Engineer Program. He was killed in the attacks of September 11, 2001 aboard American Airlines Flight 11, the first plane to hit the first World Trade Center building at 8:46am. All of the great values we read and write about seem"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000022_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.432432,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 2.4
+        },
+        {
+          "domain": "government",
+          "score": 1.7
+        },
+        {
+          "domain": "humanities",
+          "score": 1.2
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:social x2 (+2.4)"
+        ],
+        "government": [
+          "keyword:government x1 (+1.7)"
+        ],
+        "humanities": [
+          "keyword:spain x1 (+1.2)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Picasso, Joan Miró, and Salvador Dalí talked on the radio in his place to publicize the show. Picasso's friend, the surrealist poet Paul Éluard, traveled down to Barcelona from Paris for the exhibit and delivered a lecture at the opening. Éluard, standing in f"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000024_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "reference",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.761905,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "1. Yodhājīva Sutta. On five kinds of warriors: those who are frightened by a cloud of dust, by the sight of a flag, by tumult, by conflict, and those who fight victoriously; and on five similar kinds of monks. A.iii.87f. 2. Yodhājīva Sutta. On five kinds of wa"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000014_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.8,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 1.0
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:problem x1 (+1)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "like the UN and the International Court at the expense of national sovereignty. The problem is to convince the peoples of the world and the politicians in charge that this is what we must learn to do. The end of the Cold War has given us a temporary reprieve. "
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_016",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "government",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.419753,
+      "top_k": [
+        {
+          "domain": "government",
+          "score": 1.7
+        },
+        {
+          "domain": "stem",
+          "score": 1.1
+        },
+        {
+          "domain": "media",
+          "score": 1.0
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "government": [
+          "keyword:government x1 (+1.7)"
+        ],
+        "stem": [
+          "keyword:mean x1 (+1.1)"
+        ],
+        "media": [
+          "keyword:officials x1 (+1)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "fashioned sayings? Here in New York last week the mayor and the meteorologists got it wrong – but not by much. The winds blew and the rains fell and, though there was less flooding and damage than predicted here, they made damn sure we were prepared by scaring"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_002",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.90566,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 2.4
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:energy x1 (+1.2)",
+          "keyword:leaves x1 (+1.2)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "to look across the lake at the beauty that is unfolding. The scene is constant; the colors let me know that time is marching on. On the one hand I could worry that the seasons of my life are marching on, or, on the other, I could be challenged by the things I’"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000000_004",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "social_sciences",
+      "gold_abstained": false,
+      "predicted_domain": "software",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.553846,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 1.8
+        },
+        {
+          "domain": "social_sciences",
+          "score": 1.2
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:program x1 (+1)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "social_sciences": [
+          "keyword:social x1 (+1.2)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Professor of Sociology and American Studies & Ethnicity at the University of Southern California where he also directs the Program for Environmental and Regional Equity and co-directs USC’s Center for the Study of Immigrant Integration. His most recent books i"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000008_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "v2_1_noisy_single_keyword_evidence",
+      "confidence": 0.547945,
+      "top_k": [
+        {
+          "domain": "reference",
+          "score": 2.0
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "media",
+          "score": 0.6
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "reference": [
+          "keyword:encyclopedia x1 (+2)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "media": [
+          "keyword:article x1 (+0.6)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "Science Fair Project Encyclopedia |President of the| Historically, Landes was part of Gascony. It was one of the original 83 departments created during the French Revolution on March 4, 1790. It was created from parts of the provinces of Guyenne and Gascony. -"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000003_006",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.544601,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.8
+        },
+        {
+          "domain": "science",
+          "score": 3.6
+        },
+        {
+          "domain": "reference",
+          "score": 1.0
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:probability x2 (+2.8)",
+          "keyword:problem x3 (+3)"
+        ],
+        "science": [
+          "keyword:flood x7 (+3.6)"
+        ],
+        "reference": [
+          "keyword:resource x1 (+1)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "up. They often believe a flood of that size will happen only once in 500 years. On a probabilistic level, this is inaccurate. A 500 year flood simply has a .2% probability of happening each year. A more useful analogy might be to tell people they are rolling a"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_017",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "humanities",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 0.827586,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 1.2
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:plant x1 (+1.2)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "text_preview": "soul.” -Mark Twain Mark Twain achieved great success as a writer and public speaker. His wit and satire earned praise from critics and peers, and he was a friend to presidents, artists, industrialists, and European royalty. Loyalty can be both good and bad. Pe"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000020_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "education",
+      "gold_abstained": false,
+      "predicted_domain": "media",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.589595,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 5.1
+        },
+        {
+          "domain": "education",
+          "score": 2.75
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:news x5 (+5.1)"
+        ],
+        "education": [
+          "keyword:classroom x1 (+1.5)",
+          "keyword:school x1 (+1)",
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "Given that this is the first U.S. presidential election since apps have made their way onto most electronic devices, you might think there would be dozens of worthwhile products available on the topic designed for students. Think again. Sure, there are plenty "
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000003_007",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.33218,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 4.8
+        },
+        {
+          "domain": "government",
+          "score": 3.4
+        },
+        {
+          "domain": "stem",
+          "score": 2.4
+        },
+        {
+          "domain": "software",
+          "score": 2.0
+        },
+        {
+          "domain": "social_sciences",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:flood x5 (+3.6)",
+          "keyword:plants x1 (+1.2)"
+        ],
+        "government": [
+          "keyword:government x2 (+3.4)"
+        ],
+        "stem": [
+          "keyword:probability x1 (+1.4)",
+          "keyword:problem x1 (+1)"
+        ],
+        "software": [
+          "keyword:program x2 (+2)"
+        ],
+        "social_sciences": [
+          "keyword:community x1 (+0.8)"
+        ]
+      },
+      "text_preview": "logging practices, but the fact that it was an unprecedented, out of the blue, 500 year storm that caused it. While it is doubtful the slides would have occurred uncut land, that isn’t the only fallacy. When the slide did occur, the costs of repairing roads, t"
+    }
+  ],
+  "missing_predictions": [],
+  "missing_predictions_count": 0,
+  "gold_records_total": 120,
+  "matched_gold_records": 40,
+  "prediction_records_total": 88
+}

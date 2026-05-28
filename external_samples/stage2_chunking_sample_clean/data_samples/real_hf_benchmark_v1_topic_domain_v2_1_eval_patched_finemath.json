@@ -1,0 +1,498 @@
+{
+  "overall": {
+    "records_total": 40,
+    "answered_count": 37,
+    "abstained_count": 3,
+    "correct_answered": 29,
+    "correct_counting_abstain_wrong": 29,
+    "gold_abstained_count": 2,
+    "coverage_rate": 0.925,
+    "accuracy_on_answered": 0.783784,
+    "accuracy_counting_abstain_wrong": 0.725
+  },
+  "by_dataset": {
+    "FineMath": {
+      "records_total": 40,
+      "answered_count": 37,
+      "abstained_count": 3,
+      "correct_answered": 29,
+      "correct_counting_abstain_wrong": 29,
+      "gold_abstained_count": 2,
+      "coverage_rate": 0.925,
+      "accuracy_on_answered": 0.783784,
+      "accuracy_counting_abstain_wrong": 0.725
+    }
+  },
+  "by_gold_domain": {
+    "science": {
+      "records_total": 12,
+      "answered_count": 12,
+      "abstained_count": 0,
+      "correct_answered": 8,
+      "correct_counting_abstain_wrong": 8,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.666667,
+      "accuracy_counting_abstain_wrong": 0.666667
+    },
+    "software": {
+      "records_total": 3,
+      "answered_count": 3,
+      "abstained_count": 0,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    },
+    "stem": {
+      "records_total": 23,
+      "answered_count": 21,
+      "abstained_count": 2,
+      "correct_answered": 21,
+      "correct_counting_abstain_wrong": 21,
+      "gold_abstained_count": 0,
+      "coverage_rate": 0.913043,
+      "accuracy_on_answered": 1.0,
+      "accuracy_counting_abstain_wrong": 0.913043
+    },
+    "unknown": {
+      "records_total": 2,
+      "answered_count": 1,
+      "abstained_count": 1,
+      "correct_answered": 0,
+      "correct_counting_abstain_wrong": 0,
+      "gold_abstained_count": 2,
+      "coverage_rate": 0.5,
+      "accuracy_on_answered": 0.0,
+      "accuracy_counting_abstain_wrong": 0.0
+    }
+  },
+  "confusion_matrix": {
+    "science": {
+      "science": 8,
+      "stem": 2,
+      "education": 2
+    },
+    "software": {
+      "science": 1,
+      "stem": 2
+    },
+    "stem": {
+      "stem": 21,
+      "ABSTAIN": 2
+    },
+    "unknown": {
+      "ABSTAIN": 1,
+      "software": 1
+    }
+  },
+  "top_mismatch_examples": [
+    {
+      "chunk_id": "FineMath_000022_008",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.511628,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 2.2
+        },
+        {
+          "domain": "stem",
+          "score": 2.1
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:mass x1 (+1.2)",
+          "keyword:weight x1 (+1)"
+        ],
+        "stem": [
+          "keyword:formula x1 (+1.2)",
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "Inches in 5 3 can also be used as a part of various formulas. For instance, the BMI (Body Mass Index) formula uses height expressed in inches to calculate a person’s body weight. Additionally, many growth charts use inches to track the growth of babies and chi"
+    },
+    {
+      "chunk_id": "FineMath_000012_002",
+      "dataset": "FineMath",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_score_below_threshold",
+      "confidence": 1.0,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "It is simple because the centre is too wide since the triangle, to assume a shape. That would be considered a triangle. sameday essay You can figure out the the negative lengths are corresponding to the span of this rectangle when you think of a triangle the s"
+    },
+    {
+      "chunk_id": "FineMath_000005_005",
+      "dataset": "FineMath",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.596774,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 3.7
+        },
+        {
+          "domain": "science",
+          "score": 1.7
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:formula x1 (+1.2)",
+          "surface.has_math_notation (+1.2)",
+          "surface.has_scientific_formula (+0.4)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "science": [
+          "keyword:mirror x1 (+1)",
+          "surface.has_scientific_formula (+0.7)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "m = – di / do = -(-14.3)/50 = 14.3/50 = 0.3 The image is 0.3 smaller than the object. The image height (hi) : m = hi / ho hi = ho m = (10 cm)(0.3) = 3 cm [irp] 3. On object is 20 cm in front of convex mirror. If the image height is 1/5 times the object height,"
+    },
+    {
+      "chunk_id": "FineMath_000020_001",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.532258,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 3.3
+        },
+        {
+          "domain": "stem",
+          "score": 2.1
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:tree x3 (+3.3)"
+        ],
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "text_preview": "Then, we must go through all the levels of the structure, and they're $log_m N$ of them, $m$ being the order of B-tree and $N$ the number of all elements in the tree. So here, we have $O(log N)$ complexity in the worst case. Putting these information together,"
+    },
+    {
+      "chunk_id": "FineMath_000014_001",
+      "dataset": "FineMath",
+      "gold_domain": "stem",
+      "gold_abstained": false,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "abstain_reason": "top_two_domains_too_close",
+      "confidence": 0.462963,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 2.5
+        },
+        {
+          "domain": "commercial",
+          "score": 2.2
+        },
+        {
+          "domain": "science",
+          "score": 0.7
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "surface.has_scientific_formula (+0.4)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "commercial": [
+          "keyword:customer x1 (+1.2)",
+          "keyword:sale x1 (+1)"
+        ],
+        "science": [
+          "surface.has_scientific_formula (+0.7)"
+        ]
+      },
+      "text_preview": "If I need to reupholster a couch that is 6 feet long and 54 inches tall and the fabric is 4.99 a yard how much fabric would I need? 4. ### math A roll of fabric was 132 inches long. A customer bought 3 feet of the fabric. How many feet of fabric were remaining"
+    },
+    {
+      "chunk_id": "FineMath_000026_005",
+      "dataset": "FineMath",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "education",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.763889,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 5.5
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        },
+        {
+          "domain": "technology",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:lesson x2 (+2.8)",
+          "keyword:teacher x1 (+1.4)",
+          "keyword:student x1 (+1.3)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "technology": [
+          "keyword:display x1 (+0.8)"
+        ]
+      },
+      "text_preview": "A field test teacher used a Frayer model for balanced and unbalanced forces for this lesson (refer to Lesson 1 for directions on the use of the Frayer model). Slide 2 Student Journal Page: 6-1 5. Display Slide 2 “In this image, there are two forces at work: on"
+    },
+    {
+      "chunk_id": "FineMath_000009_002",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.666667,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.8
+        },
+        {
+          "domain": "software",
+          "score": 2.2
+        },
+        {
+          "domain": "science",
+          "score": 0.7
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:matrix x1 (+2)",
+          "surface.has_math_notation (+1.2)",
+          "surface.is_symbol_heavy (+0.8)",
+          "surface.has_scientific_formula (+0.4)",
+          "high token_per_byte (+0.5)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "surface.has_code (+1.4)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "science": [
+          "surface.has_scientific_formula (+0.7)"
+        ]
+      },
+      "text_preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vector}\\left(\\left[1,2,3\\right]\\right)$ ${b"
+    },
+    {
+      "chunk_id": "FineMath_000009_000",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.561151,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 7.8
+        },
+        {
+          "domain": "software",
+          "score": 6.1
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:solve x1 (+1.2)",
+          "keyword:matrix x2 (+4)",
+          "keyword:sequence x1 (+1.2)",
+          "keyword:integer x1 (+1.4)"
+        ],
+        "software": [
+          "keyword:programming x1 (+2)",
+          "keyword:maple x1 (+1.2)",
+          "surface.has_code (+1.4)",
+          "surface.has_api_or_command_syntax (+0.8)",
+          "FineMath prior overridden by tool/docs text (+0.7)"
+        ]
+      },
+      "text_preview": "Linsolve - Maple Programming Help Home : Support : Online Help : Mathematics : Inert Functions : Linsolve Linsolve inert matrix solve Calling Sequence Linsolve(A, b) mod n Linsolve(A, b, 'r', 't') mod n Parameters A - rectangular Matrix b - Vector 'r' - (optio"
+    },
+    {
+      "chunk_id": "FineMath_000026_014",
+      "dataset": "FineMath",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "education",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.365079,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 2.3
+        },
+        {
+          "domain": "science",
+          "score": 1.6
+        },
+        {
+          "domain": "reference",
+          "score": 1.5
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:student x1 (+1.3)",
+          "keyword:activity x1 (+1)"
+        ],
+        "science": [
+          "keyword:adhesion x1 (+1.6)"
+        ],
+        "reference": [
+          "keyword:definition x1 (+1.5)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "13. Hold a discussion about how to vary the “amount of dirt.” For starters, students could test fresh (never before used) tape. Then, rather than adding dirt to the tape, students could make a finger print on the tape and test its adhesion. Other ideas: drop c"
+    },
+    {
+      "chunk_id": "FineMath_000026_022",
+      "dataset": "FineMath",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.516129,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 4.8
+        },
+        {
+          "domain": "science",
+          "score": 3.1
+        },
+        {
+          "domain": "software",
+          "score": 1.4
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:average x1 (+1)",
+          "surface.has_math_notation (+1.2)",
+          "surface.is_symbol_heavy (+0.8)",
+          "surface.has_scientific_formula (+0.4)",
+          "high token_per_byte (+0.5)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "science": [
+          "keyword:force x2 (+2.4)",
+          "surface.has_scientific_formula (+0.7)"
+        ],
+        "software": [
+          "surface.has_code (+1.4)"
+        ]
+      },
+      "text_preview": "43.4N\\begin{align*}43.4 \\;\\mathrm{N}\\end{align*} average sustained clinging force of gecko with 227.1mm2\\begin{align*}227.1 \\;\\mathrm{mm}^2\\end{align*} pad area 5\\begin{align*}^5\\end{align*} Autumn, K., Liang, Y. A., Hsieh, S. T., Zesch, W., Chan, W. P., Kenny"
+    },
+    {
+      "chunk_id": "FineMath_000012_001",
+      "dataset": "FineMath",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "software",
+      "predicted_abstained": false,
+      "abstain_reason": null,
+      "confidence": 0.608696,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 1.4
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:http x1 (+1.4)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "text_preview": "You may ask your self, how can we find out everything is a triangle in mathematics. In order to figure out a triangle, first we have http://en.wikipedia.com/wiki/Sigiriya to understand what it resembles. This really is a task that is harder because there are m"
+    }
+  ],
+  "missing_predictions": [],
+  "missing_predictions_count": 0,
+  "gold_records_total": 120,
+  "matched_gold_records": 40,
+  "prediction_records_total": 195
+}
