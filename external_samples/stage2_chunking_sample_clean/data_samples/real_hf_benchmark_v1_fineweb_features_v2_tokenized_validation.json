@@ -1,0 +1,33 @@
+{
+  "input": "data_samples\\real_samples\\real_hf_benchmark_v1_fineweb_features_v2_tokenized.jsonl",
+  "records_checked": 113,
+  "errors_count": 0,
+  "warnings_count": 0,
+  "counts": {
+    "schema_versions": {
+      "annotation_v2_deterministic_features_v2_tokenized_v1": 113
+    },
+    "datasets": {
+      "FineWeb": 113
+    },
+    "noise_levels": {
+      "clean": 105,
+      "partial_noise": 7,
+      "mostly_noise": 1
+    },
+    "boolean_features": {
+      "has_api_or_command_syntax": 16,
+      "has_ui_residue": 28,
+      "has_numbers": 98,
+      "has_boilerplate_markers": 6,
+      "has_code": 6,
+      "has_urls_or_links": 3,
+      "has_table_or_list": 4,
+      "has_math_notation": 6,
+      "has_scientific_formula": 6,
+      "has_forum_residue": 1
+    }
+  },
+  "errors_sample": [],
+  "warnings_sample": []
+}

@@ -1,0 +1,654 @@
+{
+  "records": 396,
+  "dataset_counts": {
+    "FineWeb": 113,
+    "FineWeb-Edu": 88,
+    "FineMath": 195
+  },
+  "overall": {
+    "token_count": {
+      "count": 396,
+      "min": 75.0,
+      "mean": 273.939394,
+      "max": 636.0
+    },
+    "token_per_byte": {
+      "count": 396,
+      "min": 0.166391,
+      "mean": 0.253628,
+      "max": 0.690745
+    },
+    "tokens_per_char": {
+      "count": 396,
+      "min": 0.166391,
+      "mean": 0.255212,
+      "max": 0.690745
+    },
+    "bytes_per_token": {
+      "count": 396,
+      "min": 1.447712,
+      "mean": 4.189678,
+      "max": 6.00995
+    },
+    "tokens_per_word_rough": {
+      "count": 396,
+      "min": 1.092308,
+      "mean": 1.451613,
+      "max": 2.902439
+    }
+  },
+  "by_dataset": {
+    "FineMath": {
+      "token_count": {
+        "count": 195,
+        "min": 75.0,
+        "mean": 177.753846,
+        "max": 636.0
+      },
+      "token_per_byte": {
+        "count": 195,
+        "min": 0.185224,
+        "mean": 0.289619,
+        "max": 0.690745
+      },
+      "tokens_per_char": {
+        "count": 195,
+        "min": 0.185998,
+        "mean": 0.291901,
+        "max": 0.690745
+      },
+      "bytes_per_token": {
+        "count": 195,
+        "min": 1.447712,
+        "mean": 3.736652,
+        "max": 5.398876
+      },
+      "tokens_per_word_rough": {
+        "count": 195,
+        "min": 1.103226,
+        "mean": 1.608802,
+        "max": 2.902439
+      }
+    },
+    "FineWeb": {
+      "token_count": {
+        "count": 113,
+        "min": 112.0,
+        "mean": 373.0,
+        "max": 553.0
+      },
+      "token_per_byte": {
+        "count": 113,
+        "min": 0.166391,
+        "mean": 0.220169,
+        "max": 0.292497
+      },
+      "tokens_per_char": {
+        "count": 113,
+        "min": 0.166391,
+        "mean": 0.220518,
+        "max": 0.292639
+      },
+      "bytes_per_token": {
+        "count": 113,
+        "min": 3.418838,
+        "mean": 4.604339,
+        "max": 6.00995
+      },
+      "tokens_per_word_rough": {
+        "count": 113,
+        "min": 1.103125,
+        "mean": 1.302462,
+        "max": 1.795918
+      }
+    },
+    "FineWeb-Edu": {
+      "token_count": {
+        "count": 88,
+        "min": 105.0,
+        "mean": 359.875,
+        "max": 544.0
+      },
+      "token_per_byte": {
+        "count": 88,
+        "min": 0.174905,
+        "mean": 0.216842,
+        "max": 0.325217
+      },
+      "tokens_per_char": {
+        "count": 88,
+        "min": 0.175796,
+        "mean": 0.218464,
+        "max": 0.330973
+      },
+      "bytes_per_token": {
+        "count": 88,
+        "min": 3.074866,
+        "mean": 4.661078,
+        "max": 5.717391
+      },
+      "tokens_per_word_rough": {
+        "count": 88,
+        "min": 1.092308,
+        "mean": 1.294819,
+        "max": 2.22619
+      }
+    }
+  },
+  "by_surface_feature": {
+    "has_code=false": {
+      "token_count": {
+        "count": 362,
+        "min": 75.0,
+        "mean": 274.638122,
+        "max": 553.0
+      },
+      "token_per_byte": {
+        "count": 362,
+        "min": 0.166391,
+        "mean": 0.246819,
+        "max": 0.690745
+      },
+      "tokens_per_char": {
+        "count": 362,
+        "min": 0.166391,
+        "mean": 0.248304,
+        "max": 0.690745
+      },
+      "bytes_per_token": {
+        "count": 362,
+        "min": 1.447712,
+        "mean": 4.266299,
+        "max": 6.00995
+      },
+      "tokens_per_word_rough": {
+        "count": 362,
+        "min": 1.092308,
+        "mean": 1.412982,
+        "max": 2.902439
+      }
+    },
+    "has_code=true": {
+      "token_count": {
+        "count": 34,
+        "min": 95.0,
+        "mean": 266.5,
+        "max": 636.0
+      },
+      "token_per_byte": {
+        "count": 34,
+        "min": 0.186471,
+        "mean": 0.326129,
+        "max": 0.542857
+      },
+      "tokens_per_char": {
+        "count": 34,
+        "min": 0.18669,
+        "mean": 0.328764,
+        "max": 0.542857
+      },
+      "bytes_per_token": {
+        "count": 34,
+        "min": 1.842105,
+        "mean": 3.373888,
+        "max": 5.362776
+      },
+      "tokens_per_word_rough": {
+        "count": 34,
+        "min": 1.165441,
+        "mean": 1.862917,
+        "max": 2.77027
+      }
+    },
+    "has_math_notation=false": {
+      "token_count": {
+        "count": 291,
+        "min": 79.0,
+        "mean": 296.762887,
+        "max": 553.0
+      },
+      "token_per_byte": {
+        "count": 291,
+        "min": 0.166391,
+        "mean": 0.224024,
+        "max": 0.495775
+      },
+      "tokens_per_char": {
+        "count": 291,
+        "min": 0.166391,
+        "mean": 0.225188,
+        "max": 0.495775
+      },
+      "bytes_per_token": {
+        "count": 291,
+        "min": 2.017045,
+        "mean": 4.544323,
+        "max": 6.00995
+      },
+      "tokens_per_word_rough": {
+        "count": 291,
+        "min": 1.092308,
+        "mean": 1.329568,
+        "max": 2.707692
+      }
+    },
+    "has_math_notation=true": {
+      "token_count": {
+        "count": 105,
+        "min": 75.0,
+        "mean": 210.685714,
+        "max": 636.0
+      },
+      "token_per_byte": {
+        "count": 105,
+        "min": 0.197957,
+        "mean": 0.335676,
+        "max": 0.690745
+      },
+      "tokens_per_char": {
+        "count": 105,
+        "min": 0.198464,
+        "mean": 0.338422,
+        "max": 0.690745
+      },
+      "bytes_per_token": {
+        "count": 105,
+        "min": 1.447712,
+        "mean": 3.206803,
+        "max": 5.051613
+      },
+      "tokens_per_word_rough": {
+        "count": 105,
+        "min": 1.161017,
+        "mean": 1.789854,
+        "max": 2.902439
+      }
+    },
+    "is_symbol_heavy=false": {
+      "token_count": {
+        "count": 351,
+        "min": 79.0,
+        "mean": 283.11396,
+        "max": 553.0
+      },
+      "token_per_byte": {
+        "count": 351,
+        "min": 0.166391,
+        "mean": 0.233334,
+        "max": 0.449753
+      },
+      "tokens_per_char": {
+        "count": 351,
+        "min": 0.166391,
+        "mean": 0.234758,
+        "max": 0.453488
+      },
+      "bytes_per_token": {
+        "count": 351,
+        "min": 2.223443,
+        "mean": 4.401853,
+        "max": 6.00995
+      },
+      "tokens_per_word_rough": {
+        "count": 351,
+        "min": 1.092308,
+        "mean": 1.36141,
+        "max": 2.415929
+      }
+    },
+    "is_symbol_heavy=true": {
+      "token_count": {
+        "count": 45,
+        "min": 75.0,
+        "mean": 202.377778,
+        "max": 636.0
+      },
+      "token_per_byte": {
+        "count": 45,
+        "min": 0.281132,
+        "mean": 0.411924,
+        "max": 0.690745
+      },
+      "tokens_per_char": {
+        "count": 45,
+        "min": 0.281132,
+        "mean": 0.414756,
+        "max": 0.690745
+      },
+      "bytes_per_token": {
+        "count": 45,
+        "min": 1.447712,
+        "mean": 2.534706,
+        "max": 3.557047
+      },
+      "tokens_per_word_rough": {
+        "count": 45,
+        "min": 1.508772,
+        "mean": 2.155198,
+        "max": 2.902439
+      }
+    }
+  },
+  "by_noise_level": {
+    "clean": {
+      "token_count": {
+        "count": 373,
+        "min": 75.0,
+        "mean": 272.884718,
+        "max": 636.0
+      },
+      "token_per_byte": {
+        "count": 373,
+        "min": 0.170892,
+        "mean": 0.255567,
+        "max": 0.690745
+      },
+      "tokens_per_char": {
+        "count": 373,
+        "min": 0.170892,
+        "mean": 0.257144,
+        "max": 0.690745
+      },
+      "bytes_per_token": {
+        "count": 373,
+        "min": 1.447712,
+        "mean": 4.166347,
+        "max": 5.851648
+      },
+      "tokens_per_word_rough": {
+        "count": 373,
+        "min": 1.092308,
+        "mean": 1.457555,
+        "max": 2.902439
+      }
+    },
+    "mostly_noise": {
+      "token_count": {
+        "count": 2,
+        "min": 306.0,
+        "mean": 366.5,
+        "max": 427.0
+      },
+      "token_per_byte": {
+        "count": 2,
+        "min": 0.212649,
+        "mean": 0.23298,
+        "max": 0.253311
+      },
+      "tokens_per_char": {
+        "count": 2,
+        "min": 0.213287,
+        "mean": 0.233299,
+        "max": 0.253311
+      },
+      "bytes_per_token": {
+        "count": 2,
+        "min": 3.947712,
+        "mean": 4.325144,
+        "max": 4.702576
+      },
+      "tokens_per_word_rough": {
+        "count": 2,
+        "min": 1.326087,
+        "mean": 1.439693,
+        "max": 1.553299
+      }
+    },
+    "partial_noise": {
+      "token_count": {
+        "count": 21,
+        "min": 124.0,
+        "mean": 283.857143,
+        "max": 463.0
+      },
+      "token_per_byte": {
+        "count": 21,
+        "min": 0.166391,
+        "mean": 0.221171,
+        "max": 0.306931
+      },
+      "tokens_per_char": {
+        "count": 21,
+        "min": 0.166391,
+        "mean": 0.222998,
+        "max": 0.306931
+      },
+      "bytes_per_token": {
+        "count": 21,
+        "min": 3.258065,
+        "mean": 4.591173,
+        "max": 6.00995
+      },
+      "tokens_per_word_rough": {
+        "count": 21,
+        "min": 1.11747,
+        "mean": 1.347216,
+        "max": 1.907692
+      }
+    }
+  },
+  "top_token_per_byte": [
+    {
+      "chunk_id": "FineMath_000016_002",
+      "dataset": "FineMath",
+      "token_count": 306,
+      "token_per_byte": 0.690745,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "Simple matrix multiplication(Correlation matrix A = Lower triangular matrix L * Upper Triangular) helps to understand what happens. A11= L11*L11+0*0+0*0+0*0 A21= L21*L11+L22*0+0*0+0*0 A31= L31*L11+L32*0+L33*0+0*0 A41= L4"
+    },
+    {
+      "chunk_id": "FineMath_000002_006",
+      "dataset": "FineMath",
+      "token_count": 142,
+      "token_per_byte": 0.572581,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "Let y represent theta Prove: 1 + 1/tan^2y = 1/sin^2y My Answer: LS: = 1 + 1/tan^2y = (sin^2y + cos^2y) + 1 /(sin^2y/cos^2y) = (sin^2y + cos^2y) + 1 x (cos^2y/sin^2y) = (sin^2y + cos^2y) + (sin^2y + cos^2y) (cos^2y/sin^2y"
+    },
+    {
+      "chunk_id": "FineMath_000006_001",
+      "dataset": "FineMath",
+      "token_count": 209,
+      "token_per_byte": 0.542857,
+      "has_math_notation": true,
+      "has_code": true,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "$[asy] unitsize(5mm); defaultpen(linewidth(.8pt)+fontsize(8pt)); draw((6,0)--(0,0)--(0,1)--(6,1)); draw((0,1)--(0,6)--(4,6)--(4,1)); draw((4,6)--(11,6)--(11,3)--(4,3)); draw((11,3)--(11,0)--(6,0)--(6,3)); label(\"1\",(0,0."
+    },
+    {
+      "chunk_id": "FineMath_000016_004",
+      "dataset": "FineMath",
+      "token_count": 260,
+      "token_per_byte": 0.538302,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "The first column calculation: 1.00=sqrt(1) 0.80=0.8/1.00 0.20=0.2/1.00 0.50=0.5/1.00 The second column calculation(numbers rounded two the second decimal): 0.60=sqrt(1-0.80*0.80) 0.57=(0.5-0.2*0.8)/0.6 0.17 = (0.5-0.5*0."
+    },
+    {
+      "chunk_id": "FineMath_000002_001",
+      "dataset": "FineMath",
+      "token_count": 129,
+      "token_per_byte": 0.5375,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "also : sina/cosa = (2/R) / (3/R) = 23 tana = 2/3 a = arctan (2/3) = 33.69° thus 3cosx - 2sinx = √13cos(x + 33.69°) check by taking any angle x let x = 26° LS =1.8196... RS = √13 cos(5969) = 1.8196 ## Similar Questions 1."
+    },
+    {
+      "chunk_id": "FineMath_000002_008",
+      "dataset": "FineMath",
+      "token_count": 138,
+      "token_per_byte": 0.536965,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "Find sin(s+t) and (s-t) if cos(s)= 1/5 and sin(t) = 3/5 and s and t are in quadrant 1. =Sin(s)cos(t) + Cos(s)Sin(t) =Sin(1/5)Cos(3/5) + Cos(-1/5)Sin(3/5) = 0.389418 Sin(s-t) =sin(s)cos(t) - cos(s)sin(t) =sin(-3/5)cos(1/5"
+    },
+    {
+      "chunk_id": "FineMath_000009_002",
+      "dataset": "FineMath",
+      "token_count": 555,
+      "token_per_byte": 0.496422,
+      "has_math_notation": true,
+      "has_code": true,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vec"
+    },
+    {
+      "chunk_id": "FineMath_000019_001",
+      "dataset": "FineMath",
+      "token_count": 176,
+      "token_per_byte": 0.495775,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "(HTH, HH), (HTH, HT), (HTH, TH), (HTH, TT), (THH, HH), (THH, HT), (THH, TH), (THH, TT), (HTT, HH), (HTT, HT), (HTT, TH), (HTT, TT), (THT, HH), (THT, HT), (THT, TH), (THT, TT), (TTH, HH), (TTH, HT), (TTH, TH), (TTH, TT), "
+    },
+    {
+      "chunk_id": "FineMath_000009_003",
+      "dataset": "FineMath",
+      "token_count": 636,
+      "token_per_byte": 0.493789,
+      "has_math_notation": true,
+      "has_code": true,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "> $\\mathrm{alias}\\left(a=\\mathrm{RootOf}\\left({y}^{4}+y+1\\right)\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}\\mathbf{mod}\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}2\\right):$ > $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,a,{a}^{2}\\right],\\l"
+    },
+    {
+      "chunk_id": "FineMath_000025_002",
+      "dataset": "FineMath",
+      "token_count": 123,
+      "token_per_byte": 0.482353,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "2x . $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ + 2y $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ - $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = - 2y + 1 $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ (2x + 2y - 1) = - 2y + 1 $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ = "
+    }
+  ],
+  "top_token_count": [
+    {
+      "chunk_id": "FineMath_000009_003",
+      "dataset": "FineMath",
+      "token_count": 636,
+      "token_per_byte": 0.493789,
+      "has_math_notation": true,
+      "has_code": true,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "> $\\mathrm{alias}\\left(a=\\mathrm{RootOf}\\left({y}^{4}+y+1\\right)\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}\\mathbf{mod}\\phantom{\\rule[-0.0ex]{0.3em}{0.0ex}}2\\right):$ > $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,a,{a}^{2}\\right],\\l"
+    },
+    {
+      "chunk_id": "FineMath_000009_002",
+      "dataset": "FineMath",
+      "token_count": 555,
+      "token_per_byte": 0.496422,
+      "has_math_notation": true,
+      "has_code": true,
+      "is_symbol_heavy": true,
+      "noise_level": "clean",
+      "preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vec"
+    },
+    {
+      "chunk_id": "FineWeb_000015_000",
+      "dataset": "FineWeb",
+      "token_count": 553,
+      "token_per_byte": 0.245342,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "|- candidate number||14295| |- NTR Number||NTR3827| |- ISRCTN||ISRCTN wordt niet meer aangevraagd.| |- Date ISRCTN created| |- date ISRCTN requested| |- Date Registered NTR||30-jan-2013| |- Secondary IDs||NL41498.018.12 "
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000001_005",
+      "dataset": "FineWeb-Edu",
+      "token_count": 544,
+      "token_per_byte": 0.264978,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "home San Francisco, California California Palace of the Legion of Honor, CA City of San Francisco, CA IBM Building, New York, NY The Oakland Museum, CA The Phillips Collection, Washington D.C. San Francisco Museum of Mod"
+    },
+    {
+      "chunk_id": "FineWeb_000009_047",
+      "dataset": "FineWeb",
+      "token_count": 501,
+      "token_per_byte": 0.278488,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "to blink. FIG. 10 is a perspective view of the small footprint terminal (\"SFT\") 23, and FIG. 8 is a block diagram of the circuitry of the SFT. The SFT 23 also is shown in FIGS. 1 and 2. The SFT, as shown in FIG. 10, incl"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000002_000",
+      "dataset": "FineWeb-Edu",
+      "token_count": 501,
+      "token_per_byte": 0.264939,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "Started conversation May 4, 2004 It's incorrect to say that \"gyratory system\" is just the name for a roundabout that has got too big for its boots. In fact it's the original term which was soon displaced when they became"
+    },
+    {
+      "chunk_id": "FineMath_000017_000",
+      "dataset": "FineMath",
+      "token_count": 501,
+      "token_per_byte": 0.340816,
+      "has_math_notation": true,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "1 . If the ratio of the cost price and the sale price of an article be 5 : 6, the perecentage of gain is – 25% 20% 18% 15% 2 . Two pipes P and Q can fill a cistern in 12 and 15 minutes respectively. Both are opened toget"
+    },
+    {
+      "chunk_id": "FineWeb_000009_021",
+      "dataset": "FineWeb",
+      "token_count": 499,
+      "token_per_byte": 0.292497,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "computer 25, software programs, data taps 204, 205 and 206, the LAN adapter hardware and a modem (not shown) in the master computer. As it is shown in FIG. 7, as well as FIG. 5, each of the data taps has a serial input p"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000003_000",
+      "dataset": "FineWeb-Edu",
+      "token_count": 494,
+      "token_per_byte": 0.233239,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "The “presidi” translates as “garrisons” (from the French word, “to equip”), as protectors of traditional food production practices Monday, March 23, 2009 The “presidi” translates as “garrisons” (from the French word, “to"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000002_001",
+      "dataset": "FineWeb-Edu",
+      "token_count": 493,
+      "token_per_byte": 0.260571,
+      "has_math_notation": false,
+      "has_code": false,
+      "is_symbol_heavy": false,
+      "noise_level": "clean",
+      "preview": "1967 Listener 28 Sept. 398/1 People make only occasional use of their speedometer..on such critical occasions as the approach to roundabouts. 1977 Belfast Tel. 14 Feb. 5/9, 12 shots were fired at an armoured police vehic"
+    }
+  ]
+}
