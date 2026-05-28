@@ -12,7 +12,8 @@ from pathlib import Path
 from typing import Any
 
 
-METHOD = "weak_topic_domain_v2_keyword_surface_prior"
+METHOD_V2 = "weak_topic_domain_v2_keyword_surface_prior"
+METHOD_V2_1 = "weak_topic_domain_v2_1_keyword_surface_prior"
 ALLOWED_DOMAINS = [
     "stem",
     "science",
@@ -193,6 +194,145 @@ KEYWORD_PROFILES: dict[str, list[tuple[str, float]]] = {
     ],
 }
 
+V2_1_KEYWORD_ADDITIONS: dict[str, list[tuple[str, float]]] = {
+    "stem": [
+        ("ratio", 1.2),
+        ("percent", 1.1),
+        ("percentage", 1.1),
+        ("average", 1.0),
+        ("distribution", 1.1),
+        ("model error", 1.6),
+        ("forecast", 1.4),
+        ("mape", 2.0),
+        ("measurement", 1.2),
+        ("unit", 1.0),
+        ("units", 1.0),
+        ("formula", 1.2),
+        ("sequence", 1.2),
+        ("integer", 1.4),
+        ("graph", 1.0),
+        ("function", 0.9),
+        ("integral", 1.5),
+        ("problem", 1.0),
+        ("holdout", 1.4),
+        ("sigma", 1.5),
+        ("standard statistical", 1.8),
+        ("uniform norm", 1.8),
+        ("nowhere dense", 2.0),
+    ],
+    "science": [
+        ("newtons", 1.5),
+        ("newton", 1.5),
+        ("mass", 1.2),
+        ("weight", 1.0),
+        ("pressure", 1.2),
+        ("energy", 1.2),
+        ("plant", 1.2),
+        ("plants", 1.2),
+        ("tree", 1.1),
+        ("leaves", 1.2),
+        ("bark", 1.1),
+        ("acorn", 1.4),
+        ("organism", 1.4),
+        ("organisms", 1.4),
+        ("chimpanzee", 1.8),
+        ("chimpanzees", 1.8),
+        ("orangutan", 1.8),
+        ("orangutans", 1.8),
+        ("cell", 1.2),
+        ("reaction", 1.3),
+        ("molecule", 1.4),
+        ("radius", 1.0),
+        ("mirror", 1.0),
+        ("adhesion", 1.6),
+        ("habitat", 1.3),
+        ("botany", 1.8),
+        ("botanical", 1.8),
+        ("experiment", 1.0),
+    ],
+    "technology": [
+        ("point of sale", 2.2),
+        ("present invention", 2.4),
+        ("function key", 1.6),
+        ("hot keys", 1.4),
+        ("keyboard", 1.0),
+        ("screen", 0.8),
+        ("central computer", 1.8),
+        ("uploaded", 1.2),
+    ],
+    "media": [
+        ("authorities", 1.2),
+        ("troopers", 1.5),
+        ("injured", 1.4),
+        ("killed", 1.4),
+        ("crash", 1.2),
+        ("reported", 1.0),
+        ("officials", 1.0),
+    ],
+}
+
+V2_1_PATENT_CONTEXT_TERMS = [
+    "patent",
+    "pos",
+    "point of sale",
+    "present invention",
+    "apparatus",
+    "embodiment",
+    "terminal",
+    "data tap",
+    "lan adapter",
+    "circuit",
+    "function key",
+    "hot keys",
+    "display",
+    "screen",
+    "transaction",
+    "operator",
+    "central computer",
+]
+
+V2_1_COMMERCIAL_CONTEXT_TERMS = [
+    "rental",
+    "sale",
+    "customer",
+    "invoice",
+    "tax",
+    "price",
+    "product",
+    "store",
+]
+
+V2_1_SCIENCE_CONTEXT_TERMS = [
+    "force",
+    "newton",
+    "newtons",
+    "mass",
+    "weight",
+    "pressure",
+    "energy",
+    "species",
+    "organism",
+    "plant",
+    "animal",
+    "cell",
+    "chemical",
+    "reaction",
+    "molecule",
+    "radius",
+    "mirror",
+    "adhesion",
+    "habitat",
+    "climate",
+    "tree",
+    "leaves",
+    "bark",
+    "acorn",
+    "ape",
+    "apes",
+    "chimpanzee",
+    "orangutan",
+]
+
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -224,11 +364,19 @@ def add_score(scores: dict[str, float], evidence: dict[str, list[str]], domain: 
     evidence[domain].append(f"{reason} (+{amount:g})")
 
 
-def keyword_scores(text: str) -> tuple[dict[str, float], dict[str, list[str]]]:
+def keyword_profiles(version: str) -> dict[str, list[tuple[str, float]]]:
+    profiles = {domain: list(keywords) for domain, keywords in KEYWORD_PROFILES.items()}
+    if version == "v2_1":
+        for domain, additions in V2_1_KEYWORD_ADDITIONS.items():
+            profiles.setdefault(domain, []).extend(additions)
+    return profiles
+
+
+def keyword_scores(text: str, version: str) -> tuple[dict[str, float], dict[str, list[str]]]:
     normalized = text.lower()
     scores: dict[str, float] = defaultdict(float)
     evidence: dict[str, list[str]] = defaultdict(list)
-    for domain, keywords in KEYWORD_PROFILES.items():
+    for domain, keywords in keyword_profiles(version).items():
         for keyword, weight in keywords:
             pattern = r"\b" + re.escape(keyword.lower()) + r"\b" if keyword.replace("-", "").replace(" ", "").isalnum() else re.escape(keyword.lower())
             hits = len(re.findall(pattern, normalized))
@@ -269,13 +417,57 @@ def apply_provenance_prior(record: dict[str, Any], scores: dict[str, float], evi
         add_score(scores, evidence, "education", 0.25, "FineWeb-Edu weak provenance prior")
 
 
-def classify_record(record: dict[str, Any], min_score: float, margin: float) -> dict[str, Any]:
+def count_terms(text: str, terms: list[str]) -> int:
+    normalized = text.lower()
+    return sum(1 for term in terms if term in normalized)
+
+
+def apply_v2_1_guards(record: dict[str, Any], scores: dict[str, float], evidence: dict[str, list[str]]) -> None:
+    text = str(record.get("text", "")).lower()
+    surface = section(record, "surface")
+    patent_hits = count_terms(text, V2_1_PATENT_CONTEXT_TERMS)
+    commercial_hits = count_terms(text, V2_1_COMMERCIAL_CONTEXT_TERMS)
+    if patent_hits >= 3 and commercial_hits:
+        boost = min(1.2 + patent_hits * 0.35, 3.2)
+        add_score(scores, evidence, "technology", boost, "v2_1 patent/POS technology guard")
+        if scores.get("commercial", 0.0) > scores.get("technology", 0.0):
+            capped = max(scores["technology"] - 0.1, 0.0)
+            scores["commercial"] = capped
+            evidence["commercial"].append(f"v2_1 commercial cap in patent/POS context (cap={capped:g})")
+
+    science_hits = count_terms(text, V2_1_SCIENCE_CONTEXT_TERMS)
+    if science_hits >= 2 and (surface.get("has_math_notation") or surface.get("is_symbol_heavy") or surface.get("has_scientific_formula")):
+        boost = min(1.0 + science_hits * 0.25, 2.0)
+        add_score(scores, evidence, "science", boost, "v2_1 formula-heavy science context")
+
+
+def is_noisy_single_keyword_case(record: dict[str, Any], top_domain: str, top_score: float, evidence: dict[str, list[str]]) -> bool:
+    quality = section(record, "quality")
+    surface = section(record, "surface")
+    noisy = (
+        quality.get("noise_level") in {"partial_noise", "mostly_noise"}
+        or quality.get("has_ui_residue") is True
+        or quality.get("has_forum_residue") is True
+        or surface.get("has_boilerplate_markers") is True
+    )
+    if not noisy or top_score > 2.1:
+        return False
+    domain_evidence = evidence.get(top_domain, [])
+    keyword_evidence = [item for item in domain_evidence if item.startswith("keyword:")]
+    if len(keyword_evidence) != 1:
+        return False
+    weak_singletons = ["keyword:http", "keyword:encyclopedia", "keyword:article", "keyword:resource"]
+    return any(keyword_evidence[0].startswith(prefix) for prefix in weak_singletons)
+
+
+def classify_record(record: dict[str, Any], min_score: float, margin: float, version: str) -> dict[str, Any]:
+    method = METHOD_V2_1 if version == "v2_1" else METHOD_V2
     text = record.get("text")
     if not isinstance(text, str) or not text.strip():
         return {
             "domain": "unknown",
             "confidence": 0.0,
-            "method": METHOD,
+            "method": method,
             "abstained": True,
             "abstain_reason": "missing_text",
             "top_k": [],
@@ -287,16 +479,18 @@ def classify_record(record: dict[str, Any], min_score: float, margin: float) -> 
         return {
             "domain": "unknown",
             "confidence": 0.2,
-            "method": METHOD,
+            "method": method,
             "abstained": True,
             "abstain_reason": "mostly_noise",
             "top_k": [],
             "evidence": {"quality": quality.get("noise_reasons", [])},
         }
 
-    scores, evidence = keyword_scores(text)
+    scores, evidence = keyword_scores(text, version)
     apply_surface_scores(record, scores, evidence)
     apply_provenance_prior(record, scores, evidence)
+    if version == "v2_1":
+        apply_v2_1_guards(record, scores, evidence)
 
     ranked = sorted(
         ((domain, score) for domain, score in scores.items() if domain in ALLOWED_DOMAINS and domain != "unknown"),
@@ -307,7 +501,7 @@ def classify_record(record: dict[str, Any], min_score: float, margin: float) -> 
         return {
             "domain": "unknown",
             "confidence": 0.2,
-            "method": METHOD,
+            "method": method,
             "abstained": True,
             "abstain_reason": "no_domain_evidence",
             "top_k": [],
@@ -319,11 +513,21 @@ def classify_record(record: dict[str, Any], min_score: float, margin: float) -> 
     confidence = round(top_score / total, 6) if total else 0.0
     top_k = [{"domain": domain, "score": round(score, 6)} for domain, score in ranked[:5]]
 
+    if version == "v2_1" and is_noisy_single_keyword_case(record, top_domain, top_score, evidence):
+        return {
+            "domain": "unknown",
+            "confidence": confidence,
+            "method": method,
+            "abstained": True,
+            "abstain_reason": "v2_1_noisy_single_keyword_evidence",
+            "top_k": top_k,
+            "evidence": {domain: evidence.get(domain, [])[:6] for domain, _ in ranked[:5]},
+        }
     if top_score < min_score:
         return {
             "domain": "unknown",
             "confidence": confidence,
-            "method": METHOD,
+            "method": method,
             "abstained": True,
             "abstain_reason": "top_score_below_threshold",
             "top_k": top_k,
@@ -333,7 +537,7 @@ def classify_record(record: dict[str, Any], min_score: float, margin: float) -> 
         return {
             "domain": "unknown",
             "confidence": confidence,
-            "method": METHOD,
+            "method": method,
             "abstained": True,
             "abstain_reason": "top_two_domains_too_close",
             "top_k": top_k,
@@ -343,7 +547,7 @@ def classify_record(record: dict[str, Any], min_score: float, margin: float) -> 
     return {
         "domain": top_domain,
         "confidence": confidence,
-        "method": METHOD,
+        "method": method,
         "abstained": False,
         "abstain_reason": None,
         "top_k": top_k,
@@ -357,6 +561,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", required=True, help="Output JSONL with annotation_v2.topic.")
     parser.add_argument("--min-score", type=float, default=1.4)
     parser.add_argument("--margin", type=float, default=0.3)
+    parser.add_argument(
+        "--version",
+        choices=["v2", "v2_1"],
+        default="v2",
+        help="Classifier rule version. Default preserves the original v2 baseline.",
+    )
     return parser.parse_args()
 
 
@@ -369,7 +579,7 @@ def main() -> int:
     abstained = 0
     with output_path.open("w", encoding="utf-8") as fh:
         for record in rows:
-            topic = classify_record(record, min_score=args.min_score, margin=args.margin)
+            topic = classify_record(record, min_score=args.min_score, margin=args.margin, version=args.version)
             annotation(record)["topic"] = topic
             counts[topic["domain"]] += 1
             if topic["abstained"]:
@@ -381,7 +591,8 @@ def main() -> int:
         "records": len(rows),
         "domain_counts": dict(counts),
         "abstained": abstained,
-        "method": METHOD,
+        "method": METHOD_V2_1 if args.version == "v2_1" else METHOD_V2,
+        "version": args.version,
         "min_score": args.min_score,
         "margin": args.margin,
     }
