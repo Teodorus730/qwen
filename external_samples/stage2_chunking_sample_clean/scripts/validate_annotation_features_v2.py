@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from collections import Counter
 from pathlib import Path
@@ -43,6 +44,34 @@ TEXT_STATS_FIELDS = [
     "nonempty_line_count",
     "word_count_rough",
 ]
+TOKENIZED_TEXT_STATS_FIELDS = [
+    "token_count",
+    "token_per_byte",
+    "tokens_per_char",
+    "bytes_per_token",
+    "chars_per_token",
+    "tokens_per_word_rough",
+]
+OPTIONAL_TOKENIZED_TEXT_STATS_FIELDS = [
+    "unique_word_count_rough",
+    "avg_word_length_rough",
+    "latin_char_count",
+    "cyrillic_char_count",
+    "latin_char_ratio",
+    "cyrillic_char_ratio",
+]
+TOKENIZER_FIELDS = [
+    "tokenizer_name",
+    "revision",
+    "tokenizer_class",
+    "vocab_size",
+    "len_tokenizer",
+    "bos_token_id",
+    "eos_token_id",
+    "pad_token_id",
+    "unk_token_id",
+    "add_special_tokens",
+]
 
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -71,7 +100,7 @@ class ValidationResult:
 
 
 def is_number(value: Any) -> bool:
-    return isinstance(value, (int, float)) and not isinstance(value, bool)
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
 
 def require_object(result: ValidationResult, line_no: int, value: Any, name: str) -> dict[str, Any] | None:
@@ -124,6 +153,7 @@ def validate_text_stats(
     line_no: int,
     text: str,
     text_stats: dict[str, Any],
+    tokenized_required: bool,
 ) -> None:
     for field in TEXT_STATS_FIELDS:
         if field not in text_stats:
@@ -151,9 +181,64 @@ def validate_text_stats(
     if abs(float(text_stats["avg_line_length"]) - expected_avg) > 0.02:
         result.error(line_no, "text_stats.avg_line_length does not match char_count / line_count")
 
+    if not tokenized_required:
+        return
+
+    for field in TOKENIZED_TEXT_STATS_FIELDS:
+        if field not in text_stats:
+            result.error(line_no, f"annotation_v2.text_stats.{field} is required for tokenized schema")
+        elif not is_number(text_stats[field]):
+            result.error(line_no, f"annotation_v2.text_stats.{field} must be a finite number")
+        elif text_stats[field] < 0:
+            result.error(line_no, f"annotation_v2.text_stats.{field} must be non-negative")
+
+    for field in OPTIONAL_TOKENIZED_TEXT_STATS_FIELDS:
+        if field not in text_stats:
+            continue
+        if not is_number(text_stats[field]):
+            result.error(line_no, f"annotation_v2.text_stats.{field} must be a finite number")
+        elif text_stats[field] < 0:
+            result.error(line_no, f"annotation_v2.text_stats.{field} must be non-negative")
+
+    for field in ["token_per_byte", "tokens_per_char", "latin_char_ratio", "cyrillic_char_ratio"]:
+        value = text_stats.get(field)
+        if is_number(value) and value > 1:
+            result.warning(line_no, f"annotation_v2.text_stats.{field} is greater than 1")
+
+    if all(is_number(text_stats.get(field)) for field in TOKENIZED_TEXT_STATS_FIELDS):
+        token_count = text_stats["token_count"]
+        byte_count = text_stats["byte_count"]
+        char_count = text_stats["char_count"]
+        word_count = text_stats["word_count_rough"]
+        if token_count == 0 and text:
+            result.error(line_no, "token_count is 0 for non-empty text")
+        if token_count > 0:
+            if abs(float(text_stats["token_per_byte"]) - safe_ratio(token_count, byte_count)) > 0.00001:
+                result.error(line_no, "text_stats.token_per_byte does not match token_count / byte_count")
+            if abs(float(text_stats["tokens_per_char"]) - safe_ratio(token_count, char_count)) > 0.00001:
+                result.error(line_no, "text_stats.tokens_per_char does not match token_count / char_count")
+            if abs(float(text_stats["bytes_per_token"]) - safe_ratio(byte_count, token_count)) > 0.00001:
+                result.error(line_no, "text_stats.bytes_per_token does not match byte_count / token_count")
+            if abs(float(text_stats["chars_per_token"]) - safe_ratio(char_count, token_count)) > 0.00001:
+                result.error(line_no, "text_stats.chars_per_token does not match char_count / token_count")
+            if abs(float(text_stats["tokens_per_word_rough"]) - safe_ratio(token_count, word_count)) > 0.00001:
+                result.error(line_no, "text_stats.tokens_per_word_rough does not match token_count / word_count_rough")
+
 
 def schema_requires_refined_fields(schema_version: Any) -> bool:
-    return isinstance(schema_version, str) and schema_version.endswith("_v2")
+    return isinstance(schema_version, str) and (
+        schema_version.endswith("_v2") or "deterministic_features_v2_" in schema_version
+    )
+
+
+def schema_requires_tokenized_fields(schema_version: Any) -> bool:
+    return isinstance(schema_version, str) and "tokenized" in schema_version
+
+
+def safe_ratio(numerator: float, denominator: float) -> float:
+    if denominator <= 0:
+        return 0.0
+    return round(numerator / denominator, 6)
 
 
 def validate_optional_bool(
@@ -248,6 +333,52 @@ def validate_quality(
         )
 
 
+def validate_tokenizer(
+    result: ValidationResult,
+    line_no: int,
+    tokenizer: dict[str, Any] | None,
+    tokenized_required: bool,
+) -> None:
+    if not tokenized_required:
+        return
+    if tokenizer is None:
+        result.error(line_no, "annotation_v2.tokenizer is required for tokenized schema")
+        return
+    for field in TOKENIZER_FIELDS:
+        if field not in tokenizer:
+            result.error(line_no, f"annotation_v2.tokenizer.{field} is required for tokenized schema")
+
+    for field in ["tokenizer_name", "revision", "tokenizer_class"]:
+        value = tokenizer.get(field)
+        if not isinstance(value, str) or not value.strip():
+            result.error(line_no, f"annotation_v2.tokenizer.{field} must be a non-empty string")
+    for field in ["vocab_size", "len_tokenizer"]:
+        value = tokenizer.get(field)
+        if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
+            result.error(line_no, f"annotation_v2.tokenizer.{field} must be a positive integer")
+    for field in ["bos_token_id", "eos_token_id", "pad_token_id", "unk_token_id"]:
+        value = tokenizer.get(field)
+        if value is not None and (not isinstance(value, int) or isinstance(value, bool) or value < 0):
+            result.error(line_no, f"annotation_v2.tokenizer.{field} must be a non-negative integer or null")
+    if not isinstance(tokenizer.get("add_special_tokens"), bool):
+        result.error(line_no, "annotation_v2.tokenizer.add_special_tokens must be boolean")
+
+    expected = {
+        "tokenizer_name": "Qwen/Qwen3.5-0.8B-Base",
+        "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "vocab_size": 248044,
+        "len_tokenizer": 248077,
+    }
+    for field, expected_value in expected.items():
+        actual = tokenizer.get(field)
+        if actual != expected_value:
+            result.warning(
+                line_no,
+                f"annotation_v2.tokenizer.{field}={actual!r}, expected canonical {expected_value!r}",
+            )
+
+
 def validate_record(result: ValidationResult, line_no: int, record: dict[str, Any]) -> None:
     result.records_checked += 1
 
@@ -266,6 +397,7 @@ def validate_record(result: ValidationResult, line_no: int, record: dict[str, An
 
     schema_version = annotation.get("schema_version")
     refined_required = schema_requires_refined_fields(schema_version)
+    tokenized_required = schema_requires_tokenized_fields(schema_version)
     if not isinstance(schema_version, str) or not schema_version.strip():
         result.error(line_no, "annotation_v2.schema_version must be a non-empty string")
     else:
@@ -277,15 +409,18 @@ def validate_record(result: ValidationResult, line_no: int, record: dict[str, An
     text_stats = require_object(result, line_no, annotation.get("text_stats"), "annotation_v2.text_stats")
     surface = require_object(result, line_no, annotation.get("surface"), "annotation_v2.surface")
     quality = require_object(result, line_no, annotation.get("quality"), "annotation_v2.quality")
+    tokenizer = annotation.get("tokenizer")
+    tokenizer_obj = require_object(result, line_no, tokenizer, "annotation_v2.tokenizer") if tokenizer is not None else None
 
     if provenance is not None:
         validate_provenance(result, line_no, record, provenance)
     if text_stats is not None:
-        validate_text_stats(result, line_no, text, text_stats)
+        validate_text_stats(result, line_no, text, text_stats, tokenized_required=tokenized_required)
     if surface is not None:
         validate_surface(result, line_no, text, surface, refined_required=refined_required)
     if quality is not None:
         validate_quality(result, line_no, quality, refined_required=refined_required)
+    validate_tokenizer(result, line_no, tokenizer_obj, tokenized_required=tokenized_required)
 
 
 def validate_file(path: Path, max_errors: int) -> ValidationResult:
