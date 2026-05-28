@@ -1,0 +1,802 @@
+{
+  "total_records": 120,
+  "answered": 96,
+  "abstained": 24,
+  "correct": 67,
+  "incorrect": 53,
+  "gold_abstained": 3,
+  "coverage_rate": 0.8,
+  "accuracy_on_answered": 0.697917,
+  "accuracy_counting_abstain_wrong": 0.558333,
+  "confusion_matrix": {
+    "commercial": {
+      "ABSTAIN": 1,
+      "social_sciences": 1
+    },
+    "education": {
+      "education": 5,
+      "ABSTAIN": 3,
+      "humanities": 1,
+      "media": 1,
+      "commercial": 1
+    },
+    "government": {
+      "government": 1
+    },
+    "humanities": {
+      "social_sciences": 1,
+      "humanities": 4
+    },
+    "media": {
+      "ABSTAIN": 3,
+      "media": 3,
+      "science": 1
+    },
+    "reference": {
+      "media": 1,
+      "reference": 1,
+      "ABSTAIN": 2,
+      "software": 1,
+      "humanities": 1
+    },
+    "science": {
+      "science": 15,
+      "ABSTAIN": 5,
+      "social_sciences": 3,
+      "stem": 4,
+      "government": 1,
+      "humanities": 1,
+      "education": 2
+    },
+    "social_sciences": {
+      "social_sciences": 2
+    },
+    "software": {
+      "software": 3,
+      "stem": 2
+    },
+    "stem": {
+      "stem": 16,
+      "ABSTAIN": 7
+    },
+    "technology": {
+      "technology": 17,
+      "commercial": 5,
+      "ABSTAIN": 2
+    },
+    "unknown": {
+      "ABSTAIN": 1,
+      "reference": 1,
+      "software": 1
+    }
+  },
+  "top_mismatch_groups": {
+    "stem->ABSTAIN": 7,
+    "technology->commercial": 5,
+    "science->ABSTAIN": 5,
+    "science->stem": 4,
+    "education->ABSTAIN": 3,
+    "science->social_sciences": 3,
+    "media->ABSTAIN": 3,
+    "reference->ABSTAIN": 2,
+    "technology->ABSTAIN": 2,
+    "software->stem": 2,
+    "science->education": 2,
+    "reference->media": 1,
+    "humanities->social_sciences": 1,
+    "unknown->ABSTAIN": 1,
+    "commercial->ABSTAIN": 1,
+    "science->government": 1,
+    "education->humanities": 1,
+    "media->science": 1,
+    "science->humanities": 1,
+    "reference->software": 1
+  },
+  "abstain_groups_by_gold_domain": {
+    "stem": 7,
+    "science": 5,
+    "education": 3,
+    "media": 3,
+    "reference": 2,
+    "technology": 2,
+    "unknown": 1,
+    "commercial": 1
+  },
+  "per_dataset_mismatch_groups": {
+    "FineMath": {
+      "stem->ABSTAIN": 7,
+      "science->stem": 4,
+      "software->stem": 2,
+      "science->education": 2,
+      "science->ABSTAIN": 1,
+      "unknown->ABSTAIN": 1,
+      "unknown->software": 1
+    },
+    "FineWeb": {
+      "technology->commercial": 5,
+      "media->ABSTAIN": 2,
+      "technology->ABSTAIN": 2,
+      "commercial->ABSTAIN": 1,
+      "education->humanities": 1,
+      "media->science": 1,
+      "science->humanities": 1,
+      "science->ABSTAIN": 1,
+      "commercial->social_sciences": 1,
+      "education->commercial": 1
+    },
+    "FineWeb-Edu": {
+      "science->ABSTAIN": 3,
+      "education->ABSTAIN": 3,
+      "science->social_sciences": 3,
+      "reference->ABSTAIN": 2,
+      "reference->media": 1,
+      "humanities->social_sciences": 1,
+      "media->ABSTAIN": 1,
+      "science->government": 1,
+      "reference->software": 1,
+      "unknown->reference": 1,
+      "education->media": 1,
+      "reference->humanities": 1
+    }
+  },
+  "per_domain_precision_recall": {
+    "commercial": {
+      "tp": 0,
+      "fp": 6,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "education": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 6,
+      "precision": 0.714286,
+      "recall": 0.454545
+    },
+    "government": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0
+    },
+    "humanities": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.571429,
+      "recall": 0.8
+    },
+    "media": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.6,
+      "recall": 0.428571
+    },
+    "reference": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 5,
+      "precision": 0.5,
+      "recall": 0.166667
+    },
+    "science": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 16,
+      "precision": 0.9375,
+      "recall": 0.483871
+    },
+    "social_sciences": {
+      "tp": 2,
+      "fp": 5,
+      "fn": 0,
+      "precision": 0.285714,
+      "recall": 1.0
+    },
+    "software": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.6,
+      "recall": 0.6
+    },
+    "stem": {
+      "tp": 16,
+      "fp": 6,
+      "fn": 7,
+      "precision": 0.727273,
+      "recall": 0.695652
+    },
+    "technology": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 7,
+      "precision": 1.0,
+      "recall": 0.708333
+    },
+    "unknown": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0
+    }
+  },
+  "evidence_cluster_counts": {
+    "keyword": 101,
+    "provenance_prior": 76,
+    "surface_feature": 42,
+    "abstain": 24,
+    "low_margin": 16
+  },
+  "top_keyword_evidence": {
+    "program x1": 8,
+    "school x1": 7,
+    "function x1": 7,
+    "store x1": 7,
+    "community x1": 6,
+    "display x1": 6,
+    "learning x1": 5,
+    "pos x1": 5,
+    "data tap x1": 5,
+    "social x1": 5,
+    "sale x1": 5,
+    "circuit x1": 4,
+    "service x1": 4,
+    "computer x1": 4,
+    "mean x1": 4,
+    "training x1": 4,
+    "teacher x1": 4,
+    "political x1": 4,
+    "invoice x1": 4,
+    "policy x1": 4,
+    "matrix x1": 4,
+    "computer x2": 4,
+    "price x1": 4,
+    "resource x1": 3,
+    "terminal x2": 3
+  },
+  "high_confidence_wrong_examples": [
+    {
+      "chunk_id": "FineWeb-Edu_000014_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "reference",
+      "gold_abstained": false,
+      "predicted_domain": "media",
+      "predicted_abstained": false,
+      "confidence": 0.755245,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "media",
+          "score": 5.4
+        },
+        {
+          "domain": "science",
+          "score": 1.5
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "media": [
+          "keyword:journalist x1 (+1.4)",
+          "keyword:television x2 (+2.4)",
+          "keyword:published x2 (+1.6)"
+        ],
+        "science": [
+          "keyword:chemical x1 (+1.5)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "keyword"
+      ],
+      "review_note": "reference/encyclopedic resource content; UI/navigation residue present",
+      "text_preview": "Human nature and the nature of war Twenty years ago, Canadian military historian and journalist Gwynne Dyer fascinated the public in 45 countries with his award-winning television series on the nature of war. He followed up that success with an equally remarkable book that grew out of the research that went into the te"
+    },
+    {
+      "chunk_id": "FineWeb_000023_000",
+      "dataset": "FineWeb",
+      "gold_domain": "education",
+      "gold_abstained": false,
+      "predicted_domain": "humanities",
+      "predicted_abstained": false,
+      "confidence": 1.0,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "humanities",
+          "score": 7.2
+        }
+      ],
+      "evidence": {
+        "humanities": [
+          "keyword:history x1 (+1.2)",
+          "keyword:art x2 (+3.2)",
+          "keyword:artist x2 (+2.8)"
+        ]
+      },
+      "evidence_clusters": [
+        "keyword"
+      ],
+      "review_note": "educational activity or teaching-oriented content; deterministic quality heuristic indicates partial noise",
+      "text_preview": "That day was a watershed in my transition from a talented amateur to a serious artist. I had always subscribed to the mantra \"good enough is not good enough\" in my profession, but until that day I had not done so as an artist. From then on I resolved that I would make things as good as I could in my art, even if that t"
+    },
+    {
+      "chunk_id": "FineWeb_000007_000",
+      "dataset": "FineWeb",
+      "gold_domain": "media",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "confidence": 1.0,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 2.4
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:medical x2 (+2.4)"
+        ]
+      },
+      "evidence_clusters": [
+        "keyword"
+      ],
+      "review_note": "coarse media topic visible in text; primary text appears usable",
+      "text_preview": "COLUMBUS GROVE, Ohio - A 14-year-old girl was killed and 11 other people were injured when a car struck a church van filled with youngsters in southern Putnam County yesterday, authorities said. Jasmin Wickard of Leipsic, who was riding in a van belonging to the Harvest Assembly of God Church of West Leipsic, was decla"
+    },
+    {
+      "chunk_id": "FineWeb_000009_038",
+      "dataset": "FineWeb",
+      "gold_domain": "technology",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "confidence": 0.708791,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 12.9
+        },
+        {
+          "domain": "technology",
+          "score": 4.5
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:customer x4 (+3.6)",
+          "keyword:sale x3 (+3)",
+          "keyword:rental x3 (+3.9)",
+          "keyword:tax x3 (+2.4)"
+        ],
+        "technology": [
+          "keyword:transaction x3 (+4.5)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "evidence_clusters": [
+        "surface_feature",
+        "keyword"
+      ],
+      "review_note": "technology/patent topic; genre is not encoded as topic; primary text appears usable",
+      "text_preview": "type of the transaction. That is, \"R\" indicates a rental, \"S\" indicates a sale, \"C\" indicates a credit and \"F\" indicates a free transaction, such as for a free replacement. The \"Day O\" column indicates the number of days which this movie is rented for, which, in this example is one day. The \"Day C\" column indicates the"
+    },
+    {
+      "chunk_id": "FineMath_000020_001",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "confidence": 0.724138,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 2.1
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "surface_feature"
+      ],
+      "review_note": "coarse software topic visible in text; primary text appears usable; math/symbol notation reviewed as visible surface feature",
+      "text_preview": "Then, we must go through all the levels of the structure, and they're $log_m N$ of them, $m$ being the order of B-tree and $N$ the number of all elements in the tree. So here, we have $O(log N)$ complexity in the worst case. Putting these information together, we should have $O(n) * O(log n) = O(n * log n)$ complexity."
+    },
+    {
+      "chunk_id": "FineMath_000026_023",
+      "dataset": "FineMath",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "confidence": 0.708333,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 3.4
+        },
+        {
+          "domain": "software",
+          "score": 1.4
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "surface.has_math_notation (+1.2)",
+          "surface.is_symbol_heavy (+0.8)",
+          "high token_per_byte (+0.5)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "surface.has_code (+1.4)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "surface_feature"
+      ],
+      "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable; math/symbol notation reviewed as visible surface feature; code/API/command-like syntax reviewed as visible surface feature; symbol/token-dense surface reviewed separately from noise",
+      "text_preview": "Weight of adult in Newtons=888.9Newtons\\begin{align*}\\mathrm{Weight\\ of\\ adult\\ in\\ Newtons} = 888.9 \\;\\mathrm{Newtons}\\end{align*} 888.9Newtons/6.7×106Newtons per Ant Foot\\begin{align*}888.9 \\;\\mathrm{Newtons}/6.7 \\times 10^{-6} \\;\\mathrm{Newtons\\ per\\ Ant\\ Foot}\\end{align*} 32,671,642ant feet\\begin{align*}32,671,642 "
+    },
+    {
+      "chunk_id": "FineMath_000026_005",
+      "dataset": "FineMath",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "education",
+      "predicted_abstained": false,
+      "confidence": 0.763889,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "education",
+          "score": 5.5
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        },
+        {
+          "domain": "technology",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "education": [
+          "keyword:lesson x2 (+2.8)",
+          "keyword:teacher x1 (+1.4)",
+          "keyword:student x1 (+1.3)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "technology": [
+          "keyword:display x1 (+0.8)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "keyword"
+      ],
+      "review_note": "science/health/natural-science topic visible in text; primary text appears usable",
+      "text_preview": "A field test teacher used a Frayer model for balanced and unbalanced forces for this lesson (refer to Lesson 1 for directions on the use of the Frayer model). Slide 2 Student Journal Page: 6-1 5. Display Slide 2 “In this image, there are two forces at work: one that is holding the shoe onto the ceiling and another that"
+    },
+    {
+      "chunk_id": "FineWeb_000005_000",
+      "dataset": "FineWeb",
+      "gold_domain": "commercial",
+      "gold_abstained": false,
+      "predicted_domain": "social_sciences",
+      "predicted_abstained": false,
+      "confidence": 0.68,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "social_sciences",
+          "score": 1.7
+        },
+        {
+          "domain": "commercial",
+          "score": 0.8
+        }
+      ],
+      "evidence": {
+        "social_sciences": [
+          "keyword:women x1 (+1.7)"
+        ],
+        "commercial": [
+          "keyword:service x1 (+0.8)"
+        ]
+      },
+      "evidence_clusters": [
+        "keyword"
+      ],
+      "review_note": "coarse commercial topic visible in text; primary text appears usable; code/API/command-like syntax reviewed as visible surface feature",
+      "text_preview": "Black Sheepskin Boots and snow boots for women and men The Black Beauty! Everyone loves the colour Black, why because it is so versatile and can be matched with just about anything in your wardrobe. Black oozes that element of class as this coloured sheepskin allows you to wear it by day and dress it up and wear out at"
+    },
+    {
+      "chunk_id": "FineMath_000009_002",
+      "dataset": "FineMath",
+      "gold_domain": "software",
+      "gold_abstained": false,
+      "predicted_domain": "stem",
+      "predicted_abstained": false,
+      "confidence": 0.666667,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 5.8
+        },
+        {
+          "domain": "software",
+          "score": 2.2
+        },
+        {
+          "domain": "science",
+          "score": 0.7
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "keyword:matrix x1 (+2)",
+          "surface.has_math_notation (+1.2)",
+          "surface.is_symbol_heavy (+0.8)",
+          "surface.has_scientific_formula (+0.4)",
+          "high token_per_byte (+0.5)",
+          "FineMath weak provenance prior (+0.9)"
+        ],
+        "software": [
+          "surface.has_code (+1.4)",
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "science": [
+          "surface.has_scientific_formula (+0.7)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "surface_feature",
+        "keyword"
+      ],
+      "review_note": "coarse software topic visible in text; primary text appears usable; math/symbol notation reviewed as visible surface feature; code/API/command-like syntax reviewed as visible surface feature; symbol/token-dense surface reviewed separately from noise",
+      "text_preview": "> $A≔\\mathrm{Matrix}\\left(\\left[\\left[1,2,3\\right],\\left[1,3,0\\right],\\left[1,4,3\\right]\\right]\\right)$ ${A}{≔}\\left[\\begin{array}{ccc}{1}& {2}& {3}\\\\ {1}& {3}& {0}\\\\ {1}& {4}& {3}\\end{array}\\right]$ (1) > $b≔\\mathrm{Vector}\\left(\\left[1,2,3\\right]\\right)$ ${b}{≔}\\left[\\begin{array}{c}{1}\\\\ {2}\\\\ {3}\\end{array}\\right]$"
+    },
+    {
+      "chunk_id": "FineWeb_000000_001",
+      "dataset": "FineWeb",
+      "gold_domain": "education",
+      "gold_abstained": false,
+      "predicted_domain": "commercial",
+      "predicted_abstained": false,
+      "confidence": 1.0,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "commercial",
+          "score": 6.2
+        }
+      ],
+      "evidence": {
+        "commercial": [
+          "keyword:service x9 (+2.4)",
+          "keyword:product x3 (+3)",
+          "keyword:store x1 (+0.8)"
+        ]
+      },
+      "evidence_clusters": [
+        "keyword"
+      ],
+      "review_note": "educational activity or teaching-oriented content; UI/navigation residue present",
+      "text_preview": "insurance may have a certificate, but the financial service itself cannot be touched i.e. it is intangible. This makes it tricky to evaluate the quality of service prior to consuming it since there are fewer attributes of quality in comparison to a product. One way is to consider quality in terms of search, experience "
+    }
+  ],
+  "low_confidence_correct_examples": [
+    {
+      "chunk_id": "FineWeb-Edu_000000_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "science",
+      "gold_abstained": false,
+      "predicted_domain": "science",
+      "predicted_abstained": false,
+      "confidence": 0.426877,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "science",
+          "score": 5.4
+        },
+        {
+          "domain": "government",
+          "score": 3.4
+        },
+        {
+          "domain": "education",
+          "score": 1.45
+        },
+        {
+          "domain": "media",
+          "score": 1.4
+        },
+        {
+          "domain": "reference",
+          "score": 1.0
+        }
+      ],
+      "evidence": {
+        "science": [
+          "keyword:climate x7 (+4.2)",
+          "keyword:health x1 (+1.2)"
+        ],
+        "government": [
+          "keyword:government x2 (+3.4)"
+        ],
+        "education": [
+          "keyword:learning x1 (+1.2)",
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ],
+        "media": [
+          "keyword:article x1 (+0.6)",
+          "keyword:published x1 (+0.8)"
+        ],
+        "reference": [
+          "keyword:resource x1 (+1)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "keyword"
+      ],
+      "review_note": "coarse topic usable but somewhat ambiguous; primary text appears usable",
+      "text_preview": "Karuk Tribe: Learning from the First Californians for the Next California Editor's Note: This is part of series, Facing the Climate Gap, which looks at grassroots efforts in California low-income communities of color to address climate change and promote climate justice. This article was published in collaboration with"
+    }
+  ],
+  "gold_unknown_or_abstained_examples": [
+    {
+      "chunk_id": "FineMath_000012_002",
+      "dataset": "FineMath",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "unknown",
+      "predicted_abstained": true,
+      "confidence": 1.0,
+      "abstain_reason": "top_score_below_threshold",
+      "top_k": [
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "abstain"
+      ],
+      "review_note": "mostly boilerplate/noise; topic not reliable; old review marked boilerplate/noise",
+      "text_preview": "It is simple because the centre is too wide since the triangle, to assume a shape. That would be considered a triangle. sameday essay You can figure out the the negative lengths are corresponding to the span of this rectangle when you think of a triangle the shape of the parallelogram. The diameter of the rectangle is "
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000008_000",
+      "dataset": "FineWeb-Edu",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "reference",
+      "predicted_abstained": false,
+      "confidence": 0.547945,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "reference",
+          "score": 2.0
+        },
+        {
+          "domain": "software",
+          "score": 0.8
+        },
+        {
+          "domain": "media",
+          "score": 0.6
+        },
+        {
+          "domain": "education",
+          "score": 0.25
+        }
+      ],
+      "evidence": {
+        "reference": [
+          "keyword:encyclopedia x1 (+2)"
+        ],
+        "software": [
+          "surface.has_api_or_command_syntax (+0.8)"
+        ],
+        "media": [
+          "keyword:article x1 (+0.6)"
+        ],
+        "education": [
+          "FineWeb-Edu weak provenance prior (+0.25)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "surface_feature",
+        "keyword"
+      ],
+      "review_note": "mostly boilerplate/noise; topic not reliable; UI/navigation residue present",
+      "text_preview": "Science Fair Project Encyclopedia |President of the| Historically, Landes was part of Gascony. It was one of the original 83 departments created during the French Revolution on March 4, 1790. It was created from parts of the provinces of Guyenne and Gascony. - Prefecture website (in French) - Conseil Général website (i"
+    },
+    {
+      "chunk_id": "FineMath_000012_001",
+      "dataset": "FineMath",
+      "gold_domain": "unknown",
+      "gold_abstained": true,
+      "predicted_domain": "software",
+      "predicted_abstained": false,
+      "confidence": 0.608696,
+      "abstain_reason": null,
+      "top_k": [
+        {
+          "domain": "software",
+          "score": 1.4
+        },
+        {
+          "domain": "stem",
+          "score": 0.9
+        }
+      ],
+      "evidence": {
+        "software": [
+          "keyword:http x1 (+1.4)"
+        ],
+        "stem": [
+          "FineMath weak provenance prior (+0.9)"
+        ]
+      },
+      "evidence_clusters": [
+        "provenance_prior",
+        "keyword",
+        "low_margin"
+      ],
+      "review_note": "mostly boilerplate/noise; topic not reliable; old review marked boilerplate/noise",
+      "text_preview": "You may ask your self, how can we find out everything is a triangle in mathematics. In order to figure out a triangle, first we have http://en.wikipedia.com/wiki/Sigiriya to understand what it resembles. This really is a task that is harder because there are many unique shapes that could be created with all those 3 ang"
+    }
+  ]
+}
