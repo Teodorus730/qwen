@@ -16,13 +16,23 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 
-SCHEMA_VERSION = "annotation_v2_deterministic_features_v1"
+SCHEMA_VERSION = "annotation_v2_deterministic_features_v2"
 
 TEX_MARKERS = re.compile(
     r"(\\frac|\\sum|\\int|\\lim|\\sqrt|\\alpha|\\beta|\\gamma|\\theta|\\pi|\\sigma|\\mu|\\Delta|\\partial|"
     r"\\mathrm|\\begin|\\end|\\left|\\right|\$\$|\\\(|\\\)|\\\[|\\\])"
 )
 MATH_SYMBOLS = re.compile(r"[∑∫√π∂∞≈≠≤≥±×÷]")
+SCIENTIFIC_FORMULA = re.compile(
+    r"(?x)"
+    r"("
+    r"\b(?:H2O|CO2|NaCl|C6H12O6)\b|"
+    r"\b(?:[A-Z][a-z]?\d+){2,}[A-Z]?[a-z]?\d*\b|"
+    r"\b(?:Na|Cl|Fe|Cu|Zn|Mg|Ca|Al|Si|Br|Ag|Au|Hg|Pb|Sn)(?:[A-Z][a-z]?\d*)+\b|"
+    r"\b\d+(?:\.\d+)?e[-+]?\d+\b|"
+    r"\b\d+(?:\.\d+)?\s*(?:cm|mm|m|kg|g|N|J|W|Hz|mol|microbar|feet|foot|inch|inches)\b"
+    r")"
+)
 EQUATION_LIKE = re.compile(
     r"(?i)(?:\b[a-z]\s*(?:\^|_)\s*[\w{}]+|\b[a-z]\([a-z0-9_]+\)|\b[a-z]\s*[=<>]=?\s*[-+]?\d|\d+\s*[=<>]=?\s*[a-z])"
 )
@@ -39,6 +49,14 @@ API_DOC = re.compile(
     re.I,
 )
 MAPLE_OR_CAS = re.compile(r"(?:^\s*>\s*\$|\\mathrm\{(?:Matrix|Vector|RootOf)\}|:=|≔)", re.M)
+COMMAND_OR_SIGNATURE = re.compile(
+    r"(?x)"
+    r"("
+    r"\b[a-zA-Z_][\w.]*\s*\([^)]{0,120}\)|"
+    r"(?<!\w)--[a-zA-Z][\w-]+|"
+    r"\b[a-zA-Z_]\w*\.[a-zA-Z_]\w+\b"
+    r")"
+)
 
 URLS = re.compile(
     r"(https?://|www\.|[a-zA-Z0-9.-]+\.(?:com|org|net|edu|gov|io|ru|de|uk|fr|it|nl|info|biz)\b)"
@@ -58,12 +76,34 @@ BOILERPLATE_PATTERNS = [
     "copyright",
     "footer",
     "navigation",
-    "main menu",
     "accept cookies",
     "reject all",
     "newsletter",
 ]
 BOILERPLATE = re.compile("|".join(re.escape(term) for term in BOILERPLATE_PATTERNS), re.I)
+UI_RESIDUE_TERMS = [
+    "menu",
+    "click here",
+    "previous",
+    "next",
+    "home",
+    "search",
+    "login",
+    "log in",
+    "sign in",
+    "share",
+    "reply",
+    "report",
+    "breadcrumbs",
+    "notes/highlights",
+    "show more",
+    "image attributions",
+]
+UI_RESIDUE = re.compile("|".join(re.escape(term) for term in UI_RESIDUE_TERMS), re.I)
+FORUM_RESIDUE = re.compile(
+    r"\b(?:reply|quote|posted by|edited|permalink|comments?|thread|upvote|downvote|responses?)\b",
+    re.I,
+)
 
 BULLET_LINE = re.compile(r"^\s*(?:[-*+•]|\d+[.)])\s+\S", re.M)
 TABLE_LINE = re.compile(r"^\s*\|.+\|\s*$", re.M)
@@ -149,13 +189,38 @@ def has_math_notation(text: str) -> bool:
     equals_count = text.count("=")
     caret_count = text.count("^")
 
-    if tex_hits or symbol_hits:
+    if tex_hits or symbol_hits or has_scientific_formula(text):
         return True
     if equation_hits >= 2:
         return True
     if equation_hits >= 1 and (operator_context or caret_count > 0):
         return True
     if equals_count >= 3 and operator_context:
+        return True
+    return False
+
+
+def has_scientific_formula(text: str) -> bool:
+    if not text:
+        return False
+    if SCIENTIFIC_FORMULA.search(text):
+        return True
+    if re.search(r"\$[^$]*(?:_\{?\d|\\text\{|\\mathrm\{|\\cdot|10\^)[^$]*\$", text):
+        return True
+    return False
+
+
+def has_api_or_command_syntax(text: str) -> bool:
+    if not text:
+        return False
+    api_doc = bool(API_DOC.search(text))
+    command_or_signature_hits = len(COMMAND_OR_SIGNATURE.findall(text))
+    maple_or_cas = bool(MAPLE_OR_CAS.search(text))
+    if maple_or_cas:
+        return True
+    if api_doc and command_or_signature_hits >= 1:
+        return True
+    if command_or_signature_hits >= 3 and not re.search(r"\bFIG\.\s*\d|\bScreen\s+No\.\s*\d", text):
         return True
     return False
 
@@ -175,6 +240,8 @@ def has_code(text: str) -> bool:
     if API_DOC.search(text):
         code_indicators += 1
     if MAPLE_OR_CAS.search(text):
+        code_indicators += 1
+    if has_api_or_command_syntax(text):
         code_indicators += 1
 
     semicolons = text.count(";")
@@ -220,6 +287,8 @@ def surface_features(text: str) -> dict[str, Any]:
     symbols = sum((not ch.isalnum()) and (not ch.isspace()) for ch in text)
     punctuation = sum(ch in string.punctuation for ch in text)
 
+    symbol_density = ratio(symbols, char_count)
+    punctuation_density = ratio(punctuation, char_count)
     return {
         "has_math_notation": has_math_notation(text),
         "has_code": has_code(text),
@@ -227,11 +296,32 @@ def surface_features(text: str) -> dict[str, Any]:
         "has_table_or_list": has_table_or_list(text),
         "has_urls_or_links": bool(URLS.search(text)),
         "has_boilerplate_markers": bool(BOILERPLATE.search(text)),
-        "symbol_density": ratio(symbols, char_count),
+        "is_symbol_heavy": symbol_density >= 0.12 or punctuation_density >= 0.14,
+        "has_scientific_formula": has_scientific_formula(text),
+        "has_api_or_command_syntax": has_api_or_command_syntax(text),
+        "symbol_density": symbol_density,
         "digit_density": ratio(digits, char_count),
         "uppercase_ratio": ratio(len(uppercase_letters), len(letters)),
-        "punctuation_density": ratio(punctuation, char_count),
+        "punctuation_density": punctuation_density,
     }
+
+
+def has_ui_residue(text: str) -> bool:
+    if not text:
+        return False
+    hits = len(UI_RESIDUE.findall(text))
+    if hits >= 2:
+        return True
+    lower = text.lower()
+    if "notes/highlights" in lower or "image attributions" in lower or "click here" in lower:
+        return True
+    return False
+
+
+def has_forum_residue(text: str) -> bool:
+    if not text:
+        return False
+    return len(FORUM_RESIDUE.findall(text)) >= 2
 
 
 def quality_features(text: str, stats: dict[str, Any], surface: dict[str, Any]) -> dict[str, Any]:
@@ -239,12 +329,16 @@ def quality_features(text: str, stats: dict[str, Any], surface: dict[str, Any]) 
     char_count = int(stats["char_count"])
     word_count = int(stats["word_count_rough"])
     score = 0.0
+    ui_residue = has_ui_residue(text)
+    forum_residue = has_forum_residue(text)
 
     if not text.strip():
         return {
             "noise_level": "unknown",
             "noise_score": 1.0,
             "noise_reasons": ["missing_text"],
+            "has_ui_residue": False,
+            "has_forum_residue": False,
         }
     if char_count < 120:
         score += 0.25
@@ -258,12 +352,12 @@ def quality_features(text: str, stats: dict[str, Any], surface: dict[str, Any]) 
     if surface["has_table_or_list"]:
         score += 0.1
         reasons.append("table_or_list_structure")
-    if surface["symbol_density"] >= 0.12:
+    if ui_residue:
         score += 0.2
-        reasons.append("high_symbol_density")
-    if surface["punctuation_density"] >= 0.14:
-        score += 0.15
-        reasons.append("high_punctuation_density")
+        reasons.append("ui_residue")
+    if forum_residue:
+        score += 0.2
+        reasons.append("forum_residue")
     if surface["uppercase_ratio"] >= 0.35 and word_count >= 20:
         score += 0.1
         reasons.append("high_uppercase_ratio")
@@ -295,6 +389,8 @@ def quality_features(text: str, stats: dict[str, Any], surface: dict[str, Any]) 
         "noise_level": level,
         "noise_score": score,
         "noise_reasons": reasons,
+        "has_ui_residue": ui_residue,
+        "has_forum_residue": forum_residue,
     }
 
 

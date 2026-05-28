@@ -20,6 +20,15 @@ BOOLEAN_SURFACE_FIELDS = [
     "has_urls_or_links",
     "has_boilerplate_markers",
 ]
+REFINED_BOOLEAN_SURFACE_FIELDS = [
+    "is_symbol_heavy",
+    "has_scientific_formula",
+    "has_api_or_command_syntax",
+]
+REFINED_BOOLEAN_QUALITY_FIELDS = [
+    "has_ui_residue",
+    "has_forum_residue",
+]
 NUMERIC_SURFACE_FIELDS = [
     "symbol_density",
     "digit_density",
@@ -143,13 +152,51 @@ def validate_text_stats(
         result.error(line_no, "text_stats.avg_line_length does not match char_count / line_count")
 
 
-def validate_surface(result: ValidationResult, line_no: int, text: str, surface: dict[str, Any]) -> None:
+def schema_requires_refined_fields(schema_version: Any) -> bool:
+    return isinstance(schema_version, str) and schema_version.endswith("_v2")
+
+
+def validate_optional_bool(
+    result: ValidationResult,
+    line_no: int,
+    owner: dict[str, Any],
+    field: str,
+    path: str,
+    required: bool,
+) -> None:
+    if field not in owner:
+        if required:
+            result.error(line_no, f"{path}.{field} is required for refined schema")
+        return
+    value = owner.get(field)
+    if not isinstance(value, bool):
+        result.error(line_no, f"{path}.{field} must be boolean")
+    elif value:
+        result.boolean_features[field] += 1
+
+
+def validate_surface(
+    result: ValidationResult,
+    line_no: int,
+    text: str,
+    surface: dict[str, Any],
+    refined_required: bool,
+) -> None:
     for field in BOOLEAN_SURFACE_FIELDS:
         value = surface.get(field)
         if not isinstance(value, bool):
             result.error(line_no, f"annotation_v2.surface.{field} must be boolean")
         elif value:
             result.boolean_features[field] += 1
+    for field in REFINED_BOOLEAN_SURFACE_FIELDS:
+        validate_optional_bool(
+            result,
+            line_no,
+            surface,
+            field,
+            "annotation_v2.surface",
+            required=refined_required,
+        )
 
     for field in NUMERIC_SURFACE_FIELDS:
         value = surface.get(field)
@@ -167,7 +214,12 @@ def validate_surface(result: ValidationResult, line_no: int, text: str, surface:
             result.warning(line_no, "text has no digits but surface.has_numbers=true")
 
 
-def validate_quality(result: ValidationResult, line_no: int, quality: dict[str, Any]) -> None:
+def validate_quality(
+    result: ValidationResult,
+    line_no: int,
+    quality: dict[str, Any],
+    refined_required: bool,
+) -> None:
     noise_level = quality.get("noise_level")
     if not isinstance(noise_level, str) or noise_level not in EXPECTED_NOISE_LEVELS:
         result.error(line_no, "quality.noise_level must be clean, partial_noise, mostly_noise, or unknown")
@@ -185,6 +237,15 @@ def validate_quality(result: ValidationResult, line_no: int, quality: dict[str, 
         result.error(line_no, "quality.noise_reasons must be a list")
     elif any(not isinstance(item, str) for item in noise_reasons):
         result.error(line_no, "quality.noise_reasons must contain only strings")
+    for field in REFINED_BOOLEAN_QUALITY_FIELDS:
+        validate_optional_bool(
+            result,
+            line_no,
+            quality,
+            field,
+            "annotation_v2.quality",
+            required=refined_required,
+        )
 
 
 def validate_record(result: ValidationResult, line_no: int, record: dict[str, Any]) -> None:
@@ -204,6 +265,7 @@ def validate_record(result: ValidationResult, line_no: int, record: dict[str, An
             result.error(line_no, f"annotation_v2.{section} is required")
 
     schema_version = annotation.get("schema_version")
+    refined_required = schema_requires_refined_fields(schema_version)
     if not isinstance(schema_version, str) or not schema_version.strip():
         result.error(line_no, "annotation_v2.schema_version must be a non-empty string")
     else:
@@ -221,9 +283,9 @@ def validate_record(result: ValidationResult, line_no: int, record: dict[str, An
     if text_stats is not None:
         validate_text_stats(result, line_no, text, text_stats)
     if surface is not None:
-        validate_surface(result, line_no, text, surface)
+        validate_surface(result, line_no, text, surface, refined_required=refined_required)
     if quality is not None:
-        validate_quality(result, line_no, quality)
+        validate_quality(result, line_no, quality, refined_required=refined_required)
 
 
 def validate_file(path: Path, max_errors: int) -> ValidationResult:

@@ -82,11 +82,46 @@ def example(record: dict[str, Any]) -> dict[str, Any]:
         "annotation_has_math_notation": surface.get("has_math_notation"),
         "annotation_has_code": surface.get("has_code"),
         "annotation_noise_level": quality.get("noise_level"),
+        "annotation_is_symbol_heavy": surface.get("is_symbol_heavy"),
+        "annotation_has_scientific_formula": surface.get("has_scientific_formula"),
+        "annotation_has_api_or_command_syntax": surface.get("has_api_or_command_syntax"),
+        "annotation_has_ui_residue": quality.get("has_ui_residue"),
+        "annotation_has_forum_residue": quality.get("has_forum_residue"),
         "review_has_math_notation": record.get("review_has_math_notation"),
         "review_has_code": record.get("review_has_code"),
         "review_noise_level": record.get("review_noise_level"),
         "review_note": record.get("review_note"),
     }
+
+
+def load_features_by_chunk_id(paths: list[str]) -> dict[str, dict[str, Any]]:
+    features: dict[str, dict[str, Any]] = {}
+    for path_arg in paths:
+        path = Path(path_arg)
+        for record in read_jsonl(path):
+            chunk_id = record.get("chunk_id")
+            if not isinstance(chunk_id, str):
+                raise ValueError(f"{path}: feature record without string chunk_id")
+            if chunk_id in features:
+                raise ValueError(f"duplicate feature chunk_id across feature inputs: {chunk_id}")
+            features[chunk_id] = record
+    return features
+
+
+def merge_review_with_features(
+    review_records: list[dict[str, Any]],
+    features_by_chunk_id: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    merged: list[dict[str, Any]] = []
+    for review in review_records:
+        chunk_id = review.get("chunk_id")
+        feature_record = features_by_chunk_id.get(str(chunk_id))
+        if feature_record is None:
+            raise ValueError(f"missing feature record for reviewed chunk_id: {chunk_id}")
+        merged_record = dict(review)
+        merged_record["annotation_v2"] = feature_record["annotation_v2"]
+        merged.append(merged_record)
+    return merged
 
 
 def noise_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
@@ -111,6 +146,33 @@ def noise_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def new_field_coverage(records: list[dict[str, Any]]) -> dict[str, Any]:
+    fields = {
+        "surface.is_symbol_heavy": lambda record: record["annotation_v2"]["surface"].get("is_symbol_heavy"),
+        "surface.has_scientific_formula": lambda record: record["annotation_v2"]["surface"].get("has_scientific_formula"),
+        "surface.has_api_or_command_syntax": lambda record: record["annotation_v2"]["surface"].get("has_api_or_command_syntax"),
+        "quality.has_ui_residue": lambda record: record["annotation_v2"]["quality"].get("has_ui_residue"),
+        "quality.has_forum_residue": lambda record: record["annotation_v2"]["quality"].get("has_forum_residue"),
+    }
+    coverage: dict[str, Any] = {}
+    for name, getter in fields.items():
+        values = [getter(record) for record in records]
+        coverage[name] = {
+            "present": sum(value is not None for value in values),
+            "true": sum(value is True for value in values),
+        }
+    return coverage
+
+
+def evaluate_records(records: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "has_math_notation": bool_metrics(records, "has_math_notation", "review_has_math_notation"),
+        "has_code": bool_metrics(records, "has_code", "review_has_code"),
+        "noise_level": noise_metrics(records),
+        "new_field_coverage": new_field_coverage(records),
+    }
+
+
 def validate_review_fields(records: list[dict[str, Any]]) -> None:
     for record in records:
         chunk_id = record.get("chunk_id")
@@ -128,6 +190,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate annotation_v2 feature review labels.")
     parser.add_argument("--input", required=True, help="Reviewed JSONL file.")
     parser.add_argument("--output", required=True, help="Output evaluation JSON.")
+    parser.add_argument(
+        "--features",
+        nargs="+",
+        help="Optional feature JSONL files to evaluate instead of embedded review annotations.",
+    )
     return parser.parse_args()
 
 
@@ -136,15 +203,21 @@ def main() -> None:
     input_path = Path(args.input)
     records = read_jsonl(input_path)
     validate_review_fields(records)
+    metrics: dict[str, Any]
+    if args.features:
+        refined_records = merge_review_with_features(records, load_features_by_chunk_id(args.features))
+        metrics = {
+            "embedded_review_annotation": evaluate_records(records),
+            "external_features": evaluate_records(refined_records),
+        }
+    else:
+        metrics = evaluate_records(records)
     result = {
         "input": str(input_path),
+        "features": args.features,
         "records": len(records),
         "dataset_distribution": dict(Counter(record.get("dataset") for record in records)),
-        "metrics": {
-            "has_math_notation": bool_metrics(records, "has_math_notation", "review_has_math_notation"),
-            "has_code": bool_metrics(records, "has_code", "review_has_code"),
-            "noise_level": noise_metrics(records),
-        },
+        "metrics": metrics,
     }
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
