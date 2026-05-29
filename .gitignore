@@ -11,3 +11,5 @@ external_samples/stage2_chunking_sample_clean/data_samples/hf_cache_test/
 .venv-embedding/
 
 external_samples/stage2_chunking_sample_clean/.hf_tokenizer_cache/
+external_samples/stage2_chunking_sample_clean/.hf_dataset_cache/
+external_samples/stage2_chunking_sample_clean/.hf_embedding_cache/
