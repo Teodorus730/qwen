@@ -1,0 +1,403 @@
+{
+  "records_total": 118,
+  "gold_abstained_excluded": 2,
+  "answered_count": 118,
+  "abstained_count": 0,
+  "coverage_rate": 1.0,
+  "accuracy_on_answered": 0.381356,
+  "strict_accuracy": 0.381356,
+  "top_k_contains_gold": {
+    "count": 94,
+    "available_count": 118,
+    "rate": 0.79661
+  },
+  "macro_f1": 0.294358,
+  "per_domain_precision_recall": {
+    "business_economics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1
+    },
+    "computer_science_software": {
+      "precision": 0.052632,
+      "recall": 0.2,
+      "f1": 0.083333,
+      "support": 5
+    },
+    "engineering_technology": {
+      "precision": 0.833333,
+      "recall": 0.192308,
+      "f1": 0.3125,
+      "support": 26
+    },
+    "humanities_arts": {
+      "precision": 0.75,
+      "recall": 0.230769,
+      "f1": 0.352941,
+      "support": 13
+    },
+    "law_government_policy": {
+      "precision": 0.428571,
+      "recall": 0.428571,
+      "f1": 0.428571,
+      "support": 7
+    },
+    "lifestyle_everyday": {
+      "precision": 0.416667,
+      "recall": 0.5,
+      "f1": 0.454545,
+      "support": 10
+    },
+    "math": {
+      "precision": 0.62963,
+      "recall": 0.73913,
+      "f1": 0.68,
+      "support": 23
+    },
+    "medicine_health": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1": 0.285714,
+      "support": 5
+    },
+    "natural_science": {
+      "precision": 0.642857,
+      "recall": 0.391304,
+      "f1": 0.486486,
+      "support": 23
+    },
+    "other_unclear": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "social_sciences": {
+      "precision": 0.125,
+      "recall": 0.2,
+      "f1": 0.153846,
+      "support": 5
+    }
+  },
+  "per_dataset_metrics": {
+    "FineMath": {
+      "records_total": 38,
+      "answered_count": 38,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.552632,
+      "strict_accuracy": 0.552632
+    },
+    "FineWeb": {
+      "records_total": 40,
+      "answered_count": 40,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.225,
+      "strict_accuracy": 0.225
+    },
+    "FineWeb-Edu": {
+      "records_total": 40,
+      "answered_count": 40,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.375,
+      "strict_accuracy": 0.375
+    }
+  },
+  "confusion_matrix": {
+    "business_economics": {
+      "other_unclear": 1
+    },
+    "computer_science_software": {
+      "computer_science_software": 1,
+      "math": 1,
+      "other_unclear": 3
+    },
+    "engineering_technology": {
+      "computer_science_software": 18,
+      "engineering_technology": 5,
+      "lifestyle_everyday": 1,
+      "math": 1,
+      "other_unclear": 1
+    },
+    "humanities_arts": {
+      "humanities_arts": 3,
+      "law_government_policy": 1,
+      "lifestyle_everyday": 3,
+      "natural_science": 2,
+      "other_unclear": 2,
+      "social_sciences": 2
+    },
+    "law_government_policy": {
+      "business_economics": 1,
+      "humanities_arts": 1,
+      "law_government_policy": 3,
+      "natural_science": 1,
+      "social_sciences": 1
+    },
+    "lifestyle_everyday": {
+      "law_government_policy": 1,
+      "lifestyle_everyday": 5,
+      "other_unclear": 3,
+      "social_sciences": 1
+    },
+    "math": {
+      "business_economics": 1,
+      "lifestyle_everyday": 1,
+      "math": 17,
+      "medicine_health": 1,
+      "other_unclear": 3
+    },
+    "medicine_health": {
+      "engineering_technology": 1,
+      "lifestyle_everyday": 1,
+      "medicine_health": 1,
+      "natural_science": 1,
+      "social_sciences": 1
+    },
+    "natural_science": {
+      "business_economics": 1,
+      "law_government_policy": 1,
+      "lifestyle_everyday": 1,
+      "math": 8,
+      "natural_science": 9,
+      "other_unclear": 1,
+      "social_sciences": 2
+    },
+    "social_sciences": {
+      "business_economics": 2,
+      "law_government_policy": 1,
+      "natural_science": 1,
+      "social_sciences": 1
+    }
+  },
+  "mismatch_examples": [
+    {
+      "chunk_id": "FineWeb-Edu_000014_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "law_government_policy",
+      "predicted": "natural_science",
+      "confidence": 0.484108,
+      "margin": 0.000181,
+      "text_preview": "Human nature and the nature of war Twenty years ago, Canadian military historian and journalist Gwynne Dyer fascinated the public in 45 countries with his award-winning television series on the nature of war. He followed up that success with an equally remarkable book that grew out of the research t"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000018_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "law_government_policy",
+      "confidence": 0.528633,
+      "margin": 0.029253,
+      "text_preview": "The OED “is widely regarded as the accepted authority on the English language. It is an unsurpassed guide to the meaning, history, and pronunciation of 600,000 words— past and present—from across the English-speaking world. As a historical dictionary, the OED is very different from those of current "
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000013_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "lifestyle_everyday",
+      "confidence": 0.399318,
+      "margin": 0.017539,
+      "text_preview": "With Abby off at school, it is a chance to work on learning more with Kenzie. She knows all her letters, and we have been working on mastering her sounds. We’ll be doing the activity I’m showing you today with every letter of the alphabet. You may have seen my tutorial on sewing a reversible bag. To"
+    },
+    {
+      "chunk_id": "FineWeb_000009_051",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.372156,
+      "margin": 0.001685,
+      "text_preview": "the rental of the first video cassette. These steps are shown by displays 6 and 7 below. ##STR6## Next, the Total key 530 is pressed. As shown below, in Display 8, pressing this key causes the total amount, including tax, to be calculated and displayed. Further, individual subtotals of the rental ch"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000006_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "natural_science",
+      "predicted": "social_sciences",
+      "confidence": 0.472096,
+      "margin": 0.041031,
+      "text_preview": "Great apes go through mid-life crisis They may not take up surfing or start second careers as cupcake-makers, but chimpanzees and orangutans seem to go through a ‘mid-life crisis’, just like humans. A study of 508 great apes in captivity shows that the animals’ sense of well-being bottoms out in the"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_010",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "lifestyle_everyday",
+      "confidence": 0.417112,
+      "margin": 0.014589,
+      "text_preview": "in the USAF Manned Spaceflight Engineer Program. He was killed in the attacks of September 11, 2001 aboard American Airlines Flight 11, the first plane to hit the first World Trade Center building at 8:46am. All of the great values we read and write about seem to be interconnected, and loyalty may b"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000022_002",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "social_sciences",
+      "confidence": 0.337146,
+      "margin": 0.020498,
+      "text_preview": "Picasso, Joan Miró, and Salvador Dalí talked on the radio in his place to publicize the show. Picasso's friend, the surrealist poet Paul Éluard, traveled down to Barcelona from Paris for the exhibit and delivered a lecture at the opening. Éluard, standing in for Picasso, received the hearty support "
+    },
+    {
+      "chunk_id": "FineWeb_000009_027",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.435585,
+      "margin": 0.019537,
+      "text_preview": "At step S90, the \"trapper\" subroutine is executed. The trapper subroutine of step S90 is shown in detail in FIG. 4B. Referring now to FIG. 4B, the trapper subroutine starts at 125 and proceeds to step S130, in which a flag is detected, if it is present, indicating that video cassette rental data was"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000003_003",
+      "dataset": "FineWeb-Edu",
+      "gold": "social_sciences",
+      "predicted": "natural_science",
+      "confidence": 0.553562,
+      "margin": 0.014054,
+      "text_preview": "certainly brings into focus the social aspects of disasters. The disaster trap theory, likewise, brings into focus the financial bottom line. This perspective is most often discussed in international development and disaster reduction circles. It argues that disasters destroy development gains and c"
+    },
+    {
+      "chunk_id": "FineWeb_000009_013",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.466978,
+      "margin": 0.027101,
+      "text_preview": "the data regarding revenue-sharing cassettes from all of the other data it receives. Then, it computes the shares of the revenues due to the cassette owners or distributors and to the retailers. Reports and funds are sent to the respective participants in the revenue-sharing program according to a f"
+    },
+    {
+      "chunk_id": "FineWeb_000015_000",
+      "dataset": "FineWeb",
+      "gold": "natural_science",
+      "predicted": "other_unclear",
+      "confidence": 0.431642,
+      "margin": 0.009025,
+      "text_preview": "|- candidate number||14295| |- NTR Number||NTR3827| |- ISRCTN||ISRCTN wordt niet meer aangevraagd.| |- Date ISRCTN created| |- date ISRCTN requested| |- Date Registered NTR||30-jan-2013| |- Secondary IDs||NL41498.018.12 / 2012_211; CCMO / METC AMC| |- Public Title||Usability of Subcutaneous Continuo"
+    },
+    {
+      "chunk_id": "FineWeb_000009_028",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.419659,
+      "margin": 0.009178,
+      "text_preview": "in which the program is operating. If, however, the landmarks have not changed, as indicated by a No at step S131, processing proceeds to step S134. At step S134, the rental information which has been trapped is saved, updated during subsequent interrupt cycles, and ultimately sent to the output buf"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_011",
+      "dataset": "FineWeb-Edu",
+      "gold": "lifestyle_everyday",
+      "predicted": "social_sciences",
+      "confidence": 0.415801,
+      "margin": 0.005471,
+      "text_preview": "tale begins at Camp Nazareth (that’s the name of the overnight camp at the end of our lake). Its run by the local Catholic Diocese which has had little success in recent years attracting enough kids. More often than not, this wonderful facility – it can hold up to 300 kids at any one time - is terri"
+    },
+    {
+      "chunk_id": "FineWeb_000009_003",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.539724,
+      "margin": 0.033012,
+      "text_preview": "a plurality of remote video record marketing locations and for transmitting selected portions of said data to a revenue-sharing computer at a computing location, said system comprising, in combination, a point of sale system at each of a plurality of marketing locations, each of said point of sale s"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000023_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "medicine_health",
+      "predicted": "social_sciences",
+      "confidence": 0.40427,
+      "margin": 0.011136,
+      "text_preview": "NEW YORK — Children of older fathers are known to be more at risk for diseases including schizophrenia and autism. Now, a new scientific look at the genes passed down within families may have pinpointed a reason why. The study, reported Wednesday in the journal Nature, found that older fathers trans"
+    },
+    {
+      "chunk_id": "FineMath_000026_007",
+      "dataset": "FineMath",
+      "gold": "natural_science",
+      "predicted": "math",
+      "confidence": 0.475196,
+      "margin": 0.049967,
+      "text_preview": "“We are assuming in this problem that the total force required is equally divided among the six ant feet, and that ONLY the contact between feet and ceiling gives rise to the force.” The weight of the ant is provided in Newtons (N), a derived unit which is the force needed to increase the speed of ("
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000022_001",
+      "dataset": "FineWeb-Edu",
+      "gold": "law_government_policy",
+      "predicted": "humanities_arts",
+      "confidence": 0.351002,
+      "margin": 0.022123,
+      "text_preview": "Falange political party had begun to negotiate with Mussolini and Hitler, from whom they obtained financial commitments and promises of military support for a rebellion to overthrow the legally elected Second Republic. The republicans and the left, increasingly aware of the growing fascist menace th"
+    },
+    {
+      "chunk_id": "FineWeb_000009_058",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.428677,
+      "margin": 0.027981,
+      "text_preview": "to the master computer by way of the LAN adapter. The dual port RAM 196, which in a preferred embodiment is an 8 k-byte dual port RAM, enables the LAN adapter to communicated with the master computer in an asynchronous manner. Utilizing such a dual port RAM increases the amount of data transfer betw"
+    },
+    {
+      "chunk_id": "FineWeb_000009_040",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "other_unclear",
+      "confidence": 0.478131,
+      "margin": 0.012591,
+      "text_preview": "Upon pressing the function key F10 the transaction currently displayed on the screen is aborted. In accordance with the present invention, upon pressing the \"hot keys\" on the keyboard, that is, the \"Alt\" and the left \"shift\" keys, the main menu of the teacher program is displayed in the shaded area "
+    },
+    {
+      "chunk_id": "FineMath_000005_007",
+      "dataset": "FineMath",
+      "gold": "natural_science",
+      "predicted": "math",
+      "confidence": 0.380339,
+      "margin": 0.024323,
+      "text_preview": "Solution The problem drew in the figure below. 5. A biker sees the image of a motorcycle behind it 1/6 times its original size when the distance between the biker and motorcycle is 30 meters. Determine the radius of curvature of the rear view mirror… A. 7.14 m B. 8.57 m C. 12.00 m D. 24.00 m Known :"
+    },
+    {
+      "chunk_id": "FineWeb_000009_023",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.513143,
+      "margin": 0.049909,
+      "text_preview": "Accordingly, each data tap is connected between the server and one of the terminals, through cable 326 or 330. When a printer is connected to a server or terminal, additional parallel connections are used. For example, printers 308 and 310 are respectively connected to the parallel ports of the data"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000003_002",
+      "dataset": "FineWeb-Edu",
+      "gold": "social_sciences",
+      "predicted": "business_economics",
+      "confidence": 0.49631,
+      "margin": 0.021762,
+      "text_preview": "which was being assigned to imports (Bii, 2009b). “The country will continue to experience food shortages unless the Government addresses the high cost of farm inputs to motivate farmers to increase production,” said Mr. Jonathan Bii of Uasin Gish (Bartoo & Lucheli, 2009; Bii, 2009a, 2009b; Bungee, "
+    },
+    {
+      "chunk_id": "FineWeb_000009_017",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.465466,
+      "margin": 0.01057,
+      "text_preview": "and size so that the store owner's investment is kept to a minimum. In particular, the system in Store No. 3 includes a master PC 25, a LAN adapter 27, a printer 16 and cash drawers 15 and 17. Also included are optional credit card readers 28 and 29, as well as bar code reader wands 18 and 19. In ac"
+    },
+    {
+      "chunk_id": "FineWeb_000009_052",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "computer_science_software",
+      "confidence": 0.464719,
+      "margin": 0.023272,
+      "text_preview": "for late return of the rental cassette. The Total key 530 and the Amount Tendered key 532 can be used in the manner described above to complete the transaction, and the Print button can be used to print an invoice for the further fees. If a video record is being sold, rather than rented, the operato"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_008",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "other_unclear",
+      "confidence": 0.362364,
+      "margin": 0.018388,
+      "text_preview": "but clearly remembered moment in time. 9/11 does all of those things and more. My wife and I were in NYC: preparing to get on the George Washington Bridge to go into Manhattan when the first plane hit; coming to a complete stop on the road and in our lives; watching in fear and confusion as the seco"
+    }
+  ]
+}

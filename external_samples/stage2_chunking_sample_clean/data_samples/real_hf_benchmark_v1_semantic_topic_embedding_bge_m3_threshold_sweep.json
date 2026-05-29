@@ -1,0 +1,525 @@
+{
+  "source_predictions": "data_samples\\real_hf_benchmark_v1_semantic_topic_embedding_bge_m3.jsonl",
+  "gold": "data_samples\\real_hf_benchmark_v1_semantic_topic_genre_function_pseudo_gold.jsonl",
+  "note": "Dev-only threshold/margin sweep from saved BGE-M3 scores; no additional embedding inference.",
+  "results": [
+    {
+      "threshold": 0.0,
+      "margin_threshold": 0.0,
+      "records_total": 118,
+      "answered_count": 118,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.381356,
+      "strict_accuracy": 0.381356,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 38,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.552632,
+          "strict_accuracy": 0.552632
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 40,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.225,
+          "strict_accuracy": 0.225
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 40,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.375,
+          "strict_accuracy": 0.375
+        }
+      }
+    },
+    {
+      "threshold": 0.0,
+      "margin_threshold": 0.02,
+      "records_total": 118,
+      "answered_count": 64,
+      "abstained_count": 54,
+      "coverage_rate": 0.542373,
+      "accuracy_on_answered": 0.484375,
+      "strict_accuracy": 0.262712,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 28,
+          "abstained_count": 10,
+          "coverage_rate": 0.736842,
+          "accuracy_on_answered": 0.607143,
+          "strict_accuracy": 0.447368
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 19,
+          "abstained_count": 21,
+          "coverage_rate": 0.475,
+          "accuracy_on_answered": 0.210526,
+          "strict_accuracy": 0.1
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 17,
+          "abstained_count": 23,
+          "coverage_rate": 0.425,
+          "accuracy_on_answered": 0.588235,
+          "strict_accuracy": 0.25
+        }
+      }
+    },
+    {
+      "threshold": 0.0,
+      "margin_threshold": 0.05,
+      "records_total": 118,
+      "answered_count": 11,
+      "abstained_count": 107,
+      "coverage_rate": 0.09322,
+      "accuracy_on_answered": 0.727273,
+      "strict_accuracy": 0.067797,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 9,
+          "abstained_count": 29,
+          "coverage_rate": 0.236842,
+          "accuracy_on_answered": 0.666667,
+          "strict_accuracy": 0.157895
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 0,
+          "abstained_count": 40,
+          "coverage_rate": 0.0,
+          "accuracy_on_answered": 0.0,
+          "strict_accuracy": 0.0
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 2,
+          "abstained_count": 38,
+          "coverage_rate": 0.05,
+          "accuracy_on_answered": 1.0,
+          "strict_accuracy": 0.05
+        }
+      }
+    },
+    {
+      "threshold": 0.2,
+      "margin_threshold": 0.0,
+      "records_total": 118,
+      "answered_count": 118,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.381356,
+      "strict_accuracy": 0.381356,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 38,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.552632,
+          "strict_accuracy": 0.552632
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 40,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.225,
+          "strict_accuracy": 0.225
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 40,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.375,
+          "strict_accuracy": 0.375
+        }
+      }
+    },
+    {
+      "threshold": 0.2,
+      "margin_threshold": 0.02,
+      "records_total": 118,
+      "answered_count": 64,
+      "abstained_count": 54,
+      "coverage_rate": 0.542373,
+      "accuracy_on_answered": 0.484375,
+      "strict_accuracy": 0.262712,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 28,
+          "abstained_count": 10,
+          "coverage_rate": 0.736842,
+          "accuracy_on_answered": 0.607143,
+          "strict_accuracy": 0.447368
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 19,
+          "abstained_count": 21,
+          "coverage_rate": 0.475,
+          "accuracy_on_answered": 0.210526,
+          "strict_accuracy": 0.1
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 17,
+          "abstained_count": 23,
+          "coverage_rate": 0.425,
+          "accuracy_on_answered": 0.588235,
+          "strict_accuracy": 0.25
+        }
+      }
+    },
+    {
+      "threshold": 0.2,
+      "margin_threshold": 0.05,
+      "records_total": 118,
+      "answered_count": 11,
+      "abstained_count": 107,
+      "coverage_rate": 0.09322,
+      "accuracy_on_answered": 0.727273,
+      "strict_accuracy": 0.067797,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 9,
+          "abstained_count": 29,
+          "coverage_rate": 0.236842,
+          "accuracy_on_answered": 0.666667,
+          "strict_accuracy": 0.157895
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 0,
+          "abstained_count": 40,
+          "coverage_rate": 0.0,
+          "accuracy_on_answered": 0.0,
+          "strict_accuracy": 0.0
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 2,
+          "abstained_count": 38,
+          "coverage_rate": 0.05,
+          "accuracy_on_answered": 1.0,
+          "strict_accuracy": 0.05
+        }
+      }
+    },
+    {
+      "threshold": 0.3,
+      "margin_threshold": 0.0,
+      "records_total": 118,
+      "answered_count": 116,
+      "abstained_count": 2,
+      "coverage_rate": 0.983051,
+      "accuracy_on_answered": 0.37931,
+      "strict_accuracy": 0.372881,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 38,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.552632,
+          "strict_accuracy": 0.552632
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 38,
+          "abstained_count": 2,
+          "coverage_rate": 0.95,
+          "accuracy_on_answered": 0.210526,
+          "strict_accuracy": 0.2
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 40,
+          "abstained_count": 0,
+          "coverage_rate": 1.0,
+          "accuracy_on_answered": 0.375,
+          "strict_accuracy": 0.375
+        }
+      }
+    },
+    {
+      "threshold": 0.3,
+      "margin_threshold": 0.02,
+      "records_total": 118,
+      "answered_count": 64,
+      "abstained_count": 54,
+      "coverage_rate": 0.542373,
+      "accuracy_on_answered": 0.484375,
+      "strict_accuracy": 0.262712,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 28,
+          "abstained_count": 10,
+          "coverage_rate": 0.736842,
+          "accuracy_on_answered": 0.607143,
+          "strict_accuracy": 0.447368
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 19,
+          "abstained_count": 21,
+          "coverage_rate": 0.475,
+          "accuracy_on_answered": 0.210526,
+          "strict_accuracy": 0.1
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 17,
+          "abstained_count": 23,
+          "coverage_rate": 0.425,
+          "accuracy_on_answered": 0.588235,
+          "strict_accuracy": 0.25
+        }
+      }
+    },
+    {
+      "threshold": 0.3,
+      "margin_threshold": 0.05,
+      "records_total": 118,
+      "answered_count": 11,
+      "abstained_count": 107,
+      "coverage_rate": 0.09322,
+      "accuracy_on_answered": 0.727273,
+      "strict_accuracy": 0.067797,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 9,
+          "abstained_count": 29,
+          "coverage_rate": 0.236842,
+          "accuracy_on_answered": 0.666667,
+          "strict_accuracy": 0.157895
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 0,
+          "abstained_count": 40,
+          "coverage_rate": 0.0,
+          "accuracy_on_answered": 0.0,
+          "strict_accuracy": 0.0
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 2,
+          "abstained_count": 38,
+          "coverage_rate": 0.05,
+          "accuracy_on_answered": 1.0,
+          "strict_accuracy": 0.05
+        }
+      }
+    },
+    {
+      "threshold": 0.4,
+      "margin_threshold": 0.0,
+      "records_total": 118,
+      "answered_count": 97,
+      "abstained_count": 21,
+      "coverage_rate": 0.822034,
+      "accuracy_on_answered": 0.360825,
+      "strict_accuracy": 0.29661,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 31,
+          "abstained_count": 7,
+          "coverage_rate": 0.815789,
+          "accuracy_on_answered": 0.548387,
+          "strict_accuracy": 0.447368
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 33,
+          "abstained_count": 7,
+          "coverage_rate": 0.825,
+          "accuracy_on_answered": 0.151515,
+          "strict_accuracy": 0.125
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 33,
+          "abstained_count": 7,
+          "coverage_rate": 0.825,
+          "accuracy_on_answered": 0.393939,
+          "strict_accuracy": 0.325
+        }
+      }
+    },
+    {
+      "threshold": 0.4,
+      "margin_threshold": 0.02,
+      "records_total": 118,
+      "answered_count": 53,
+      "abstained_count": 65,
+      "coverage_rate": 0.449153,
+      "accuracy_on_answered": 0.45283,
+      "strict_accuracy": 0.20339,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 24,
+          "abstained_count": 14,
+          "coverage_rate": 0.631579,
+          "accuracy_on_answered": 0.583333,
+          "strict_accuracy": 0.368421
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 16,
+          "abstained_count": 24,
+          "coverage_rate": 0.4,
+          "accuracy_on_answered": 0.125,
+          "strict_accuracy": 0.05
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 13,
+          "abstained_count": 27,
+          "coverage_rate": 0.325,
+          "accuracy_on_answered": 0.615385,
+          "strict_accuracy": 0.2
+        }
+      }
+    },
+    {
+      "threshold": 0.4,
+      "margin_threshold": 0.05,
+      "records_total": 118,
+      "answered_count": 10,
+      "abstained_count": 108,
+      "coverage_rate": 0.084746,
+      "accuracy_on_answered": 0.7,
+      "strict_accuracy": 0.059322,
+      "top_k_contains_gold_rate": 0.79661,
+      "per_dataset_metrics": {
+        "FineMath": {
+          "records_total": 38,
+          "answered_count": 8,
+          "abstained_count": 30,
+          "coverage_rate": 0.210526,
+          "accuracy_on_answered": 0.625,
+          "strict_accuracy": 0.131579
+        },
+        "FineWeb": {
+          "records_total": 40,
+          "answered_count": 0,
+          "abstained_count": 40,
+          "coverage_rate": 0.0,
+          "accuracy_on_answered": 0.0,
+          "strict_accuracy": 0.0
+        },
+        "FineWeb-Edu": {
+          "records_total": 40,
+          "answered_count": 2,
+          "abstained_count": 38,
+          "coverage_rate": 0.05,
+          "accuracy_on_answered": 1.0,
+          "strict_accuracy": 0.05
+        }
+      }
+    }
+  ],
+  "best_by_strict_accuracy": {
+    "threshold": 0.0,
+    "margin_threshold": 0.0,
+    "records_total": 118,
+    "answered_count": 118,
+    "abstained_count": 0,
+    "coverage_rate": 1.0,
+    "accuracy_on_answered": 0.381356,
+    "strict_accuracy": 0.381356,
+    "top_k_contains_gold_rate": 0.79661,
+    "per_dataset_metrics": {
+      "FineMath": {
+        "records_total": 38,
+        "answered_count": 38,
+        "abstained_count": 0,
+        "coverage_rate": 1.0,
+        "accuracy_on_answered": 0.552632,
+        "strict_accuracy": 0.552632
+      },
+      "FineWeb": {
+        "records_total": 40,
+        "answered_count": 40,
+        "abstained_count": 0,
+        "coverage_rate": 1.0,
+        "accuracy_on_answered": 0.225,
+        "strict_accuracy": 0.225
+      },
+      "FineWeb-Edu": {
+        "records_total": 40,
+        "answered_count": 40,
+        "abstained_count": 0,
+        "coverage_rate": 1.0,
+        "accuracy_on_answered": 0.375,
+        "strict_accuracy": 0.375
+      }
+    }
+  },
+  "best_by_accuracy_on_answered": {
+    "threshold": 0.0,
+    "margin_threshold": 0.05,
+    "records_total": 118,
+    "answered_count": 11,
+    "abstained_count": 107,
+    "coverage_rate": 0.09322,
+    "accuracy_on_answered": 0.727273,
+    "strict_accuracy": 0.067797,
+    "top_k_contains_gold_rate": 0.79661,
+    "per_dataset_metrics": {
+      "FineMath": {
+        "records_total": 38,
+        "answered_count": 9,
+        "abstained_count": 29,
+        "coverage_rate": 0.236842,
+        "accuracy_on_answered": 0.666667,
+        "strict_accuracy": 0.157895
+      },
+      "FineWeb": {
+        "records_total": 40,
+        "answered_count": 0,
+        "abstained_count": 40,
+        "coverage_rate": 0.0,
+        "accuracy_on_answered": 0.0,
+        "strict_accuracy": 0.0
+      },
+      "FineWeb-Edu": {
+        "records_total": 40,
+        "answered_count": 2,
+        "abstained_count": 38,
+        "coverage_rate": 0.05,
+        "accuracy_on_answered": 1.0,
+        "strict_accuracy": 0.05
+      }
+    }
+  }
+}
