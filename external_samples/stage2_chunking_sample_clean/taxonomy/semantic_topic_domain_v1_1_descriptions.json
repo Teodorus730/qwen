@@ -1,0 +1,159 @@
+{
+  "schema_version": "semantic_topic_domain_v1_1",
+  "domains": [
+    {
+      "domain": "math",
+      "description": "Mathematics as the main subject: theorem proving, equation solving, symbolic manipulation, topology, calculus, trigonometry, probability, statistics as mathematical method, distributions, matrix/vector operations, optimization, and mathematical problem solving.",
+      "positive_examples": [
+        "A proof involving sine, cosine, tangent, identities, functions, or equations.",
+        "A topology passage about nowhere dense sets, closure, complete spaces, or uniform norm.",
+        "A statistics lesson about median, mean, skew, probability, MAPE, model error, or distributions where the mathematical object is central."
+      ],
+      "negative_notes": [
+        "Do not assign math to physics, chemistry, biology, or engineering text merely because it contains formulas, units, or numeric calculations.",
+        "Do not assign math to software documentation about matrix commands when the software/API behavior is the main subject.",
+        "If formulas explain a natural phenomenon such as force, chemistry, molecules, climate, or animal adhesion, prefer natural_science."
+      ]
+    },
+    {
+      "domain": "natural_science",
+      "description": "Natural science as the main subject: biology, chemistry, physics, earth science, astronomy, ecology, climate science, geology, genetics, species, habitats, molecules, atoms, forces, materials as natural phenomena, and empirical scientific findings.",
+      "positive_examples": [
+        "A biology passage about species, genes, cells, animals, rainforests, ecology, or endangered habitats.",
+        "A chemistry passage about atoms, molecules, valence electrons, bromine, iodine, sucrose, or chemical formulas.",
+        "A physics passage about force, Newtons, mirrors, adhesion, motion, or experimental measurement of a natural system."
+      ],
+      "negative_notes": [
+        "Do not assign natural_science to pure math/statistics notation with no natural phenomenon.",
+        "Do not assign natural_science to engineering patents or devices unless the natural phenomenon is the main subject.",
+        "Medical diagnosis, treatment, symptoms, mental health, and public health belong to medicine_health."
+      ]
+    },
+    {
+      "domain": "computer_science_software",
+      "description": "Software and computing as the main subject: programming, code, APIs, algorithms as software implementation, data structures, computational complexity, packages, libraries, CLIs, configuration, servers, databases, cybersecurity, developer documentation, and operating systems.",
+      "positive_examples": [
+        "API or package documentation with functions, classes, parameters, commands, or configuration options.",
+        "A programming explanation about B-trees, algorithms, complexity, code, data structures, or database behavior.",
+        "A web server or software product page where server configuration, reverse proxy behavior, SSL/TLS, or software features are central."
+      ],
+      "negative_notes": [
+        "Do not assign software to physical devices, patent apparatus, terminals, sensors, circuits, adapters, printers, POS hardware, or industrial systems unless code/software is clearly the main subject.",
+        "Do not assign software only because a patent text mentions a program, data, display, keyboard, LAN, or computer inside a physical system.",
+        "Mathematical use of software tools may be math when the math object is central."
+      ]
+    },
+    {
+      "domain": "engineering_technology",
+      "description": "Engineered physical or cyber-physical systems as the main subject: patents, devices, apparatuses, circuits, terminals, sensors, adapters, data taps, printers, keyboards, displays, POS systems, electronics, appliances, vehicles, infrastructure, telecommunications hardware, industrial systems, and manufacturing processes.",
+      "positive_examples": [
+        "A patent-like description of a point-of-sale terminal, LAN adapter, data tap, printer connection, display, keyboard, invoice capture, transaction hardware, or circuit.",
+        "A technical description of sensors, adapters, apparatuses, appliances, electronics, terminals, vehicles, engines, or infrastructure.",
+        "A product or engineering specification for industrial equipment, physical hardware, or a cyber-physical system."
+      ],
+      "negative_notes": [
+        "Do not assign engineering_technology to pure software APIs, code snippets, packages, CLI documentation, or algorithm tutorials.",
+        "A computer mentioned as a component of a patented physical system does not automatically make the topic software.",
+        "Consumer lifestyle reviews of gadgets may be lifestyle_everyday when practical consumer experience dominates."
+      ]
+    },
+    {
+      "domain": "medicine_health",
+      "description": "Medicine, clinical care, mental health, disease, symptoms, treatments, patient education, public health, disability, rehabilitation, anatomy, drugs, healthcare systems, and health advice where health outcomes are central.",
+      "positive_examples": [
+        "A mental health help article about depression, suicide, therapy, medication, or emergency care.",
+        "A medical genetics article about disease risk, autism, schizophrenia, symptoms, or clinical findings.",
+        "A rehabilitation or disability technology program framed around healthcare and patient outcomes."
+      ],
+      "negative_notes": [
+        "Biology or chemistry without clinical/health framing is natural_science.",
+        "Fitness, fashion, or everyday wellness without medical claims is lifestyle_everyday.",
+        "Engineering devices belong to engineering_technology unless the clinical health context is dominant."
+      ]
+    },
+    {
+      "domain": "business_economics",
+      "description": "Business, marketing, services, finance, economics, markets, accounting, management, corporate strategy, employment, pricing analysis, trade, supply chains, and economic mechanisms as the subject.",
+      "positive_examples": [
+        "An explanation of services marketing, intangible services, service quality, consumer evaluation, or marketing management.",
+        "A finance or economics passage about markets, interest rates, pricing, accounting, investment portfolios, or demand.",
+        "A business operations article about hiring, management, supply chains, or corporate strategy."
+      ],
+      "negative_notes": [
+        "Do not assign business_economics simply because a page is commercial or sells a product; product_commercial is genre/function, not semantic topic.",
+        "A clothing storefront is usually lifestyle_everyday plus commercial function, not business_economics.",
+        "Tax law and government regulation usually belong to law_government_policy."
+      ]
+    },
+    {
+      "domain": "law_government_policy",
+      "description": "Law, public policy, government, elections, civic institutions, courts, regulation, legal rights, sovereignty, international governance, war policy, public administration, taxation, assessment systems, and official policy processes.",
+      "positive_examples": [
+        "A passage about elections, presidential election resources, legislation, public policy, or government reform.",
+        "A discussion of war, sovereignty, international courts, nuclear proliferation, or global governance.",
+        "A local or national government text about taxes, assessment systems, public services, compliance, or regulation."
+      ],
+      "negative_notes": [
+        "Historical narrative without policy/institutional focus may be humanities_arts.",
+        "Social inequality analysis may be social_sciences when empirical society/behavior framing dominates.",
+        "Do not assign this label for every mention of a country, official, or event without legal/government/policy substance."
+      ]
+    },
+    {
+      "domain": "social_sciences",
+      "description": "Human society and behavior studied or analyzed through sociology, psychology, anthropology, education research, demographics, communication studies, gender studies, social inequality, public opinion, development studies, and disaster/social vulnerability analysis.",
+      "positive_examples": [
+        "A sociology or equity passage about immigrant integration, gender inequality, poverty, labor, or social conditions.",
+        "A development studies or disaster-risk analysis about social vulnerability, disaster traps, and institutional effects.",
+        "A psychology or social behavior passage about groups, motivation, memory, or public opinion."
+      ],
+      "negative_notes": [
+        "Government rules, elections, legal institutions, and policy mechanisms belong to law_government_policy when they are central.",
+        "History, religion, biography, art, literature, and philosophy usually belong to humanities_arts.",
+        "Casual life advice or personal narrative is usually lifestyle_everyday unless social-science analysis dominates."
+      ]
+    },
+    {
+      "domain": "humanities_arts",
+      "description": "Humanities and arts as the subject: history, religion, literature, language, dictionaries, philosophy, art history, artists, biography, cultural analysis, music, film studies, ethics, and interpretive or historical exposition.",
+      "positive_examples": [
+        "A passage about Picasso, Miro, Dali, surrealism, art exhibitions, painting, or artist biography.",
+        "A dictionary or language-history passage about the OED, word meanings, pronunciation, or literary language.",
+        "A religious, philosophical, historical, literary, or biographical reference entry."
+      ],
+      "negative_notes": [
+        "Casual lifestyle, parenting, sports, food, training, or personal advice is lifestyle_everyday unless arts/culture/history analysis is central.",
+        "Empirical social inequality or sociology belongs to social_sciences.",
+        "Election law, government institutions, war policy, and sovereignty belong to law_government_policy when institutional/policy substance dominates."
+      ]
+    },
+    {
+      "domain": "lifestyle_everyday",
+      "description": "Everyday life, hobbies, food, cooking, restaurants, sports, fitness, parenting, clothing, fashion, consumer goods, travel, home advice, local accidents/events, personal routines, practical advice, and non-specialist consumer experience.",
+      "positive_examples": [
+        "A clothing or boots product page, fashion description, consumer buying note, or practical product description.",
+        "A food, chef, restaurant, sports, rowing, training, parenting, camp, home, or personal routine article.",
+        "A local accident report or everyday community event with no stronger policy, science, or specialist topic."
+      ],
+      "negative_notes": [
+        "Historical, literary, religious, artistic, philosophical, or biographical analysis belongs to humanities_arts.",
+        "Medical diagnosis, symptoms, treatment, and public health belong to medicine_health.",
+        "Physical hardware specifications or automotive engineering details may be engineering_technology when the technical artifact is central."
+      ]
+    },
+    {
+      "domain": "other_unclear",
+      "description": "Use only when the semantic topic is absent, too short, too noisy, too mixed, outside the taxonomy, or not recoverable with reasonable confidence.",
+      "positive_examples": [
+        "SEO or spam-like fragments with broken text and no reliable subject.",
+        "Navigation-only or boilerplate-only chunks.",
+        "Very short mixed snippets where no domain dominates."
+      ],
+      "negative_notes": [
+        "Do not use other_unclear when a concrete semantic topic is visible.",
+        "Do not use other_unclear as a generic low-confidence prediction for hard but recoverable math, science, software, engineering, humanities, policy, or lifestyle text.",
+        "Quality/noise and genre/function should be tracked separately from semantic topic."
+      ]
+    }
+  ]
+}

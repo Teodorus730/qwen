@@ -1,0 +1,398 @@
+{
+  "records_total": 118,
+  "gold_abstained_excluded": 2,
+  "answered_count": 118,
+  "abstained_count": 0,
+  "coverage_rate": 1.0,
+  "accuracy_on_answered": 0.635593,
+  "strict_accuracy": 0.635593,
+  "top_k_contains_gold": {
+    "count": 102,
+    "available_count": 118,
+    "rate": 0.864407
+  },
+  "macro_f1": 0.459891,
+  "per_domain_precision_recall": {
+    "business_economics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1
+    },
+    "computer_science_software": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1": 0.285714,
+      "support": 5
+    },
+    "engineering_technology": {
+      "precision": 0.888889,
+      "recall": 0.923077,
+      "f1": 0.90566,
+      "support": 26
+    },
+    "humanities_arts": {
+      "precision": 0.888889,
+      "recall": 0.615385,
+      "f1": 0.727273,
+      "support": 13
+    },
+    "law_government_policy": {
+      "precision": 0.5,
+      "recall": 0.571429,
+      "f1": 0.533333,
+      "support": 7
+    },
+    "lifestyle_everyday": {
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4,
+      "support": 10
+    },
+    "math": {
+      "precision": 0.73913,
+      "recall": 0.73913,
+      "f1": 0.73913,
+      "support": 23
+    },
+    "medicine_health": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1": 0.285714,
+      "support": 5
+    },
+    "natural_science": {
+      "precision": 0.857143,
+      "recall": 0.521739,
+      "f1": 0.648649,
+      "support": 23
+    },
+    "other_unclear": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "social_sciences": {
+      "precision": 0.4,
+      "recall": 0.8,
+      "f1": 0.533333,
+      "support": 5
+    }
+  },
+  "per_dataset_metrics": {
+    "FineMath": {
+      "records_total": 38,
+      "answered_count": 38,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.657895,
+      "strict_accuracy": 0.657895
+    },
+    "FineWeb": {
+      "records_total": 40,
+      "answered_count": 40,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.65,
+      "strict_accuracy": 0.65
+    },
+    "FineWeb-Edu": {
+      "records_total": 40,
+      "answered_count": 40,
+      "abstained_count": 0,
+      "coverage_rate": 1.0,
+      "accuracy_on_answered": 0.6,
+      "strict_accuracy": 0.6
+    }
+  },
+  "confusion_matrix": {
+    "business_economics": {
+      "other_unclear": 1
+    },
+    "computer_science_software": {
+      "computer_science_software": 1,
+      "engineering_technology": 1,
+      "math": 2,
+      "other_unclear": 1
+    },
+    "engineering_technology": {
+      "business_economics": 1,
+      "engineering_technology": 24,
+      "math": 1
+    },
+    "humanities_arts": {
+      "humanities_arts": 8,
+      "law_government_policy": 2,
+      "lifestyle_everyday": 2,
+      "social_sciences": 1
+    },
+    "law_government_policy": {
+      "business_economics": 1,
+      "humanities_arts": 1,
+      "law_government_policy": 4,
+      "social_sciences": 1
+    },
+    "lifestyle_everyday": {
+      "business_economics": 1,
+      "lifestyle_everyday": 4,
+      "math": 1,
+      "natural_science": 1,
+      "other_unclear": 2,
+      "social_sciences": 1
+    },
+    "math": {
+      "engineering_technology": 1,
+      "lifestyle_everyday": 1,
+      "math": 17,
+      "medicine_health": 1,
+      "other_unclear": 3
+    },
+    "medicine_health": {
+      "engineering_technology": 1,
+      "lifestyle_everyday": 2,
+      "medicine_health": 1,
+      "natural_science": 1
+    },
+    "natural_science": {
+      "computer_science_software": 1,
+      "law_government_policy": 1,
+      "lifestyle_everyday": 1,
+      "math": 2,
+      "natural_science": 12,
+      "other_unclear": 3,
+      "social_sciences": 3
+    },
+    "social_sciences": {
+      "law_government_policy": 1,
+      "social_sciences": 4
+    }
+  },
+  "mismatch_examples": [
+    {
+      "chunk_id": "FineWeb-Edu_000014_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "law_government_policy",
+      "predicted": "social_sciences",
+      "confidence": 0.49044,
+      "margin": 0.003109,
+      "text_preview": "Human nature and the nature of war Twenty years ago, Canadian military historian and journalist Gwynne Dyer fascinated the public in 45 countries with his award-winning television series on the nature of war. He followed up that success with an equally remarkable book that grew out of the research t"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000013_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "lifestyle_everyday",
+      "confidence": 0.414677,
+      "margin": 0.018646,
+      "text_preview": "With Abby off at school, it is a chance to work on learning more with Kenzie. She knows all her letters, and we have been working on mastering her sounds. We’ll be doing the activity I’m showing you today with every letter of the alphabet. You may have seen my tutorial on sewing a reversible bag. To"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000006_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "natural_science",
+      "predicted": "social_sciences",
+      "confidence": 0.509507,
+      "margin": 0.062875,
+      "text_preview": "Great apes go through mid-life crisis They may not take up surfing or start second careers as cupcake-makers, but chimpanzees and orangutans seem to go through a ‘mid-life crisis’, just like humans. A study of 508 great apes in captivity shows that the animals’ sense of well-being bottoms out in the"
+    },
+    {
+      "chunk_id": "FineWeb_000006_003",
+      "dataset": "FineWeb",
+      "gold": "computer_science_software",
+      "predicted": "engineering_technology",
+      "confidence": 0.46843,
+      "margin": 0.024172,
+      "text_preview": "Virtual hosting is only available in the professional edition Abyss Web Server X2. Abyss Web Server supports the SSL and TLS protocols and is able to accept secure connections with strong cryptography (up to 256-bit keys) to protect your visitors' sensitive data from flowing in clear form over the I"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_010",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "social_sciences",
+      "confidence": 0.421797,
+      "margin": 0.006172,
+      "text_preview": "in the USAF Manned Spaceflight Engineer Program. He was killed in the attacks of September 11, 2001 aboard American Airlines Flight 11, the first plane to hit the first World Trade Center building at 8:46am. All of the great values we read and write about seem to be interconnected, and loyalty may b"
+    },
+    {
+      "chunk_id": "FineMath_000026_012",
+      "dataset": "FineMath",
+      "gold": "natural_science",
+      "predicted": "math",
+      "confidence": 0.474541,
+      "margin": 0.028126,
+      "text_preview": "10. Tell students that over the next day or so, they will be able to refine this question based on how they set up their experiment. 11. Prior to showing slide 9 introduce the Tape Pull activity by having the students answer the question in their journal on page 6–4. Slide 9 Student Journal Pages: 6"
+    },
+    {
+      "chunk_id": "FineMath_000022_011",
+      "dataset": "FineMath",
+      "gold": "math",
+      "predicted": "engineering_technology",
+      "confidence": 0.404346,
+      "margin": 0.008691,
+      "text_preview": "What can be used to convert inches in 5 3? To quickly and accurately convert inches in 5 3, you can either use a calculator or an online tool such as our Inches To Feet Calculator. This calculator allows you to enter multiple measurements at once so you don’t have to do each one individually. Additi"
+    },
+    {
+      "chunk_id": "FineWeb_000015_000",
+      "dataset": "FineWeb",
+      "gold": "natural_science",
+      "predicted": "other_unclear",
+      "confidence": 0.464316,
+      "margin": 0.024711,
+      "text_preview": "|- candidate number||14295| |- NTR Number||NTR3827| |- ISRCTN||ISRCTN wordt niet meer aangevraagd.| |- Date ISRCTN created| |- date ISRCTN requested| |- Date Registered NTR||30-jan-2013| |- Secondary IDs||NL41498.018.12 / 2012_211; CCMO / METC AMC| |- Public Title||Usability of Subcutaneous Continuo"
+    },
+    {
+      "chunk_id": "FineWeb_000022_001",
+      "dataset": "FineWeb",
+      "gold": "lifestyle_everyday",
+      "predicted": "social_sciences",
+      "confidence": 0.370776,
+      "margin": 0.026882,
+      "text_preview": "chills watching that again. Childress was drafted #19 overall in the 1995 Draft by Detroit but only hung around in the league long enough for a cup of coffee. A very small cup. Since leaving the NBA, he has played internationally in Turkey, Australia and Italy. He was a tremendous talent and it hone"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_011",
+      "dataset": "FineWeb-Edu",
+      "gold": "lifestyle_everyday",
+      "predicted": "natural_science",
+      "confidence": 0.415439,
+      "margin": 0.008358,
+      "text_preview": "tale begins at Camp Nazareth (that’s the name of the overnight camp at the end of our lake). Its run by the local Catholic Diocese which has had little success in recent years attracting enough kids. More often than not, this wonderful facility – it can hold up to 300 kids at any one time - is terri"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000023_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "medicine_health",
+      "predicted": "natural_science",
+      "confidence": 0.430336,
+      "margin": 0.015571,
+      "text_preview": "NEW YORK — Children of older fathers are known to be more at risk for diseases including schizophrenia and autism. Now, a new scientific look at the genes passed down within families may have pinpointed a reason why. The study, reported Wednesday in the journal Nature, found that older fathers trans"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000022_001",
+      "dataset": "FineWeb-Edu",
+      "gold": "law_government_policy",
+      "predicted": "humanities_arts",
+      "confidence": 0.402289,
+      "margin": 0.052542,
+      "text_preview": "Falange political party had begun to negotiate with Mussolini and Hitler, from whom they obtained financial commitments and promises of military support for a rebellion to overthrow the legally elected Second Republic. The republicans and the left, increasingly aware of the growing fascist menace th"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000000_001",
+      "dataset": "FineWeb-Edu",
+      "gold": "natural_science",
+      "predicted": "social_sciences",
+      "confidence": 0.457775,
+      "margin": 0.011039,
+      "text_preview": "traditionally low-carbon lifestyles. The Karuk, in particular have experienced dramatic environmental changes in their forestlands and fisheries as a result of both climate change and misguided Federal and regional policies. The Karuk have long depended upon the forest to support their livelihood, c"
+    },
+    {
+      "chunk_id": "FineWeb_000026_000",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "math",
+      "confidence": 0.314101,
+      "margin": 0.010868,
+      "text_preview": "Chevrolet has taken the wrapping off its newest iteration of the Camaro. Engulfed in a holy war between the Mustang, the Camaro has always been a bit of an underdog. The original Mustang wiped the floor with the original Camaro, in terms of sales, and has kept going up until 2010 where the Camaro ha"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_008",
+      "dataset": "FineWeb-Edu",
+      "gold": "humanities_arts",
+      "predicted": "law_government_policy",
+      "confidence": 0.364923,
+      "margin": 0.004312,
+      "text_preview": "but clearly remembered moment in time. 9/11 does all of those things and more. My wife and I were in NYC: preparing to get on the George Washington Bridge to go into Manhattan when the first plane hit; coming to a complete stop on the road and in our lives; watching in fear and confusion as the seco"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000029_000",
+      "dataset": "FineWeb-Edu",
+      "gold": "social_sciences",
+      "predicted": "law_government_policy",
+      "confidence": 0.541558,
+      "margin": 0.045718,
+      "text_preview": "International Women’s Day 2013 Every year the United Nations chooses a theme for that year’s International Women’s Day. This theme is something many organizations choose to build on, make their own, or change it completely. This year, 2013, I believe the UN has chosen a great theme: “A promise is a "
+    },
+    {
+      "chunk_id": "FineMath_000001_000",
+      "dataset": "FineMath",
+      "gold": "math",
+      "predicted": "medicine_health",
+      "confidence": 0.525133,
+      "margin": 0.019525,
+      "text_preview": "# Statistics A clinic offers you a free test for a very rare, but hideous disease. The test they offer is very reliable. If you have the disease it has a 98% chance of giving a positive result, and if you don’t have the disease, it has only a 1% chance of giving a positive result. You decide to take"
+    },
+    {
+      "chunk_id": "FineMath_000006_000",
+      "dataset": "FineMath",
+      "gold": "math",
+      "predicted": "lifestyle_everyday",
+      "confidence": 0.363932,
+      "margin": 0.023399,
+      "text_preview": "# 2003 AMC 10B Problems/Problem 4 The following problem is from both the 2003 AMC 12B #3 and 2003 AMC 10B #4, so both problems redirect to this page. ## Problem Rose fills each of the rectangular regions of her rectangular flower bed with a different type of flower. The lengths, in feet, of the rect"
+    },
+    {
+      "chunk_id": "FineWeb_000008_000",
+      "dataset": "FineWeb",
+      "gold": "lifestyle_everyday",
+      "predicted": "business_economics",
+      "confidence": 0.378852,
+      "margin": 0.002962,
+      "text_preview": "view full screen Bi-Stretch Bootcut Pant Out of Stock Clean-tailored pants made with an ultra-comfortable bi-stretch cotton twill that retains its shape wear after wear. 94% Cotton, 6% Spandex. Machine wash, cold; tumble dry low. Imported. - Our universal fit. Eased through the hip and thigh, sits j"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_016",
+      "dataset": "FineWeb-Edu",
+      "gold": "lifestyle_everyday",
+      "predicted": "other_unclear",
+      "confidence": 0.444247,
+      "margin": 0.005115,
+      "text_preview": "fashioned sayings? Here in New York last week the mayor and the meteorologists got it wrong – but not by much. The winds blew and the rains fell and, though there was less flooding and damage than predicted here, they made damn sure we were prepared by scaring the daylights out of us with their dire"
+    },
+    {
+      "chunk_id": "FineWeb_000023_000",
+      "dataset": "FineWeb",
+      "gold": "humanities_arts",
+      "predicted": "lifestyle_everyday",
+      "confidence": 0.442338,
+      "margin": 0.013022,
+      "text_preview": "That day was a watershed in my transition from a talented amateur to a serious artist. I had always subscribed to the mantra \"good enough is not good enough\" in my profession, but until that day I had not done so as an artist. From then on I resolved that I would make things as good as I could in my"
+    },
+    {
+      "chunk_id": "FineWeb_000007_000",
+      "dataset": "FineWeb",
+      "gold": "lifestyle_everyday",
+      "predicted": "other_unclear",
+      "confidence": 0.25399,
+      "margin": 0.006279,
+      "text_preview": "COLUMBUS GROVE, Ohio - A 14-year-old girl was killed and 11 other people were injured when a car struck a church van filled with youngsters in southern Putnam County yesterday, authorities said. Jasmin Wickard of Leipsic, who was riding in a van belonging to the Harvest Assembly of God Church of Wes"
+    },
+    {
+      "chunk_id": "FineWeb-Edu_000010_012",
+      "dataset": "FineWeb-Edu",
+      "gold": "lifestyle_everyday",
+      "predicted": "math",
+      "confidence": 0.456143,
+      "margin": 0.00052,
+      "text_preview": "of the rowers is out of synch (even a little) the boat can very easily (and visibly) miss a beat. And if any of those misses are overly pronounced the boats can stop altogether or even capsize. So at the beginning of this training the coach definitely wanted to take it slow. As the week progressed, "
+    },
+    {
+      "chunk_id": "FineMath_000028_010",
+      "dataset": "FineMath",
+      "gold": "math",
+      "predicted": "other_unclear",
+      "confidence": 0.485896,
+      "margin": 0.031076,
+      "text_preview": "To show that each $$E_n$$ is nowhere dense, we have to show that the closure of each $$E_n$$ has empty interior or, equivalently, if we have an arbitrary function in $$\\overline{E}_n$$, we need to find a continuous function that is “close” to $$f$$ in the uniform norm, but which is not contained in "
+    },
+    {
+      "chunk_id": "FineWeb_000009_038",
+      "dataset": "FineWeb",
+      "gold": "engineering_technology",
+      "predicted": "business_economics",
+      "confidence": 0.486087,
+      "margin": 0.008916,
+      "text_preview": "type of the transaction. That is, \"R\" indicates a rental, \"S\" indicates a sale, \"C\" indicates a credit and \"F\" indicates a free transaction, such as for a free replacement. The \"Day O\" column indicates the number of days which this movie is rented for, which, in this example is one day. The \"Day C\" "
+    }
+  ]
+}
