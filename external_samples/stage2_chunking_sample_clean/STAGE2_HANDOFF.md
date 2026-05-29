@@ -121,7 +121,29 @@ C:\Users\pervo\PycharmProjects\qwen\.venv-embedding\Scripts\python.exe scripts\r
   --margin-threshold 0.0
 ```
 
-## 6. Current benchmark numbers
+## 6. Unified handoff outputs
+
+Unified chunk-level handoff files are available under:
+
+- `data_samples/handoff/stage2_v1_dev_annotations.jsonl`
+- `data_samples/handoff/stage2_v2_test_annotations.jsonl`
+- `data_samples/handoff/stage2_handoff_validation_summary.json`
+
+These files join existing component outputs by `chunk_id`. They include annotation_v2 deterministic fields, tokenization stats, surface/quality fields, legacy `weak_topic_domain_v2.1` predictions, and any available review labels or embedding predictions.
+
+Current validation counts:
+
+- v1-dev handoff: 396 chunk-level records;
+- v2-test handoff: 416 chunk-level records.
+
+Important label status:
+
+- v1-dev includes cleaned `semantic_topic_domain_v1` and `genre_function_v1` pseudo-gold where available, plus BGE-M3 v1.1 dev predictions/reranked predictions where available.
+- v2-test includes legacy mixed-topic pseudo-gold and weak topic predictions where available.
+- v2-test does not have cleaned semantic/genre gold. Cleaned held-out evaluation is not done yet.
+- Any cleaned semantic prediction on v2-test should be treated as prediction-only until a cleaned held-out labeling decision is made.
+
+## 7. Current benchmark numbers
 
 Old `source_type/domain/field/subfield`:
 
@@ -146,7 +168,7 @@ BGE-M3 on cleaned `semantic_topic_domain_v1`, v1-dev only:
 
 The BGE-M3 numbers are not held-out quality. They are dev-only.
 
-## 7. Known problems
+## 8. Known problems
 
 - FineWeb is hard and noisy.
 - Old `topic.domain` is mixed and should be treated as legacy weak metadata.
@@ -154,7 +176,7 @@ The BGE-M3 numbers are not held-out quality. They are dev-only.
 - There is no cleaned held-out split yet.
 - Local HF caches and virtual environments should not be committed.
 
-## 8. What can be used for NLL pilot now
+## 9. What can be used for NLL pilot now
 
 Use confidently:
 
@@ -172,7 +194,7 @@ Use cautiously:
 
 Topic labels should be exploratory metadata with confidence, abstention, and split caveats.
 
-## 9. Next suggested steps
+## 10. Next suggested steps
 
 1. Decide cleaned held-out strategy:
    - relabel v2-test under cleaned axes with audit notes; or
@@ -181,7 +203,7 @@ Topic labels should be exploratory metadata with confidence, abstention, and spl
 3. Build a small NLL grouping interface using robust axes first.
 4. Keep v2-test out of tuning loops.
 
-## 10. Contact / maintenance notes
+## 11. Contact / maintenance notes
 
 - Use `.venv-embedding` for embedding scripts.
 - Do not tune on v2-test.

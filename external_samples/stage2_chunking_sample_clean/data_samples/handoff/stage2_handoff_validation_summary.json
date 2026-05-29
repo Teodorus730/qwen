@@ -1,0 +1,29 @@
+{
+  "output_granularity": "chunk_level_full_tokenized_features",
+  "expected_counts_note": "Reviewed pseudo-gold subsets are about 120 v1-dev and 90 v2-test records; unified handoff outputs are chunk-level joins over all available tokenized feature records.",
+  "v1_dev": {
+    "path": "data_samples\\handoff\\stage2_v1_dev_annotations.jsonl",
+    "records_count": 396,
+    "duplicate_chunk_id_count": 0,
+    "datasets": {
+      "FineMath": 195,
+      "FineWeb": 113,
+      "FineWeb-Edu": 88
+    },
+    "valid": true,
+    "errors": []
+  },
+  "v2_test": {
+    "path": "data_samples\\handoff\\stage2_v2_test_annotations.jsonl",
+    "records_count": 416,
+    "duplicate_chunk_id_count": 0,
+    "datasets": {
+      "FineMath": 245,
+      "FineWeb": 52,
+      "FineWeb-Edu": 119
+    },
+    "valid": true,
+    "errors": []
+  },
+  "valid": true
+}
