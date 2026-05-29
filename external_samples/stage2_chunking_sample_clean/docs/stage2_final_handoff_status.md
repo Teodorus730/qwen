@@ -43,6 +43,44 @@ Dataset counts:
 
 The reviewed pseudo-gold subsets are smaller than the chunk-level handoff files. The unified handoff outputs cover all available tokenized feature records for the relevant split and attach labels/predictions where available.
 
+## Benchmark / quality metrics
+
+### Old mixed `source_type/domain/field/subfield` attempt
+
+| Approach | Full-label accuracy | Note |
+| --- | ---: | --- |
+| rule-based | ~0.10 | old mixed labels |
+| MiniLM | ~0.00 | low-confidence/null problem |
+| hybrid | ~0.10 | mostly inherited rule-based behavior |
+
+The old `source_type` setup mixed topic, genre/function, surface format, noise, and provenance, so full-label accuracy was not a good long-term target.
+
+### `weak_topic_domain_v2.1`, old mixed `topic.domain`
+
+| Split | Coverage | Accuracy on answered | Strict accuracy |
+| --- | ---: | ---: | ---: |
+| v1 patched dev | 0.9083 | 0.8165 | 0.7417 |
+| v2-test held-out | 0.7889 | 0.6197 | 0.4889 |
+
+This is the main held-out evidence for the legacy/mixed topic-domain baseline. It is useful as transparent weak metadata, but it is not final, especially on FineWeb.
+
+### BGE-M3 on cleaned `semantic_topic_domain_v1`
+
+| Setup | Accuracy | Top-3 contains gold | Scope |
+| --- | ---: | ---: | --- |
+| BGE-M3 + v1 cards | 0.3814 | 0.7966 | v1-dev only |
+| BGE-M3 + v1.1 cards | 0.5678 | 0.8644 | v1-dev only |
+| BGE-M3 + v1.1 + rerank | 0.6356 | 0.8644 | v1-dev only |
+
+These are promising development results, not held-out quality. Cleaned semantic-topic held-out evaluation is still missing.
+
+Current practical conclusion:
+
+- robust axes are ready for NLL pilot: provenance, deterministic stats, tokenizer stats, surface flags, and quality/noise;
+- topic labels are exploratory/weak metadata;
+- legacy `weak_topic_domain_v2.1` has held-out evidence but degrades on v2-test;
+- BGE-M3 cleaned semantic-topic is promising but dev-only.
+
 ## Ready for team review
 
 Ready:

@@ -145,6 +145,8 @@ Important label status:
 
 ## 7. Current benchmark numbers
 
+The compact benchmark summary is below. The canonical final handoff status with packaging counts and quality metrics is `docs/stage2_final_handoff_status.md`.
+
 Old `source_type/domain/field/subfield`:
 
 - rule-based full-label: about 0.10;
