@@ -1,0 +1,159 @@
+{
+  "schema_version": "semantic_topic_domain_v1",
+  "domains": [
+    {
+      "domain": "math",
+      "description": "Mathematics as the main subject, including pure math, applied math, statistics when presented as mathematical content, proofs, equations, problem solving, mathematical definitions, and quantitative reasoning where the concepts themselves are central.",
+      "positive_examples": [
+        "A worked calculus problem explaining derivatives or integrals.",
+        "A theorem statement with proof sketch.",
+        "A probability distribution or linear algebra discussion where the math is the topic."
+      ],
+      "negative_notes": [
+        "Do not assign math only because a page contains prices, dates, rankings, or incidental numbers.",
+        "Software code with arrays or formulas is usually computer_science_software unless the mathematical concept is the main subject.",
+        "Physics equations may be natural_science when the scientific phenomenon is central."
+      ]
+    },
+    {
+      "domain": "natural_science",
+      "description": "Empirical and theoretical natural sciences, including physics, chemistry, biology, earth science, astronomy, ecology, climate science, geology, and scientific explanations of natural phenomena.",
+      "positive_examples": [
+        "A passage explaining photosynthesis, planetary motion, chemical reactions, or climate systems.",
+        "A science education text about cells, forces, minerals, or ecosystems.",
+        "A research-like abstract about experimental results in biology or physics."
+      ],
+      "negative_notes": [
+        "Medical advice and clinical health content should usually be medicine_health.",
+        "Engineering devices using scientific principles should be engineering_technology when the artifact or system is central.",
+        "Do not assign natural_science for isolated words such as energy, field, or tree in software or metaphorical contexts."
+      ]
+    },
+    {
+      "domain": "computer_science_software",
+      "description": "Computing, software, programming, data systems, machine learning, algorithms, APIs, operating systems, developer tools, cybersecurity, databases, and technical documentation centered on software behavior or computational concepts.",
+      "positive_examples": [
+        "An API reference for a Python package.",
+        "A tutorial about Kubernetes deployment, SQL queries, or JavaScript functions.",
+        "A passage about neural network training, compilers, encryption, or operating system commands."
+      ],
+      "negative_notes": [
+        "Consumer electronics product pages may be engineering_technology if hardware is central.",
+        "Business pages for software pricing can be business_economics if the commercial/financial content dominates.",
+        "Do not assign software only because the text contains a URL or generic web boilerplate."
+      ]
+    },
+    {
+      "domain": "engineering_technology",
+      "description": "Engineered systems, hardware, manufacturing, electronics, mechanical systems, civil infrastructure, industrial processes, materials engineering, patents, devices, sensors, vehicles, and applied technology where physical or system design is central.",
+      "positive_examples": [
+        "A patent-like description of a circuit, terminal, sensor, apparatus, or manufacturing method.",
+        "A product specification for industrial equipment.",
+        "A technical article about batteries, robotics hardware, bridges, engines, or telecommunications infrastructure."
+      ],
+      "negative_notes": [
+        "Software-only APIs and code should usually be computer_science_software.",
+        "Commercial product intent belongs in genre_function=product_commercial, not in this semantic topic.",
+        "General lifestyle gadget reviews may be lifestyle_everyday if the consumer use context dominates."
+      ]
+    },
+    {
+      "domain": "medicine_health",
+      "description": "Medicine, clinical care, public health, nutrition when health-focused, disease, symptoms, treatments, anatomy, mental health, healthcare systems, drugs, medical devices in clinical context, and wellness advice framed around health outcomes.",
+      "positive_examples": [
+        "A passage about diabetes treatment, vaccine policy, or clinical symptoms.",
+        "Patient education about medication side effects.",
+        "A public health article about disease prevention."
+      ],
+      "negative_notes": [
+        "Biology content without health or clinical framing is usually natural_science.",
+        "Fitness or beauty content may be lifestyle_everyday unless medical claims dominate.",
+        "Commercial supplement pages should still use medicine_health only if health content is central; commercial intent belongs in genre_function."
+      ]
+    },
+    {
+      "domain": "business_economics",
+      "description": "Business operations, finance, markets, economics, accounting, management, trade, employment, marketing strategy, pricing analysis, corporate activity, entrepreneurship, and economic policy when the economic mechanism is central.",
+      "positive_examples": [
+        "An article about inflation, interest rates, company earnings, or market demand.",
+        "A guide to accounting, hiring, business strategy, or supply chain management.",
+        "A financial analysis of stocks, loans, insurance, or pricing."
+      ],
+      "negative_notes": [
+        "A product sales page is not automatically business_economics; use product_commercial for genre/function and assign semantic topic from the product content.",
+        "Government tax law may be law_government_policy if legal rules dominate.",
+        "Generic job listings or navigation pages may be boilerplate or other_unclear if little semantic content is present."
+      ]
+    },
+    {
+      "domain": "law_government_policy",
+      "description": "Law, regulation, courts, contracts, rights, public policy, government institutions, elections, civic processes, public administration, compliance, legal terms, and official policy documents.",
+      "positive_examples": [
+        "A passage about court procedure, privacy law, tax rules, or immigration policy.",
+        "Government guidance about public services.",
+        "A news or education text explaining elections, legislation, or civil rights."
+      ],
+      "negative_notes": [
+        "Political opinion may be social_sciences or humanities_arts when analysis or commentary dominates rather than institutions or policy.",
+        "Commercial terms of service may be law_government_policy semantically, but genre/function may be boilerplate_navigation or reference.",
+        "Do not assign this label for every occurrence of country names or officials without legal or civic substance."
+      ]
+    },
+    {
+      "domain": "social_sciences",
+      "description": "Human society and behavior as studied or analyzed through sociology, psychology, anthropology, education research, communication studies, demographics, political science when not primarily legal/policy, and social trends.",
+      "positive_examples": [
+        "A passage about social behavior, demographics, survey findings, or educational outcomes.",
+        "An analysis of community patterns, culture from a social-science perspective, or public opinion.",
+        "A psychology explanation about memory, motivation, or group behavior."
+      ],
+      "negative_notes": [
+        "Legal rules and government procedures should usually be law_government_policy.",
+        "Historical narrative and literary analysis usually belong to humanities_arts.",
+        "Casual personal advice may be lifestyle_everyday unless it is framed as social science."
+      ]
+    },
+    {
+      "domain": "humanities_arts",
+      "description": "History, literature, language, philosophy, religion, arts, music, film studies, cultural criticism, ethics, interpretation, and humanistic analysis or creative works.",
+      "positive_examples": [
+        "A literary analysis of a poem or novel.",
+        "A historical passage about an ancient civilization.",
+        "A philosophy, art history, music, or religious studies text."
+      ],
+      "negative_notes": [
+        "Entertainment news may have genre_function=news_media, but semantic topic depends on whether arts/culture is central.",
+        "Social trend analysis may be social_sciences if empirical society/behavior framing dominates.",
+        "Do not assign humanities_arts for any polished prose if the subject is actually science, law, or business."
+      ]
+    },
+    {
+      "domain": "lifestyle_everyday",
+      "description": "Everyday life topics, hobbies, home, travel, food, sports, fashion, consumer advice, relationships, entertainment as consumption, personal productivity, local services, and practical non-specialist information.",
+      "positive_examples": [
+        "A travel guide, recipe, home repair tip, or consumer buying guide.",
+        "A blog post about parenting, hobbies, restaurants, sports, or personal routines.",
+        "A general article about fashion, games, pets, or local events."
+      ],
+      "negative_notes": [
+        "Medical claims should move to medicine_health when health outcomes dominate.",
+        "Technical product specs may be engineering_technology or computer_science_software.",
+        "Commercial intent belongs in genre_function=product_commercial; assign lifestyle_everyday only when the product or content topic is everyday consumer life."
+      ]
+    },
+    {
+      "domain": "other_unclear",
+      "description": "Use when the semantic topic is absent, too noisy, too short, too mixed, outside the current taxonomy, or impossible to determine with reasonable confidence.",
+      "positive_examples": [
+        "A navigation fragment with only menu labels and no subject content.",
+        "A spam or SEO chunk where the topic is not recoverable.",
+        "A very short mixed snippet with no dominant subject."
+      ],
+      "negative_notes": [
+        "Prefer a concrete semantic topic when the subject is clear even if the genre is commercial, educational, media, or reference.",
+        "Do not use other_unclear as a synonym for low quality if the topic is still evident.",
+        "When a workflow supports abstention, abstain may be better than forcing other_unclear."
+      ]
+    }
+  ]
+}

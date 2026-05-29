@@ -1,0 +1,159 @@
+{
+  "schema_version": "genre_function_v1",
+  "labels": [
+    {
+      "label": "reference",
+      "description": "Content organized to provide lookup information, definitions, facts, entries, glossaries, encyclopedic summaries, manuals, or structured explanatory reference material.",
+      "positive_examples": [
+        "An encyclopedia-style entry about a plant species.",
+        "A glossary definition with concise factual explanation.",
+        "A knowledge-base page summarizing a concept or entity."
+      ],
+      "negative_notes": [
+        "API-specific reference should usually be documentation_api.",
+        "A tutorial with step-by-step instruction should be education_tutorial.",
+        "Reference is a function, not a semantic topic; assign semantic_topic_domain separately."
+      ]
+    },
+    {
+      "label": "education_tutorial",
+      "description": "Instructional content intended to teach, explain, train, or guide a learner through concepts, exercises, lessons, examples, worksheets, courses, or how-to steps.",
+      "positive_examples": [
+        "A lesson explaining photosynthesis to students.",
+        "A step-by-step programming tutorial.",
+        "A worksheet or study guide for algebra."
+      ],
+      "negative_notes": [
+        "Do not use this label for every clear explanation; require pedagogical framing or instructional structure.",
+        "Official API docs may be documentation_api even if educational.",
+        "Education is not a semantic topic; assign the subject separately."
+      ]
+    },
+    {
+      "label": "news_media",
+      "description": "Journalistic, broadcast, magazine, interview, report, press, or media-style content focused on events, current affairs, public communication, reviews, or reported narratives.",
+      "positive_examples": [
+        "A news article about an election, product launch, or scientific discovery.",
+        "An interview transcript published by a media outlet.",
+        "A magazine-style report about climate, culture, or business."
+      ],
+      "negative_notes": [
+        "Blog opinion pieces without journalistic reporting may be blog_opinion.",
+        "Press releases selling a product may be product_commercial.",
+        "Media is a genre/function label, not a subject domain."
+      ]
+    },
+    {
+      "label": "forum_qa",
+      "description": "Question-and-answer, forum, discussion thread, support exchange, comments, troubleshooting conversation, or community response format.",
+      "positive_examples": [
+        "A Stack Overflow-style question with answers.",
+        "A forum thread troubleshooting an error.",
+        "A community Q&A about health, travel, or consumer products."
+      ],
+      "negative_notes": [
+        "A polished FAQ page from a company may be reference or product_commercial depending on intent.",
+        "Do not infer low quality from forum format alone.",
+        "Semantic topic depends on the content of the question and answers."
+      ]
+    },
+    {
+      "label": "blog_opinion",
+      "description": "Personal, editorial, review, commentary, essay, reflective, or opinionated web content where the author's perspective or narrative stance is prominent.",
+      "positive_examples": [
+        "A personal blog post reviewing a book or gadget.",
+        "An opinion essay about public policy.",
+        "A reflective post about productivity, travel, or culture."
+      ],
+      "negative_notes": [
+        "Reported news should usually be news_media.",
+        "Step-by-step teaching posts may be education_tutorial.",
+        "Opinionated tone does not determine semantic topic."
+      ]
+    },
+    {
+      "label": "product_commercial",
+      "description": "Content whose primary function is selling, promoting, listing, pricing, advertising, lead generation, affiliate conversion, service marketing, or product/service comparison for commercial action.",
+      "positive_examples": [
+        "A product page for an industrial sensor with price and call-to-action.",
+        "A SaaS pricing or feature marketing page.",
+        "An e-commerce listing, affiliate review, or service landing page."
+      ],
+      "negative_notes": [
+        "Commercial intent is not a semantic topic; assign the product's subject separately.",
+        "A neutral technical specification may be reference if not primarily promotional.",
+        "Spammy commercial pages should also be captured by quality_noise where appropriate."
+      ]
+    },
+    {
+      "label": "documentation_api",
+      "description": "Developer or technical documentation for APIs, commands, configuration, libraries, SDKs, protocols, data formats, software options, or system behavior.",
+      "positive_examples": [
+        "A function reference for a Python method.",
+        "CLI command documentation with flags and examples.",
+        "A configuration guide for a database, web server, or cloud SDK."
+      ],
+      "negative_notes": [
+        "General programming tutorials may be education_tutorial.",
+        "Non-software product manuals may be reference or engineering documentation, depending on future schema needs.",
+        "Semantic topic is usually computer_science_software, but still record it separately."
+      ]
+    },
+    {
+      "label": "academic_paper_like",
+      "description": "Research-paper-like content with abstract, methodology, formal results, citations, experiments, theorem/proof structure, or scholarly exposition.",
+      "positive_examples": [
+        "An abstract describing experimental methods and findings.",
+        "A paper excerpt with citations, sections, and results.",
+        "A theorem/proof style mathematical manuscript."
+      ],
+      "negative_notes": [
+        "Educational summaries of research may be education_tutorial or reference.",
+        "News reports about papers should be news_media.",
+        "Academic style can appear in any semantic topic."
+      ]
+    },
+    {
+      "label": "list_table_directory",
+      "description": "Content primarily structured as a list, table, catalog, index, directory, registry, menu-like collection, ranking, or repeated record set.",
+      "positive_examples": [
+        "A directory of offices, products, terms, or organizations.",
+        "A table of measurements, model names, prices, or locations.",
+        "A ranked list or catalog with repeated entries."
+      ],
+      "negative_notes": [
+        "A table embedded in an otherwise explanatory article does not necessarily define the whole genre.",
+        "Commercial catalogs may also be product_commercial; choose the dominant function for v1.",
+        "The listed entities determine semantic topic when recoverable."
+      ]
+    },
+    {
+      "label": "boilerplate_navigation",
+      "description": "Navigation, menus, cookie text, footer material, login prompts, legal fragments, repeated site chrome, extraction residue, or other page scaffolding rather than main content.",
+      "positive_examples": [
+        "A chunk dominated by header links, footer links, and cookie prompts.",
+        "Repeated subscription, sign-in, or share-widget text.",
+        "Terms/navigation residue with little main article content."
+      ],
+      "negative_notes": [
+        "Legal or policy content with substantive rules may be reference or news_media depending on function.",
+        "Use quality_noise fields to capture extraction noise severity.",
+        "Do not use this label for a clean table of contents that is part of a useful document unless it dominates the chunk."
+      ]
+    },
+    {
+      "label": "other_function",
+      "description": "Use when the document function is unclear, mixed, outside the current genre/function taxonomy, or not recoverable from the chunk.",
+      "positive_examples": [
+        "A short fragment with no clear communicative format.",
+        "A mixed chunk combining unrelated snippets without a dominant function.",
+        "A valid main-content passage whose genre is not covered by the current labels."
+      ],
+      "negative_notes": [
+        "Prefer a specific function when one is clearly dominant.",
+        "Do not use other_function to represent semantic uncertainty; that belongs to semantic_topic_domain or abstention.",
+        "Do not use other_function as a quality label."
+      ]
+    }
+  ]
+}
