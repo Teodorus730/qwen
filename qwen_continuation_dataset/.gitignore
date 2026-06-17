@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.cache/
+hf_cache/
+outputs/*.jsonl
+outputs/*.parquet
+outputs/*.bin
+outputs/*.arrow
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+wandb/
+runs/
+.DS_Store
