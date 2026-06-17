@@ -1,0 +1,64 @@
+# Alpha-sweep on Qwen3-0.6B-Base (GPU, RTX 3090 Ti).
+#
+# Same recipe as full_3090ti.yaml (mixed GKD, off-policy warmup, annealed beta)
+# but on the smaller 0.6B base model so the whole alpha sweep finishes in a
+# fraction of the 1.7B time. Results land in their OWN folder
+# (results/sweep_qwen3_0.6b/<run_name>) so they never mix with the 1.7B runs.
+#
+# 0.6B fits comfortably in 24 GB with plain bf16 AdamW + no grad checkpointing,
+# which is also faster per step than the 8-bit/checkpointed 1.7B path.
+#
+# Sweep:
+#   for a in 0.1 0.2 0.35 0.5; do
+#     python -m src.distill --config configs/sweep_qwen3_0.6b.yaml \
+#         --alpha $a --run_name a$a
+#   done
+model_name: Qwen/Qwen3-0.6B-Base
+run_name: a0.2
+out_dir: results/sweep_qwen3_0.6b
+
+alpha: 0.2
+noise_seed: 0
+perturb_norms: false
+
+seq_len: 256          # short blocks: the 152k-vocab fp32 logit/KD tensors are
+                      # the real memory hog on this 24 GB card. At 256 the whole
+                      # training step peaks ~10 GB so Windows/WDDM never spills
+                      # to shared system RAM (which silently crawls / hangs the PC)
+min_score: 2.5
+data_seed: 0
+
+mode: mixed
+on_policy_ratio: 0.5
+on_policy_warmup_frac: 0.3
+divergence: forward_kl
+on_policy_divergence: reverse_kl
+temperature: 1.0
+jsd_beta: 0.5
+beta_start: 1.0
+beta_end: 0.4
+beta_schedule: cosine
+rollout_min: 1
+rollout_max: 5
+rollout_prompt_len: 128
+sample_temperature: 1.0
+
+optimizer: adamw8bit   # bitsandbytes PagedAdamW8bit: halves optimizer state
+                       # (fp32 m,v -> int8). fp32 AdamW added ~4.8 GB on the
+                       # first step and tipped peak over 24 GB -> sysmem spill.
+grad_checkpointing: false
+steps: 2000
+batch_size: 4
+grad_accum: 2
+lr: 5.0e-5
+weight_decay: 0.01
+warmup: 100
+grad_clip: 1.0
+
+eval_every: 250
+eval_blocks: 64
+probe_blocks: 16
+cka_max_tokens: 16384
+
+save_student: true
+max_seconds: 0

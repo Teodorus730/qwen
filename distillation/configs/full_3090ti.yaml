@@ -1,0 +1,69 @@
+# Full run for an RTX 3090 Ti (24 GB) + i9-12900/13900KF.
+#
+# Model: Qwen3-1.7B-Base -- newest generation, the largest Qwen that still does
+# *full-parameter* fine-tuning (teacher frozen + student + grads + optimizer)
+# on 24 GB, given two memory tricks that are ON by default here:
+#   * grad_checkpointing: true   -> activations recomputed in backward
+#   * optimizer: adamw8bit       -> bitsandbytes PagedAdamW8bit halves the
+#                                   optimizer state (m,v) from fp32 to int8
+# Rough 24 GB budget (bf16): student weights 3.4 + grads 3.4 + 8-bit Adam 3.4
+#   + frozen teacher 3.4 ~= 14 GB static, leaving ~10 GB for activations.
+#
+# If bitsandbytes is unavailable on your setup, either:
+#   (a) set optimizer: adamw and model_name: Qwen/Qwen3-0.6B-Base  (comfortable
+#       full fp32-Adam fine-tune on 24 GB), or
+#   (b) keep 1.7B but reduce batch_size to 1 and seq_len to 512.
+#
+# This is ONE cell of the alpha sweep -- the primary experiment is the sweep:
+#   for a in 0.05 0.1 0.2 0.35 0.5; do
+#     python -m src.distill --config configs/full_3090ti.yaml \
+#         --alpha $a --run_name full_a$a
+#   done
+#   python -m src.plot results/full_a*
+#
+# 1B tokens ~= batch 4 * accum 2 * seq 1024 * steps  =>  ~122k steps for 1B.
+# Start with steps: 4000 (~32M tokens) to see the recovery curve, then scale.
+model_name: Qwen/Qwen3-1.7B-Base
+run_name: full_a0.2
+out_dir: results
+
+alpha: 0.2
+noise_seed: 0
+perturb_norms: false
+
+seq_len: 1024
+min_score: 2.5          # keep higher-quality FineWeb-Edu docs
+data_seed: 0
+
+mode: mixed
+on_policy_ratio: 0.5
+on_policy_warmup_frac: 0.3   # repair off-policy first, then roll out (cold-start fix)
+divergence: forward_kl       # off-policy teacher-forced term
+on_policy_divergence: reverse_kl   # on-policy rollout term (mode-seeking)
+temperature: 1.0
+jsd_beta: 0.5
+beta_start: 1.0         # snap back to teacher first ...
+beta_end: 0.4           # ... then let ground-truth CE refine
+beta_schedule: cosine
+rollout_min: 1
+rollout_max: 5
+rollout_prompt_len: 128
+sample_temperature: 1.0
+
+optimizer: adamw8bit
+grad_checkpointing: true
+steps: 4000
+batch_size: 4
+grad_accum: 2
+lr: 5.0e-5
+weight_decay: 0.01
+warmup: 100
+grad_clip: 1.0
+
+eval_every: 500
+eval_blocks: 64
+probe_blocks: 16
+cka_max_tokens: 16384
+
+save_student: true
+max_seconds: 0

@@ -1,0 +1,6 @@
+{
+  "summary": "alpha=0.05: perturbed 197 tensors (595,984,384 / 596,049,920 params, 100.0%)",
+  "n_tensors": 197,
+  "n_params": 595984384,
+  "total_params": 596049920
+}
