@@ -13,7 +13,12 @@ from tqdm.auto import tqdm
 from qwen_continuation.config import load_config, with_overrides
 from qwen_continuation.data import stream_documents
 from qwen_continuation.generation import generate_continuation
-from qwen_continuation.io_utils import JsonlWriter, load_completed_ids
+from qwen_continuation.io_utils import (
+    HfShardWriter,
+    JsonlWriter,
+    load_completed_ids,
+    load_completed_ids_from_dir,
+)
 from qwen_continuation.model import load_teacher
 
 
@@ -112,6 +117,14 @@ def print_environment(config: dict[str, Any]) -> None:
     print("Mode:", config["generation"]["mode"])
     print("Max examples:", config["dataset"]["max_examples"])
     print("Output:", config["output"]["path"])
+
+    hf_cfg = config.get("huggingface", {})
+    if hf_cfg.get("enabled", False):
+        print("HF upload:   enabled")
+        print("HF repo:    ", hf_cfg.get("repo_id", "(не задан)"))
+        print("Shard size: ", hf_cfg.get("shard_size", 10000))
+    else:
+        print("HF upload:   disabled")
 
 
 def build_record(
@@ -242,18 +255,34 @@ def main() -> None:
 
     output_path = Path(config["output"]["path"])
     resume = bool(config["output"].get("resume", True))
+    hf_cfg = config.get("huggingface", {})
+    hf_enabled = hf_cfg.get("enabled", False)
 
     if args.overwrite or not resume:
-        if output_path.exists():
-            output_path.unlink()
-            print(f"Removed existing output: {output_path}")
+        if hf_enabled:
+            removed = 0
+            for shard in output_path.parent.glob("train-*.jsonl"):
+                shard.unlink()
+                removed += 1
+            state_file = output_path.parent / "state.json"
+            if state_file.exists():
+                state_file.unlink()
+            if removed:
+                print(f"Удалено {removed} шард(ов) из: {output_path.parent}")
+        else:
+            if output_path.exists():
+                output_path.unlink()
+                print(f"Removed existing output: {output_path}")
         completed_ids: set[str] = set()
     else:
-        completed_ids = load_completed_ids(output_path)
+        if hf_enabled:
+            completed_ids = load_completed_ids_from_dir(output_path.parent)
+        else:
+            completed_ids = load_completed_ids(output_path)
         if completed_ids:
             print(
                 f"Resume enabled: found {len(completed_ids)} completed "
-                f"source IDs in {output_path}"
+                f"source IDs"
             )
 
     teacher = load_teacher(config)
@@ -273,7 +302,17 @@ def main() -> None:
 
     progress = tqdm(total=max_examples, desc="Saved examples")
 
-    with JsonlWriter(output_path, flush_every=flush_every) as writer:
+    if hf_enabled:
+        writer_cm = HfShardWriter(
+            output_dir=output_path.parent,
+            repo_id=hf_cfg["repo_id"],
+            shard_size=hf_cfg.get("shard_size", 10000),
+            token=hf_cfg.get("token"),
+        )
+    else:
+        writer_cm = JsonlWriter(output_path, flush_every=flush_every)
+
+    with writer_cm as writer:
         for document in stream_documents(config):
             if saved >= max_examples:
                 break
@@ -343,7 +382,10 @@ def main() -> None:
     print("Skipped short documents:", skipped_short)
     print("Skipped completed documents:", skipped_completed)
     print("Elapsed seconds:", round(total_elapsed, 2))
-    print("Output:", output_path.resolve())
+    if hf_enabled:
+        print("HF repo:", hf_cfg["repo_id"])
+    else:
+        print("Output:", output_path.resolve())
 
 
 if __name__ == "__main__":

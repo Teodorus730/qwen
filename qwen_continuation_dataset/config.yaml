@@ -43,3 +43,9 @@ output:
   path: outputs/generated.jsonl
   resume: true
   flush_every: 1
+
+huggingface:
+  enabled: false
+  repo_id: your_username/qwen_continuation_dataset
+  token: null        # или через env: export HF_TOKEN=hf_xxxxx
+  shard_size: 10000
