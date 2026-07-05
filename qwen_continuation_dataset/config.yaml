@@ -52,5 +52,5 @@ output:
 huggingface:
   enabled: false
   repo_id: your_username/qwen_continuation_dataset
-  token: null        # или задай через env: export HF_TOKEN=hf_xxxxx
+  token: null        # или через env: export HF_TOKEN=hf_xxxxx
   shard_size: 10000  # примеров в одном шарде
