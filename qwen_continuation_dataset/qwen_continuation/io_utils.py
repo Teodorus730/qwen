@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from huggingface_hub import HfApi, create_repo
+from huggingface_hub import HfApi, create_repo, hf_hub_download
 
 
 def load_completed_ids(path: str | Path) -> set[str]:
@@ -35,7 +35,6 @@ def load_completed_ids(path: str | Path) -> set[str]:
 
 
 def load_completed_ids_from_dir(output_dir: str | Path) -> set[str]:
-    """Scan all train-*.jsonl shards in a directory and return their source IDs."""
     output_dir = Path(output_dir)
     completed: set[str] = set()
     shard_files = sorted(output_dir.glob("train-*.jsonl"))
@@ -43,7 +42,7 @@ def load_completed_ids_from_dir(output_dir: str | Path) -> set[str]:
         completed |= load_completed_ids(shard_path)
     if completed:
         print(
-            f"[HF] Resume: found {len(completed):,} completed IDs "
+            f"[HF] resume: {len(completed):,} completed IDs "
             f"across {len(shard_files)} local shard(s)"
         )
     return completed
@@ -77,17 +76,6 @@ class JsonlWriter:
 
 
 class HfShardWriter:
-    """
-    Context manager: пишет JSONL-записи шардами фиксированного размера
-    и загружает каждый завершённый шард в датасет Hugging Face.
-
-    - Каждые shard_size примеров текущий файл заливается на HF и открывается новый.
-      Уже загруженные шарды никогда не перезаписываются.
-    - После каждой загрузки обновляется README.md и state.json.
-    - При перезапуске читается state.json (или сканируется HF-репо),
-      чтобы продолжить с нужного номера шарда.
-    """
-
     _STATE_FILE = "state.json"
 
     def __init__(
@@ -96,34 +84,30 @@ class HfShardWriter:
         repo_id: str,
         shard_size: int = 10000,
         token: str | None = None,
+        flush_every: int = 1,
     ) -> None:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.repo_id = repo_id
         self.shard_size = shard_size
+        self.flush_every = max(1, int(flush_every))
+        self._pending = 0
 
-        token = token or os.getenv("HF_TOKEN")
-        self.api = HfApi(token=token)
+        self._token = token or os.getenv("HF_TOKEN")
+        self.api = HfApi(token=self._token)
         create_repo(
             repo_id=repo_id,
             repo_type="dataset",
             exist_ok=True,
-            token=token,
+            token=self._token,
         )
 
-        # current_shard = индекс следующего шарда для записи (0 при старте с нуля)
         self.current_shard, self.total_examples = self._load_state()
         self.current_examples = 0
         self.current_path: Path | None = None
         self.file = None
 
-    # ------------------------------------------------------------------ state
-
     def _load_state(self) -> tuple[int, int]:
-        """
-        Возвращает (следующий_шард, всего_примеров).
-        Источники по приоритету: state.json → список файлов на HF → с нуля.
-        """
         state_path = self.output_dir / self._STATE_FILE
         if state_path.exists():
             try:
@@ -131,19 +115,20 @@ class HfShardWriter:
                 shard = int(state["current_shard"])
                 total = int(state["total_examples"])
                 print(
-                    f"[HF] state.json найден: продолжаем с шарда {shard}, "
-                    f"уже сгенерировано {total:,} примеров"
+                    f"[HF] resuming from shard {shard} "
+                    f"({total:,} examples uploaded)"
                 )
                 return shard, total
             except Exception as exc:
-                print(f"[HF] state.json нечитаем ({exc}), сканируем HF-репо…")
+                print(f"[HF] state.json unreadable ({exc}), scanning repo...")
 
-        # Fallback: сканируем HF-репо
         try:
-            files = list(self.api.list_repo_files(
-                repo_id=self.repo_id,
-                repo_type="dataset",
-            ))
+            files = list(
+                self.api.list_repo_files(
+                    repo_id=self.repo_id,
+                    repo_type="dataset",
+                )
+            )
             shard_files = [
                 f for f in files
                 if f.startswith("data/train-") and f.endswith(".jsonl")
@@ -152,25 +137,43 @@ class HfShardWriter:
                 indices = []
                 for f in shard_files:
                     try:
-                        idx = int(Path(f).stem.split("-")[1])
-                        indices.append(idx)
+                        indices.append(int(Path(f).stem.split("-")[1]))
                     except (IndexError, ValueError):
                         pass
                 if indices:
-                    next_shard = max(indices) + 1
-                    total = next_shard * self.shard_size  # приблизительно
+                    indices.sort()
+                    next_shard = indices[-1] + 1
+                    last_shard_count = self._count_remote_shard(indices[-1])
+                    total = (len(indices) - 1) * self.shard_size + last_shard_count
                     print(
-                        f"[HF] На HF найдено {len(shard_files)} шард(ов), "
-                        f"продолжаем с шарда {next_shard}"
+                        f"[HF] found {len(shard_files)} shard(s) on hub, "
+                        f"resuming from shard {next_shard} ({total:,} examples)"
                     )
                     return next_shard, total
         except Exception as exc:
-            print(f"[HF] Не удалось просканировать HF-репо ({exc}), начинаем с нуля")
+            print(f"[HF] could not scan repo ({exc}), starting from scratch")
 
         return 0, 0
 
+    def _count_remote_shard(self, shard_index: int) -> int:
+        filename = f"data/train-{shard_index:05d}.jsonl"
+        try:
+            local_copy = hf_hub_download(
+                repo_id=self.repo_id,
+                repo_type="dataset",
+                filename=filename,
+                token=self._token,
+            )
+            with open(local_copy, "r", encoding="utf-8") as f:
+                return sum(1 for line in f if line.strip())
+        except Exception as exc:
+            print(
+                f"[HF] could not fetch {filename} for an exact count ({exc}), "
+                f"assuming {self.shard_size} rows"
+            )
+            return self.shard_size
+
     def _save_state(self) -> None:
-        """Сохраняет прогресс в state.json."""
         state = {
             "current_shard": self.current_shard,
             "total_examples": self.total_examples,
@@ -184,8 +187,6 @@ class HfShardWriter:
             encoding="utf-8",
         )
 
-    # ------------------------------------------------------------ shard logic
-
     def __enter__(self) -> "HfShardWriter":
         self._open_shard()
         return self
@@ -193,22 +194,61 @@ class HfShardWriter:
     def _open_shard(self) -> None:
         if self.file is not None:
             self.file.close()
-        self.current_path = (
-            self.output_dir / f"train-{self.current_shard:05d}.jsonl"
-        )
-        self.file = open(self.current_path, "w", encoding="utf-8")
-        self.current_examples = 0
+            self.file = None
+
+        while True:
+            self.current_path = (
+                self.output_dir / f"train-{self.current_shard:05d}.jsonl"
+            )
+
+            if not self.current_path.exists():
+                self.current_examples = 0
+                self.file = open(self.current_path, "w", encoding="utf-8")
+                return
+
+            with open(self.current_path, "r", encoding="utf-8") as f:
+                existing = sum(1 for line in f if line.strip())
+
+            if existing < self.shard_size:
+                self.current_examples = existing
+                self.total_examples += existing
+                self.file = open(self.current_path, "a", encoding="utf-8")
+                print(
+                    f"[HF] partial shard {self.current_path.name}: "
+                    f"{existing} rows, appending "
+                    f"({self.shard_size - existing} left)"
+                )
+                return
+
+            print(
+                f"[HF] {self.current_path.name} already has {existing} rows, "
+                f"re-uploading and moving on"
+            )
+            self.api.upload_file(
+                path_or_fileobj=str(self.current_path),
+                path_in_repo=f"data/{self.current_path.name}",
+                repo_id=self.repo_id,
+                repo_type="dataset",
+            )
+            self.total_examples += existing
+            self.current_shard += 1
+            self._update_readme()
+            self._save_state()
 
     def write(self, record: dict[str, Any]) -> None:
         self.file.write(json.dumps(record, ensure_ascii=False) + "\n")
         self.current_examples += 1
         self.total_examples += 1
+        self._pending += 1
+        if self._pending >= self.flush_every:
+            self.file.flush()
+            self._pending = 0
         if self.current_examples >= self.shard_size:
             self._finish_shard()
 
     def _finish_shard(self) -> None:
-        """Загружает завершённый шард, обновляет README и state.json, открывает следующий."""
         self.file.flush()
+        self._pending = 0
         self.api.upload_file(
             path_or_fileobj=str(self.current_path),
             path_in_repo=f"data/{self.current_path.name}",
@@ -217,8 +257,8 @@ class HfShardWriter:
         )
         self.current_shard += 1
         print(
-            f"[HF] ✓ {self.current_path.name} загружен "
-            f"— всего {self.total_examples:,} примеров"
+            f"[HF] uploaded {self.current_path.name} "
+            f"({self.total_examples:,} total)"
         )
         self._update_readme()
         self._save_state()
@@ -228,7 +268,6 @@ class HfShardWriter:
         if self.file is None:
             return
         if self.current_examples > 0:
-            # Загружаем последний неполный шард
             self.file.flush()
             self.api.upload_file(
                 path_or_fileobj=str(self.current_path),
@@ -238,17 +277,14 @@ class HfShardWriter:
             )
             self.current_shard += 1
             print(
-                f"[HF] ✓ Финальный шард {self.current_path.name} загружен "
-                f"— всего {self.total_examples:,} примеров"
+                f"[HF] uploaded {self.current_path.name} "
+                f"({self.total_examples:,} total)"
             )
             self._update_readme()
             self._save_state()
         self.file.close()
 
-    # ----------------------------------------------------------- HF metadata
-
     def _update_readme(self) -> None:
-        """Загружает обновлённый dataset card (README.md) в HF-репо."""
         text = (
             "---\n"
             "license: apache-2.0\n"
@@ -265,62 +301,37 @@ class HfShardWriter:
             "\n"
             "# Qwen Continuation Dataset\n"
             "\n"
-            "Автоматически сгенерированный датасет продолжений на базе модели Qwen.\n"
-            "Датасет загружается **инкрементально** во время генерации — каждый завершённый шард\n"
-            "сразу публикуется на Hub, так что данные доступны частично в любой момент,\n"
-            "а генерацию можно безопасно возобновить после прерывания.\n"
+            "Generated with [qwen_continuation_dataset](https://github.com/Teodorus730/qwen).\n"
             "\n"
-            "## Текущая статистика\n"
+            "## Statistics\n"
             "\n"
-            "| Метрика | Значение |\n"
+            "| | |\n"
             "|---|---:|\n"
-            f"| Шардов загружено | {self.current_shard} |\n"
-            f"| Примеров | {self.total_examples:,} |\n"
-            f"| Размер шарда | {self.shard_size:,} |\n"
-            f"| Последнее обновление | {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC |\n"
+            f"| Shards | {self.current_shard} |\n"
+            f"| Examples | {self.total_examples:,} |\n"
+            f"| Shard size | {self.shard_size:,} |\n"
+            f"| Updated | {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC |\n"
             "\n"
-            "## Поддержка возобновления (resume)\n"
-            "\n"
-            "Генерация полностью возобновляема. Если процесс остановился:\n"
-            "\n"
-            "1. Локальные файлы шардов сохраняются в папке `outputs/`.\n"
-            "2. Уже загруженные шарды остаются на Hugging Face — **ничего не перезаписывается**.\n"
-            "3. При следующем запуске скрипт читает `state.json` (или сканирует HF-репо\n"
-            "   в поисках существующих шардов) и автоматически продолжает с нужного номера.\n"
-            "4. Обработанные документы отслеживаются через `source_id`, поэтому дублей\n"
-            "   не возникает даже после аварийной остановки.\n"
-            "\n"
-            "## Структура репозитория\n"
-            "\n"
-            "```\n"
-            "README.md\n"
-            "data/\n"
-            "  train-00000.jsonl\n"
-            "  train-00001.jsonl\n"
-            "  ...\n"
-            "```\n"
-            "\n"
-            "## Загрузка\n"
+            "## Usage\n"
             "\n"
             "```python\n"
             "from datasets import load_dataset\n"
             "\n"
             f'ds = load_dataset("{self.repo_id}")\n'
-            "# или в потоковом режиме:\n"
             f'ds = load_dataset("{self.repo_id}", streaming=True)\n'
             "```\n"
             "\n"
-            "## Поля записи\n"
+            "## Fields\n"
             "\n"
-            "| Поле | Описание |\n"
+            "| Field | Description |\n"
             "|---|---|\n"
-            "| `source_id` | ID исходного документа |\n"
-            "| `source_name` | Название датасета-источника (`fineweb` / `math`) |\n"
-            "| `prefix_text` | Текст-префикс (контекст) |\n"
-            "| `real_continuation` | Настоящее продолжение из источника |\n"
-            "| `teacher_continuation` | Продолжение, сгенерированное моделью |\n"
+            "| `source_id` | source document ID |\n"
+            "| `source_name` | source dataset (`fineweb` / `math`) |\n"
+            "| `prefix_text` | input prefix |\n"
+            "| `real_continuation` | original continuation from source |\n"
+            "| `teacher_continuation` | model-generated continuation |\n"
             "| `synthetic_text` | prefix + teacher continuation |\n"
-            "| `generation` | Гиперпараметры генерации и энтропии по токенам |\n"
+            "| `generation` | generation settings and per-token entropies |\n"
         )
         readme_path = self.output_dir / "README.md"
         readme_path.write_text(text, encoding="utf-8")

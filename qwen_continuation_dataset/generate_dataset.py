@@ -308,6 +308,7 @@ def main() -> None:
             repo_id=hf_cfg["repo_id"],
             shard_size=hf_cfg.get("shard_size", 10000),
             token=hf_cfg.get("token"),
+            flush_every=flush_every,
         )
     else:
         writer_cm = JsonlWriter(output_path, flush_every=flush_every)

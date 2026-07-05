@@ -97,6 +97,68 @@ generation:
 
 `max_new_tokens` is also used as a safety limit in entropy mode.
 
+## Cycle detection
+
+Generation stops early when the output contains a repeated n-gram. The check
+compares the last `ngram_chars` characters against all positions in the
+preceding `window_chars` character window and stops if a match is found.
+`min_chars` sets the minimum generated length before the check starts.
+
+```yaml
+generation:
+  cycle_detection:
+    enabled: true
+    window_chars: 100
+    ngram_chars: 20
+    min_chars: 50
+```
+
+`window_chars` must be greater than `ngram_chars`, and `ngram_chars` must be
+positive; the script raises an error at startup otherwise instead of silently
+running with detection disabled. A repeat is only caught if its period fits
+within `window_chars - ngram_chars` characters; longer-period repeats fall
+outside the window by design. Set `enabled: false` to disable entirely.
+
+## Hugging Face upload
+
+Set `huggingface.enabled: true` in `config.yaml`:
+
+```yaml
+huggingface:
+  enabled: true
+  repo_id: your_username/qwen_continuation_dataset
+  token: null
+  shard_size: 10000
+```
+
+The repository is created automatically if it does not exist. Completed shards
+are uploaded as `data/train-00000.jsonl`, `data/train-00001.jsonl`, and so on.
+Each upload also refreshes the dataset card with current statistics.
+
+Authorise before the first run:
+
+```bash
+huggingface-cli login
+# or
+export HF_TOKEN=hf_xxxxxxxxxxxxxxxxx
+```
+
+Progress is saved to `outputs/state.json` after each shard. On restart the
+script reads `state.json` (or scans the hub for existing shards if the file is
+missing) and continues from where it stopped. If the process was interrupted
+mid-shard, the partial local file is detected and appended to rather than
+overwritten. Already uploaded shards are never modified.
+
+Rows are flushed to disk every `output.flush_every` writes (same setting used
+by the plain JSONL path), so a hard crash loses at most that many unflushed
+rows rather than a full buffer's worth. If a crash happens between a
+successful upload and the `state.json` write for that shard, the next run
+detects the shard is already full, re-uploads it once to be safe, and moves
+on to the next shard instead of appending to it. If `state.json` is missing
+entirely, the exact row count of the most recently uploaded shard is fetched
+from the hub rather than assumed, since it may be a short final shard from an
+earlier interrupted run.
+
 ## Output
 
 Each JSONL row contains:
@@ -198,4 +260,3 @@ qwen/
 
 The included Colab notebook clones the `main` branch and opens this root-level
 directory.
-

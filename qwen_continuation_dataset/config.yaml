@@ -37,6 +37,11 @@ generation:
   top_k: 0
   entropy_threshold: 6.5
   min_generated_tokens_before_entropy_stop: 1
+  cycle_detection:
+    enabled: true
+    window_chars: 100   # ширина окна обзора (символов)
+    ngram_chars: 20     # размер n-граммы / хвоста
+    min_chars: 50       # минимум символов до начала проверки
   seed: 42
 
 output:
@@ -47,5 +52,5 @@ output:
 huggingface:
   enabled: false
   repo_id: your_username/qwen_continuation_dataset
-  token: null        # или через env: export HF_TOKEN=hf_xxxxx
-  shard_size: 10000
+  token: null        # или задай через env: export HF_TOKEN=hf_xxxxx
+  shard_size: 10000  # примеров в одном шарде

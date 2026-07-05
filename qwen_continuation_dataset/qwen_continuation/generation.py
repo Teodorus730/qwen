@@ -4,6 +4,7 @@ import math
 from typing import Any
 
 import torch
+from transformers import StoppingCriteria, StoppingCriteriaList
 
 from qwen_continuation.model import TeacherBundle
 
@@ -52,6 +53,73 @@ def _sample_next_token(
     return torch.multinomial(probabilities, num_samples=1)
 
 
+def _detect_ngram_cycle(text: str, window_chars: int, ngram_chars: int) -> bool:
+    if ngram_chars <= 0:
+        return False
+    if len(text) < ngram_chars * 2:
+        return False
+    window = text[-window_chars:]
+    if len(window) <= ngram_chars:
+        return False
+    tail = window[-ngram_chars:]
+    return tail in window[:-ngram_chars]
+
+
+class _NgramCycleStopping(StoppingCriteria):
+    def __init__(
+        self,
+        tokenizer: Any,
+        prefix_len: int,
+        window_chars: int,
+        ngram_chars: int,
+        min_chars: int,
+    ) -> None:
+        self.tokenizer = tokenizer
+        self.prefix_len = prefix_len
+        self.window_chars = window_chars
+        self.ngram_chars = ngram_chars
+        self.min_chars = min_chars
+
+    def __call__(
+        self,
+        input_ids: torch.Tensor,
+        scores: torch.FloatTensor,
+        **kwargs: Any,
+    ) -> torch.BoolTensor:
+        batch_size = input_ids.shape[0]
+        is_done = torch.zeros(batch_size, dtype=torch.bool, device=input_ids.device)
+        for row in range(batch_size):
+            generated_ids = input_ids[row, self.prefix_len:].tolist()
+            if not generated_ids:
+                continue
+            text = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+            if len(text) < self.min_chars:
+                continue
+            if _detect_ngram_cycle(text, self.window_chars, self.ngram_chars):
+                is_done[row] = True
+        return is_done
+
+
+def _get_cycle_cfg(config: dict[str, Any]) -> dict[str, Any] | None:
+    cfg = config["generation"].get("cycle_detection", {})
+    if not cfg.get("enabled", False):
+        return None
+    window_chars = int(cfg.get("window_chars", 100))
+    ngram_chars = int(cfg.get("ngram_chars", 20))
+    min_chars = int(cfg.get("min_chars", 50))
+    if ngram_chars <= 0:
+        raise ValueError("cycle_detection.ngram_chars must be positive")
+    if window_chars <= ngram_chars:
+        raise ValueError(
+            "cycle_detection.window_chars must be greater than ngram_chars"
+        )
+    return {
+        "window_chars": window_chars,
+        "ngram_chars": ngram_chars,
+        "min_chars": min_chars,
+    }
+
+
 def generate_fixed(
     teacher: TeacherBundle,
     prefix_ids: list[int],
@@ -89,6 +157,20 @@ def generate_fixed(
         if top_k > 0:
             kwargs["top_k"] = top_k
 
+    cycle_cfg = _get_cycle_cfg(config)
+    if cycle_cfg:
+        kwargs["stopping_criteria"] = StoppingCriteriaList(
+            [
+                _NgramCycleStopping(
+                    tokenizer=tokenizer,
+                    prefix_len=len(prefix_ids),
+                    window_chars=cycle_cfg["window_chars"],
+                    ngram_chars=cycle_cfg["ngram_chars"],
+                    min_chars=cycle_cfg["min_chars"],
+                )
+            ]
+        )
+
     with torch.inference_mode():
         output = model.generate(
             input_ids=input_ids,
@@ -123,6 +205,8 @@ def generate_until_entropy(
     top_p = float(generation.get("top_p", 1.0))
     top_k = int(generation.get("top_k", 0))
 
+    cycle_cfg = _get_cycle_cfg(config)
+
     input_ids = torch.tensor(
         [prefix_ids], dtype=torch.long, device=teacher.input_device
     )
@@ -155,6 +239,18 @@ def generate_until_entropy(
         token_id = int(next_token.item())
         generated.append(token_id)
 
+        if cycle_cfg:
+            decoded = tokenizer.decode(generated, skip_special_tokens=True)
+            if (
+                len(decoded) >= cycle_cfg["min_chars"]
+                and _detect_ngram_cycle(
+                    decoded,
+                    cycle_cfg["window_chars"],
+                    cycle_cfg["ngram_chars"],
+                )
+            ):
+                break
+
         input_ids = torch.cat((input_ids, next_token), dim=-1)
         attention_mask = torch.cat(
             (
@@ -168,7 +264,10 @@ def generate_until_entropy(
             dim=-1,
         )
 
-        if tokenizer.eos_token_id is not None and token_id == tokenizer.eos_token_id:
+        if (
+            tokenizer.eos_token_id is not None
+            and token_id == tokenizer.eos_token_id
+        ):
             break
 
     return generated, entropies
