@@ -82,6 +82,24 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Validate configuration without downloading model or dataset.",
     )
+    parser.add_argument(
+        "--hf-upload",
+        action="store_true",
+        help="Enable incremental upload to a Hugging Face dataset repo (overrides huggingface.enabled).",
+    )
+    parser.add_argument(
+        "--hf-repo-id",
+        help="Target Hugging Face dataset repo, e.g. username/dataset-name.",
+    )
+    parser.add_argument(
+        "--hf-token",
+        help="Hugging Face token. Prefer 'huggingface-cli login' or the HF_TOKEN env var over passing this on the command line.",
+    )
+    parser.add_argument(
+        "--hf-shard-size",
+        type=int,
+        help="Rows per uploaded shard.",
+    )
     return parser.parse_args()
 
 
@@ -121,7 +139,7 @@ def print_environment(config: dict[str, Any]) -> None:
     hf_cfg = config.get("huggingface", {})
     if hf_cfg.get("enabled", False):
         print("HF upload:   enabled")
-        print("HF repo:    ", hf_cfg.get("repo_id", "(не задан)"))
+        print("HF repo:    ", hf_cfg.get("repo_id", "(not set)"))
         print("Shard size: ", hf_cfg.get("shard_size", 10000))
     else:
         print("HF upload:   disabled")
@@ -238,6 +256,10 @@ def main() -> None:
         prefix_tokens=args.prefix_tokens,
         max_new_tokens=args.max_new_tokens,
         entropy_threshold=args.entropy_threshold,
+        hf_upload=args.hf_upload or None,
+        hf_repo_id=args.hf_repo_id,
+        hf_token=args.hf_token,
+        hf_shard_size=args.hf_shard_size,
     )
 
     print_environment(config)
@@ -268,7 +290,7 @@ def main() -> None:
             if state_file.exists():
                 state_file.unlink()
             if removed:
-                print(f"Удалено {removed} шард(ов) из: {output_path.parent}")
+                print(f"Removed {removed} shard(s) from: {output_path.parent}")
         else:
             if output_path.exists():
                 output_path.unlink()

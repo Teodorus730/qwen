@@ -131,6 +131,20 @@ huggingface:
   shard_size: 10000
 ```
 
+Or skip editing the file and pass it on the command line instead, which is
+more convenient on Kaggle or right after a fresh clone:
+
+```bash
+python generate_dataset.py \
+  --config config.yaml \
+  --hf-upload \
+  --hf-repo-id your_username/qwen_continuation_dataset
+```
+
+`--hf-shard-size` and `--hf-token` are also available; CLI flags override
+`config.yaml` for that run only. `--hf-upload` without a resolvable `repo_id`
+fails immediately with a clear error instead of partway through generation.
+
 The repository is created automatically if it does not exist. Completed shards
 are uploaded as `data/train-00000.jsonl`, `data/train-00001.jsonl`, and so on.
 Each upload also refreshes the dataset card with current statistics.
@@ -258,5 +272,6 @@ qwen/
 └── qwen_continuation_dataset/
 ```
 
-The included Colab notebook clones the `main` branch and opens this root-level
-directory.
+The included notebook clones the `main` branch and opens this root-level
+directory. It detects Colab, Kaggle, or a local Jupyter environment and
+adjusts the working directory accordingly.

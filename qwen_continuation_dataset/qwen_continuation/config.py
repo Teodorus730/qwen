@@ -91,6 +91,15 @@ def validate_config(config: dict[str, Any]) -> None:
     if not output.get("path"):
         raise ValueError("output.path must not be empty.")
 
+    hf = config.get("huggingface", {})
+    if hf.get("enabled", False):
+        repo_id = hf.get("repo_id")
+        if not repo_id or repo_id == "your_username/qwen_continuation_dataset":
+            raise ValueError(
+                "huggingface.repo_id must be set to a real repo when "
+                "huggingface.enabled is true."
+            )
+
 
 def with_overrides(
     config: dict[str, Any],
@@ -103,6 +112,10 @@ def with_overrides(
     prefix_tokens: int | None = None,
     max_new_tokens: int | None = None,
     entropy_threshold: float | None = None,
+    hf_upload: bool | None = None,
+    hf_repo_id: str | None = None,
+    hf_token: str | None = None,
+    hf_shard_size: int | None = None,
 ) -> dict[str, Any]:
     updated = deepcopy(config)
     if max_examples is not None:
@@ -121,5 +134,15 @@ def with_overrides(
         updated["generation"]["max_new_tokens"] = max_new_tokens
     if entropy_threshold is not None:
         updated["generation"]["entropy_threshold"] = entropy_threshold
+    if any(v is not None for v in (hf_upload, hf_repo_id, hf_token, hf_shard_size)):
+        hf_section = updated.setdefault("huggingface", {})
+        if hf_upload is not None:
+            hf_section["enabled"] = hf_upload
+        if hf_repo_id is not None:
+            hf_section["repo_id"] = hf_repo_id
+        if hf_token is not None:
+            hf_section["token"] = hf_token
+        if hf_shard_size is not None:
+            hf_section["shard_size"] = hf_shard_size
     validate_config(updated)
     return updated
