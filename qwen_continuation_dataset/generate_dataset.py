@@ -77,6 +77,36 @@ def parse_args() -> argparse.Namespace:
         type=float,
         help="Override generation.entropy_threshold from config.yaml.",
     )
+    cycle_group = parser.add_mutually_exclusive_group()
+    cycle_group.add_argument(
+        "--cycle-detection",
+        dest="cycle_enabled",
+        action="store_true",
+        default=None,
+        help="Force-enable n-gram cycle detection for this run.",
+    )
+    cycle_group.add_argument(
+        "--no-cycle-detection",
+        dest="cycle_enabled",
+        action="store_false",
+        default=None,
+        help="Force-disable n-gram cycle detection for this run.",
+    )
+    parser.add_argument(
+        "--cycle-window-chars",
+        type=int,
+        help="Override generation.cycle_detection.window_chars from config.yaml.",
+    )
+    parser.add_argument(
+        "--cycle-ngram-chars",
+        type=int,
+        help="Override generation.cycle_detection.ngram_chars from config.yaml.",
+    )
+    parser.add_argument(
+        "--cycle-min-chars",
+        type=int,
+        help="Override generation.cycle_detection.min_chars from config.yaml.",
+    )
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -135,6 +165,15 @@ def print_environment(config: dict[str, Any]) -> None:
     print("Mode:", config["generation"]["mode"])
     print("Max examples:", config["dataset"]["max_examples"])
     print("Output:", config["output"]["path"])
+
+    cycle_cfg = config["generation"].get("cycle_detection", {})
+    if cycle_cfg.get("enabled", False):
+        print("Cycle detection: enabled")
+        print("  window_chars:", cycle_cfg.get("window_chars", 100))
+        print("  ngram_chars: ", cycle_cfg.get("ngram_chars", 20))
+        print("  min_chars:   ", cycle_cfg.get("min_chars", 50))
+    else:
+        print("Cycle detection: disabled")
 
     hf_cfg = config.get("huggingface", {})
     if hf_cfg.get("enabled", False):
@@ -256,6 +295,10 @@ def main() -> None:
         prefix_tokens=args.prefix_tokens,
         max_new_tokens=args.max_new_tokens,
         entropy_threshold=args.entropy_threshold,
+        cycle_enabled=args.cycle_enabled,
+        cycle_window_chars=args.cycle_window_chars,
+        cycle_ngram_chars=args.cycle_ngram_chars,
+        cycle_min_chars=args.cycle_min_chars,
         hf_upload=args.hf_upload or None,
         hf_repo_id=args.hf_repo_id,
         hf_token=args.hf_token,

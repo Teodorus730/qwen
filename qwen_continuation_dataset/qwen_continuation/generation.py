@@ -104,19 +104,10 @@ def _get_cycle_cfg(config: dict[str, Any]) -> dict[str, Any] | None:
     cfg = config["generation"].get("cycle_detection", {})
     if not cfg.get("enabled", False):
         return None
-    window_chars = int(cfg.get("window_chars", 100))
-    ngram_chars = int(cfg.get("ngram_chars", 20))
-    min_chars = int(cfg.get("min_chars", 50))
-    if ngram_chars <= 0:
-        raise ValueError("cycle_detection.ngram_chars must be positive")
-    if window_chars <= ngram_chars:
-        raise ValueError(
-            "cycle_detection.window_chars must be greater than ngram_chars"
-        )
     return {
-        "window_chars": window_chars,
-        "ngram_chars": ngram_chars,
-        "min_chars": min_chars,
+        "window_chars": int(cfg.get("window_chars", 100)),
+        "ngram_chars": int(cfg.get("ngram_chars", 20)),
+        "min_chars": int(cfg.get("min_chars", 50)),
     }
 
 

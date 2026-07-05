@@ -88,6 +88,20 @@ def validate_config(config: dict[str, Any]) -> None:
     ) <= 0:
         raise ValueError("generation.entropy_threshold must be positive.")
 
+    cycle = generation.get("cycle_detection", {})
+    if cycle.get("enabled", False):
+        ngram_chars = int(cycle.get("ngram_chars", 20))
+        window_chars = int(cycle.get("window_chars", 100))
+        if ngram_chars <= 0:
+            raise ValueError(
+                "generation.cycle_detection.ngram_chars must be positive."
+            )
+        if window_chars <= ngram_chars:
+            raise ValueError(
+                "generation.cycle_detection.window_chars must be greater "
+                "than ngram_chars."
+            )
+
     if not output.get("path"):
         raise ValueError("output.path must not be empty.")
 
@@ -112,6 +126,10 @@ def with_overrides(
     prefix_tokens: int | None = None,
     max_new_tokens: int | None = None,
     entropy_threshold: float | None = None,
+    cycle_enabled: bool | None = None,
+    cycle_window_chars: int | None = None,
+    cycle_ngram_chars: int | None = None,
+    cycle_min_chars: int | None = None,
     hf_upload: bool | None = None,
     hf_repo_id: str | None = None,
     hf_token: str | None = None,
@@ -134,6 +152,19 @@ def with_overrides(
         updated["generation"]["max_new_tokens"] = max_new_tokens
     if entropy_threshold is not None:
         updated["generation"]["entropy_threshold"] = entropy_threshold
+    if any(
+        v is not None
+        for v in (cycle_enabled, cycle_window_chars, cycle_ngram_chars, cycle_min_chars)
+    ):
+        cycle_section = updated["generation"].setdefault("cycle_detection", {})
+        if cycle_enabled is not None:
+            cycle_section["enabled"] = cycle_enabled
+        if cycle_window_chars is not None:
+            cycle_section["window_chars"] = cycle_window_chars
+        if cycle_ngram_chars is not None:
+            cycle_section["ngram_chars"] = cycle_ngram_chars
+        if cycle_min_chars is not None:
+            cycle_section["min_chars"] = cycle_min_chars
     if any(v is not None for v in (hf_upload, hf_repo_id, hf_token, hf_shard_size)):
         hf_section = updated.setdefault("huggingface", {})
         if hf_upload is not None:

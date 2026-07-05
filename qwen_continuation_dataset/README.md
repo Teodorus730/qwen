@@ -117,7 +117,26 @@ generation:
 positive; the script raises an error at startup otherwise instead of silently
 running with detection disabled. A repeat is only caught if its period fits
 within `window_chars - ngram_chars` characters; longer-period repeats fall
-outside the window by design. Set `enabled: false` to disable entirely.
+outside the window by design.
+
+Every field can also be set from the command line, without editing
+`config.yaml`:
+
+```bash
+python generate_dataset.py \
+  --config config.yaml \
+  --cycle-detection \
+  --cycle-window-chars 150 \
+  --cycle-ngram-chars 30 \
+  --cycle-min-chars 60 \
+  --dataset fineweb \
+  --mode fixed \
+  --max-examples 20 \
+  --output outputs/test.jsonl \
+  --overwrite
+```
+
+Use `--no-cycle-detection` to turn it off for a single run instead.
 
 ## Hugging Face upload
 
