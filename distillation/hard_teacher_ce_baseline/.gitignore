@@ -1,0 +1,18 @@
+# Local Hugging Face cache (model weights + streamed datasets)
+.hf_cache/
+
+# Local FineWeb-Edu corpus cache (rebuild with src/fetch_corpus.py)
+data/
+
+# Saved student checkpoints are large and reproducible from configs + logs
+results/**/student/
+results/**/checkpoint_last/
+results/**/checkpoint_last_tmp/
+
+# Transient run artifacts regenerated on every run
+results/**/*.log
+results/**/live.png
+
+# Python
+__pycache__/
+*.pyc
