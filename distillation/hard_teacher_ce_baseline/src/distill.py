@@ -15,7 +15,7 @@ Pipeline
    logged to results/<run>/log.jsonl plus a baseline snapshot taken right
    after noise injection (step 0) so the recovery curve has an anchor.
 
-Runs on CPU (smoke) or CUDA (full). On CUDA it uses bf16 autocast.
+Runs on CPU, CUDA, or XPU. GPU runs use bf16 autocast.
 
 Usage:
     python -m src.distill --config configs/smoke.yaml
@@ -58,6 +58,7 @@ class RunConfig:
     model_name: str = "Qwen/Qwen2.5-0.5B"
     run_name: str = "smoke"
     out_dir: str = "results"
+    device: str = "auto"              # auto | cuda | xpu | cpu
 
     # noise
     alpha: float = 0.05
@@ -68,6 +69,9 @@ class RunConfig:
     seq_len: int = 512
     min_score: float = 0.0
     data_seed: int = 0
+    local_jsonl: str | None = None
+    probe_skip_docs: int = 5000
+    train_skip_docs: int = 200
 
     # distillation
     mode: str = "mixed"               # off_policy | on_policy | mixed
@@ -131,8 +135,39 @@ def load_config(path: str | None, overrides: dict) -> RunConfig:
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def get_device() -> torch.device:
-    return torch.device("cuda" if torch.cuda.is_available() else "cpu")
+def get_device(requested: str = "auto") -> torch.device:
+    if requested == "auto":
+        if torch.cuda.is_available():
+            requested = "cuda"
+        elif torch.xpu.is_available():
+            requested = "xpu"
+        else:
+            requested = "cpu"
+    if requested == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA was requested but is not available")
+    if requested == "xpu" and not torch.xpu.is_available():
+        raise RuntimeError("XPU was requested but is not available")
+    if requested not in {"cuda", "xpu", "cpu"}:
+        raise ValueError("device must be one of: auto, cuda, xpu, cpu")
+    return torch.device(requested)
+
+
+def model_dtype(device: torch.device) -> torch.dtype:
+    return torch.bfloat16 if device.type in {"cuda", "xpu"} else torch.float32
+
+
+def synchronize(device: torch.device) -> None:
+    if device.type == "cuda":
+        torch.cuda.synchronize()
+    elif device.type == "xpu":
+        torch.xpu.synchronize()
+
+
+def empty_cache(device: torch.device) -> None:
+    if device.type == "cuda":
+        torch.cuda.empty_cache()
+    elif device.type == "xpu":
+        torch.xpu.empty_cache()
 
 
 def load_models(cfg: RunConfig, device):
@@ -140,9 +175,8 @@ def load_models(cfg: RunConfig, device):
     tok = AutoTokenizer.from_pretrained(cfg.model_name)
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
-    teacher = AutoModelForCausalLM.from_pretrained(cfg.model_name,
-                                                   torch_dtype=dtype)
+    dtype = model_dtype(device)
+    teacher = AutoModelForCausalLM.from_pretrained(cfg.model_name, dtype=dtype)
     teacher.to(device).eval()
     for p in teacher.parameters():
         p.requires_grad_(False)
@@ -197,9 +231,8 @@ def save_training_checkpoint(student, tok, run_dir: Path, cfg: RunConfig,
         shutil.rmtree(tmp)
     tmp.mkdir(parents=True, exist_ok=True)
 
-    if next(student.parameters()).is_cuda:
-        torch.cuda.synchronize()
-    # CPU state_dict avoids serializing directly from CUDA tensors and keeps
+    synchronize(next(student.parameters()).device)
+    # CPU state_dict avoids serializing directly from accelerator tensors and keeps
     # the live module on GPU so optimizer parameter references remain valid.
     cpu_state = {k: v.detach().cpu() for k, v in student.state_dict().items()}
     student.save_pretrained(tmp, state_dict=cpu_state)
@@ -242,7 +275,7 @@ def on_policy_batch(student, teacher, prompt_block, cfg: RunConfig, device):
 
 def run_eval(student, teacher, tok, cfg: RunConfig, device, eval_blocks,
              probe_blocks):
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
+    dtype = model_dtype(device)
     ppl = metric_mod.perplexity(student, eval_blocks, device,
                                 batch_size=cfg.batch_size, dtype=dtype)
     kl = metric_mod.kl_to_teacher(student, teacher, probe_blocks, device,
@@ -271,11 +304,13 @@ def main():
     ap.add_argument("--mode", type=str, default=None)
     ap.add_argument("--run_name", type=str, default=None)
     ap.add_argument("--max_seconds", type=float, default=None)
+    ap.add_argument("--device", type=str, default=None)
     args = ap.parse_args()
 
     cfg = load_config(args.config, {
         "alpha": args.alpha, "steps": args.steps, "mode": args.mode,
         "run_name": args.run_name, "max_seconds": args.max_seconds,
+        "device": args.device,
     })
     if cfg.distill_objective == "hard_teacher_ce" and cfg.mode != "off_policy":
         raise ValueError("hard_teacher_ce is an off-policy teacher-forcing "
@@ -284,7 +319,7 @@ def main():
         raise ValueError("Do not set temperature=0 literally. Use "
                          "distill_objective: hard_teacher_ce for the T->0 "
                          "teacher-argmax baseline.")
-    device = get_device()
+    device = get_device(cfg.device)
     # Safety cap (Windows/WDDM): without this, oversubscribing VRAM silently
     # spills into system RAM ("sysmem fallback") and the whole machine can hang
     # while it thrashes the pagefile. Capping the per-process fraction makes
@@ -319,11 +354,9 @@ def main():
         ckpt = out / cfg.checkpoint_dir
         print(f"[resume] loading student from {ckpt}", flush=True)
         del student
-        if device.type == "cuda":
-            torch.cuda.empty_cache()
-        dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
-        student = AutoModelForCausalLM.from_pretrained(ckpt,
-                                                       torch_dtype=dtype)
+        empty_cache(device)
+        dtype = model_dtype(device)
+        student = AutoModelForCausalLM.from_pretrained(ckpt, dtype=dtype)
         student.to(device)
         for p in student.parameters():
             p.requires_grad_(True)
@@ -336,11 +369,12 @@ def main():
 
     # --- fixed eval / probe sets (reproducible, score-filtered) ---
     dcfg = data_mod.DataConfig(seq_len=cfg.seq_len, min_score=cfg.min_score,
-                               seed=cfg.data_seed)
+                               seed=cfg.data_seed,
+                               local_jsonl=cfg.local_jsonl)
     print("[data] building fixed eval/probe blocks ...", flush=True)
     eval_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.eval_blocks, skip_docs=0)
     probe_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.probe_blocks,
-                                         skip_docs=5000)
+                                         skip_docs=cfg.probe_skip_docs)
 
     if not resume_state:
         # --- baseline of the *clean* teacher-as-student (sanity, CKA==1) ---
@@ -378,8 +412,9 @@ def main():
 
     # --- training stream ---
     train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                       n_batches=None, skip_docs=200)
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
+                                       n_batches=None,
+                                       skip_docs=cfg.train_skip_docs)
+    dtype = model_dtype(device)
     t0 = time.time()
     student.train()
     rng = torch.Generator().manual_seed(cfg.data_seed)
@@ -391,7 +426,7 @@ def main():
             block = next(train_iter)
         except StopIteration:
             train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                               skip_docs=200)
+                                               skip_docs=cfg.train_skip_docs)
             block = next(train_iter)
 
         for g in opt.param_groups:
@@ -412,7 +447,7 @@ def main():
         if use_on_policy:
             seq, kd_mask = on_policy_batch(student, teacher, block, cfg, device)
             with torch.autocast(device_type=device.type, dtype=dtype,
-                                enabled=(device.type == "cuda")):
+                                enabled=(device.type != "cpu")):
                 s_logits = student(seq).logits[:, :-1, :]
                 with torch.no_grad():
                     t_logits = teacher(seq).logits[:, :-1, :]
@@ -427,7 +462,7 @@ def main():
         else:
             seq = block.to(device)
             with torch.autocast(device_type=device.type, dtype=dtype,
-                                enabled=(device.type == "cuda")):
+                                enabled=(device.type != "cpu")):
                 s_logits = student(seq).logits[:, :-1, :]
                 with torch.no_grad():
                     t_logits = teacher(seq).logits[:, :-1, :]
@@ -474,8 +509,7 @@ def main():
 
         if (cfg.sleep_every_steps and cfg.sleep_seconds > 0 and
                 step % cfg.sleep_every_steps == 0):
-            if device.type == "cuda":
-                torch.cuda.synchronize()
+            synchronize(device)
             time.sleep(cfg.sleep_seconds)
 
         if (cfg.checkpoint_every and step > start_step and
@@ -493,11 +527,11 @@ def main():
             break
 
     if cfg.save_student:
-        if cfg.cpu_before_save and device.type == "cuda":
+        if cfg.cpu_before_save and device.type != "cpu":
             print("[save] moving student to CPU before serialization ...",
                   flush=True)
             student.to("cpu")
-            torch.cuda.empty_cache()
+            empty_cache(device)
         student.save_pretrained(out / "student")
         tok.save_pretrained(out / "student")
 

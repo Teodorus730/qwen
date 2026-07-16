@@ -15,7 +15,7 @@ Pipeline
    logged to results/<run>/log.jsonl plus a baseline snapshot taken right
    after noise injection (step 0) so the recovery curve has an anchor.
 
-Runs on CPU (smoke) or CUDA (full). On CUDA it uses bf16 autocast.
+Runs on CPU, CUDA, or XPU. GPU runs use bf16 autocast.
 
 Usage:
     python -m src.distill --config configs/smoke.yaml
@@ -57,6 +57,7 @@ class RunConfig:
     model_name: str = "Qwen/Qwen2.5-0.5B"
     run_name: str = "smoke"
     out_dir: str = "results"
+    device: str = "auto"              # auto | cuda | xpu | cpu
 
     # noise
     alpha: float = 0.05
@@ -67,6 +68,9 @@ class RunConfig:
     seq_len: int = 512
     min_score: float = 0.0
     data_seed: int = 0
+    local_jsonl: str | None = None
+    probe_skip_docs: int = 5000
+    train_skip_docs: int = 200
 
     # distillation
     mode: str = "mixed"               # off_policy | on_policy | mixed
@@ -89,6 +93,11 @@ class RunConfig:
     # optim
     optimizer: str = "adamw"          # adamw | adamw8bit (bnb, needs CUDA)
     grad_checkpointing: bool = False  # trade compute for memory (big models)
+    lora_r: int = 0                   # 0 disables LoRA (existing full FT)
+    lora_alpha: int = 16
+    lora_dropout: float = 0.0
+    lora_target_modules: list[str] = field(
+        default_factory=lambda: ["q_proj", "v_proj"])
     steps: int = 50
     batch_size: int = 4
     grad_accum: int = 1
@@ -123,8 +132,25 @@ def load_config(path: str | None, overrides: dict) -> RunConfig:
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def get_device() -> torch.device:
-    return torch.device("cuda" if torch.cuda.is_available() else "cpu")
+def get_device(requested: str = "auto") -> torch.device:
+    if requested == "auto":
+        if torch.cuda.is_available():
+            requested = "cuda"
+        elif torch.xpu.is_available():
+            requested = "xpu"
+        else:
+            requested = "cpu"
+    if requested == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA was requested but is not available")
+    if requested == "xpu" and not torch.xpu.is_available():
+        raise RuntimeError("XPU was requested but is not available")
+    if requested not in {"cuda", "xpu", "cpu"}:
+        raise ValueError("device must be one of: auto, cuda, xpu, cpu")
+    return torch.device(requested)
+
+
+def model_dtype(device: torch.device) -> torch.dtype:
+    return torch.bfloat16 if device.type in {"cuda", "xpu"} else torch.float32
 
 
 def load_models(cfg: RunConfig, device):
@@ -132,9 +158,8 @@ def load_models(cfg: RunConfig, device):
     tok = AutoTokenizer.from_pretrained(cfg.model_name)
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
-    teacher = AutoModelForCausalLM.from_pretrained(cfg.model_name,
-                                                   torch_dtype=dtype)
+    dtype = model_dtype(device)
+    teacher = AutoModelForCausalLM.from_pretrained(cfg.model_name, dtype=dtype)
     teacher.to(device).eval()
     for p in teacher.parameters():
         p.requires_grad_(False)
@@ -147,6 +172,25 @@ def load_models(cfg: RunConfig, device):
         student.gradient_checkpointing_enable()
         student.config.use_cache = False
     return tok, teacher, student
+
+
+def add_lora(cfg: RunConfig, student):
+    if cfg.lora_r <= 0:
+        return student
+    from peft import LoraConfig, TaskType, get_peft_model
+    student = get_peft_model(
+        student,
+        LoraConfig(
+            r=cfg.lora_r,
+            lora_alpha=cfg.lora_alpha,
+            lora_dropout=cfg.lora_dropout,
+            target_modules=cfg.lora_target_modules,
+            bias="none",
+            task_type=TaskType.CAUSAL_LM,
+        ),
+    )
+    student.print_trainable_parameters()
+    return student
 
 
 def build_optimizer(cfg: RunConfig, student):
@@ -185,7 +229,7 @@ def on_policy_batch(student, teacher, prompt_block, cfg: RunConfig, device):
 
 def run_eval(student, teacher, tok, cfg: RunConfig, device, eval_blocks,
              probe_blocks):
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
+    dtype = model_dtype(device)
     ppl = metric_mod.perplexity(student, eval_blocks, device,
                                 batch_size=cfg.batch_size, dtype=dtype)
     kl = metric_mod.kl_to_teacher(student, teacher, probe_blocks, device,
@@ -209,13 +253,15 @@ def main():
     ap.add_argument("--mode", type=str, default=None)
     ap.add_argument("--run_name", type=str, default=None)
     ap.add_argument("--max_seconds", type=float, default=None)
+    ap.add_argument("--device", type=str, default=None)
     args = ap.parse_args()
 
     cfg = load_config(args.config, {
         "alpha": args.alpha, "steps": args.steps, "mode": args.mode,
         "run_name": args.run_name, "max_seconds": args.max_seconds,
+        "device": args.device,
     })
-    device = get_device()
+    device = get_device(cfg.device)
     # Safety cap (Windows/WDDM): without this, oversubscribing VRAM silently
     # spills into system RAM ("sysmem fallback") and the whole machine can hang
     # while it thrashes the pagefile. Capping the per-process fraction makes
@@ -245,11 +291,12 @@ def main():
 
     # --- fixed eval / probe sets (reproducible, score-filtered) ---
     dcfg = data_mod.DataConfig(seq_len=cfg.seq_len, min_score=cfg.min_score,
-                               seed=cfg.data_seed)
+                               seed=cfg.data_seed,
+                               local_jsonl=cfg.local_jsonl)
     print("[data] building fixed eval/probe blocks ...", flush=True)
     eval_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.eval_blocks, skip_docs=0)
     probe_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.probe_blocks,
-                                         skip_docs=5000)
+                                         skip_docs=cfg.probe_skip_docs)
 
     # --- baseline of the *clean* teacher-as-student (sanity, CKA==1) ---
     print("[eval] teacher self-baseline ...", flush=True)
@@ -274,6 +321,9 @@ def main():
                     probe_blocks)
     log({"phase": "post_noise", "step": 0, **post})
 
+    # Keep the noised base fixed and train only the adapter when LoRA is on.
+    student = add_lora(cfg, student)
+
     # --- optimiser + LR schedule ---
     opt = build_optimizer(cfg, student)
 
@@ -286,8 +336,9 @@ def main():
 
     # --- training stream ---
     train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                       n_batches=None, skip_docs=200)
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
+                                       n_batches=None,
+                                       skip_docs=cfg.train_skip_docs)
+    dtype = model_dtype(device)
     t0 = time.time()
     student.train()
     rng = torch.Generator().manual_seed(cfg.data_seed)
@@ -299,7 +350,7 @@ def main():
             block = next(train_iter)
         except StopIteration:
             train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                               skip_docs=200)
+                                               skip_docs=cfg.train_skip_docs)
             block = next(train_iter)
 
         for g in opt.param_groups:
@@ -320,7 +371,7 @@ def main():
         if use_on_policy:
             seq, kd_mask = on_policy_batch(student, teacher, block, cfg, device)
             with torch.autocast(device_type=device.type, dtype=dtype,
-                                enabled=(device.type == "cuda")):
+                                enabled=(device.type != "cpu")):
                 s_logits = student(seq).logits[:, :-1, :]
                 with torch.no_grad():
                     t_logits = teacher(seq).logits[:, :-1, :]
@@ -335,7 +386,7 @@ def main():
         else:
             seq = block.to(device)
             with torch.autocast(device_type=device.type, dtype=dtype,
-                                enabled=(device.type == "cuda")):
+                                enabled=(device.type != "cpu")):
                 s_logits = student(seq).logits[:, :-1, :]
                 with torch.no_grad():
                     t_logits = teacher(seq).logits[:, :-1, :]

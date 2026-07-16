@@ -52,7 +52,9 @@ def _local_doc_stream(path: str, cfg: DataConfig, skip: int):
                 if n < skip:
                     n += 1
                     continue
-                txt = ex.get(cfg.text_field)
+                # Continuation datasets store the generated training text under
+                # `synthetic_text`; ordinary FineWeb JSONL keeps using `text`.
+                txt = ex.get(cfg.text_field) or ex.get("synthetic_text")
                 if txt:
                     any_yielded = True
                     yield txt

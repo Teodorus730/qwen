@@ -32,7 +32,7 @@ def perplexity(model, blocks: torch.Tensor, device, batch_size: int = 8,
     for i in range(0, blocks.size(0), batch_size):
         b = blocks[i:i + batch_size].to(device)
         with torch.autocast(device_type=device.type, dtype=dtype,
-                            enabled=(device.type == "cuda")):
+                            enabled=(device.type != "cpu")):
             logits = model(b).logits
         # shift
         lg = logits[:, :-1, :].float()

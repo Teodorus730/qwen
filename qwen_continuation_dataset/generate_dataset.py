@@ -145,8 +145,11 @@ def print_environment(config: dict[str, Any]) -> None:
             round(torch.cuda.get_device_properties(0).total_memory / 2**30, 2),
             "GiB",
         )
+    elif torch.xpu.is_available():
+        print("XPU available:", True)
+        print("GPU:", torch.xpu.get_device_name(0))
     else:
-        print("Warning: CUDA is unavailable; generation will be very slow.")
+        print("Warning: GPU is unavailable; generation will be very slow.")
     print("Teacher:", config["model"]["id"])
     dataset_config = config["dataset"]
     selected_source = dataset_config.get("source", "fineweb")
@@ -311,9 +314,9 @@ def main() -> None:
         print("Dry run completed: configuration is valid.")
         return
 
-    if not torch.cuda.is_available():
+    if not (torch.cuda.is_available() or torch.xpu.is_available()):
         answer = input(
-            "CUDA is unavailable. Continue on CPU? This may be very slow. [y/N]: "
+            "GPU is unavailable. Continue on CPU? This may be very slow. [y/N]: "
         ).strip().lower()
         if answer not in {"y", "yes"}:
             raise SystemExit("Stopped. Enable a GPU and run again.")

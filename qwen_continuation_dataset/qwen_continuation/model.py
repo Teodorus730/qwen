@@ -15,10 +15,19 @@ class TeacherBundle:
     dtype_name: str
 
 
-def choose_dtype() -> torch.dtype:
-    if not torch.cuda.is_available():
+def choose_device() -> torch.device:
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    if torch.xpu.is_available():
+        return torch.device("xpu")
+    return torch.device("cpu")
+
+
+def choose_dtype(device: torch.device | None = None) -> torch.dtype:
+    device = device or choose_device()
+    if device.type == "cpu":
         return torch.float32
-    if torch.cuda.is_bf16_supported():
+    if device.type == "xpu" or torch.cuda.is_bf16_supported():
         return torch.bfloat16
     return torch.float16
 
@@ -60,7 +69,8 @@ def load_teacher(config: dict[str, Any]) -> TeacherBundle:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
     model_class = _load_model_class()
-    dtype = choose_dtype()
+    device = choose_device()
+    dtype = choose_dtype(device)
 
     load_kwargs: dict[str, Any] = {
         "trust_remote_code": trust_remote_code,
@@ -68,8 +78,12 @@ def load_teacher(config: dict[str, Any]) -> TeacherBundle:
         "dtype": dtype,
     }
 
-    if torch.cuda.is_available():
-        load_kwargs["device_map"] = model_config.get("device_map", "auto")
+    if device.type != "cpu":
+        device_map = model_config.get("device_map", "auto")
+        load_kwargs["device_map"] = (
+            {"": "xpu"} if device.type == "xpu" and device_map == "auto"
+            else device_map
+        )
 
     try:
         model = model_class.from_pretrained(model_id, **load_kwargs)
@@ -78,7 +92,7 @@ def load_teacher(config: dict[str, Any]) -> TeacherBundle:
         load_kwargs["torch_dtype"] = load_kwargs.pop("dtype")
         model = model_class.from_pretrained(model_id, **load_kwargs)
 
-    if not torch.cuda.is_available():
+    if device.type == "cpu":
         model = model.to("cpu")
 
     model.eval()
