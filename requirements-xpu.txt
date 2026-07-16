@@ -1,0 +1,6 @@
+--extra-index-url https://download.pytorch.org/whl/xpu
+
+torch==2.13.0+xpu
+-r qwen_continuation_dataset/requirements.txt
+peft==0.19.1
+matplotlib==3.11.0
