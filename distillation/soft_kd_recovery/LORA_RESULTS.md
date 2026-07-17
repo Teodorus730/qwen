@@ -128,6 +128,34 @@ LoRA training path, не полное восстановление.
 - На этом этапе чистая модель использовалась только для предварительной генерации
   датасета. Обучение LoRA не запускалось.
 
+## Pilot synthetic_ce: 1500 примеров
+
+- `synthetic_ce`: next-token CE только по `synthetic_text`; teacher не участвует
+  в train-step и используется только для baseline, PPL, обеих KL и CKA.
+- Model/device/dtype: `Qwen/Qwen3.5-0.8B-Base`, XPU, BF16; шум `alpha=0.05`,
+  seed 0; основной JSONL на 1500 строк.
+- LoRA: rank 8, alpha 16, dropout 0; 5 111 808 обучаемых параметров
+  (`0.6748%`); targets без изменений относительно recovery-run.
+- Обучение: 120 шагов; batch 1; sequence 160; peak LR `5e-5`; warmup 10;
+  cosine decay; gradient clip 1.0; offsets eval/probe/train 0 / 16 / 32.
+- Training/eval elapsed: `224.1 s`; wall-clock: `271.73 s`; peak XPU
+  allocation: `4623.9 MiB`; тяжёлые веса не сохранялись.
+- Все числовые записи конечны; fail-fast норм градиентов не сработал; NaN/Inf
+  нет. Runtime-счётчик teacher-forward внутри 120 train-step: `0`.
+
+| Метрика | Teacher | Post-noise | Post-LoRA, step 120 | Изменение от post-noise |
+|---|---:|---:|---:|---:|
+| PPL | 24.9725 | 28.3967 | 25.6201 | -2.7766 |
+| KL(teacher || student) | 0.0000 | 0.1459 | 0.1633 | +0.0174 |
+| KL(student || teacher) | 0.0000 | 0.1619 | 0.1713 | +0.0094 |
+| CKA mean | 1.0000 | 0.9850 | 0.9844 | -0.0006 |
+
+Вывод: CE-only LoRA вернула около 81% прироста PPL от шума, но обе финальные KL
+ухудшились относительно post-noise; recovery к teacher по распределениям не
+показан. На шаге 60 reverse KL кратко улучшилась до `0.1606`, затем ухудшилась.
+CKA изменилась мало. Режим подтверждает автономное обучение по сохранённому
+`synthetic_text`, но не заменяет KD для восстановления teacher logits.
+
 ## Воспроизведение
 
 Из корня репозитория в PowerShell:
@@ -158,6 +186,9 @@ Push-Location distillation\soft_kd_recovery
 
 ..\..\.venv\Scripts\python.exe -m src.distill `
   --config configs/recovery_xpu_qwen3.5_0.8b_a005.yaml
+
+..\..\.venv\Scripts\python.exe -m src.distill `
+  --config configs/pilot_synthetic_ce_xpu_qwen3.5_0.8b.yaml
 Pop-Location
 ```
 

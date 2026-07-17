@@ -31,6 +31,19 @@ import torch
 import torch.nn.functional as F
 
 
+def synthetic_ce_loss(student_logits: torch.Tensor, targets: torch.Tensor,
+                      ignore_index: int = -100):
+    """Next-token CE on synthetic text without teacher logits."""
+    vocab_size = student_logits.shape[-1]
+    ce = F.cross_entropy(
+        student_logits.reshape(-1, vocab_size),
+        targets.reshape(-1),
+        ignore_index=ignore_index,
+    )
+    zero = torch.zeros((), device=student_logits.device)
+    return ce, {"loss": ce.detach(), "kd": zero, "ce": ce.detach()}
+
+
 def kd_divergence(student_logits: torch.Tensor, teacher_logits: torch.Tensor,
                   kind: str = "forward_kl", temperature: float = 1.0,
                   jsd_beta: float = 0.5) -> torch.Tensor:

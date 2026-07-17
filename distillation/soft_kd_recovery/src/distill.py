@@ -68,11 +68,12 @@ class RunConfig:
     seq_len: int = 512
     min_score: float = 0.0
     data_seed: int = 0
-    local_jsonl: str | None = None
+    local_jsonl: str | None = "data/fineweb_edu_local.jsonl"
     probe_skip_docs: int = 5000
     train_skip_docs: int = 200
 
     # distillation
+    objective: str = "distillation"  # distillation | synthetic_ce
     mode: str = "mixed"               # off_policy | on_policy | mixed
     on_policy_ratio: float = 0.5      # P(step is on-policy) once warmed up
     on_policy_warmup_frac: float = 0.0  # first frac of steps forced off-policy
@@ -126,7 +127,13 @@ def load_config(path: str | None, overrides: dict) -> RunConfig:
     unknown = set(cfg) - known
     if unknown:
         raise ValueError(f"unknown config keys: {unknown}")
-    return RunConfig(**cfg)
+    result = RunConfig(**cfg)
+    if result.objective not in {"distillation", "synthetic_ce"}:
+        raise ValueError(
+            "objective must be one of: distillation, synthetic_ce")
+    if result.mode not in {"off_policy", "on_policy", "mixed"}:
+        raise ValueError("mode must be one of: off_policy, on_policy, mixed")
+    return result
 
 
 # --------------------------------------------------------------------------- #
@@ -332,6 +339,19 @@ def main():
     # Keep the noised base fixed and train only the adapter when LoRA is on.
     student = add_lora(cfg, student)
 
+    # Count teacher forwards only while a train-step loss is being computed.
+    # Evaluation forwards run with this flag disabled and are not included.
+    teacher_train_forwards = 0
+    teacher_train_step_active = False
+
+    def count_teacher_train_forward(_module, _args):
+        nonlocal teacher_train_forwards
+        if teacher_train_step_active:
+            teacher_train_forwards += 1
+
+    teacher_forward_hook = teacher.register_forward_pre_hook(
+        count_teacher_train_forward)
+
     # --- optimiser + LR schedule ---
     opt = build_optimizer(cfg, student)
 
@@ -363,47 +383,65 @@ def main():
 
         for g in opt.param_groups:
             g["lr"] = lr_at(step)
-        beta = loss_mod.beta_schedule(step, cfg.steps, cfg.beta_start,
-                                      cfg.beta_end, cfg.beta_schedule)
+        beta = (0.0 if cfg.objective == "synthetic_ce" else
+                loss_mod.beta_schedule(step, cfg.steps, cfg.beta_start,
+                                       cfg.beta_end, cfg.beta_schedule))
 
-        # choose regime. On-policy is disabled during the warmup window so a
-        # badly damaged student isn't asked to learn from its own garbage
-        # rollouts (the cold-start failure mode observed at large alpha).
-        warmup_steps = int(cfg.on_policy_warmup_frac * cfg.steps)
-        on_policy_allowed = step >= warmup_steps
-        use_on_policy = on_policy_allowed and (
-            cfg.mode == "on_policy" or
-            (cfg.mode == "mixed" and
-             torch.rand(1, generator=rng).item() < cfg.on_policy_ratio))
+        teacher_train_step_active = True
+        try:
+            if cfg.objective == "synthetic_ce":
+                seq = block.to(device)
+                with torch.autocast(device_type=device.type, dtype=dtype,
+                                    enabled=(device.type != "cpu")):
+                    s_logits = student(seq).logits[:, :-1, :]
+                targets = seq[:, 1:]
+                loss, parts = loss_mod.synthetic_ce_loss(
+                    s_logits.float(), targets)
+                regime = "synthetic_ce"
+            else:
+                # Keep cold-start protection for the existing KD regimes.
+                warmup_steps = int(cfg.on_policy_warmup_frac * cfg.steps)
+                on_policy_allowed = step >= warmup_steps
+                use_on_policy = on_policy_allowed and (
+                    cfg.mode == "on_policy" or
+                    (cfg.mode == "mixed" and
+                     torch.rand(1, generator=rng).item() <
+                     cfg.on_policy_ratio))
 
-        if use_on_policy:
-            seq, kd_mask = on_policy_batch(student, teacher, block, cfg, device)
-            with torch.autocast(device_type=device.type, dtype=dtype,
-                                enabled=(device.type != "cpu")):
-                s_logits = student(seq).logits[:, :-1, :]
-                with torch.no_grad():
-                    t_logits = teacher(seq).logits[:, :-1, :]
-            targets = torch.full_like(seq[:, 1:], -100)  # no ground truth
-            kd_mask = kd_mask[:, 1:]
-            loss, parts = loss_mod.mixed_loss(
-                s_logits.float(), t_logits.float(), targets, beta=1.0,
-                divergence=cfg.on_policy_divergence,
-                temperature=cfg.temperature, jsd_beta=cfg.jsd_beta,
-                kd_mask=kd_mask)
-            regime = "on_policy"
-        else:
-            seq = block.to(device)
-            with torch.autocast(device_type=device.type, dtype=dtype,
-                                enabled=(device.type != "cpu")):
-                s_logits = student(seq).logits[:, :-1, :]
-                with torch.no_grad():
-                    t_logits = teacher(seq).logits[:, :-1, :]
-            targets = seq[:, 1:]
-            loss, parts = loss_mod.mixed_loss(
-                s_logits.float(), t_logits.float(), targets, beta=beta,
-                divergence=cfg.divergence, temperature=cfg.temperature,
-                jsd_beta=cfg.jsd_beta)
-            regime = "off_policy"
+                if use_on_policy:
+                    seq, kd_mask = on_policy_batch(
+                        student, teacher, block, cfg, device)
+                    with torch.autocast(
+                            device_type=device.type, dtype=dtype,
+                            enabled=(device.type != "cpu")):
+                        s_logits = student(seq).logits[:, :-1, :]
+                        with torch.no_grad():
+                            t_logits = teacher(seq).logits[:, :-1, :]
+                    targets = torch.full_like(
+                        seq[:, 1:], -100)  # no ground truth
+                    kd_mask = kd_mask[:, 1:]
+                    loss, parts = loss_mod.mixed_loss(
+                        s_logits.float(), t_logits.float(), targets, beta=1.0,
+                        divergence=cfg.on_policy_divergence,
+                        temperature=cfg.temperature, jsd_beta=cfg.jsd_beta,
+                        kd_mask=kd_mask)
+                    regime = "on_policy"
+                else:
+                    seq = block.to(device)
+                    with torch.autocast(
+                            device_type=device.type, dtype=dtype,
+                            enabled=(device.type != "cpu")):
+                        s_logits = student(seq).logits[:, :-1, :]
+                        with torch.no_grad():
+                            t_logits = teacher(seq).logits[:, :-1, :]
+                    targets = seq[:, 1:]
+                    loss, parts = loss_mod.mixed_loss(
+                        s_logits.float(), t_logits.float(), targets,
+                        beta=beta, divergence=cfg.divergence,
+                        temperature=cfg.temperature, jsd_beta=cfg.jsd_beta)
+                    regime = "off_policy"
+        finally:
+            teacher_train_step_active = False
 
         (loss / cfg.grad_accum).backward()
         if (step + 1) % cfg.grad_accum == 0:
@@ -420,6 +458,7 @@ def main():
                  "beta": beta, "lr": lr_at(step),
                  "loss": float(parts["loss"]), "kd": float(parts["kd"]),
                  "ce": float(parts["ce"]),
+                 "teacher_train_forwards": teacher_train_forwards,
                  "elapsed": round(time.time() - t0, 1)})
 
         step += 1
@@ -443,6 +482,13 @@ def main():
                  "peak_memory_mb": peak_memory_mb(device),
                  "elapsed": round(time.time() - t0, 1)})
             break
+
+    if cfg.objective == "synthetic_ce" and teacher_train_forwards != 0:
+        raise RuntimeError(
+            "teacher forward was called inside a synthetic_ce train-step")
+    print(f"[teacher-check] train forwards: {teacher_train_forwards}",
+          flush=True)
+    teacher_forward_hook.remove()
 
     if cfg.save_student:
         student.save_pretrained(out / "student")
