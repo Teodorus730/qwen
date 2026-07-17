@@ -50,6 +50,54 @@
 снизилась; восстановление представлений не показано. Подтверждён конечный XPU BF16
 LoRA training path, не полное восстановление.
 
+## Recovery: 64 примера, alpha 0.05
+
+- Model/device/dtype: `Qwen/Qwen3.5-0.8B-Base`, XPU, BF16.
+- Датасет и offsets: те же 64 строки; eval/probe/train 0 / 16 / 32.
+- Шум: `alpha=0.05`, seed 0; изменены 205 тензоров / 752 336 896 параметров.
+- LoRA: rank 8, alpha 16, dropout 0; 5 111 808 обучаемых параметров
+  (`0.6748%`); targets без изменений относительно validation.
+- Обучение: off-policy forward KL; AdamW; 120 шагов; batch 1; sequence 64;
+  peak LR `5e-5`; warmup 10; cosine decay; gradient clip 1.0.
+- Training/eval elapsed: `264.6 s`; полный wall-clock: около `306 s`.
+- Peak XPU allocation: `3941.1 MiB`; тяжёлые веса не сохранялись.
+- Все записанные loss и метрики конечны; fail-fast проверка норм градиентов не
+  сработала; NaN/Inf нет.
+
+| Метрика | Teacher | Post-noise | Post-LoRA, step 120 | Изменение от post-noise |
+|---|---:|---:|---:|---:|
+| PPL | 30.9452 | 34.9761 | 32.3503 | -2.6258 |
+| KL(teacher || student) | 0.0000 | 0.1410 | 0.0953 | -0.0457 |
+| KL(student || teacher) | 0.0000 | 0.1496 | 0.1007 | -0.0489 |
+| CKA mean | 1.0000 | 0.9860 | 0.9877 | +0.0017 |
+
+Вывод: LoRA вернула около 65% прироста PPL от шума и снизила обе KL примерно на
+32%. До teacher baseline модель не восстановилась. CKA немного выросла; это
+согласуется с частичным, а не полным recovery. На шаге 90 reverse KL была
+минимально лучше финальной (`0.1005` против `0.1007`), остальные финальные метрики
+не хуже шага 90. Повторный запуск не потребовался.
+
+## Общий setup validation и recovery
+
+Оба прогона использовали один технический JSONL-датасет из 64 примеров, созданный заранее кодом Андрея.
+
+Генерация датасета:
+
+* teacher: `Qwen/Qwen3.5-0.8B-Base`;
+* источник префиксов: FineWeb-Edu;
+* режим: `fixed`;
+* число примеров: 64;
+* длина префикса: 64 токена;
+* длина сгенерированного продолжения: 16 токенов;
+* decoding: greedy (`temperature=0`, `top_p=1.0`, `top_k=0`);
+* seed: 42;
+* cycle detection: отключён;
+* обучающий текст: `synthetic_text`, состоящий из `prefix_text` и `teacher_continuation`.
+
+Чистая модель также использовалась во время обоих обучающих прогонов как online teacher. Один и тот же `synthetic_text` подавался чистому teacher и повреждённому student с LoRA; обучающий loss включал `forward KL`, заставляющий распределение student приближаться к распределению teacher.
+
+При evaluation чистая модель использовалась как эталон для teacher baseline, обеих KL и CKA. Поэтому validation и recovery проверяют комбинацию «синтетический датасет + online teacher + LoRA», а не автономное восстановление только по сохранённому датасету.
+
 ## Воспроизведение
 
 Из корня репозитория в PowerShell:
@@ -77,5 +125,8 @@ $env:TRANSFORMERS_OFFLINE = '1'
 Push-Location distillation\soft_kd_recovery
 ..\..\.venv\Scripts\python.exe -m src.distill `
   --config configs/validation_xpu_qwen3.5_0.8b.yaml
+
+..\..\.venv\Scripts\python.exe -m src.distill `
+  --config configs/recovery_xpu_qwen3.5_0.8b_a005.yaml
 Pop-Location
 ```
