@@ -1,0 +1,56 @@
+model:
+  id: Qwen/Qwen3.5-0.8B-Base
+  trust_remote_code: true
+  device_map: auto
+
+dataset:
+  source: fineweb
+  max_examples: 64
+  mixed:
+    math_ratio: 0.5
+  sources:
+    fineweb:
+      id: HuggingFaceFW/fineweb-edu
+      subset: sample-10BT
+      split: train
+      streaming: true
+      text_column: text
+      id_column: id
+      shuffle: true
+      shuffle_buffer_size: 1000
+    math:
+      id: HuggingFaceTB/finemath
+      subset: finemath-4plus
+      split: train
+      streaming: true
+      text_column: text
+      id_column: url
+      shuffle: true
+      shuffle_buffer_size: 1000
+
+generation:
+  mode: fixed
+  prefix_tokens: 128
+  max_new_tokens: 32
+  temperature: 0.0
+  top_p: 1.0
+  top_k: 0
+  entropy_threshold: 6.5
+  min_generated_tokens_before_entropy_stop: 1
+  cycle_detection:
+    enabled: true
+    window_chars: 100
+    ngram_chars: 20
+    min_chars: 50
+  seed: 43
+
+output:
+  path: outputs/qwen35_08b_fineweb_heldout_seed43.jsonl
+  resume: true
+  flush_every: 1
+
+huggingface:
+  enabled: false
+  repo_id: your_username/qwen_continuation_dataset
+  token: null
+  shard_size: 10000

@@ -69,8 +69,12 @@ class RunConfig:
     min_score: float = 0.0
     data_seed: int = 0
     local_jsonl: str | None = "data/fineweb_edu_local.jsonl"
+    eval_jsonl: str | None = None
+    probe_jsonl: str | None = None
+    eval_skip_docs: int = 0
     probe_skip_docs: int = 5000
     train_skip_docs: int = 200
+    train_one_pass: bool = False
 
     # distillation
     objective: str = "distillation"  # distillation | synthetic_ce
@@ -309,9 +313,53 @@ def main():
                                seed=cfg.data_seed,
                                local_jsonl=cfg.local_jsonl)
     print("[data] building fixed eval/probe blocks ...", flush=True)
-    eval_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.eval_blocks, skip_docs=0)
-    probe_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.probe_blocks,
-                                         skip_docs=cfg.probe_skip_docs)
+    train_batches = None
+    data_audit = None
+    if cfg.train_one_pass:
+        if cfg.grad_accum != 1:
+            raise ValueError("train_one_pass currently requires grad_accum=1")
+        if not cfg.eval_jsonl or not cfg.probe_jsonl:
+            raise ValueError(
+                "train_one_pass requires separate eval_jsonl and probe_jsonl")
+        train_batches, data_audit = data_mod.one_pass_local_batches(
+            tok, dcfg, cfg.batch_size)
+        eval_blocks, eval_source_ids = (
+            data_mod.fixed_local_blocks_with_source_ids(
+                tok, dcfg, cfg.eval_jsonl, cfg.eval_blocks,
+                skip_docs=cfg.eval_skip_docs))
+        probe_blocks, probe_source_ids = (
+            data_mod.fixed_local_blocks_with_source_ids(
+                tok, dcfg, cfg.probe_jsonl, cfg.probe_blocks,
+                skip_docs=cfg.probe_skip_docs))
+        train_source_ids = set(data_audit.pop("source_ids"))
+        intersections = {
+            "train_eval": len(train_source_ids & eval_source_ids),
+            "train_probe": len(train_source_ids & probe_source_ids),
+            "eval_probe": len(eval_source_ids & probe_source_ids),
+        }
+        if any(intersections.values()):
+            raise ValueError(f"data split source_id overlap: {intersections}")
+        cfg.steps = len(train_batches)
+        data_audit.update({
+            "optimizer_steps_planned": cfg.steps,
+            "eval_unique_source_ids": len(eval_source_ids),
+            "probe_unique_source_ids": len(probe_source_ids),
+            "source_id_intersections": intersections,
+        })
+        (out / "config.json").write_text(
+            json.dumps(asdict(cfg), indent=2))
+        log({"phase": "data_audit", **data_audit})
+        print(
+            f"[data] one pass: {data_audit['unique_source_ids']}/"
+            f"{data_audit['source_rows']} unique rows -> "
+            f"{data_audit['packed_batches']} packed batches / "
+            f"{cfg.steps} optimizer steps",
+            flush=True)
+    else:
+        eval_blocks = data_mod.fixed_blocks(
+            tok, dcfg, cfg.eval_blocks, skip_docs=cfg.eval_skip_docs)
+        probe_blocks = data_mod.fixed_blocks(
+            tok, dcfg, cfg.probe_blocks, skip_docs=cfg.probe_skip_docs)
 
     # --- baseline of the *clean* teacher-as-student (sanity, CKA==1) ---
     print("[eval] teacher self-baseline ...", flush=True)
@@ -363,23 +411,33 @@ def main():
         return cfg.lr * 0.5 * (1 + math.cos(math.pi * min(1.0, frac)))
 
     # --- training stream ---
-    train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                       n_batches=None,
-                                       skip_docs=cfg.train_skip_docs)
+    if cfg.train_one_pass:
+        train_iter = iter(train_batches)
+    else:
+        train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
+                                           n_batches=None,
+                                           skip_docs=cfg.train_skip_docs)
     dtype = model_dtype(device)
     t0 = time.time()
     student.train()
     rng = torch.Generator().manual_seed(cfg.data_seed)
 
     step = 0
+    optimizer_steps = 0
+    consumed_batches = 0
     opt.zero_grad(set_to_none=True)
     while step < cfg.steps:
         try:
             block = next(train_iter)
         except StopIteration:
+            if cfg.train_one_pass:
+                raise RuntimeError(
+                    f"one-pass iterator ended after {consumed_batches} of "
+                    f"{len(train_batches)} packed batches")
             train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
                                                skip_docs=cfg.train_skip_docs)
             block = next(train_iter)
+        consumed_batches += 1
 
         for g in opt.param_groups:
             g["lr"] = lr_at(step)
@@ -451,6 +509,7 @@ def main():
                 raise FloatingPointError(
                     f"non-finite gradient norm at step {step}: {grad_norm}")
             opt.step()
+            optimizer_steps += 1
             opt.zero_grad(set_to_none=True)
 
         if step % 5 == 0:
@@ -486,6 +545,25 @@ def main():
     if cfg.objective == "synthetic_ce" and teacher_train_forwards != 0:
         raise RuntimeError(
             "teacher forward was called inside a synthetic_ce train-step")
+    if cfg.train_one_pass:
+        if consumed_batches != data_audit["packed_batches"]:
+            raise RuntimeError(
+                f"consumed {consumed_batches} of "
+                f"{data_audit['packed_batches']} packed batches")
+        if optimizer_steps != data_audit["optimizer_steps_planned"]:
+            raise RuntimeError(
+                f"completed {optimizer_steps} of "
+                f"{data_audit['optimizer_steps_planned']} optimizer steps")
+        log({
+            "phase": "data_complete",
+            "training_source_rows": data_audit["source_rows"],
+            "training_unique_source_ids": data_audit["unique_source_ids"],
+            "packed_batches_consumed": consumed_batches,
+            "optimizer_steps_completed": optimizer_steps,
+            "source_id_intersections":
+                data_audit["source_id_intersections"],
+            "teacher_train_forwards": teacher_train_forwards,
+        })
     print(f"[teacher-check] train forwards: {teacher_train_forwards}",
           flush=True)
     teacher_forward_hook.remove()
