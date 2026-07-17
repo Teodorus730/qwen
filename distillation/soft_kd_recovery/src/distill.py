@@ -153,6 +153,14 @@ def model_dtype(device: torch.device) -> torch.dtype:
     return torch.bfloat16 if device.type in {"cuda", "xpu"} else torch.float32
 
 
+def peak_memory_mb(device: torch.device) -> float:
+    if device.type == "cuda":
+        return round(torch.cuda.max_memory_allocated() / 2**20, 1)
+    if device.type == "xpu":
+        return round(torch.xpu.max_memory_allocated() / 2**20, 1)
+    return 0.0
+
+
 def load_models(cfg: RunConfig, device):
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(cfg.model_name)
@@ -399,7 +407,11 @@ def main():
 
         (loss / cfg.grad_accum).backward()
         if (step + 1) % cfg.grad_accum == 0:
-            torch.nn.utils.clip_grad_norm_(student.parameters(), cfg.grad_clip)
+            grad_norm = torch.nn.utils.clip_grad_norm_(
+                student.parameters(), cfg.grad_clip)
+            if not torch.isfinite(grad_norm):
+                raise FloatingPointError(
+                    f"non-finite gradient norm at step {step}: {grad_norm}")
             opt.step()
             opt.zero_grad(set_to_none=True)
 
@@ -417,6 +429,7 @@ def main():
             ev = run_eval(student, teacher, tok, cfg, device, eval_blocks,
                           probe_blocks)
             log({"phase": "eval", "step": step, **ev,
+                 "peak_memory_mb": peak_memory_mb(device),
                  "elapsed": round(time.time() - t0, 1)})
             student.train()
 
@@ -427,6 +440,7 @@ def main():
             ev = run_eval(student, teacher, tok, cfg, device, eval_blocks,
                           probe_blocks)
             log({"phase": "eval_final_capped", "step": step, **ev,
+                 "peak_memory_mb": peak_memory_mb(device),
                  "elapsed": round(time.time() - t0, 1)})
             break
 
