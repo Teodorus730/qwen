@@ -353,22 +353,36 @@ def main() -> None:
                 f"source IDs"
             )
 
+    max_examples = int(config["dataset"]["max_examples"])
+    saved = len(completed_ids)
+    if saved > max_examples:
+        raise ValueError(
+            f"Output already contains {saved} unique source IDs, "
+            f"more than dataset.max_examples={max_examples}."
+        )
+    if saved == max_examples:
+        print(f"Output already complete: {saved} examples.")
+        print("Output:", output_path.resolve())
+        return
+
     teacher = load_teacher(config)
     tokenizer = teacher.tokenizer
 
     prefix_tokens = int(config["generation"]["prefix_tokens"])
     max_new_tokens = int(config["generation"]["max_new_tokens"])
     required_tokens = prefix_tokens + max_new_tokens
-    max_examples = int(config["dataset"]["max_examples"])
     flush_every = int(config["output"].get("flush_every", 1))
 
-    saved = 0
     skipped_short = 0
     skipped_completed = 0
     source_counts: dict[str, int] = {"fineweb": 0, "math": 0}
     started = time.perf_counter()
 
-    progress = tqdm(total=max_examples, desc="Saved examples")
+    progress = tqdm(
+        total=max_examples,
+        initial=saved,
+        desc="Saved examples",
+    )
 
     if hf_enabled:
         writer_cm = HfShardWriter(

@@ -98,6 +98,36 @@ LoRA training path, не полное восстановление.
 
 При evaluation чистая модель использовалась как эталон для teacher baseline, обеих KL и CKA. Поэтому validation и recovery проверяют комбинацию «синтетический датасет + online teacher + LoRA», а не автономное восстановление только по сохранённому датасету.
 
+## Основной синтетический датасет: 1500 примеров
+
+- Конфиг: `qwen_continuation_dataset/config_qwen35_08b_fineweb_1500_seed42.yaml`.
+- Output: `qwen_continuation_dataset/outputs/qwen35_08b_fineweb_1500_seed42.jsonl`.
+- Teacher: `Qwen/Qwen3.5-0.8B-Base`, XPU BF16; источник FineWeb-Edu
+  `sample-10BT`; 1500 примеров; fixed 128 -> 32 токена; greedy
+  (`temperature=0`, `top_p=1.0`, `top_k=0`); seed 42.
+- Cycle detection: включён; window 100 символов, n-gram 20 символов,
+  минимум 50 сгенерированных символов. Resume включён, flush после каждой строки.
+- Resume проверен повторным запуском: найдено 1500 готовых `source_id`, процесс
+  завершился до загрузки модели, SHA-256 output-файла не изменился.
+- `--dry-run`: пройден. Генерация: `5961.31 s`; wall-clock: `5973.50 s`;
+  пропущено 73 коротких документа. Размер: 4 465 582 байта (`4.259 MiB`).
+- JSONL: 1500 валидных строк; 1500 уникальных `source_id`; пустых
+  `prefix_text`, `teacher_continuation` и `synthetic_text` нет.
+- Во всех строках: teacher `Qwen/Qwen3.5-0.8B-Base`, dtype `bfloat16`, source
+  `fineweb`, prefix 128 токенов и заданные параметры greedy decoding.
+- Generated tokens: min 8, mean 30.594, median 32, max 32; 1301 строка —
+  32 токена; 199 строк — 8–31 токен. Все 199 досрочных остановок соответствуют
+  cycle detection; других досрочных остановок нет.
+- `teacher_continuation`: 1500 уникальных значений; дубликатов нет.
+- `synthetic_text == prefix_text + teacher_continuation`: 1499/1500 буквально.
+  В строке 1266 один byte-level символ пересекает границу полей: combined decode
+  собирает его корректно, а два раздельных decode дают replacement-символы;
+  `synthetic_text` по-прежнему построен генератором из `prefix_ids + generated_ids`.
+- Ручная проверка трёх строк: тематическое продолжение есть; встречаются повторы
+  слов и обрыв последнего слова на лимите 32 токена.
+- На этом этапе чистая модель использовалась только для предварительной генерации
+  датасета. Обучение LoRA не запускалось.
+
 ## Воспроизведение
 
 Из корня репозитория в PowerShell:
@@ -128,5 +158,21 @@ Push-Location distillation\soft_kd_recovery
 
 ..\..\.venv\Scripts\python.exe -m src.distill `
   --config configs/recovery_xpu_qwen3.5_0.8b_a005.yaml
+Pop-Location
+```
+
+Основной датасет, из корня репозитория в PowerShell:
+
+```powershell
+Remove-Item Env:HF_HUB_OFFLINE -ErrorAction SilentlyContinue
+Remove-Item Env:TRANSFORMERS_OFFLINE -ErrorAction SilentlyContinue
+$env:HF_HOME = Join-Path $PWD '.cache\huggingface'
+
+Push-Location qwen_continuation_dataset
+..\.venv\Scripts\python.exe generate_dataset.py `
+  --config config_qwen35_08b_fineweb_1500_seed42.yaml `
+  --dry-run
+..\.venv\Scripts\python.exe generate_dataset.py `
+  --config config_qwen35_08b_fineweb_1500_seed42.yaml
 Pop-Location
 ```
