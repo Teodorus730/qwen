@@ -1,7 +1,7 @@
 """
 Distillation losses for the recovery experiment.
 
-Mixed objective from experiment.md:
+KD objectives used by the recovery pipeline:
 
     L = beta * D(student || teacher) + (1 - beta) * CE(student, ground_truth)
 
@@ -29,6 +29,19 @@ from __future__ import annotations
 
 import torch
 import torch.nn.functional as F
+
+
+def synthetic_ce_loss(student_logits: torch.Tensor, targets: torch.Tensor,
+                      ignore_index: int = -100):
+    """Next-token CE on synthetic text without teacher logits."""
+    vocab_size = student_logits.shape[-1]
+    ce = F.cross_entropy(
+        student_logits.reshape(-1, vocab_size),
+        targets.reshape(-1),
+        ignore_index=ignore_index,
+    )
+    zero = torch.zeros((), device=student_logits.device)
+    return ce, {"loss": ce.detach(), "kd": zero, "ce": ce.detach()}
 
 
 def kd_divergence(student_logits: torch.Tensor, teacher_logits: torch.Tensor,
@@ -105,7 +118,7 @@ def beta_schedule(step: int, total: int, beta_start: float, beta_end: float,
                   kind: str = "linear") -> float:
     """Anneal the KD weight beta from beta_start -> beta_end over `total` steps.
 
-    experiment.md wants beta to *decrease*: start by snapping the noised student
+    The schedule decreases beta: start by snapping the noised student
     back onto the teacher (KD-heavy), then let ground-truth CE refine it."""
     if total <= 1:
         return beta_end

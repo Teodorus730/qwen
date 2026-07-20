@@ -15,7 +15,7 @@ Pipeline
    logged to results/<run>/log.jsonl plus a baseline snapshot taken right
    after noise injection (step 0) so the recovery curve has an anchor.
 
-Runs on CPU, CUDA, or XPU. GPU runs use bf16 autocast.
+Runs on CPU (smoke) or CUDA (full). On CUDA it uses bf16 autocast.
 
 Usage:
     python -m src.distill --config configs/smoke.yaml
@@ -57,7 +57,6 @@ class RunConfig:
     model_name: str = "Qwen/Qwen2.5-0.5B"
     run_name: str = "smoke"
     out_dir: str = "results"
-    device: str = "auto"              # auto | cuda | xpu | cpu
 
     # noise
     alpha: float = 0.05
@@ -68,16 +67,8 @@ class RunConfig:
     seq_len: int = 512
     min_score: float = 0.0
     data_seed: int = 0
-    local_jsonl: str | None = "data/fineweb_edu_local.jsonl"
-    eval_jsonl: str | None = None
-    probe_jsonl: str | None = None
-    eval_skip_docs: int = 0
-    probe_skip_docs: int = 5000
-    train_skip_docs: int = 200
-    train_one_pass: bool = False
 
     # distillation
-    objective: str = "distillation"  # distillation | synthetic_ce
     mode: str = "mixed"               # off_policy | on_policy | mixed
     on_policy_ratio: float = 0.5      # P(step is on-policy) once warmed up
     on_policy_warmup_frac: float = 0.0  # first frac of steps forced off-policy
@@ -98,11 +89,6 @@ class RunConfig:
     # optim
     optimizer: str = "adamw"          # adamw | adamw8bit (bnb, needs CUDA)
     grad_checkpointing: bool = False  # trade compute for memory (big models)
-    lora_r: int = 0                   # 0 disables LoRA (existing full FT)
-    lora_alpha: int = 16
-    lora_dropout: float = 0.0
-    lora_target_modules: list[str] = field(
-        default_factory=lambda: ["q_proj", "v_proj"])
     steps: int = 50
     batch_size: int = 4
     grad_accum: int = 1
@@ -131,45 +117,14 @@ def load_config(path: str | None, overrides: dict) -> RunConfig:
     unknown = set(cfg) - known
     if unknown:
         raise ValueError(f"unknown config keys: {unknown}")
-    result = RunConfig(**cfg)
-    if result.objective not in {"distillation", "synthetic_ce"}:
-        raise ValueError(
-            "objective must be one of: distillation, synthetic_ce")
-    if result.mode not in {"off_policy", "on_policy", "mixed"}:
-        raise ValueError("mode must be one of: off_policy, on_policy, mixed")
-    return result
+    return RunConfig(**cfg)
 
 
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def get_device(requested: str = "auto") -> torch.device:
-    if requested == "auto":
-        if torch.cuda.is_available():
-            requested = "cuda"
-        elif torch.xpu.is_available():
-            requested = "xpu"
-        else:
-            requested = "cpu"
-    if requested == "cuda" and not torch.cuda.is_available():
-        raise RuntimeError("CUDA was requested but is not available")
-    if requested == "xpu" and not torch.xpu.is_available():
-        raise RuntimeError("XPU was requested but is not available")
-    if requested not in {"cuda", "xpu", "cpu"}:
-        raise ValueError("device must be one of: auto, cuda, xpu, cpu")
-    return torch.device(requested)
-
-
-def model_dtype(device: torch.device) -> torch.dtype:
-    return torch.bfloat16 if device.type in {"cuda", "xpu"} else torch.float32
-
-
-def peak_memory_mb(device: torch.device) -> float:
-    if device.type == "cuda":
-        return round(torch.cuda.max_memory_allocated() / 2**20, 1)
-    if device.type == "xpu":
-        return round(torch.xpu.max_memory_allocated() / 2**20, 1)
-    return 0.0
+def get_device() -> torch.device:
+    return torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def load_models(cfg: RunConfig, device):
@@ -177,8 +132,9 @@ def load_models(cfg: RunConfig, device):
     tok = AutoTokenizer.from_pretrained(cfg.model_name)
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
-    dtype = model_dtype(device)
-    teacher = AutoModelForCausalLM.from_pretrained(cfg.model_name, dtype=dtype)
+    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
+    teacher = AutoModelForCausalLM.from_pretrained(cfg.model_name,
+                                                   torch_dtype=dtype)
     teacher.to(device).eval()
     for p in teacher.parameters():
         p.requires_grad_(False)
@@ -191,25 +147,6 @@ def load_models(cfg: RunConfig, device):
         student.gradient_checkpointing_enable()
         student.config.use_cache = False
     return tok, teacher, student
-
-
-def add_lora(cfg: RunConfig, student):
-    if cfg.lora_r <= 0:
-        return student
-    from peft import LoraConfig, TaskType, get_peft_model
-    student = get_peft_model(
-        student,
-        LoraConfig(
-            r=cfg.lora_r,
-            lora_alpha=cfg.lora_alpha,
-            lora_dropout=cfg.lora_dropout,
-            target_modules=cfg.lora_target_modules,
-            bias="none",
-            task_type=TaskType.CAUSAL_LM,
-        ),
-    )
-    student.print_trainable_parameters()
-    return student
 
 
 def build_optimizer(cfg: RunConfig, student):
@@ -248,7 +185,7 @@ def on_policy_batch(student, teacher, prompt_block, cfg: RunConfig, device):
 
 def run_eval(student, teacher, tok, cfg: RunConfig, device, eval_blocks,
              probe_blocks):
-    dtype = model_dtype(device)
+    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
     ppl = metric_mod.perplexity(student, eval_blocks, device,
                                 batch_size=cfg.batch_size, dtype=dtype)
     kl = metric_mod.kl_to_teacher(student, teacher, probe_blocks, device,
@@ -272,15 +209,13 @@ def main():
     ap.add_argument("--mode", type=str, default=None)
     ap.add_argument("--run_name", type=str, default=None)
     ap.add_argument("--max_seconds", type=float, default=None)
-    ap.add_argument("--device", type=str, default=None)
     args = ap.parse_args()
 
     cfg = load_config(args.config, {
         "alpha": args.alpha, "steps": args.steps, "mode": args.mode,
         "run_name": args.run_name, "max_seconds": args.max_seconds,
-        "device": args.device,
     })
-    device = get_device(cfg.device)
+    device = get_device()
     # Safety cap (Windows/WDDM): without this, oversubscribing VRAM silently
     # spills into system RAM ("sysmem fallback") and the whole machine can hang
     # while it thrashes the pagefile. Capping the per-process fraction makes
@@ -310,56 +245,11 @@ def main():
 
     # --- fixed eval / probe sets (reproducible, score-filtered) ---
     dcfg = data_mod.DataConfig(seq_len=cfg.seq_len, min_score=cfg.min_score,
-                               seed=cfg.data_seed,
-                               local_jsonl=cfg.local_jsonl)
+                               seed=cfg.data_seed)
     print("[data] building fixed eval/probe blocks ...", flush=True)
-    train_batches = None
-    data_audit = None
-    if cfg.train_one_pass:
-        if cfg.grad_accum != 1:
-            raise ValueError("train_one_pass currently requires grad_accum=1")
-        if not cfg.eval_jsonl or not cfg.probe_jsonl:
-            raise ValueError(
-                "train_one_pass requires separate eval_jsonl and probe_jsonl")
-        train_batches, data_audit = data_mod.one_pass_local_batches(
-            tok, dcfg, cfg.batch_size)
-        eval_blocks, eval_source_ids = (
-            data_mod.fixed_local_blocks_with_source_ids(
-                tok, dcfg, cfg.eval_jsonl, cfg.eval_blocks,
-                skip_docs=cfg.eval_skip_docs))
-        probe_blocks, probe_source_ids = (
-            data_mod.fixed_local_blocks_with_source_ids(
-                tok, dcfg, cfg.probe_jsonl, cfg.probe_blocks,
-                skip_docs=cfg.probe_skip_docs))
-        train_source_ids = set(data_audit.pop("source_ids"))
-        intersections = {
-            "train_eval": len(train_source_ids & eval_source_ids),
-            "train_probe": len(train_source_ids & probe_source_ids),
-            "eval_probe": len(eval_source_ids & probe_source_ids),
-        }
-        if any(intersections.values()):
-            raise ValueError(f"data split source_id overlap: {intersections}")
-        cfg.steps = len(train_batches)
-        data_audit.update({
-            "optimizer_steps_planned": cfg.steps,
-            "eval_unique_source_ids": len(eval_source_ids),
-            "probe_unique_source_ids": len(probe_source_ids),
-            "source_id_intersections": intersections,
-        })
-        (out / "config.json").write_text(
-            json.dumps(asdict(cfg), indent=2))
-        log({"phase": "data_audit", **data_audit})
-        print(
-            f"[data] one pass: {data_audit['unique_source_ids']}/"
-            f"{data_audit['source_rows']} unique rows -> "
-            f"{data_audit['packed_batches']} packed batches / "
-            f"{cfg.steps} optimizer steps",
-            flush=True)
-    else:
-        eval_blocks = data_mod.fixed_blocks(
-            tok, dcfg, cfg.eval_blocks, skip_docs=cfg.eval_skip_docs)
-        probe_blocks = data_mod.fixed_blocks(
-            tok, dcfg, cfg.probe_blocks, skip_docs=cfg.probe_skip_docs)
+    eval_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.eval_blocks, skip_docs=0)
+    probe_blocks = data_mod.fixed_blocks(tok, dcfg, cfg.probe_blocks,
+                                         skip_docs=5000)
 
     # --- baseline of the *clean* teacher-as-student (sanity, CKA==1) ---
     print("[eval] teacher self-baseline ...", flush=True)
@@ -384,22 +274,6 @@ def main():
                     probe_blocks)
     log({"phase": "post_noise", "step": 0, **post})
 
-    # Keep the noised base fixed and train only the adapter when LoRA is on.
-    student = add_lora(cfg, student)
-
-    # Count teacher forwards only while a train-step loss is being computed.
-    # Evaluation forwards run with this flag disabled and are not included.
-    teacher_train_forwards = 0
-    teacher_train_step_active = False
-
-    def count_teacher_train_forward(_module, _args):
-        nonlocal teacher_train_forwards
-        if teacher_train_step_active:
-            teacher_train_forwards += 1
-
-    teacher_forward_hook = teacher.register_forward_pre_hook(
-        count_teacher_train_forward)
-
     # --- optimiser + LR schedule ---
     opt = build_optimizer(cfg, student)
 
@@ -411,105 +285,71 @@ def main():
         return cfg.lr * 0.5 * (1 + math.cos(math.pi * min(1.0, frac)))
 
     # --- training stream ---
-    if cfg.train_one_pass:
-        train_iter = iter(train_batches)
-    else:
-        train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                           n_batches=None,
-                                           skip_docs=cfg.train_skip_docs)
-    dtype = model_dtype(device)
+    train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
+                                       n_batches=None, skip_docs=200)
+    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
     t0 = time.time()
     student.train()
     rng = torch.Generator().manual_seed(cfg.data_seed)
 
     step = 0
-    optimizer_steps = 0
-    consumed_batches = 0
     opt.zero_grad(set_to_none=True)
     while step < cfg.steps:
         try:
             block = next(train_iter)
         except StopIteration:
-            if cfg.train_one_pass:
-                raise RuntimeError(
-                    f"one-pass iterator ended after {consumed_batches} of "
-                    f"{len(train_batches)} packed batches")
             train_iter = data_mod.make_batches(tok, dcfg, cfg.batch_size,
-                                               skip_docs=cfg.train_skip_docs)
+                                               skip_docs=200)
             block = next(train_iter)
-        consumed_batches += 1
 
         for g in opt.param_groups:
             g["lr"] = lr_at(step)
-        beta = (0.0 if cfg.objective == "synthetic_ce" else
-                loss_mod.beta_schedule(step, cfg.steps, cfg.beta_start,
-                                       cfg.beta_end, cfg.beta_schedule))
+        beta = loss_mod.beta_schedule(step, cfg.steps, cfg.beta_start,
+                                      cfg.beta_end, cfg.beta_schedule)
 
-        teacher_train_step_active = True
-        try:
-            if cfg.objective == "synthetic_ce":
-                seq = block.to(device)
-                with torch.autocast(device_type=device.type, dtype=dtype,
-                                    enabled=(device.type != "cpu")):
-                    s_logits = student(seq).logits[:, :-1, :]
-                targets = seq[:, 1:]
-                loss, parts = loss_mod.synthetic_ce_loss(
-                    s_logits.float(), targets)
-                regime = "synthetic_ce"
-            else:
-                # Keep cold-start protection for the existing KD regimes.
-                warmup_steps = int(cfg.on_policy_warmup_frac * cfg.steps)
-                on_policy_allowed = step >= warmup_steps
-                use_on_policy = on_policy_allowed and (
-                    cfg.mode == "on_policy" or
-                    (cfg.mode == "mixed" and
-                     torch.rand(1, generator=rng).item() <
-                     cfg.on_policy_ratio))
+        # choose regime. On-policy is disabled during the warmup window so a
+        # badly damaged student isn't asked to learn from its own garbage
+        # rollouts (the cold-start failure mode observed at large alpha).
+        warmup_steps = int(cfg.on_policy_warmup_frac * cfg.steps)
+        on_policy_allowed = step >= warmup_steps
+        use_on_policy = on_policy_allowed and (
+            cfg.mode == "on_policy" or
+            (cfg.mode == "mixed" and
+             torch.rand(1, generator=rng).item() < cfg.on_policy_ratio))
 
-                if use_on_policy:
-                    seq, kd_mask = on_policy_batch(
-                        student, teacher, block, cfg, device)
-                    with torch.autocast(
-                            device_type=device.type, dtype=dtype,
-                            enabled=(device.type != "cpu")):
-                        s_logits = student(seq).logits[:, :-1, :]
-                        with torch.no_grad():
-                            t_logits = teacher(seq).logits[:, :-1, :]
-                    targets = torch.full_like(
-                        seq[:, 1:], -100)  # no ground truth
-                    kd_mask = kd_mask[:, 1:]
-                    loss, parts = loss_mod.mixed_loss(
-                        s_logits.float(), t_logits.float(), targets, beta=1.0,
-                        divergence=cfg.on_policy_divergence,
-                        temperature=cfg.temperature, jsd_beta=cfg.jsd_beta,
-                        kd_mask=kd_mask)
-                    regime = "on_policy"
-                else:
-                    seq = block.to(device)
-                    with torch.autocast(
-                            device_type=device.type, dtype=dtype,
-                            enabled=(device.type != "cpu")):
-                        s_logits = student(seq).logits[:, :-1, :]
-                        with torch.no_grad():
-                            t_logits = teacher(seq).logits[:, :-1, :]
-                    targets = seq[:, 1:]
-                    loss, parts = loss_mod.mixed_loss(
-                        s_logits.float(), t_logits.float(), targets,
-                        beta=beta, divergence=cfg.divergence,
-                        temperature=cfg.temperature, jsd_beta=cfg.jsd_beta)
-                    regime = "off_policy"
-        finally:
-            teacher_train_step_active = False
+        if use_on_policy:
+            seq, kd_mask = on_policy_batch(student, teacher, block, cfg, device)
+            with torch.autocast(device_type=device.type, dtype=dtype,
+                                enabled=(device.type == "cuda")):
+                s_logits = student(seq).logits[:, :-1, :]
+                with torch.no_grad():
+                    t_logits = teacher(seq).logits[:, :-1, :]
+            targets = torch.full_like(seq[:, 1:], -100)  # no ground truth
+            kd_mask = kd_mask[:, 1:]
+            loss, parts = loss_mod.mixed_loss(
+                s_logits.float(), t_logits.float(), targets, beta=1.0,
+                divergence=cfg.on_policy_divergence,
+                temperature=cfg.temperature, jsd_beta=cfg.jsd_beta,
+                kd_mask=kd_mask)
+            regime = "on_policy"
+        else:
+            seq = block.to(device)
+            with torch.autocast(device_type=device.type, dtype=dtype,
+                                enabled=(device.type == "cuda")):
+                s_logits = student(seq).logits[:, :-1, :]
+                with torch.no_grad():
+                    t_logits = teacher(seq).logits[:, :-1, :]
+            targets = seq[:, 1:]
+            loss, parts = loss_mod.mixed_loss(
+                s_logits.float(), t_logits.float(), targets, beta=beta,
+                divergence=cfg.divergence, temperature=cfg.temperature,
+                jsd_beta=cfg.jsd_beta)
+            regime = "off_policy"
 
         (loss / cfg.grad_accum).backward()
         if (step + 1) % cfg.grad_accum == 0:
-            grad_norm = torch.nn.utils.clip_grad_norm_(
-                student.parameters(), cfg.grad_clip)
-            if not torch.isfinite(grad_norm):
-                raise FloatingPointError(
-                    f"non-finite gradient norm at step {step}: {grad_norm}")
+            torch.nn.utils.clip_grad_norm_(student.parameters(), cfg.grad_clip)
             opt.step()
-            optimizer_steps += 1
             opt.zero_grad(set_to_none=True)
 
         if step % 5 == 0:
@@ -517,7 +357,6 @@ def main():
                  "beta": beta, "lr": lr_at(step),
                  "loss": float(parts["loss"]), "kd": float(parts["kd"]),
                  "ce": float(parts["ce"]),
-                 "teacher_train_forwards": teacher_train_forwards,
                  "elapsed": round(time.time() - t0, 1)})
 
         step += 1
@@ -527,7 +366,6 @@ def main():
             ev = run_eval(student, teacher, tok, cfg, device, eval_blocks,
                           probe_blocks)
             log({"phase": "eval", "step": step, **ev,
-                 "peak_memory_mb": peak_memory_mb(device),
                  "elapsed": round(time.time() - t0, 1)})
             student.train()
 
@@ -538,35 +376,8 @@ def main():
             ev = run_eval(student, teacher, tok, cfg, device, eval_blocks,
                           probe_blocks)
             log({"phase": "eval_final_capped", "step": step, **ev,
-                 "peak_memory_mb": peak_memory_mb(device),
                  "elapsed": round(time.time() - t0, 1)})
             break
-
-    if cfg.objective == "synthetic_ce" and teacher_train_forwards != 0:
-        raise RuntimeError(
-            "teacher forward was called inside a synthetic_ce train-step")
-    if cfg.train_one_pass:
-        if consumed_batches != data_audit["packed_batches"]:
-            raise RuntimeError(
-                f"consumed {consumed_batches} of "
-                f"{data_audit['packed_batches']} packed batches")
-        if optimizer_steps != data_audit["optimizer_steps_planned"]:
-            raise RuntimeError(
-                f"completed {optimizer_steps} of "
-                f"{data_audit['optimizer_steps_planned']} optimizer steps")
-        log({
-            "phase": "data_complete",
-            "training_source_rows": data_audit["source_rows"],
-            "training_unique_source_ids": data_audit["unique_source_ids"],
-            "packed_batches_consumed": consumed_batches,
-            "optimizer_steps_completed": optimizer_steps,
-            "source_id_intersections":
-                data_audit["source_id_intersections"],
-            "teacher_train_forwards": teacher_train_forwards,
-        })
-    print(f"[teacher-check] train forwards: {teacher_train_forwards}",
-          flush=True)
-    teacher_forward_hook.remove()
 
     if cfg.save_student:
         student.save_pretrained(out / "student")
