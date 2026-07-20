@@ -9,11 +9,10 @@ from transformers import StoppingCriteria, StoppingCriteriaList
 from qwen_continuation.model import TeacherBundle
 
 
-def _entropy_from_logits(logits: torch.Tensor) -> float:
+def _entropy_from_logits(logits: torch.Tensor) -> torch.Tensor:
     log_probs = torch.log_softmax(logits.float(), dim=-1)
     probs = log_probs.exp()
-    entropy = -(probs * log_probs).sum(dim=-1)
-    return float(entropy.item())
+    return -(probs * log_probs).sum(dim=-1)
 
 
 def _sample_next_token(
@@ -116,12 +115,21 @@ def generate_fixed(
     prefix_ids: list[int],
     config: dict[str, Any],
 ) -> tuple[list[int], list[float]]:
+    return generate_fixed_batch(teacher, [prefix_ids], config)[0]
+
+
+def generate_fixed_batch(
+    teacher: TeacherBundle,
+    prefix_ids_batch: list[list[int]],
+    config: dict[str, Any],
+) -> list[tuple[list[int], list[float]]]:
     generation = config["generation"]
     tokenizer = teacher.tokenizer
     model = teacher.model
+    prefix_len = len(prefix_ids_batch[0])
 
     input_ids = torch.tensor(
-        [prefix_ids], dtype=torch.long, device=teacher.input_device
+        prefix_ids_batch, dtype=torch.long, device=teacher.input_device
     )
     attention_mask = torch.ones_like(input_ids)
 
@@ -154,7 +162,7 @@ def generate_fixed(
             [
                 _NgramCycleStopping(
                     tokenizer=tokenizer,
-                    prefix_len=len(prefix_ids),
+                    prefix_len=prefix_len,
                     window_chars=cycle_cfg["window_chars"],
                     ngram_chars=cycle_cfg["ngram_chars"],
                     min_chars=cycle_cfg["min_chars"],
@@ -169,13 +177,20 @@ def generate_fixed(
             **kwargs,
         )
 
-    sequence = output.sequences[0]
-    generated = sequence[len(prefix_ids):].tolist()
-    entropies = [
-        _entropy_from_logits(step_logits[0])
-        for step_logits in output.scores
-    ]
-    return generated, entropies
+    pad_id = tokenizer.pad_token_id
+    eos_id = tokenizer.eos_token_id
+    step_entropies = _entropy_from_logits(torch.stack(output.scores)).tolist()
+    results = []
+    for row in range(len(prefix_ids_batch)):
+        generated = output.sequences[row, prefix_len:].tolist()
+        if eos_id is not None and eos_id in generated:
+            generated = generated[: generated.index(eos_id) + 1]
+        elif pad_id is not None:
+            while generated and generated[-1] == pad_id:
+                generated.pop()
+        entropies = [step[row] for step in step_entropies][: len(generated)]
+        results.append((generated, entropies))
+    return results
 
 
 def generate_until_entropy(
@@ -183,10 +198,19 @@ def generate_until_entropy(
     prefix_ids: list[int],
     config: dict[str, Any],
 ) -> tuple[list[int], list[float]]:
+    return generate_until_entropy_batch(teacher, [prefix_ids], config)[0]
+
+
+def generate_until_entropy_batch(
+    teacher: TeacherBundle,
+    prefix_ids_batch: list[list[int]],
+    config: dict[str, Any],
+) -> list[tuple[list[int], list[float]]]:
     generation = config["generation"]
     model = teacher.model
     tokenizer = teacher.tokenizer
 
+    batch_size = len(prefix_ids_batch)
     max_new_tokens = int(generation["max_new_tokens"])
     threshold = float(generation["entropy_threshold"])
     min_before_stop = int(
@@ -195,59 +219,81 @@ def generate_until_entropy(
     temperature = float(generation.get("temperature", 0.0))
     top_p = float(generation.get("top_p", 1.0))
     top_k = int(generation.get("top_k", 0))
-
     cycle_cfg = _get_cycle_cfg(config)
 
     input_ids = torch.tensor(
-        [prefix_ids], dtype=torch.long, device=teacher.input_device
+        prefix_ids_batch, dtype=torch.long, device=teacher.input_device
     )
     attention_mask = torch.ones_like(input_ids)
 
-    generated: list[int] = []
-    entropies: list[float] = []
+    generated: list[list[int]] = [[] for _ in range(batch_size)]
+    entropies: list[list[float]] = [[] for _ in range(batch_size)]
+    finished = [False] * batch_size
+
+    past_key_values = None
+    current_input = input_ids
 
     for _ in range(max_new_tokens):
         with torch.inference_mode():
             output = model(
-                input_ids=input_ids,
+                input_ids=current_input,
                 attention_mask=attention_mask,
-                use_cache=False,
+                past_key_values=past_key_values,
+                use_cache=True,
             )
-
+        past_key_values = output.past_key_values
         logits = output.logits[:, -1, :]
-        entropy = _entropy_from_logits(logits[0])
-        entropies.append(entropy)
 
-        if len(generated) >= min_before_stop and entropy > threshold:
-            break
-
-        next_token = _sample_next_token(
-            logits,
-            temperature=temperature,
-            top_p=top_p,
-            top_k=top_k,
+        next_tokens = _sample_next_token(
+            logits, temperature=temperature, top_p=top_p, top_k=top_k
         )
-        token_id = int(next_token.item())
-        generated.append(token_id)
+        step_entropies = _entropy_from_logits(logits).tolist()
+        step_tokens = next_tokens.squeeze(-1).tolist()
+
+        for row in range(batch_size):
+            if finished[row]:
+                continue
+
+            entropy = step_entropies[row]
+            entropies[row].append(entropy)
+
+            if len(generated[row]) >= min_before_stop and entropy > threshold:
+                finished[row] = True
+                continue
+
+            token_id = step_tokens[row]
+            generated[row].append(token_id)
+
+            if not cycle_cfg and (
+                tokenizer.eos_token_id is not None
+                and token_id == tokenizer.eos_token_id
+            ):
+                finished[row] = True
 
         if cycle_cfg:
-            decoded = tokenizer.decode(generated, skip_special_tokens=True)
-            if (
-                len(decoded) >= cycle_cfg["min_chars"]
-                and _detect_ngram_cycle(
-                    decoded,
-                    cycle_cfg["window_chars"],
-                    cycle_cfg["ngram_chars"],
+            active_rows = [
+                row for row in range(batch_size) if not finished[row] and generated[row]
+            ]
+            if active_rows:
+                texts = tokenizer.batch_decode(
+                    [generated[row] for row in active_rows],
+                    skip_special_tokens=True,
                 )
-            ):
-                break
+                for row, text in zip(active_rows, texts):
+                    if len(text) >= cycle_cfg["min_chars"] and _detect_ngram_cycle(
+                        text, cycle_cfg["window_chars"], cycle_cfg["ngram_chars"]
+                    ):
+                        finished[row] = True
 
-        input_ids = torch.cat((input_ids, next_token), dim=-1)
+        if all(finished):
+            break
+
+        current_input = next_tokens
         attention_mask = torch.cat(
             (
                 attention_mask,
                 torch.ones(
-                    (attention_mask.shape[0], 1),
+                    (batch_size, 1),
                     dtype=attention_mask.dtype,
                     device=attention_mask.device,
                 ),
@@ -255,13 +301,7 @@ def generate_until_entropy(
             dim=-1,
         )
 
-        if (
-            tokenizer.eos_token_id is not None
-            and token_id == tokenizer.eos_token_id
-        ):
-            break
-
-    return generated, entropies
+    return list(zip(generated, entropies))
 
 
 def generate_continuation(
@@ -274,4 +314,17 @@ def generate_continuation(
         return generate_fixed(teacher, prefix_ids, config)
     if mode == "entropy":
         return generate_until_entropy(teacher, prefix_ids, config)
+    raise ValueError(f"Unsupported generation mode: {mode}")
+
+
+def generate_continuation_batch(
+    teacher: TeacherBundle,
+    prefix_ids_batch: list[list[int]],
+    config: dict[str, Any],
+) -> list[tuple[list[int], list[float]]]:
+    mode = config["generation"]["mode"]
+    if mode == "fixed":
+        return generate_fixed_batch(teacher, prefix_ids_batch, config)
+    if mode == "entropy":
+        return generate_until_entropy_batch(teacher, prefix_ids_batch, config)
     raise ValueError(f"Unsupported generation mode: {mode}")

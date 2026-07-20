@@ -1,21 +1,22 @@
-# Qwen continuation dataset generator
+# Генератор датасета продолжений на Qwen
 
-Generates text-continuation pairs with a Qwen Base model. The script takes a
-prefix from an existing dataset and stores both the original continuation and
-the generated continuation in JSONL.
+Генерирует пары текст-продолжение с помощью модели Qwen Base. Скрипт берёт
+префикс из существующего датасета и сохраняет и настоящее продолжение из
+источника, и продолжение, сгенерированное моделью.
 
-The resulting data can be analyzed directly or used later in a distillation
-experiment. Student-model training is not included in this repository.
+Полученные данные можно анализировать напрямую или использовать позже в
+эксперименте по дистилляции. Обучение модели-студента в этот репозиторий не
+входит.
 
-## Setup
+## Установка
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-A CUDA GPU is recommended.
+Рекомендуется GPU с поддержкой CUDA.
 
-## Quick start
+## Быстрый старт
 
 ```bash
 python generate_dataset.py \
@@ -27,117 +28,123 @@ python generate_dataset.py \
   --overwrite
 ```
 
-Without `--overwrite`, an existing output file (or set of shards, if
-Hugging Face upload is on) is resumed, and already processed `source_id`
-values are skipped.
+Без `--overwrite` существующий запуск резюмируется, уже обработанные
+документы пропускаются — см. [Выходные файлы](#выходные-файлы).
 
-## Parameters
+## Параметры
 
-Every setting lives in `config.yaml`. Most also have a matching CLI flag that
-overrides it for a single run without editing the file. `--config` picks
-which YAML file to load; it defaults to `config.yaml`.
+Все настройки живут в `config.yaml`. У большинства есть соответствующий
+CLI-флаг, который переопределяет значение на один запуск без правки файла.
+`--config` выбирает, какой YAML-файл загрузить, по умолчанию `config.yaml`.
 
 ### model
 
-| Key | Default | CLI flag | Description |
+| Ключ | По умолчанию | CLI-флаг | Описание |
 |---|---|---|---|
-| `model.id` | `Qwen/Qwen3.5-0.8B-Base` | — | Hugging Face model id used as the teacher. |
-| `model.trust_remote_code` | `true` | — | Passed to `from_pretrained`. |
-| `model.device_map` | `auto` | — | Passed to `from_pretrained`. |
+| `model.id` | `Qwen/Qwen3.5-0.8B-Base` | — | ID модели на Hugging Face, используемой как teacher. |
+| `model.trust_remote_code` | `true` | — | Передаётся в `from_pretrained`. |
+| `model.device_map` | `auto` | — | Передаётся в `from_pretrained`. |
+| `model.compile` | `false` | — | Обернуть модель в `torch.compile`. См. [Производительность](#производительность). |
 
 ### dataset
 
-| Key | Default | CLI flag | Description |
+| Ключ | По умолчанию | CLI-флаг | Описание |
 |---|---|---|---|
-| `dataset.source` | `fineweb` | `--dataset` | `fineweb`, `math`, or `mixed`. |
-| `dataset.max_examples` | `20` | `--max-examples` | How many examples to generate and save. |
-| `dataset.mixed.math_ratio` | `0.5` | `--math-ratio` | Fraction of FineMath documents when `source: mixed`. See [Mixed source](#mixed-source). |
-| `dataset.sources.fineweb.*` | see `config.yaml` | — | FineWeb-Edu connection: `id`, `subset`, `split`, `streaming`, `text_column`, `id_column`, `shuffle`, `shuffle_buffer_size`. |
-| `dataset.sources.math.*` | see `config.yaml` | — | Same fields for FineMath. |
+| `dataset.source` | `fineweb` | `--dataset` | `fineweb`, `math` или `mixed`. |
+| `dataset.max_examples` | `20` | `--max-examples` | Сколько примеров сгенерировать и сохранить. |
+| `dataset.mixed.math_ratio` | `0.5` | `--math-ratio` | Доля документов FineMath при `source: mixed`. См. [Смешанный источник](#смешанный-источник). |
+| `dataset.sources.fineweb.*` | см. `config.yaml` | — | Подключение к FineWeb-Edu: `id`, `subset`, `split`, `streaming`, `text_column`, `id_column`, `shuffle`, `shuffle_buffer_size`. |
+| `dataset.sources.math.*` | см. `config.yaml` | — | То же самое для FineMath. |
 
 ### generation
 
-| Key | Default | CLI flag | Description |
+| Ключ | По умолчанию | CLI-флаг | Описание |
 |---|---|---|---|
-| `generation.mode` | `fixed` | `--mode` | `fixed` generates exactly `max_new_tokens`; `entropy` stops early on high uncertainty. |
-| `generation.prefix_tokens` | `128` | `--prefix-tokens` | Tokens taken from the document as the input prefix. |
-| `generation.max_new_tokens` | `32` | `--max-new-tokens` | Tokens to generate in fixed mode; hard cap in entropy mode. |
-| `generation.temperature` | `0.0` | — | `0` is greedy decoding; higher values sample. |
-| `generation.top_p` | `1.0` | — | Nucleus sampling threshold. |
-| `generation.top_k` | `0` | — | Top-k sampling limit; `0` disables it. |
-| `generation.entropy_threshold` | `6.5` | `--entropy-threshold` | Entropy mode only — stop once next-token entropy exceeds this. See [Generation modes](#generation-modes). |
-| `generation.min_generated_tokens_before_entropy_stop` | `1` | — | Entropy mode only — tokens generated before the entropy stop can trigger. |
-| `generation.seed` | `42` | — | RNG seed. |
-| `generation.cycle_detection.enabled` | `true` | `--cycle-detection` / `--no-cycle-detection` | Stop generation early on a repeated n-gram. See [Cycle detection](#cycle-detection). |
-| `generation.cycle_detection.window_chars` | `100` | `--cycle-window-chars` | Width of the character window checked for a repeat. |
-| `generation.cycle_detection.ngram_chars` | `20` | `--cycle-ngram-chars` | Length of the tail compared against the window. |
-| `generation.cycle_detection.min_chars` | `50` | `--cycle-min-chars` | Minimum generated length before checking starts. |
+| `generation.mode` | `fixed` | `--mode` | `fixed` генерирует ровно `max_new_tokens`; `entropy` останавливается раньше при высокой неопределённости. |
+| `generation.batch_size` | `1` | `--batch-size` | Сколько документов генерируется вместе за один вызов модели. См. [Производительность](#производительность). |
+| `generation.prefix_tokens` | `128` | `--prefix-tokens` | Сколько токенов документа берётся как входной префикс. |
+| `generation.max_new_tokens` | `32` | `--max-new-tokens` | Токенов для генерации в fixed-режиме; жёсткий потолок в entropy-режиме. |
+| `generation.temperature` | `0.0` | — | `0` — жадное декодирование; выше — сэмплирование. |
+| `generation.top_p` | `1.0` | — | Порог nucleus sampling. |
+| `generation.top_k` | `0` | — | Ограничение top-k sampling; `0` отключает. |
+| `generation.entropy_threshold` | `6.5` | `--entropy-threshold` | Только для entropy-режима — остановка, когда энтропия следующего токена превышает это значение. См. [Режимы генерации](#режимы-генерации). |
+| `generation.min_generated_tokens_before_entropy_stop` | `1` | — | Только для entropy-режима — сколько токенов сгенерировать, прежде чем остановка по энтропии может сработать. |
+| `generation.seed` | `42` | — | Seed для генератора случайных чисел. |
+| `generation.cycle_detection.enabled` | `true` | `--cycle-detection` / `--no-cycle-detection` | Останавливать генерацию раньше при повторяющейся n-грамме. См. [Детекция циклов](#детекция-циклов). |
+| `generation.cycle_detection.window_chars` | `100` | `--cycle-window-chars` | Ширина окна символов, в котором ищется повтор. |
+| `generation.cycle_detection.ngram_chars` | `20` | `--cycle-ngram-chars` | Длина хвоста, который сравнивается с окном. |
+| `generation.cycle_detection.min_chars` | `50` | `--cycle-min-chars` | Минимальная длина сгенерированного текста, прежде чем проверка начнётся. |
 
 ### output
 
-| Key | Default | CLI flag | Description |
+| Ключ | По умолчанию | CLI-флаг | Описание |
 |---|---|---|---|
-| `output.path` | `outputs/generated.jsonl` | `--output` | Local JSONL path, or shard directory when Hugging Face upload is on. |
-| `output.resume` | `true` | `--overwrite` (inverts it for one run) | Resume from existing output instead of starting over. |
-| `output.flush_every` | `1` | — | Rows written between disk flushes. |
+| `output.path` | `outputs/generated.jsonl` | `--output` | Локальный путь к JSONL, либо директория шардов при включённой загрузке на Hugging Face. |
+| `output.resume` | `true` | `--overwrite` (инвертирует на один запуск) | Резюмировать с существующего вывода вместо начала с нуля. |
+| `output.flush_every` | `1` | — | Сколько строк между сбросами на диск. |
+| `output.extra_fields.enabled` | `false` | `--save-extra-fields` | Сохранять полные метаданные по каждому примеру в отдельный локальный файл. См. [Выходные файлы](#выходные-файлы). |
+| `output.extra_fields.path` | `outputs/extra.jsonl` | `--extra-fields-path` | Куда пишется этот файл с метаданными. |
+| `output.extra_fields.batch_size` | `100` | `--extra-fields-batch-size` | Сколько примеров копится в памяти перед каждой записью. |
 
 ### huggingface
 
-| Key | Default | CLI flag | Description |
+| Ключ | По умолчанию | CLI-флаг | Описание |
 |---|---|---|---|
-| `huggingface.enabled` | `false` | `--hf-upload` | Upload completed shards to a Hugging Face dataset repo as they're generated. See [Hugging Face upload](#hugging-face-upload). |
-| `huggingface.repo_id` | `your_username/qwen_continuation_dataset` | `--hf-repo-id` | Target dataset repo. |
-| `huggingface.token` | `null` | `--hf-token` | Prefer the `HF_TOKEN` env var or `huggingface-cli login` instead of passing this on the command line. |
-| `huggingface.shard_size` | `10000` | `--hf-shard-size` | Examples per shard before it's uploaded. |
+| `huggingface.enabled` | `false` | `--hf-upload` | Загружать завершённые шарды в датасет на Hugging Face по мере генерации. См. [Загрузка на Hugging Face](#загрузка-на-hugging-face). |
+| `huggingface.repo_id` | `your_username/qwen_continuation_dataset` | `--hf-repo-id` | Целевой репозиторий датасета. |
+| `huggingface.token` | `null` | `--hf-token` | Лучше использовать переменную окружения `HF_TOKEN` или `huggingface-cli login`, чем передавать токен в командной строке. |
+| `huggingface.shard_size` | `10000` | `--hf-shard-size` | Примеров в шарде перед загрузкой. |
 
-### CLI-only flags
+### Флаги только для CLI
 
-These have no `config.yaml` equivalent:
+У них нет аналога в `config.yaml`:
 
-| Flag | Description |
+| Флаг | Описание |
 |---|---|
-| `--config PATH` | YAML config file to load. Default: `config.yaml`. |
-| `--overwrite` | Delete existing output before starting instead of resuming it. |
-| `--preview N` | Print the first `N` generated examples while running. See [Preview generated examples](#preview-generated-examples). |
-| `--dry-run` | Validate configuration and exit, without loading the model or dataset. |
+| `--config PATH` | Какой YAML-файл загрузить. По умолчанию: `config.yaml`. |
+| `--overwrite` | Удалить существующий вывод перед началом вместо резюмирования. |
+| `--preview N` | Печатать первые `N` сгенерированных примеров во время выполнения. См. [Просмотр сгенерированных примеров](#просмотр-сгенерированных-примеров). |
+| `--dry-run` | Проверить конфигурацию и выйти, не загружая модель и датасет. |
 
-## Generation modes
+## Режимы генерации
 
-`fixed` always generates `max_new_tokens` tokens (subject to cycle
-detection). `entropy` generates token by token and stops as soon as the
-next-token entropy exceeds `entropy_threshold`, with `max_new_tokens` as a
-hard cap either way. Both modes record per-token entropy in the output
-regardless of which one is active.
+`fixed` всегда генерирует `max_new_tokens` токенов (с учётом детекции
+циклов). `entropy` генерирует токен за токеном и останавливается, как только
+энтропия следующего токена превышает `entropy_threshold`, при этом
+`max_new_tokens` — жёсткий потолок в обоих случаях. Оба режима записывают
+энтропию по каждому токену независимо от того, какой из них активен, и оба
+поддерживают `batch_size > 1`.
 
-## Mixed source
+## Смешанный источник
 
-`--dataset mixed` reads from FineWeb-Edu and FineMath in the same run.
-`--math-ratio` controls the probability of selecting FineMath for each next
-document:
+`--dataset mixed` читает одновременно из FineWeb-Edu и FineMath.
+`--math-ratio` задаёт вероятность выбора FineMath для каждого следующего
+документа:
 
 ```text
---math-ratio 0.5  -> approximately 50% FineMath and 50% FineWeb-Edu
---math-ratio 0.8  -> approximately 80% FineMath and 20% FineWeb-Edu
+--math-ratio 0.5  -> примерно 50% FineMath и 50% FineWeb-Edu
+--math-ratio 0.8  -> примерно 80% FineMath и 20% FineWeb-Edu
 ```
 
-The ratio is approximate rather than an exact quota. Short or already
-processed documents can be skipped, so the final saved counts may differ
-slightly. The random choice is reproducible with the configured seed. Every
-JSONL row stores its source in `source_name`, so mixed output can still be
-analyzed separately by dataset.
+Соотношение приблизительное, а не точная квота. Короткие или уже
+обработанные документы могут пропускаться, поэтому итоговые числа могут
+немного отличаться. Случайный выбор воспроизводим при заданном seed. Файл с
+метаданными (если включён) хранит источник каждой строки в `source_name`,
+так что смешанный вывод всё равно можно анализировать по датасетам отдельно.
 
-## Cycle detection
+## Детекция циклов
 
-Generation stops early when the output contains a repeated n-gram. The check
-compares the last `ngram_chars` characters against all positions in the
-preceding `window_chars` character window and stops if a match is found.
-`min_chars` sets the minimum generated length before the check starts.
+Генерация останавливается раньше, если в выводе появляется повторяющаяся
+n-грамма. Проверка сравнивает последние `ngram_chars` символов со всеми
+позициями в предшествующем окне шириной `window_chars` символов и
+останавливается при совпадении. `min_chars` задаёт минимальную сгенерированную
+длину, прежде чем проверка начнётся.
 
-`window_chars` must be greater than `ngram_chars`, and `ngram_chars` must be
-positive; the script raises an error at startup otherwise instead of
-silently running with detection disabled. A repeat is only caught if its
-period fits within `window_chars - ngram_chars` characters; longer-period
-repeats fall outside the window by design.
+`window_chars` должен быть больше `ngram_chars`, а `ngram_chars` должен быть
+положительным; иначе скрипт упадёт с ошибкой при старте, вместо того чтобы
+молча работать с отключённой детекцией. Повтор ловится, только если его
+период укладывается в `window_chars - ngram_chars` символов; повторы с более
+длинным периодом остаются вне окна по конструкции.
 
 ```bash
 python generate_dataset.py \
@@ -153,13 +160,93 @@ python generate_dataset.py \
   --overwrite
 ```
 
-Use `--no-cycle-detection` to turn it off for a single run instead.
+Используйте `--no-cycle-detection`, чтобы отключить её на один запуск.
 
-## Hugging Face upload
+## Производительность
+
+Генерация обычно упирается в GPU, поэтому пункты ниже примерно по убыванию
+влияния.
+
+**Уже сделано:**
+
+- **Батчинг** (`generation.batch_size` / `--batch-size`) — генерирует
+  несколько документов за один вызов модели вместо одного за раз. Это
+  главный рычаг: GPU на batch size 1 в основном простаивает. Оба режима его
+  поддерживают; `fixed` батчится через сам `model.generate()`, `entropy`
+  использует ручной цикл с отдельным флагом "готово" на каждую строку
+  батча, чтобы один документ мог остановиться независимо (по своему порогу
+  энтропии или детекции цикла), не дожидаясь остальных. Начните примерно с
+  8–16 и поднимайте, пока не упрётесь в память GPU (`max_new_tokens` и
+  `prefix_tokens` тоже влияют на то, сколько памяти нужно для данного
+  batch_size).
+- **KV-cache в entropy-режиме** — ручной потокенный цикл раньше пересчитывал
+  attention по всей последовательности заново на каждом шаге. Теперь он
+  переиспользует `past_key_values` и подаёт на каждом шаге только новый
+  токен — это стандартный способ инкрементального декодирования, убирающий
+  затраты O(n²) по вычислениям, никак не связанные с `batch_size`.
+- **`torch.compile`** (`model.compile: true`) — задаётся один раз при
+  загрузке. Первый вызов генерации медленный (компиляция), и форма модели
+  должна оставаться стабильной, чтобы скомпилированный граф не терял
+  актуальность — фиксированные `batch_size` и `max_new_tokens` тут помогают,
+  поскольку меняющаяся форма входа заставляет перекомпилироваться. Выгода
+  проявляется на длинном прогоне, а не на коротком. Кастомный код модели,
+  загруженный через `trust_remote_code`, иногда компилируется криво — если
+  падает или всё замедляет, просто выключите.
+- **Откат при нехватке памяти (OOM)** — если батч не влезает в память GPU,
+  он делится пополам и повторяется (рекурсивно, вплоть до batch size 1)
+  вместо падения всего прогона. Позволяет задавать `batch_size` чуть с
+  запасом, не подбирая его вручную; расплата — более медленный именно этот
+  батч в момент отката, а не потерянный прогон.
+
+**Не сделано, стоит посмотреть дальше:**
+
+- **vLLM / отдельный inference-сервер** — сознательно пропущено пока.
+  Помимо стоимости настройки (continuous batching, paged attention,
+  отдельный serving-процесс), условие остановки в `entropy`-режиме поточное
+  и не ложится на модель запросов vLLM, которая рассчитана на
+  фиксированный `max_tokens` или стоп-строки, а не на произвольную
+  поштучную проверку — понадобится форкать логику сэмплирования или
+  отказываться от entropy-режима, чтобы использовать vLLM как есть. Для
+  `fixed`-режима подходит без проблем, для `entropy` — отдельная работа.
+- **Несколько реплик модели параллельно** (например, по одной на GPU, с
+  разбиением потока документов между ними) — просто, если есть несколько
+  свободных GPU. На одном GPU это напрямую конкурирует за память с
+  `batch_size`, так что там это не "бесплатный" параллелизм — больше
+  реплик означает меньше места под батч у каждой, и с какого-то момента
+  одна реплика с большим батчем делает больше работы, чем несколько с
+  маленькими. Имеет смысл при наличии свободных GPU, а не как способ
+  выжать больше из одного.
+- **Квантизация** (например, `bitsandbytes` 8-bit/4-bit, либо готовый
+  квантизованный чекпоинт) — меньше памяти на последовательность значит
+  больше влезающий `batch_size`, а это обычно важнее для throughput, чем
+  скорость одного forward pass.
+- **Flash attention** — передайте `attn_implementation="flash_attention_2"`
+  (либо `"sdpa"`, которая часто уже используется по умолчанию) в
+  `from_pretrained`, если модель и установленные пакеты это поддерживают.
+  Больше всего помогает на длинных последовательностях (больший
+  `prefix_tokens` / `max_new_tokens`); при текущих дефолтах 128/32 выигрыш
+  небольшой.
+- **Статический KV-cache** (`cache_implementation="static"`) — сочетается с
+  `torch.compile`; избавляет от переаллокации кэша на каждом шаге и
+  позволяет скомпилировать больше entropy-цикла, а не только один forward
+  call. Больше настройки ради выигрыша второго порядка поверх двух пунктов
+  выше.
+- **Совмещение загрузки данных с генерацией** — потоковый режим `datasets`
+  уже используется, но фоновый поток, заранее подгружающий и токенизирующий
+  следующий батч, пока GPU занят текущим, убрал бы возможный разрыв между
+  ними. Имеет смысл, только если профилирование покажет, что GPU реально
+  простаивает в ожидании данных, а батчинг может сделать этот разрыв
+  заметнее.
+
+Если после батчинга, компиляции и entropy-режима на KV-cache всё ещё
+медленно — следующий настоящий скачок это vLLM, а не очередная правка этого
+скрипта.
+
+## Загрузка на Hugging Face
 
 ```bash
 huggingface-cli login
-# or: export HF_TOKEN=hf_xxxxxxxxxxxxxxxxx
+# либо: export HF_TOKEN=hf_xxxxxxxxxxxxxxxxx
 
 python generate_dataset.py \
   --config config.yaml \
@@ -173,54 +260,60 @@ python generate_dataset.py \
   --output outputs/train.jsonl
 ```
 
-The repository is created automatically if it does not exist. Completed
-shards are uploaded as `data/train-00000.jsonl`, `data/train-00001.jsonl`,
-and so on. Each upload also refreshes the dataset card with current
-statistics.
+Репозиторий создаётся автоматически, если его ещё нет. Завершённые шарды
+загружаются как `data/train-00000.jsonl`, `data/train-00001.jsonl` и так
+далее, каждая строка содержит только `prefix` и `suffix` — см.
+[Выходные файлы](#выходные-файлы). Каждая загрузка также обновляет
+dataset card с текущей статистикой.
 
-Progress is saved to `outputs/state.json` after each shard. On restart the
-script reads `state.json` (or scans the hub for existing shards if the file
-is missing) and continues from where it stopped. If the process was
-interrupted mid-shard, the partial local file is detected and appended to
-rather than overwritten. Already uploaded shards are never modified.
+Прогресс сохраняется в `outputs/state.json` после каждого шарда. При
+перезапуске скрипт читает `state.json` (либо сканирует хаб на предмет
+существующих шардов, если файла нет) и продолжает с того места, где
+остановился. Если процесс прервался посреди шарда, частичный локальный файл
+обнаруживается и дозаписывается, а не перезаписывается заново. Уже
+загруженные шарды никогда не изменяются.
 
-Rows are flushed to disk every `output.flush_every` writes (same setting used
-by the plain JSONL path), so a hard crash loses at most that many unflushed
-rows rather than a full buffer's worth. If a crash happens between a
-successful upload and the `state.json` write for that shard, the next run
-detects the shard is already full, re-uploads it once to be safe, and moves
-on to the next shard instead of appending to it. If `state.json` is missing
-entirely, the exact row count of the most recently uploaded shard is fetched
-from the hub rather than assumed, since it may be a short final shard from an
-earlier interrupted run.
+Строки сбрасываются на диск каждые `output.flush_every` записей (тот же
+параметр, что и в обычном JSONL-режиме), так что жёсткий сбой теряет не
+больше этого числа несброшенных строк, а не целый буфер. Если сбой
+происходит между успешной загрузкой шарда и записью `state.json`, следующий
+запуск обнаруживает, что шард уже полон, на всякий случай перезаливает его
+ещё раз и переходит к следующему шарду вместо дозаписи в него. Если
+`state.json` отсутствует целиком, точное число строк в последнем
+загруженном шарде запрашивается с хаба, а не предполагается, поскольку это
+может быть короткий финальный шард от прерванного ранее запуска.
 
-## Output fields
+## Выходные файлы
 
-Each JSONL row contains:
+Каждый запуск пишет несколько файлов в директорию `output.path` (или в
+директорию шардов, если включена загрузка на Hugging Face):
 
-| Field | Description |
-|---|---|
-| `source_id` | ID of the source document. |
-| `source_name` | `fineweb` or `math`. |
-| `source_dataset`, `source_subset`, `source_metadata` | Source dataset details. |
-| `prefix_text` | Input prefix. |
-| `real_continuation` | Original continuation from the source document. |
-| `teacher_continuation` | Continuation generated by the model. |
-| `synthetic_text` | `prefix_text` + `teacher_continuation`. |
-| `prefix_token_count`, `real_continuation_token_count`, `generated_token_count` | Token counts. |
-| `teacher_model`, `teacher_dtype` | Model identity and precision used. |
-| `generation_seconds` | Wall-clock time for this example. |
-| `generation` | Mode, sampling settings, and per-token entropy for this example. |
+| Файл | Пишется всегда? | Содержимое |
+|---|---|---|
+| основной вывод (`output.path`, либо шарды `train-*.jsonl`) | всегда | только `prefix` и `suffix` — именно это загружается на Hugging Face. |
+| `ids.txt` | всегда | По одному `source_id` на строку. Чисто локальная бухгалтерия, никогда не загружается — именно на этом держится резюмирование и дедупликация, независимо от всего остального. |
+| `output.extra_fields.path` (по умолчанию `outputs/extra.jsonl`) | только если `output.extra_fields.enabled` | Всё остальное, пишется батчами по `output.extra_fields.batch_size`: `source_id`, `source_name`, `source_dataset`, `source_subset`, `source_metadata`, `real_continuation`, `synthetic_text`, счётчики токенов, `teacher_model`, `teacher_dtype`, `generation_seconds` и `generation` (режим, параметры сэмплирования, энтропия по токенам). |
 
-## Preview generated examples
+`prefix`/`suffix` и соответствующая строка в файле с метаданными пишутся в
+одном порядке, по строке на документ, так что они совпадают позиционно;
+если нужна явная привязка — сверяйтесь по `source_id`.
 
-`--preview N` prints the first `N` examples while generation is running: the
-source, the full prefix, the real continuation, the Qwen continuation, token
-count, runtime, and entropy summary.
+Резюмирование нуждается только в `ids.txt`, поэтому работает одинаково
+независимо от того, включён ли `extra_fields`. Если `extra_fields`
+выключен, более богатые метаданные для уже сгенерированных примеров нигде
+не сохраняются.
 
-## Inspect a generated file
+## Просмотр сгенерированных примеров
 
-From Python or a notebook:
+`--preview N` печатает первые `N` примеров во время генерации: источник,
+полный префикс, настоящее продолжение, продолжение от Qwen, число токенов,
+время выполнения и сводку по энтропии. Это работает независимо от того,
+включён ли `extra_fields` — превью строится из данных, ещё находящихся в
+памяти, до того как они разделяются на то, что пишется на диск.
+
+## Просмотр сгенерированного файла
+
+Из Python или ноутбука:
 
 ```python
 from inspect_dataset import inspect_jsonl
@@ -231,24 +324,25 @@ rows = inspect_jsonl(
 )
 ```
 
-The function prints file statistics, source distribution, generation
-lengths, full prefixes, real continuations, Qwen continuations, and entropy
-summaries. It also returns the loaded rows.
+Функция печатает статистику по файлу и возвращает загруженные строки. Раз в
+основном файле теперь только `prefix`/`suffix`, для более богатой
+постатейной статистики передайте (тоже или вместо) путь к файлу с
+метаданными.
 
-The same helper can be run from the command line:
+Тот же helper можно запустить из командной строки:
 
 ```bash
 python inspect_dataset.py outputs/math_test.jsonl --show-examples 3
 ```
 
-## Repository layout
+## Структура репозитория
 
-This directory is intended to be placed at the repository root:
+Эта директория должна лежать в корне репозитория:
 
 ```text
 qwen/
 └── qwen_continuation_dataset/
 ```
 
-The included Colab/Kaggle notebook detects the environment, clones the
-`main` branch, and opens this root-level directory automatically.
+Прилагаемый ноутбук для Colab/Kaggle определяет окружение, клонирует ветку
+`main` и открывает эту директорию в корне автоматически.

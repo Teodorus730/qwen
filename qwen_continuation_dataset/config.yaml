@@ -2,6 +2,7 @@ model:
   id: Qwen/Qwen3.5-0.8B-Base
   trust_remote_code: true
   device_map: auto
+  compile: false
 
 dataset:
   source: fineweb
@@ -30,6 +31,7 @@ dataset:
 
 generation:
   mode: fixed
+  batch_size: 1
   prefix_tokens: 128
   max_new_tokens: 32
   temperature: 0.0
@@ -48,6 +50,10 @@ output:
   path: outputs/generated.jsonl
   resume: true
   flush_every: 1
+  extra_fields:
+    enabled: false
+    path: outputs/extra.jsonl
+    batch_size: 100
 
 huggingface:
   enabled: false

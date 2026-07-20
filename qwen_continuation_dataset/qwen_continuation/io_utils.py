@@ -10,42 +10,36 @@ from huggingface_hub import HfApi, create_repo, hf_hub_download
 
 
 def load_completed_ids(path: str | Path) -> set[str]:
-    output_path = Path(path)
-    if not output_path.exists():
+    path = Path(path)
+    if not path.exists():
         return set()
-
-    completed: set[str] = set()
-    with output_path.open("r", encoding="utf-8") as file:
-        for line_number, line in enumerate(file, start=1):
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                record = json.loads(line)
-            except json.JSONDecodeError:
-                print(
-                    f"Warning: skipping invalid JSON at "
-                    f"{output_path}:{line_number}"
-                )
-                continue
-            source_id = record.get("source_id")
-            if source_id is not None:
-                completed.add(str(source_id))
-    return completed
+    with path.open("r", encoding="utf-8") as file:
+        return {line.strip() for line in file if line.strip()}
 
 
-def load_completed_ids_from_dir(output_dir: str | Path) -> set[str]:
-    output_dir = Path(output_dir)
-    completed: set[str] = set()
-    shard_files = sorted(output_dir.glob("train-*.jsonl"))
-    for shard_path in shard_files:
-        completed |= load_completed_ids(shard_path)
-    if completed:
-        print(
-            f"[HF] resume: {len(completed):,} completed IDs "
-            f"across {len(shard_files)} local shard(s)"
-        )
-    return completed
+class IdLedger:
+    def __init__(self, path: str | Path, flush_every: int = 1) -> None:
+        self.path = Path(path)
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.flush_every = max(1, int(flush_every))
+        self._file = None
+        self._pending = 0
+
+    def __enter__(self) -> "IdLedger":
+        self._file = self.path.open("a", encoding="utf-8")
+        return self
+
+    def add(self, source_id: str) -> None:
+        self._file.write(f"{source_id}\n")
+        self._pending += 1
+        if self._pending >= self.flush_every:
+            self._file.flush()
+            self._pending = 0
+
+    def __exit__(self, exc_type, exc_value, traceback) -> None:
+        if self._file is not None:
+            self._file.flush()
+            self._file.close()
 
 
 class JsonlWriter:
@@ -72,6 +66,39 @@ class JsonlWriter:
     def __exit__(self, exc_type, exc_value, traceback) -> None:
         if self._file is not None:
             self._file.flush()
+            self._file.close()
+
+
+class ExtraFieldsWriter:
+    def __init__(self, path: str | Path, batch_size: int = 100) -> None:
+        self.path = Path(path)
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.batch_size = max(1, int(batch_size))
+        self._buffer: list[dict[str, Any]] = []
+        self._file = None
+
+    def __enter__(self) -> "ExtraFieldsWriter":
+        self._file = self.path.open("a", encoding="utf-8")
+        return self
+
+    def write(self, record: dict[str, Any]) -> None:
+        self._buffer.append(record)
+        if len(self._buffer) >= self.batch_size:
+            self._flush()
+
+    def _flush(self) -> None:
+        if not self._buffer:
+            return
+        lines = "".join(
+            json.dumps(record, ensure_ascii=False) + "\n" for record in self._buffer
+        )
+        self._file.write(lines)
+        self._file.flush()
+        self._buffer.clear()
+
+    def __exit__(self, exc_type, exc_value, traceback) -> None:
+        self._flush()
+        if self._file is not None:
             self._file.close()
 
 
@@ -115,12 +142,12 @@ class HfShardWriter:
                 shard = int(state["current_shard"])
                 total = int(state["total_examples"])
                 print(
-                    f"[HF] resuming from shard {shard} "
-                    f"({total:,} examples uploaded)"
+                    f"[HF] резюмируем с шарда {shard} "
+                    f"(загружено примеров: {total:,})"
                 )
                 return shard, total
             except Exception as exc:
-                print(f"[HF] state.json unreadable ({exc}), scanning repo...")
+                print(f"[HF] state.json нечитаем ({exc}), сканируем репозиторий...")
 
         try:
             files = list(
@@ -146,12 +173,12 @@ class HfShardWriter:
                     last_shard_count = self._count_remote_shard(indices[-1])
                     total = (len(indices) - 1) * self.shard_size + last_shard_count
                     print(
-                        f"[HF] found {len(shard_files)} shard(s) on hub, "
-                        f"resuming from shard {next_shard} ({total:,} examples)"
+                        f"[HF] найдено шардов на хабе: {len(shard_files)}, "
+                        f"резюмируем с шарда {next_shard} (примеров: {total:,})"
                     )
                     return next_shard, total
         except Exception as exc:
-            print(f"[HF] could not scan repo ({exc}), starting from scratch")
+            print(f"[HF] не удалось просканировать репозиторий ({exc}), начинаем с нуля")
 
         return 0, 0
 
@@ -168,8 +195,8 @@ class HfShardWriter:
                 return sum(1 for line in f if line.strip())
         except Exception as exc:
             print(
-                f"[HF] could not fetch {filename} for an exact count ({exc}), "
-                f"assuming {self.shard_size} rows"
+                f"[HF] не удалось скачать {filename} для точного подсчёта ({exc}), "
+                f"предполагаем {self.shard_size} строк"
             )
             return self.shard_size
 
@@ -214,15 +241,15 @@ class HfShardWriter:
                 self.total_examples += existing
                 self.file = open(self.current_path, "a", encoding="utf-8")
                 print(
-                    f"[HF] partial shard {self.current_path.name}: "
-                    f"{existing} rows, appending "
-                    f"({self.shard_size - existing} left)"
+                    f"[HF] частичный шард {self.current_path.name}: "
+                    f"строк {existing}, дозаписываем "
+                    f"(осталось {self.shard_size - existing})"
                 )
                 return
 
             print(
-                f"[HF] {self.current_path.name} already has {existing} rows, "
-                f"re-uploading and moving on"
+                f"[HF] {self.current_path.name} уже содержит строк: {existing}, "
+                f"перезаливаем и переходим дальше"
             )
             self.api.upload_file(
                 path_or_fileobj=str(self.current_path),
@@ -257,8 +284,8 @@ class HfShardWriter:
         )
         self.current_shard += 1
         print(
-            f"[HF] uploaded {self.current_path.name} "
-            f"({self.total_examples:,} total)"
+            f"[HF] загружен {self.current_path.name} "
+            f"(всего примеров: {self.total_examples:,})"
         )
         self._update_readme()
         self._save_state()
@@ -277,8 +304,8 @@ class HfShardWriter:
             )
             self.current_shard += 1
             print(
-                f"[HF] uploaded {self.current_path.name} "
-                f"({self.total_examples:,} total)"
+                f"[HF] загружен {self.current_path.name} "
+                f"(всего примеров: {self.total_examples:,})"
             )
             self._update_readme()
             self._save_state()
@@ -325,13 +352,13 @@ class HfShardWriter:
             "\n"
             "| Field | Description |\n"
             "|---|---|\n"
-            "| `source_id` | source document ID |\n"
-            "| `source_name` | source dataset (`fineweb` / `math`) |\n"
-            "| `prefix_text` | input prefix |\n"
-            "| `real_continuation` | original continuation from source |\n"
-            "| `teacher_continuation` | model-generated continuation |\n"
-            "| `synthetic_text` | prefix + teacher continuation |\n"
-            "| `generation` | generation settings and per-token entropies |\n"
+            "| `prefix` | input prefix |\n"
+            "| `suffix` | model-generated continuation |\n"
+            "\n"
+            "Only these two fields are published here. If the generator was run with\n"
+            "`--save-extra-fields`, the source generation run also has a local-only\n"
+            "file (not published) with per-example metadata: source id/dataset,\n"
+            "original continuation, token counts, timing, and per-token entropy.\n"
         )
         readme_path = self.output_dir / "README.md"
         readme_path.write_text(text, encoding="utf-8")

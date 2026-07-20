@@ -84,6 +84,9 @@ def load_teacher(config: dict[str, Any]) -> TeacherBundle:
     model.eval()
     input_device = next(model.parameters()).device
 
+    if bool(model_config.get("compile", False)):
+        model = torch.compile(model)
+
     return TeacherBundle(
         model=model,
         tokenizer=tokenizer,
