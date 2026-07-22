@@ -1,0 +1,8 @@
+outputs/raw_results.partial.json
+outputs/*.tmp
+outputs/run_*.log
+outputs_smoke/
+.hf_cache/
+.cache/
+__pycache__/
+*.pyc

@@ -1,0 +1,99 @@
+teacher_model: Qwen/Qwen3-0.6B-Base
+
+data:
+  jsonl: ../soft_kd_recovery/data/fineweb_edu_local.jsonl
+  text_field: text
+  score_field: score
+  min_score: 2.5
+  skip_docs: 45000
+  seq_len: 256
+  eval_blocks: 16
+  robustness_blocks: 8
+
+runtime:
+  seed: 20260720
+  device: cuda
+  dtype: bfloat16
+  vocab_chunk: 16
+  cuda_memory_fraction: 0.88
+  bootstrap_samples: 2000
+
+metrics:
+  temperatures: [1.0, 2.0]
+  topk: 10
+  equivalence:
+    top1_match_min: 0.95
+    kl_teacher_student_max: 0.10
+    robustness_gap_abs_max: 0.02
+
+robustness:
+  embedding_noise_sigma: [0.01, 0.05, 0.10, 0.20]
+  token_dropout_rate: [0.10, 0.20, 0.30]
+  token_replacement_rate: [0.10, 0.20, 0.30]
+
+generation:
+  prompts: 16
+  prompt_len: 96
+  new_tokens: 32
+  batch_size: 4
+
+linear_probe:
+  train_conllu: .cache/ud_english_ewt/en_ewt-ud-train.conllu
+  test_conllu: .cache/ud_english_ewt/en_ewt-ud-test.conllu
+  train_targets: 12000
+  test_targets: 4000
+  max_length: 256
+  extraction_batch_size: 8
+  layers: [7, 14, 21]
+  epochs: 35
+  probe_batch_size: 512
+  learning_rate: 0.01
+  weight_decay: 0.0001
+  procrustes_train_rows: 4096
+
+attention_alignment:
+  examples: 100
+  seq_len: 128
+  low_similarity_threshold: 0.5
+
+models:
+  - id: soft_a0.05
+    objective: soft_kd
+    alpha: 0.05
+    path: ../soft_kd_recovery/results/sweep_qwen3_0.6b/a0.05/student
+  - id: soft_a0.1
+    objective: soft_kd
+    alpha: 0.10
+    path: ../soft_kd_recovery/results/sweep_qwen3_0.6b/a0.1/student
+  - id: soft_a0.2
+    objective: soft_kd
+    alpha: 0.20
+    path: ../soft_kd_recovery/results/sweep_qwen3_0.6b/a0.2/student
+  - id: soft_a0.35
+    objective: soft_kd
+    alpha: 0.35
+    path: ../soft_kd_recovery/results/sweep_qwen3_0.6b/a0.35/student
+  - id: soft_a0.5
+    objective: soft_kd
+    alpha: 0.50
+    path: ../soft_kd_recovery/results/sweep_qwen3_0.6b/a0.5/student
+  - id: hard_a0.05
+    objective: hard_teacher_ce
+    alpha: 0.05
+    path: ../hard_teacher_ce_baseline/results/qwen3_0.6b_alpha_sweep/a0.05/student
+  - id: hard_a0.1
+    objective: hard_teacher_ce
+    alpha: 0.10
+    path: ../hard_teacher_ce_baseline/results/qwen3_0.6b_alpha_sweep/a0.1/student
+  - id: hard_a0.2
+    objective: hard_teacher_ce
+    alpha: 0.20
+    path: ../hard_teacher_ce_baseline/results/qwen3_0.6b_alpha_sweep/a0.2/student
+  - id: hard_a0.35
+    objective: hard_teacher_ce
+    alpha: 0.35
+    path: ../hard_teacher_ce_baseline/results/qwen3_0.6b_alpha_sweep/a0.35/student
+  - id: hard_a0.5
+    objective: hard_teacher_ce
+    alpha: 0.50
+    path: ../hard_teacher_ce_baseline/results/qwen3_0.6b_alpha_sweep/a0.5/student

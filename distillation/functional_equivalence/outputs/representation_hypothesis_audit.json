@@ -1,0 +1,146 @@
+{
+  "purpose": "Secondary hypothesis audit only; these internal metrics do not decide functional equivalence.",
+  "synthetic_invariance": {
+    "cka_original_vs_orthogonal_rotation": 1.0,
+    "cka_original_vs_anisotropic_transform": 0.8112545609474182
+  },
+  "teacher_tie_word_embeddings_config": true,
+  "teacher_input_output_weights_share_storage": true,
+  "blocks": 4,
+  "tokens": 1024,
+  "layers": [
+    0,
+    14,
+    28
+  ],
+  "models": {
+    "soft_a0.05": {
+      "objective": "soft_kd",
+      "alpha": 0.05,
+      "tie_word_embeddings_config": true,
+      "input_output_weights_share_storage": true,
+      "layers": {
+        "0": {
+          "linear_cka": 0.9997541308403015,
+          "teacher_effective_rank": 194.03707885742188,
+          "student_effective_rank": 194.0039520263672,
+          "effective_rank_ratio_student_teacher": 0.9998292757690965,
+          "singular_spectrum_cosine": 0.9999966025352478,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.19323426485061646
+        },
+        "14": {
+          "linear_cka": 0.999487042427063,
+          "teacher_effective_rank": 1.1030089855194092,
+          "student_effective_rank": 1.1268155574798584,
+          "effective_rank_ratio_student_teacher": 1.0215832982985524,
+          "singular_spectrum_cosine": 1.0,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.9948512315750122
+        },
+        "28": {
+          "linear_cka": 0.9936951994895935,
+          "teacher_effective_rank": 67.92792510986328,
+          "student_effective_rank": 71.663818359375,
+          "effective_rank_ratio_student_teacher": 1.0549979002519136,
+          "singular_spectrum_cosine": 0.9995535016059875,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.5277235507965088
+        }
+      }
+    },
+    "hard_a0.05": {
+      "objective": "hard_teacher_ce",
+      "alpha": 0.05,
+      "tie_word_embeddings_config": true,
+      "input_output_weights_share_storage": true,
+      "layers": {
+        "0": {
+          "linear_cka": 0.999751091003418,
+          "teacher_effective_rank": 194.03707885742188,
+          "student_effective_rank": 194.12554931640625,
+          "effective_rank_ratio_student_teacher": 1.0004559461495985,
+          "singular_spectrum_cosine": 0.9999967217445374,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.20104581117630005
+        },
+        "14": {
+          "linear_cka": 0.9988287687301636,
+          "teacher_effective_rank": 1.1030089855194092,
+          "student_effective_rank": 1.1322269439697266,
+          "effective_rank_ratio_student_teacher": 1.0264893204261238,
+          "singular_spectrum_cosine": 0.9999999403953552,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.9930423498153687
+        },
+        "28": {
+          "linear_cka": 0.8901289105415344,
+          "teacher_effective_rank": 67.92792510986328,
+          "student_effective_rank": 119.20039367675781,
+          "effective_rank_ratio_student_teacher": 1.754806929314696,
+          "singular_spectrum_cosine": 0.9504081010818481,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.38627296686172485
+        }
+      }
+    },
+    "soft_a0.5": {
+      "objective": "soft_kd",
+      "alpha": 0.5,
+      "tie_word_embeddings_config": true,
+      "input_output_weights_share_storage": true,
+      "layers": {
+        "0": {
+          "linear_cka": 0.9708921313285828,
+          "teacher_effective_rank": 194.03707885742188,
+          "student_effective_rank": 209.1005859375,
+          "effective_rank_ratio_student_teacher": 1.077632106032408,
+          "singular_spectrum_cosine": 0.9939703345298767,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.1295452117919922
+        },
+        "14": {
+          "linear_cka": 0.9441048502922058,
+          "teacher_effective_rank": 1.1030089855194092,
+          "student_effective_rank": 1.7653027772903442,
+          "effective_rank_ratio_student_teacher": 1.6004427891936523,
+          "singular_spectrum_cosine": 0.9999735355377197,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.8723257780075073
+        },
+        "28": {
+          "linear_cka": 0.7545604705810547,
+          "teacher_effective_rank": 67.92792510986328,
+          "student_effective_rank": 68.32263946533203,
+          "effective_rank_ratio_student_teacher": 1.0058107818666677,
+          "singular_spectrum_cosine": 0.9855985045433044,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.028881490230560303
+        }
+      }
+    },
+    "hard_a0.5": {
+      "objective": "hard_teacher_ce",
+      "alpha": 0.5,
+      "tie_word_embeddings_config": true,
+      "input_output_weights_share_storage": true,
+      "layers": {
+        "0": {
+          "linear_cka": 0.9715991616249084,
+          "teacher_effective_rank": 194.03707885742188,
+          "student_effective_rank": 208.7225341796875,
+          "effective_rank_ratio_student_teacher": 1.075683758015428,
+          "singular_spectrum_cosine": 0.9946134090423584,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.12265843152999878
+        },
+        "14": {
+          "linear_cka": 0.940459668636322,
+          "teacher_effective_rank": 1.1030089855194092,
+          "student_effective_rank": 1.909125566482544,
+          "effective_rank_ratio_student_teacher": 1.7308341015767272,
+          "singular_spectrum_cosine": 0.9999659657478333,
+          "heldout_scaled_orthogonal_procrustes_r2": 0.8590121865272522
+        },
+        "28": {
+          "linear_cka": 0.7119874954223633,
+          "teacher_effective_rank": 67.92792510986328,
+          "student_effective_rank": 96.64611053466797,
+          "effective_rank_ratio_student_teacher": 1.422774365304951,
+          "singular_spectrum_cosine": 0.9496803283691406,
+          "heldout_scaled_orthogonal_procrustes_r2": -0.0376812219619751
+        }
+      }
+    }
+  }
+}

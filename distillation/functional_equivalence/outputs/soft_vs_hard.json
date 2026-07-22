@@ -1,0 +1,3265 @@
+{
+  "definition": "At each alpha, soft-KD is the reference distribution and hard-teacher-CE is the comparison distribution.",
+  "pairs": {
+    "alpha_0.05": {
+      "alpha": 0.05,
+      "soft_id": "soft_a0.05",
+      "hard_id": "hard_a0.05",
+      "summary": {
+        "top1_match": {
+          "estimate": 0.875,
+          "ci95": [
+            0.8649509803921569,
+            0.8838235294117647
+          ]
+        },
+        "teacher_correct": {
+          "estimate": 0.4306372549019608,
+          "ci95": [
+            0.4056372549019608,
+            0.4568627450980392
+          ]
+        },
+        "student_correct": {
+          "estimate": 0.4281862745098039,
+          "ci95": [
+            0.4007352941176471,
+            0.4566237745098038
+          ]
+        },
+        "both_correct": {
+          "estimate": 0.40637254901960784,
+          "ci95": [
+            0.38087622549019606,
+            0.4338235294117647
+          ]
+        },
+        "teacher_only_correct": {
+          "estimate": 0.024264705882352938,
+          "ci95": [
+            0.020588235294117647,
+            0.027696078431372548
+          ]
+        },
+        "student_only_correct": {
+          "estimate": 0.021813725490196077,
+          "ci95": [
+            0.017401960784313726,
+            0.026470588235294117
+          ]
+        },
+        "both_wrong": {
+          "estimate": 0.5475490196078432,
+          "ci95": [
+            0.5200857843137254,
+            0.5764705882352941
+          ]
+        },
+        "teacher_nll": {
+          "estimate": 2.6970998083843902,
+          "ci95": [
+            2.473933459345032,
+            2.9263215116951984
+          ]
+        },
+        "student_nll": {
+          "estimate": 5.06886143170151,
+          "ci95": [
+            4.615637773883109,
+            5.528861724033074
+          ]
+        },
+        "kl_teacher_student_t1": {
+          "estimate": 2.5455683895185883,
+          "ci95": [
+            2.373977621817121,
+            2.7204855565113175
+          ]
+        },
+        "kl_student_teacher_t1": {
+          "estimate": 0.7251891282259249,
+          "ci95": [
+            0.6762269175724656,
+            0.7724530450532249
+          ]
+        },
+        "kl_teacher_student_t2": {
+          "estimate": 3.292276285208908,
+          "ci95": [
+            3.171860167606204,
+            3.4252352622677296
+          ]
+        },
+        "kl_student_teacher_t2": {
+          "estimate": 2.0140926300310618,
+          "ci95": [
+            1.9518828232849346,
+            2.074757204114222
+          ]
+        },
+        "js_divergence_t1": {
+          "estimate": 0.19511704208219752,
+          "ci95": [
+            0.1835693302027443,
+            0.20615575276388257
+          ]
+        },
+        "total_variation_t1": {
+          "estimate": 0.4591306449735866,
+          "ci95": [
+            0.44039471455794926,
+            0.4777002310811304
+          ]
+        },
+        "teacher_entropy": {
+          "estimate": 2.8061050041049134,
+          "ci95": [
+            2.6035382853419176,
+            3.0190880007019225
+          ]
+        },
+        "student_entropy": {
+          "estimate": 0.5267333310316591,
+          "ci95": [
+            0.4876623185797065,
+            0.5670627615907613
+          ]
+        },
+        "teacher_confidence": {
+          "estimate": 0.4287095113712198,
+          "ci95": [
+            0.4061909272141901,
+            0.4519539702289245
+          ]
+        },
+        "student_confidence": {
+          "estimate": 0.828912378058714,
+          "ci95": [
+            0.8176999220602652,
+            0.8395303904075249
+          ]
+        },
+        "logit_pearson": {
+          "estimate": 0.8620860340548497,
+          "ci95": [
+            0.8553387714542595,
+            0.8690332106223294
+          ]
+        },
+        "topk_overlap": {
+          "estimate": 0.7903186407743716,
+          "ci95": [
+            0.7856366530878872,
+            0.7951225626936147
+          ]
+        },
+        "error_jaccard": {
+          "estimate": 0.9223781998348473,
+          "ci95": [
+            0.9117896904185316,
+            0.9319035180653086
+          ]
+        },
+        "same_wrong_prediction_given_teacher_error": {
+          "estimate": 0.823073611708997,
+          "ci95": [
+            0.8105922037067029,
+            0.8361815426973013
+          ]
+        },
+        "teacher_error_rate": {
+          "estimate": 0.5693627450980392,
+          "ci95": [
+            0.5448468137254902,
+            0.594859068627451
+          ]
+        },
+        "student_error_rate": {
+          "estimate": 0.571813725490196,
+          "ci95": [
+            0.5419056372549019,
+            0.5987745098039216
+          ]
+        },
+        "tokens": 4080,
+        "blocks": 16,
+        "teacher_ppl": 14.836640168770677,
+        "student_ppl": 158.99319963295196
+      },
+      "block_records": [
+        {
+          "top1_match": 0.8941176470588236,
+          "teacher_correct": 0.5568627450980392,
+          "student_correct": 0.5764705882352941,
+          "both_correct": 0.5333333333333333,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.043137254901960784,
+          "both_wrong": 0.4,
+          "teacher_nll": 1.8750230714386584,
+          "student_nll": 3.4752887127446193,
+          "kl_teacher_student_t1": 1.9682002123664408,
+          "kl_student_teacher_t1": 0.5285402297973633,
+          "kl_teacher_student_t2": 4.0022499982048485,
+          "kl_student_teacher_t2": 1.9386367723053577,
+          "js_divergence_t1": 0.14951253404804304,
+          "total_variation_t1": 0.37798535870570765,
+          "teacher_entropy": 1.9887197307511872,
+          "student_entropy": 0.3611768862780403,
+          "teacher_confidence": 0.5399019839716893,
+          "student_confidence": 0.8808221106435739,
+          "logit_pearson": 0.8727933434879078,
+          "topk_overlap": 0.796862766789455,
+          "error_intersection": 102.0,
+          "error_union": 119.0,
+          "teacher_error": 113.0,
+          "student_error": 108.0,
+          "same_wrong_prediction": 92.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8941176470588236,
+          "teacher_correct": 0.47058823529411764,
+          "student_correct": 0.45098039215686275,
+          "both_correct": 0.4392156862745098,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.011764705882352941,
+          "both_wrong": 0.5176470588235295,
+          "teacher_nll": 2.388076438155829,
+          "student_nll": 4.350812515557981,
+          "kl_teacher_student_t1": 2.2542271034390318,
+          "kl_student_teacher_t1": 0.6482324918111165,
+          "kl_teacher_student_t2": 3.3278621149998084,
+          "kl_student_teacher_t2": 1.9603863734824984,
+          "js_divergence_t1": 0.1773607889811198,
+          "total_variation_t1": 0.42954616359635894,
+          "teacher_entropy": 2.6572907167322497,
+          "student_entropy": 0.5418964816074745,
+          "teacher_confidence": 0.452518996070413,
+          "student_confidence": 0.8174873426848767,
+          "logit_pearson": 0.8861631281235639,
+          "topk_overlap": 0.7839215820910884,
+          "error_intersection": 132.0,
+          "error_union": 143.0,
+          "teacher_error": 135.0,
+          "student_error": 140.0,
+          "same_wrong_prediction": 116.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8627450980392157,
+          "teacher_correct": 0.4470588235294118,
+          "student_correct": 0.43529411764705883,
+          "both_correct": 0.41568627450980394,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.5333333333333333,
+          "teacher_nll": 2.8202317032159545,
+          "student_nll": 5.456247681262447,
+          "kl_teacher_student_t1": 2.557051647410673,
+          "kl_student_teacher_t1": 0.7301522198845358,
+          "kl_teacher_student_t2": 3.106171432195925,
+          "kl_student_teacher_t2": 2.0334180196126304,
+          "js_divergence_t1": 0.1929439390406889,
+          "total_variation_t1": 0.4462342898050944,
+          "teacher_entropy": 2.8326460595224416,
+          "student_entropy": 0.5330513533423928,
+          "teacher_confidence": 0.44649373970779715,
+          "student_confidence": 0.8293202680699966,
+          "logit_pearson": 0.8758025225471048,
+          "topk_overlap": 0.7792157004861271,
+          "error_intersection": 136.0,
+          "error_union": 149.0,
+          "teacher_error": 141.0,
+          "student_error": 144.0,
+          "same_wrong_prediction": 114.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.9058823529411765,
+          "teacher_correct": 0.4627450980392157,
+          "student_correct": 0.4666666666666667,
+          "both_correct": 0.4392156862745098,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5098039215686274,
+          "teacher_nll": 2.341477091172162,
+          "student_nll": 4.610114939072552,
+          "kl_teacher_student_t1": 2.512926483154297,
+          "kl_student_teacher_t1": 0.6796838031095617,
+          "kl_teacher_student_t2": 3.50646676456227,
+          "kl_student_teacher_t2": 2.0428752151190066,
+          "js_divergence_t1": 0.18699788813497506,
+          "total_variation_t1": 0.4444774964276482,
+          "teacher_entropy": 2.5385053372850606,
+          "student_entropy": 0.42348799845751595,
+          "teacher_confidence": 0.46046897102804746,
+          "student_confidence": 0.8588632284426222,
+          "logit_pearson": 0.8497928170596852,
+          "topk_overlap": 0.8019607955334234,
+          "error_intersection": 130.0,
+          "error_union": 143.0,
+          "teacher_error": 137.0,
+          "student_error": 136.0,
+          "same_wrong_prediction": 119.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8862745098039215,
+          "teacher_correct": 0.44313725490196076,
+          "student_correct": 0.45098039215686275,
+          "both_correct": 0.4235294117647059,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5294117647058824,
+          "teacher_nll": 2.271910289689606,
+          "student_nll": 4.371035085939893,
+          "kl_teacher_student_t1": 2.215522706274893,
+          "kl_student_teacher_t1": 0.637370631274055,
+          "kl_teacher_student_t2": 3.489791810278799,
+          "kl_student_teacher_t2": 1.9187170739267387,
+          "js_divergence_t1": 0.17629297574361166,
+          "total_variation_t1": 0.43549124773810893,
+          "teacher_entropy": 2.3631673476275274,
+          "student_entropy": 0.4497112685558843,
+          "teacher_confidence": 0.4541363473032035,
+          "student_confidence": 0.8488465178246591,
+          "logit_pearson": 0.8520255032707663,
+          "topk_overlap": 0.8023529576320274,
+          "error_intersection": 135.0,
+          "error_union": 147.0,
+          "teacher_error": 142.0,
+          "student_error": 140.0,
+          "same_wrong_prediction": 118.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8627450980392157,
+          "teacher_correct": 0.45098039215686275,
+          "student_correct": 0.44313725490196076,
+          "both_correct": 0.4196078431372549,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.5254901960784314,
+          "teacher_nll": 2.5529855989942365,
+          "student_nll": 4.524009450276693,
+          "kl_teacher_student_t1": 2.256717322854435,
+          "kl_student_teacher_t1": 0.67391217175652,
+          "kl_teacher_student_t2": 3.1709887037090225,
+          "kl_student_teacher_t2": 1.8379302978515626,
+          "js_divergence_t1": 0.18327623722600003,
+          "total_variation_t1": 0.4420048507989622,
+          "teacher_entropy": 2.5654862272973156,
+          "student_entropy": 0.5342067681106867,
+          "teacher_confidence": 0.4401670399834128,
+          "student_confidence": 0.8233257480696136,
+          "logit_pearson": 0.8436097014184092,
+          "topk_overlap": 0.7768627540737975,
+          "error_intersection": 134.0,
+          "error_union": 148.0,
+          "teacher_error": 140.0,
+          "student_error": 142.0,
+          "same_wrong_prediction": 113.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8862745098039215,
+          "teacher_correct": 0.4666666666666667,
+          "student_correct": 0.4392156862745098,
+          "both_correct": 0.43137254901960786,
+          "teacher_only_correct": 0.03529411764705882,
+          "student_only_correct": 0.00784313725490196,
+          "both_wrong": 0.5254901960784314,
+          "teacher_nll": 2.277631587608188,
+          "student_nll": 4.464580520929075,
+          "kl_teacher_student_t1": 2.319709239286535,
+          "kl_student_teacher_t1": 0.6524550681020699,
+          "kl_teacher_student_t2": 3.3742009929582184,
+          "kl_student_teacher_t2": 1.8944628547219668,
+          "js_divergence_t1": 0.1794079303741455,
+          "total_variation_t1": 0.4352562006782083,
+          "teacher_entropy": 2.457216494691138,
+          "student_entropy": 0.4856731900981828,
+          "teacher_confidence": 0.45315118303485946,
+          "student_confidence": 0.83883524128035,
+          "logit_pearson": 0.8454917159734988,
+          "topk_overlap": 0.8039215835870481,
+          "error_intersection": 134.0,
+          "error_union": 145.0,
+          "teacher_error": 136.0,
+          "student_error": 143.0,
+          "same_wrong_prediction": 116.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8862745098039215,
+          "teacher_correct": 0.4666666666666667,
+          "student_correct": 0.47058823529411764,
+          "both_correct": 0.4470588235294118,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.5098039215686274,
+          "teacher_nll": 2.389358139038086,
+          "student_nll": 4.423337240780101,
+          "kl_teacher_student_t1": 2.5212689418418734,
+          "kl_student_teacher_t1": 0.7077647227866977,
+          "kl_teacher_student_t2": 3.2279427173090918,
+          "kl_student_teacher_t2": 1.9987967472450405,
+          "js_divergence_t1": 0.19455618390849994,
+          "total_variation_t1": 0.459886713588939,
+          "teacher_entropy": 2.634192814546473,
+          "student_entropy": 0.4692977568682502,
+          "teacher_confidence": 0.4339657054227941,
+          "student_confidence": 0.8365398556578393,
+          "logit_pearson": 0.8419080883848901,
+          "topk_overlap": 0.7811764847998526,
+          "error_intersection": 130.0,
+          "error_union": 141.0,
+          "teacher_error": 136.0,
+          "student_error": 135.0,
+          "same_wrong_prediction": 112.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8823529411764706,
+          "teacher_correct": 0.4745098039215686,
+          "student_correct": 0.4823529411764706,
+          "both_correct": 0.4627450980392157,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.5058823529411764,
+          "teacher_nll": 2.165875356337603,
+          "student_nll": 3.968542091519225,
+          "kl_teacher_student_t1": 2.101939968034333,
+          "kl_student_teacher_t1": 0.5914006289313821,
+          "kl_teacher_student_t2": 3.323014352835861,
+          "kl_student_teacher_t2": 1.8274854996625114,
+          "js_divergence_t1": 0.16258066355013379,
+          "total_variation_t1": 0.4006922647064807,
+          "teacher_entropy": 2.369688512764725,
+          "student_entropy": 0.5029243693632238,
+          "teacher_confidence": 0.4869482246099734,
+          "student_confidence": 0.8321487202363855,
+          "logit_pearson": 0.8526981465956744,
+          "topk_overlap": 0.7756862864774816,
+          "error_intersection": 129.0,
+          "error_union": 137.0,
+          "teacher_error": 134.0,
+          "student_error": 132.0,
+          "same_wrong_prediction": 107.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8470588235294118,
+          "teacher_correct": 0.39215686274509803,
+          "student_correct": 0.403921568627451,
+          "both_correct": 0.3803921568627451,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.5843137254901961,
+          "teacher_nll": 3.1280372993618832,
+          "student_nll": 5.792617917528339,
+          "kl_teacher_student_t1": 2.9950877170936736,
+          "kl_student_teacher_t1": 0.8442853665819355,
+          "kl_teacher_student_t2": 3.3836476045496324,
+          "kl_student_teacher_t2": 2.2032372343773936,
+          "js_divergence_t1": 0.22249000119227988,
+          "total_variation_t1": 0.5077248517204733,
+          "teacher_entropy": 3.285690128102022,
+          "student_entropy": 0.6050193842719583,
+          "teacher_confidence": 0.3694848565494313,
+          "student_confidence": 0.8026033588484222,
+          "logit_pearson": 0.861683344373516,
+          "topk_overlap": 0.7949019712560317,
+          "error_intersection": 149.0,
+          "error_union": 158.0,
+          "teacher_error": 155.0,
+          "student_error": 152.0,
+          "same_wrong_prediction": 119.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8352941176470589,
+          "teacher_correct": 0.34901960784313724,
+          "student_correct": 0.3254901960784314,
+          "both_correct": 0.3137254901960784,
+          "teacher_only_correct": 0.03529411764705882,
+          "student_only_correct": 0.011764705882352941,
+          "both_wrong": 0.6392156862745098,
+          "teacher_nll": 3.3422319674024394,
+          "student_nll": 6.191245808320887,
+          "kl_teacher_student_t1": 2.7773523442885457,
+          "kl_student_teacher_t1": 0.8487803384369494,
+          "kl_teacher_student_t2": 2.9903896556181064,
+          "kl_student_teacher_t2": 2.0730216157202626,
+          "js_divergence_t1": 0.22105606116500556,
+          "total_variation_t1": 0.504115852655149,
+          "teacher_entropy": 3.341937682207893,
+          "student_entropy": 0.6714285794426413,
+          "teacher_confidence": 0.3620594987682268,
+          "student_confidence": 0.7861410739375095,
+          "logit_pearson": 0.8770195717905082,
+          "topk_overlap": 0.7992156982421875,
+          "error_intersection": 163.0,
+          "error_union": 175.0,
+          "teacher_error": 166.0,
+          "student_error": 172.0,
+          "same_wrong_prediction": 133.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8784313725490196,
+          "teacher_correct": 0.37254901960784315,
+          "student_correct": 0.37254901960784315,
+          "both_correct": 0.34509803921568627,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.6,
+          "teacher_nll": 3.2075847251742493,
+          "student_nll": 6.188119776108685,
+          "kl_teacher_student_t1": 3.0436045627967983,
+          "kl_student_teacher_t1": 0.8479632583318972,
+          "kl_teacher_student_t2": 3.3200271905637253,
+          "kl_student_teacher_t2": 2.2085618262197455,
+          "js_divergence_t1": 0.22686300090714998,
+          "total_variation_t1": 0.5123890820671531,
+          "teacher_entropy": 3.2031786600748697,
+          "student_entropy": 0.5022544094160492,
+          "teacher_confidence": 0.3836049566081926,
+          "student_confidence": 0.8368797451842065,
+          "logit_pearson": 0.8683423659380745,
+          "topk_overlap": 0.8003921807981005,
+          "error_intersection": 153.0,
+          "error_union": 167.0,
+          "teacher_error": 160.0,
+          "student_error": 160.0,
+          "same_wrong_prediction": 136.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8862745098039215,
+          "teacher_correct": 0.3607843137254902,
+          "student_correct": 0.3568627450980392,
+          "both_correct": 0.34509803921568627,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.011764705882352941,
+          "both_wrong": 0.6274509803921569,
+          "teacher_nll": 3.3661483315860523,
+          "student_nll": 6.631490251129748,
+          "kl_teacher_student_t1": 3.0312092949362364,
+          "kl_student_teacher_t1": 0.8283763548907112,
+          "kl_teacher_student_t2": 3.3673293020211013,
+          "kl_student_teacher_t2": 2.213596643186083,
+          "js_divergence_t1": 0.21907173605526195,
+          "total_variation_t1": 0.49600350062052406,
+          "teacher_entropy": 3.275899326100069,
+          "student_entropy": 0.5274677183113846,
+          "teacher_confidence": 0.4006521589615766,
+          "student_confidence": 0.8398981318754308,
+          "logit_pearson": 0.8826325023875518,
+          "topk_overlap": 0.7898039312923656,
+          "error_intersection": 160.0,
+          "error_union": 167.0,
+          "teacher_error": 163.0,
+          "student_error": 164.0,
+          "same_wrong_prediction": 138.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8745098039215686,
+          "teacher_correct": 0.38823529411764707,
+          "student_correct": 0.3803921568627451,
+          "both_correct": 0.3686274509803922,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.011764705882352941,
+          "both_wrong": 0.6,
+          "teacher_nll": 3.4112959843055877,
+          "student_nll": 6.527916882084865,
+          "kl_teacher_student_t1": 3.0337864894492954,
+          "kl_student_teacher_t1": 0.8802754645254097,
+          "kl_teacher_student_t2": 3.3143889034495633,
+          "kl_student_teacher_t2": 2.184118412990196,
+          "js_divergence_t1": 0.22864847370222502,
+          "total_variation_t1": 0.5138659234140434,
+          "teacher_entropy": 3.418429490631702,
+          "student_entropy": 0.6470006475261614,
+          "teacher_confidence": 0.36663389673420027,
+          "student_confidence": 0.8018047033571729,
+          "logit_pearson": 0.8673403309840783,
+          "topk_overlap": 0.7776470633114085,
+          "error_intersection": 153.0,
+          "error_union": 161.0,
+          "teacher_error": 156.0,
+          "student_error": 158.0,
+          "same_wrong_prediction": 129.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8431372549019608,
+          "teacher_correct": 0.3803921568627451,
+          "student_correct": 0.38823529411764707,
+          "both_correct": 0.35294117647058826,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.5843137254901961,
+          "teacher_nll": 2.7357990489286537,
+          "student_nll": 4.903610588522518,
+          "kl_teacher_student_t1": 2.480860392252604,
+          "kl_student_teacher_t1": 0.7245458976895202,
+          "kl_teacher_student_t2": 2.9507866504145603,
+          "kl_student_teacher_t2": 1.9054770376168044,
+          "js_divergence_t1": 0.19503023110184015,
+          "total_variation_t1": 0.4641629331252154,
+          "teacher_entropy": 2.8819328008913527,
+          "student_entropy": 0.6039587899750354,
+          "teacher_confidence": 0.4056802469141343,
+          "student_confidence": 0.8076817867802638,
+          "logit_pearson": 0.8518368889303768,
+          "topk_overlap": 0.7917647193459904,
+          "error_intersection": 149.0,
+          "error_union": 165.0,
+          "teacher_error": 158.0,
+          "student_error": 156.0,
+          "same_wrong_prediction": 125.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8745098039215686,
+          "teacher_correct": 0.40784313725490196,
+          "student_correct": 0.40784313725490196,
+          "both_correct": 0.3843137254901961,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.5686274509803921,
+          "teacher_nll": 2.879930301741058,
+          "student_nll": 5.222813445446538,
+          "kl_teacher_student_t1": 2.6596298068177466,
+          "kl_student_teacher_t1": 0.7792874037050733,
+          "kl_teacher_student_t2": 2.82116236967199,
+          "kl_student_teacher_t2": 1.984760456459195,
+          "js_divergence_t1": 0.20578402818418018,
+          "total_variation_t1": 0.4762535899293189,
+          "teacher_entropy": 3.0836987364525887,
+          "student_entropy": 0.5691776948816636,
+          "teacher_confidence": 0.40348437627156575,
+          "student_confidence": 0.8214002160465016,
+          "logit_pearson": 0.8642365736119887,
+          "topk_overlap": 0.78941177667356,
+          "error_intersection": 145.0,
+          "error_union": 157.0,
+          "teacher_error": 151.0,
+          "student_error": 151.0,
+          "same_wrong_prediction": 125.0,
+          "n_tokens": 255.0
+        }
+      ]
+    },
+    "alpha_0.1": {
+      "alpha": 0.1,
+      "soft_id": "soft_a0.1",
+      "hard_id": "hard_a0.1",
+      "summary": {
+        "top1_match": {
+          "estimate": 0.8693627450980392,
+          "ci95": [
+            0.853186274509804,
+            0.884313725490196
+          ]
+        },
+        "teacher_correct": {
+          "estimate": 0.42377450980392156,
+          "ci95": [
+            0.3980330882352941,
+            0.4500061274509803
+          ]
+        },
+        "student_correct": {
+          "estimate": 0.4198529411764706,
+          "ci95": [
+            0.3926470588235294,
+            0.44852941176470584
+          ]
+        },
+        "both_correct": {
+          "estimate": 0.39656862745098037,
+          "ci95": [
+            0.37058823529411766,
+            0.4232904411764706
+          ]
+        },
+        "teacher_only_correct": {
+          "estimate": 0.027205882352941177,
+          "ci95": [
+            0.024019607843137253,
+            0.030392156862745098
+          ]
+        },
+        "student_only_correct": {
+          "estimate": 0.023284313725490197,
+          "ci95": [
+            0.019356617647058837,
+            0.027450980392156862
+          ]
+        },
+        "both_wrong": {
+          "estimate": 0.5529411764705883,
+          "ci95": [
+            0.526219362745098,
+            0.5786825980392157
+          ]
+        },
+        "teacher_nll": {
+          "estimate": 2.749078996508729,
+          "ci95": [
+            2.5342210430374332,
+            2.9808344837964746
+          ]
+        },
+        "student_nll": {
+          "estimate": 4.770774505652634,
+          "ci95": [
+            4.35218070036056,
+            5.221261538652812
+          ]
+        },
+        "kl_teacher_student_t1": {
+          "estimate": 2.1887640209758983,
+          "ci95": [
+            2.052303244892289,
+            2.3275662349485886
+          ]
+        },
+        "kl_student_teacher_t1": {
+          "estimate": 0.6934833871383294,
+          "ci95": [
+            0.645507626594866,
+            0.7389625134888818
+          ]
+        },
+        "kl_teacher_student_t2": {
+          "estimate": 2.7753384328355977,
+          "ci95": [
+            2.654641359226376,
+            2.9058901590459487
+          ]
+        },
+        "kl_student_teacher_t2": {
+          "estimate": 1.8837487185702606,
+          "ci95": [
+            1.8385244212022016,
+            1.929979885763982
+          ]
+        },
+        "js_divergence_t1": {
+          "estimate": 0.18653274234019074,
+          "ci95": [
+            0.17571780925214875,
+            0.19731591418458552
+          ]
+        },
+        "total_variation_t1": {
+          "estimate": 0.449249188397445,
+          "ci95": [
+            0.4298106799391555,
+            0.4682807716435077
+          ]
+        },
+        "teacher_entropy": {
+          "estimate": 2.8671360385184195,
+          "ci95": [
+            2.6688175018979057,
+            3.0571621669040003
+          ]
+        },
+        "student_entropy": {
+          "estimate": 0.6037819752506182,
+          "ci95": [
+            0.5590416591775184,
+            0.6469241807303008
+          ]
+        },
+        "teacher_confidence": {
+          "estimate": 0.42197372907517,
+          "ci95": [
+            0.39981895548309765,
+            0.4450917324803623
+          ]
+        },
+        "student_confidence": {
+          "estimate": 0.8069034520317526,
+          "ci95": [
+            0.7948432749334504,
+            0.8195263086230147
+          ]
+        },
+        "logit_pearson": {
+          "estimate": 0.9002593147988414,
+          "ci95": [
+            0.894843756369516,
+            0.9054755822291561
+          ]
+        },
+        "topk_overlap": {
+          "estimate": 0.8059313862931494,
+          "ci95": [
+            0.8001470726670002,
+            0.811471215048257
+          ]
+        },
+        "error_jaccard": {
+          "estimate": 0.9163281884646629,
+          "ci95": [
+            0.9079157387794144,
+            0.9241609405076323
+          ]
+        },
+        "same_wrong_prediction_given_teacher_error": {
+          "estimate": 0.8205019140791153,
+          "ci95": [
+            0.8006651376692748,
+            0.8436541642138312
+          ]
+        },
+        "teacher_error_rate": {
+          "estimate": 0.5762254901960784,
+          "ci95": [
+            0.5497549019607844,
+            0.6022058823529411
+          ]
+        },
+        "student_error_rate": {
+          "estimate": 0.5801470588235295,
+          "ci95": [
+            0.5514705882352942,
+            0.6071139705882352
+          ]
+        },
+        "tokens": 4080,
+        "blocks": 16,
+        "teacher_ppl": 15.628231597985016,
+        "student_ppl": 118.01060645671566
+      },
+      "block_records": [
+        {
+          "top1_match": 0.9058823529411765,
+          "teacher_correct": 0.5568627450980392,
+          "student_correct": 0.5647058823529412,
+          "both_correct": 0.5333333333333333,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.4117647058823529,
+          "teacher_nll": 1.9204814462100759,
+          "student_nll": 3.2813043781355318,
+          "kl_teacher_student_t1": 1.6571777268952015,
+          "kl_student_teacher_t1": 0.48517189960853724,
+          "kl_teacher_student_t2": 3.415841884239047,
+          "kl_student_teacher_t2": 1.883158261168237,
+          "js_divergence_t1": 0.13859151157678343,
+          "total_variation_t1": 0.3627549134048761,
+          "teacher_entropy": 2.036446986478918,
+          "student_entropy": 0.4156651029399797,
+          "teacher_confidence": 0.5374283248302983,
+          "student_confidence": 0.8670304092706419,
+          "logit_pearson": 0.9097488665113262,
+          "topk_overlap": 0.8196078618367513,
+          "error_intersection": 105.0,
+          "error_union": 119.0,
+          "teacher_error": 113.0,
+          "student_error": 111.0,
+          "same_wrong_prediction": 95.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.9215686274509803,
+          "teacher_correct": 0.45098039215686275,
+          "student_correct": 0.4392156862745098,
+          "both_correct": 0.42745098039215684,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.011764705882352941,
+          "both_wrong": 0.5372549019607843,
+          "teacher_nll": 2.445171116847618,
+          "student_nll": 4.162972252041686,
+          "kl_teacher_student_t1": 1.968763583314185,
+          "kl_student_teacher_t1": 0.6286489935482249,
+          "kl_teacher_student_t2": 2.8651461283365887,
+          "kl_student_teacher_t2": 1.8730727476232192,
+          "js_divergence_t1": 0.1716850804347618,
+          "total_variation_t1": 0.42380964054780845,
+          "teacher_entropy": 2.7284533332375918,
+          "student_entropy": 0.6026928976470349,
+          "teacher_confidence": 0.4459127557043936,
+          "student_confidence": 0.8021859075508866,
+          "logit_pearson": 0.9187855888815487,
+          "topk_overlap": 0.8050980661429611,
+          "error_intersection": 137.0,
+          "error_union": 146.0,
+          "teacher_error": 140.0,
+          "student_error": 143.0,
+          "same_wrong_prediction": 126.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8705882352941177,
+          "teacher_correct": 0.42745098039215684,
+          "student_correct": 0.4235294117647059,
+          "both_correct": 0.396078431372549,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5450980392156862,
+          "teacher_nll": 2.905980323342716,
+          "student_nll": 5.267270525764016,
+          "kl_teacher_student_t1": 2.238175874597886,
+          "kl_student_teacher_t1": 0.6987550080991258,
+          "kl_teacher_student_t2": 2.630325661453546,
+          "kl_student_teacher_t2": 1.9192262312945199,
+          "js_divergence_t1": 0.1854754504035501,
+          "total_variation_t1": 0.4391781956541772,
+          "teacher_entropy": 2.888941566616881,
+          "student_entropy": 0.601652223923627,
+          "teacher_confidence": 0.43890249401915304,
+          "student_confidence": 0.8053107542150161,
+          "logit_pearson": 0.9066580978094363,
+          "topk_overlap": 0.7850980496874043,
+          "error_intersection": 139.0,
+          "error_union": 154.0,
+          "teacher_error": 146.0,
+          "student_error": 147.0,
+          "same_wrong_prediction": 121.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8980392156862745,
+          "teacher_correct": 0.4588235294117647,
+          "student_correct": 0.4392156862745098,
+          "both_correct": 0.42745098039215684,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.011764705882352941,
+          "both_wrong": 0.5294117647058824,
+          "teacher_nll": 2.382918346629423,
+          "student_nll": 4.310501898971259,
+          "kl_teacher_student_t1": 2.196703937006932,
+          "kl_student_teacher_t1": 0.6668633760190478,
+          "kl_teacher_student_t2": 2.975550812365962,
+          "kl_student_teacher_t2": 1.928296751134536,
+          "js_divergence_t1": 0.1822806769726323,
+          "total_variation_t1": 0.43929253465989054,
+          "teacher_entropy": 2.6038229848824295,
+          "student_entropy": 0.4934199959624047,
+          "teacher_confidence": 0.44873146730310776,
+          "student_confidence": 0.8405892839618757,
+          "logit_pearson": 0.8894965863695332,
+          "topk_overlap": 0.8207843256931678,
+          "error_intersection": 135.0,
+          "error_union": 146.0,
+          "teacher_error": 138.0,
+          "student_error": 143.0,
+          "same_wrong_prediction": 120.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.9019607843137255,
+          "teacher_correct": 0.4627450980392157,
+          "student_correct": 0.45098039215686275,
+          "both_correct": 0.43529411764705883,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.5215686274509804,
+          "teacher_nll": 2.2966355940874883,
+          "student_nll": 4.124698048011929,
+          "kl_teacher_student_t1": 1.967926758410884,
+          "kl_student_teacher_t1": 0.6149558273016238,
+          "kl_teacher_student_t2": 3.0352429109461165,
+          "kl_student_teacher_t2": 1.8487503799737668,
+          "js_divergence_t1": 0.16986029101353065,
+          "total_variation_t1": 0.42635420817954867,
+          "teacher_entropy": 2.4539239546831917,
+          "student_entropy": 0.5290430199866202,
+          "teacher_confidence": 0.4447927381478104,
+          "student_confidence": 0.8189753102321251,
+          "logit_pearson": 0.8920115078196806,
+          "topk_overlap": 0.8145098106533873,
+          "error_intersection": 133.0,
+          "error_union": 144.0,
+          "teacher_error": 137.0,
+          "student_error": 140.0,
+          "same_wrong_prediction": 119.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8431372549019608,
+          "teacher_correct": 0.4470588235294118,
+          "student_correct": 0.45098039215686275,
+          "both_correct": 0.4235294117647059,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5254901960784314,
+          "teacher_nll": 2.610839806351007,
+          "student_nll": 4.314039312624464,
+          "kl_teacher_student_t1": 1.9622999228683173,
+          "kl_student_teacher_t1": 0.6380737472982968,
+          "kl_teacher_student_t2": 2.780634831447227,
+          "kl_student_teacher_t2": 1.763096648571538,
+          "js_divergence_t1": 0.17391089364594103,
+          "total_variation_t1": 0.430795415242513,
+          "teacher_entropy": 2.6370906680238013,
+          "student_entropy": 0.6107032467337216,
+          "teacher_confidence": 0.43655620275759227,
+          "student_confidence": 0.802254654379452,
+          "logit_pearson": 0.8862765143899357,
+          "topk_overlap": 0.7980392306458717,
+          "error_intersection": 134.0,
+          "error_union": 147.0,
+          "teacher_error": 141.0,
+          "student_error": 140.0,
+          "same_wrong_prediction": 107.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8627450980392157,
+          "teacher_correct": 0.44313725490196076,
+          "student_correct": 0.4627450980392157,
+          "both_correct": 0.4235294117647059,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.5176470588235295,
+          "teacher_nll": 2.3182761622410193,
+          "student_nll": 4.135016886393229,
+          "kl_teacher_student_t1": 1.9694038914699181,
+          "kl_student_teacher_t1": 0.6206586538576613,
+          "kl_teacher_student_t2": 2.900141024122051,
+          "kl_student_teacher_t2": 1.7929408578311696,
+          "js_divergence_t1": 0.1701831387538536,
+          "total_variation_t1": 0.42549969168270335,
+          "teacher_entropy": 2.500960413614909,
+          "student_entropy": 0.5636988480885824,
+          "teacher_confidence": 0.44507317075542374,
+          "student_confidence": 0.8143242555506089,
+          "logit_pearson": 0.8883055107266296,
+          "topk_overlap": 0.8254902110380284,
+          "error_intersection": 132.0,
+          "error_union": 147.0,
+          "teacher_error": 142.0,
+          "student_error": 137.0,
+          "same_wrong_prediction": 112.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8784313725490196,
+          "teacher_correct": 0.45098039215686275,
+          "student_correct": 0.4470588235294118,
+          "both_correct": 0.4196078431372549,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5215686274509804,
+          "teacher_nll": 2.4475482491885914,
+          "student_nll": 4.1983161627077585,
+          "kl_teacher_student_t1": 2.19518658507104,
+          "kl_student_teacher_t1": 0.6890977597704121,
+          "kl_teacher_student_t2": 2.7653021569345513,
+          "kl_student_teacher_t2": 1.8829961589738435,
+          "js_divergence_t1": 0.1886512877894383,
+          "total_variation_t1": 0.455330358767042,
+          "teacher_entropy": 2.742205728269091,
+          "student_entropy": 0.5457334967220531,
+          "teacher_confidence": 0.4186293358896293,
+          "student_confidence": 0.8174456540276023,
+          "logit_pearson": 0.8859256445192824,
+          "topk_overlap": 0.7882353015974456,
+          "error_intersection": 133.0,
+          "error_union": 148.0,
+          "teacher_error": 140.0,
+          "student_error": 141.0,
+          "same_wrong_prediction": 117.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8588235294117647,
+          "teacher_correct": 0.4745098039215686,
+          "student_correct": 0.4627450980392157,
+          "both_correct": 0.4470588235294118,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.5098039215686274,
+          "teacher_nll": 2.2227878346162684,
+          "student_nll": 3.751813731474035,
+          "kl_teacher_student_t1": 1.8262283998377182,
+          "kl_student_teacher_t1": 0.5733540946362066,
+          "kl_teacher_student_t2": 2.855680233824487,
+          "kl_student_teacher_t2": 1.7355619617536957,
+          "js_divergence_t1": 0.15694649313010423,
+          "total_variation_t1": 0.39459540049235026,
+          "teacher_entropy": 2.4272552340638405,
+          "student_entropy": 0.569417262544819,
+          "teacher_confidence": 0.4820841116063735,
+          "student_confidence": 0.8125596439137178,
+          "logit_pearson": 0.8950861949546665,
+          "topk_overlap": 0.8027451085109337,
+          "error_intersection": 130.0,
+          "error_union": 141.0,
+          "teacher_error": 134.0,
+          "student_error": 137.0,
+          "same_wrong_prediction": 105.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8862745098039215,
+          "teacher_correct": 0.396078431372549,
+          "student_correct": 0.39215686274509803,
+          "both_correct": 0.37254901960784315,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.5843137254901961,
+          "teacher_nll": 3.1749812631046073,
+          "student_nll": 5.436895123650046,
+          "kl_teacher_student_t1": 2.5136715458888634,
+          "kl_student_teacher_t1": 0.7878168180877088,
+          "kl_teacher_student_t2": 2.7888351515227674,
+          "kl_student_teacher_t2": 2.024980380488377,
+          "js_divergence_t1": 0.20855201085408528,
+          "total_variation_t1": 0.49022745992623123,
+          "teacher_entropy": 3.2978874655330883,
+          "student_entropy": 0.6779651510949228,
+          "teacher_confidence": 0.37058189429488836,
+          "student_confidence": 0.7867579329247568,
+          "logit_pearson": 0.9005633111093558,
+          "topk_overlap": 0.8066666846181832,
+          "error_intersection": 149.0,
+          "error_union": 160.0,
+          "teacher_error": 154.0,
+          "student_error": 155.0,
+          "same_wrong_prediction": 131.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8156862745098039,
+          "teacher_correct": 0.3333333333333333,
+          "student_correct": 0.3137254901960784,
+          "both_correct": 0.29411764705882354,
+          "teacher_only_correct": 0.0392156862745098,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.6470588235294118,
+          "teacher_nll": 3.375215171365177,
+          "student_nll": 5.763239191092697,
+          "kl_teacher_student_t1": 2.3654074575386796,
+          "kl_student_teacher_t1": 0.7985386474459779,
+          "kl_teacher_student_t2": 2.4658659018722235,
+          "kl_student_teacher_t2": 1.8823499866560394,
+          "js_divergence_t1": 0.20858606310451733,
+          "total_variation_t1": 0.48954656451356177,
+          "teacher_entropy": 3.4226251639571843,
+          "student_entropy": 0.789165751139323,
+          "teacher_confidence": 0.3500732234880036,
+          "student_confidence": 0.7499145470413507,
+          "logit_pearson": 0.9118225658641143,
+          "topk_overlap": 0.8141176672542796,
+          "error_intersection": 165.0,
+          "error_union": 180.0,
+          "teacher_error": 170.0,
+          "student_error": 175.0,
+          "same_wrong_prediction": 133.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.9098039215686274,
+          "teacher_correct": 0.3686274509803922,
+          "student_correct": 0.36470588235294116,
+          "both_correct": 0.34901960784313724,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.615686274509804,
+          "teacher_nll": 3.2684178146661496,
+          "student_nll": 5.8632561926748235,
+          "kl_teacher_student_t1": 2.6201786190855736,
+          "kl_student_teacher_t1": 0.8146824369243547,
+          "kl_teacher_student_t2": 2.7581758536544503,
+          "kl_student_teacher_t2": 2.040189219456093,
+          "js_divergence_t1": 0.21817686511021034,
+          "total_variation_t1": 0.5038303319145652,
+          "teacher_entropy": 3.259504161161535,
+          "student_entropy": 0.5605237811219459,
+          "teacher_confidence": 0.3800592291588877,
+          "student_confidence": 0.8279553619085573,
+          "logit_pearson": 0.9085239036410463,
+          "topk_overlap": 0.81490198023179,
+          "error_intersection": 157.0,
+          "error_union": 166.0,
+          "teacher_error": 161.0,
+          "student_error": 162.0,
+          "same_wrong_prediction": 143.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8627450980392157,
+          "teacher_correct": 0.3568627450980392,
+          "student_correct": 0.34509803921568627,
+          "both_correct": 0.3215686274509804,
+          "teacher_only_correct": 0.03529411764705882,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.6196078431372549,
+          "teacher_nll": 3.4407520967371323,
+          "student_nll": 6.1622750226189105,
+          "kl_teacher_student_t1": 2.5739240309771367,
+          "kl_student_teacher_t1": 0.7860229155596565,
+          "kl_teacher_student_t2": 2.7192491867963007,
+          "kl_student_teacher_t2": 2.0239360210942285,
+          "js_divergence_t1": 0.20841251541586484,
+          "total_variation_t1": 0.4829880284328087,
+          "teacher_entropy": 3.3424018411075367,
+          "student_entropy": 0.6335077210968616,
+          "teacher_confidence": 0.3920748000051461,
+          "student_confidence": 0.8072072085212258,
+          "logit_pearson": 0.9175335491404814,
+          "topk_overlap": 0.801176482555913,
+          "error_intersection": 158.0,
+          "error_union": 173.0,
+          "teacher_error": 164.0,
+          "student_error": 167.0,
+          "same_wrong_prediction": 138.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8274509803921568,
+          "teacher_correct": 0.38823529411764707,
+          "student_correct": 0.38823529411764707,
+          "both_correct": 0.3686274509803922,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.592156862745098,
+          "teacher_nll": 3.4526029100605085,
+          "student_nll": 6.0681004842122395,
+          "kl_teacher_student_t1": 2.5934592153511797,
+          "kl_student_teacher_t1": 0.8559415293674842,
+          "kl_teacher_student_t2": 2.7018499710980586,
+          "kl_student_teacher_t2": 1.9995210236194088,
+          "js_divergence_t1": 0.22065030172759412,
+          "total_variation_t1": 0.503131144654517,
+          "teacher_entropy": 3.4743458916159238,
+          "student_entropy": 0.7232771798676135,
+          "teacher_confidence": 0.3616407899295582,
+          "student_confidence": 0.7797778784060011,
+          "logit_pearson": 0.9043272093230603,
+          "topk_overlap": 0.7925490285836014,
+          "error_intersection": 151.0,
+          "error_union": 161.0,
+          "teacher_error": 156.0,
+          "student_error": 156.0,
+          "same_wrong_prediction": 117.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8274509803921568,
+          "teacher_correct": 0.3803921568627451,
+          "student_correct": 0.37254901960784315,
+          "both_correct": 0.3411764705882353,
+          "teacher_only_correct": 0.0392156862745098,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.5882352941176471,
+          "teacher_nll": 2.7729487699620865,
+          "student_nll": 4.632060899921492,
+          "kl_teacher_student_t1": 2.1001260794845282,
+          "kl_student_teacher_t1": 0.6902375408247405,
+          "kl_teacher_student_t2": 2.457231274773093,
+          "kl_student_teacher_t2": 1.7534447352091471,
+          "js_divergence_t1": 0.18522175153096518,
+          "total_variation_t1": 0.4523807563033758,
+          "teacher_entropy": 2.9051018359614353,
+          "student_entropy": 0.6706665263456457,
+          "teacher_confidence": 0.4039199155919692,
+          "student_confidence": 0.7894419240016564,
+          "logit_pearson": 0.8893046322990866,
+          "topk_overlap": 0.8047058928246592,
+          "error_intersection": 150.0,
+          "error_union": 168.0,
+          "teacher_error": 158.0,
+          "student_error": 160.0,
+          "same_wrong_prediction": 124.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8392156862745098,
+          "teacher_correct": 0.3843137254901961,
+          "student_correct": 0.4,
+          "both_correct": 0.36470588235294116,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.5803921568627451,
+          "teacher_nll": 2.9497070387297986,
+          "student_nll": 4.860631980148017,
+          "kl_teacher_student_t1": 2.2715907078163298,
+          "kl_student_teacher_t1": 0.7469149458642099,
+          "kl_teacher_student_t2": 2.290341941983092,
+          "kl_student_teacher_t2": 1.788458132276348,
+          "js_divergence_t1": 0.19733954597921932,
+          "total_variation_t1": 0.46827236998314953,
+          "teacher_entropy": 3.1532093870873545,
+          "student_entropy": 0.6733793987947352,
+          "teacher_confidence": 0.3951192117204853,
+          "student_confidence": 0.7887245066025678,
+          "logit_pearson": 0.8997793534222771,
+          "topk_overlap": 0.8011764788160137,
+          "error_intersection": 148.0,
+          "error_union": 162.0,
+          "teacher_error": 157.0,
+          "student_error": 153.0,
+          "same_wrong_prediction": 121.0,
+          "n_tokens": 255.0
+        }
+      ]
+    },
+    "alpha_0.2": {
+      "alpha": 0.2,
+      "soft_id": "soft_a0.2",
+      "hard_id": "hard_a0.2",
+      "summary": {
+        "top1_match": {
+          "estimate": 0.8583333333333334,
+          "ci95": [
+            0.8448468137254902,
+            0.870343137254902
+          ]
+        },
+        "teacher_correct": {
+          "estimate": 0.3892156862745098,
+          "ci95": [
+            0.36176470588235293,
+            0.4183823529411764
+          ]
+        },
+        "student_correct": {
+          "estimate": 0.39362745098039215,
+          "ci95": [
+            0.3681311274509804,
+            0.41838848039215676
+          ]
+        },
+        "both_correct": {
+          "estimate": 0.366421568627451,
+          "ci95": [
+            0.34191176470588236,
+            0.3933823529411764
+          ]
+        },
+        "teacher_only_correct": {
+          "estimate": 0.022794117647058826,
+          "ci95": [
+            0.018627450980392157,
+            0.027450980392156862
+          ]
+        },
+        "student_only_correct": {
+          "estimate": 0.027205882352941177,
+          "ci95": [
+            0.023529411764705882,
+            0.030882352941176472
+          ]
+        },
+        "both_wrong": {
+          "estimate": 0.583578431372549,
+          "ci95": [
+            0.5558762254901961,
+            0.611280637254902
+          ]
+        },
+        "teacher_nll": {
+          "estimate": 2.9812255882749374,
+          "ci95": [
+            2.7391985328992208,
+            3.2180369849415387
+          ]
+        },
+        "student_nll": {
+          "estimate": 4.185132868149701,
+          "ci95": [
+            3.858630123138428,
+            4.506998287731526
+          ]
+        },
+        "kl_teacher_student_t1": {
+          "estimate": 1.2744701457958596,
+          "ci95": [
+            1.1976856895404704,
+            1.340695729056994
+          ]
+        },
+        "kl_student_teacher_t1": {
+          "estimate": 0.5729040881582335,
+          "ci95": [
+            0.5341982403792003,
+            0.6105537241317477
+          ]
+        },
+        "kl_teacher_student_t2": {
+          "estimate": 0.9882422555895412,
+          "ci95": [
+            0.9230255873004596,
+            1.050646870337865
+          ]
+        },
+        "kl_student_teacher_t2": {
+          "estimate": 1.0486466564384163,
+          "ci95": [
+            1.0026422565824844,
+            1.0897753902451666
+          ]
+        },
+        "js_divergence_t1": {
+          "estimate": 0.15267659836247854,
+          "ci95": [
+            0.14310714707655064,
+            0.16118163686026546
+          ]
+        },
+        "total_variation_t1": {
+          "estimate": 0.40610127969115384,
+          "ci95": [
+            0.3873185932387908,
+            0.42221877407209546
+          ]
+        },
+        "teacher_entropy": {
+          "estimate": 3.042308880301083,
+          "ci95": [
+            2.83787012676398,
+            3.245282270674612
+          ]
+        },
+        "student_entropy": {
+          "estimate": 0.9213089518687305,
+          "ci95": [
+            0.8601411780773425,
+            0.9880965580776625
+          ]
+        },
+        "teacher_confidence": {
+          "estimate": 0.4064605953062282,
+          "ci95": [
+            0.3848456752592442,
+            0.4304858716811035
+          ]
+        },
+        "student_confidence": {
+          "estimate": 0.7324220468016232,
+          "ci95": [
+            0.7177211239349608,
+            0.7463733081607258
+          ]
+        },
+        "logit_pearson": {
+          "estimate": 0.9451278443429985,
+          "ci95": [
+            0.9430302700926275,
+            0.9473159552906073
+          ]
+        },
+        "topk_overlap": {
+          "estimate": 0.8048529536116357,
+          "ci95": [
+            0.8008082204823401,
+            0.8083333466976297
+          ]
+        },
+        "error_jaccard": {
+          "estimate": 0.921083172147002,
+          "ci95": [
+            0.9099302186416387,
+            0.9313727379926527
+          ]
+        },
+        "same_wrong_prediction_given_teacher_error": {
+          "estimate": 0.8053772070626003,
+          "ci95": [
+            0.7871405457935678,
+            0.8229818242380156
+          ]
+        },
+        "teacher_error_rate": {
+          "estimate": 0.6107843137254902,
+          "ci95": [
+            0.5821078431372549,
+            0.6392156862745098
+          ]
+        },
+        "student_error_rate": {
+          "estimate": 0.6063725490196078,
+          "ci95": [
+            0.5801470588235295,
+            0.6318627450980392
+          ]
+        },
+        "tokens": 4080,
+        "blocks": 16,
+        "teacher_ppl": 19.711960594249888,
+        "student_ppl": 65.70223007055229
+      },
+      "block_records": [
+        {
+          "top1_match": 0.8705882352941177,
+          "teacher_correct": 0.5254901960784314,
+          "student_correct": 0.5098039215686274,
+          "both_correct": 0.49019607843137253,
+          "teacher_only_correct": 0.03529411764705882,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.4549019607843137,
+          "teacher_nll": 2.138513370588714,
+          "student_nll": 2.833608799354703,
+          "kl_teacher_student_t1": 0.8430497300391103,
+          "kl_student_teacher_t1": 0.36645438904855765,
+          "kl_teacher_student_t2": 0.9861709819120519,
+          "kl_student_teacher_t2": 1.0124558430092008,
+          "js_divergence_t1": 0.10306800603866577,
+          "total_variation_t1": 0.3096503201652976,
+          "teacher_entropy": 2.185489766737994,
+          "student_entropy": 0.7305033291087432,
+          "teacher_confidence": 0.5214102763755649,
+          "student_confidence": 0.7791617935779048,
+          "logit_pearson": 0.9520336188522039,
+          "topk_overlap": 0.8156862857295017,
+          "error_intersection": 116.0,
+          "error_union": 130.0,
+          "teacher_error": 121.0,
+          "student_error": 125.0,
+          "same_wrong_prediction": 97.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8392156862745098,
+          "teacher_correct": 0.4117647058823529,
+          "student_correct": 0.41568627450980394,
+          "both_correct": 0.38823529411764707,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5607843137254902,
+          "teacher_nll": 2.773278726315966,
+          "student_nll": 3.8309841380399816,
+          "kl_teacher_student_t1": 1.1550544551774566,
+          "kl_student_teacher_t1": 0.5368087731155695,
+          "kl_teacher_student_t2": 0.9512668647018133,
+          "kl_student_teacher_t2": 1.0207118763643153,
+          "js_divergence_t1": 0.1435218698838178,
+          "total_variation_t1": 0.39092854705511354,
+          "teacher_entropy": 2.9821195265826055,
+          "student_entropy": 0.9169541676839192,
+          "teacher_confidence": 0.42130771524765914,
+          "student_confidence": 0.7340469771740483,
+          "logit_pearson": 0.9521992253322228,
+          "topk_overlap": 0.8109804003846411,
+          "error_intersection": 143.0,
+          "error_union": 156.0,
+          "teacher_error": 150.0,
+          "student_error": 149.0,
+          "same_wrong_prediction": 115.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8627450980392157,
+          "teacher_correct": 0.38823529411764707,
+          "student_correct": 0.38823529411764707,
+          "both_correct": 0.3607843137254902,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.5843137254901961,
+          "teacher_nll": 3.2463676228242764,
+          "student_nll": 4.797991524490656,
+          "kl_teacher_student_t1": 1.3712492288327685,
+          "kl_student_teacher_t1": 0.5932503176670448,
+          "kl_teacher_student_t2": 0.9777200063069661,
+          "kl_student_teacher_t2": 1.0906560673433192,
+          "js_divergence_t1": 0.15705955449272604,
+          "total_variation_t1": 0.4050802118637983,
+          "teacher_entropy": 3.0439745734719668,
+          "student_entropy": 0.8290313197117226,
+          "teacher_confidence": 0.4197199297886269,
+          "student_confidence": 0.7491643157659792,
+          "logit_pearson": 0.9444813634835038,
+          "topk_overlap": 0.8007843316770067,
+          "error_intersection": 149.0,
+          "error_union": 163.0,
+          "teacher_error": 156.0,
+          "student_error": 156.0,
+          "same_wrong_prediction": 128.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8941176470588236,
+          "teacher_correct": 0.4196078431372549,
+          "student_correct": 0.4235294117647059,
+          "both_correct": 0.4,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.5568627450980392,
+          "teacher_nll": 2.5538725834266813,
+          "student_nll": 3.7900810840083103,
+          "kl_teacher_student_t1": 1.3534961700439454,
+          "kl_student_teacher_t1": 0.5732892260831945,
+          "kl_teacher_student_t2": 1.1793334886139515,
+          "kl_student_teacher_t2": 1.1913887098723768,
+          "js_divergence_t1": 0.15354097403732,
+          "total_variation_t1": 0.4004323547961665,
+          "teacher_entropy": 2.7299264496447995,
+          "student_entropy": 0.7371243738660626,
+          "teacher_confidence": 0.4398364160575119,
+          "student_confidence": 0.7759779126036401,
+          "logit_pearson": 0.938453670576507,
+          "topk_overlap": 0.8098039402681239,
+          "error_intersection": 142.0,
+          "error_union": 153.0,
+          "teacher_error": 148.0,
+          "student_error": 147.0,
+          "same_wrong_prediction": 126.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8392156862745098,
+          "teacher_correct": 0.4196078431372549,
+          "student_correct": 0.396078431372549,
+          "both_correct": 0.37254901960784315,
+          "teacher_only_correct": 0.047058823529411764,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.5568627450980392,
+          "teacher_nll": 2.4828924141678157,
+          "student_nll": 3.6166219150318817,
+          "kl_teacher_student_t1": 1.1526068668739469,
+          "kl_student_teacher_t1": 0.5109498902863148,
+          "kl_teacher_student_t2": 1.1455430498310164,
+          "kl_student_teacher_t2": 1.1297436807669845,
+          "js_divergence_t1": 0.13917111415489047,
+          "total_variation_t1": 0.3862544022354425,
+          "teacher_entropy": 2.613879716162588,
+          "student_entropy": 0.7969360650754442,
+          "teacher_confidence": 0.4351785285800111,
+          "student_confidence": 0.7528649461035635,
+          "logit_pearson": 0.9416625490375593,
+          "topk_overlap": 0.8066666771383847,
+          "error_intersection": 142.0,
+          "error_union": 160.0,
+          "teacher_error": 148.0,
+          "student_error": 154.0,
+          "same_wrong_prediction": 119.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8745098039215686,
+          "teacher_correct": 0.43529411764705883,
+          "student_correct": 0.4470588235294118,
+          "both_correct": 0.41568627450980394,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.5333333333333333,
+          "teacher_nll": 2.7929735894296686,
+          "student_nll": 3.8814970876656325,
+          "kl_teacher_student_t1": 1.2250851575066062,
+          "kl_student_teacher_t1": 0.541108673694087,
+          "kl_teacher_student_t2": 1.113172134698606,
+          "kl_student_teacher_t2": 1.1163427128511316,
+          "js_divergence_t1": 0.14603271811616186,
+          "total_variation_t1": 0.394417527142693,
+          "teacher_entropy": 2.8471120273365695,
+          "student_entropy": 0.8902852226706112,
+          "teacher_confidence": 0.4230148913813572,
+          "student_confidence": 0.7403677697275199,
+          "logit_pearson": 0.940549166062299,
+          "topk_overlap": 0.8058823566810758,
+          "error_intersection": 136.0,
+          "error_union": 149.0,
+          "teacher_error": 144.0,
+          "student_error": 141.0,
+          "same_wrong_prediction": 117.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8705882352941177,
+          "teacher_correct": 0.4235294117647059,
+          "student_correct": 0.4196078431372549,
+          "both_correct": 0.403921568627451,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.5607843137254902,
+          "teacher_nll": 2.4556162665872012,
+          "student_nll": 3.5915023504518997,
+          "kl_teacher_student_t1": 1.1851140788957184,
+          "kl_student_teacher_t1": 0.5097734152102003,
+          "kl_teacher_student_t2": 1.1845980064541686,
+          "kl_student_teacher_t2": 1.1631456113329122,
+          "js_divergence_t1": 0.1376769313625261,
+          "total_variation_t1": 0.3790401178247788,
+          "teacher_entropy": 2.608416852764055,
+          "student_entropy": 0.794445681104473,
+          "teacher_confidence": 0.4389464527952905,
+          "student_confidence": 0.7512134477203968,
+          "logit_pearson": 0.940243216121898,
+          "topk_overlap": 0.8141176635143803,
+          "error_intersection": 143.0,
+          "error_union": 152.0,
+          "teacher_error": 147.0,
+          "student_error": 148.0,
+          "same_wrong_prediction": 119.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8745098039215686,
+          "teacher_correct": 0.4,
+          "student_correct": 0.4117647058823529,
+          "both_correct": 0.3764705882352941,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.5647058823529412,
+          "teacher_nll": 2.7001872791963466,
+          "student_nll": 3.8284679113649855,
+          "kl_teacher_student_t1": 1.2896552366368912,
+          "kl_student_teacher_t1": 0.5723339641795439,
+          "kl_teacher_student_t2": 1.037377555697572,
+          "kl_student_teacher_t2": 1.0816862966500076,
+          "js_divergence_t1": 0.15511918301675834,
+          "total_variation_t1": 0.4152177249684053,
+          "teacher_entropy": 2.948951451918658,
+          "student_entropy": 0.865880012512207,
+          "teacher_confidence": 0.3971577027264763,
+          "student_confidence": 0.736079844306497,
+          "logit_pearson": 0.9429501440010819,
+          "topk_overlap": 0.8086274651920095,
+          "error_intersection": 144.0,
+          "error_union": 159.0,
+          "teacher_error": 153.0,
+          "student_error": 150.0,
+          "same_wrong_prediction": 127.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8509803921568627,
+          "teacher_correct": 0.4588235294117647,
+          "student_correct": 0.47058823529411764,
+          "both_correct": 0.42745098039215684,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.043137254901960784,
+          "both_wrong": 0.4980392156862745,
+          "teacher_nll": 2.459598892810298,
+          "student_nll": 3.3448211744719862,
+          "kl_teacher_student_t1": 1.1280390458948473,
+          "kl_student_teacher_t1": 0.4877301945405848,
+          "kl_teacher_student_t2": 1.0829691868202358,
+          "kl_student_teacher_t2": 1.0871335908478381,
+          "js_divergence_t1": 0.1332853307910994,
+          "total_variation_t1": 0.36721968744315353,
+          "teacher_entropy": 2.6873078589345893,
+          "student_entropy": 0.85573268217199,
+          "teacher_confidence": 0.45245544209199795,
+          "student_confidence": 0.7422209122601677,
+          "logit_pearson": 0.9463967715992647,
+          "topk_overlap": 0.8003921733183019,
+          "error_intersection": 127.0,
+          "error_union": 146.0,
+          "teacher_error": 138.0,
+          "student_error": 135.0,
+          "same_wrong_prediction": 108.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8705882352941177,
+          "teacher_correct": 0.33725490196078434,
+          "student_correct": 0.3568627450980392,
+          "both_correct": 0.3254901960784314,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.6313725490196078,
+          "teacher_nll": 3.3787862141927083,
+          "student_nll": 4.715453742532169,
+          "kl_teacher_student_t1": 1.4810265036190258,
+          "kl_student_teacher_t1": 0.6565628631442201,
+          "kl_teacher_student_t2": 1.0087625840130974,
+          "kl_student_teacher_t2": 1.1037056530223173,
+          "js_divergence_t1": 0.17339643964580462,
+          "total_variation_t1": 0.4475662568036248,
+          "teacher_entropy": 3.468745257807713,
+          "student_entropy": 1.015850029739679,
+          "teacher_confidence": 0.3552220157548493,
+          "student_confidence": 0.7148031982721067,
+          "logit_pearson": 0.9448250228283452,
+          "topk_overlap": 0.8094117819094191,
+          "error_intersection": 161.0,
+          "error_union": 172.0,
+          "teacher_error": 169.0,
+          "student_error": 164.0,
+          "same_wrong_prediction": 139.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8156862745098039,
+          "teacher_correct": 0.29411764705882354,
+          "student_correct": 0.29411764705882354,
+          "both_correct": 0.27450980392156865,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.6862745098039216,
+          "teacher_nll": 3.6013318155326095,
+          "student_nll": 5.000116789574717,
+          "kl_teacher_student_t1": 1.3794150109384573,
+          "kl_student_teacher_t1": 0.6291223208109538,
+          "kl_teacher_student_t2": 0.8846891627592199,
+          "kl_student_teacher_t2": 0.9775802462708716,
+          "js_divergence_t1": 0.16549772141026517,
+          "total_variation_t1": 0.4329539327060475,
+          "teacher_entropy": 3.572238002103918,
+          "student_entropy": 1.1608779795029585,
+          "teacher_confidence": 0.34084611219518324,
+          "student_confidence": 0.6658143847596412,
+          "logit_pearson": 0.9506078495698816,
+          "topk_overlap": 0.8109803891649433,
+          "error_intersection": 175.0,
+          "error_union": 185.0,
+          "teacher_error": 180.0,
+          "student_error": 180.0,
+          "same_wrong_prediction": 138.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.9098039215686274,
+          "teacher_correct": 0.34509803921568627,
+          "student_correct": 0.34901960784313724,
+          "both_correct": 0.3333333333333333,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.6392156862745098,
+          "teacher_nll": 3.4795368568570004,
+          "student_nll": 4.98910088632621,
+          "kl_teacher_student_t1": 1.3601773056329465,
+          "kl_student_teacher_t1": 0.6291370223550236,
+          "kl_teacher_student_t2": 0.8215234943464691,
+          "kl_student_teacher_t2": 0.9379704456703336,
+          "js_divergence_t1": 0.1679742504568661,
+          "total_variation_t1": 0.44147950901704675,
+          "teacher_entropy": 3.3214436848958333,
+          "student_entropy": 0.923643243079092,
+          "teacher_confidence": 0.3819027358410405,
+          "student_confidence": 0.7486520542817957,
+          "logit_pearson": 0.9473259757546818,
+          "topk_overlap": 0.8039215873269474,
+          "error_intersection": 163.0,
+          "error_union": 170.0,
+          "teacher_error": 167.0,
+          "student_error": 166.0,
+          "same_wrong_prediction": 147.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8470588235294118,
+          "teacher_correct": 0.30980392156862746,
+          "student_correct": 0.3333333333333333,
+          "both_correct": 0.2980392156862745,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.6549019607843137,
+          "teacher_nll": 3.731495277554381,
+          "student_nll": 5.108635764028512,
+          "kl_teacher_student_t1": 1.3108370762245327,
+          "kl_student_teacher_t1": 0.6161127539242015,
+          "kl_teacher_student_t2": 0.7465035831227022,
+          "kl_student_teacher_t2": 0.8799144146489162,
+          "js_divergence_t1": 0.16093556319966035,
+          "total_variation_t1": 0.42233835669124825,
+          "teacher_entropy": 3.513135767918007,
+          "student_entropy": 1.1120038761812099,
+          "teacher_confidence": 0.37708606626473223,
+          "student_confidence": 0.7046547534419041,
+          "logit_pearson": 0.952321351743212,
+          "topk_overlap": 0.7878431394988415,
+          "error_intersection": 167.0,
+          "error_union": 179.0,
+          "teacher_error": 176.0,
+          "student_error": 170.0,
+          "same_wrong_prediction": 140.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8,
+          "teacher_correct": 0.34901960784313724,
+          "student_correct": 0.35294117647058826,
+          "both_correct": 0.32941176470588235,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.6274509803921569,
+          "teacher_nll": 3.68379191978305,
+          "student_nll": 5.098331900203929,
+          "kl_teacher_student_t1": 1.4271079792695887,
+          "kl_student_teacher_t1": 0.6923298218671013,
+          "kl_teacher_student_t2": 0.8631555314157523,
+          "kl_student_teacher_t2": 0.9759569392484777,
+          "js_divergence_t1": 0.17808827792896945,
+          "total_variation_t1": 0.45301819595636106,
+          "teacher_entropy": 3.641853407317517,
+          "student_entropy": 1.1331491096346986,
+          "teacher_confidence": 0.3425717606264002,
+          "student_confidence": 0.6879597196391984,
+          "logit_pearson": 0.9456853716981177,
+          "topk_overlap": 0.7956862954532399,
+          "error_intersection": 160.0,
+          "error_union": 171.0,
+          "teacher_error": 166.0,
+          "student_error": 165.0,
+          "same_wrong_prediction": 120.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8627450980392157,
+          "teacher_correct": 0.34509803921568627,
+          "student_correct": 0.3568627450980392,
+          "both_correct": 0.3254901960784314,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.6235294117647059,
+          "teacher_nll": 2.989607238769531,
+          "student_nll": 4.1417164821250765,
+          "kl_teacher_student_t1": 1.3139270296283796,
+          "kl_student_teacher_t1": 0.5980158413157743,
+          "kl_teacher_student_t2": 0.9848077587052888,
+          "kl_student_teacher_t2": 1.0525550281300264,
+          "js_divergence_t1": 0.15803385669109868,
+          "total_variation_t1": 0.41637963126687444,
+          "teacher_entropy": 3.1109982210047105,
+          "student_entropy": 0.9677054760502833,
+          "teacher_confidence": 0.38572859951094085,
+          "student_confidence": 0.7185900744269876,
+          "logit_pearson": 0.9398449953864603,
+          "topk_overlap": 0.8050980549232633,
+          "error_intersection": 159.0,
+          "error_union": 172.0,
+          "teacher_error": 167.0,
+          "student_error": 164.0,
+          "same_wrong_prediction": 137.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8509803921568627,
+          "teacher_correct": 0.36470588235294116,
+          "student_correct": 0.37254901960784315,
+          "both_correct": 0.3411764705882353,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.6039215686274509,
+          "teacher_nll": 3.2317593443627453,
+          "student_nll": 4.3931943407245715,
+          "kl_teacher_student_t1": 1.4156814575195313,
+          "kl_student_teacher_t1": 0.653485943289364,
+          "kl_teacher_student_t2": 0.8442827000337488,
+          "kl_student_teacher_t2": 0.9573993869856292,
+          "js_divergence_t1": 0.17042378257302676,
+          "total_variation_t1": 0.4356436991224102,
+          "teacher_entropy": 3.4013495202158013,
+          "student_entropy": 1.0108206618065927,
+          "teacher_confidence": 0.3709848796620088,
+          "student_confidence": 0.7171806447646197,
+          "logit_pearson": 0.9424652174407361,
+          "topk_overlap": 0.7917647156060911,
+          "error_intersection": 154.0,
+          "error_union": 168.0,
+          "teacher_error": 162.0,
+          "student_error": 160.0,
+          "same_wrong_prediction": 130.0,
+          "n_tokens": 255.0
+        }
+      ]
+    },
+    "alpha_0.35": {
+      "alpha": 0.35,
+      "soft_id": "soft_a0.35",
+      "hard_id": "hard_a0.35",
+      "summary": {
+        "top1_match": {
+          "estimate": 0.8125,
+          "ci95": [
+            0.7985294117647059,
+            0.8259803921568627
+          ]
+        },
+        "teacher_correct": {
+          "estimate": 0.31519607843137254,
+          "ci95": [
+            0.29240196078431374,
+            0.33725490196078434
+          ]
+        },
+        "student_correct": {
+          "estimate": 0.3247549019607843,
+          "ci95": [
+            0.3026960784313726,
+            0.34681372549019607
+          ]
+        },
+        "both_correct": {
+          "estimate": 0.2936274509803921,
+          "ci95": [
+            0.2737745098039216,
+            0.3154411764705882
+          ]
+        },
+        "teacher_only_correct": {
+          "estimate": 0.021568627450980392,
+          "ci95": [
+            0.016911764705882355,
+            0.02696078431372549
+          ]
+        },
+        "student_only_correct": {
+          "estimate": 0.031127450980392157,
+          "ci95": [
+            0.026715686274509806,
+            0.03529411764705882
+          ]
+        },
+        "both_wrong": {
+          "estimate": 0.6536764705882353,
+          "ci95": [
+            0.6291666666666667,
+            0.6774509803921569
+          ]
+        },
+        "teacher_nll": {
+          "estimate": 3.609671172441221,
+          "ci95": [
+            3.3834177690627527,
+            3.844308560046495
+          ]
+        },
+        "student_nll": {
+          "estimate": 4.166036953645594,
+          "ci95": [
+            3.905626432673604,
+            4.446115620463502
+          ]
+        },
+        "kl_teacher_student_t1": {
+          "estimate": 0.6113494091758541,
+          "ci95": [
+            0.5785065354625969,
+            0.641657338872844
+          ]
+        },
+        "kl_student_teacher_t1": {
+          "estimate": 0.4101103193619672,
+          "ci95": [
+            0.38592338313951213,
+            0.4327528305439388
+          ]
+        },
+        "kl_teacher_student_t2": {
+          "estimate": 0.17341758448119257,
+          "ci95": [
+            0.16756721794897433,
+            0.17912717347635942
+          ]
+        },
+        "kl_student_teacher_t2": {
+          "estimate": 0.19475736404750862,
+          "ci95": [
+            0.18766888690637606,
+            0.20156102568495507
+          ]
+        },
+        "js_divergence_t1": {
+          "estimate": 0.10519890767686507,
+          "ci95": [
+            0.09941881968585008,
+            0.11017704319537563
+          ]
+        },
+        "total_variation_t1": {
+          "estimate": 0.3453735385455337,
+          "ci95": [
+            0.33282607371316236,
+            0.35703077166834296
+          ]
+        },
+        "teacher_entropy": {
+          "estimate": 3.5692131538017122,
+          "ci95": [
+            3.385018191407709,
+            3.7523748168173965
+          ]
+        },
+        "student_entropy": {
+          "estimate": 1.7864156479929008,
+          "ci95": [
+            1.6743486913688044,
+            1.890507802799636
+          ]
+        },
+        "teacher_confidence": {
+          "estimate": 0.3551462257609648,
+          "ci95": [
+            0.3361238064952925,
+            0.3783691577496482
+          ]
+        },
+        "student_confidence": {
+          "estimate": 0.5926605176691915,
+          "ci95": [
+            0.5774603306458277,
+            0.6102943199960624
+          ]
+        },
+        "logit_pearson": {
+          "estimate": 0.9452218392316033,
+          "ci95": [
+            0.9439645463169789,
+            0.9464685075189553
+          ]
+        },
+        "topk_overlap": {
+          "estimate": 0.7917892308796153,
+          "ci95": [
+            0.7864209716927771,
+            0.7975735449732518
+          ]
+        },
+        "error_jaccard": {
+          "estimate": 0.9253990284524636,
+          "ci95": [
+            0.9140725107463804,
+            0.9346930311417941
+          ]
+        },
+        "same_wrong_prediction_given_teacher_error": {
+          "estimate": 0.7576950608446671,
+          "ci95": [
+            0.742672354841419,
+            0.7724826321933058
+          ]
+        },
+        "teacher_error_rate": {
+          "estimate": 0.6848039215686275,
+          "ci95": [
+            0.6615196078431372,
+            0.707843137254902
+          ]
+        },
+        "student_error_rate": {
+          "estimate": 0.6752450980392157,
+          "ci95": [
+            0.6522058823529412,
+            0.6963357843137253
+          ]
+        },
+        "tokens": 4080,
+        "blocks": 16,
+        "teacher_ppl": 36.95389935622328,
+        "student_ppl": 64.4594893020932
+      },
+      "block_records": [
+        {
+          "top1_match": 0.807843137254902,
+          "teacher_correct": 0.41568627450980394,
+          "student_correct": 0.403921568627451,
+          "both_correct": 0.36470588235294116,
+          "teacher_only_correct": 0.050980392156862744,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.5450980392156862,
+          "teacher_nll": 2.9394037583295036,
+          "student_nll": 3.325483726052677,
+          "kl_teacher_student_t1": 0.43131060226290835,
+          "kl_student_teacher_t1": 0.29071048474779315,
+          "kl_teacher_student_t2": 0.16966154435101677,
+          "kl_student_teacher_t2": 0.18847369680217668,
+          "js_divergence_t1": 0.07631486467286652,
+          "total_variation_t1": 0.2757367152793735,
+          "teacher_entropy": 2.663278175802792,
+          "student_entropy": 1.395178903317919,
+          "teacher_confidence": 0.47146035549687404,
+          "student_confidence": 0.6541838702033548,
+          "logit_pearson": 0.9480060839185528,
+          "topk_overlap": 0.8125490225997626,
+          "error_intersection": 139.0,
+          "error_union": 162.0,
+          "teacher_error": 149.0,
+          "student_error": 152.0,
+          "same_wrong_prediction": 113.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7764705882352941,
+          "teacher_correct": 0.34901960784313724,
+          "student_correct": 0.3411764705882353,
+          "both_correct": 0.3215686274509804,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.6313725490196078,
+          "teacher_nll": 3.5177026337268305,
+          "student_nll": 4.056183384914024,
+          "kl_teacher_student_t1": 0.5690842890271953,
+          "kl_student_teacher_t1": 0.38619837480432845,
+          "kl_teacher_student_t2": 0.16926850244110705,
+          "kl_student_teacher_t2": 0.1925800183240105,
+          "js_divergence_t1": 0.09887366388358322,
+          "total_variation_t1": 0.3288772330564611,
+          "teacher_entropy": 3.513112730138442,
+          "student_entropy": 1.776704616172641,
+          "teacher_confidence": 0.3680406654582304,
+          "student_confidence": 0.5914727379294002,
+          "logit_pearson": 0.9458995108510934,
+          "topk_overlap": 0.7929411944221048,
+          "error_intersection": 161.0,
+          "error_union": 173.0,
+          "teacher_error": 166.0,
+          "student_error": 168.0,
+          "same_wrong_prediction": 116.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8352941176470589,
+          "teacher_correct": 0.3333333333333333,
+          "student_correct": 0.34901960784313724,
+          "both_correct": 0.3215686274509804,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.6392156862745098,
+          "teacher_nll": 3.8373987983254825,
+          "student_nll": 4.525365298402075,
+          "kl_teacher_student_t1": 0.6621762930178174,
+          "kl_student_teacher_t1": 0.426262118769627,
+          "kl_teacher_student_t2": 0.1807501905104693,
+          "kl_student_teacher_t2": 0.20764960494695925,
+          "js_divergence_t1": 0.10945683554107068,
+          "total_variation_t1": 0.34433282590379904,
+          "teacher_entropy": 3.5269332287358304,
+          "student_entropy": 1.6624291326485428,
+          "teacher_confidence": 0.3788186494041892,
+          "student_confidence": 0.610033384958903,
+          "logit_pearson": 0.9428782294778263,
+          "topk_overlap": 0.7886274599561505,
+          "error_intersection": 163.0,
+          "error_union": 173.0,
+          "teacher_error": 170.0,
+          "student_error": 166.0,
+          "same_wrong_prediction": 131.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8352941176470589,
+          "teacher_correct": 0.35294117647058826,
+          "student_correct": 0.34509803921568627,
+          "both_correct": 0.3254901960784314,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.6274509803921569,
+          "teacher_nll": 3.1249307146259384,
+          "student_nll": 3.7851920632755056,
+          "kl_teacher_student_t1": 0.6632819755404603,
+          "kl_student_teacher_t1": 0.412819372438917,
+          "kl_teacher_student_t2": 0.19817213918648513,
+          "kl_student_teacher_t2": 0.22595353407018326,
+          "js_divergence_t1": 0.1079617420832316,
+          "total_variation_t1": 0.34482940973020065,
+          "teacher_entropy": 3.1852396871529374,
+          "student_entropy": 1.4414170321296242,
+          "teacher_confidence": 0.3987300872802734,
+          "student_confidence": 0.6546510322421205,
+          "logit_pearson": 0.941113307429295,
+          "topk_overlap": 0.8043137419457529,
+          "error_intersection": 160.0,
+          "error_union": 172.0,
+          "teacher_error": 165.0,
+          "student_error": 167.0,
+          "same_wrong_prediction": 130.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8156862745098039,
+          "teacher_correct": 0.3568627450980392,
+          "student_correct": 0.37254901960784315,
+          "both_correct": 0.3333333333333333,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.6039215686274509,
+          "teacher_nll": 3.0615109985949944,
+          "student_nll": 3.557538185867609,
+          "kl_teacher_student_t1": 0.5762190313900218,
+          "kl_student_teacher_t1": 0.3752372816497204,
+          "kl_teacher_student_t2": 0.19176870981852215,
+          "kl_student_teacher_t2": 0.21128454769358915,
+          "js_divergence_t1": 0.09809960337246165,
+          "total_variation_t1": 0.3280373554603726,
+          "teacher_entropy": 3.1756286321901808,
+          "student_entropy": 1.559330368041992,
+          "teacher_confidence": 0.39322365031522866,
+          "student_confidence": 0.629383872537052,
+          "logit_pearson": 0.9430635975856407,
+          "topk_overlap": 0.7898039350322649,
+          "error_intersection": 154.0,
+          "error_union": 170.0,
+          "teacher_error": 164.0,
+          "student_error": 160.0,
+          "same_wrong_prediction": 123.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8313725490196079,
+          "teacher_correct": 0.3333333333333333,
+          "student_correct": 0.33725490196078434,
+          "both_correct": 0.3137254901960784,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.023529411764705882,
+          "both_wrong": 0.6431372549019608,
+          "teacher_nll": 3.4312462152219285,
+          "student_nll": 3.7985579397164138,
+          "kl_teacher_student_t1": 0.5972779180489335,
+          "kl_student_teacher_t1": 0.40552818634930776,
+          "kl_teacher_student_t2": 0.17589528420392206,
+          "kl_student_teacher_t2": 0.1939797177034266,
+          "js_divergence_t1": 0.10406738169053022,
+          "total_variation_t1": 0.3478139690324372,
+          "teacher_entropy": 3.5947715609681374,
+          "student_entropy": 1.8802409976136452,
+          "teacher_confidence": 0.33046110845079607,
+          "student_confidence": 0.568833485771628,
+          "logit_pearson": 0.9438350789687213,
+          "topk_overlap": 0.7913725609872856,
+          "error_intersection": 164.0,
+          "error_union": 175.0,
+          "teacher_error": 170.0,
+          "student_error": 169.0,
+          "same_wrong_prediction": 132.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8549019607843137,
+          "teacher_correct": 0.34509803921568627,
+          "student_correct": 0.3686274509803922,
+          "both_correct": 0.3333333333333333,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.6196078431372549,
+          "teacher_nll": 3.0106720943076937,
+          "student_nll": 3.5793969921037263,
+          "kl_teacher_student_t1": 0.5823292227352367,
+          "kl_student_teacher_t1": 0.38661706026862647,
+          "kl_teacher_student_t2": 0.17994312585568895,
+          "kl_student_teacher_t2": 0.20414752305722705,
+          "js_divergence_t1": 0.09968426975549437,
+          "total_variation_t1": 0.33570595722572477,
+          "teacher_entropy": 3.1404458438648897,
+          "student_entropy": 1.4917285545199526,
+          "teacher_confidence": 0.38859181217118804,
+          "student_confidence": 0.6351372363520603,
+          "logit_pearson": 0.9472604639389935,
+          "topk_overlap": 0.8113725662231446,
+          "error_intersection": 158.0,
+          "error_union": 170.0,
+          "teacher_error": 167.0,
+          "student_error": 161.0,
+          "same_wrong_prediction": 133.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.807843137254902,
+          "teacher_correct": 0.3333333333333333,
+          "student_correct": 0.34509803921568627,
+          "both_correct": 0.30980392156862746,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.6313725490196078,
+          "teacher_nll": 3.252450112735524,
+          "student_nll": 3.7468005161659392,
+          "kl_teacher_student_t1": 0.5524363181170295,
+          "kl_student_teacher_t1": 0.36863980386771406,
+          "kl_teacher_student_t2": 0.16742768848643583,
+          "kl_student_teacher_t2": 0.18548308307049322,
+          "js_divergence_t1": 0.09631919299854952,
+          "total_variation_t1": 0.3316386204139859,
+          "teacher_entropy": 3.4178441365559897,
+          "student_entropy": 1.7619495990229588,
+          "teacher_confidence": 0.354395559722302,
+          "student_confidence": 0.5835496191884957,
+          "logit_pearson": 0.947914321749818,
+          "topk_overlap": 0.808627472671808,
+          "error_intersection": 161.0,
+          "error_union": 176.0,
+          "teacher_error": 170.0,
+          "student_error": 167.0,
+          "same_wrong_prediction": 127.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8549019607843137,
+          "teacher_correct": 0.34509803921568627,
+          "student_correct": 0.37254901960784315,
+          "both_correct": 0.32941176470588235,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.043137254901960784,
+          "both_wrong": 0.611764705882353,
+          "teacher_nll": 3.0941309311810663,
+          "student_nll": 3.420516369389553,
+          "kl_teacher_student_t1": 0.5508791175543093,
+          "kl_student_teacher_t1": 0.363462038601146,
+          "kl_teacher_student_t2": 0.17506694606706208,
+          "kl_student_teacher_t2": 0.19353170114405016,
+          "js_divergence_t1": 0.09526276845558017,
+          "total_variation_t1": 0.32706028152914607,
+          "teacher_entropy": 3.391414223465265,
+          "student_entropy": 1.740016092038622,
+          "teacher_confidence": 0.36928688311109353,
+          "student_confidence": 0.5930050307629156,
+          "logit_pearson": 0.9487610199872185,
+          "topk_overlap": 0.7796078513650333,
+          "error_intersection": 156.0,
+          "error_union": 171.0,
+          "teacher_error": 167.0,
+          "student_error": 160.0,
+          "same_wrong_prediction": 134.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7843137254901961,
+          "teacher_correct": 0.25882352941176473,
+          "student_correct": 0.2627450980392157,
+          "both_correct": 0.2235294117647059,
+          "teacher_only_correct": 0.03529411764705882,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.7019607843137254,
+          "teacher_nll": 4.018067558138978,
+          "student_nll": 4.648666980219822,
+          "kl_teacher_student_t1": 0.6640674217074525,
+          "kl_student_teacher_t1": 0.44374023512297983,
+          "kl_teacher_student_t2": 0.17923491234872854,
+          "kl_student_teacher_t2": 0.20484405265134922,
+          "js_divergence_t1": 0.1134551487716974,
+          "total_variation_t1": 0.3678768662845387,
+          "teacher_entropy": 3.891405905929266,
+          "student_entropy": 1.9380392934761794,
+          "teacher_confidence": 0.30934613452238197,
+          "student_confidence": 0.5581194709329044,
+          "logit_pearson": 0.9437591964123295,
+          "topk_overlap": 0.794509827856924,
+          "error_intersection": 179.0,
+          "error_union": 198.0,
+          "teacher_error": 189.0,
+          "student_error": 188.0,
+          "same_wrong_prediction": 143.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.803921568627451,
+          "teacher_correct": 0.23921568627450981,
+          "student_correct": 0.24705882352941178,
+          "both_correct": 0.2196078431372549,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.7333333333333333,
+          "teacher_nll": 4.184050272025314,
+          "student_nll": 4.919171606325635,
+          "kl_teacher_student_t1": 0.6664212993547028,
+          "kl_student_teacher_t1": 0.450869717317469,
+          "kl_teacher_student_t2": 0.1694126886479995,
+          "kl_student_teacher_t2": 0.19464079211739932,
+          "js_divergence_t1": 0.11427929962382596,
+          "total_variation_t1": 0.3663775724523208,
+          "teacher_entropy": 3.9663083843156404,
+          "student_entropy": 1.9718936620974072,
+          "teacher_confidence": 0.3101885150460636,
+          "student_confidence": 0.5539794473087086,
+          "logit_pearson": 0.9471416922176585,
+          "topk_overlap": 0.7866666868621228,
+          "error_intersection": 187.0,
+          "error_union": 199.0,
+          "teacher_error": 194.0,
+          "student_error": 192.0,
+          "same_wrong_prediction": 149.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7607843137254902,
+          "teacher_correct": 0.27058823529411763,
+          "student_correct": 0.28627450980392155,
+          "both_correct": 0.2549019607843137,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.6980392156862745,
+          "teacher_nll": 4.05786034079159,
+          "student_nll": 4.706198449228324,
+          "kl_teacher_student_t1": 0.6345146459691665,
+          "kl_student_teacher_t1": 0.44202518463134766,
+          "kl_teacher_student_t2": 0.1582072332793591,
+          "kl_student_teacher_t2": 0.17655631514156567,
+          "js_divergence_t1": 0.1121517396440693,
+          "total_variation_t1": 0.3653711188073252,
+          "teacher_entropy": 3.7576845206466376,
+          "student_entropy": 1.8246730879241344,
+          "teacher_confidence": 0.3343545530356613,
+          "student_confidence": 0.5888502382764629,
+          "logit_pearson": 0.9453889173619887,
+          "topk_overlap": 0.7929411869423062,
+          "error_intersection": 178.0,
+          "error_union": 190.0,
+          "teacher_error": 186.0,
+          "student_error": 182.0,
+          "same_wrong_prediction": 129.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.803921568627451,
+          "teacher_correct": 0.2549019607843137,
+          "student_correct": 0.26666666666666666,
+          "both_correct": 0.23921568627450981,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.7176470588235294,
+          "teacher_nll": 4.402242578244676,
+          "student_nll": 5.014101035922182,
+          "kl_teacher_student_t1": 0.6024274059370452,
+          "kl_student_teacher_t1": 0.41901864444508274,
+          "kl_teacher_student_t2": 0.14623621258081174,
+          "kl_student_teacher_t2": 0.16505722532085343,
+          "js_divergence_t1": 0.10608516066682105,
+          "total_variation_t1": 0.3525830081864899,
+          "teacher_entropy": 4.098392830642999,
+          "student_entropy": 2.1981873456169576,
+          "teacher_confidence": 0.32111524133121266,
+          "student_confidence": 0.5549878924500709,
+          "logit_pearson": 0.9494349273980832,
+          "topk_overlap": 0.7811764997594497,
+          "error_intersection": 183.0,
+          "error_union": 194.0,
+          "teacher_error": 190.0,
+          "student_error": 187.0,
+          "same_wrong_prediction": 144.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7803921568627451,
+          "teacher_correct": 0.2823529411764706,
+          "student_correct": 0.27450980392156865,
+          "both_correct": 0.25882352941176473,
+          "teacher_only_correct": 0.023529411764705882,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.7019607843137254,
+          "teacher_nll": 4.258357657638251,
+          "student_nll": 4.873263968673407,
+          "kl_teacher_student_t1": 0.6689543331370634,
+          "kl_student_teacher_t1": 0.45532492843328737,
+          "kl_teacher_student_t2": 0.1663534772162344,
+          "kl_student_teacher_t2": 0.18863079314138376,
+          "js_divergence_t1": 0.11529751525205724,
+          "total_variation_t1": 0.36730267580817727,
+          "teacher_entropy": 4.058573749018651,
+          "student_entropy": 2.090667844286152,
+          "teacher_confidence": 0.3092065549364277,
+          "student_confidence": 0.5518643790600346,
+          "logit_pearson": 0.9446181876986635,
+          "topk_overlap": 0.7788235309077244,
+          "error_intersection": 179.0,
+          "error_union": 189.0,
+          "teacher_error": 183.0,
+          "student_error": 185.0,
+          "same_wrong_prediction": 133.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8,
+          "teacher_correct": 0.26666666666666666,
+          "student_correct": 0.30196078431372547,
+          "both_correct": 0.2549019607843137,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.047058823529411764,
+          "both_wrong": 0.6862745098039216,
+          "teacher_nll": 3.605542216581457,
+          "student_nll": 4.131610885320925,
+          "kl_teacher_student_t1": 0.6399692498001398,
+          "kl_student_teacher_t1": 0.43540110307581287,
+          "kl_teacher_student_t2": 0.17964027535681631,
+          "kl_student_teacher_t2": 0.19833415068832097,
+          "js_divergence_t1": 0.1108530600865682,
+          "total_variation_t1": 0.35734884037691006,
+          "teacher_entropy": 3.7165314618278953,
+          "student_entropy": 1.9054253073299632,
+          "teacher_confidence": 0.3361013318978104,
+          "student_confidence": 0.5709818634332395,
+          "logit_pearson": 0.9427825740739411,
+          "topk_overlap": 0.7745098188811658,
+          "error_intersection": 175.0,
+          "error_union": 190.0,
+          "teacher_error": 187.0,
+          "student_error": 178.0,
+          "same_wrong_prediction": 139.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.8470588235294118,
+          "teacher_correct": 0.3058823529411765,
+          "student_correct": 0.3215686274509804,
+          "both_correct": 0.29411764705882354,
+          "teacher_only_correct": 0.011764705882352941,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.6666666666666666,
+          "teacher_nll": 3.959171878590303,
+          "student_nll": 4.568543856751685,
+          "kl_teacher_student_t1": 0.7202414232141832,
+          "kl_student_teacher_t1": 0.49991057526831534,
+          "kl_teacher_student_t2": 0.1676424213484222,
+          "kl_student_teacher_t2": 0.1849710688871496,
+          "js_divergence_t1": 0.12502027633143406,
+          "total_variation_t1": 0.3850841671812768,
+          "teacher_entropy": 4.009845389571844,
+          "student_entropy": 1.9447685316497205,
+          "teacher_confidence": 0.3090185099957036,
+          "student_confidence": 0.5835347212997137,
+          "logit_pearson": 0.9416923186358284,
+          "topk_overlap": 0.7807843376608455,
+          "error_intersection": 170.0,
+          "error_union": 180.0,
+          "teacher_error": 177.0,
+          "student_error": 173.0,
+          "same_wrong_prediction": 141.0,
+          "n_tokens": 255.0
+        }
+      ]
+    },
+    "alpha_0.5": {
+      "alpha": 0.5,
+      "soft_id": "soft_a0.5",
+      "hard_id": "hard_a0.5",
+      "summary": {
+        "top1_match": {
+          "estimate": 0.7237745098039217,
+          "ci95": [
+            0.7071078431372548,
+            0.7411825980392157
+          ]
+        },
+        "teacher_correct": {
+          "estimate": 0.2002450980392157,
+          "ci95": [
+            0.18406250000000002,
+            0.2156924019607843
+          ]
+        },
+        "student_correct": {
+          "estimate": 0.21887254901960784,
+          "ci95": [
+            0.20318014705882353,
+            0.2340686274509804
+          ]
+        },
+        "both_correct": {
+          "estimate": 0.17965686274509804,
+          "ci95": [
+            0.16470588235294117,
+            0.1948529411764706
+          ]
+        },
+        "teacher_only_correct": {
+          "estimate": 0.020588235294117647,
+          "ci95": [
+            0.016421568627450978,
+            0.025
+          ]
+        },
+        "student_only_correct": {
+          "estimate": 0.0392156862745098,
+          "ci95": [
+            0.03259803921568627,
+            0.04656862745098039
+          ]
+        },
+        "both_wrong": {
+          "estimate": 0.7605392156862745,
+          "ci95": [
+            0.7441176470588236,
+            0.7786764705882352
+          ]
+        },
+        "teacher_nll": {
+          "estimate": 4.872375434987686,
+          "ci95": [
+            4.629957708447588,
+            5.118787685796327
+          ]
+        },
+        "student_nll": {
+          "estimate": 5.081617608724856,
+          "ci95": [
+            4.836676601171494,
+            5.3434520532103145
+          ]
+        },
+        "kl_teacher_student_t1": {
+          "estimate": 0.4582068185595905,
+          "ci95": [
+            0.4494212646943097,
+            0.4677274223373217
+          ]
+        },
+        "kl_student_teacher_t1": {
+          "estimate": 0.38402469871090905,
+          "ci95": [
+            0.374258575182335,
+            0.39443512829933686
+          ]
+        },
+        "kl_teacher_student_t2": {
+          "estimate": 0.11668104181687038,
+          "ci95": [
+            0.11516460746818899,
+            0.11824010457113093
+          ]
+        },
+        "kl_student_teacher_t2": {
+          "estimate": 0.11818146027770697,
+          "ci95": [
+            0.11662445903189628,
+            0.11993934439750863
+          ]
+        },
+        "js_divergence_t1": {
+          "estimate": 0.09220563911047636,
+          "ci95": [
+            0.0902719799261175,
+            0.09420811965550277
+          ]
+        },
+        "total_variation_t1": {
+          "estimate": 0.33634854572660783,
+          "ci95": [
+            0.331395809279353,
+            0.3408819977383988
+          ]
+        },
+        "teacher_entropy": {
+          "estimate": 4.719933044209199,
+          "ci95": [
+            4.554403865010131,
+            4.893949123784608
+          ]
+        },
+        "student_entropy": {
+          "estimate": 3.191655066901562,
+          "ci95": [
+            3.0321029012927823,
+            3.357826062557744
+          ]
+        },
+        "teacher_confidence": {
+          "estimate": 0.24559664679508583,
+          "ci95": [
+            0.231951656997496,
+            0.2600149190805706
+          ]
+        },
+        "student_confidence": {
+          "estimate": 0.4227897272390478,
+          "ci95": [
+            0.40571522763254597,
+            0.44112678601461297
+          ]
+        },
+        "logit_pearson": {
+          "estimate": 0.926116132034975,
+          "ci95": [
+            0.9242001440069255,
+            0.9278100633036855
+          ]
+        },
+        "topk_overlap": {
+          "estimate": 0.7548774628078236,
+          "ci95": [
+            0.7466421701510747,
+            0.762844373864286
+          ]
+        },
+        "error_jaccard": {
+          "estimate": 0.9270988945324171,
+          "ci95": [
+            0.9162147467048499,
+            0.9371223074727358
+          ]
+        },
+        "same_wrong_prediction_given_teacher_error": {
+          "estimate": 0.6803555010726325,
+          "ci95": [
+            0.6594965045836703,
+            0.7010489241938376
+          ]
+        },
+        "teacher_error_rate": {
+          "estimate": 0.7997549019607844,
+          "ci95": [
+            0.7840625,
+            0.8161825980392157
+          ]
+        },
+        "student_error_rate": {
+          "estimate": 0.7811274509803922,
+          "ci95": [
+            0.7654350490196078,
+            0.7977941176470589
+          ]
+        },
+        "tokens": 4080,
+        "blocks": 16,
+        "teacher_ppl": 130.6308537337458,
+        "student_ppl": 161.03433590303135
+      },
+      "block_records": [
+        {
+          "top1_match": 0.6941176470588235,
+          "teacher_correct": 0.22745098039215686,
+          "student_correct": 0.2784313725490196,
+          "both_correct": 0.20784313725490197,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.07058823529411765,
+          "both_wrong": 0.7019607843137254,
+          "teacher_nll": 4.518857753978056,
+          "student_nll": 4.581975390864353,
+          "kl_teacher_student_t1": 0.44345363635642854,
+          "kl_student_teacher_t1": 0.37339794869516413,
+          "kl_teacher_student_t2": 0.12037338509279139,
+          "kl_student_teacher_t2": 0.12186562220255534,
+          "js_divergence_t1": 0.08908835111879836,
+          "total_variation_t1": 0.32656067960402546,
+          "teacher_entropy": 4.264023290895948,
+          "student_entropy": 2.8373235216327743,
+          "teacher_confidence": 0.2850939806769876,
+          "student_confidence": 0.46583552080042223,
+          "logit_pearson": 0.9169955908083448,
+          "topk_overlap": 0.7796078625847311,
+          "error_intersection": 179.0,
+          "error_union": 202.0,
+          "teacher_error": 197.0,
+          "student_error": 184.0,
+          "same_wrong_prediction": 124.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.6980392156862745,
+          "teacher_correct": 0.23529411764705882,
+          "student_correct": 0.23529411764705882,
+          "both_correct": 0.19607843137254902,
+          "teacher_only_correct": 0.0392156862745098,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.7254901960784313,
+          "teacher_nll": 4.851834929223154,
+          "student_nll": 5.035648465624043,
+          "kl_teacher_student_t1": 0.49197831808352005,
+          "kl_student_teacher_t1": 0.43057031070484836,
+          "kl_teacher_student_t2": 0.11551559766133626,
+          "kl_student_teacher_t2": 0.11774668272803812,
+          "js_divergence_t1": 0.09999831003301284,
+          "total_variation_t1": 0.3494299495921415,
+          "teacher_entropy": 4.845575893626494,
+          "student_entropy": 3.2751396179199217,
+          "teacher_confidence": 0.23993131506676768,
+          "student_confidence": 0.41767317641015145,
+          "logit_pearson": 0.9189196380914426,
+          "topk_overlap": 0.7364706076827704,
+          "error_intersection": 185.0,
+          "error_union": 205.0,
+          "teacher_error": 195.0,
+          "student_error": 195.0,
+          "same_wrong_prediction": 128.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7686274509803922,
+          "teacher_correct": 0.24313725490196078,
+          "student_correct": 0.24313725490196078,
+          "both_correct": 0.22745098039215686,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.01568627450980392,
+          "both_wrong": 0.7411764705882353,
+          "teacher_nll": 4.929213265811696,
+          "student_nll": 5.259586693258846,
+          "kl_teacher_student_t1": 0.45772494895785465,
+          "kl_student_teacher_t1": 0.3739640890383253,
+          "kl_teacher_student_t2": 0.11341538055270325,
+          "kl_student_teacher_t2": 0.11548007609797459,
+          "js_divergence_t1": 0.09017409787458532,
+          "total_variation_t1": 0.32479164086136164,
+          "teacher_entropy": 4.60727726057464,
+          "student_entropy": 3.0504127502441407,
+          "teacher_confidence": 0.2847425227071725,
+          "student_confidence": 0.4595604485156489,
+          "logit_pearson": 0.928119203156116,
+          "topk_overlap": 0.7521568747127757,
+          "error_intersection": 189.0,
+          "error_union": 197.0,
+          "teacher_error": 193.0,
+          "student_error": 193.0,
+          "same_wrong_prediction": 138.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7411764705882353,
+          "teacher_correct": 0.23529411764705882,
+          "student_correct": 0.24705882352941178,
+          "both_correct": 0.20784313725490197,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.7254901960784313,
+          "teacher_nll": 4.214346163880592,
+          "student_nll": 4.475812380921607,
+          "kl_teacher_student_t1": 0.4803834036284802,
+          "kl_student_teacher_t1": 0.3904536209854425,
+          "kl_teacher_student_t2": 0.12384794880362118,
+          "kl_student_teacher_t2": 0.12687616582010305,
+          "js_divergence_t1": 0.0948770424898933,
+          "total_variation_t1": 0.33976806004842125,
+          "teacher_entropy": 4.29412898643344,
+          "student_entropy": 2.7163601968802658,
+          "teacher_confidence": 0.2757759636523677,
+          "student_confidence": 0.4782852528141994,
+          "logit_pearson": 0.9258751588709214,
+          "topk_overlap": 0.7745098263609643,
+          "error_intersection": 185.0,
+          "error_union": 202.0,
+          "teacher_error": 195.0,
+          "student_error": 192.0,
+          "same_wrong_prediction": 136.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7176470588235294,
+          "teacher_correct": 0.21568627450980393,
+          "student_correct": 0.2549019607843137,
+          "both_correct": 0.1843137254901961,
+          "teacher_only_correct": 0.03137254901960784,
+          "student_only_correct": 0.07058823529411765,
+          "both_wrong": 0.7137254901960784,
+          "teacher_nll": 4.42365623922909,
+          "student_nll": 4.569782825544769,
+          "kl_teacher_student_t1": 0.45496175803390204,
+          "kl_student_teacher_t1": 0.38311870612350163,
+          "kl_teacher_student_t2": 0.12088989837496888,
+          "kl_student_teacher_t2": 0.12300791693668739,
+          "js_divergence_t1": 0.09252303955601711,
+          "total_variation_t1": 0.3412732049530628,
+          "teacher_entropy": 4.534790278416054,
+          "student_entropy": 3.024955240885417,
+          "teacher_confidence": 0.25410202250761144,
+          "student_confidence": 0.4390061303681018,
+          "logit_pearson": 0.927163729948156,
+          "topk_overlap": 0.7776470595715093,
+          "error_intersection": 182.0,
+          "error_union": 208.0,
+          "teacher_error": 200.0,
+          "student_error": 190.0,
+          "same_wrong_prediction": 136.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7019607843137254,
+          "teacher_correct": 0.2196078431372549,
+          "student_correct": 0.23529411764705882,
+          "both_correct": 0.20392156862745098,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.03137254901960784,
+          "both_wrong": 0.7490196078431373,
+          "teacher_nll": 4.597880584118413,
+          "student_nll": 4.684649718041514,
+          "kl_teacher_student_t1": 0.4410458340364344,
+          "kl_student_teacher_t1": 0.37095950257544424,
+          "kl_teacher_student_t2": 0.11399537675520953,
+          "kl_student_teacher_t2": 0.11497123989404416,
+          "js_divergence_t1": 0.08972608201644,
+          "total_variation_t1": 0.3352970740374397,
+          "teacher_entropy": 4.81746935376934,
+          "student_entropy": 3.2937758801030177,
+          "teacher_confidence": 0.22586528179692286,
+          "student_confidence": 0.40056748483695237,
+          "logit_pearson": 0.9288613936480354,
+          "topk_overlap": 0.7560784433402267,
+          "error_intersection": 191.0,
+          "error_union": 203.0,
+          "teacher_error": 199.0,
+          "student_error": 195.0,
+          "same_wrong_prediction": 127.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7647058823529411,
+          "teacher_correct": 0.2235294117647059,
+          "student_correct": 0.24313725490196078,
+          "both_correct": 0.20392156862745098,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.7372549019607844,
+          "teacher_nll": 4.271084130979052,
+          "student_nll": 4.555776394114774,
+          "kl_teacher_student_t1": 0.43936032126931585,
+          "kl_student_teacher_t1": 0.3502831215951957,
+          "kl_teacher_student_t2": 0.11939937741148705,
+          "kl_student_teacher_t2": 0.1213158930049223,
+          "js_divergence_t1": 0.08621836970834171,
+          "total_variation_t1": 0.3227478176939721,
+          "teacher_entropy": 4.182041452445236,
+          "student_entropy": 2.6975136700798483,
+          "teacher_confidence": 0.27814059818492215,
+          "student_confidence": 0.4626649987463858,
+          "logit_pearson": 0.9279330160103593,
+          "topk_overlap": 0.7776470670513078,
+          "error_intersection": 188.0,
+          "error_union": 203.0,
+          "teacher_error": 198.0,
+          "student_error": 193.0,
+          "same_wrong_prediction": 143.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7686274509803922,
+          "teacher_correct": 0.19215686274509805,
+          "student_correct": 0.2,
+          "both_correct": 0.16470588235294117,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.7725490196078432,
+          "teacher_nll": 4.375666524849686,
+          "student_nll": 4.594493806128408,
+          "kl_teacher_student_t1": 0.421177022597369,
+          "kl_student_teacher_t1": 0.3508904447742537,
+          "kl_teacher_student_t2": 0.11663655907500024,
+          "kl_student_teacher_t2": 0.1178410431917976,
+          "js_divergence_t1": 0.08462741071102665,
+          "total_variation_t1": 0.3204084078470866,
+          "teacher_entropy": 4.351150437897327,
+          "student_entropy": 2.9214191511565564,
+          "teacher_confidence": 0.2635169365826775,
+          "student_confidence": 0.4309282246757956,
+          "logit_pearson": 0.9298648834228516,
+          "topk_overlap": 0.7694117676978017,
+          "error_intersection": 197.0,
+          "error_union": 213.0,
+          "teacher_error": 206.0,
+          "student_error": 204.0,
+          "same_wrong_prediction": 154.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7843137254901961,
+          "teacher_correct": 0.24705882352941178,
+          "student_correct": 0.24705882352941178,
+          "both_correct": 0.22745098039215686,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.0196078431372549,
+          "both_wrong": 0.7333333333333333,
+          "teacher_nll": 4.2731298110064335,
+          "student_nll": 4.4704390881108305,
+          "kl_teacher_student_t1": 0.44261642156862746,
+          "kl_student_teacher_t1": 0.35754616774764714,
+          "kl_teacher_student_t2": 0.11963013340445126,
+          "kl_student_teacher_t2": 0.12077318874059939,
+          "js_divergence_t1": 0.0878251734901877,
+          "total_variation_t1": 0.32507503359925516,
+          "teacher_entropy": 4.3205431321088,
+          "student_entropy": 2.747796630859375,
+          "teacher_confidence": 0.29255654484617943,
+          "student_confidence": 0.48451498069015203,
+          "logit_pearson": 0.931755376329609,
+          "topk_overlap": 0.7470588235294118,
+          "error_intersection": 187.0,
+          "error_union": 197.0,
+          "teacher_error": 192.0,
+          "student_error": 192.0,
+          "same_wrong_prediction": 142.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.6784313725490196,
+          "teacher_correct": 0.17254901960784313,
+          "student_correct": 0.20784313725490197,
+          "both_correct": 0.16470588235294117,
+          "teacher_only_correct": 0.00784313725490196,
+          "student_only_correct": 0.043137254901960784,
+          "both_wrong": 0.7843137254901961,
+          "teacher_nll": 5.150919207404642,
+          "student_nll": 5.40173417633655,
+          "kl_teacher_student_t1": 0.45090266770007564,
+          "kl_student_teacher_t1": 0.3818187190037148,
+          "kl_teacher_student_t2": 0.11540598308338838,
+          "kl_student_teacher_t2": 0.11766086512920904,
+          "js_divergence_t1": 0.0914009547701069,
+          "total_variation_t1": 0.33551229215135764,
+          "teacher_entropy": 4.950470000622319,
+          "student_entropy": 3.441505267573338,
+          "teacher_confidence": 0.22195336117463954,
+          "student_confidence": 0.3838976906795128,
+          "logit_pearson": 0.9249469270893171,
+          "topk_overlap": 0.7592156915103688,
+          "error_intersection": 200.0,
+          "error_union": 213.0,
+          "teacher_error": 211.0,
+          "student_error": 202.0,
+          "same_wrong_prediction": 131.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7098039215686275,
+          "teacher_correct": 0.1450980392156863,
+          "student_correct": 0.17254901960784313,
+          "both_correct": 0.13725490196078433,
+          "teacher_only_correct": 0.00784313725490196,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.8196078431372549,
+          "teacher_nll": 5.446884678859337,
+          "student_nll": 5.699149427226946,
+          "kl_teacher_student_t1": 0.4645286877950033,
+          "kl_student_teacher_t1": 0.4090579855675791,
+          "kl_teacher_student_t2": 0.11344584203233905,
+          "kl_student_teacher_t2": 0.11504232883453369,
+          "js_divergence_t1": 0.09500693339927524,
+          "total_variation_t1": 0.3412226321650486,
+          "teacher_entropy": 5.048889324711818,
+          "student_entropy": 3.4833932913985906,
+          "teacher_confidence": 0.21555410927417232,
+          "student_confidence": 0.38524056041941923,
+          "logit_pearson": 0.9257878097833372,
+          "topk_overlap": 0.7407843384088254,
+          "error_intersection": 209.0,
+          "error_union": 220.0,
+          "teacher_error": 218.0,
+          "student_error": 211.0,
+          "same_wrong_prediction": 146.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.6901960784313725,
+          "teacher_correct": 0.15294117647058825,
+          "student_correct": 0.15294117647058825,
+          "both_correct": 0.12549019607843137,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.027450980392156862,
+          "both_wrong": 0.8196078431372549,
+          "teacher_nll": 5.425618220310585,
+          "student_nll": 5.705129765529259,
+          "kl_teacher_student_t1": 0.46686359480315565,
+          "kl_student_teacher_t1": 0.4051177230535769,
+          "kl_teacher_student_t2": 0.1141657880708283,
+          "kl_student_teacher_t2": 0.11514506433524338,
+          "js_divergence_t1": 0.09585399206946878,
+          "total_variation_t1": 0.35009078418507295,
+          "teacher_entropy": 4.908232924517463,
+          "student_entropy": 3.3378021988214233,
+          "teacher_confidence": 0.21011719516679353,
+          "student_confidence": 0.39296010709276386,
+          "logit_pearson": 0.9280382979149912,
+          "topk_overlap": 0.7525490330714806,
+          "error_intersection": 209.0,
+          "error_union": 223.0,
+          "teacher_error": 216.0,
+          "student_error": 216.0,
+          "same_wrong_prediction": 144.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7529411764705882,
+          "teacher_correct": 0.17254901960784313,
+          "student_correct": 0.1803921568627451,
+          "both_correct": 0.1450980392156863,
+          "teacher_only_correct": 0.027450980392156862,
+          "student_only_correct": 0.03529411764705882,
+          "both_wrong": 0.792156862745098,
+          "teacher_nll": 5.777080371333104,
+          "student_nll": 5.971819230621937,
+          "kl_teacher_student_t1": 0.4464365155089135,
+          "kl_student_teacher_t1": 0.384563180512073,
+          "kl_teacher_student_t2": 0.1133401398565255,
+          "kl_student_teacher_t2": 0.11457188596912458,
+          "js_divergence_t1": 0.09182988288355809,
+          "total_variation_t1": 0.33738486720066446,
+          "teacher_entropy": 5.222659870222503,
+          "student_entropy": 3.778030560063381,
+          "teacher_confidence": 0.23200957728367225,
+          "student_confidence": 0.39895953477597706,
+          "logit_pearson": 0.9267681682811064,
+          "topk_overlap": 0.7298039305443857,
+          "error_intersection": 202.0,
+          "error_union": 218.0,
+          "teacher_error": 211.0,
+          "student_error": 209.0,
+          "same_wrong_prediction": 155.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.6627450980392157,
+          "teacher_correct": 0.16862745098039217,
+          "student_correct": 0.19215686274509805,
+          "both_correct": 0.14901960784313725,
+          "teacher_only_correct": 0.0196078431372549,
+          "student_only_correct": 0.043137254901960784,
+          "both_wrong": 0.788235294117647,
+          "teacher_nll": 5.638797640332989,
+          "student_nll": 5.728882853190104,
+          "kl_teacher_student_t1": 0.4660192882313448,
+          "kl_student_teacher_t1": 0.3953321531707165,
+          "kl_teacher_student_t2": 0.11316075278263465,
+          "kl_student_teacher_t2": 0.11460535619773117,
+          "js_divergence_t1": 0.09466005119622922,
+          "total_variation_t1": 0.34314924501905253,
+          "teacher_entropy": 5.225199471268,
+          "student_entropy": 3.7148211460487515,
+          "teacher_confidence": 0.20610243479410809,
+          "student_confidence": 0.3599560214023964,
+          "logit_pearson": 0.9252796060898725,
+          "topk_overlap": 0.7462745180317,
+          "error_intersection": 201.0,
+          "error_union": 217.0,
+          "teacher_error": 212.0,
+          "student_error": 206.0,
+          "same_wrong_prediction": 131.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7372549019607844,
+          "teacher_correct": 0.17647058823529413,
+          "student_correct": 0.2,
+          "both_correct": 0.1607843137254902,
+          "teacher_only_correct": 0.01568627450980392,
+          "student_only_correct": 0.0392156862745098,
+          "both_wrong": 0.7843137254901961,
+          "teacher_nll": 4.716203532499425,
+          "student_nll": 4.975628437715418,
+          "kl_teacher_student_t1": 0.47760654524260876,
+          "kl_student_teacher_t1": 0.3824930939019895,
+          "kl_teacher_student_t2": 0.11606072210798077,
+          "kl_student_teacher_t2": 0.11640850796419032,
+          "js_divergence_t1": 0.09358948282167023,
+          "total_variation_t1": 0.33732926424811865,
+          "teacher_entropy": 4.77973544550877,
+          "student_entropy": 3.2027118159275427,
+          "teacher_confidence": 0.23426807721455892,
+          "student_confidence": 0.41599734624226886,
+          "logit_pearson": 0.9278182497211531,
+          "topk_overlap": 0.7454902087940889,
+          "error_intersection": 200.0,
+          "error_union": 214.0,
+          "teacher_error": 210.0,
+          "student_error": 204.0,
+          "same_wrong_prediction": 147.0,
+          "n_tokens": 255.0
+        },
+        {
+          "top1_match": 0.7098039215686275,
+          "teacher_correct": 0.17647058823529413,
+          "student_correct": 0.21176470588235294,
+          "both_correct": 0.16862745098039217,
+          "teacher_only_correct": 0.00784313725490196,
+          "student_only_correct": 0.043137254901960784,
+          "both_wrong": 0.7803921568627451,
+          "teacher_nll": 5.346833905986711,
+          "student_nll": 5.595373086368336,
+          "kl_teacher_student_t1": 0.4862501331404144,
+          "kl_student_teacher_t1": 0.40482841192507274,
+          "kl_teacher_student_t2": 0.11761378400466022,
+          "kl_student_teacher_t2": 0.11759152739655737,
+          "js_divergence_t1": 0.09789105162901036,
+          "total_variation_t1": 0.35153577841964423,
+          "teacher_entropy": 5.166741584329044,
+          "student_entropy": 3.5435201308306525,
+          "teacher_confidence": 0.20981642779181986,
+          "student_confidence": 0.38858815735461666,
+          "logit_pearson": 0.9237310633939855,
+          "topk_overlap": 0.7333333520328298,
+          "error_intersection": 199.0,
+          "error_union": 212.0,
+          "teacher_error": 210.0,
+          "student_error": 201.0,
+          "same_wrong_prediction": 138.0,
+          "n_tokens": 255.0
+        }
+      ]
+    }
+  }
+}
