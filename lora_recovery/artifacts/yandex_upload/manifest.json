@@ -1,0 +1,631 @@
+{
+  "base_model": "Qwen/Qwen3.5-0.8B-Base",
+  "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+  "application_order": "clean base -> Gaussian noise -> PEFT adapter",
+  "adapters": [
+    {
+      "alpha": 0.0,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p00",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "575a57e8c42f425ea950a9f1519eb4705760636286f53ac2a9c302b6e2b6cda2"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "8149913b35daa3647abdfe71e913cd782775cfcb340b0e135558a53fcde71b8d"
+        },
+        "run_metadata.json": {
+          "bytes": 3805,
+          "sha256": "9a85cde2f61e22a8083c55b35dc0fc6c289be26a31593a0ecd19bd67d3a19ad0"
+        },
+        "verify_report.json": {
+          "bytes": 346,
+          "sha256": "c35cbe44743f2801505caadc5ff59e809d8b6ba5bd812988461a614e7efb5a60"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 16.608057022094727,
+        "kl_teacher_student": 0.08403981406733675,
+        "kl_student_teacher": 0.11408444170681935,
+        "cka_mean": 0.9911734652519226,
+        "cka_per_layer": [
+          1.0,
+          0.999839723110199,
+          0.9984246492385864,
+          0.9985005855560303,
+          0.9977158904075623,
+          0.9949586987495422,
+          0.9963858127593994,
+          0.9996874928474426,
+          0.9355047345161438,
+          0.9975491166114807,
+          0.9960619807243347,
+          0.949824869632721,
+          0.9962316751480103,
+          0.9916748404502869,
+          0.9949465990066528,
+          0.9910646677017212,
+          0.9945099949836731,
+          0.9950388669967651,
+          0.9935794472694397,
+          0.9938640594482422,
+          0.9929028749465942,
+          0.9935802817344666,
+          0.9938803315162659,
+          0.9946014881134033,
+          0.9890079498291016
+        ]
+      },
+      "source_run": "results/adapter_check_a0p00_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 7.25
+    },
+    {
+      "alpha": 0.05,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p05",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "d351af82abb750a9f6b2f33e078f0c9c101afe525c3920a1ab3eb36a2d70d6f9"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "1e3907c4db4b79e442b05393eb4c59f8482946bf4dd174f6ff1515978677c4b3"
+        },
+        "run_metadata.json": {
+          "bytes": 3855,
+          "sha256": "a177ae8a87b8f8d375270aef566d11299b75bd9c4356fa7ca1d57c348e1c47df"
+        },
+        "verify_report.json": {
+          "bytes": 349,
+          "sha256": "e41594e3c6cae774bd817043cc9f9912417aeefa1f7040bfcc40811b7b813fff"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 18.151386260986328,
+        "kl_teacher_student": 0.17148813811488123,
+        "kl_student_teacher": 0.20829487446718994,
+        "cka_mean": 0.985135440826416,
+        "cka_per_layer": [
+          0.999945342540741,
+          0.9936891794204712,
+          0.9896447658538818,
+          0.9888032674789429,
+          0.9891833662986755,
+          0.9863982796669006,
+          0.988472044467926,
+          0.9955452680587769,
+          0.9816040992736816,
+          0.9754317998886108,
+          0.9842648506164551,
+          0.9828132390975952,
+          0.984490692615509,
+          0.9824416637420654,
+          0.9859321117401123,
+          0.9537039995193481,
+          0.9855726957321167,
+          0.9872384667396545,
+          0.9862514734268188,
+          0.9866408705711365,
+          0.9852554798126221,
+          0.9844800233840942,
+          0.9851731657981873,
+          0.9857973456382751,
+          0.9796125292778015
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p05_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 6.78125
+    },
+    {
+      "alpha": 0.1,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p10",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "d48fd74f2ef86e985f4176a6cbfa62d3b143885c00e72fe9674e13feaa974b70"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "82ecec9c42589f71333d76d0c9b822dc974f0941ef02f4a8f9c7b00a0fc302a9"
+        },
+        "run_metadata.json": {
+          "bytes": 3854,
+          "sha256": "5c60fcca48dd124da877d33096d6cc863b96a813ca97168c55b87db789c54db8"
+        },
+        "verify_report.json": {
+          "bytes": 345,
+          "sha256": "978682eb1a619809d6420f8ebb67df542feff44de93a0637c64edbf44237edc4"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 23.162994384765625,
+        "kl_teacher_student": 0.40806444036135886,
+        "kl_student_teacher": 0.5272628016441873,
+        "cka_mean": 0.9554604816436768,
+        "cka_per_layer": [
+          0.9997745156288147,
+          0.9770299196243286,
+          0.9658166170120239,
+          0.9606552124023438,
+          0.9642961025238037,
+          0.9606674313545227,
+          0.9641479849815369,
+          0.9720552563667297,
+          0.9402288198471069,
+          0.9053459763526917,
+          0.9517565369606018,
+          0.9515278339385986,
+          0.9557721018791199,
+          0.9582875370979309,
+          0.9614052176475525,
+          0.833346426486969,
+          0.9614561200141907,
+          0.9683266282081604,
+          0.9668533205986023,
+          0.9658737182617188,
+          0.9638710021972656,
+          0.9598454833030701,
+          0.9633008241653442,
+          0.9623016119003296,
+          0.952569842338562
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p10_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 7.75
+    },
+    {
+      "alpha": 0.2,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p20",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "576d831a69768fcebee6a46b69300165b9ea127919f9031ec9ba909fc1dff01e"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "b2f65988bd10b4acacccb5a6c49a6bac5e5b68ef725e1a9b1dc242e1d8442d51"
+        },
+        "run_metadata.json": {
+          "bytes": 3853,
+          "sha256": "81fa99c95a67f760740ed227b79bdfe78ada131ec4fc24cec43094a82e60e6f2"
+        },
+        "verify_report.json": {
+          "bytes": 346,
+          "sha256": "42690fe4cc08ec77e1ffde5c0efd61b666a4f3025b4b187a196f5b1e97b7bb68"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 53.36256408691406,
+        "kl_teacher_student": 1.165347453183348,
+        "kl_student_teacher": 1.4901271316240419,
+        "cka_mean": 0.8408828306198121,
+        "cka_per_layer": [
+          0.9989960193634033,
+          0.9201095104217529,
+          0.8950940370559692,
+          0.8696526288986206,
+          0.8856130838394165,
+          0.8815948367118835,
+          0.8847759962081909,
+          0.2535756230354309,
+          0.8057366609573364,
+          0.6497788429260254,
+          0.8568930625915527,
+          0.8555727005004883,
+          0.8654636144638062,
+          0.8893561363220215,
+          0.8905007839202881,
+          0.5965660810470581,
+          0.8914344906806946,
+          0.9023723602294922,
+          0.9025031924247742,
+          0.8954676985740662,
+          0.8848863244056702,
+          0.8889303803443909,
+          0.8903756737709045,
+          0.8957082629203796,
+          0.8711127638816833
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p20_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 19.09375
+    },
+    {
+      "alpha": 0.25,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p25",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "a5ee53e3c7c2e09cadd6d36b45805885844bd95afe37b85f7061a8074062b0f5"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "abae4c0ab9596986727df4cf9dafc26277e3bb3be27c1fe12cbdf543d511f2b9"
+        },
+        "run_metadata.json": {
+          "bytes": 3855,
+          "sha256": "a089dc7327de1283eaedbe86e92e88e12299e17f73bedd62443defdf19a1dd76"
+        },
+        "verify_report.json": {
+          "bytes": 344,
+          "sha256": "877f4fe4e437b4796e1dbef7a079d2f09b0487bc022155acad81652c0021aa08"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 127.52900695800781,
+        "kl_teacher_student": 1.9733379052120186,
+        "kl_student_teacher": 2.619056173840409,
+        "cka_mean": 0.7724136477708816,
+        "cka_per_layer": [
+          0.9983118772506714,
+          0.8685476183891296,
+          0.8339394330978394,
+          0.8074436187744141,
+          0.8111651539802551,
+          0.808002769947052,
+          0.8147309422492981,
+          0.23154009878635406,
+          0.7272791266441345,
+          0.5922814607620239,
+          0.7711423635482788,
+          0.7770261168479919,
+          0.7845569252967834,
+          0.7991482019424438,
+          0.8032716512680054,
+          0.5477925539016724,
+          0.8149572014808655,
+          0.8238645195960999,
+          0.8223254680633545,
+          0.8236436247825623,
+          0.8067728281021118,
+          0.8168777823448181,
+          0.812417209148407,
+          0.8228472471237183,
+          0.7904554009437561
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p25_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 21.0
+    },
+    {
+      "alpha": 0.3,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p30",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "59ebb2471eb615d9888999ac5e4ea439c798574ff8efcfb56148182de1582bc6"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "906baae2e9a25d31e5f62f286e4f45af4b1715ff5dd4ce93e6a5e3c9b67a077d"
+        },
+        "run_metadata.json": {
+          "bytes": 3849,
+          "sha256": "ed9299b50f37fafe7abbea0012f54fcf09c5e67ad4830ec2cf64420370d9e2ee"
+        },
+        "verify_report.json": {
+          "bytes": 341,
+          "sha256": "a152bfe13ca2169e956f88ba93e3ce21cf440a4a68193e35622dca73b846d267"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 330.9661865234375,
+        "kl_teacher_student": 2.95896844444035,
+        "kl_student_teacher": 3.7052408854166665,
+        "cka_mean": 0.6578908389806748,
+        "cka_per_layer": [
+          0.9973648190498352,
+          0.822253942489624,
+          0.7834980487823486,
+          0.7289078235626221,
+          0.7101388573646545,
+          0.6738477945327759,
+          0.6642522811889648,
+          0.20639096200466156,
+          0.592997670173645,
+          0.46639177203178406,
+          0.5897997617721558,
+          0.6168673038482666,
+          0.6247695088386536,
+          0.647205650806427,
+          0.6715417504310608,
+          0.4663764536380768,
+          0.6816204786300659,
+          0.6863031983375549,
+          0.6815062761306763,
+          0.695457398891449,
+          0.6974154114723206,
+          0.6995686292648315,
+          0.6849453449249268,
+          0.694552481174469,
+          0.6632973551750183
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p30_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 20.5
+    },
+    {
+      "alpha": 0.35,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p35",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "dbbad8e4995a00e8bf783f9a75d7332103f11ba048a8af672ce6a0d5db9c9af5"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "db6ad59c2d0549934239799986fc7bf9b56a15ffdb7def202d637071310e3012"
+        },
+        "run_metadata.json": {
+          "bytes": 3854,
+          "sha256": "299cdf80d7049bda79d539e3f54b7e060cd11f939909defe5d654fd1e8991a76"
+        },
+        "verify_report.json": {
+          "bytes": 343,
+          "sha256": "c77aab520d4fb087208fb7adb7473b49167905f6c370e36491d5a2b82d0040d4"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 684.807373046875,
+        "kl_teacher_student": 3.773887202424823,
+        "kl_student_teacher": 4.54135957154088,
+        "cka_mean": 0.5031598097085953,
+        "cka_per_layer": [
+          0.9960880279541016,
+          0.7792851328849792,
+          0.728658139705658,
+          0.6419453024864197,
+          0.6185087561607361,
+          0.5515335202217102,
+          0.5217109322547913,
+          0.16356174647808075,
+          0.3884613513946533,
+          0.28311753273010254,
+          0.3573892414569855,
+          0.39116552472114563,
+          0.3565095067024231,
+          0.4147605001926422,
+          0.5079271793365479,
+          0.38467589020729065,
+          0.5284163951873779,
+          0.5113242268562317,
+          0.5000268816947937,
+          0.51979660987854,
+          0.5176311135292053,
+          0.48997676372528076,
+          0.469950407743454,
+          0.48926568031311035,
+          0.4673088788986206
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p35_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 19.9375
+    },
+    {
+      "alpha": 0.5,
+      "noise_seed": 0,
+      "training_seed": 0,
+      "base_model": "Qwen/Qwen3.5-0.8B-Base",
+      "base_model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter_path": "adapters/alpha_0p50",
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1201,
+          "sha256": "e326864014d6172e14ff8262611df9b40d53c309625fc7768a22812ec9b259c1"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 20487064,
+          "sha256": "458f6a932ef77e8aa23dc9a1862e55c7431ce09f9975986197f73897684a35d7"
+        },
+        "run_metadata.json": {
+          "bytes": 3864,
+          "sha256": "22e666dffa86b4299530a4a53c2e268fac9f813999c5cd6519c35faf4a0a06c5"
+        },
+        "verify_report.json": {
+          "bytes": 342,
+          "sha256": "6324069acc7851a7d8e83140bbd81d7954e387822e70eb4e7ae043f2915ee0a7"
+        }
+      },
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dataset_sha256": "2e34cdb3a3862dc31e5768c193c868bbc56201d2d3cc79c9061bccd7903ce4a2",
+      "final_metrics": {
+        "ppl": 2135.02587890625,
+        "kl_teacher_student": 4.9659723245872645,
+        "kl_student_teacher": 6.240410954697327,
+        "cka_mean": 0.362498362660408,
+        "cka_per_layer": [
+          0.9896390438079834,
+          0.6803315281867981,
+          0.6097894310951233,
+          0.5065147280693054,
+          0.49194252490997314,
+          0.4364128112792969,
+          0.41698139905929565,
+          0.1297239363193512,
+          0.34354400634765625,
+          0.27459654211997986,
+          0.350624144077301,
+          0.34629976749420166,
+          0.32245808839797974,
+          0.31720468401908875,
+          0.31898343563079834,
+          0.22647616267204285,
+          0.29865288734436035,
+          0.2900868058204651,
+          0.2888158857822418,
+          0.2746129035949707,
+          0.25840044021606445,
+          0.2505834698677063,
+          0.23060712218284607,
+          0.22954249382019043,
+          0.17963482439517975
+        ]
+      },
+      "source_run": "results/saved_adapter_a0p50_seed0",
+      "verification_status": "passed",
+      "verification_logit_delta": 20.125
+    }
+  ]
+}

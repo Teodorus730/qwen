@@ -1,7 +1,7 @@
 """
 Evaluation metrics for the distillation-recovery experiment.
 
-Three families, matching experiment.md:
+Three metric families used by the recovery pipeline:
 
   1. Perplexity            -> "did the model (re)learn the language?"
   2. KL(teacher || student) on a fixed probe -> behavioural distance to teacher
@@ -68,32 +68,6 @@ def kl_to_teacher(student, teacher, blocks: torch.Tensor, device,
         n += fkl.numel()
     return {"kl_teacher_student": fkl_sum / max(1, n),
             "kl_student_teacher": rkl_sum / max(1, n)}
-
-
-@torch.no_grad()
-def hard_teacher_metrics(student, teacher, blocks: torch.Tensor, device,
-                         batch_size: int = 8) -> dict:
-    """Top-1 teacher baseline metrics on a fixed probe set.
-
-    `teacher_argmax_nll` is the student's CE/NLL against the teacher's argmax
-    token. `teacher_argmax_acc` is how often student top-1 equals teacher top-1.
-    """
-    student.eval(); teacher.eval()
-    total_nll, total_tok, total_match = 0.0, 0, 0
-    for i in range(0, blocks.size(0), batch_size):
-        b = blocks[i:i + batch_size].to(device)
-        s = student(b).logits[:, :-1, :].float()
-        t = teacher(b).logits[:, :-1, :].float()
-        target = t.argmax(dim=-1)
-        nll = F.cross_entropy(s.reshape(-1, s.size(-1)), target.reshape(-1),
-                              reduction="sum")
-        total_nll += nll.item()
-        total_tok += target.numel()
-        total_match += (s.argmax(dim=-1) == target).sum().item()
-    return {
-        "teacher_argmax_nll": total_nll / max(1, total_tok),
-        "teacher_argmax_acc": total_match / max(1, total_tok),
-    }
 
 
 def _linear_cka(X: torch.Tensor, Y: torch.Tensor) -> float:

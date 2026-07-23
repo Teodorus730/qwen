@@ -1,0 +1,12 @@
+{
+  "adapter_dir": "artifacts\\lora_adapters\\alpha_0p30",
+  "noise_alpha": 0.3,
+  "noise_seed": 0,
+  "adapter_effect_max_abs_logit_delta": 20.5,
+  "verified_metrics": {
+    "ppl": 330.9661865234375,
+    "kl_teacher_student": 2.95896844444035,
+    "kl_student_teacher": 3.7052408854166665,
+    "cka_mean": 0.6578908389806748
+  }
+}

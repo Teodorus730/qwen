@@ -1,5 +1,11 @@
 1.md
 test.md
 .idea/
+.venv/
+.cache/
+.matplotlib_temp/
+__pycache__/
+*.py[cod]
+qwen_continuation_dataset/outputs/
 data_samples/*
 !data_samples/README.md

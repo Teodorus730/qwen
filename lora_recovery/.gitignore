@@ -1,0 +1,28 @@
+# Local Hugging Face cache (model weights + streamed datasets)
+.hf_cache/
+
+# Local FineWeb-Edu corpus cache (rebuild with src/fetch_corpus.py)
+data/
+
+# Saved student checkpoints are large and reproducible from configs + logs
+results/**/student/
+results/**/adapter/
+# Large local adapter weights and transfer archives. Metadata below remains visible.
+artifacts/**/*.safetensors
+artifacts/**/*.bin
+artifacts/**/*.pt
+artifacts/**/*.pth
+artifacts/**/*.ckpt
+artifacts/**/*.gguf
+artifacts/**/*.zip
+artifacts/yandex_upload/adapters/
+
+# Transient run artifacts regenerated on every run
+results/**/*.log
+results/**/live.png
+*.console.log
+*.stderr.log
+
+# Python
+__pycache__/
+*.pyc
