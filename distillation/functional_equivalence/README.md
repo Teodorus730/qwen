@@ -26,6 +26,9 @@
 6. Attention alignment на 100 одинаковых входах: cosine полных attention-матриц
    для всех 28 слоёв × 16 голов и дополнительное оптимальное сопоставление голов
    алгоритмом Hungarian.
+7. Локальная обусловленность всех слоёв: относительное усиление малых изменений
+   входных embeddings для `ε=0.001`, `0.003` и `0.01`, отдельно накопленное от
+   входа и пошаговое для каждого transformer-блока.
 
 Каждая позиция next-token считается одним примером предсказания языковой модели.
 По умолчанию используются 16 блоков длиной 256 токенов, что даёт 4 080
@@ -40,7 +43,9 @@ $env:HF_HOME = "$PWD\.hf_cache"
 python evaluate_outputs.py --config config.yaml
 python run_linear_probing.py --config config.yaml
 python run_attention_alignment.py --config config.yaml
+python run_layer_conditioning.py --config config.yaml
 python build_report.py
+python build_conditioning_report.py
 ```
 
 После прерванного запуска используйте `--resume`. Перед полным свипом конвейер
@@ -73,4 +78,9 @@ Invoke-WebRequest https://raw.githubusercontent.com/UniversalDependencies/UD_Eng
 - `raw_results.json` и `summary.csv` — выходные метрики и сводка;
 - `linear_probe_results.json` — результаты этапа 4;
 - `attention_alignment_results.json` — результаты этапа 5;
-- `01_...png` — `07_...png` — итоговые графики.
+- `layer_conditioning_results.json` и `layer_conditioning_summary.csv` —
+  послойные оценки локальной обусловленности;
+- `01_...png` — `09_...png` — итоговые графики.
+
+Подробный отдельный отчёт по малым изменениям входов находится в
+`CONDITIONING_REPORT.md`.

@@ -137,6 +137,14 @@ Hard `α=0.5`.
 robustness — вырожденный или плохо различающий входы predictor тоже может мало
 менять решение. Поэтому кривые интерпретируются только вместе с clean PPL/KL.
 
+### Малые изменения входов: обусловленность слоёв
+
+Дополнительно для Teacher и всех Students рассчитана локальная относительная
+обусловленность каждого из 28 слоёв при `ε=0.001`, `0.003` и `0.01`: как
+накопленное усиление от embeddings, так и пошаговый вклад отдельного блока.
+Подробная методика, ограничения, таблицы и два графика вынесены в отдельный
+[отчёт по обусловленности](CONDITIONING_REPORT.md).
+
 ## Свободная генерация
 
 ![Свободная генерация](outputs/05_free_generation.png)
@@ -335,6 +343,11 @@ objective.** Сейчас это корреляционное наблюдени
   accuracy и confusion matrices.
 - `outputs/attention_alignment_results.json` — Stage 5: все 448 сравнений голов
   на модель, Hungarian mappings и корреляции с выходными метриками.
+- `outputs/layer_conditioning_results.json` и
+  `outputs/layer_conditioning_summary.csv` — локальная послойная
+  обусловленность при малых изменениях входа.
+- `CONDITIONING_REPORT.md` — отдельный отчёт по обусловленности слоёв.
 - `evaluate_outputs.py`, `compare_soft_hard.py`,
   `audit_representation_hypotheses.py`, `run_linear_probing.py`,
-  `run_attention_alignment.py` — воспроизводимый код.
+  `run_attention_alignment.py`, `run_layer_conditioning.py` —
+  воспроизводимый код.

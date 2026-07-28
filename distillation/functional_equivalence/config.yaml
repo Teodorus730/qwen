@@ -56,6 +56,14 @@ attention_alignment:
   seq_len: 128
   low_similarity_threshold: 0.5
 
+layer_conditioning:
+  blocks: 8
+  seq_len: 256
+  relative_epsilons: [0.001, 0.003, 0.01]
+  primary_epsilon: 0.001
+  directions_per_block: 4
+  dtype: float32
+
 models:
   - id: soft_a0.05
     objective: soft_kd

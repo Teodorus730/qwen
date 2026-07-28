@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from audit_representation_hypotheses import linear_cka  # noqa: E402
 from evaluate_outputs import baseline_block_metrics  # noqa: E402
 from run_attention_alignment import safe_correlation  # noqa: E402
+from run_layer_conditioning import condition_profile  # noqa: E402
 from run_linear_probing import reconstruct_sentence  # noqa: E402
 
 
@@ -84,6 +85,25 @@ class StageFourAndFiveTests(unittest.TestCase):
         result = safe_correlation([1.0, 2.0, 3.0], [2.0, 4.0, 6.0])
         self.assertAlmostEqual(result["pearson_r"], 1.0, places=7)
         self.assertAlmostEqual(result["spearman_rho"], 1.0, places=7)
+
+
+class LayerConditioningTests(unittest.TestCase):
+    def test_identity_propagation_has_unit_condition(self) -> None:
+        clean = torch.tensor([[[1.0, 2.0], [3.0, 4.0]]])
+        delta = torch.tensor([[[0.1, -0.1], [0.2, -0.2]]])
+        clean_states = (clean, clean * 2.0, clean * 4.0)
+        noisy_states = (
+            clean + delta,
+            (clean + delta) * 2.0,
+            (clean + delta) * 4.0,
+        )
+        _, cumulative, incremental = condition_profile(
+            clean_states, noisy_states
+        )
+        for value in cumulative:
+            self.assertAlmostEqual(value, 1.0, places=6)
+        for value in incremental[1:]:
+            self.assertAlmostEqual(value, 1.0, places=6)
 
 
 if __name__ == "__main__":
