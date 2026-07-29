@@ -1,0 +1,50 @@
+# Recommended profile for RTX 4070 Ti SUPER / RTX 5070 Ti 16 GB.
+model:
+  id: stellaathena/qwen3-0.6b-sweep-ot2.0-psn316
+  revision: 8b6324aa8bd3fafedc4cf41817fb596cbe66837f
+  dtype: bfloat16
+  attention_implementation: sdpa
+
+data:
+  dataset_id: HuggingFaceTB/smollm-corpus
+  revision: 3ba9d605774198c5868892d7a8deda78031a781f
+  subset: fineweb-edu-dedup
+  split: train
+  text_field: text
+  sequence_length: 512
+  local_slice: artifacts/data/fineweb_edu_dedup_20512_docs.jsonl
+  total_documents: 20512
+  validation_documents: 512
+  shuffle_seed: 42
+
+training:
+  run_name: vast_16gb_10m
+  output_dir: outputs
+  max_tokens: 10000000
+  micro_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 5.0e-5
+  min_learning_rate_ratio: 0.1
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  gradient_clip: 1.0
+  optimizer: paged_adamw_8bit
+  gradient_checkpointing: false
+  seed: 42
+  log_every: 1
+  eval_every: 100
+  eval_blocks: 64
+  save_every: 100
+  keep_last_checkpoints: 2
+  save_final: true
+  cuda_memory_fraction: 0.90
+
+benchmark:
+  batch_sizes: [1, 2, 4, 5, 6]
+  warmup_steps: 2
+  measured_steps: 5
+  stop_after_oom: true
+  results_dir: results
+

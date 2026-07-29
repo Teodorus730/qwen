@@ -1,0 +1,46 @@
+# Closer to the checkpoint's original 2048-token training context. It is much
+# heavier than the speed benchmark and therefore uses checkpointing + batch 1.
+model:
+  id: stellaathena/qwen3-0.6b-sweep-ot2.0-psn316
+  revision: 8b6324aa8bd3fafedc4cf41817fb596cbe66837f
+  dtype: bfloat16
+  attention_implementation: sdpa
+
+data:
+  dataset_id: HuggingFaceTB/smollm-corpus
+  revision: 3ba9d605774198c5868892d7a8deda78031a781f
+  subset: fineweb-edu-dedup
+  split: train
+  text_field: text
+  sequence_length: 2048
+  local_slice: artifacts/data/fineweb_edu_dedup_4096_docs.jsonl
+  local_documents: 4096
+  shuffle_seed: 42
+  shuffle_buffer_size: 10000
+
+training:
+  output_dir: outputs/continued_pretraining_seq2048
+  max_steps: 100
+  micro_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 5.0e-5
+  min_learning_rate_ratio: 0.1
+  warmup_steps: 10
+  weight_decay: 0.01
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  gradient_clip: 1.0
+  optimizer: paged_adamw_8bit
+  gradient_checkpointing: true
+  seed: 42
+  log_every: 1
+  save_every: 0
+  save_final: false
+  cuda_memory_fraction: 0.90
+
+benchmark:
+  batch_sizes: [1, 2, 4]
+  warmup_steps: 2
+  measured_steps: 5
+  stop_after_oom: true
+  results_dir: results_seq2048

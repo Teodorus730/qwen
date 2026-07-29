@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "purpose": "Validate train.py end-to-end; this is not a quality experiment.",
+  "model": "stellaathena/qwen3-0.6b-sweep-ot2.0-psn316",
+  "model_revision": "8b6324aa8bd3fafedc4cf41817fb596cbe66837f",
+  "dataset": "HuggingFaceTB/smollm-corpus/fineweb-edu-dedup",
+  "dataset_revision": "3ba9d605774198c5868892d7a8deda78031a781f",
+  "slice_sha256": "f8eaece96ff98deb7556a47340be066399815827b6414c8c68fe9d72766ed39c",
+  "sequence_length": 512,
+  "micro_batch_size": 2,
+  "gradient_accumulation_steps": 2,
+  "optimizer_updates": 3,
+  "tokens_processed": 6144,
+  "peak_allocated_mib": 7091.02001953125,
+  "peak_reserved_mib": 7446.0,
+  "elapsed_seconds": 1.9351811000378802,
+  "records": [
+    {
+      "update_step": 1,
+      "loss": 3.3767004013061523,
+      "learning_rate": 5e-06,
+      "grad_norm": 2.40625,
+      "tokens_this_run": 2048,
+      "tokens_per_second": 1771.5486007727743,
+      "elapsed_seconds": 1.1560506999958307
+    },
+    {
+      "update_step": 2,
+      "loss": 3.3258215188980103,
+      "learning_rate": 1e-05,
+      "grad_norm": 2.046875,
+      "tokens_this_run": 4096,
+      "tokens_per_second": 2650.2489266893285,
+      "elapsed_seconds": 1.5455152000067756
+    },
+    {
+      "update_step": 3,
+      "loss": 3.2579437494277954,
+      "learning_rate": 1.5000000000000002e-05,
+      "grad_norm": 2.734375,
+      "tokens_this_run": 6144,
+      "tokens_per_second": 3174.8966543129914,
+      "elapsed_seconds": 1.9351811000378802
+    }
+  ]
+}

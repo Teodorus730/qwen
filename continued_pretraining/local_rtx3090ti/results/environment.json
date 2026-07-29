@@ -1,0 +1,21 @@
+{
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "executable": "C:\\Users\\jbobik\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.57.6",
+  "datasets": "4.3.0",
+  "bitsandbytes": "0.49.2",
+  "cuda": {
+    "available": true,
+    "device_name": "NVIDIA GeForce RTX 3090 Ti",
+    "total_vram_bytes": 25756696576,
+    "compute_capability": [
+      8,
+      6
+    ],
+    "torch_cuda_version": "12.4",
+    "cudnn_version": 90100
+  },
+  "nvidia_driver": "560.94"
+}

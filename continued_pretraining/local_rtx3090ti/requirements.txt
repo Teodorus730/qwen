@@ -1,0 +1,11 @@
+# Versions used for the measured RTX 3090 Ti run are recorded in README.md and
+# results/environment.json. These lower bounds describe the supported API.
+torch>=2.6
+transformers>=4.51
+datasets>=4.3
+huggingface-hub>=0.36
+PyYAML>=6.0
+bitsandbytes>=0.48
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.9
