@@ -4,12 +4,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 $projectRoot = [System.IO.Path]::GetFullPath($PSScriptRoot)
-$parent = Split-Path -Parent $projectRoot
 if ([string]::IsNullOrWhiteSpace($OutputPath)) {
-    $OutputPath = Join-Path $parent "vast_ai_single_gpu_upload.zip"
+    $OutputPath = Join-Path $projectRoot "vast_ai_single_gpu_upload.zip"
 }
 $resolvedOutput = [System.IO.Path]::GetFullPath($OutputPath)
-$allowedPrefix = [System.IO.Path]::GetFullPath($parent).TrimEnd(
+$allowedPrefix = $projectRoot.TrimEnd(
     [System.IO.Path]::DirectorySeparatorChar,
     [System.IO.Path]::AltDirectorySeparatorChar
 ) + [System.IO.Path]::DirectorySeparatorChar
@@ -18,7 +17,7 @@ if (-not $resolvedOutput.StartsWith(
         $allowedPrefix,
         [System.StringComparison]::OrdinalIgnoreCase
     )) {
-    throw "Output archive must stay inside $parent"
+    throw "Output archive must stay inside $projectRoot"
 }
 if ([System.IO.Path]::GetExtension($resolvedOutput) -ne ".zip") {
     throw "Output archive must have a .zip extension"
@@ -88,10 +87,27 @@ try {
     if (Test-Path -LiteralPath $partialOutput) {
         Remove-Item -LiteralPath $partialOutput -Force
     }
-    $archiveItems = Get-ChildItem -LiteralPath $stagingPath -Force |
-        Select-Object -ExpandProperty FullName
-    Compress-Archive -LiteralPath $archiveItems `
-        -DestinationPath $partialOutput -CompressionLevel Optimal
+    Add-Type -AssemblyName System.IO.Compression
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $archive = [System.IO.Compression.ZipFile]::Open(
+        $partialOutput,
+        [System.IO.Compression.ZipArchiveMode]::Create
+    )
+    try {
+        foreach ($relativeItem in $relativeItems) {
+            $stagedSource = Join-Path $stagingPath $relativeItem
+            $entryName = $relativeItem.Replace("\", "/")
+            [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                $archive,
+                $stagedSource,
+                $entryName,
+                [System.IO.Compression.CompressionLevel]::Optimal
+            ) | Out-Null
+        }
+    }
+    finally {
+        $archive.Dispose()
+    }
 
     if (Test-Path -LiteralPath $resolvedOutput) {
         Remove-Item -LiteralPath $resolvedOutput -Force

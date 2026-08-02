@@ -1,9 +1,11 @@
 1.md
 test.md
 .idea/
+/.dist/
 data_samples/*
 !data_samples/README.md
 
 # Vast.ai upload and downloaded training artifacts
-/continued_pretraining/vast_ai_single_gpu/vast_ai_single_gpu_upload.zip
-/continued_pretraining/vast_ai_single_gpu/qwen_vast_full_20260729T161440Z.tar.gz
+/continued_pretraining/vast_ai_single_gpu/rtx_5070_ti_16gb/vast_ai_single_gpu_upload.zip
+/continued_pretraining/vast_ai_single_gpu/rtx_5070_ti_16gb/qwen_vast_full_20260729T161440Z.tar.gz
+/continued_pretraining/vast_ai_single_gpu/rtx_5090_32gb/rtx_5090_32gb_upload.zip

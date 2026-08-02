@@ -1,0 +1,13 @@
+# PyTorch is intentionally absent: use the CUDA-compatible torch bundled with
+# the Vast.ai PyTorch template instead of replacing it from PyPI.
+transformers==4.57.6
+datasets==4.3.0
+huggingface-hub>=0.36,<2
+bitsandbytes==0.49.2
+PyYAML>=6.0,<7
+numpy>=1.26,<3
+matplotlib>=3.9,<4
+psutil>=6,<8
+safetensors>=0.4,<1
+packaging>=24,<27
+

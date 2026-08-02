@@ -361,7 +361,7 @@ SSH
 Готовый локальный файл:
 
 ```text
-D:\HANDMADE_LLM\REPO\qwen\continued_pretraining\vast_ai_single_gpu_upload.zip
+D:\HANDMADE_LLM\REPO\qwen\continued_pretraining\vast_ai_single_gpu\rtx_5070_ti_16gb\vast_ai_single_gpu_upload.zip
 ```
 
 В WinSCP:

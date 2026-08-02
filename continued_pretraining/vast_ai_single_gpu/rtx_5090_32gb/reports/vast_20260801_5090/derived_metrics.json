@@ -1,0 +1,437 @@
+{
+  "report_generated_from_raw_metrics": true,
+  "sources": {
+    "rtx_5090_metrics": "continued_pretraining/vast_ai_single_gpu/rtx_5090_32gb/exports/qwen_vast_5090_metrics_20260801T135322Z",
+    "rtx_5090_full": "continued_pretraining/vast_ai_single_gpu/rtx_5090_32gb/exports/qwen_vast_5090_full_20260801T135329Z",
+    "rtx_5070": "continued_pretraining/vast_ai_single_gpu/rtx_5070_ti_16gb/qwen_vast_full_20260729T161440Z.tar.gz",
+    "rtx_3090": "continued_pretraining/local_rtx3090ti/results"
+  },
+  "experiment_identity": {
+    "model": "stellaathena/qwen3-0.6b-sweep-ot2.0-psn316",
+    "model_revision": "8b6324aa8bd3fafedc4cf41817fb596cbe66837f",
+    "dataset": "HuggingFaceTB/smollm-corpus/fineweb-edu-dedup",
+    "dataset_revision": "3ba9d605774198c5868892d7a8deda78031a781f",
+    "slice_sha256_5070_5090": "af93165446a7243a92151aeec6bd5bdb76e562600724ab016aa720820cb58ee6",
+    "sequence_length": 512,
+    "parameters": 751108096
+  },
+  "training": {
+    "RTX 5070 Ti": {
+      "train_rows": 1221,
+      "eval_rows": 14,
+      "periodic_eval_seconds_median": 0.9658603979623877,
+      "all_eval_seconds_total": 13.813169576984365,
+      "pipeline_seconds": 1091,
+      "training_summary_seconds": 981.8315958479652,
+      "training_log_seconds": 979.014439866005,
+      "training_tps_log_final": 10216.838069690786,
+      "training_tps_including_final_eval_save": 10187.523035822996,
+      "pipeline_effective_tps": 9168.131989000916,
+      "median_update_tps": 10607.821214685982,
+      "p10_update_tps": 10600.23702410839,
+      "p90_update_tps": 10617.251641258707,
+      "first_100_train_loss_mean": 3.113284711241722,
+      "last_100_train_loss_mean": 2.8938654786348343,
+      "train_loss_mean_delta_pct": -7.047837026102677,
+      "train_loss_min": 2.5044238567352295,
+      "train_loss_min_step": 1009,
+      "grad_norm_max": 4.59375,
+      "grad_norm_median": 0.70703125,
+      "grad_clipped_fraction": 0.04832104832104832,
+      "grad_norm_first100_mean": 1.1862890625,
+      "grad_norm_last100_mean": 0.70453125,
+      "lr_peak": 5e-05,
+      "lr_peak_step": 61,
+      "baseline_loss": 3.164723664522171,
+      "final_loss": 2.801798090338707,
+      "loss_abs_change": -0.36292557418346405,
+      "loss_rel_change_pct": -11.467844041235143,
+      "baseline_ppl": 23.682198896797907,
+      "final_ppl": 16.474242331351235,
+      "ppl_abs_change": -7.207956565446672,
+      "ppl_rel_change_pct": -30.43617949860756,
+      "best_eval_step": 1100,
+      "best_eval_tokens": 9011200,
+      "best_eval_loss": 2.801717072725296,
+      "best_eval_ppl": 16.472907681620594,
+      "final_minus_best_loss": 8.101761341094971e-05,
+      "gain_by_step100_fraction": 0.8045447433011396,
+      "gain_by_step200_fraction": 0.9184018754185652,
+      "unique_train_tokens": 20449792,
+      "consumed_unique_fraction": 0.4891214541448637,
+      "validation_evaluated_fraction": 0.065439672801636,
+      "tokens_processed": 10002432,
+      "target_tokens": 10000000,
+      "overshoot_tokens": 2432,
+      "overshoot_pct": 0.024320000000011,
+      "train_peak_allocated_mib": 11281.37548828125,
+      "train_peak_reserved_mib": 12242.0,
+      "micro_batch_size": 4,
+      "gradient_accumulation_steps": 4,
+      "tokens_per_update": 8192
+    },
+    "RTX 5090": {
+      "train_rows": 1221,
+      "eval_rows": 14,
+      "periodic_eval_seconds_median": 0.5004097539931536,
+      "all_eval_seconds_total": 7.609557485033292,
+      "pipeline_seconds": 1121,
+      "training_summary_seconds": 675.365076504997,
+      "training_log_seconds": 672.0540958819911,
+      "training_tps_log_final": 14883.373319632845,
+      "training_tps_including_final_eval_save": 14810.407508428507,
+      "pipeline_effective_tps": 8922.77609277431,
+      "median_update_tps": 16364.79084509328,
+      "p10_update_tps": 13763.396901850245,
+      "p90_update_tps": 16745.99489040688,
+      "first_100_train_loss_mean": 3.1132538259029388,
+      "last_100_train_loss_mean": 2.8937448334693907,
+      "train_loss_mean_delta_pct": -7.050790096431781,
+      "train_loss_min": 2.504195809364319,
+      "train_loss_min_step": 1009,
+      "grad_norm_max": 2.03125,
+      "grad_norm_median": 0.70703125,
+      "grad_clipped_fraction": 0.0475020475020475,
+      "grad_norm_first100_mean": 1.1853515625,
+      "grad_norm_last100_mean": 0.70484375,
+      "lr_peak": 5e-05,
+      "lr_peak_step": 61,
+      "baseline_loss": 3.164723724126816,
+      "final_loss": 2.8018674552440643,
+      "loss_abs_change": -0.36285626888275146,
+      "loss_rel_change_pct": -11.465653893148852,
+      "baseline_ppl": 23.682200308367,
+      "final_ppl": 16.475385105245127,
+      "ppl_abs_change": -7.206815203121874,
+      "ppl_rel_change_pct": -30.431358190039802,
+      "best_eval_step": 1000,
+      "best_eval_tokens": 8192000,
+      "best_eval_loss": 2.8015968799591064,
+      "best_eval_ppl": 16.470927876260678,
+      "final_minus_best_loss": 0.00027057528495788574,
+      "gain_by_step100_fraction": 0.8054604368993439,
+      "gain_by_step200_fraction": 0.9193191931689345,
+      "unique_train_tokens": 20449792,
+      "consumed_unique_fraction": 0.4891214541448637,
+      "validation_evaluated_fraction": 0.065439672801636,
+      "tokens_processed": 10002432,
+      "target_tokens": 10000000,
+      "overshoot_tokens": 2432,
+      "overshoot_pct": 0.024320000000011,
+      "train_peak_allocated_mib": 19651.83642578125,
+      "train_peak_reserved_mib": 23010.0,
+      "micro_batch_size": 8,
+      "gradient_accumulation_steps": 2,
+      "tokens_per_update": 8192
+    }
+  },
+  "benchmark": {
+    "RTX 3090 Ti": {
+      "fit_slope_mib_per_sample": 2437.2962318978653,
+      "fit_intercept_mib": 3437.7503572789637,
+      "fit_r_squared": 0.9997193336118615,
+      "successful_batches": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "first_oom_batch": 10,
+      "max_successful_batch": 8,
+      "max_successful_headroom_mib": 423.1171875,
+      "best_throughput_batch": 8,
+      "best_throughput_tps": 6785.220279563897,
+      "rows": [
+        {
+          "batch_size": 1,
+          "status": "ok",
+          "tokens_per_second": 2682.201924499426,
+          "mean_step_seconds": 0.19088793998816983,
+          "incremental_device_peak_mib": 5926.0,
+          "device_peak_used_mib": 7202.5,
+          "total_vram_mib": 24563.5,
+          "physical_headroom_mib": 17361.0
+        },
+        {
+          "batch_size": 2,
+          "status": "ok",
+          "tokens_per_second": 4493.153031905664,
+          "mean_step_seconds": 0.22790231998078525,
+          "incremental_device_peak_mib": 8270.0,
+          "device_peak_used_mib": 9546.5,
+          "total_vram_mib": 24563.5,
+          "physical_headroom_mib": 15017.0
+        },
+        {
+          "batch_size": 4,
+          "status": "ok",
+          "tokens_per_second": 5907.319237751407,
+          "mean_step_seconds": 0.34668856000062076,
+          "incremental_device_peak_mib": 13072.0,
+          "device_peak_used_mib": 14348.5,
+          "total_vram_mib": 24563.5,
+          "physical_headroom_mib": 10215.0
+        },
+        {
+          "batch_size": 6,
+          "status": "ok",
+          "tokens_per_second": 6343.286525392397,
+          "mean_step_seconds": 0.4842915399931371,
+          "incremental_device_peak_mib": 18240.08984375,
+          "device_peak_used_mib": 19516.58984375,
+          "total_vram_mib": 24563.5,
+          "physical_headroom_mib": 5046.91015625
+        },
+        {
+          "batch_size": 8,
+          "status": "ok",
+          "tokens_per_second": 6785.220279563897,
+          "mean_step_seconds": 0.603664999990724,
+          "incremental_device_peak_mib": 22863.8828125,
+          "device_peak_used_mib": 24140.3828125,
+          "total_vram_mib": 24563.5,
+          "physical_headroom_mib": 423.1171875
+        },
+        {
+          "batch_size": 10,
+          "status": "oom"
+        }
+      ]
+    },
+    "RTX 5070 Ti": {
+      "fit_slope_mib_per_sample": 2406.2,
+      "fit_intercept_mib": 3189.900000000001,
+      "fit_r_squared": 0.999922030999042,
+      "successful_batches": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "first_oom_batch": 6,
+      "max_successful_batch": 5,
+      "max_successful_headroom_mib": 354.5,
+      "best_throughput_batch": 5,
+      "best_throughput_tps": 9468.136416711837,
+      "rows": [
+        {
+          "batch_size": 1,
+          "status": "ok",
+          "tokens_per_second": 4975.703987824769,
+          "mean_step_seconds": 0.10290001198882237,
+          "incremental_device_peak_mib": 5628.0,
+          "device_peak_used_mib": 5859.25,
+          "total_vram_mib": 15841.75,
+          "physical_headroom_mib": 9982.5
+        },
+        {
+          "batch_size": 2,
+          "status": "ok",
+          "tokens_per_second": 7266.863038781277,
+          "mean_step_seconds": 0.1409136231872253,
+          "incremental_device_peak_mib": 7972.0,
+          "device_peak_used_mib": 8203.25,
+          "total_vram_mib": 15841.75,
+          "physical_headroom_mib": 7638.5
+        },
+        {
+          "batch_size": 4,
+          "status": "ok",
+          "tokens_per_second": 9171.091633700575,
+          "mean_step_seconds": 0.22331038460833952,
+          "incremental_device_peak_mib": 12778.0,
+          "device_peak_used_mib": 13009.25,
+          "total_vram_mib": 15841.75,
+          "physical_headroom_mib": 2832.5
+        },
+        {
+          "batch_size": 5,
+          "status": "ok",
+          "tokens_per_second": 9468.136416711837,
+          "mean_step_seconds": 0.27038055720040577,
+          "incremental_device_peak_mib": 15256.0,
+          "device_peak_used_mib": 15487.25,
+          "total_vram_mib": 15841.75,
+          "physical_headroom_mib": 354.5
+        },
+        {
+          "batch_size": 6,
+          "status": "oom"
+        }
+      ]
+    },
+    "RTX 5090": {
+      "fit_slope_mib_per_sample": 2398.957359009628,
+      "fit_intercept_mib": 3237.3755158184335,
+      "fit_r_squared": 0.9999703925687022,
+      "successful_batches": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        10,
+        11
+      ],
+      "first_oom_batch": 12,
+      "max_successful_batch": 11,
+      "max_successful_headroom_mib": 1907.875,
+      "best_throughput_batch": 11,
+      "best_throughput_tps": 19380.877737260867,
+      "rows": [
+        {
+          "batch_size": 1,
+          "status": "ok",
+          "tokens_per_second": 3315.5792011733442,
+          "mean_step_seconds": 0.154422491195146,
+          "incremental_device_peak_mib": 5664.0,
+          "device_peak_used_mib": 6171.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 25937.875
+        },
+        {
+          "batch_size": 2,
+          "status": "ok",
+          "tokens_per_second": 6665.51818452307,
+          "mean_step_seconds": 0.15362646558787674,
+          "incremental_device_peak_mib": 8008.0,
+          "device_peak_used_mib": 8515.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 23593.875
+        },
+        {
+          "batch_size": 4,
+          "status": "ok",
+          "tokens_per_second": 12906.448579377364,
+          "mean_step_seconds": 0.1586803672136739,
+          "incremental_device_peak_mib": 12806.0,
+          "device_peak_used_mib": 13313.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 18795.875
+        },
+        {
+          "batch_size": 5,
+          "status": "ok",
+          "tokens_per_second": 15269.213384881316,
+          "mean_step_seconds": 0.16765762161230668,
+          "incremental_device_peak_mib": 15292.0,
+          "device_peak_used_mib": 15799.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 16309.875
+        },
+        {
+          "batch_size": 6,
+          "status": "ok",
+          "tokens_per_second": 14260.362153972308,
+          "mean_step_seconds": 0.21542229901533574,
+          "incremental_device_peak_mib": 17630.0,
+          "device_peak_used_mib": 18137.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 13971.875
+        },
+        {
+          "batch_size": 8,
+          "status": "ok",
+          "tokens_per_second": 14525.674755017126,
+          "mean_step_seconds": 0.2819834581925534,
+          "incremental_device_peak_mib": 22382.0,
+          "device_peak_used_mib": 22889.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 9219.875
+        },
+        {
+          "batch_size": 10,
+          "status": "ok",
+          "tokens_per_second": 18263.192546557904,
+          "mean_step_seconds": 0.2803452894091606,
+          "incremental_device_peak_mib": 27174.0,
+          "device_peak_used_mib": 27681.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 4427.875
+        },
+        {
+          "batch_size": 11,
+          "status": "ok",
+          "tokens_per_second": 19380.877737260867,
+          "mean_step_seconds": 0.29059571379330007,
+          "incremental_device_peak_mib": 29694.0,
+          "device_peak_used_mib": 30201.25,
+          "total_vram_mib": 32109.125,
+          "physical_headroom_mib": 1907.875
+        },
+        {
+          "batch_size": 12,
+          "status": "oom"
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "training_5090_vs_5070_speedup": 1.4537790448521966,
+    "training_5090_vs_5070_runtime_reduction_pct": 31.213756069673682,
+    "training_effective_tps_5090_vs_5070": 1.4537790448521968,
+    "periodic_eval_5090_vs_5070_speedup": 1.9301390315737175,
+    "pipeline_5090_vs_5070_change_pct": 2.7497708524289566,
+    "batch4_speedups": {
+      "5070_vs_3090": 1.5524963633405238,
+      "5090_vs_5070": 1.407296873138924,
+      "5090_vs_3090": 2.18482327768867
+    },
+    "best_raw_speedups": {
+      "5070_vs_3090": 1.395405900856085,
+      "5090_vs_5070": 2.046958016263099,
+      "5090_vs_3090": 2.856337294698194
+    },
+    "final_eval_loss_5090_minus_5070": 6.936490535736084e-05,
+    "best_eval_loss_5090_minus_5070": -0.0001201927661895752,
+    "memory_slope_spread_pct_of_min": 1.598147326139432
+  },
+  "rtx_3090_smoke": {
+    "status": "ok",
+    "purpose": "Validate train.py end-to-end; this is not a quality experiment.",
+    "model": "stellaathena/qwen3-0.6b-sweep-ot2.0-psn316",
+    "model_revision": "8b6324aa8bd3fafedc4cf41817fb596cbe66837f",
+    "dataset": "HuggingFaceTB/smollm-corpus/fineweb-edu-dedup",
+    "dataset_revision": "3ba9d605774198c5868892d7a8deda78031a781f",
+    "slice_sha256": "f8eaece96ff98deb7556a47340be066399815827b6414c8c68fe9d72766ed39c",
+    "sequence_length": 512,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 2,
+    "optimizer_updates": 3,
+    "tokens_processed": 6144,
+    "peak_allocated_mib": 7091.02001953125,
+    "peak_reserved_mib": 7446.0,
+    "elapsed_seconds": 1.9351811000378802,
+    "records": [
+      {
+        "update_step": 1,
+        "loss": 3.3767004013061523,
+        "learning_rate": 5e-06,
+        "grad_norm": 2.40625,
+        "tokens_this_run": 2048,
+        "tokens_per_second": 1771.5486007727743,
+        "elapsed_seconds": 1.1560506999958307
+      },
+      {
+        "update_step": 2,
+        "loss": 3.3258215188980103,
+        "learning_rate": 1e-05,
+        "grad_norm": 2.046875,
+        "tokens_this_run": 4096,
+        "tokens_per_second": 2650.2489266893285,
+        "elapsed_seconds": 1.5455152000067756
+      },
+      {
+        "update_step": 3,
+        "loss": 3.2579437494277954,
+        "learning_rate": 1.5000000000000002e-05,
+        "grad_norm": 2.734375,
+        "tokens_this_run": 6144,
+        "tokens_per_second": 3174.8966543129914,
+        "elapsed_seconds": 1.9351811000378802
+      }
+    ]
+  }
+}

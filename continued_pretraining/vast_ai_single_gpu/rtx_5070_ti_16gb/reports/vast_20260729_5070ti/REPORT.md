@@ -310,7 +310,7 @@ benchmark выполняет optimizer step на каждом измеренно
 ## 8. Сравнение с локальной RTX 3090 Ti
 
 Локальные цифры взяты из
-[`continued_pretraining/local_rtx3090ti`](../../../local_rtx3090ti/README.md).
+[`continued_pretraining/local_rtx3090ti`](../../../../local_rtx3090ti/README.md).
 
 | Micro-batch | RTX 3090 Ti, токенов/с | RTX 5070 Ti Vast, токенов/с | Ускорение Vast |
 |---:|---:|---:|---:|
@@ -497,8 +497,7 @@ in-domain улучшения получена за первые 1–2 млн т�
 
 - [Инструкция и устройство Vast-пайплайна](../../README.md)
 - [Фактическая конфигурация 16 GB](../../configs/vast_16gb.yaml)
-- [Локальный эксперимент RTX 3090 Ti](../../../local_rtx3090ti/README.md)
+- [Локальный эксперимент RTX 3090 Ti](../../../../local_rtx3090ti/README.md)
 - [Производственная модель на Hugging Face](https://huggingface.co/stellaathena/qwen3-0.6b-sweep-ot2.0-psn316)
 - [Исходный датасет на Hugging Face](https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus)
 - [`derived_metrics.json`](derived_metrics.json) — машинно-читаемые производные метрики отчёта
-

@@ -172,7 +172,7 @@ benchmark и полный train завершились, то есть workaround
 `cuda_memory_fraction=0.9` процессу было разрешено 13.92 GiB, а непосредственно перед
 ошибкой на устройстве оставалось 2.5 MiB.
 
-![VRAM, throughput и сравнение с локальным запуском](02_batch_vram_and_comparison.png)
+![VRAM, throughput и сравнение с локальным запуском](reports/vast_20260729_5070ti/02_batch_vram_and_comparison.png)
 
 ### 5.1. Линейная модель памяти
 
@@ -238,7 +238,7 @@ Batch 5 — формальный максимум, но не надёжная р
 `0.000081`, или примерно `0.0029%`; это практически незначимое отличие на столь
 маленьком validation-срезе и не выглядит как содержательное переобучение.
 
-![Динамика train loss, validation, LR и скорости](01_training_dynamics.png)
+![Динамика train loss, validation, LR и скорости](reports/vast_20260729_5070ti/01_training_dynamics.png)
 
 ### 6.2. Где возникает основное улучшение
 
@@ -310,7 +310,7 @@ benchmark выполняет optimizer step на каждом измеренно
 ## 8. Сравнение с локальной RTX 3090 Ti
 
 Локальные цифры взяты из
-[`continued_pretraining/local_rtx3090ti`](../../../local_rtx3090ti/README.md).
+[`continued_pretraining/local_rtx3090ti`](../../local_rtx3090ti/README.md).
 
 | Micro-batch | RTX 3090 Ti, токенов/с | RTX 5070 Ti Vast, токенов/с | Ускорение Vast |
 |---:|---:|---:|---:|
@@ -495,10 +495,9 @@ in-domain улучшения получена за первые 1–2 млн т�
 
 ## 15. Навигация по связанным материалам
 
-- [Инструкция и устройство Vast-пайплайна](../../README.md)
-- [Фактическая конфигурация 16 GB](../../configs/vast_16gb.yaml)
-- [Локальный эксперимент RTX 3090 Ti](../../../local_rtx3090ti/README.md)
+- [Инструкция и устройство Vast-пайплайна](README.md)
+- [Фактическая конфигурация 16 GB](configs/vast_16gb.yaml)
+- [Локальный эксперимент RTX 3090 Ti](../../local_rtx3090ti/README.md)
 - [Производственная модель на Hugging Face](https://huggingface.co/stellaathena/qwen3-0.6b-sweep-ot2.0-psn316)
 - [Исходный датасет на Hugging Face](https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus)
-- [`derived_metrics.json`](derived_metrics.json) — машинно-читаемые производные метрики отчёта
-
+- [`derived_metrics.json`](reports/vast_20260729_5070ti/derived_metrics.json) — машинно-читаемые производные метрики отчёта
