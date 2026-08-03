@@ -18,7 +18,7 @@
 
 **Зачем:** Модель 0.6B физически не может выучить язык, отвлекаясь на мусор. FastText работает в сотни раз быстрее нейросетей и отлично чистит датасет от откровенного мусора.
 
-**Статья:** Ultra-FineWeb (2025) [[1]](https://arxiv.org/abs/2505.05427)
+**Статья:** Ultra-FineWeb (2025) [[1]](https://arxiv.org/pdf/2505.05427)
 
 ---
 
@@ -30,7 +30,7 @@
 
 **Зачем:** Дубликаты заставляют модель механически воспроизводить тексты вместо генерации оригинального контента. Для маленькой модели это критично — каждый дубликат съедает параметры.
 
-**Статья:** Deduplicating Training Data Makes Language Models Better (2022) [[2]](https://arxiv.org/abs/2107.06499)
+**Статья:** Deduplicating Training Data Makes Language Models Better (2022) [[2]](https://arxiv.org/pdf/2107.06499)
 
 ---
 
@@ -46,7 +46,7 @@
 
 - **Эмбеддинги** (для кластеризации, Шаг 4)
 - **Per-token loss** — рабочая метрика сложности примера для LM и основа для PPL ($PPL=\exp(\text{loss})$): чем выше loss, тем «сложнее» текст для модели. Используется во всех шагах ниже (PPL-фильтр, квотирование).
-- **EL2N — референс, не рабочая метрика.** Идея прореживать данные по сложности пришла из supervised-классификации и метрики EL2N (Error L2-Norm, _Data Diet_ [[3]](https://arxiv.org/abs/2107.07075)): $EL2N=\lVert e_{\text{метка}}-\hat p\rVert$ — расстояние в пространстве вероятностей между one-hot меткой и предсказанием классификатора. В LM метка — это one-hot следующего токена, так что EL2N вычисляется напрямую и равен $\lVert\nabla_{\text{logits}} L\rVert$. Но в LM-кураторах стандарт — per-token loss, а не EL2N: loss проще, даёт интерпретируемую PPL, и на нём строятся FineWeb/DCLM/Marion. К тому же это разные функции предсказания — loss зависит только от вероятности правильного токена, а EL2N — ещё от того, как распределена оставшаяся вероятность по остальным токенам словаря. Поэтому используем loss, а Data Diet цитируем как источник идеи. **TODO (открытый вопрос):** не понимаю, что всё-таки брать как рабочую метрику сложности — per-token loss или настоящий EL2N; пока зафиксирован loss, но решение не финальное.
+- **EL2N — референс, не рабочая метрика.** Идея прореживать данные по сложности пришла из supervised-классификации и метрики EL2N (Error L2-Norm, _Data Diet_ [[3]](https://arxiv.org/pdf/2107.07075)): $EL2N=\lVert e_{\text{метка}}-\hat p\rVert$ — расстояние в пространстве вероятностей между one-hot меткой и предсказанием классификатора. В LM метка — это one-hot следующего токена, так что EL2N вычисляется напрямую и равен $\lVert\nabla_{\text{logits}} L\rVert$. Но в LM-кураторах стандарт — per-token loss, а не EL2N: loss проще, даёт интерпретируемую PPL, и на нём строятся FineWeb/DCLM/Marion. К тому же это разные функции предсказания — loss зависит только от вероятности правильного токена, а EL2N — ещё от того, как распределена оставшаяся вероятность по остальным токенам словаря. Поэтому используем loss, а Data Diet цитируем как источник идеи. **TODO (открытый вопрос):** не понимаю, что всё-таки брать как рабочую метрику сложности — per-token loss или настоящий EL2N; пока зафиксирован loss, но решение не финальное.
 - **Градиенты последнего слоя** (для поиска конфликтов, Шаг 5)
 
 **Глобальный PPL-префильтр (бесплатно, на том же проходе).** Per-token loss — это перплексия в логарифмическом масштабе: $PPL = \exp(\text{per-token loss})$. Поэтому сразу после прохода отсекаем глобальный хвост по абсолютному порогу: `per-token loss > log(1000) ≈ 6.9` (то есть $PPL > 1000$) → пример удаляется. Это убирает семантический мусор, который пропустил FastText: галлюцинации OCR, склеенные таблицы, белиберду на смеси языков, низкокачественный автоген — тексты, что структурно выглядят нормально, но модель их не может осмысленно предсказать. Тот же per-token loss позже используется **локально** в Шаге 6 (квотирование по перцентилям внутри кластеров): глобальный порог и локальные перцентили — два режима одного сигнала, считается всё один раз.
@@ -57,10 +57,10 @@
 
 **Статьи:**
 
-- Deep Learning on a Data Diet (2021) [[3]](https://arxiv.org/abs/2107.07075) — EL2N / data diet.
-- When Less is More: Investigating Data Pruning for Pretraining LLMs at Scale (Marion et al., 2023) [[8]](https://arxiv.org/abs/2309.04564)
-- DCLM: DataComp for Language Models (2024) [[9]](https://arxiv.org/abs/2406.11794)
-- FineWeb (2024) [[10]](https://arxiv.org/abs/2406.17557) — KenLM-перплексия как дешёвый quality-фильтр.
+- Deep Learning on a Data Diet (2021) [[3]](https://arxiv.org/pdf/2107.07075) — EL2N / data diet.
+- When Less is More: Investigating Data Pruning for Pretraining LLMs at Scale (Marion et al., 2023) [[8]](https://arxiv.org/pdf/2309.04564)
+- DCLM: DataComp for Language Models (2024) [[9]](https://arxiv.org/pdf/2406.11794)
+- FineWeb (2024) [[10]](https://arxiv.org/pdf/2406.17557) — KenLM-перплексия как дешёвый quality-фильтр.
 
 ---
 
@@ -74,7 +74,7 @@
 
 **Выбор C критичен.** C подбирается **под плотность кластеров**, а не под «удобное» число: внутри кластера должно быть мало легитимного разнообразия (тексты реально похожи). Это важнейшая предпосылка Шага 5 — при грубом разбиении (маленькое C) в один кластер попадает тематически разный контент, и градиентная фильтрация начинает удалять полезное разнообразие вместо шума. На практике C подбирают так, чтобы среднее внутрикластерное косинусное расстояние между эмбеддингами было малым.
 
-**Статья:** INGENIOUS: Using Informative Data Subsets for Efficient Pre-Training (2023) [[4]](https://arxiv.org/abs/2305.06677)
+**Статья:** INGENIOUS: Using Informative Data Subsets for Efficient Pre-Training (2023) [[4]](https://arxiv.org/pdf/2305.06677)
 
 ---
 
@@ -93,8 +93,8 @@
 
 **Статьи:**
 
-- CONGRAD: Conflicting Gradient Filtering (2025) [[5]](https://arxiv.org/abs/2503.23777)
-- PCGrad: Gradient Surgery for Multi-Task Learning (2020) [[6]](https://arxiv.org/abs/2001.06782)
+- CONGRAD: Conflicting Gradient Filtering (2025) [[5]](https://arxiv.org/pdf/2503.23777) — оригинал: preference alignment; метод перенесён на претрейн.
+- PCGrad: Gradient Surgery for Multi-Task Learning (2020) [[6]](https://arxiv.org/pdf/2001.06782)
 
 ---
 
@@ -110,7 +110,7 @@
 
 **Зачем:** Глобальное квотирование убивает редкие домены (у них в принципе низкий loss). Локальное квотирование сохраняет баланс сложности внутри каждой темы.
 
-**Статья:** Deep Learning on a Data Diet (2021) [[3]](https://arxiv.org/abs/2107.07075)
+**Статья:** Deep Learning on a Data Diet (2021) [[3]](https://arxiv.org/pdf/2107.07075)
 
 ---
 
@@ -122,7 +122,7 @@
 
 **Зачем:** Сжимает датасет без потери разнообразия. Для модели 0.6B это критично — каждый параметр должен работать на уникальную информацию.
 
-**Статья:** SMART: Submodular data Mixture strAtegy (2024) [[7]](https://arxiv.org/abs/2403.08370)
+**Статья:** SMART: Submodular data Mixture strAtegy (2024) [[7]](https://arxiv.org/pdf/2403.08370) — оригинал: instruction tuning; метод перенесён на претрейн.
 
 ## Почему это работает именно для 0.6B
 
@@ -139,7 +139,7 @@
 1. [Ultra-FineWeb: Efficient Data Filtering (2025)](https://arxiv.org/pdf/2505.05427)
 2. [Deduplicating Training Data Makes Language Models Better (2022)](https://arxiv.org/pdf/2107.06499)
 3. [Deep Learning on a Data Diet (2021)](https://arxiv.org/pdf/2107.07075)
-4. [INGENIOUS: Using Informative Data Subsets for Efficient Pre-Training of Large Language Models (2023)](https://arxiv.org/pdf/2305.06677)
+4. [INGENIOUS: Using Informative Data Subsets for Efficient Pre-Training of Language Models (2023)](https://arxiv.org/pdf/2305.06677)
 5. [CONGRAD: Conflicting Gradient Filtering for LLM Alignment (2025)](https://arxiv.org/pdf/2503.23777)
 6. [PCGrad: Gradient Surgery for Multi-Task Learning (2020)](https://arxiv.org/pdf/2001.06782)
 7. [SMART: Submodular data Mixture strAtegy (2024)](https://arxiv.org/pdf/2403.08370)
