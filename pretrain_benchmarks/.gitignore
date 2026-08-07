@@ -1,0 +1,6 @@
+# Downloaded evaluation outputs may contain large sample logs.
+results/
+
+# Empty transient logs left by a failed local dependency installation.
+pip_install.*
+__pycache__/
