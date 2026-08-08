@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import platform
 import subprocess
 import sys
@@ -16,7 +17,12 @@ import torch
 
 
 DEFAULT_MODEL = "Qwen/Qwen3.5-0.8B-Base"
-TASKS = ("wikitext", "lambada_openai", "hellaswag", "arc_easy", "piqa")
+SUITES = {
+    "core": ("wikitext", "lambada_openai", "hellaswag", "arc_easy", "piqa"),
+    "extended_loglikelihood": ("ceval-valid", "mmmlu"),
+    "extended_generation": ("mmlu_redux_generative", "mmlu_pro"),
+    "instruction_control": ("ifeval",),
+}
 REPRODUCIBILITY_PACKAGES = (
     "torch",
     "transformers",
@@ -92,11 +98,13 @@ def model_revision(model_id: str) -> str | None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--tasks", nargs="+", choices=TASKS, default=list(TASKS))
+    parser.add_argument("--suite", choices=SUITES, help="Named benchmark suite; defaults to core.")
+    parser.add_argument("--tasks", nargs="+", help="Exact lm-eval task or group IDs; overrides suite selection.")
     parser.add_argument("--backend", choices=("auto", "cuda", "xpu", "cpu"), default="auto")
     parser.add_argument("--dtype", choices=("auto", "bfloat16", "float16", "float32"), default="auto")
     parser.add_argument("--batch-size", default="auto")
-    parser.add_argument("--num-fewshot", type=int, default=0)
+    parser.add_argument("--num-fewshot", type=int, help="Explicit few-shot override; omit to preserve task defaults.")
+    parser.add_argument("--max-length", type=int, help="Model context limit; core defaults to 2048.")
     parser.add_argument("--limit", type=float, help="Limit examples per task; use only for smoke runs.")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output-dir", type=Path, default=Path("pretrain_benchmarks/results"))
@@ -107,6 +115,28 @@ def parse_args() -> argparse.Namespace:
         help="Write a compact, versionable JSON summary for a completed full suite.",
     )
     return parser.parse_args()
+
+
+def resolve_tasks_and_protocol(args: argparse.Namespace) -> tuple[list[str], str | None, int | None, str, int | None, str]:
+    if args.suite and args.tasks:
+        raise ValueError("Use either --suite or --tasks, not both.")
+    suite = args.suite or (None if args.tasks else "core")
+    tasks = list(args.tasks) if args.tasks else list(SUITES[suite])
+
+    if args.num_fewshot is not None:
+        num_fewshot, fewshot_source = args.num_fewshot, "explicit_override"
+    elif suite == "core":
+        num_fewshot, fewshot_source = 0, "core_suite_default_zero_shot"
+    else:
+        num_fewshot, fewshot_source = None, "native_task_default"
+
+    if args.max_length is not None:
+        max_length, max_length_source = args.max_length, "explicit_override"
+    elif suite == "core":
+        max_length, max_length_source = 2048, "core_suite_default"
+    else:
+        max_length, max_length_source = None, "model_or_task_default"
+    return tasks, suite, num_fewshot, fewshot_source, max_length, max_length_source
 
 
 def write_baseline_summary(run_dir: Path, run_metadata: dict[str, Any]) -> Path:
@@ -166,14 +196,13 @@ def write_baseline_summary(run_dir: Path, run_metadata: dict[str, Any]) -> Path:
 
 def main() -> int:
     args = parse_args()
+    tasks, suite, num_fewshot, fewshot_source, max_length, max_length_source = resolve_tasks_and_protocol(args)
     device, backend, selected_dtype, vram_gb = select_backend(args.backend)
     dtype = selected_dtype if args.dtype == "auto" else args.dtype
     if backend == "cpu" and dtype != "float32":
         raise ValueError("CPU runs require float32; use CPU only for diagnostics.")
     if args.write_baseline_summary and args.limit is not None:
         raise ValueError("--write-baseline-summary is for an unbounded full suite; do not combine it with --limit.")
-    if args.write_baseline_summary and set(args.tasks) != set(TASKS):
-        raise ValueError("--write-baseline-summary requires all five configured tasks.")
 
     revision = model_revision(args.model)
     if args.write_baseline_summary and revision is None:
@@ -186,7 +215,9 @@ def main() -> int:
     model_arg_parts = [f"pretrained={args.model}"]
     if revision is not None:
         model_arg_parts.append(f"revision={revision}")
-    model_arg_parts.extend((f"dtype={dtype}", "backend=causal", "max_length=2048"))
+    model_arg_parts.extend((f"dtype={dtype}", "backend=causal"))
+    if max_length is not None:
+        model_arg_parts.append(f"max_length={max_length}")
     model_args = ",".join(model_arg_parts)
     command = [
         sys.executable,
@@ -197,18 +228,18 @@ def main() -> int:
         "--model_args",
         model_args,
         "--tasks",
-        ",".join(args.tasks),
+        ",".join(tasks),
         "--device",
         device,
         "--batch_size",
         str(args.batch_size),
-        "--num_fewshot",
-        str(args.num_fewshot),
         "--seed",
         str(args.seed),
         "--output_path",
         str(run_dir),
     ]
+    if num_fewshot is not None:
+        command.extend(("--num_fewshot", str(num_fewshot)))
     if args.limit is not None:
         command.extend(("--limit", str(args.limit)))
     if args.log_samples:
@@ -231,9 +262,13 @@ def main() -> int:
         "package_versions": {
             package: package_version(package) for package in REPRODUCIBILITY_PACKAGES
         },
-        "tasks": args.tasks,
+        "suite": suite,
+        "tasks": tasks,
         "batch_size": args.batch_size,
-        "num_fewshot": args.num_fewshot,
+        "num_fewshot": num_fewshot,
+        "fewshot_source": fewshot_source,
+        "max_length": max_length,
+        "max_length_source": max_length_source,
         "limit": args.limit,
         "seed": args.seed,
         "model_args": model_args,
@@ -241,7 +276,9 @@ def main() -> int:
     }
     (run_dir / "metadata.json").write_text(json.dumps(run_metadata, indent=2), encoding="utf-8")
     print("Running:", subprocess.list2cmdline(command))
-    completed = subprocess.run(command, cwd=Path.cwd())
+    child_env = os.environ.copy()
+    child_env.setdefault("PYTHONIOENCODING", "utf-8")
+    completed = subprocess.run(command, cwd=Path.cwd(), env=child_env)
     run_metadata["return_code"] = completed.returncode
     run_metadata["finished_utc"] = datetime.now(timezone.utc).isoformat()
     (run_dir / "metadata.json").write_text(json.dumps(run_metadata, indent=2), encoding="utf-8")
