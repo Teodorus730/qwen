@@ -23,6 +23,7 @@ SUITES = {
     "extended_generation": ("mmlu_redux_generative", "mmlu_pro"),
     "instruction_control": ("ifeval",),
 }
+CANONICAL_TASKS_DIR = Path(__file__).with_name("lm_eval_tasks")
 REPRODUCIBILITY_PACKAGES = (
     "torch",
     "transformers",
@@ -110,6 +111,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=Path("pretrain_benchmarks/results"))
     parser.add_argument("--log-samples", action="store_true")
     parser.add_argument(
+        "--write-stage-summary",
+        type=Path,
+        help="Write compact exact per-task binary metric counters from lm-eval sample logs.",
+    )
+    parser.add_argument(
+        "--include-path",
+        type=Path,
+        help="External lm-eval task directory (used for canonical pinned-dataset groups).",
+    )
+    parser.add_argument(
+        "--samples",
+        type=Path,
+        help="JSON mapping of lm-eval task names to exact sample indices; incompatible with --limit.",
+    )
+    parser.add_argument(
         "--write-baseline-summary",
         action="store_true",
         help="Write a compact, versionable JSON summary for a completed full suite.",
@@ -194,6 +210,41 @@ def write_baseline_summary(run_dir: Path, run_metadata: dict[str, Any]) -> Path:
     return summary_path
 
 
+def write_stage_summary(run_dir: Path, destination: Path, run_metadata: dict[str, Any]) -> Path:
+    """Compactly preserve exact mergeable counters; raw sample logs stay ignored."""
+    counters: dict[str, dict[str, int]] = {}
+    for sample_path in sorted(run_dir.rglob("samples_*.jsonl")):
+        task = sample_path.name[len("samples_") :].rsplit("_", 1)[0]
+        sample_count = correct_acc = correct_acc_norm = 0
+        for line in sample_path.read_text(encoding="utf-8").splitlines():
+            sample = json.loads(line)
+            if sample.get("acc") not in (0, 1) or sample.get("acc_norm") not in (0, 1):
+                raise ValueError(f"{task} does not expose binary acc/acc_norm outcomes.")
+            sample_count += 1
+            correct_acc += int(sample["acc"])
+            correct_acc_norm += int(sample["acc_norm"])
+        counters[task] = {
+            "sample_count": sample_count,
+            "correct_count_acc": correct_acc,
+            "correct_count_acc_norm": correct_acc_norm,
+        }
+    if not counters:
+        raise FileNotFoundError("No lm-eval sample logs found for stage summary.")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "schema_version": 1,
+        "run_id": run_metadata["run_id"],
+        "model_id": run_metadata["model_id"],
+        "model_revision": run_metadata["model_revision"],
+        "command": run_metadata["command"],
+        "samples_sha256": run_metadata["samples_sha256"],
+        "exact_merge": "sum integer counters per task, then divide by summed sample_count",
+        "per_task": counters,
+    }
+    destination.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    return destination
+
+
 def main() -> int:
     args = parse_args()
     tasks, suite, num_fewshot, fewshot_source, max_length, max_length_source = resolve_tasks_and_protocol(args)
@@ -203,6 +254,14 @@ def main() -> int:
         raise ValueError("CPU runs require float32; use CPU only for diagnostics.")
     if args.write_baseline_summary and args.limit is not None:
         raise ValueError("--write-baseline-summary is for an unbounded full suite; do not combine it with --limit.")
+    if args.samples is not None and args.limit is not None:
+        raise ValueError("--samples and --limit are mutually exclusive.")
+    if args.samples is not None and not args.samples.is_file():
+        raise FileNotFoundError(f"Sample selection file not found: {args.samples}")
+    if args.write_stage_summary and args.limit is not None:
+        raise ValueError("--write-stage-summary requires an explicit --samples selection, not --limit.")
+    if args.write_stage_summary and args.samples is None:
+        raise ValueError("--write-stage-summary requires --samples.")
 
     revision = model_revision(args.model)
     if args.write_baseline_summary and revision is None:
@@ -242,7 +301,11 @@ def main() -> int:
         command.extend(("--num_fewshot", str(num_fewshot)))
     if args.limit is not None:
         command.extend(("--limit", str(args.limit)))
-    if args.log_samples:
+    if args.samples is not None:
+        command.extend(("--samples", str(args.samples)))
+    if args.include_path is not None:
+        command.extend(("--include_path", str(args.include_path)))
+    if args.log_samples or args.write_stage_summary:
         command.append("--log_samples")
 
     run_metadata: dict[str, Any] = {
@@ -270,6 +333,13 @@ def main() -> int:
         "max_length": max_length,
         "max_length_source": max_length_source,
         "limit": args.limit,
+        "samples_path": str(args.samples) if args.samples else None,
+        "samples_sha256": (
+            __import__("hashlib").sha256(args.samples.read_bytes()).hexdigest()
+            if args.samples
+            else None
+        ),
+        "include_path": str(args.include_path) if args.include_path else None,
         "seed": args.seed,
         "model_args": model_args,
         "command": command,
@@ -278,12 +348,17 @@ def main() -> int:
     print("Running:", subprocess.list2cmdline(command))
     child_env = os.environ.copy()
     child_env.setdefault("PYTHONIOENCODING", "utf-8")
+    # Keep downloaded benchmark data local to this infrastructure.  It is an
+    # ignored cache, while task configs pin the immutable HF revision.
+    child_env.setdefault("HF_HOME", str(Path("pretrain_benchmarks/.hf_cache").resolve()))
     completed = subprocess.run(command, cwd=Path.cwd(), env=child_env)
     run_metadata["return_code"] = completed.returncode
     run_metadata["finished_utc"] = datetime.now(timezone.utc).isoformat()
     (run_dir / "metadata.json").write_text(json.dumps(run_metadata, indent=2), encoding="utf-8")
     if completed.returncode == 0 and args.write_baseline_summary:
         print(f"Versionable summary: {write_baseline_summary(run_dir, run_metadata)}")
+    if completed.returncode == 0 and args.write_stage_summary:
+        print(f"Stage summary: {write_stage_summary(run_dir, args.write_stage_summary, run_metadata)}")
     print(f"Artifacts: {run_dir}")
     return completed.returncode
 
