@@ -111,11 +111,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=Path("pretrain_benchmarks/results"))
     parser.add_argument("--log-samples", action="store_true")
     parser.add_argument(
-        "--optimize-single-token-loglikelihood",
-        action="store_true",
-        help="Opt-in exact MMMLU-only left-padded logits_to_keep=1 scoring path.",
-    )
-    parser.add_argument(
         "--write-stage-summary",
         type=Path,
         help="Write compact exact per-task binary metric counters from lm-eval sample logs.",
@@ -267,9 +262,6 @@ def main() -> int:
         raise ValueError("--write-stage-summary requires an explicit --samples selection, not --limit.")
     if args.write_stage_summary and args.samples is None:
         raise ValueError("--write-stage-summary requires --samples.")
-    if args.optimize_single_token_loglikelihood:
-        if not all(task == "mmmlu" or task.startswith("mmmlu_") for task in tasks) or args.batch_size == "auto":
-            raise ValueError("The optimized path is only valid for MMMLU tasks with a fixed batch size.")
 
     revision = model_revision(args.model)
     if args.write_baseline_summary and revision is None:
@@ -289,7 +281,7 @@ def main() -> int:
     command = [
         sys.executable,
         "-m",
-        "optimized_lm_eval" if args.optimize_single_token_loglikelihood else "lm_eval",
+        "lm_eval",
         "--model",
         "hf",
         "--model_args",
@@ -341,16 +333,6 @@ def main() -> int:
         "max_length": max_length,
         "max_length_source": max_length_source,
         "limit": args.limit,
-        "single_token_loglikelihood_optimization": {
-            "enabled": args.optimize_single_token_loglikelihood,
-            "padding_side": "left" if args.optimize_single_token_loglikelihood else None,
-            "logits_to_keep": 1 if args.optimize_single_token_loglikelihood else None,
-            "batching_policy": "fixed" if args.optimize_single_token_loglikelihood else None,
-            "bucket_policy": (
-                {"0-256": 64, "257-512": 32, "513-1024": 16, "1025-2048": 8, "2049-4096": 8}
-                if args.optimize_single_token_loglikelihood else None
-            ),
-        },
         "samples_path": str(args.samples) if args.samples else None,
         "samples_sha256": (
             __import__("hashlib").sha256(args.samples.read_bytes()).hexdigest()
@@ -369,8 +351,6 @@ def main() -> int:
     # Keep downloaded benchmark data local to this infrastructure.  It is an
     # ignored cache, while task configs pin the immutable HF revision.
     child_env.setdefault("HF_HOME", str(Path("pretrain_benchmarks/.hf_cache").resolve()))
-    if args.optimize_single_token_loglikelihood:
-        child_env["PYTHONPATH"] = str(Path("pretrain_benchmarks").resolve()) + os.pathsep + child_env.get("PYTHONPATH", "")
     completed = subprocess.run(command, cwd=Path.cwd(), env=child_env)
     run_metadata["return_code"] = completed.returncode
     run_metadata["finished_utc"] = datetime.now(timezone.utc).isoformat()
