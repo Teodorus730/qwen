@@ -162,17 +162,13 @@ def verify_manifest(manifest_path: Path) -> None:
         raise ValueError("Manifest totals mismatch")
 
 
-def audit_prompts(manifest_path: Path, destination: Path) -> Path:
-    """Tokenize the exact 0-shot lm-eval prompt text for every stage-1 row."""
+def audit_prompts(manifest_path: Path, destination: Path, selected: dict[tuple[str, str], list[int]], stage: str) -> Path:
+    """Tokenize the exact 0-shot lm-eval prompt text for a selected stage."""
     import lm_eval
     from lm_eval.tasks._yaml_loader import load_yaml
     from lm_eval import utils
 
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
-    selected = {
-        (entry["locale"], entry["subject"]): entry["selected_source_indices"]
-        for entry in payload["strata"]
-    }
     task_root = Path(inspect.getfile(lm_eval)).parent / "tasks" / "openai-mmmlu" / "default"
     tokenizer = AutoTokenizer.from_pretrained(MODEL, revision=MODEL_REVISION)
     lengths: list[tuple[int, str, str, int, str]] = []
@@ -213,9 +209,58 @@ def audit_prompts(manifest_path: Path, destination: Path) -> Path:
             ">4096": sum(value > 4096 for value in values),
         },
     }
-    output = destination / "mmmlu_stage1_prompt_lengths.json"
+    output = destination / f"mmmlu_{stage}_prompt_lengths.json"
     output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     return output
+
+
+def prepare_stage2(manifest_path: Path, destination: Path) -> dict[str, Path]:
+    """Create the exact complement of committed Stage 1 in lm-eval indices."""
+    payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+    verify_manifest(manifest_path)
+    if payload["dataset"] != {"path": DATASET, "revision": REVISION, "split": "test"}:
+        raise ValueError("Manifest dataset identity does not match the canonical MMMLU source.")
+    manifest_strata = {(x["locale"], x["subject"]): x for x in payload["strata"]}
+    if len(manifest_strata) != 798:
+        raise ValueError("Manifest does not contain all 798 locale-subject strata.")
+    stage2_samples: dict[str, list[int]] = {}
+    stage2_source: dict[tuple[str, str], list[int]] = {}
+    stage1_total = stage2_total = full_total = 0
+    for locale in LOCALES:
+        dataset = load_dataset(DATASET, locale.upper(), split="test", revision=REVISION)
+        by_subject: dict[str, list[tuple[int, dict[str, Any]]]] = defaultdict(list)
+        for index, row in enumerate(dataset):
+            by_subject[normalized_subject(row["Subject"])].append((index, dict(row)))
+        if len(by_subject) != 57:
+            raise ValueError(f"Unexpected subject count in {locale}: {len(by_subject)}")
+        for subject, rows in sorted(by_subject.items()):
+            key = (locale, subject)
+            entry = manifest_strata.get(key)
+            if entry is None:
+                raise ValueError(f"Manifest missing {key}")
+            ordered = sorted(rows, key=lambda item: rank(locale, subject, item[0]))
+            full_order = [index for index, _ in ordered]
+            if digest(canonical_json(full_order)) != entry["full_order_sha256"]:
+                raise ValueError(f"Full ordering mismatch for {key}")
+            stage1 = entry["selected_source_indices"]
+            if full_order[: len(stage1)] != stage1:
+                raise ValueError(f"Stage-1 prefix mismatch for {key}")
+            stage2 = full_order[len(stage1) :]
+            if set(stage1) & set(stage2) or set(stage1) | set(stage2) != set(full_order):
+                raise ValueError(f"Complement coverage failure for {key}")
+            filtered_position = {source_index: position for position, (source_index, _) in enumerate(rows)}
+            stage2_samples[task_name(locale, subject)] = [filtered_position[index] for index in stage2]
+            stage2_source[key] = stage2
+            stage1_total += len(stage1)
+            stage2_total += len(stage2)
+            full_total += len(full_order)
+    if (stage1_total, stage2_total, full_total) != (9828, 186760, 196588):
+        raise ValueError("Unexpected Stage-2 totals")
+    destination.mkdir(parents=True, exist_ok=True)
+    samples_path = destination / "mmmlu_stage2_samples.json"
+    samples_path.write_text(json.dumps(stage2_samples, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    audit_path = audit_prompts(manifest_path, destination, stage2_source, "stage2")
+    return {"samples": samples_path, "audit": audit_path}
 
 
 def main() -> None:
@@ -223,17 +268,27 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--verify", type=Path)
     parser.add_argument("--audit-prompts", action="store_true")
+    parser.add_argument("--prepare-stage2", type=Path, metavar="MANIFEST")
     args = parser.parse_args()
     if args.verify:
         verify_manifest(args.verify)
         print(f"Verified: {args.verify}")
+        return
+    if args.prepare_stage2:
+        paths = prepare_stage2(args.prepare_stage2, args.output_dir)
+        print(f"Stage-2 samples: {paths['samples']}")
+        print(f"Stage-2 prompt-length audit: {paths['audit']}")
         return
     paths = write_manifest(args.output_dir)
     verify_manifest(paths["manifest"])
     print(f"Manifest: {paths['manifest']}")
     print(f"Stage-1 samples: {paths['samples']}")
     if args.audit_prompts:
-        print(f"Prompt-length audit: {audit_prompts(paths['manifest'], args.output_dir)}")
+        selected = {
+            (entry["locale"], entry["subject"]): entry["selected_source_indices"]
+            for entry in json.loads(paths["manifest"].read_text(encoding="utf-8"))["strata"]
+        }
+        print(f"Prompt-length audit: {audit_prompts(paths['manifest'], args.output_dir, selected, 'stage1')}")
 
 
 if __name__ == "__main__":

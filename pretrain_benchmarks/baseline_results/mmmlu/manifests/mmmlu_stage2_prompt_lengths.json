@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": "001b5824114013b92629413abc142a5a201dfa89be0ac9a3df4f9c374d5cc306",
+  "model_id": "Qwen/Qwen3.5-0.8B-Base",
+  "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+  "prompt_protocol": "lm-eval 0.4.12 MMMLU task description plus doc_to_text, native 0-shot",
+  "tokenizer_encode": "AutoTokenizer.encode default special-token behavior, matching hf causal backend default",
+  "sample_count": 186760,
+  "median": 124,
+  "p95": 518,
+  "p99": 961,
+  "max": 3392,
+  "max_sample": {
+    "locale": "hi_in",
+    "subject": "college_medicine",
+    "source_index": 1262,
+    "text_sha256": "4733422bd311ab6d3799fe75ca035cefcb9e730ce35aeb2db7611d218dae9114"
+  },
+  "counts": {
+    ">1024": 1463,
+    ">2048": 30,
+    ">4096": 0
+  }
+}
