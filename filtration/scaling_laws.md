@@ -63,7 +63,7 @@ $$L(N, D, Q) = \frac{A}{N^\alpha} + \frac{B}{(Q \cdot D)^\beta} + L_0$$
 
 Статьи:
 
-Microsoft Research (Phi series) — Phi-1.5, 
+Microsoft Research (Phi series) — Phi-1.5,
 
 Phi-3Penedo et al., 2024 — «The FineWeb Datasets»
 
@@ -73,7 +73,7 @@ Phi-3Penedo et al., 2024 — «The FineWeb Datasets»
 
 Формула:
 
-$$ \text{TCO}(N, D) = C_{\text{train}}(N, D) + C_{\text{infer}}(N, Q_{\text{total}}), \quad (N_0, D_0) = \arg\min_{N,D} \text{TCO}(N, D) $$
+$$ \text{TCO}(N, D) = C*{\text{train}}(N, D) + C*{\text{infer}}(N, Q*{\text{total}}), \quad (N_0, D_0) = \arg\min*{N,D} \text{TCO}(N, D) $$
 
 Статья: Sardana et al., 2024 — «Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws»
 
