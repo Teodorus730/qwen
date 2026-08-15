@@ -216,7 +216,12 @@ def write_stage_summary(run_dir: Path, destination: Path, run_metadata: dict[str
     for sample_path in sorted(run_dir.rglob("samples_*.jsonl")):
         task = sample_path.name[len("samples_") :].rsplit("_", 1)[0]
         sample_count = correct_acc = correct_acc_norm = 0
-        for line in sample_path.read_text(encoding="utf-8").splitlines():
+        # JSON strings may legally contain Unicode line-separator characters
+        # (for example U+2028); only the physical LF byte delimits JSONL
+        # records, so str.splitlines() is incorrect here.
+        for line in sample_path.read_text(encoding="utf-8").split("\n"):
+            if not line:
+                continue
             sample = json.loads(line)
             if sample.get("acc") not in (0, 1) or sample.get("acc_norm") not in (0, 1):
                 raise ValueError(f"{task} does not expose binary acc/acc_norm outcomes.")
