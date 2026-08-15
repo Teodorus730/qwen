@@ -60,6 +60,19 @@ BPB (bits per byte, биты на UTF-8 байт) — основная норм�
 | Китайский (ZH) | 1.1715 | 20.1050 |
 | Русский (RU) | 0.5583 | 8.8706 |
 
+### Multilingual / knowledge diagnostics
+
+| Бенчмарк | Охват | Метрика | Результат |
+|---|---|---|---:|
+| C-Eval validation | 1 346 вопросов | acc / acc_norm | 0.5498 / 0.5498 |
+| MMMLU full | 196 588 вопросов, 14 локалей, 57 предметных областей | acc / acc_norm | 0.4017 / 0.4017 |
+
+C-Eval и MMMLU запускались для базовой `Qwen3.5-0.8B-Base` в zero-shot
+режиме. MMMLU посчитан на полном наборе, а не на 5% подмножестве: итоговая
+точность составляет 40,17% (78 977 верных ответов из 196 588). Из-за
+вычислительной стоимости набор был оценён двумя непересекающимися частями,
+которые вместе в точности покрывают весь закреплённый тестовый набор.
+
 ## Как интерпретировать
 
 Эти числа будут контрольной точкой для следующих моделей. BPB разумно
@@ -83,3 +96,18 @@ SHA модели, Git provenance, окружение и компактные р�
 - `baseline_results/multilingual_wikipedia/manifests/`
 - `baseline_results/multilingual_wikipedia/20260808T121142Z/result.json`
 - `baseline_results/multilingual_wikipedia/20260808T121142Z/environment.txt`
+- `baseline_results/Qwen__Qwen3.5-0.8B-Base/20260809T112434Z.json`
+- `baseline_results/mmmlu/full_result.json`
+- `baseline_results/mmmlu/20260809T113000Z/stage_summary.json`
+- `baseline_results/mmmlu/20260810T134134Z/stage_summary.json`
+
+Для C-Eval и MMMLU также сохранены закреплённые версии датасетов,
+конфигурация запуска и компактные итоговые артефакты. Полный MMMLU собран
+точным сложением целочисленных счётчиков двух частей, поэтому итог не зависит
+от округления промежуточных процентов.
+
+## Статус следующего блока
+
+C-Eval validation и полный MMMLU завершены и включены в baseline. MMLU-Pro,
+MMLU-Redux, IFEval и SuperGPQA пока не запускались; результатов для них этот
+документ не заявляет.
