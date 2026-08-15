@@ -1,107 +1,151 @@
-# Pretraining benchmark baseline
+# Pretraining benchmark infrastructure
 
-This directory provides reproducible evaluation infrastructure for base and
-pretrained checkpoints. It fixes a Qwen Base reference point so later local,
-pretrained, or compressed models can be compared without storing weights in
-Git.
+`pretrain_benchmarks` provides reproducible evaluation for base and pretrained
+language-model checkpoints. It keeps evaluation code, pinned task definitions,
+canonical corpus/sample manifests, compact results, and environment snapshots
+together so future checkpoints can be compared against the fixed baseline
+under the same evaluation protocol. Model weights and heavy per-sample outputs
+are not stored in Git.
 
-## Core: Base/pretraining evaluation
+## Scope and status
 
-The completed Core suite combines two kinds of evidence:
+| Direction | Benchmarks | Status |
+|---|---|---|
+| **Core: Base/pretraining evaluation** | WikiText, multilingual Wikipedia EN/ZH/RU, LAMBADA OpenAI, HellaSwag, PIQA, ARC-Easy | Completed |
+| **Multilingual / knowledge** | C-Eval validation, full MMMLU | Completed |
+| **Extended diagnostics** | MMLU-Redux generative, MMLU-Pro, IFEval | Runner suites exist; canonical baselines not run |
+| **Deferred** | SuperGPQA | Not integrated or run |
 
-- **Intrinsic LM evaluation:** WikiText and multilingual Wikipedia BPB/PPL for
-  English, Chinese, and Russian.
-- **Base-model capability diagnostics:** LAMBADA OpenAI, HellaSwag, PIQA, and
-  ARC-Easy. These are downstream diagnostics of a base model, not claims that
-  every Core task is a pure pretraining metric or requires instruction tuning.
+WikiText and multilingual Wikipedia are intrinsic language-model evaluations.
+The remaining completed tasks are zero-shot diagnostics of base-model
+capabilities; they are not all pure pretraining metrics.
 
-The canonical baseline is `Qwen/Qwen3.5-0.8B-Base` at exact revision
-[`dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68`](https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/tree/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68).
-It ran on Intel Arc A770 16 GB through XPU (`xpu:0`) in BF16.
+The versioned reference is `Qwen/Qwen3.5-0.8B-Base` at exact revision
+`dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68`, evaluated on Intel Arc A770
+16 GB through XPU in BF16.
 
-Canonical, versioned artifacts:
+## Where to start
 
-- lm-eval aggregate/config:
-  [baseline_results/Qwen__Qwen3.5-0.8B-Base/20260807T061546Z.json](baseline_results/Qwen__Qwen3.5-0.8B-Base/20260807T061546Z.json)
-  and its adjacent environment snapshot.
-- Model-independent multilingual corpus manifests:
-  [baseline_results/multilingual_wikipedia/manifests/](baseline_results/multilingual_wikipedia/manifests/).
-- Multilingual result and environment:
-  [baseline_results/multilingual_wikipedia/20260808T121142Z/](baseline_results/multilingual_wikipedia/20260808T121142Z/).
-- Result index: [BASELINE_RESULTS.md](BASELINE_RESULTS.md). Russian team
-  report: [CORE_BENCHMARK_RESULTS_RU.md](CORE_BENCHMARK_RESULTS_RU.md).
+- [BASELINE_RESULTS.md](BASELINE_RESULTS.md) is the technical source of truth:
+  exact metrics, protocols, revisions, hashes, provenance, artifacts, and
+  caveats.
+- [BASELINE_RESULTS_RU.md](BASELINE_RESULTS_RU.md) is the concise Russian
+  report for the team and project reviewers.
+- [`baseline_results/`](baseline_results/) contains reviewed compact results,
+  environment snapshots, and canonical manifests.
+- [`lm_eval_tasks/`](lm_eval_tasks/) contains the pinned external C-Eval and
+  MMMLU task definitions.
+- `results/`, `.hf_cache/`, and the multilingual selected-text cache are local,
+  ignored runtime data.
 
-## Install and smoke checks
+## Setup
+
+Run commands from the repository root:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r pretrain_benchmarks\requirements.txt
-.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --tasks hellaswag --limit 10
 ```
 
-`--limit` is **only for smoke/integration checks**. A limited score is never a
-canonical baseline. Raw harness output and sample logs belong to ignored
-`results/`; only reviewed compact aggregates, manifests, and environment
-snapshots belong under versioned `baseline_results/`.
+`run_benchmark.py` is the lm-eval entry point. It selects the requested
+backend, resolves and records the exact model revision when available, writes
+run metadata, and keeps raw harness output under ignored `results/`.
 
-`run_benchmark.py` runs the five lm-eval Core tasks by default: WikiText,
-LAMBADA OpenAI, HellaSwag, ARC-Easy, and PIQA. It defaults to zero-shot,
-seed 42, and `max_length=2048`; the effective automatic batch size is saved.
-Named non-Core groups are `extended_loglikelihood`, `extended_generation`,
-and `instruction_control`.
+## Common workflows
+
+### Smoke check
 
 ```powershell
-# Full lm-eval Core protocol. Do not add --limit.
-.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --log-samples --write-baseline-summary
+.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --tasks hellaswag --backend xpu --dtype bfloat16 --batch-size 8 --limit 10
 ```
 
-A versioned full baseline requires an exact model revision SHA. The compact
-artifact preserves the command, model/revision, backend/device, dtype,
-environment, task configuration, task versions, and aggregate metrics.
+`--limit` is only for smoke and integration checks. Limited scores are never
+canonical baseline results.
 
-## Multilingual Wikipedia BPB/PPL
-
-The multilingual evaluator is separate from lm-eval:
-
-`pinned Wikipedia source` → `canonical model-independent corpus manifests` →
-`model/tokenizer-specific evaluation` → `BPB/PPL`.
-
-It pins `wikimedia/wikipedia` at
-`b04c8d1ceb2f5cd4588862100d08de323dccfbaa`, with `20231101.en`,
-`20231101.zh`, and `20231101.ru`. The committed manifests deterministically
-select about 1 MiB raw UTF-8 text per language. They fix source identity,
-document order, raw byte counts, and text hashes, but deliberately contain no
-model, tokenizer, chunk, or machine-specific cache path.
-
-BPB is the primary normalized metric for comparing models within one language
-on this fixed corpus. PPL is secondary and token PPL is not directly
-comparable across different tokenizers. Lower Russian BPB than English BPB
-does not mean a model automatically "knows Russian better": corpora and
-tokenization properties differ.
-
-Future models must reuse the committed manifests. The local selected-text
-cache is ignored and only accelerates evaluation; a missing cache fails
-verification rather than silently changing the corpus.
+### Full Core run
 
 ```powershell
-# Verify committed corpus and local selected-text cache; no model forward pass.
+.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --suite core --backend xpu --dtype bfloat16 --log-samples --write-baseline-summary
+```
+
+The Core suite defaults to zero-shot, seed 42, and `max_length=2048`. Do not
+add `--limit` to a canonical run.
+
+### C-Eval validation
+
+```powershell
+.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --tasks ceval-valid --include-path pretrain_benchmarks\lm_eval_tasks --backend xpu --dtype bfloat16 --batch-size 8 --num-fewshot 0 --log-samples --write-baseline-summary
+```
+
+The committed task definition pins `ceval/ceval-exam`; `ceval-valid` evaluates
+the public validation split, not the closed official test split.
+
+### Multilingual Wikipedia
+
+Canonical manifests are model/tokenizer-independent and fix the exact source
+documents, order, UTF-8 byte counts, and text hashes for EN, ZH, and RU. The
+ignored local text cache is only a runtime accelerator and is not part of a
+manifest hash.
+
+```powershell
+# Verify committed manifests and the local selected-text cache; no model pass.
 .\.venv\Scripts\python.exe pretrain_benchmarks\multilingual_lm_eval.py --manifest-dir pretrain_benchmarks\baseline_results\multilingual_wikipedia\manifests --verify-manifests
 
-# Evaluate strictly on the committed corpus. Do not use --source-scan-documents.
-.\.venv\Scripts\python.exe pretrain_benchmarks\multilingual_lm_eval.py --backend xpu --manifest-dir pretrain_benchmarks\baseline_results\multilingual_wikipedia\manifests --versioned-output-dir pretrain_benchmarks\baseline_results\multilingual_wikipedia
+# Evaluate strictly on those manifests.
+.\.venv\Scripts\python.exe pretrain_benchmarks\multilingual_lm_eval.py --backend xpu --dtype bfloat16 --manifest-dir pretrain_benchmarks\baseline_results\multilingual_wikipedia\manifests --versioned-output-dir pretrain_benchmarks\baseline_results\multilingual_wikipedia
 ```
 
-`--source-scan-documents` and capped-byte runs are smoke/probe modes only.
-Their artifacts are non-canonical and must not be presented as project results.
+The protocol is:
 
-## Reproducibility and known limitation
+`pinned Wikipedia source` → `canonical raw-text manifests` →
+`model/tokenizer-specific tokenization and scoring` → `BPB/PPL`.
 
-Versioned results preserve model SHA, Git provenance, evaluator/protocol and
-manifest hashes where applicable, hardware/backend, dtype, command, and a
-`pip freeze` snapshot. The multilingual result was produced after canonical
-manifest commit `b88bc68` and reuses those committed manifests.
+BPB is the primary metric for comparing models within one language on the
+same corpus. Token PPL is tokenizer-dependent, and absolute BPB values across
+different languages are not a ranking of language knowledge.
 
-The older lm-eval baseline records task versions, task configuration,
-environment, model SHA, and aggregate metrics. Its `dataset_revision` fields
-are `null` and `task_hashes` is empty because lm-eval did not expose them in
-that run. This limits exact future source pinning for those five datasets, but
-does not invalidate the recorded baseline or require a rerun.
+`--source-scan-documents` and capped-source runs are smoke/probe modes only.
+Future models must reuse the committed manifests rather than rebuild a corpus.
+
+### Full MMMLU
+
+MMMLU uses committed deterministic selections whose union is the full pinned
+`openai/MMMLU` test set. Verify the progressive manifest without a model pass:
+
+```powershell
+.\.venv\Scripts\python.exe pretrain_benchmarks\prepare_mmmlu_progressive.py --output-dir pretrain_benchmarks\baseline_results\mmmlu\manifests --verify pretrain_benchmarks\baseline_results\mmmlu\manifests\mmmlu_progressive_manifest.json
+```
+
+Evaluate both complementary selections with the reference lm-eval path:
+
+```powershell
+# Stage 1: 9,828 samples.
+.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --tasks mmmlu --include-path pretrain_benchmarks\lm_eval_tasks --samples pretrain_benchmarks\baseline_results\mmmlu\manifests\mmmlu_stage1_samples.json --backend xpu --dtype bfloat16 --batch-size 4 --num-fewshot 0 --max-length 2048 --write-stage-summary pretrain_benchmarks\results\mmmlu_stage1_summary.json
+
+# Stage 2: exact complement, 186,760 samples.
+.\.venv\Scripts\python.exe pretrain_benchmarks\run_benchmark.py --tasks mmmlu --include-path pretrain_benchmarks\lm_eval_tasks --samples pretrain_benchmarks\baseline_results\mmmlu\manifests\mmmlu_stage2_samples.json --backend xpu --dtype bfloat16 --batch-size 2 --num-fewshot 0 --max-length 4096 --write-stage-summary pretrain_benchmarks\results\mmmlu_stage2_summary.json
+```
+
+There is no extra `--limit`, automatic batching, or experimental optimized
+evaluator in the canonical path. Full metrics are reconstructed by summing
+the exact integer counters from the two non-overlapping stage summaries, not
+by averaging their floating-point accuracies.
+
+## Reproducibility and artifact policy
+
+Canonical compact artifacts preserve, as applicable:
+
+- exact model and dataset revisions;
+- task versions/configuration, zero/few-shot setting, seed, device, dtype,
+  batch policy, context length, and full command;
+- Git provenance, manifest/selection hashes, aggregate metrics, and mergeable
+  integer counters;
+- environment snapshots including the relevant Python package versions.
+
+Heavy raw/sample logs remain ignored. Review compact outputs before copying
+them into `baseline_results/`, and commit infrastructure/manifests separately
+from benchmark results.
+
+The older Core lm-eval artifact has `dataset_revision=null` and empty
+`task_hashes` because those values were not exposed in that run. Its task
+versions, configuration, environment, model SHA, and metrics are preserved;
+the limitation is documented in [BASELINE_RESULTS.md](BASELINE_RESULTS.md).
