@@ -255,10 +255,10 @@ $$F(S_{\text{greedy}}) \ge \left(1 - \frac{1}{e}\right) F(S^{\ast}) \approx 0{,}
 | ------- | ----------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
 | 1       | Грубая очистка (FastText)     | —                                                                                                | Ultra-FineWeb [1], DCLM [9]                       |
 | 2       | Дедупликация                  | $J=\lvert A\cap B\rvert/\lvert A\cup B\rvert$, $\Pr[\min_h(A)=\min_h(B)]=J$, порог $(1/b)^{1/r}$ | Lee et al. [2]                                    |
-| 3       | Proxy-скоринг + PPL-префильтр | $L=-\tfrac1N\sum\log p(x_i\mid x_{\lt i})$, $\mathrm{PPL}=e^L$, отсев при $L\gt \log 1000$             | Data Diet [3], Marion [8], DCLM [9], FineWeb [10] |
-| 3 (alt) | KenLM n-грамм PPL | $\mathrm{PPL}\_{\text{ngram}} = \exp(-\tfrac1N \sum \log\ p\_{\text{kenlm}})$ | FineWeb [10] |
+| 3       | Proxy-скоринг + PPL-префильтр | $L=-\tfrac1N\sum\log p(x_i\mid x_{\lt i})$, $\mathrm{PPL}=e^L$, отсев при $L\gt \log 1000$       | Data Diet [3], Marion [8], DCLM [9], FineWeb [10] |
+| 3 (alt) | KenLM n-грамм PPL             | $\mathrm{PPL}\_{\text{ngram}} = \exp(-\tfrac1N \sum \log\ p\_{\text{kenlm}})$                    | FineWeb [10]                                      |
 | 3 (ref) | EL2N ≡ норма градиента loss   | $\|\nabla_z L\|_2=\|e-\hat p\|_2=\mathrm{EL2N}$                                                  | Data Diet [3]                                     |
 | 4       | Кластеризация                 | $\min\sum\|x-\mu_c\|^2$; $O(n^2)\to O(n^2/C)$                                                    | INGENIOUS [4]                                     |
-| 5       | Градиентная фильтрация        | отсев при $\cos(g_i,g_{\text{cons}})\lt 0$                                                          | CONGRAD [5], PCGrad [6]                           |
+| 5       | Градиентная фильтрация        | отсев при $\cos(g_i,g_{\text{cons}})\lt 0$                                                       | CONGRAD [5], PCGrad [6]                           |
 | 6       | Квоты по сложности (локально) | перцентили $L$ внутри кластера                                                                   | Data Diet [3]                                     |
 | 7       | Субмодулярная оптимизация     | $F_{\text{GC}}(S)=\sum_v\min(\max_{u\in S}s(u,v),\alpha)$; greedy $\ge(1-1/e)$                   | SMART [7]                                         |
