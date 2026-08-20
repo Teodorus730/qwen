@@ -4,6 +4,7 @@ test.md
 /.dist/
 data_samples/*
 !data_samples/README.md
+.claude
 
 # Vast.ai upload and downloaded training artifacts
 /continued_pretraining/vast_ai_single_gpu/rtx_5070_ti_16gb/vast_ai_single_gpu_upload.zip
