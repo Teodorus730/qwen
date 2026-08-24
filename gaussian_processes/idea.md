@@ -1,4 +1,4 @@
-# 0. Пролог
+# Сравнение моделей через гауссовские процессы
 
 **Задача:** сравнение двух LLM без прогона через всё множество данных. Проверка функциональной эквивалентности (FE) на выборке с количественной оценкой уверенности.
 
@@ -6,7 +6,7 @@
 
 **Объект сравнения:** локальные next-token распределения pretrained LLM при фиксированных префиксах. Не утверждаем полную sequence-level эквивалентность.
 
-**Два пути:** **(1) практический** — GP как суррогат для скалярного расхождения, active search нарушений; **(2) академический** — GP над low-dimensional discrepancy field, сравнение posterior processes.
+**Два пути:** **(1) практический** — GP как суррогат для скалярного расхождения, active search нарушений; **(2) методологический** — GP над логитами моделей, сравнение posterior processes.
 
 **Задел:** если метод заработает, естественное продолжение — итеративная дистилляция: FE-проверка между student и expert находит контексты-нарушения, те идут в training data student, повторяем до достижения эквивалентности. Применяя последовательно к разным доменам (coder → biologist → ...), можно собирать универсальную модель, где каждый домен закрыт целенаправленно отобранными данными, а не случайной выборкой.
 
@@ -48,7 +48,7 @@ $$\hat\theta = \frac{1}{M_{\text{test}}} \sum_{j=1}^{M_{\text{test}}} \Phi\!\lef
 
 ## 1.4 Входное пространство
 
-Контекст $c$ кодируется через независимый encoder. GP работает **для ранжирования реальных текстов из пула** $\mathcal{U} = \{c_1, \dots, c_M\}$, не для генерации произвольных векторов. Это снимает проблему интерполяции вне текстового многообразия.
+Контекст $c$ кодируется через независимый encoder. GP работает **для ранжирования реальных текстов из пула** $\mathcal{U} = \{c_1, \dots, c_M\}$, а не для генерации произвольных векторов. Это снимает проблему интерполяции вне текстового многообразия.
 
 ---
 
@@ -62,8 +62,8 @@ $$d(z) \sim \text{GP}\bigl(\mu(z),\; k(z, z')\bigr)$$
 
 Цели:
 
-1. Оценить $\Pr(d(c) \leq \varepsilon)$ по доменам
-2. Найти контексты с максимальным расхождением
+1. Оценить $\mathbb{P}(d(c) \leq \varepsilon)$ по доменам
+2. Найти тексты с максимальным расхождением
 
 ## 2.2 Pipeline
 
@@ -80,7 +80,9 @@ $$d(z) \sim \text{GP}\bigl(\mu(z),\; k(z, z')\bigr)$$
 
 **Этап 3 — Оценка эквивалентности:**
 
-- $\hat\theta = \Pr(d(c) \leq \varepsilon)$ по доверительному интервалу
+- $\hat\theta = \mathbb{P}(d(c) \leq \varepsilon)$ по доверительному интервалу
+
+**выбор $\varepsilon$**: вопрос открытый
 
 ## 2.3 Что это даёт
 
@@ -97,176 +99,34 @@ $$d(z) \sim \text{GP}\bigl(\mu(z),\; k(z, z')\bigr)$$
 
 ## 3.1 Постановка
 
-GP над самими выходами моделей (low-dimensional discrepancy field), а не над скалярным агрегатом.
+Pipeline тот же, но вместо скалярного $d(c)$ работаем с самими выходами моделей. Цель — сравнить не схлопнутую меру, а функции как таковые.
 
-**Ключевое отличие от Пути 1:** GP описывает функцию $\Delta(z) = f_A(z) - f_B(z)$, а не свёрнутую меру $d(z) = D(p_A, p_B)$. Сравнение — через posterior processes, а не через scalar threshold.
+## 3.2 Варианты сравнения
 
-## 3.2 Проблема полных выходов
+**Вариант A — GP на разность логитов.** Строим один GP на $r(z) = \log p_A(\cdot \mid z) - \log p_B(\cdot \mid z)$. Эквивалентность — $\|r(z)\| \approx 0$ и $\|C(z)\| \approx 0$ или JS с N(0,0):
 
-Next-token distribution живёт на симплексе: $p_t \geq 0$, $\sum_t p_t = 1$. Обычный GP даёт гауссовский выход — может предсказывать отрицательные вероятности.
+**Вариант B — Два GP, сравнение через JSD.** Строим $f_A(z) \sim \text{GP}_A$ и $f_B(z) \sim \text{GP}_B$ независимо. На тестовом множестве получаем два гауссовских апостериора: $\mathcal{N}(m_A, C_A)$ и $\mathcal{N}(m_B, C_B)$. Сравниваем их через JSD или KLD между этими гауссианами.
 
-Размерность: $|V| \sim 10^5$ — multi-output GP невозможен напрямую.
+## 3.3 Что это даёт
 
-Решение: **low-rank representation разности логитов.**
+То же, что Путь 1, плюс интерпретируемость: можно видеть, какие именно токены и в какую сторону расходятся.
 
-## 3.3 Low-rank discrepancy field
+## 3.4 Риски
 
-**Шаг 1.** Для каждого контекста получаем log-probability difference:
-
-$$r(z) = \log p_A(\cdot \mid z) - \log p_B(\cdot \mid z) \in \mathbb{R}^{|V|}$$
-
-**Шаг 2.** PCA/SVD на calibration set:
-
-$$r(z) \approx U h(z), \quad U \in \mathbb{R}^{|V| \times L}, \quad h(z) \in \mathbb{R}^L$$
-
-$L = 16, 32, 64, 128 \ll |V|$.
-
-**Шаг 3.** Multi-output GP (или independent GP на каждую компоненту):
-
-$$h(z) \sim \text{GP}(0, K)$$
-
-**Шаг 4.** Эквивалентность:
-
-$$\|h(z)\\_2 \leq \varepsilon \quad \Longleftrightarrow \quad \Delta(z) \approx 0$$
-
-Или через восстановленную метрику:
-
-$$\hat{d}(z) = JS\bigl(\text{softmax}(\log p_B + U h(z)),\; \text{softmax}(\log p_B)\bigr)$$
-
-## 3.4 Сравнение posterior processes
-
-На тестовом множестве $Z_* = \{z_1^*, \dots, z_T^*\}$:
-
-$$h^* \mid \mathcal{D} \sim \mathcal{N}(m^*, C^*)$$
-
-Эквивалентность:
-
-$$\Pr\bigl(\|h(z)\|_2 \leq \varepsilon \;\forall\, z \in Z_*\bigr)$$
-
-Или Expected Violation:
-
-$$\alpha(z) = \mathbb{E}[\|h(z)\|] + \beta\,\sigma_{\|h(z)\|}$$
-
-**Альтернатива — paired difference GP:** вместо двух отдельных GP строим один GP на $\Delta(z) = f_A(z) - f_B(z)$. Нулевая гипотеза $\Delta = 0$ соответствует эквивалентности. Чище, чем сравнение двух независимых GP (которые могут различаться из-за разной покрытости данных, а не из-за разницы LLM).
-
-## 3.5 Сравнение с Путём 1
-
-| Критерий        | Путь 1 (scalar)                 | Путь 2 (functional)                                |
-| --------------- | ------------------------------- | -------------------------------------------------- |
-| Объект GP       | $z \mapsto d(z) \in \mathbb{R}$ | $z \mapsto h(z) \in \mathbb{R}^L$                  |
-| Роль GP         | Surrogate для active sampling   | Описание функции модели                            |
-| Эквивалентность | $\Pr(d \leq \varepsilon)$       | $\Pr(\|h\| \leq \varepsilon)$                      |
-| Новизна         | Ниже                            | Выше                                               |
-| Сложность       | Средняя                         | Высокая                                            |
-| Риски           | GP может быть не нужен          | Low-rank approximation, kernel choice, calibration |
-
-## 3.6 Плюсы и минусы
-
-| +                                                     | -                                                                                       |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| GP концептуально в центре метода                      | Сложнее в реализации                                                                    |
-| Ближе к исходной идее «описать LLM как функцию»       | Нужно доказывать адекватность low-rank представления                                    |
-| Больше новизны                                        | Больше рисков при рецензировании                                                        |
-| Сохраняет структуру различий (не схлопывает в скаляр) | Детерминированность LLM → GP uncertainty отражает выбор точек, не стохастичность модели |
+- Все варианты требуют понижения размерности ($|V| \sim 10^5$), нужно доказывать адекватность
 
 ---
 
-# 4. Инженерные трюки
+# 4. Что это дает
 
-## 4.1 Union top-$k$ + REST: детали реализации
+## 4.1 Dataset selection для универсальных моделей
 
-```python
-def reduced_dist(p, top_k_indices, union_set):
-    p_tilde = np.zeros(len(union_set) + 1)  # +1 for REST
-    for i, t in enumerate(union_set):
-        p_tilde[i] = p[t] if t in top_k_indices else 0.0
-    p_tilde[-1] = max(0.0, 1.0 - p_tilde[:-1].sum())  # REST
-    return p_tilde
-```
-
-Численная стабильность: если REST $< 0$ из-за floating point — обнулить и перенормировать.
-
-## 4.2 Kernel choice в high-dimensional space
-
-RBF в $\mathbb{R}^{768}$ страдает от curse of dimensionality — расстояния плохо различимы.
-
-- PCA projection на $\mathbb{R}^{50\text{--}100}$ перед ядром
-- Learned kernel (deep kernel learning)
-- Composite kernel: $k(z, z') = k_{\text{sem}}(z, z') \cdot k_{\text{domain}}(z, z')$ где второй фактор по domain label
-- Ablation обязательна
-
-## 4.3 Efficient GP
-
-- **SVGP** с inducing points — основа
-- **Online GP** для streaming оценки (добавляем точки по мере вычисления)
-- **GPyTorch** с GPU-ускорением
-- **Preconditioning** для стабильности при $N > 10^4$
-- Аппроксимация GAIA-style: обновлять GP не на каждой итерации, а по батчам
-
-## 4.4 Acquisition с cluster quotas
-
-```python
-def batch_acquisition(gp, pool, clusters, b, epsilon):
-    # Глобальный UCB
-    ucb = gp.mean + beta * gp.std
-
-    # Per-cluster лучшие кандидаты
-    cluster_best = {}
-    for c_id in clusters:
-        mask = (cluster_labels == c_id) & (~evaluated)
-        if mask.any():
-            cluster_best[c_id] = pool[mask][ucb[mask].argmax()]
-
-    # Batch: b_exploit + b_explore + b_coverage
-    batch = []
-    batch.extend(top_k(ucb[~evaluated], b_exploit))
-    batch.extend(sample_by_uncertainty(gp, pool, b_explore))
-    batch.extend(least_covered_clusters(cluster_best, b_coverage))
-    return batch
-```
-
-## 4.5 Handling разных токенизаторов
-
-```python
-ndef cross_tokenizer_js(pA, tokA, pB, tokB, k=50):
-    # Вариант 1: canonical surface forms
-    tokens_A = {tokA.decode([i]): pA[i] for i in top_k(pA, k)}
-    tokens_B = {tokB.decode([i]): pB[i] for i in top_k(pB, k)}
-    # Align по surface strings, JS по aligned distribution
-
-    # Вариант 2: OT с семантической стоимостью
-    # C_ij = 1 - cos(embed_A[i], embed_B[j])
-    # OT = sinkhorn(pA_topk, pB_topk, C)
-    pass
-```
-
-## 4.6 Calibration $\varepsilon$
-
-```python
-def calibrate_epsilon(model, corpus, n_samples=1000):
-    # Noise floor
-    d_self = [js(model(c, seed=0), model(c, seed=1)) for c in sample(corpus, n_samples)]
-    noise_floor = np.percentile(d_self, 95)
-
-    # Paraphrase invariance
-    d_para = [js(model(c), model(paraphrase(c))) for c in sample(corpus, n_samples)]
-    para_ceiling = np.percentile(d_para, 95)
-
-    return noise_floor, para_ceiling
-```
-
----
-
-# 5. Future Vision
-
-## 5.1 Dataset selection для универсальных моделей
-
-Идея: использовать FE-проверку для итеративного отбора данных при дистилляции.
+**Идея:** использовать FE-проверку для итеративного отбора данных при дистилляции.
 
 **Pipeline:**
 
 1. Есть expert-модель (например, coder) и student
-2. Проверяем FE: $\Pr(d(c) \leq \varepsilon) \geq 1 - \delta$?
+2. Проверяем FE: $\mathbb{P}(d(c) \leq \varepsilon) \geq 1 - \delta$?
 3. Если нет — находим контексты-нарушения через active search
 4. Добавляем эти контексты в training data student
 5. Переобучаем student
@@ -276,11 +136,11 @@ def calibrate_epsilon(model, corpus, n_samples=1000):
 
 $$\text{Coder Expert} \xrightarrow{\text{FE check + data select}} \text{Student}_1 \xrightarrow{\text{FE check + data select}} \text{Biologist Expert} \xrightarrow{} \text{Student}_2 \xrightarrow{} \cdots$$
 
-На каждом шаге: GP-суррогат находит, где student расходится с expert, данные для закрытия gap отбираются автоматически.
+На каждом шаге: GP-суррогат находит, где студент расходится с экспертом, данные для закрытия gap отбираются автоматически.
 
 **Требование:** dataset selection должен быть целенаправленным — не случайная выборка, а именно те контексты, где FE нарушается. GP с acquisition function даёт именно это.
 
-## 5.2 Domain-aware equivalence maps
+## 4.2 Domain-aware equivalence maps
 
 Карта эквивалентности по доменам:
 
@@ -292,7 +152,3 @@ $$\text{Coder Expert} \xrightarrow{\text{FE check + data select}} \text{Student}
 | Safety       | 0.62         | 0.05          | 400         | ±0.05        |
 
 Позволяет: (a) сертифицировать модели для конкретных доменов, (b) целенаправленно улучшать слабые домены.
-
-## 5.3 Continuous equivalence monitoring
-
-При обновлении модели (fine-tuning, quantization, pruning) — автоматически пересчитывать FE-карту и детектировать регрессию. GP позволяет делать это на подмножестве данных, переиспользуя структуру из предыдущих оценок.
