@@ -26,29 +26,29 @@ $$p_\theta(y_t \mid c)$$
 
 Для контекста $c$ и двух моделей $A$, $B$ с общим токенизатором:
 
-$$d(c) = JS\bigl(\tilde p_A(\cdot \mid c),\; \tilde p_B(\cdot \mid c)\bigr)$$
+$$d(c) = JS\bigl(\tilde p_A(\cdot \mid c),\ \tilde p_B(\cdot \mid c)\bigr)$$
 
 ## 1.3 Эквивалентность на домене
 
 $$\mathbb{P}_{c \sim \mathcal{D}}\bigl(d(c) \leq \varepsilon\bigr) \geq 1 - \delta$$
 
-**Оценка через posterior GP.** GP строится отдельно внутри каждого домена на примерах из этого домена. После обучения на $\{z_i, d_i\}_{i=1}^N$ GP даёт предсказание с неопределённостью:
+**Оценка через posterior GP.** GP строится отдельно внутри каждого домена на примерах из этого домена. После обучения на $\lbrace z_i, d_i\rbrace _{i=1}^N$ GP даёт предсказание с неопределённостью:
 
-$$d(z) \mid \mathcal{D} \sim \mathcal{N}\bigl(\mu(z),\, \sigma^2(z)\bigr)$$
+$$d(z) \mid \mathcal{D} \sim \mathcal{N}\bigl(\mu(z)\,\ \sigma^2(z)\bigr)$$
 
 Для каждой точки вероятность $d(z) \leq \varepsilon$:
 
-$$\mathbb{P}(d(z) \leq \varepsilon \mid z, \mathcal{D}) = \Phi\!\left(\frac{\varepsilon - \mu(z)}{\sigma(z)}\right)$$
+$$\mathbb{P}(d(z) \leq \varepsilon \mid z, \mathcal{D}) = \Phi\left(\frac{\varepsilon - \mu(z)}{\sigma(z)}\right)$$
 
 Усредняем по тестовому множеству из домена:
 
-$$\hat\theta = \frac{1}{M_{\text{test}}} \sum_{j=1}^{M_{\text{test}}} \Phi\!\left(\frac{\varepsilon - \mu(z_j^{\text{test}})}{\sigma(z_j^{\text{test}})}\right)$$
+$$\hat\theta = \frac{1}{M_{\text{test}}} \sum_{j=1}^{M_{\text{test}}} \Phi\left(\frac{\varepsilon - \mu(z_j^{\text{test}})}{\sigma(z_j^{\text{test}})}\right)$$
 
 **Выбор $\varepsilon$ и тестового множества:** открытые вопросы.
 
 ## 1.4 Входное пространство
 
-Контекст $c$ кодируется через независимый encoder. GP работает **для ранжирования реальных текстов из пула** $\mathcal{U} = \{c_1, \dots, c_M\}$, а не для генерации произвольных векторов. Это снимает проблему интерполяции вне текстового многообразия.
+Контекст $c$ кодируется через независимый encoder. GP работает **для ранжирования реальных текстов из пула** $\mathcal{U} = \lbrace c_1, \dots, c_M\rbrace$, а не для генерации произвольных векторов. Это снимает проблему интерполяции вне текстового многообразия.
 
 ---
 
@@ -58,7 +58,7 @@ $$\hat\theta = \frac{1}{M_{\text{test}}} \sum_{j=1}^{M_{\text{test}}} \Phi\!\lef
 
 GP над скалярной мерой расхождения:
 
-$$d(z) \sim \text{GP}\bigl(\mu(z),\; k(z, z')\bigr)$$
+$$d(z) \sim \text{GP}\bigl(\mu(z),\  k(z, z')\bigr)$$
 
 Цели:
 
