@@ -134,7 +134,7 @@ Pipeline тот же, но вместо скалярного $d(c)$ работа
 
 **Симбиоз:** последовательное применение к разным доменам:
 
-$$\text{Coder Expert} \xrightarrow{\text{FE check + data select}} \text{Student}_1 \xrightarrow{\text{FE check + data select}} \text{Biologist Expert} \xrightarrow{} \text{Student}_2 \xrightarrow{} \cdots$$
+$$\text{Coder Expert} \xrightarrow{} \text{Student}_1 \xrightarrow{} \text{Biologist Expert} \xrightarrow{} \text{Student}_2 \xrightarrow{} \cdots$$
 
 На каждом шаге: GP-суррогат находит, где студент расходится с экспертом, данные для закрытия gap отбираются автоматически.
 
