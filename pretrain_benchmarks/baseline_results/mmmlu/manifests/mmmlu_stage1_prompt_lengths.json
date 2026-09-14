@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": "001b5824114013b92629413abc142a5a201dfa89be0ac9a3df4f9c374d5cc306",
+  "model_id": "Qwen/Qwen3.5-0.8B-Base",
+  "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+  "prompt_protocol": "lm-eval 0.4.12 MMMLU task description plus doc_to_text, native 0-shot",
+  "tokenizer_encode": "AutoTokenizer.encode default special-token behavior, matching hf causal backend default",
+  "sample_count": 9828,
+  "median": 125,
+  "p95": 513,
+  "p99": 969,
+  "max": 1840,
+  "max_sample": {
+    "locale": "hi_in",
+    "subject": "high_school_european_history",
+    "source_index": 3316,
+    "text_sha256": "95b76167c496b4dfff1abeebd8440c94e5bfcf014c7a2f516d335350eaaeb950"
+  },
+  "counts": {
+    ">1024": 78,
+    ">2048": 0,
+    ">4096": 0
+  }
+}

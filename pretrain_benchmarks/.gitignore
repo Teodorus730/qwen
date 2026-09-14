@@ -1,0 +1,14 @@
+# Downloaded evaluation outputs may contain large sample logs.
+results/
+
+# Empty transient logs left by a failed local dependency installation.
+pip_install.*
+__pycache__/
+
+# Temporary Hugging Face dataset cache for diagnostic probes.
+.hf_probe_cache/
+.hf_cache/
+
+# Materialized selected Wikipedia text is reproducible from a manifest but is
+# intentionally not versioned.  Compact manifests/results can live elsewhere.
+results/multilingual_wikipedia/

@@ -1,0 +1,3295 @@
+{
+  "schema_version": 1,
+  "canonical": true,
+  "noncanonical_reason": null,
+  "dataset": {
+    "repo": "wikimedia/wikipedia",
+    "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+    "config": "20231101.en",
+    "split": "train",
+    "dump_date": "20231101"
+  },
+  "language": "en",
+  "selection": {
+    "algorithm": "sha256(dataset_revision\\0language\\0article_id\\0seed)",
+    "seed": 42,
+    "byte_budget": 1048576,
+    "candidate_count": 512,
+    "source_scan_documents": null
+  },
+  "scanned_documents": 6407814,
+  "selected_raw_utf8_bytes": 1048480,
+  "documents": [
+    {
+      "order": 0,
+      "article_id": "43778967",
+      "title": "Estadi Nacional",
+      "selection_rank_sha256": "00000118e506709b40a75619f607a7f13577a1ce31067072fbc9272070b07685",
+      "utf8_bytes": 1810,
+      "characters": 1805,
+      "text_sha256": "1a18ce7bad6909d3de036f3e8a822dce86bda985e0d365c3409dc17a05fa6730"
+    },
+    {
+      "order": 1,
+      "article_id": "35890077",
+      "title": "Heteropsis nigrescens",
+      "selection_rank_sha256": "00000208766fe2052bd7259e31d751f6ec8cd226abbbd13e674050a727230eba",
+      "utf8_bytes": 318,
+      "characters": 318,
+      "text_sha256": "b88c2eb6f1bf16a3669d0a74f7e6526ccbdd26b661a9c5646a6370efafb01241"
+    },
+    {
+      "order": 2,
+      "article_id": "43721075",
+      "title": "Karnataka Sahitya Academy Award",
+      "selection_rank_sha256": "000002b63f947e84f2ca8613345c9bfd8197459e12558df155dd2d8b3e4db4d8",
+      "utf8_bytes": 1193,
+      "characters": 1193,
+      "text_sha256": "e096121150cfb4e496f09ad8a90a8d327c3bbcd5c3e0c812bbad0740911434b0"
+    },
+    {
+      "order": 3,
+      "article_id": "3567961",
+      "title": "Lars-Gunnar Bodin",
+      "selection_rank_sha256": "000003823fe460e196fb79c6479b2f332ed44ecf99f1d2df3855262bc8da3f92",
+      "utf8_bytes": 1974,
+      "characters": 1965,
+      "text_sha256": "baead6f9dfad308b3a45c1b897b7a38afef3ecfd2ebcbb592cdc6a4a4f087589"
+    },
+    {
+      "order": 4,
+      "article_id": "4243486",
+      "title": "Frédéric Vitoux (writer)",
+      "selection_rank_sha256": "000008eaf858da781a763a753fec93314b79ab7e9e431ab2c28fe80eabdf6b2d",
+      "utf8_bytes": 1998,
+      "characters": 1969,
+      "text_sha256": "bb0860f7d290863ef642d58deca004b732b755830532b47d2b1540489a9e32b6"
+    },
+    {
+      "order": 5,
+      "article_id": "15895544",
+      "title": "Marcellus, Lot-et-Garonne",
+      "selection_rank_sha256": "00000d53bf521d137a01842e5b8c4349771cef2fe1abccc732f143616538a79e",
+      "utf8_bytes": 173,
+      "characters": 173,
+      "text_sha256": "7d3e6650fa7d7f68de5c044b954aa2c4b441a66e62ad96ade8ea884ba1f57a43"
+    },
+    {
+      "order": 6,
+      "article_id": "41862222",
+      "title": "Diceratura ostrinana",
+      "selection_rank_sha256": "00000da7ee422f991204b842efa5966b01c6a74ac2fbd2c350dabb19a3b2cfd2",
+      "utf8_bytes": 452,
+      "characters": 449,
+      "text_sha256": "f821d7f35d0038e9e83ac29850fdb50d60baedb29d84759fef8c1a84420a0b84"
+    },
+    {
+      "order": 7,
+      "article_id": "4872662",
+      "title": "David Niles",
+      "selection_rank_sha256": "000010cbbeaa354b81ca5d579d20191a22990f1ac8fff666aa7cbcc95dc618b1",
+      "utf8_bytes": 5942,
+      "characters": 5928,
+      "text_sha256": "1b8b38eb025fd8714df1f067b81aa023dab97ee82f98e99eff91a5805cd0d2b7"
+    },
+    {
+      "order": 8,
+      "article_id": "41356558",
+      "title": "Arnold Creek (West Virginia)",
+      "selection_rank_sha256": "0000190a48970b110fb4c0599125a92ad93b0e5bf561917a02f6e2707576e381",
+      "utf8_bytes": 1522,
+      "characters": 1522,
+      "text_sha256": "21df1b1d98accaae8fbcf387a7bda4e18ae9b3e87218a153870fd0e8388cfc04"
+    },
+    {
+      "order": 9,
+      "article_id": "4827986",
+      "title": "Natural City",
+      "selection_rank_sha256": "00001bd0320eeae975387d7b33f4d33c16bbc51347f1238febebae6a91a547ec",
+      "utf8_bytes": 1646,
+      "characters": 1646,
+      "text_sha256": "5466138a1ac9fa8daefb2a606af8c1eefc2c79730ea19577c0eb3e499acd2bc7"
+    },
+    {
+      "order": 10,
+      "article_id": "35843055",
+      "title": "Bolivia–Peru relations",
+      "selection_rank_sha256": "00001c1c07f2a23224c3709b8a675c0db61ab32ca072d0ce56d78fc48b5e1bbd",
+      "utf8_bytes": 1869,
+      "characters": 1859,
+      "text_sha256": "52bc5a07d6d7c7f2d8f4b9a2b209a9cad030efbafcc01e124b22b7f4f180040e"
+    },
+    {
+      "order": 11,
+      "article_id": "26964130",
+      "title": "Balekudru Shreematha",
+      "selection_rank_sha256": "000023f25521ee9962e5b624087fb5b2887f473cae15a6f737157cb940294d9f",
+      "utf8_bytes": 3486,
+      "characters": 3465,
+      "text_sha256": "babd33f58fb5b312bb456192491dc16521b0af3279118c30da34ed9a2d816984"
+    },
+    {
+      "order": 12,
+      "article_id": "66824069",
+      "title": "Étienne Galloy",
+      "selection_rank_sha256": "00002a742a4b55e0dc7343435bd2fe1bd1058efeca2bae9dd2f3908762c4bc96",
+      "utf8_bytes": 1069,
+      "characters": 1065,
+      "text_sha256": "64c804b3f72bed81d9f2d78be559431b32b28cab697d8a5c5fe9ca8b6efafd9f"
+    },
+    {
+      "order": 13,
+      "article_id": "53467144",
+      "title": "Palladium Theatre, Edinburgh",
+      "selection_rank_sha256": "00002ea39be5c2bc0656cc99c6bda02b4456522018b2904ee5b6ed87edcb0573",
+      "utf8_bytes": 1459,
+      "characters": 1459,
+      "text_sha256": "6556df0c06b69213f0407bbb37aafa69589dc69eb9d9bea06e1e28710348edea"
+    },
+    {
+      "order": 14,
+      "article_id": "5811245",
+      "title": "Thiruvalam",
+      "selection_rank_sha256": "000033f72ff19a868369a1d405dbeb9043f4c39be952768121e34ca6becac4dc",
+      "utf8_bytes": 534,
+      "characters": 534,
+      "text_sha256": "f98f03abfda0d0f9a54e1230f9f4f7f9eb712c1a030cec43497e0e01dbc595c0"
+    },
+    {
+      "order": 15,
+      "article_id": "60289081",
+      "title": "This Is for You, John",
+      "selection_rank_sha256": "000034d689fddf96ae7e872cfc761ec858719cedbf7883a56713ace113b70c3e",
+      "utf8_bytes": 1626,
+      "characters": 1601,
+      "text_sha256": "139670b4bb6a5023ebf062f99087ec8ddc3c9435dddfc317cd1193aa1c6a720a"
+    },
+    {
+      "order": 16,
+      "article_id": "2430164",
+      "title": "Dorell Wright",
+      "selection_rank_sha256": "00003559f4b8c2c79cdf0b962c2275130fa9a1e43c32ddf301a3554d6d48a225",
+      "utf8_bytes": 9448,
+      "characters": 9412,
+      "text_sha256": "5115b9d408b8bc4f0a51023c5c7afa197150c94d39110ce12c14fba811a64de1"
+    },
+    {
+      "order": 17,
+      "article_id": "1995681",
+      "title": "Centurio",
+      "selection_rank_sha256": "00003877b8ea0b4a1398c87b2b225b9354f2a733764a68c0cb0adbb91623c1d9",
+      "utf8_bytes": 177,
+      "characters": 177,
+      "text_sha256": "49cfbe0c1e1d0ab771ea94a68cc5cad6aaf1bf5f972b125ff05a1a64023798f7"
+    },
+    {
+      "order": 18,
+      "article_id": "30599547",
+      "title": "Frederick Douglass and the White Negro",
+      "selection_rank_sha256": "0000395dd0895efb1121e64c978736a815564ff68b7721fa554858bf4b6b5cd8",
+      "utf8_bytes": 2246,
+      "characters": 2246,
+      "text_sha256": "94ea61c2e9f036a551af21b92e93246a7af82c693d2c808d41ecc1e42ddf7526"
+    },
+    {
+      "order": 19,
+      "article_id": "6176401",
+      "title": "Alsophila horridula",
+      "selection_rank_sha256": "00003a7ecbaa890318bbeaa1c71106a4cd63f0fd86f2d553e55f953f2c32455c",
+      "utf8_bytes": 647,
+      "characters": 645,
+      "text_sha256": "3c8b4bbb9c3e2d40a300e224da534b2cbf77800d5973872b855e924aa721a649"
+    },
+    {
+      "order": 20,
+      "article_id": "41960221",
+      "title": "List of gold mines in Japan",
+      "selection_rank_sha256": "00003b1f632b7ea5e8ef5d1efbc8dea7a6572bab577ea05d08a9541f58eaffa7",
+      "utf8_bytes": 197,
+      "characters": 197,
+      "text_sha256": "8ce0e029a651a1268cb1800d4b99d93535d5944739e94009ffa1b6a613f040d9"
+    },
+    {
+      "order": 21,
+      "article_id": "30872588",
+      "title": "List of newspapers in Malaysia",
+      "selection_rank_sha256": "00003ba89ac054684316d122cae917ea3358f1e6fcad305b2d8681c67c12a069",
+      "utf8_bytes": 3070,
+      "characters": 2937,
+      "text_sha256": "8ec28a051fd9ba825c7d336e9d676734492965af75f683a97ae724d8e738f9d3"
+    },
+    {
+      "order": 22,
+      "article_id": "20931492",
+      "title": "National Register of Historic Places listings in Hamilton County, Florida",
+      "selection_rank_sha256": "000045ce41964bbf368ef5ed86df1119abe0946dd6cb72c3440d7c7a20d6009d",
+      "utf8_bytes": 684,
+      "characters": 684,
+      "text_sha256": "1f2eaa8bb6c81758f7c430f3e19ae33ece173905562015b5a3a14fe165fe813d"
+    },
+    {
+      "order": 23,
+      "article_id": "64330314",
+      "title": "Forest Glen Park, Maryland",
+      "selection_rank_sha256": "000047b45596b024801194dcbfd741f4b7e8b015a562202de4a0dd6ee84a9d2f",
+      "utf8_bytes": 8863,
+      "characters": 8861,
+      "text_sha256": "5edb98d36efb2a3c527612d8c96c23a0f755178a6de2e4011db7b267ec29fa52"
+    },
+    {
+      "order": 24,
+      "article_id": "54771698",
+      "title": "Crystal Peak (Santa Clara County, California)",
+      "selection_rank_sha256": "00004c9095f0121e1951dd61a0d70d5f47dd61851b6f4678b80cc080e5f43d10",
+      "utf8_bytes": 768,
+      "characters": 768,
+      "text_sha256": "7d73c1632e67393253bdc62560d8b406b860bdf76682dd6b1188b3ace52dea31"
+    },
+    {
+      "order": 25,
+      "article_id": "38016319",
+      "title": "Damodardev",
+      "selection_rank_sha256": "00004d6764de16cce12954a4fab405c70579ee4c2d13ce0049d117588d5eb310",
+      "utf8_bytes": 1879,
+      "characters": 1877,
+      "text_sha256": "1def25172570ed9787156ed6e2a5c152ea405220e82f879645f293587daf5165"
+    },
+    {
+      "order": 26,
+      "article_id": "38116289",
+      "title": "Kokubun",
+      "selection_rank_sha256": "00004deb24d8db766abea5d1ae3b9b9c32fe845161c72750cb18e1dbabd84a94",
+      "utf8_bytes": 734,
+      "characters": 724,
+      "text_sha256": "60224976b264f996c0e48b6b73e0d9c0ecbefb71287711542f546e219ac9dd34"
+    },
+    {
+      "order": 27,
+      "article_id": "40350772",
+      "title": "His Last Race",
+      "selection_rank_sha256": "0000583548cfd9676ffab1912021d9c4ce415eaeb378a66deb727241ea53cebc",
+      "utf8_bytes": 957,
+      "characters": 957,
+      "text_sha256": "ddf0bcc94203ecb05ca717c85d81347a32f588cf9d3a9e07cc87616a64ed5350"
+    },
+    {
+      "order": 28,
+      "article_id": "6960523",
+      "title": "Xavier Girard",
+      "selection_rank_sha256": "0000586b06e08fb8b23bf079594d45d2ad530ae37ef323e7ec082c04f22b8faf",
+      "utf8_bytes": 553,
+      "characters": 552,
+      "text_sha256": "3d520b3dc967328a881db7d025483e4cef8edfe37e01159db0f8096f3a618671"
+    },
+    {
+      "order": 29,
+      "article_id": "65349345",
+      "title": "Sterbenz lemma",
+      "selection_rank_sha256": "000059b4ad906681c0487209a7a8ecf5c0dbf1181311185e92bfbde0305bf335",
+      "utf8_bytes": 3234,
+      "characters": 3228,
+      "text_sha256": "e381a3162a2f54e76f59aa7953fcbea848cf8796d6938827b8d00161fc3fd8ae"
+    },
+    {
+      "order": 30,
+      "article_id": "70910825",
+      "title": "Henry F. Hall",
+      "selection_rank_sha256": "000062bf633836d9512f6b4242612e573909fff9549b6c858142f768a06c5183",
+      "utf8_bytes": 816,
+      "characters": 814,
+      "text_sha256": "6fdc0712e7a9ea447b034a9c6d32457aa0abc7d29b29d231ae3bb3964d7f761c"
+    },
+    {
+      "order": 31,
+      "article_id": "38135467",
+      "title": "Governor's Bridge (Patuxent River)",
+      "selection_rank_sha256": "000064e2fc516de1e9d00a836bccc4cc186579fd8b34ff2cf964959a107b8f94",
+      "utf8_bytes": 2129,
+      "characters": 2129,
+      "text_sha256": "8d55d2e987d43a4a16424735713e7a435da4e63468d1542d7ff2ac52240f0ce9"
+    },
+    {
+      "order": 32,
+      "article_id": "23366248",
+      "title": "Zharkiv",
+      "selection_rank_sha256": "0000659e98713873db439a5d713c2996d0a16ae30349b0b849138d9ffc93b50e",
+      "utf8_bytes": 566,
+      "characters": 566,
+      "text_sha256": "c31b1b637a5bc81ebde1d40e82afb8e6bb28afd050ab3cd557d825a4b2e354fa"
+    },
+    {
+      "order": 33,
+      "article_id": "3247346",
+      "title": "Ultraviolet/The Ballad of Paul K",
+      "selection_rank_sha256": "0000680747b96c40e8acca9d59f6fe980530ebe07388992f603535036a34b429",
+      "utf8_bytes": 1540,
+      "characters": 1540,
+      "text_sha256": "50f31dd10c2d50c198a8b9f65501aee4790dd21b565fae9167918946c28f381b"
+    },
+    {
+      "order": 34,
+      "article_id": "1684106",
+      "title": "Eluru",
+      "selection_rank_sha256": "000068b0ca202e373c5bf0b25669aa582ec9fc423706a14b3cab42c645bae704",
+      "utf8_bytes": 15165,
+      "characters": 15155,
+      "text_sha256": "f9c996a53847ac97841c923d621de66a50a3911fae879f13fc93354fb79255d8"
+    },
+    {
+      "order": 35,
+      "article_id": "3520591",
+      "title": "Later Trần dynasty",
+      "selection_rank_sha256": "00006b03e57d2cd15c3fcf3c3d5780924a0044047620c3262f400be7cc4e477c",
+      "utf8_bytes": 4173,
+      "characters": 4100,
+      "text_sha256": "a7d03027bfeeebb9a8f485658a2e4ebb49543edec6b436c53e1e994e19d31f60"
+    },
+    {
+      "order": 36,
+      "article_id": "8735158",
+      "title": "The Abandoned (Star Trek: Deep Space Nine)",
+      "selection_rank_sha256": "00006cb31e0f82140798cc5e092b4bb2ab7ee7375c41c4bc1a25bd508442fffa",
+      "utf8_bytes": 3636,
+      "characters": 3635,
+      "text_sha256": "39028daac42496a384896fe5c1c8acd4554518072ed00451be0952c2980b54d3"
+    },
+    {
+      "order": 37,
+      "article_id": "71118499",
+      "title": "Manasichi Choodu",
+      "selection_rank_sha256": "00006f45a28b4f187e91cf101fb2d1ebc4f1a8e329785cde83fbb4239f52a794",
+      "utf8_bytes": 84,
+      "characters": 84,
+      "text_sha256": "5274ebd56c6c5ece4d3e13fa2dc30b4e246bd98fb3c6d61965ac82af65945b20"
+    },
+    {
+      "order": 38,
+      "article_id": "3615519",
+      "title": "St Winifred's School",
+      "selection_rank_sha256": "00007562352a4d1b0bf885b9f8baf85828e0274b2a354d1d12fd9d99f529b5ed",
+      "utf8_bytes": 3206,
+      "characters": 3184,
+      "text_sha256": "b3e7f0fa550aa5fa712e96b26584e0e8cfb2098d235a9454810d269199a1fbf6"
+    },
+    {
+      "order": 39,
+      "article_id": "63983961",
+      "title": "Niederwald railway station",
+      "selection_rank_sha256": "0000773ba1af76d0f625b62273189264dc27bbcd0f169a5919add3b2d6874819",
+      "utf8_bytes": 476,
+      "characters": 476,
+      "text_sha256": "7a979ad7b5df3139ac2f31c4a5dfdda2204acae31c75b4b41d0370707ab948cc"
+    },
+    {
+      "order": 40,
+      "article_id": "29549232",
+      "title": "Dvergen Hill",
+      "selection_rank_sha256": "000079d919f2874674208e21fb591058a522b5e3e40f8037ee7b5b069f639441",
+      "utf8_bytes": 510,
+      "characters": 500,
+      "text_sha256": "5e9fcb216eff6a7eca626c888882292ccc54d0b9069acb512b72276c57f5aa4f"
+    },
+    {
+      "order": 41,
+      "article_id": "64163957",
+      "title": "Court of Jurisdictional Disputes",
+      "selection_rank_sha256": "00007a037bb19878104d7a5637157f4aa4cfad45ce67c34ab72099a13fe6dd41",
+      "utf8_bytes": 1416,
+      "characters": 1416,
+      "text_sha256": "09886d0c6b6cf3bb6cd29157c3572a4a84d904cd070000fc8dae0982626a32f5"
+    },
+    {
+      "order": 42,
+      "article_id": "27772673",
+      "title": "Temple B'Nai Israel (New Britain, Connecticut)",
+      "selection_rank_sha256": "00007bb0d3ddaec73ac4144f5a3ee7dd1a942dc16ee217bd45bb46ad86d8f74c",
+      "utf8_bytes": 2496,
+      "characters": 2496,
+      "text_sha256": "2715e070a6f46a78b7431c630f0be1dab243a12cd751db39cba87e0b1427945e"
+    },
+    {
+      "order": 43,
+      "article_id": "50606808",
+      "title": "Hermitage of Madonna di Coccia",
+      "selection_rank_sha256": "00007d46a718eba50f42b3df5dbf504dc3f54ab65f712af208de77dd7c03e0aa",
+      "utf8_bytes": 244,
+      "characters": 244,
+      "text_sha256": "e3e4fb03e2a91142af11fc36e220f85a26ee52ecd491605b9846c01ea198753b"
+    },
+    {
+      "order": 44,
+      "article_id": "11342913",
+      "title": "Wayne Morris (American football)",
+      "selection_rank_sha256": "00008761bf7541ba9e2c61dfd8ac041ac8406d2c8fa94b4054298d8e5226f20f",
+      "utf8_bytes": 1649,
+      "characters": 1649,
+      "text_sha256": "f49bf8b7d26885f7ada000511371255563434fb49c1c4633c29dcbe415e613c4"
+    },
+    {
+      "order": 45,
+      "article_id": "30204463",
+      "title": "Thinking of Linking",
+      "selection_rank_sha256": "000088aeb54c2175602e879570dfbcc1235ea4b7142e94558689489465e358e0",
+      "utf8_bytes": 5090,
+      "characters": 5088,
+      "text_sha256": "39a60becd856c965da65b551df42dc3a47395835aa8d01d8df28889f3dcff101"
+    },
+    {
+      "order": 46,
+      "article_id": "66008340",
+      "title": "It's Up to You (Al Dexter song)",
+      "selection_rank_sha256": "000088d2dfaec49ba9807b02c3a343c1b4fce1f17fe84ea91a956f1a54392864",
+      "utf8_bytes": 443,
+      "characters": 443,
+      "text_sha256": "5f3e0d008b67b613aac92020774aff2c599c23c165981ceef02ba29201b2f4e0"
+    },
+    {
+      "order": 47,
+      "article_id": "23548629",
+      "title": "Zoe Miller (footballer)",
+      "selection_rank_sha256": "00008d399576a8742af5474e7609b09ae3c83c1d4a2277b92429b5c42d4ed7de",
+      "utf8_bytes": 490,
+      "characters": 487,
+      "text_sha256": "eae17bd7f0e3f9101034c28d57004064c679e787ae8e29574bc457aec83306a8"
+    },
+    {
+      "order": 48,
+      "article_id": "31205544",
+      "title": "One Night of Cheatin' (Ain't Worth the Reapin')",
+      "selection_rank_sha256": "00008d8bd755a61ecaccb1ab3d49ff8d346784cda530aef6825483f27a0c8976",
+      "utf8_bytes": 351,
+      "characters": 351,
+      "text_sha256": "60843f327dfbb6166a18f126d64e291358b84cdfcf84c2fbcbf0fc3060dd3239"
+    },
+    {
+      "order": 49,
+      "article_id": "2563479",
+      "title": "Cristina Galbó",
+      "selection_rank_sha256": "00008dfcd7056ae484fec1ef7529d02c90eee3a8802e33df0343230dc0051c52",
+      "utf8_bytes": 1717,
+      "characters": 1707,
+      "text_sha256": "dbda96eebc436a2ddf2217303a142fc9ee11db68412b654b9cad5bde269798a8"
+    },
+    {
+      "order": 50,
+      "article_id": "69827451",
+      "title": "Out of Time (The Weeknd song)",
+      "selection_rank_sha256": "000094310b1a208d807471e4574a429fd063584b54629a6ff1dee159c542ae84",
+      "utf8_bytes": 3155,
+      "characters": 3127,
+      "text_sha256": "e2c0af058de78819f08c0315a0e067e2347d7fda3395c7417e670220c0a1bb8a"
+    },
+    {
+      "order": 51,
+      "article_id": "3907718",
+      "title": "Charles Scott (ambassador)",
+      "selection_rank_sha256": "00009cd38f93c820a720eec6b2c8c72dfaf2655f3c02c33eb953c88936bfc540",
+      "utf8_bytes": 1463,
+      "characters": 1459,
+      "text_sha256": "7ea57ca43ef9792487340027fbe62b92f552854ec1fc2c96548a30755c09422d"
+    },
+    {
+      "order": 52,
+      "article_id": "2423762",
+      "title": "Begumpet Airport",
+      "selection_rank_sha256": "00009e3667a461a80120dc5abfc1455e15af5d99c5ac0dd44276f3e40277d222",
+      "utf8_bytes": 5350,
+      "characters": 5346,
+      "text_sha256": "d64b7c7c3cf96cc2894435cc8bb54d1472708367dd491c2157ffc9560e20752b"
+    },
+    {
+      "order": 53,
+      "article_id": "31077980",
+      "title": "At-Tanʽim",
+      "selection_rank_sha256": "0000a14e5108e0b4ac521b42ec70319ea616427c4ed73e5d6ec4edbe7ffb9ccb",
+      "utf8_bytes": 331,
+      "characters": 322,
+      "text_sha256": "123ed5a0d6b4283e32321b25b6983611aab17073f9a205d4dc1271b46ff0ab8f"
+    },
+    {
+      "order": 54,
+      "article_id": "35713017",
+      "title": "Tabarian, Shirvan",
+      "selection_rank_sha256": "0000a27899d1b1d8d4d25bd3a10796809010e937bbf8a6a218a0edec8df39105",
+      "utf8_bytes": 319,
+      "characters": 309,
+      "text_sha256": "6bba4445230fe9392ee009a0f0c54beb987839f77c3e39263e5c86623b463b39"
+    },
+    {
+      "order": 55,
+      "article_id": "11521833",
+      "title": "Roman Catholic Archdiocese of Lagos",
+      "selection_rank_sha256": "0000a30ded18613639fb6d1307f69441c3cc4a10b07ec3982d354878652616d8",
+      "utf8_bytes": 8171,
+      "characters": 8152,
+      "text_sha256": "42ff7d56a1c1e146696aaf389e0e956436abb39bfe62d41bddc9e9a16271437a"
+    },
+    {
+      "order": 56,
+      "article_id": "28138750",
+      "title": "2011 Masters Tournament",
+      "selection_rank_sha256": "0000a4d292cf6940180bde666969f507f67ae7af4963b8f88177e524f04171db",
+      "utf8_bytes": 8957,
+      "characters": 8921,
+      "text_sha256": "3244970900c4cc91864cfac9bb26c5b7be565da56e71597a7c95ba0bfc0761f3"
+    },
+    {
+      "order": 57,
+      "article_id": "28341854",
+      "title": "Master of the Stauffenberg Altarpiece",
+      "selection_rank_sha256": "0000a61754c03c3b6f70dbca78554436ba9299433a39d380b009913f96734c05",
+      "utf8_bytes": 1162,
+      "characters": 1155,
+      "text_sha256": "b4c3511503e04cfefed29a81b9046a7abb121cc484c002f77fba9831f27656dc"
+    },
+    {
+      "order": 58,
+      "article_id": "29518269",
+      "title": "Club 15-15",
+      "selection_rank_sha256": "0000a8f1c26a8f5df137bc6acd132470be9668a737428e62ae86e13b085f1296",
+      "utf8_bytes": 1374,
+      "characters": 1364,
+      "text_sha256": "312658b14bac569e8f7d50bbe68e4aee3bb8d0c392edb4c2683711f4847b0236"
+    },
+    {
+      "order": 59,
+      "article_id": "49969939",
+      "title": "Liz Mair",
+      "selection_rank_sha256": "0000a941dd0a15dcbfe2fead07ee9784951e4cd16bd94f49c569bc940d6ac4c1",
+      "utf8_bytes": 3664,
+      "characters": 3664,
+      "text_sha256": "c5d8cfd156edf28152cda1900eab0afd1d16a1b9804e113770c1cdce0b32ceb5"
+    },
+    {
+      "order": 60,
+      "article_id": "5236949",
+      "title": "Panago",
+      "selection_rank_sha256": "0000ab50f4c58b4ef2fad7bc71d72920b3070957be4a41457e9bbec170fcd3d6",
+      "utf8_bytes": 1031,
+      "characters": 1031,
+      "text_sha256": "7829c15fc2655e1de86375388c4b032a37f689522e3bfb2fc39ec0279f0c62da"
+    },
+    {
+      "order": 61,
+      "article_id": "4852983",
+      "title": "Tammelan Stadion",
+      "selection_rank_sha256": "0000ac4b8d3a928feb027bd56924cfc9ae2466832851eb6a4398a32a6ddf15ed",
+      "utf8_bytes": 2268,
+      "characters": 2240,
+      "text_sha256": "9829021704ba969a252445af37c78e66a0a491bf8fe7fe135d3c2056250b4961"
+    },
+    {
+      "order": 62,
+      "article_id": "61644325",
+      "title": "Gabriella Zahra",
+      "selection_rank_sha256": "0000ae436449d8da900e679fa4d623e7afd0709e354a883a615abc32ddf907ae",
+      "utf8_bytes": 510,
+      "characters": 510,
+      "text_sha256": "7b34f8fc004fbd46e395e8eb1cf7f9da469bf0009f2db76320933619b74758ca"
+    },
+    {
+      "order": 63,
+      "article_id": "56890844",
+      "title": "The River Changes",
+      "selection_rank_sha256": "0000ae53ed7dfd64cd11b00d5c518161fdd08719187ae09c09bd6fb72a330ec9",
+      "utf8_bytes": 723,
+      "characters": 723,
+      "text_sha256": "b5e5ab8fd6616f278f8fa80399c58ff162d9281c0f990d897c60d280a9fbb35a"
+    },
+    {
+      "order": 64,
+      "article_id": "6070404",
+      "title": "Ox (comics)",
+      "selection_rank_sha256": "0000b0ad407420e25f572a8855a62aeddd581f32103d9725866c6d13f794e146",
+      "utf8_bytes": 10384,
+      "characters": 10372,
+      "text_sha256": "77d698b828a6b809ce7a0be169a64880844f17c64c69d6df7e2d508fa17ddd41"
+    },
+    {
+      "order": 65,
+      "article_id": "53914758",
+      "title": "Blair Brown (American football)",
+      "selection_rank_sha256": "0000b12b89cbc8a6de43d5b3ba50ff61791f300cb2aae4454cca9d3731bdc061",
+      "utf8_bytes": 1678,
+      "characters": 1678,
+      "text_sha256": "5bff27e49cefe37e62311ce4b0164142f669b561a64d42e7ee543a9309f5eeb9"
+    },
+    {
+      "order": 66,
+      "article_id": "462299",
+      "title": "Marty Gervais",
+      "selection_rank_sha256": "0000b7c106bb0300081533befa9185c38fc4f39d551bbb831059dc6cb955b77c",
+      "utf8_bytes": 7198,
+      "characters": 7183,
+      "text_sha256": "9e87e238af59059f650674ab750142b5c5f8f63b4f190c54add14bdd1538ebdb"
+    },
+    {
+      "order": 67,
+      "article_id": "13575194",
+      "title": "Frapin",
+      "selection_rank_sha256": "0000b80361d1aa4ef0805252f3b285789c98aa1098eaaf4e0a7b51d1a33c2a0b",
+      "utf8_bytes": 727,
+      "characters": 727,
+      "text_sha256": "22ee5db99547c6b6c3909874fbad01a2472deb5784ebd68cca165c7fa2db4ecb"
+    },
+    {
+      "order": 68,
+      "article_id": "56861861",
+      "title": "Charhi railway station",
+      "selection_rank_sha256": "0000b9c3bebf155a9ee4c23c06027ab2af2916c721cdde1cf9a68932d19bd6b5",
+      "utf8_bytes": 1688,
+      "characters": 1679,
+      "text_sha256": "15efe865d18199a2067f5a23c54b08ec2f69b8cf9223dbe09e37b877ead22705"
+    },
+    {
+      "order": 69,
+      "article_id": "7992325",
+      "title": "Montana District of the Lutheran Church – Missouri Synod",
+      "selection_rank_sha256": "0000bb92932813c458993711fdf8a7caf189b448374b89104d458efeff208bc9",
+      "utf8_bytes": 1812,
+      "characters": 1792,
+      "text_sha256": "ce1b3bfabfbbb8da72ff55748a8604851f63faedbff5030466fd6cd6a610e679"
+    },
+    {
+      "order": 70,
+      "article_id": "40910731",
+      "title": "Sosthène Léopold Bayemi Matjei",
+      "selection_rank_sha256": "0000bee363c62371844b47e6148d3477987b2cc924bad90ed04df48255e06a71",
+      "utf8_bytes": 2066,
+      "characters": 2046,
+      "text_sha256": "9705429fb4f6f31a3a7ccaff4e75e31b714eff506644dbd1f18a9e4c88f820e5"
+    },
+    {
+      "order": 71,
+      "article_id": "9419850",
+      "title": "Mikalojus Radvila the Old",
+      "selection_rank_sha256": "0000bfa1b03e5030dda18dee3fc2e4d781aefa46fb7914afc4b48a400771d913",
+      "utf8_bytes": 1073,
+      "characters": 1063,
+      "text_sha256": "39138504f1e24191b9371acf019c979d2ff5feb8ac72797de262e9dc988d3556"
+    },
+    {
+      "order": 72,
+      "article_id": "16945709",
+      "title": "2008 Stockport Metropolitan Borough Council election",
+      "selection_rank_sha256": "0000bfe8d011265667ead59d6d53b6cf585639550d3f44248fe097d18cb2adb8",
+      "utf8_bytes": 1262,
+      "characters": 1262,
+      "text_sha256": "1a4e9a5bf983a4dae17081b26a84427219a1af16d899b54749103556ee369cd3"
+    },
+    {
+      "order": 73,
+      "article_id": "114717",
+      "title": "Lost Springs, Kansas",
+      "selection_rank_sha256": "0000c0f7b8e1bdaf372ad5c6260cada29b657e5bdcaed6e6887ca971f4f6d9e0",
+      "utf8_bytes": 10770,
+      "characters": 10761,
+      "text_sha256": "b87d1805052db1c4bb4c09fd3bf1077cdeb5ede067c6fa71f4a2710431ed7067"
+    },
+    {
+      "order": 74,
+      "article_id": "40404293",
+      "title": "Julia Krynke",
+      "selection_rank_sha256": "0000c186be39329881fe9e910fc6c0a72a5352cfcb08ab01cb7402196ce20de5",
+      "utf8_bytes": 7091,
+      "characters": 7071,
+      "text_sha256": "f2c7bb12dae162dc433b9dc34c40c03860f753f69d9719c396a97d9e4326a9b7"
+    },
+    {
+      "order": 75,
+      "article_id": "58277079",
+      "title": "Mogok Pauk Pauk",
+      "selection_rank_sha256": "0000c67b258187d06773bc37b6141c8d864f9dc3d56f7878db0e428735b9ee18",
+      "utf8_bytes": 2639,
+      "characters": 2637,
+      "text_sha256": "88f2d92209202f6faddf8488bbdf44a3237908edcaa3ce704dfd6cd2dfd42218"
+    },
+    {
+      "order": 76,
+      "article_id": "27115622",
+      "title": "HMS Lancaster Castle",
+      "selection_rank_sha256": "0000ca63d25cf1b3bd5dabe43514eea68e0ea589a70c97bf00c64a399a451068",
+      "utf8_bytes": 2079,
+      "characters": 2079,
+      "text_sha256": "145423515e171c6bfb5d23cda9fb7da3eae80264dc9f4317b6a136f3c5a7b023"
+    },
+    {
+      "order": 77,
+      "article_id": "23995737",
+      "title": "Bulbophyllum florulentum",
+      "selection_rank_sha256": "0000cab0024d62835d2e1e6fba723676be7ca74b3b99bf783c2dbb96976e6992",
+      "utf8_bytes": 215,
+      "characters": 215,
+      "text_sha256": "6bceee54011de6776184298d1dee65bb0b213b9c56857e0addf143e2778122ca"
+    },
+    {
+      "order": 78,
+      "article_id": "71786951",
+      "title": "Kim Brooks",
+      "selection_rank_sha256": "0000d511e07c2b17d40ae7b21e54be4d0001e0d77ba0bc9fb1bf60c70794427a",
+      "utf8_bytes": 2614,
+      "characters": 2614,
+      "text_sha256": "949084722f38216a590e12e2ebba022cdbddfe2395683eaba854a58d5ef54a16"
+    },
+    {
+      "order": 79,
+      "article_id": "200585",
+      "title": "Zitkala-Sa",
+      "selection_rank_sha256": "0000d5d4c5127120e41da3dfe1258c1df020dc513936d83e5e87bcae76b32d21",
+      "utf8_bytes": 21813,
+      "characters": 21736,
+      "text_sha256": "772fc706b37c485d551f34fe43176d15b06f5203df1d4d4e1094644d5a02b02e"
+    },
+    {
+      "order": 80,
+      "article_id": "11380479",
+      "title": "Scott Christie",
+      "selection_rank_sha256": "0000d84f8c397f5f51c7ec4e971dae4cc917c6d3375f4f8afc8b41f375e9ee89",
+      "utf8_bytes": 4213,
+      "characters": 4177,
+      "text_sha256": "c97cab8567c202b01b011378742cc20a6bbdc7474be070e8238f833927c3119f"
+    },
+    {
+      "order": 81,
+      "article_id": "63095419",
+      "title": "René Kahn",
+      "selection_rank_sha256": "0000da90ed439aef50f22002679e2d586db072dfa5f9a0cb5a2492209e9e1fde",
+      "utf8_bytes": 8568,
+      "characters": 8546,
+      "text_sha256": "5d9abf92555a1f6321769ceff4917a6fcb52c2d87ab6c387fcde8d4ee5e873b9"
+    },
+    {
+      "order": 82,
+      "article_id": "1156576",
+      "title": "Station agent",
+      "selection_rank_sha256": "0000db6d140b7c43e82c7ea07126e827d18ea641e09cc7397e9e57f6f8b74c59",
+      "utf8_bytes": 286,
+      "characters": 286,
+      "text_sha256": "7c483aaf30ff4f04a1fe5af972c5c3c2a4ef486ede01958948a4a6d762734bc1"
+    },
+    {
+      "order": 83,
+      "article_id": "40018665",
+      "title": "John Pawle",
+      "selection_rank_sha256": "0000df06bbac69acd50b4c8e03422a8a2097d5b4e03072320a089a3ac6cdd707",
+      "utf8_bytes": 1470,
+      "characters": 1466,
+      "text_sha256": "77f1b5f60041cd2e83ff9e9e12ea9f3dc2e313ac82447e52c28e53680de7baa4"
+    },
+    {
+      "order": 84,
+      "article_id": "8558081",
+      "title": "Frank Illiano",
+      "selection_rank_sha256": "0000e3b6e986c7e8c5146cabff0202040915ed03b9fc821b4797c44c9d0ac702",
+      "utf8_bytes": 4601,
+      "characters": 4599,
+      "text_sha256": "44ccba9d59ab99376cbb30427fef327d690b4f68fb3d3bf99c657eb55a760a60"
+    },
+    {
+      "order": 85,
+      "article_id": "43718151",
+      "title": "White-capped parrot",
+      "selection_rank_sha256": "0000e5198bc4d37bfc68fda16e97cc1e1685efe6a94e41c70a12a7f307ca5460",
+      "utf8_bytes": 2906,
+      "characters": 2906,
+      "text_sha256": "fa8c4b05c278409659ff256e569fa15073c1c2d10d5a56ad300fb079bff1195b"
+    },
+    {
+      "order": 86,
+      "article_id": "47360179",
+      "title": "Friend Zone (song)",
+      "selection_rank_sha256": "0000e75ad61bb0b883a3a4b74ca335e2f97f7529353cced458c877264a3297d7",
+      "utf8_bytes": 1587,
+      "characters": 1580,
+      "text_sha256": "e871a444dbfdb71ebd0aefa425833c7742523d21109066edcb2938885e5edb01"
+    },
+    {
+      "order": 87,
+      "article_id": "19828970",
+      "title": "2002 Majorca Open – Singles",
+      "selection_rank_sha256": "0000e8291e488535f0bc31985be10d553a483c3581e52971ac03d61b7bae3a8d",
+      "utf8_bytes": 944,
+      "characters": 932,
+      "text_sha256": "e1a7b76c9a6e20b50e54f818f7981dc35f12d335f72e1da65a63d34218d10c7f"
+    },
+    {
+      "order": 88,
+      "article_id": "354064",
+      "title": "Batavia, Dutch East Indies",
+      "selection_rank_sha256": "0000ea5c0d7dcb53a4be11925a0d0c50831ffce1749ea86875e3c2da7216bfc4",
+      "utf8_bytes": 24099,
+      "characters": 24063,
+      "text_sha256": "1666054025ba3529e07e23f71245b2bf9a016c794c1e66cc492de537b8028713"
+    },
+    {
+      "order": 89,
+      "article_id": "29575180",
+      "title": "1912 U.S. Open (golf)",
+      "selection_rank_sha256": "0000eee3cfa60c2bb26606b0b0912f85e6a3e2b6d5c24fb7d23f9f7f1e4f0258",
+      "utf8_bytes": 2260,
+      "characters": 2258,
+      "text_sha256": "6861dc54db0b95a1a51453cf2271902f3bc27620a90f340f7b3499bfeccd5475"
+    },
+    {
+      "order": 90,
+      "article_id": "5262673",
+      "title": "Illuminated",
+      "selection_rank_sha256": "0000efdecb5be2e1078d4c9f3844de07e7506291ff5a3851e9fc09850e47378a",
+      "utf8_bytes": 339,
+      "characters": 339,
+      "text_sha256": "9db847368cb03255a0c69975b882b44e0d660aefa84669cbf39eb65b5f540d0c"
+    },
+    {
+      "order": 91,
+      "article_id": "59752124",
+      "title": "1977 Giro d'Italia, Stage 11 to Stage 22",
+      "selection_rank_sha256": "0000f1aefbab6c5ca7e64ed96350e5a2c59d39c85c9b4a3515c86da2dc5acd25",
+      "utf8_bytes": 1097,
+      "characters": 1070,
+      "text_sha256": "197eaf942cd09b541face4a2e5761da6521c0978fc6f669c447e10830bc60b05"
+    },
+    {
+      "order": 92,
+      "article_id": "14649482",
+      "title": "Manuel María de Salcedo",
+      "selection_rank_sha256": "0000f4b5efdf3197ce7843331925a0f5fef621547dd3f6aca0e644f4ea00219d",
+      "utf8_bytes": 20222,
+      "characters": 20188,
+      "text_sha256": "fedfb2a0eb8b90565e010d6b2ba23dd582a4464b072ea319aa9ef6053ee6c736"
+    },
+    {
+      "order": 93,
+      "article_id": "27176939",
+      "title": "Best. Concert. Ever.",
+      "selection_rank_sha256": "0000f652c2236788c638aa65b86f1bf3d950d59e9cac64187848c54de0c028de",
+      "utf8_bytes": 1095,
+      "characters": 1095,
+      "text_sha256": "7fb4f5149c71e2a99acdfb5879a4ed902d8b51d587bb083ef5a2de24dc9125b2"
+    },
+    {
+      "order": 94,
+      "article_id": "1786788",
+      "title": "Kabale District",
+      "selection_rank_sha256": "0000f68346b1ede9161374e6b3f9b6fb7bbc0bbd11b4586148fb7e83200d3874",
+      "utf8_bytes": 1948,
+      "characters": 1948,
+      "text_sha256": "e027869cd0446a2f774d0aebd0d0d66332640e4f7dcb5f89344221fd9bb1f58a"
+    },
+    {
+      "order": 95,
+      "article_id": "67819488",
+      "title": "Trypanaresta dolores",
+      "selection_rank_sha256": "0000f78e6398f14feefa519fc9b5b88ceec72968258e3d81ed8dca5f5fd4c375",
+      "utf8_bytes": 212,
+      "characters": 212,
+      "text_sha256": "4e1b46042173b662a018e21a595f23c8a8fd2bdafc23912230dbc67e6609af14"
+    },
+    {
+      "order": 96,
+      "article_id": "34947883",
+      "title": "Box Elder Stake Tabernacle",
+      "selection_rank_sha256": "0000fa10aa38dccfcfc5598604b077e4831631eb14b884f69c6014e7cf58df02",
+      "utf8_bytes": 2654,
+      "characters": 2654,
+      "text_sha256": "d6fe91f405e45784aff7627134c053f9bb2901cd4d8e249ae8c5b3ab80b35647"
+    },
+    {
+      "order": 97,
+      "article_id": "64648721",
+      "title": "The Navy Swings",
+      "selection_rank_sha256": "0000fadecc9f480ff4e8531634791d5e6e46be68bd3cc65e2942e93cf8d20143",
+      "utf8_bytes": 1142,
+      "characters": 1127,
+      "text_sha256": "9be64cf8f2d81edd065a6c94c32211d3d61276dce0f10b7d87715cec5b207281"
+    },
+    {
+      "order": 98,
+      "article_id": "3534822",
+      "title": "Eolambia",
+      "selection_rank_sha256": "00010160308cfebe3b1bd549e56466081078f4bb083123c7df3b2fc15a539bf7",
+      "utf8_bytes": 41355,
+      "characters": 41288,
+      "text_sha256": "9fff304823bcf8a22f3df5478862cce36c91c9707564961ab638674b86215542"
+    },
+    {
+      "order": 99,
+      "article_id": "982188",
+      "title": "Adam of Ebrach",
+      "selection_rank_sha256": "000101c62ef08b3c601f8e5bf66d36d90c5ad5bf2b0194cdb7f36cbbf3a0ad8c",
+      "utf8_bytes": 3350,
+      "characters": 3343,
+      "text_sha256": "550c3b7d4e57dd708306263661cc45ae97f9c10a5d750f69a3c29e6451ee56ed"
+    },
+    {
+      "order": 100,
+      "article_id": "14429191",
+      "title": "GPR64",
+      "selection_rank_sha256": "0001062608a848a3f5ac55c8a889a7a3c63cad7ff14de67b51d0e7506758c32b",
+      "utf8_bytes": 2242,
+      "characters": 2242,
+      "text_sha256": "c400147e2992b69f33f44bdaff7077503d1fcf31506330bf7c2f8c9a7ed5cd79"
+    },
+    {
+      "order": 101,
+      "article_id": "1323675",
+      "title": "František Tomášek",
+      "selection_rank_sha256": "000107ad341c102cb44f92c59310dc543df6c2c2dfb430107435189ab527cd16",
+      "utf8_bytes": 4961,
+      "characters": 4909,
+      "text_sha256": "c2bca74425ef5f78bb0613c4a11c40341f8a535b2e509379173f6cf9db71eff5"
+    },
+    {
+      "order": 102,
+      "article_id": "3507972",
+      "title": "Berbice Creole Dutch",
+      "selection_rank_sha256": "0001084846743fa83fdfa0fa3c8a9201741c2ea8aacc7c3f01f752c20bea73c3",
+      "utf8_bytes": 6521,
+      "characters": 6518,
+      "text_sha256": "75c9529879f70074315ffc5fc1be4d3698830a040bccf2ca6d514417b0dd59fb"
+    },
+    {
+      "order": 103,
+      "article_id": "38338292",
+      "title": "International Conference on Robotics and Automation",
+      "selection_rank_sha256": "0001087e2c73b20a992bb0cba534f89ddbaeb7fc4d64133ef44f4049b418b983",
+      "utf8_bytes": 452,
+      "characters": 452,
+      "text_sha256": "473a4bbba1bd554f266709e40f8d8f6e6c82d6a3eae3f23b35cf165066c0412b"
+    },
+    {
+      "order": 104,
+      "article_id": "37188537",
+      "title": "Midway Lady",
+      "selection_rank_sha256": "00010ba6def36fe12e13e534f7930e2480f7fe570b567ba77e372db481b699fc",
+      "utf8_bytes": 5708,
+      "characters": 5708,
+      "text_sha256": "e28ffe013f22ef5a713a8e1d4953a6e85deede5b22cd12da40fb3464d6ef7dd2"
+    },
+    {
+      "order": 105,
+      "article_id": "30722965",
+      "title": "Lac Belot",
+      "selection_rank_sha256": "00010bbe6c3924ee162f3538045928eaf812ac32fddd4d4fb4a4fb70b3a9e0da",
+      "utf8_bytes": 158,
+      "characters": 158,
+      "text_sha256": "7d16f512b2e261a250e32f089c73d4d8f3d4fbbe7961330d789c719efe57814f"
+    },
+    {
+      "order": 106,
+      "article_id": "11203950",
+      "title": "Malësor Prenkoçaj",
+      "selection_rank_sha256": "00010d46485f1896a5a299efb30340ef15028cba7a4dd9f404788cc509f8e6f3",
+      "utf8_bytes": 2430,
+      "characters": 2410,
+      "text_sha256": "9e7af5e441956011770413ebee33d18160abe21fd26b465affae127ec125b13b"
+    },
+    {
+      "order": 107,
+      "article_id": "56291816",
+      "title": "2018 Liga de Elite",
+      "selection_rank_sha256": "00010ffe142c1c7d00a6b41d2bc27924c5b0627a102f665847636060c1a5e0c6",
+      "utf8_bytes": 575,
+      "characters": 572,
+      "text_sha256": "d451e325844a18a5e2a185cb2e79e2e1b2a8a42581c34eb846a06ca1569f5ea9"
+    },
+    {
+      "order": 108,
+      "article_id": "25383669",
+      "title": "Kingsford House",
+      "selection_rank_sha256": "00011003c7e0667cf24bcf918be0f0804f83078bc26144d0507b7515715acf8c",
+      "utf8_bytes": 665,
+      "characters": 663,
+      "text_sha256": "8f1305d11e49ae2c894e007a879e99d05d605c8d5b1b2375f30f78195d55e398"
+    },
+    {
+      "order": 109,
+      "article_id": "69411408",
+      "title": "Brian Morehouse",
+      "selection_rank_sha256": "00011004d16d7fb8977a7ba077b79d829e32edfea0d88ae85efe0bd567670640",
+      "utf8_bytes": 912,
+      "characters": 912,
+      "text_sha256": "18deb01cdf12fca8d404960990f96b8ab901ecb98fe0e536f8a5b561814c3b58"
+    },
+    {
+      "order": 110,
+      "article_id": "40916744",
+      "title": "Faram Rudbar Hajji Sadeq",
+      "selection_rank_sha256": "00011092c91765ffb43e8f59f81e93d67834b7b7ff0317e3cf7c7e41848082f8",
+      "utf8_bytes": 298,
+      "characters": 289,
+      "text_sha256": "e7a5d5795c858304195241544ac7f99e8de914c492a8f952d820e3ab541852a2"
+    },
+    {
+      "order": 111,
+      "article_id": "633326",
+      "title": "Apache Indian",
+      "selection_rank_sha256": "000113c0b19fd819074d1879627a0265417c01f02c2e2ff4a932d66d45116fc4",
+      "utf8_bytes": 5669,
+      "characters": 5659,
+      "text_sha256": "492584dcf1955144cba143eea95be4dedd76fccbf3fc0b54d46ac65c4f169fd1"
+    },
+    {
+      "order": 112,
+      "article_id": "33275529",
+      "title": "Mount Hunt (Wyoming)",
+      "selection_rank_sha256": "000114f781724e9803284ec9b10364beb6217eba0a1d122d103177cb7250b49a",
+      "utf8_bytes": 390,
+      "characters": 390,
+      "text_sha256": "7c4b19c4887fba2d157fa75bb0ed2f2c2cad8423091c91b182edccb378b40e6a"
+    },
+    {
+      "order": 113,
+      "article_id": "74523803",
+      "title": "1985 Vavuniya massacre",
+      "selection_rank_sha256": "0001192cef7fc6da0195e8fa1c03250d23bd7ba2f2d105805c015cecaaa751a5",
+      "utf8_bytes": 6327,
+      "characters": 6321,
+      "text_sha256": "5159ac6fe2f79047c11e8573adc4ad3bfb459621b4d8d47ea4262ad281d2ca2a"
+    },
+    {
+      "order": 114,
+      "article_id": "66372514",
+      "title": "2021 SEC Championship Game",
+      "selection_rank_sha256": "00011bf4997eb59362764777521f5e46eb8375d739b73bddc6d0f7223feb9fbc",
+      "utf8_bytes": 6490,
+      "characters": 6467,
+      "text_sha256": "a024e8c2248c221e7479591fc26ff59eaf13f16a3f49aab570d8c351c40774a5"
+    },
+    {
+      "order": 115,
+      "article_id": "73599625",
+      "title": "2023 Utah Tech Trailblazers football team",
+      "selection_rank_sha256": "00011f2b78762c2c5496514a5b8d1eebf0e700f52078a9bdf30055ce5985478f",
+      "utf8_bytes": 417,
+      "characters": 417,
+      "text_sha256": "2e12a54c4a4070eef5042ac1e827da879c2ae627f612782eb9a0da81308e899a"
+    },
+    {
+      "order": 116,
+      "article_id": "68016320",
+      "title": "Andrea Ciofi",
+      "selection_rank_sha256": "00011f3136c2bfccef5eb6a12c419b688963594e32870bfc6b7bed42a87cef81",
+      "utf8_bytes": 614,
+      "characters": 610,
+      "text_sha256": "69f8843dccce24a1326233969adae41a3ee6b22522de81a648e34de582add7fb"
+    },
+    {
+      "order": 117,
+      "article_id": "37804216",
+      "title": "Sargent Center for Outdoor Education",
+      "selection_rank_sha256": "0001214b72d0cab325895c7f71406ce9ac8ea2f16f9db017076139eb3deb3107",
+      "utf8_bytes": 803,
+      "characters": 803,
+      "text_sha256": "889f7ef7d587507f0e88b540e5eaa5ae99c3741cc8ec897e3745d002b5cce6e3"
+    },
+    {
+      "order": 118,
+      "article_id": "70476779",
+      "title": "1973 Reading Borough Council election",
+      "selection_rank_sha256": "00012402f4af08af97275e66e3cb589b0ed5ccc55667bfcf637ca30ee7d6f11c",
+      "utf8_bytes": 1775,
+      "characters": 1775,
+      "text_sha256": "02c2fb6b34971d9c40f8f5fcbdf4a3dba4d5f0d528a6c9794c07b191d6b68dae"
+    },
+    {
+      "order": 119,
+      "article_id": "15274228",
+      "title": "Internet network operators' group",
+      "selection_rank_sha256": "000124848b6a0712e24e5caba920514f1568f7092b35edd84366b7130e6017dd",
+      "utf8_bytes": 6767,
+      "characters": 6544,
+      "text_sha256": "bf27c1a7a5f1a76d2fe32822a541fdccd1dbbee2edb435b1681811146b09bcb9"
+    },
+    {
+      "order": 120,
+      "article_id": "3441387",
+      "title": "Wood Norton",
+      "selection_rank_sha256": "000129f0ac7ac5fc88cd39b1c5a230a03d6a3c802fa0ac21f6d1bef976085f4e",
+      "utf8_bytes": 149,
+      "characters": 149,
+      "text_sha256": "e4be7d575ddab15a8761b0ce0be05d36a4e2921e175bc739862ce2c2849207d5"
+    },
+    {
+      "order": 121,
+      "article_id": "9295994",
+      "title": "Percy Everett",
+      "selection_rank_sha256": "00012a38ab95c3f3a12d40f2cac8c56644a5b58e11cd60232d43de4efac6b93b",
+      "utf8_bytes": 1576,
+      "characters": 1574,
+      "text_sha256": "3951089f8d4afcd9eb5e7106dca97227421329cb5a706f6a66e6e02560174a01"
+    },
+    {
+      "order": 122,
+      "article_id": "18745043",
+      "title": "Central Square Historic District (Lynn, Massachusetts)",
+      "selection_rank_sha256": "00012a507eade19265784eed1f336f75955f3ae8850f78ad5fcc2ec08340e1fe",
+      "utf8_bytes": 1057,
+      "characters": 1057,
+      "text_sha256": "0cf26077f9bff163b44d13084fad8efb8fd63c07f6d7ac27f45dcddb8bb01af7"
+    },
+    {
+      "order": 123,
+      "article_id": "26539858",
+      "title": "UOU",
+      "selection_rank_sha256": "00012bceb598de7480819df0e483bd7c8f89f02adcf3cb108540158286f994b3",
+      "utf8_bytes": 176,
+      "characters": 176,
+      "text_sha256": "9f0af1e517d07422483f475f47c8b95d5e3eb41d3425788c977db740dd17f902"
+    },
+    {
+      "order": 124,
+      "article_id": "39085567",
+      "title": "Urs Meier (footballer)",
+      "selection_rank_sha256": "00012c36345e13b96e23fce1685fc05b5f3c2294cb68fa6bbf7835fb875ff17e",
+      "utf8_bytes": 1251,
+      "characters": 1246,
+      "text_sha256": "5a97bf3f46b414cd861e685b5290529966337784f9a5a191405962f801859435"
+    },
+    {
+      "order": 125,
+      "article_id": "33537398",
+      "title": "2011–12 Scottish handball season",
+      "selection_rank_sha256": "00012d3d90e5aa944a7ec8a76d2b58153c2a182d6f44d2e502ead835655b4ade",
+      "utf8_bytes": 2358,
+      "characters": 2358,
+      "text_sha256": "cc6ef4a5f0354b19d045fab97981f6ef3c27d2ef54114c0cee0b09b38c37fa43"
+    },
+    {
+      "order": 126,
+      "article_id": "43078976",
+      "title": "Waves (Waves album)",
+      "selection_rank_sha256": "000133010061f51b427e5c2e35feec19297668d2fc92228d6dbecbb0d5b8fc89",
+      "utf8_bytes": 6571,
+      "characters": 6459,
+      "text_sha256": "94f7cab9bd7409a4ccca3a3b81f00ad2976bd64004fb43f6fcf5cfd37874e622"
+    },
+    {
+      "order": 127,
+      "article_id": "24312430",
+      "title": "Sheath current filter",
+      "selection_rank_sha256": "0001371d1e6388ae6381001294f034ea4f3d7e39cbd7998bf4a251485e3aea24",
+      "utf8_bytes": 4100,
+      "characters": 4095,
+      "text_sha256": "47ba43802020fd5916d77d939a9a62c5e8caad64533978111f3bbb67252005b7"
+    },
+    {
+      "order": 128,
+      "article_id": "9134033",
+      "title": "Ukula",
+      "selection_rank_sha256": "000137f75f7e1049486f2a620732e6e30cd695453c9aab5b232b4a7352d4106d",
+      "utf8_bytes": 2923,
+      "characters": 2923,
+      "text_sha256": "2fabfe9f5f8a1c65088a211812e6f2e9c02a0f8e89b4524c003940df4f17c70d"
+    },
+    {
+      "order": 129,
+      "article_id": "21791689",
+      "title": "Mary Van Duzer-Sayer House",
+      "selection_rank_sha256": "0001396c37e0b75ffd4b631c2d52f3580ab7429e88becd2b26f491b9c0e78854",
+      "utf8_bytes": 2673,
+      "characters": 2673,
+      "text_sha256": "7c6075f25b4f72f9c14e116a977af908f17b81ee52fae67441f403f8b37767b3"
+    },
+    {
+      "order": 130,
+      "article_id": "12503131",
+      "title": "Las Chinchillas National Reserve",
+      "selection_rank_sha256": "000139f0ed9bbaa8fb94bab87ccce9359dcdd609025188657d2bd34ee4a7ec56",
+      "utf8_bytes": 1036,
+      "characters": 1036,
+      "text_sha256": "d66c82b3e8083ccc5ec5f916e12b223ab1f1a92c65ff05ffb7995ea297683e51"
+    },
+    {
+      "order": 131,
+      "article_id": "8964687",
+      "title": "Dangerously Close",
+      "selection_rank_sha256": "00013a8decadc32f9b26a7608df4015f053fb2cf091865681bb51a6c39e9c1d5",
+      "utf8_bytes": 3692,
+      "characters": 3692,
+      "text_sha256": "ae8e1993d5a3e4aa4ff6b43c7ef8446ae96db452100ef60fcbc6f29c9e0c9583"
+    },
+    {
+      "order": 132,
+      "article_id": "44197630",
+      "title": "Mabra russoi",
+      "selection_rank_sha256": "000142c3ff730124ea6119c3a713e3e94ec1cc2eda9d088fc585e29f14b00010",
+      "utf8_bytes": 135,
+      "characters": 135,
+      "text_sha256": "bb80aef1c051acfad9bfe66f96c5dcfb6e45b1769096f19133d12f1887be839f"
+    },
+    {
+      "order": 133,
+      "article_id": "13138416",
+      "title": "Lucien Favre",
+      "selection_rank_sha256": "00014696c56b18fb2fbd5916cb5944e968cd210b07e9591f6a01ff2ca8cdb868",
+      "utf8_bytes": 12162,
+      "characters": 12030,
+      "text_sha256": "a43d253859f6aebbbe12d1b373a29b28c51b89adb94885bd951b059bf2991b9d"
+    },
+    {
+      "order": 134,
+      "article_id": "62447373",
+      "title": "Tamerlano (Gasparini opera)",
+      "selection_rank_sha256": "000146add30cde120a68d10e8de589d5be26222ea5e1443199eaffa2f13f336c",
+      "utf8_bytes": 2343,
+      "characters": 2323,
+      "text_sha256": "eca6b3937953da0e4332df0a5042295801b732ec472764479359b0a8beb5cd11"
+    },
+    {
+      "order": 135,
+      "article_id": "46252313",
+      "title": "St Andrew's Church, Wolverhampton",
+      "selection_rank_sha256": "000147ef5397af75adbd9dc938a78171f8a3f0442f33bcf3f0bde640bb18e794",
+      "utf8_bytes": 1066,
+      "characters": 1064,
+      "text_sha256": "71b74a9944ac05b176c569f41dc40385c521d74cb0220b764592fc2fd4b48a59"
+    },
+    {
+      "order": 136,
+      "article_id": "1583322",
+      "title": "Il Bellerofonte",
+      "selection_rank_sha256": "00014aa82ae65d32c94aae7da94181648276cc1f299e88f63f5a04b4764015a2",
+      "utf8_bytes": 7002,
+      "characters": 6976,
+      "text_sha256": "e2456330228edddd870608918714829b51349e52212ca9e7dbd2693e4701d8ed"
+    },
+    {
+      "order": 137,
+      "article_id": "603949",
+      "title": "Anna Held",
+      "selection_rank_sha256": "00014ad65188decf8041add085332e370d61db61e6a0b41cadadf60578321097",
+      "utf8_bytes": 7914,
+      "characters": 7905,
+      "text_sha256": "818bbb5b337486872831f1da7ba6ea6202c134cbbcb51bb240da90b4b18c839b"
+    },
+    {
+      "order": 138,
+      "article_id": "2497223",
+      "title": "Mountain Designs",
+      "selection_rank_sha256": "00014b53d08b1b7e45918bd2ee6dfab4bd14263180a975697b0f21ebf9a56f61",
+      "utf8_bytes": 1769,
+      "characters": 1769,
+      "text_sha256": "693528b8afa44d2ccf696f2fe2b034e64fed01722fdd10edecf88b1a2bccec78"
+    },
+    {
+      "order": 139,
+      "article_id": "13077083",
+      "title": "Félix Castello",
+      "selection_rank_sha256": "00014d2de15a5563d974ab915f93696b0ac4b83fcd93ac5ab0f7e05682f228ba",
+      "utf8_bytes": 2469,
+      "characters": 2456,
+      "text_sha256": "c0091613aebb626253bf0139c9b955b95077ee2854e9a4d556a88dc129e8489c"
+    },
+    {
+      "order": 140,
+      "article_id": "35567433",
+      "title": "Commune of Marangara",
+      "selection_rank_sha256": "000154b8e2b1338392ab53e55a6315db369325e3496b1f20fd5f97462ea3a0d1",
+      "utf8_bytes": 184,
+      "characters": 184,
+      "text_sha256": "e00fa3984883b8a9e5505766216c0e66356517f0cd5e04d6a385c0be5788b5a6"
+    },
+    {
+      "order": 141,
+      "article_id": "46427782",
+      "title": "Pancho Magno",
+      "selection_rank_sha256": "0001563c3ab669cb1c69788288da844cab60a78e2996e1b45a69ae1e21c3c61c",
+      "utf8_bytes": 401,
+      "characters": 400,
+      "text_sha256": "74a9f438f49857d9f5efcdd1631b0baab80ba2a650d8452b3b0d284c7406657d"
+    },
+    {
+      "order": 142,
+      "article_id": "160393",
+      "title": "Chuck Peddle",
+      "selection_rank_sha256": "000158ce4b0e5fc304ac3cd3fa877278eb5549f9da106e62609375bd3adee0bf",
+      "utf8_bytes": 3157,
+      "characters": 3155,
+      "text_sha256": "d9f5cf8535acdbc21e89d9ef1936ff9bc07b4e2a1063fade73cb9f3382222c85"
+    },
+    {
+      "order": 143,
+      "article_id": "19826775",
+      "title": ".50-110 Winchester",
+      "selection_rank_sha256": "0001599ed7b55e727f8458c85c84a02b46b810d990aff417fc33d58684f8e378",
+      "utf8_bytes": 2624,
+      "characters": 2613,
+      "text_sha256": "48d937bb5cd2bce37be8e74973631627728f849c3a850ef993ac55ecf5403c95"
+    },
+    {
+      "order": 144,
+      "article_id": "58015326",
+      "title": "Anna Simson",
+      "selection_rank_sha256": "00015b1dfd305214ed3dc0a01982e68458da72e5cfa54c0ba18db43ba337c9d6",
+      "utf8_bytes": 1363,
+      "characters": 1341,
+      "text_sha256": "9183ce7aefdd956bae7cb2f4a2b70d658a53ce7edf3bcb864a02e7d02ebe44b5"
+    },
+    {
+      "order": 145,
+      "article_id": "35749208",
+      "title": "Alexandru Cisar",
+      "selection_rank_sha256": "00015b60b6c0a4df9df74064ef991358f233c54297a5626b4d4a71c4fc15aefd",
+      "utf8_bytes": 1721,
+      "characters": 1709,
+      "text_sha256": "e71dbda51b4b16c9dc8bd83cd5a057ee71505aeef3a5597d36b083076e70674d"
+    },
+    {
+      "order": 146,
+      "article_id": "503235",
+      "title": "She-Ra: Princess of Power",
+      "selection_rank_sha256": "00015e3dfe0f1e8458b1ae91931ad364c1461bd59e3d59c48e9c494a897d4f1f",
+      "utf8_bytes": 8316,
+      "characters": 8314,
+      "text_sha256": "553b5c48297d583224ba88e7d73abfb6c66700f8787490bf8433a5e91efa5647"
+    },
+    {
+      "order": 147,
+      "article_id": "43525497",
+      "title": "Margaret Rogers (politician)",
+      "selection_rank_sha256": "0001605c7cd750fa7b4c728885ed5b2a0b3e39edadcdd90d29698edfce0fcd2c",
+      "utf8_bytes": 522,
+      "characters": 522,
+      "text_sha256": "1e3712a0ddcdee325234c7797a0ed517d0f5f68a5407ecce65023f4c029f8213"
+    },
+    {
+      "order": 148,
+      "article_id": "7128412",
+      "title": "Spa (Sirius XM)",
+      "selection_rank_sha256": "000161def61d9abab0089e8db73cdf505ea42d087a64b1709fc3302333a30c34",
+      "utf8_bytes": 764,
+      "characters": 764,
+      "text_sha256": "17d6d4afdb53e310e662efb04d332e9ad52ea5bb4f99684c0431f00ba075b818"
+    },
+    {
+      "order": 149,
+      "article_id": "44690664",
+      "title": "Provincial road N522 (Netherlands)",
+      "selection_rank_sha256": "00016222f1f356ec0feb29d5d45f230a029210e61e1010ae27ec4727ece65559",
+      "utf8_bytes": 95,
+      "characters": 95,
+      "text_sha256": "37bfe3f8cea04ca50eb0a883ea3787ce63ef1476c04c4333c01c61a73b693057"
+    },
+    {
+      "order": 150,
+      "article_id": "39667356",
+      "title": "Karl Wilmanns",
+      "selection_rank_sha256": "0001634e515a174988f4045cc475fe58c7a1bd79cad0908a76541284e0a171d2",
+      "utf8_bytes": 374,
+      "characters": 372,
+      "text_sha256": "ba5b7f69e71764ab34bef9ffb351a00590c1886f133b86d6a4b22c4293374fbd"
+    },
+    {
+      "order": 151,
+      "article_id": "7237530",
+      "title": "Retarder (railroad)",
+      "selection_rank_sha256": "0001649d4114c1e41e896d68ea11270c6e6251ceaca4f2e3bff1b10e55d9e23e",
+      "utf8_bytes": 851,
+      "characters": 851,
+      "text_sha256": "7920c34e839a53bbc87f8d3f91c4028df13fade5c7f0da13ed469e2d27de56bd"
+    },
+    {
+      "order": 152,
+      "article_id": "22720976",
+      "title": "Ernesto Nieto",
+      "selection_rank_sha256": "000167f5cfcc5f74ed6110c567e89a9c8dc7d8d5196415e5f53f268d55863cb7",
+      "utf8_bytes": 5449,
+      "characters": 5449,
+      "text_sha256": "fddf0da40ec326b0ee2dd45f833abe006afc70fd09d8e38ca892b00cac313cb5"
+    },
+    {
+      "order": 153,
+      "article_id": "18328003",
+      "title": "Wygoda",
+      "selection_rank_sha256": "000168c2e19867032c19f0c99580d3a8151da1e08fdb4a9a993b9193e945249c",
+      "utf8_bytes": 3114,
+      "characters": 3060,
+      "text_sha256": "8132b9a8f806fa99a01581a8982893e291503c75eeb0deef005e4786bacf859d"
+    },
+    {
+      "order": 154,
+      "article_id": "64613653",
+      "title": "DRDO Bharat (drone)",
+      "selection_rank_sha256": "00016ad7e05ba86c76e4548bdf0071d1d0a1f3b91caa853a5ea0f4b3a8c3064e",
+      "utf8_bytes": 624,
+      "characters": 624,
+      "text_sha256": "b46b288f10e131169fa42d18fc659ff383c7c6d44a52c9ab6bec2b5d6f48e7df"
+    },
+    {
+      "order": 155,
+      "article_id": "55156758",
+      "title": "Dennis Radtke",
+      "selection_rank_sha256": "00016b6633f1c1aa5dd32d1392691ec890a85689de314aa2c9adf403e9d12287",
+      "utf8_bytes": 1625,
+      "characters": 1617,
+      "text_sha256": "7722537acae0d5e0e61cccd888159e69718866188da8d2bdbd2a61860868acff"
+    },
+    {
+      "order": 156,
+      "article_id": "72537155",
+      "title": "You're So Cool",
+      "selection_rank_sha256": "00016b958b7101f62e52b3e4f33f5155f56bbe2cb2d4bec3b387cd6509822941",
+      "utf8_bytes": 815,
+      "characters": 815,
+      "text_sha256": "df81629299b6663ae74e0bee9fa49a02bd04660afd90309f7515f2a075f3ad02"
+    },
+    {
+      "order": 157,
+      "article_id": "10938074",
+      "title": "Schönberg–Chandrasekhar limit",
+      "selection_rank_sha256": "00016f8e1668cabbae0b5f4a7b7981ba81d748ae017ee68223f6422ba8e999f7",
+      "utf8_bytes": 1883,
+      "characters": 1870,
+      "text_sha256": "bcbece47f8c3130da03c40d874205f41511e6f3ebb95ec659fc221ef78181e3d"
+    },
+    {
+      "order": 158,
+      "article_id": "31312500",
+      "title": "Adriaen de Weerdt",
+      "selection_rank_sha256": "0001767f9ecfd46e32f8bbb19618778507fccf05cf16278a49b2d443fccad9d3",
+      "utf8_bytes": 956,
+      "characters": 954,
+      "text_sha256": "44820d4f9eadeefdcab265edd4e47bc04c0275d3faae96a760a1f505ce6e22f3"
+    },
+    {
+      "order": 159,
+      "article_id": "50918939",
+      "title": "Dong Nai University",
+      "selection_rank_sha256": "0001774ed034b63078cd973b6cd6bfe84ec261efad666a1f4589afc7af29633c",
+      "utf8_bytes": 1744,
+      "characters": 1722,
+      "text_sha256": "d7a8da62544070297ae7db7f93edb1c0860b9117f4ce3b5d95488136b96721b5"
+    },
+    {
+      "order": 160,
+      "article_id": "16514637",
+      "title": "Jessie Boucherett",
+      "selection_rank_sha256": "000177d4c31be63efe1216ad9e8ec2d32374275f4469e44c09d81789743cda43",
+      "utf8_bytes": 2345,
+      "characters": 2343,
+      "text_sha256": "d2cba1952221ecc34bb9d26e4d04cd0c003ae34f0e0aebd07f7c5a5da8d1a414"
+    },
+    {
+      "order": 161,
+      "article_id": "28947108",
+      "title": "Gold bloc",
+      "selection_rank_sha256": "000177f3beb5795098281d4f24c8e25b3104bc788ecf6757c2318aca2854fd6b",
+      "utf8_bytes": 2115,
+      "characters": 2113,
+      "text_sha256": "43d3963b06549b1ff8b7f8dbaaf93673a8ff4d95977893abae98f385d43da3df"
+    },
+    {
+      "order": 162,
+      "article_id": "12944629",
+      "title": "Saint-Amans, Lozère",
+      "selection_rank_sha256": "00017b3440e6f92ac68e7b31d724c604dea0a02c3420fdc41645a78b490b528c",
+      "utf8_bytes": 302,
+      "characters": 300,
+      "text_sha256": "a0c239d4b95e30539725a0ff2f8f3f4a5bd3ba380da5d2d6b87eb24794db40eb"
+    },
+    {
+      "order": 163,
+      "article_id": "56212776",
+      "title": "Koa people",
+      "selection_rank_sha256": "00017cd7a880dd75a085ff1c06db16e9d41088cab7cb053ad1a25d0d83cf97ab",
+      "utf8_bytes": 2505,
+      "characters": 2505,
+      "text_sha256": "abd756363ab465cf87c553375e32fa45da9abda108d300b2436dc0a1a9e75133"
+    },
+    {
+      "order": 164,
+      "article_id": "36052607",
+      "title": "Grünenberg family",
+      "selection_rank_sha256": "00017cdad330f283638e17f7481ef126f0b8158521fbca7162661f33f6f25826",
+      "utf8_bytes": 3322,
+      "characters": 3311,
+      "text_sha256": "943f0ef7fb2289e1b1238ecd9dcf3d099fafb3d16ba9f63a5f4c8a7cfb1a8817"
+    },
+    {
+      "order": 165,
+      "article_id": "67063922",
+      "title": "ACT-335827",
+      "selection_rank_sha256": "00018203e35a9ae2872b03136b9d3c10ed832d69bfa37198af6d1bd98de79ce3",
+      "utf8_bytes": 300,
+      "characters": 300,
+      "text_sha256": "1559c00ec08f5009279e71f092a09f6baad16d8f8890e5a862c56c42cbe5953b"
+    },
+    {
+      "order": 166,
+      "article_id": "45430868",
+      "title": "Guzelce",
+      "selection_rank_sha256": "000182153770c8430f6493e876834849209b94570da35c274dc510d1e1f5255e",
+      "utf8_bytes": 236,
+      "characters": 231,
+      "text_sha256": "cc422b0cc06e1b3015704316d2e50eb1f5d7ffa552d8a22a4db3e8e32a144eb0"
+    },
+    {
+      "order": 167,
+      "article_id": "19509689",
+      "title": "Rant (Ian Hunter album)",
+      "selection_rank_sha256": "0001852b925799463faed470f3da41eddd92f0fe0de561cf19966e5faa16323f",
+      "utf8_bytes": 1616,
+      "characters": 1568,
+      "text_sha256": "3286ba1c4a93ac547fcb491babef989ab11d23db7ee42456b8e12f95535fc70c"
+    },
+    {
+      "order": 168,
+      "article_id": "1968873",
+      "title": "Time3",
+      "selection_rank_sha256": "00018e4c1fc3b25ca3c2b12532ea9889d97d7d82186d4d0fa8b83454139b67f1",
+      "utf8_bytes": 3964,
+      "characters": 3960,
+      "text_sha256": "b9a5196e9cc5b4aee8b144c27be6f4252eb41f95cb687206b985485eb8d89b4a"
+    },
+    {
+      "order": 169,
+      "article_id": "47476704",
+      "title": "Plum Creek (Mississippi River tributary)",
+      "selection_rank_sha256": "00018ee51f69bf9596938c00e4ba9fdf83fb1ff931216e70d0ee3a1157da620e",
+      "utf8_bytes": 288,
+      "characters": 288,
+      "text_sha256": "045be1eb5731a12d2518407acb57a9ed5eb3302d88ba65d448e0aa7c06d0bffc"
+    },
+    {
+      "order": 170,
+      "article_id": "37033258",
+      "title": "Barrow Rangers GAA",
+      "selection_rank_sha256": "00019254dade637089534c0fc3b1600125d887ec896b45e8c54eba987ae248be",
+      "utf8_bytes": 1155,
+      "characters": 1155,
+      "text_sha256": "cb6f74f2134372c246f30702ff147672ed2ce219df1208a287f558a57b64146e"
+    },
+    {
+      "order": 171,
+      "article_id": "27436483",
+      "title": "Hotel Bristol (Oslo)",
+      "selection_rank_sha256": "000194eac8890bd93e3cb05c5a5afa4e89a0f65e6e923d05ce7f2cc841357320",
+      "utf8_bytes": 711,
+      "characters": 711,
+      "text_sha256": "4e86ac7ab021332ec50ca59043766cf37ec471d30fc4e5045afe918d63e4e5af"
+    },
+    {
+      "order": 172,
+      "article_id": "20035749",
+      "title": "Naoto Sakurai",
+      "selection_rank_sha256": "0001951012a89615121f8a7aec4004890a1d997c7f972efdb9de2631e71cf269",
+      "utf8_bytes": 930,
+      "characters": 930,
+      "text_sha256": "14d9cf2df22a445cb9035dd1caa157a85b264cc2e6ad7922b5a831d0b5da719d"
+    },
+    {
+      "order": 173,
+      "article_id": "57105703",
+      "title": "Walnut Grove School (Caneyville, Kentucky)",
+      "selection_rank_sha256": "000198344ca374540450b7dcccfbc103e92cc81f86d50ea420f796c56110adef",
+      "utf8_bytes": 497,
+      "characters": 497,
+      "text_sha256": "317719b3be6700e2a16cda21bda1127cdcab5bcb1d55c369c147cb3922b6dd4b"
+    },
+    {
+      "order": 174,
+      "article_id": "41929661",
+      "title": "Kōri no ue ni Tatsu yō ni",
+      "selection_rank_sha256": "00019bc79f66b927f931811465c8d1b37fb9129f72c0501134f0b1ae4316ac43",
+      "utf8_bytes": 855,
+      "characters": 853,
+      "text_sha256": "30effca1215771aef969b2427e88aa2742b0a2b450ff7f1fa1a0b1796eb606e6"
+    },
+    {
+      "order": 175,
+      "article_id": "39857859",
+      "title": "Linda Lê",
+      "selection_rank_sha256": "00019e4922262c0393a6aed0f3b021e2e039724b28f9ba1d7857497fb467c4a2",
+      "utf8_bytes": 1590,
+      "characters": 1575,
+      "text_sha256": "a5d46765c8e991329b416d25fbc0bcc8714569129e26c2fd4dc900934c390fa0"
+    },
+    {
+      "order": 176,
+      "article_id": "29257845",
+      "title": "Indonesia national under-17 football team",
+      "selection_rank_sha256": "0001a1afb9e59a22f30929fab9344cf1c5e049ebb81172d451aa198f2d30bac7",
+      "utf8_bytes": 1758,
+      "characters": 1758,
+      "text_sha256": "721170be6f1d59225582b7c6bddc8bf8c4e8a432944cf9dfe036384c4a41f536"
+    },
+    {
+      "order": 177,
+      "article_id": "63263994",
+      "title": "Wildcat Saunders",
+      "selection_rank_sha256": "0001a4a7c7e724350afc6b0ed304d9cc5b02cbbd87bd5d915e2635179f623935",
+      "utf8_bytes": 712,
+      "characters": 712,
+      "text_sha256": "6778d112e7d94ef17efe2b2f478fbd6cc88a38af7a06762fc9bbe354228a4053"
+    },
+    {
+      "order": 178,
+      "article_id": "1133306",
+      "title": "Saffron (singer)",
+      "selection_rank_sha256": "0001a5d6ecb77570b3abc3c006cfdfbef18c99ede61ed9d353372f05987af380",
+      "utf8_bytes": 3372,
+      "characters": 3372,
+      "text_sha256": "02de97cbd3d1bc077d8120b50dcd2ed597227b3df28b1a48c286167754158111"
+    },
+    {
+      "order": 179,
+      "article_id": "17403230",
+      "title": "Franklin Range",
+      "selection_rank_sha256": "0001a6859d1989faaef2e62c4ea6db1d97cfef82cb33fa7273633b9910ccd540",
+      "utf8_bytes": 797,
+      "characters": 796,
+      "text_sha256": "31f7130521e78b84120d44226c3a35f8af43f2b0e91213e188877ef2e7f58c84"
+    },
+    {
+      "order": 180,
+      "article_id": "24526335",
+      "title": "Jack Doms",
+      "selection_rank_sha256": "0001a8c4d74342ef31b1a03d05f56301fe8e297b19373c6d14e1f39a81bad503",
+      "utf8_bytes": 1927,
+      "characters": 1923,
+      "text_sha256": "b4da7710138bce4e383f1d097735e1858951f3e859b320cd81cbfd58f35e32e5"
+    },
+    {
+      "order": 181,
+      "article_id": "44134029",
+      "title": "The Shell Game (album)",
+      "selection_rank_sha256": "0001aa5a7e1378a7cf2e69e0bd9b2d10d61968a52253f8acb724061feb7edfdb",
+      "utf8_bytes": 2473,
+      "characters": 2471,
+      "text_sha256": "e2bf40a1d05134095760fef123aa8421e5514b4eea8b0375e147f622e3ad74f2"
+    },
+    {
+      "order": 182,
+      "article_id": "1323036",
+      "title": "Black Maria",
+      "selection_rank_sha256": "0001ae21a106725ad316a55fcaf2026a949ba1d058cda6e8f248c3395a31b55d",
+      "utf8_bytes": 1308,
+      "characters": 1308,
+      "text_sha256": "f3e87dd78964bf80a24e38d29876c7ebfa20265fe459c07ea2fb1b1c89d6a875"
+    },
+    {
+      "order": 183,
+      "article_id": "25701900",
+      "title": "Daniele Morante",
+      "selection_rank_sha256": "0001af591455525bfb42009974ba14265447c513f1aa51ea68c4e91e01713068",
+      "utf8_bytes": 790,
+      "characters": 788,
+      "text_sha256": "28c7334f0a64e5381a080396fe2238c1968609288882af1a400f0db6af0f132c"
+    },
+    {
+      "order": 184,
+      "article_id": "54719354",
+      "title": "Chiquinha Gonzaga (TV series)",
+      "selection_rank_sha256": "0001b51848fcf6d4c6ca0f4f393c7a6e38e95f9201dcf960734759b7d30e65d8",
+      "utf8_bytes": 940,
+      "characters": 938,
+      "text_sha256": "0eac804c72a1e208596827d2d5261ab1ee12ef5d951afe9b4af303d7991366d0"
+    },
+    {
+      "order": 185,
+      "article_id": "19599346",
+      "title": "Frühschoppen",
+      "selection_rank_sha256": "0001b5aed5a5a5f6287f32aac9fc4fd8b3d05152ba36dea10b539f39b1716bb9",
+      "utf8_bytes": 1516,
+      "characters": 1509,
+      "text_sha256": "692806647f005e6fd5214a4699e31bab4cb19632bd649aba8a824556744e82e4"
+    },
+    {
+      "order": 186,
+      "article_id": "74818288",
+      "title": "2023 Special Session of the Parliament of India",
+      "selection_rank_sha256": "0001b809d22890e9a4dfb65860720b784062b772f63334c5759cbc4d049e992d",
+      "utf8_bytes": 11910,
+      "characters": 11908,
+      "text_sha256": "6988db4c60bc13e550a510f7dfd74a9dddfcf710ee0ebcee428bb2ec196bd5e8"
+    },
+    {
+      "order": 187,
+      "article_id": "32606165",
+      "title": "Lubiejewski",
+      "selection_rank_sha256": "0001bba404ed5aa261e0aabc6f3e5e3989d56fb108b4c523d7815cbd27941d9b",
+      "utf8_bytes": 268,
+      "characters": 267,
+      "text_sha256": "4c25aa4b400946b3185ae085cf0af54a58a7187d4e38f27c2da48c6b41ac3f16"
+    },
+    {
+      "order": 188,
+      "article_id": "1085971",
+      "title": "Ouse Bridge (M62)",
+      "selection_rank_sha256": "0001bc6781ea1fca224fad441c91d6ad8aa0f8e2f5ee43d7dde9dd7c02004fd0",
+      "utf8_bytes": 4325,
+      "characters": 4318,
+      "text_sha256": "3e14274d46cf78ba1b19f9a9c511a518211dda48fbf5155b76f1f98d2b8630dc"
+    },
+    {
+      "order": 189,
+      "article_id": "16107619",
+      "title": "River Tib",
+      "selection_rank_sha256": "0001bce11f7c2efb43c9df4f56178a6f238b6ea1e6d44c9278df3349c2fb2fb7",
+      "utf8_bytes": 1570,
+      "characters": 1570,
+      "text_sha256": "799929d6b667c60640be5dc63203fe7301ac1cd56dea5810e444be030201ba8d"
+    },
+    {
+      "order": 190,
+      "article_id": "64592986",
+      "title": "Gogar railway station, NBR",
+      "selection_rank_sha256": "0001bfd2c9b214257e2938a2522fef15b37a2d83aa5017aa4b3abf8a6e569682",
+      "utf8_bytes": 560,
+      "characters": 560,
+      "text_sha256": "6997f5fe86a880a45c25324712c0bf9f11395625c924572a8020cd5a042464d3"
+    },
+    {
+      "order": 191,
+      "article_id": "15883537",
+      "title": "Reilhac, Lot",
+      "selection_rank_sha256": "0001c1c83f32f1a898edaffa59dda6316b80dbd1b08c2d09af33386eedc58c13",
+      "utf8_bytes": 155,
+      "characters": 155,
+      "text_sha256": "741f572c5f04e5bd1d857578197bbf03cf64057595e6461885e380d5220967a7"
+    },
+    {
+      "order": 192,
+      "article_id": "23934464",
+      "title": "Vacas Gordas River",
+      "selection_rank_sha256": "0001c387a9f1f1b58a159591320a8434ce71e4a58d8641253970c8a4338f31be",
+      "utf8_bytes": 279,
+      "characters": 279,
+      "text_sha256": "b91437564a5ed01f34e05b80698cd1e5cd5846bae933dd5aa536f80da27f82c1"
+    },
+    {
+      "order": 193,
+      "article_id": "41721777",
+      "title": "Mount Street Club",
+      "selection_rank_sha256": "0001c6ed8487cbcfce1ab4c0544433059ce3cda1fe258dea8ae679c4353b4f75",
+      "utf8_bytes": 2461,
+      "characters": 2456,
+      "text_sha256": "08c65311e838e92c099584e74dc2e2f88238b20f0498ae168500f2bb65b84718"
+    },
+    {
+      "order": 194,
+      "article_id": "56861434",
+      "title": "Kähri",
+      "selection_rank_sha256": "0001c8bbb9291bbd4f2216d708019850f53f330f6f0db0f6136e66d9f782ce98",
+      "utf8_bytes": 238,
+      "characters": 225,
+      "text_sha256": "358e0b1a072822e47531198199b269f06d1ef199ecaaf39acd5a9ed33f7a824e"
+    },
+    {
+      "order": 195,
+      "article_id": "36454893",
+      "title": "1147 in Norway",
+      "selection_rank_sha256": "0001cc1215e90a19c3f5ad4bcbfe27518765b32c3c02c375e3440aae8d06a69a",
+      "utf8_bytes": 296,
+      "characters": 294,
+      "text_sha256": "e53d21cc3fdaaced6361aee49141e68bdd1db38e353a304935ce49ce94ef1f2e"
+    },
+    {
+      "order": 196,
+      "article_id": "18458257",
+      "title": "Bikin (river)",
+      "selection_rank_sha256": "0001cf7cedaee8dc92064e0b9aa0f777057c1f1add166a184ca324b0eb304aff",
+      "utf8_bytes": 670,
+      "characters": 670,
+      "text_sha256": "debf96b93d389ccd4353d7d0ff7229e533bcb2c0e8688bda52634364204ac769"
+    },
+    {
+      "order": 197,
+      "article_id": "54899610",
+      "title": "Chuck Wild",
+      "selection_rank_sha256": "0001d62e420115205d5d275750570159134afbd3642c6c345e5f3bda2977209b",
+      "utf8_bytes": 8776,
+      "characters": 8770,
+      "text_sha256": "ab8c44f5aa36197a6ab63fee418cdcb1597527d8b21c374c3e22f4d88b3e8478"
+    },
+    {
+      "order": 198,
+      "article_id": "28215136",
+      "title": "1985 in Israel",
+      "selection_rank_sha256": "0001d68ab8c798f29e36f9097717bdaf3ef97bf5c93d3271d97d0404432f7f0a",
+      "utf8_bytes": 5673,
+      "characters": 5595,
+      "text_sha256": "82e6d028ad882d716569c562c7272b0d997cd7181f96723439effdf182438772"
+    },
+    {
+      "order": 199,
+      "article_id": "26147480",
+      "title": "Riad Ismat",
+      "selection_rank_sha256": "0001d8ace637ebd1ff38d503e0aa1957b0f3738a3f0329c08e097d6c50b0f1fa",
+      "utf8_bytes": 2506,
+      "characters": 2504,
+      "text_sha256": "585e0dde721ec0e89ce1c188a8946553f846b2e2f3d867b3743787f776a2f5d7"
+    },
+    {
+      "order": 200,
+      "article_id": "71188368",
+      "title": "Anthurium alluriquinense",
+      "selection_rank_sha256": "0001dade77468b58e950e4159c504e99f683e5e1324e11b128fda4f5ce4231eb",
+      "utf8_bytes": 238,
+      "characters": 238,
+      "text_sha256": "2e56325f607c9e8c14ec03e16324bdb56b7985bf7e10a6008cf37ec8dbe77f19"
+    },
+    {
+      "order": 201,
+      "article_id": "36824818",
+      "title": "Coliseo Cubierto de Itagüí",
+      "selection_rank_sha256": "0001dcc9bb630aaf7a8506e7110553ea632e8863c1b8449f69a518c32dab1768",
+      "utf8_bytes": 407,
+      "characters": 393,
+      "text_sha256": "3195b379ec68a752bdf6a5b29754e73a62cd767f3bf638e7636091aded933e98"
+    },
+    {
+      "order": 202,
+      "article_id": "41558999",
+      "title": "Javelin V6 STOL",
+      "selection_rank_sha256": "0001dcd36ba93aa3312a7c4a1323d435744a1a0ba8c0e3c2571ff7afb5e951c5",
+      "utf8_bytes": 1731,
+      "characters": 1730,
+      "text_sha256": "3609e30c13110218de04c48df9d0975cb7f3fa683e573319ae423687478ac0a4"
+    },
+    {
+      "order": 203,
+      "article_id": "22163400",
+      "title": "Band of Gold (album)",
+      "selection_rank_sha256": "0001de7eb41aae27621903809b3ba5924a899e7785d76d0d6d8de686c7dbebf9",
+      "utf8_bytes": 1262,
+      "characters": 1256,
+      "text_sha256": "992421e6e708b7c805a34d712cb6f667b33a99c53ba1dae8999c8a7dbf6b9138"
+    },
+    {
+      "order": 204,
+      "article_id": "4923842",
+      "title": "WBGH-CD",
+      "selection_rank_sha256": "0001e0d98b0c6125af30d47e05d41f7991e8418fc32976bf72547ce505e4501c",
+      "utf8_bytes": 6634,
+      "characters": 6634,
+      "text_sha256": "f4c796b74ae0084b540749725e5e1e8f3f3026889f935674d6907dcd4523fa9a"
+    },
+    {
+      "order": 205,
+      "article_id": "67708518",
+      "title": "Phyllobotryon",
+      "selection_rank_sha256": "0001e4f9c8f1d33ffaaf9e94cfe6b0914087bc9f0ce6f4b24e496f704b4002a2",
+      "utf8_bytes": 320,
+      "characters": 320,
+      "text_sha256": "6cd54b1a717a59fc3e4af510198287ed99753ef49f00012d8e24484e3a071bdd"
+    },
+    {
+      "order": 206,
+      "article_id": "47297720",
+      "title": "Brent Roske",
+      "selection_rank_sha256": "0001ea54691a1aab193d6eeb232870618777b218488756be5e0c52865b535c7e",
+      "utf8_bytes": 3916,
+      "characters": 3904,
+      "text_sha256": "708d2ca3b5275523f9ad7bd5aeee0593924066838cc86d94b9389a33b5f84ffb"
+    },
+    {
+      "order": 207,
+      "article_id": "75169446",
+      "title": "Forms of the Old Testament Literature",
+      "selection_rank_sha256": "0001f4322f43d268bb59bb76c62d4d720e8ea7abcd311247e816150b315ad1f6",
+      "utf8_bytes": 688,
+      "characters": 688,
+      "text_sha256": "71736ee840cb6c2d6f847e585b5acbee089ec945b4c7a231ce5043b3d7ee7a5f"
+    },
+    {
+      "order": 208,
+      "article_id": "69711270",
+      "title": "Posai Sitiboonlert",
+      "selection_rank_sha256": "0001f5979900895baeb60bcbe8b5f17e0c1ad33036e25db55fb07e5a4543c1f3",
+      "utf8_bytes": 8395,
+      "characters": 8265,
+      "text_sha256": "a5777d44e4421df30afbfa6f3151e4a8ac0688875212bbedc9c61c0c3b091716"
+    },
+    {
+      "order": 209,
+      "article_id": "3639319",
+      "title": "Siona people",
+      "selection_rank_sha256": "0001fbaf3a88c1f839c231e86a71a80d72772fca4a489468e618e63f334cfc71",
+      "utf8_bytes": 2173,
+      "characters": 2171,
+      "text_sha256": "1d5eb1801ee168c4d74c21f934f9da4c750ae648591be6ecef794403065a5cc9"
+    },
+    {
+      "order": 210,
+      "article_id": "55190250",
+      "title": "Arthur Read (footballer, born 1999)",
+      "selection_rank_sha256": "0001fc262f308a2ec7ae3e2c5d1e4a1fe075222eb729e964c3213b78294df5b4",
+      "utf8_bytes": 2437,
+      "characters": 2431,
+      "text_sha256": "2c242aaebad20521d18ff42f843be413d45931979fbd58a62b47bd3eb3612243"
+    },
+    {
+      "order": 211,
+      "article_id": "43707866",
+      "title": "Michael Huey (American football)",
+      "selection_rank_sha256": "0001fc9af308b6945cf21adb67e711d01e95859e4b4fd3f8ced8aca755a1387e",
+      "utf8_bytes": 3779,
+      "characters": 3771,
+      "text_sha256": "4f8e995eb91c1d7d733ea35d66be4acb162e46542acb947769f6f3b607f9663f"
+    },
+    {
+      "order": 212,
+      "article_id": "6431857",
+      "title": "Trzebiatowski Institute of Low Temperature and Structure Research of the Polish Academy of Sciences",
+      "selection_rank_sha256": "00020362bcca2581329062e4f5fd6694b425a5e2897ab91f1b96d8183db9419a",
+      "utf8_bytes": 660,
+      "characters": 654,
+      "text_sha256": "cdd123318ca57746122b980ae69cb7bed5cbd538d7d98a4621c7ad181eed3bcb"
+    },
+    {
+      "order": 213,
+      "article_id": "37129416",
+      "title": "Đaković",
+      "selection_rank_sha256": "000204053ba67da15a14561f329fe629fbe68b0cd9ff348215d9273ab8143894",
+      "utf8_bytes": 381,
+      "characters": 355,
+      "text_sha256": "bf42b761470267c2a7aadfe324eee52de33ffccd4f0c0b17613a777c8b428b4c"
+    },
+    {
+      "order": 214,
+      "article_id": "20405892",
+      "title": "KZLS (AM)",
+      "selection_rank_sha256": "00020819c1d871ef56d76ab160b1f011fbf2d0fe1b169afdd4909143cbfed065",
+      "utf8_bytes": 2126,
+      "characters": 2123,
+      "text_sha256": "48533e433e90b2a4e5ee974afe4f470c8900ac9a624b1573b1ea5d37e66bf0a6"
+    },
+    {
+      "order": 215,
+      "article_id": "24283457",
+      "title": "Saadat Ali Khan",
+      "selection_rank_sha256": "00020b3548794d4607ab5dc04af38afb2bf0b62be40f68ee38f14f2a7748b30d",
+      "utf8_bytes": 171,
+      "characters": 167,
+      "text_sha256": "41ee929ca378eda0d64286c9d7866ea21fad052e7745bcb736d69650ff1b2356"
+    },
+    {
+      "order": 216,
+      "article_id": "7735285",
+      "title": "Joseph Cordeiro",
+      "selection_rank_sha256": "00020bc667fb74bffedb58564954deff42816c200c02ca3d2ae554bb20d8c842",
+      "utf8_bytes": 3169,
+      "characters": 3165,
+      "text_sha256": "899e109d7db7e7e9770018fbc100ce13ff92a6abcd74db6019318ff0526031d9"
+    },
+    {
+      "order": 217,
+      "article_id": "66409141",
+      "title": "1998 Espirito Santo Trophy",
+      "selection_rank_sha256": "00020c789c570478cbae7f0f4e6e7ab3846178bfdb081c02384369f626d13604",
+      "utf8_bytes": 1188,
+      "characters": 1186,
+      "text_sha256": "b0d2d493a211d06c5b3ca4cbf948ffa41d6bd769869601c3a61eb446a1d56f5c"
+    },
+    {
+      "order": 218,
+      "article_id": "22320344",
+      "title": "Dayakattai",
+      "selection_rank_sha256": "00020cffaaa02a4c68f17316ce082de9e8c149046b5ed80c47ec51d98d7a14ec",
+      "utf8_bytes": 4109,
+      "characters": 4087,
+      "text_sha256": "c689177699c1eca66003f02ea06fde477a7155cee7bc4dc879abe4b15926ee3f"
+    },
+    {
+      "order": 219,
+      "article_id": "13603444",
+      "title": "Erdal Bibo",
+      "selection_rank_sha256": "00020d4135da5fa8864fb0fe98ae358a5c989149aacc0b6593efc35e9084faaa",
+      "utf8_bytes": 514,
+      "characters": 509,
+      "text_sha256": "68dea5b1e7db04e48f1d9c753f6dcaa67759ee5cbe4b697d4bb56f71d5273314"
+    },
+    {
+      "order": 220,
+      "article_id": "511889",
+      "title": "Lake Abaya",
+      "selection_rank_sha256": "00020e55f9c509f51422a2339bda435af524258522f5106fde2bb3451d6e73d3",
+      "utf8_bytes": 2749,
+      "characters": 2735,
+      "text_sha256": "7528198e4998274cff11d10c4be5c0d4f5ac117d94070bd022ffb916885fd4fc"
+    },
+    {
+      "order": 221,
+      "article_id": "25848353",
+      "title": "Make My Life with You",
+      "selection_rank_sha256": "00021315472a0bc4549f68d7dbbc5b217f934c9a958e94b1a55262e5c00810d1",
+      "utf8_bytes": 580,
+      "characters": 580,
+      "text_sha256": "32d20dca4c47e46fcc5fd71c853a0e051c04240df5f0f52cad880efb82d61f8f"
+    },
+    {
+      "order": 222,
+      "article_id": "4438919",
+      "title": "Memphis Kiddie Park",
+      "selection_rank_sha256": "0002155c6ebd36c6e3b19a9e3ca52fc3a19f48942d3d89bbae6fabda640d83fd",
+      "utf8_bytes": 1797,
+      "characters": 1795,
+      "text_sha256": "6b114019f50e87aef66a81c61419ee3526a89e39bdf081a5ebc53ec5cce0731d"
+    },
+    {
+      "order": 223,
+      "article_id": "61753917",
+      "title": "Federico Rodriguez Hertz",
+      "selection_rank_sha256": "000216c974776baf223208ff82f742446306adfdb524c851bff6e019cc816332",
+      "utf8_bytes": 4353,
+      "characters": 4351,
+      "text_sha256": "c66e3fbc277e6365e50e8155ff23cc030264735b3567d1eaf3a874a4272ff91c"
+    },
+    {
+      "order": 224,
+      "article_id": "35337144",
+      "title": "Philipp Reiter",
+      "selection_rank_sha256": "00022463fab6f4b6fe6c3679c9d3ddef84eab6c4b97de386acd80a1d9be91bf0",
+      "utf8_bytes": 2091,
+      "characters": 2091,
+      "text_sha256": "f4dc93b55216a8d8b0fa2a29fafe1081c078d4638bb5b13f83d0f0d06f8accce"
+    },
+    {
+      "order": 225,
+      "article_id": "39775773",
+      "title": "Kani Pasha",
+      "selection_rank_sha256": "00022b19e73ef8988de2a93c84749318bc22e93ba51ff9e4c897089c31b645e9",
+      "utf8_bytes": 271,
+      "characters": 267,
+      "text_sha256": "e64e07d8721707f885bc86c52352bf74a4526b94584a6c0de9529cb3c1841121"
+    },
+    {
+      "order": 226,
+      "article_id": "41567533",
+      "title": "W. M. Brutton",
+      "selection_rank_sha256": "0002327efa28957facf4dce0a995892ef55b3b7ce6b91c1517360a7eedff4f38",
+      "utf8_bytes": 1601,
+      "characters": 1586,
+      "text_sha256": "d888f5b7832379a15132adafc86d08fc7d7d0895e7ed5fa62fb512a413f07c6f"
+    },
+    {
+      "order": 227,
+      "article_id": "65643",
+      "title": "Demographics of South Africa",
+      "selection_rank_sha256": "000233713b3bacf7d2123dfda9182d14b35075cc9a31792c43f10159c734afbd",
+      "utf8_bytes": 13422,
+      "characters": 13413,
+      "text_sha256": "a32c3aeb3210e7722d4c4a317f04c45a0ccce9e376f2d02979b8a1dedc943048"
+    },
+    {
+      "order": 228,
+      "article_id": "53900134",
+      "title": "Vitor Assan",
+      "selection_rank_sha256": "0002348ac1ab784e9faa954ea16666857c8c0da479a5970820623aaefb8a568f",
+      "utf8_bytes": 1024,
+      "characters": 1023,
+      "text_sha256": "468dca25c750bf3ed39e81c536a846506c058190098c5b2fb9d72211a54e216f"
+    },
+    {
+      "order": 229,
+      "article_id": "18266357",
+      "title": "Wrathrash",
+      "selection_rank_sha256": "000239eec44a3b066047ac9d9f6e06551ceb5e93191a2a873c198e5c15e6c21d",
+      "utf8_bytes": 790,
+      "characters": 790,
+      "text_sha256": "866699ed489226621cdcbeb9c05dc1bd41c5e71ce57140c8a0d5e57a44887637"
+    },
+    {
+      "order": 230,
+      "article_id": "37946163",
+      "title": "Alexandre Guedes",
+      "selection_rank_sha256": "00023b0f486a28c7266d82389dfb2a53de52b215cfa9f007eb7716135b7d2271",
+      "utf8_bytes": 4403,
+      "characters": 4349,
+      "text_sha256": "d62e34ed9b851fe1527a10c68ea4eda9afda2e6b5d8b38f54f2995a4f836a989"
+    },
+    {
+      "order": 231,
+      "article_id": "6191935",
+      "title": "Josh Chetwynd",
+      "selection_rank_sha256": "00023e335f02290465aebadaa2a6b0227c4caaf483af6d06c8a5594e0805b17c",
+      "utf8_bytes": 12162,
+      "characters": 12158,
+      "text_sha256": "4643e3d4016494de543b23cd202a8e56757af461097dcca4c30c1f345b35b6b7"
+    },
+    {
+      "order": 232,
+      "article_id": "13592351",
+      "title": "Albert Pitt",
+      "selection_rank_sha256": "0002409a38ab2ee7603a7a478821e29e65aa0d0e3f96b2367eca7b533c9e4829",
+      "utf8_bytes": 3920,
+      "characters": 3918,
+      "text_sha256": "51b851fae4b57f9ba02d6288213341a3272a9a29027cb2b03c1496fd10f045a7"
+    },
+    {
+      "order": 233,
+      "article_id": "2095798",
+      "title": "Great Lakes Environmental Research Laboratory",
+      "selection_rank_sha256": "000242036607949fefd3c95d9cf7f3532160dbb2b4a524f0e5a56fcbcf146eba",
+      "utf8_bytes": 1314,
+      "characters": 1311,
+      "text_sha256": "d980a5f050307a24d188a6259e5cf2971b5525c007d5ea93451a314d34098cce"
+    },
+    {
+      "order": 234,
+      "article_id": "6569823",
+      "title": "Jesse D. Smith",
+      "selection_rank_sha256": "00024396558b0ff488f59c4edd2e41cf5077ae2419d8796080c7650c6a2f31fb",
+      "utf8_bytes": 1266,
+      "characters": 1266,
+      "text_sha256": "94cba4eaeb7506200b3274af7b2c18f8f8618eb8f2effa66a539f146f6225965"
+    },
+    {
+      "order": 235,
+      "article_id": "47833784",
+      "title": "Theriimorpha",
+      "selection_rank_sha256": "00024458818e650daa039ca3b3d7b08f1b3e77c919bdfd4fb2d526a170cbf7ce",
+      "utf8_bytes": 650,
+      "characters": 650,
+      "text_sha256": "894148cc22c070a05e23604ba6951f287023bcde542b824373bff54f73896503"
+    },
+    {
+      "order": 236,
+      "article_id": "56360459",
+      "title": "Rudolf Pesch",
+      "selection_rank_sha256": "0002458a01351764e942e53961776bd826d25fe44ded929c67d5497f6a18805b",
+      "utf8_bytes": 7043,
+      "characters": 7006,
+      "text_sha256": "09cef14818e07052062b8c3d46f80084d4b726292ac01dd709d938fca4d148c6"
+    },
+    {
+      "order": 237,
+      "article_id": "63381707",
+      "title": "Polish Armed Forces (Second Polish Republic)",
+      "selection_rank_sha256": "0002482dcd06c324608b7c596e434102add931af0740929cdf79a3f292efb7d7",
+      "utf8_bytes": 20710,
+      "characters": 20675,
+      "text_sha256": "a5f2ec1b76cbcdece130f996045316d09d00ff86be431135cf2a3d68dee1c270"
+    },
+    {
+      "order": 238,
+      "article_id": "74161238",
+      "title": "Free Music \"Nasr Mahrous\"",
+      "selection_rank_sha256": "00024adae75eaaf2d763022d14083a8ac3dc79c688f67b9e01cd99c455879183",
+      "utf8_bytes": 459,
+      "characters": 459,
+      "text_sha256": "b7f503bee4bc07761fa2ee8179e3178b3c4d6e6150b551dd98beeac0efe62f2d"
+    },
+    {
+      "order": 239,
+      "article_id": "3057515",
+      "title": "Lenbachhaus",
+      "selection_rank_sha256": "00024cd84f34a17ea12ac5b8f67acb793a2e250e44ded1abb6edc7a5c19e12f7",
+      "utf8_bytes": 6076,
+      "characters": 6052,
+      "text_sha256": "2b551d3f69dc3d2a80fba99ffff4b1c4bf179e383396f1bc0076408ed211648d"
+    },
+    {
+      "order": 240,
+      "article_id": "70252415",
+      "title": "Mako (template engine)",
+      "selection_rank_sha256": "000251e84b9ed82aa38dfebccf9987c4ac891bffcb8eba25228bffbfa41673b2",
+      "utf8_bytes": 457,
+      "characters": 457,
+      "text_sha256": "5e1fd779bc01da60232165ac395db9fa3d608bcae3017290a1045862a9b8365a"
+    },
+    {
+      "order": 241,
+      "article_id": "4319350",
+      "title": "Myeongjang-dong",
+      "selection_rank_sha256": "000254d3e7f2af24e560c70842a020744eff6e4f951d4a5cb1ed2597ba3bb385",
+      "utf8_bytes": 771,
+      "characters": 771,
+      "text_sha256": "3d9fc70a59c1043ddfb7247a205a87bf79d2eee8829dd49cd3fadd6ae18ca1f5"
+    },
+    {
+      "order": 242,
+      "article_id": "6897571",
+      "title": "Progresu",
+      "selection_rank_sha256": "000255c79c92ca721a33227365002f1db9c1035890a575fb59d29ecf42b1cef4",
+      "utf8_bytes": 170,
+      "characters": 164,
+      "text_sha256": "76c0a18e374817fa72e656666d5e73c9dbc524c73fcd1d410c8762145a87dba9"
+    },
+    {
+      "order": 243,
+      "article_id": "38613107",
+      "title": "Kate Rattray",
+      "selection_rank_sha256": "00025816701c7e868987c6844391dd842d0a4a789da419cc77526f88c03dc2d1",
+      "utf8_bytes": 554,
+      "characters": 553,
+      "text_sha256": "18152769a316c0e33497ac25843a8a6241ee2961dedd2fe536fb19231a208be7"
+    },
+    {
+      "order": 244,
+      "article_id": "24042359",
+      "title": "Lieutenant governor of the Isle of Man",
+      "selection_rank_sha256": "00025a710522dec64d6b68bcc426ba861e62263bef247a4ce44e1ff9157aaedb",
+      "utf8_bytes": 8144,
+      "characters": 8144,
+      "text_sha256": "faca527df1337315b8d5cabe51a4ee7240a59f40e36dfe0412b5ef5b8ec12830"
+    },
+    {
+      "order": 245,
+      "article_id": "49745049",
+      "title": "Nanhai Boulevard",
+      "selection_rank_sha256": "00025b1922688c2b6323c1c83b7065c9da5d34b4b0151eec64d6a3a0354c0836",
+      "utf8_bytes": 778,
+      "characters": 778,
+      "text_sha256": "bfc458ed51864a071a170c9187a6c0fd2626eda83c9a84c450b1a24d89e7ff97"
+    },
+    {
+      "order": 246,
+      "article_id": "18942245",
+      "title": "Mudboy",
+      "selection_rank_sha256": "00025cbe77347e620312d655331eb9029739137b73e315831bf901274e0e31e5",
+      "utf8_bytes": 1975,
+      "characters": 1975,
+      "text_sha256": "ee7f5fc59bfb96809e6559c04041cfa6bdf664097ea9a22a5f6f192bd951e0c3"
+    },
+    {
+      "order": 247,
+      "article_id": "14724148",
+      "title": "I Don't Want to Miss a Thing (album)",
+      "selection_rank_sha256": "00025e0abcd891eeefe0ada97424b6a8a178cef68f96e6432e87a10a5f27e4d2",
+      "utf8_bytes": 1832,
+      "characters": 1772,
+      "text_sha256": "13f5d577d89bedf4fbebba811a5ecfc470c40e3be9ed9e505bc5a54493f85ecf"
+    },
+    {
+      "order": 248,
+      "article_id": "73432467",
+      "title": "DUI (Ash vs Evil Dead)",
+      "selection_rank_sha256": "0002615de087624e4173469a186483607eb81df9762e23591d991a973c8d827f",
+      "utf8_bytes": 6363,
+      "characters": 6349,
+      "text_sha256": "41f8bae06109d0e261dd4cedeaba82b12249ac541e26542b5a636fec23b0f648"
+    },
+    {
+      "order": 249,
+      "article_id": "27946444",
+      "title": "Gornja Šušaja",
+      "selection_rank_sha256": "000262b0749610da4ffbaa755cb925b749c05a35393d89e74dedf72bb930dab3",
+      "utf8_bytes": 262,
+      "characters": 258,
+      "text_sha256": "1e2910ff63f15b03640578fb72325eebb1be45720a7e1a21e150961f56efe26c"
+    },
+    {
+      "order": 250,
+      "article_id": "37267547",
+      "title": "Con Purser",
+      "selection_rank_sha256": "000263e0cb729504cf51b97d6150da5ffc4dfcfc377800e6b35777a2699339ad",
+      "utf8_bytes": 988,
+      "characters": 985,
+      "text_sha256": "77512ea6091b198e8a206ca201609b6ab41f6fb4807099e31df52a990a9fe274"
+    },
+    {
+      "order": 251,
+      "article_id": "6551274",
+      "title": "List of MPs elected in the 1910 United Kingdom general election",
+      "selection_rank_sha256": "000266619fc8487a858eac162da711ed4621304f0cb4f1e4045f1762c37b655d",
+      "utf8_bytes": 336,
+      "characters": 336,
+      "text_sha256": "9bf5206e9fa421db65164865ec80d15b7860ac73ce80caae2e832dfa5443b27d"
+    },
+    {
+      "order": 252,
+      "article_id": "12733666",
+      "title": "List of SS Lazio records and statistics",
+      "selection_rank_sha256": "0002677cb8c9f34f9955ecc6fe833bddc900c39ae160808d23abd481681acae7",
+      "utf8_bytes": 1965,
+      "characters": 1920,
+      "text_sha256": "26709bbd925c1bf5cb3e7c99f6dad3e756093617e3956523c8176e60f63e4e5f"
+    },
+    {
+      "order": 253,
+      "article_id": "55101215",
+      "title": "Apion cruentatum",
+      "selection_rank_sha256": "000269b9df125d51ef59ab29e973c9365bc5b3062796486ff952e17b072e30b7",
+      "utf8_bytes": 164,
+      "characters": 164,
+      "text_sha256": "15ebdde40de57be1a6000fdf56fd6381e00cab5ea55e800fe380bac69ff38946"
+    },
+    {
+      "order": 254,
+      "article_id": "5598793",
+      "title": "Orange-2 Vermont Representative District, 2002–2012",
+      "selection_rank_sha256": "00026dee184e78c935221540ac33c3dcb9c5c9cc201cb3dc889fc3576055a81a",
+      "utf8_bytes": 1286,
+      "characters": 1284,
+      "text_sha256": "1e595b9d85f3c0d4045ae680c4eddf4979ecde22c599beb36b31cc30584eaacf"
+    },
+    {
+      "order": 255,
+      "article_id": "59583931",
+      "title": "Gibberula lorenziana",
+      "selection_rank_sha256": "00026f59d722711b42583b9ae53f1236ed0ec611ee098d536f288d076cc4226e",
+      "utf8_bytes": 249,
+      "characters": 249,
+      "text_sha256": "41a1199df26b96bce4a318d6661328c3a7468c884612c331ffa64fe0bf1e4ed6"
+    },
+    {
+      "order": 256,
+      "article_id": "13872325",
+      "title": "Bolo (footballer)",
+      "selection_rank_sha256": "0002709c0c924971f8e8dad5e6ec29989aeca6ad8af630b8fb77742e5acf404a",
+      "utf8_bytes": 3617,
+      "characters": 3588,
+      "text_sha256": "8ec41f30bf9cd4984d91d2557e8086d7d4aada70edcdba778a9c3f42f29bdfd4"
+    },
+    {
+      "order": 257,
+      "article_id": "73086690",
+      "title": "Randi Nordby",
+      "selection_rank_sha256": "000271bfde95087520726e8582a8998aac0a023e2d87be142aca6b73a13004cd",
+      "utf8_bytes": 6550,
+      "characters": 6513,
+      "text_sha256": "5a462c706dbe8a503dac8232cf2971a7977f74f1daf4ff3a6af758d9efa0316a"
+    },
+    {
+      "order": 258,
+      "article_id": "72010503",
+      "title": "Amasra mine explosion",
+      "selection_rank_sha256": "0002748659fa14cca1f3948ac875e21f3b9203a02c41fd70c082793a4ebba1c7",
+      "utf8_bytes": 1624,
+      "characters": 1613,
+      "text_sha256": "ede960652518f1a376349484210de4c3171dea6c4efb20bce7199c955704b6bf"
+    },
+    {
+      "order": 259,
+      "article_id": "18469105",
+      "title": "A Witch's Tale",
+      "selection_rank_sha256": "00027921d2f950dbcf2641005101d4c1cfc34b1e63ba3fc40c5f27002efbd101",
+      "utf8_bytes": 7252,
+      "characters": 7252,
+      "text_sha256": "8e21097d9cde96ed7256bf3c6ff2b6cee9b7ffaaf53ec586c6a29303c1a0b3e9"
+    },
+    {
+      "order": 260,
+      "article_id": "36412474",
+      "title": "Özyurt, Polatlı",
+      "selection_rank_sha256": "000279b272f568982ea7ac8ddc9f7f556c2308a806edf118f1d5fdc6eb310b95",
+      "utf8_bytes": 250,
+      "characters": 247,
+      "text_sha256": "869853307c5d5b63404c651d2b7b6ae3340377d660ef002f92b080404934ea5b"
+    },
+    {
+      "order": 261,
+      "article_id": "63655638",
+      "title": "The Bottom of the Well",
+      "selection_rank_sha256": "00027d0107de7da029de9155c75e48ff3540f38b905302d9271eb3a2f7c070d1",
+      "utf8_bytes": 871,
+      "characters": 871,
+      "text_sha256": "e05a942452e20eb88c482902bf03dcd9ae0ef66fefeb8def54a0cbf127c2fbf3"
+    },
+    {
+      "order": 262,
+      "article_id": "18918424",
+      "title": "Khnatsakh, Nagorno-Karabakh",
+      "selection_rank_sha256": "000281ec9a01c6555e0981a2eba32e0064dd5fc296f57be25fdeac6ce243e827",
+      "utf8_bytes": 1351,
+      "characters": 1351,
+      "text_sha256": "e104685fe1b515e86c350198413dc214dc6664a0734bc707dfc3cefed24a902f"
+    },
+    {
+      "order": 263,
+      "article_id": "36307494",
+      "title": "Jayanta Bandyopadhyay",
+      "selection_rank_sha256": "000286da3c1e9eb5635693707c10b836e72f000ada4ee099ca5390fdd6a297da",
+      "utf8_bytes": 5783,
+      "characters": 5727,
+      "text_sha256": "ded5b662c96e3b37d715460a5005ddc96e1ff0e773851068c9a5044211d9448a"
+    },
+    {
+      "order": 264,
+      "article_id": "14461631",
+      "title": "Waterson",
+      "selection_rank_sha256": "000288df24e6d1d8cc5a393f339bddd725e05a1b26fb5b7393b9af94b54eaaf9",
+      "utf8_bytes": 326,
+      "characters": 324,
+      "text_sha256": "61d43f981d20cfc7a48a50ce7fd0f0a5c999cce0a3c3bb6efb7d2f7205a2be89"
+    },
+    {
+      "order": 265,
+      "article_id": "46225865",
+      "title": "Vasif Biçaku",
+      "selection_rank_sha256": "00028917bf57c49685c41a7f046c59d0d6aa87ef446a7d39eb4832ff67a78076",
+      "utf8_bytes": 1691,
+      "characters": 1681,
+      "text_sha256": "050e622aa09a1a8d9e8f94eb3bb079f81880f306655c9e37fb4de65523c390c1"
+    },
+    {
+      "order": 266,
+      "article_id": "26940618",
+      "title": "SSV Hagen",
+      "selection_rank_sha256": "00028a03c4634c1c303295e39896b6983712fdbacdcc7eb02573f61c9a68c4a3",
+      "utf8_bytes": 284,
+      "characters": 284,
+      "text_sha256": "13c9df72c81449846786d05385ac783a700f4d17496ca57ba5c064c0630c3543"
+    },
+    {
+      "order": 267,
+      "article_id": "33794188",
+      "title": "Peter John Douglas",
+      "selection_rank_sha256": "00028af7d3d86da039e136ea0baf82d5f6e6ec19c821f76f747b80e6b0573649",
+      "utf8_bytes": 3311,
+      "characters": 3309,
+      "text_sha256": "571f6167c8f37b231ce1b9d208d412ad6c4f1208107636083484cf474767afc2"
+    },
+    {
+      "order": 268,
+      "article_id": "4385331",
+      "title": "Spartanburg Day School",
+      "selection_rank_sha256": "000290134a72142f0ecf2394041e7973d089dfa4e79a09e81e70ab46cb7ac73a",
+      "utf8_bytes": 2920,
+      "characters": 2910,
+      "text_sha256": "79e5a8a17f875f9718ae8d3ac2b1b85a6d410ad930f5cfea99be8d61d07ae86c"
+    },
+    {
+      "order": 269,
+      "article_id": "5194143",
+      "title": "New York State Route 41",
+      "selection_rank_sha256": "00029169b582a7ae0383866b612585e6098dc2ec4dcd57983e0aa93856120ee2",
+      "utf8_bytes": 7698,
+      "characters": 7593,
+      "text_sha256": "45549fee0771ad37b2bd8567c52c94e395ad9964279cc8207adb9e364ae444c0"
+    },
+    {
+      "order": 270,
+      "article_id": "40522215",
+      "title": "Invizimals: The Lost Kingdom",
+      "selection_rank_sha256": "000295acd10598272cb915c9909955e2b07d784239d62297c110e4f1deffa2df",
+      "utf8_bytes": 485,
+      "characters": 485,
+      "text_sha256": "c8cf071d6fac7e8f45d234fff6f69494caf2547d05958b34615082069ed7e42b"
+    },
+    {
+      "order": 271,
+      "article_id": "27030258",
+      "title": "Vacchi",
+      "selection_rank_sha256": "000295b9412d199a834a40b6b9f7463eba77d8038eb71032972b498fd36551e8",
+      "utf8_bytes": 339,
+      "characters": 339,
+      "text_sha256": "5de6091c51debe86c933c3da97a3c284ab48399cb61228e266977c44391a0c3f"
+    },
+    {
+      "order": 272,
+      "article_id": "40143408",
+      "title": "Ministry of Tourism and Antiquities (Egypt)",
+      "selection_rank_sha256": "000297353f2807e43685240e18a500e51c8054706b86c1d0370ce06f0df90243",
+      "utf8_bytes": 2112,
+      "characters": 2108,
+      "text_sha256": "7caae6047f965a5b53adb05ba7433930056425f2362b47f3cb57ea77ad5f5713"
+    },
+    {
+      "order": 273,
+      "article_id": "3442495",
+      "title": "Johann Rudolph Schellenberg",
+      "selection_rank_sha256": "000297dfb4e3becf5b733cc9f93a97bf053eedb45a42ca31c5e66dfa4332bf88",
+      "utf8_bytes": 1127,
+      "characters": 1116,
+      "text_sha256": "f34c85df99ffbef481f04419aa7876c4a9f843ea0b7d066055d50758c8f99b10"
+    },
+    {
+      "order": 274,
+      "article_id": "45008661",
+      "title": "Recep İvedik 4",
+      "selection_rank_sha256": "00029b0bd23a16b04a9d1ac37644382196b9ec38768d4543a2f553662b7a04f3",
+      "utf8_bytes": 919,
+      "characters": 901,
+      "text_sha256": "6e14503afe86722b219773502f02999b8007b9693d58328a7448fbcf65504610"
+    },
+    {
+      "order": 275,
+      "article_id": "34342538",
+      "title": "Psych (season 7)",
+      "selection_rank_sha256": "0002a5e4d39dd01fe7d16e1c154118725734a7fed5a8abefa5ca3cbf94b9fd7e",
+      "utf8_bytes": 3958,
+      "characters": 3952,
+      "text_sha256": "b4ef896ff4ef6687a7473d1e0e06d37bb95198798d479e8a062b24c422111cd9"
+    },
+    {
+      "order": 276,
+      "article_id": "57739299",
+      "title": "Anthony Alfredo",
+      "selection_rank_sha256": "0002a60f818907fca9ad57a319773dd0e3fc38bd9a5dbc2c0ec1f0f420acd244",
+      "utf8_bytes": 4076,
+      "characters": 4044,
+      "text_sha256": "9a8a2f3fd0ddb7cc109662c84b8188194b52dcb012706b5215a9cbebf6b2fb97"
+    },
+    {
+      "order": 277,
+      "article_id": "37651610",
+      "title": "William L. Thomas",
+      "selection_rank_sha256": "0002a82da82ca3117fc0656e160458e2ed55fc0f0f33d2175a4f25c1c020cc4a",
+      "utf8_bytes": 3881,
+      "characters": 3881,
+      "text_sha256": "050d21c753aba91077f5d535838ba957f45539726cfb99d89cc9d1c93b8f0e4f"
+    },
+    {
+      "order": 278,
+      "article_id": "69466301",
+      "title": "Golden jellyfish",
+      "selection_rank_sha256": "0002a856607887dc5a42e2e401a03f414c931fb22191d321bf9cb8b9f8f6110d",
+      "utf8_bytes": 1534,
+      "characters": 1533,
+      "text_sha256": "af35a4ebecf4197fcd16fa6e5da5db2197df02a31d56e0c74e268e67b9475599"
+    },
+    {
+      "order": 279,
+      "article_id": "1502108",
+      "title": "Three Bishoprics",
+      "selection_rank_sha256": "0002a8a8c1a159525fabf321596803adabaa5087c70b621d6af55ef2b2ed127a",
+      "utf8_bytes": 5035,
+      "characters": 5018,
+      "text_sha256": "c20ffa901861e717a1adf509352152cfce3f9c97bcf478f2d4de36c8be5124f7"
+    },
+    {
+      "order": 280,
+      "article_id": "25714105",
+      "title": "Puntius sealei",
+      "selection_rank_sha256": "0002a9145d53320e3be70bc33e1ad829211b40b6aec66663aad1cfcdf669dc18",
+      "utf8_bytes": 195,
+      "characters": 195,
+      "text_sha256": "f4c81848ece42eba56a9a7071813af7bb98ab0ed5d1dcebdea2f8af908645711"
+    },
+    {
+      "order": 281,
+      "article_id": "24464333",
+      "title": "Sam Aleckson",
+      "selection_rank_sha256": "0002a9d53d8f0c2181357e36a3996905fd5d9dd222bbc6c32bcc07a5497ad4ef",
+      "utf8_bytes": 12707,
+      "characters": 12705,
+      "text_sha256": "1b3731b08616933a637e710ff0119ca37ab74e5ea06327f5a66ba9007d6704b1"
+    },
+    {
+      "order": 282,
+      "article_id": "59275558",
+      "title": "Arturo L. Carrión Muñoz",
+      "selection_rank_sha256": "0002af140949026fb9457fcf4eb0dab72e3aa1896b28f110e05aac1fbc069d9b",
+      "utf8_bytes": 1155,
+      "characters": 1151,
+      "text_sha256": "f718a774701b35ddb370cee59054a65a9676ded04ec50c723540ac5aa8871b79"
+    },
+    {
+      "order": 283,
+      "article_id": "10411890",
+      "title": "Level 42 (song)",
+      "selection_rank_sha256": "0002b0098f8989f02d073473933bf647234ed3cc7631ecb4033c6b814e01345b",
+      "utf8_bytes": 289,
+      "characters": 289,
+      "text_sha256": "645445392cb4182ba900d80413556f4206fe64a72a43db2fedcadb6be89690d0"
+    },
+    {
+      "order": 284,
+      "article_id": "227908",
+      "title": "1500 in literature",
+      "selection_rank_sha256": "0002b42214a6cf56656ebf7e9327c610d6f8b2d11c79d5acd4b3aa77e16449d3",
+      "utf8_bytes": 2661,
+      "characters": 2625,
+      "text_sha256": "a41c95655be07d2075e42d0c977d3835823028a3475e842e27930ffa4fecfb63"
+    },
+    {
+      "order": 285,
+      "article_id": "43663747",
+      "title": "Borko Duronjić",
+      "selection_rank_sha256": "0002b60030b5a859f13a0770897c7c1fb8bbd55e32a4d72502c7d9fc132e8604",
+      "utf8_bytes": 639,
+      "characters": 634,
+      "text_sha256": "8cfa03c7dabcbd6d9e120821e76b06c3cf11d741b0458aefc635b5035aff9a1a"
+    },
+    {
+      "order": 286,
+      "article_id": "44146420",
+      "title": "Cass High School",
+      "selection_rank_sha256": "0002bac1e4dbabae4cef8d886bb2c9102bd191f2142e2f819f6f0b38a4e5e6b4",
+      "utf8_bytes": 215,
+      "characters": 215,
+      "text_sha256": "dd26d4faeb2b01a5bcaa574cae7b73ef08e8ea233cfccbdb9756a32d218ccf14"
+    },
+    {
+      "order": 287,
+      "article_id": "75112392",
+      "title": "Audrey Brown",
+      "selection_rank_sha256": "0002bb357fa814842b6d109840dbbee965b98bdd35f82c4e76395b0d17fbd7b0",
+      "utf8_bytes": 259,
+      "characters": 254,
+      "text_sha256": "88c18e5f922578b5fe8c0968926b2707f24234fd45c1a886b904587b0f171f3c"
+    },
+    {
+      "order": 288,
+      "article_id": "65509714",
+      "title": "Aishath Maain Rasheed",
+      "selection_rank_sha256": "0002bd367b0eead4c21d1f8cf23fb993e19b2400791d443d90d9c9280825981c",
+      "utf8_bytes": 3141,
+      "characters": 3139,
+      "text_sha256": "f08abc89e29a4bcfe1a7553189b9bc14f3136ae6ce44cb96176ea9b6792add13"
+    },
+    {
+      "order": 289,
+      "article_id": "57312783",
+      "title": "Zehra Borazancı",
+      "selection_rank_sha256": "0002bdb66826c034d229a573ae96071c0de2287aa15a23039290805d29a75715",
+      "utf8_bytes": 4424,
+      "characters": 4381,
+      "text_sha256": "87717059c810b0343221f230889ea591d2d970b6ae48867958faae964a7947aa"
+    },
+    {
+      "order": 290,
+      "article_id": "7816568",
+      "title": "Johan Voskamp",
+      "selection_rank_sha256": "0002be594968e5c5b8f175a2ee1d61eb370ac9c87f97e839bc27aa5c00a959dc",
+      "utf8_bytes": 1628,
+      "characters": 1608,
+      "text_sha256": "d4216d729a7b49e50e6efb3b6dd235f3f135a8f6f311e6ae84d5c5e95477afc2"
+    },
+    {
+      "order": 291,
+      "article_id": "18807235",
+      "title": "Airport reference point",
+      "selection_rank_sha256": "0002c053f5021830f4b59050297c0ef13d438aa08e9f7c16552461bfb76bd584",
+      "utf8_bytes": 663,
+      "characters": 663,
+      "text_sha256": "ea6a6292a2ad22288ef9698175299f1fff52eb19e7c795382786028257f1c0b7"
+    },
+    {
+      "order": 292,
+      "article_id": "23129431",
+      "title": "Cognitive appraisal",
+      "selection_rank_sha256": "0002c28605cee82ad9c6e7e9ed9d1eb212053d64f0d54bd8921fe5fc1513cb14",
+      "utf8_bytes": 4144,
+      "characters": 4142,
+      "text_sha256": "a2122a0439f20429e1f8de999f0b61630ccd3b7862a2f9af131c40b298aa795f"
+    },
+    {
+      "order": 293,
+      "article_id": "22794742",
+      "title": "Peter Todd",
+      "selection_rank_sha256": "0002c31ab9c5fd3efb96d7ba6745b38bd28ed4458065ae3af4992215ccd3820d",
+      "utf8_bytes": 1639,
+      "characters": 1639,
+      "text_sha256": "899f1dfa2dd652b858045f2be16d7e4445f8280ee07dbd9ab08f25601616bfa6"
+    },
+    {
+      "order": 294,
+      "article_id": "5889153",
+      "title": "List of former bus stations in Singapore",
+      "selection_rank_sha256": "0002c34c60eadfa3e5391bfc39a14b3cea547d26f9beb1edd30f846c37a00cec",
+      "utf8_bytes": 14458,
+      "characters": 14454,
+      "text_sha256": "e5633d4c7b9edf505054800ab4a1296877faf68cac3c5daa42bc1c58043c067f"
+    },
+    {
+      "order": 295,
+      "article_id": "51474413",
+      "title": "Motozintlecos",
+      "selection_rank_sha256": "0002c45b44a82dfa76216fc8f200e6471391f8699171a1b85152465e65daf450",
+      "utf8_bytes": 370,
+      "characters": 367,
+      "text_sha256": "061b2862a4b0e7bf5f5747b2d57b95e79e794a837c559f5e0ce027248b7bdf17"
+    },
+    {
+      "order": 296,
+      "article_id": "6411578",
+      "title": "Adolphus von Dalberg",
+      "selection_rank_sha256": "0002c671db7d4da6d04f5bb7f6a0f6a778ee65c2b4c46fe0695a5f713fb4dd7d",
+      "utf8_bytes": 2143,
+      "characters": 2141,
+      "text_sha256": "d3a4b366ab5d8401b3d2dba1400f7356db37d1006883213ddd8e7d177180cc8f"
+    },
+    {
+      "order": 297,
+      "article_id": "36618176",
+      "title": "Larisa Korobeynikova",
+      "selection_rank_sha256": "0002c6a5c5ef3bb70bcdbdecda57d32493100bd56d7456c29c467342d6b88b83",
+      "utf8_bytes": 1220,
+      "characters": 1220,
+      "text_sha256": "38a1a36affea8f57d38ec479946ed3490c81648b0b3c82a929fe6012180639b0"
+    },
+    {
+      "order": 298,
+      "article_id": "13781123",
+      "title": "Asatō Line",
+      "selection_rank_sha256": "0002cb023cd94892284ab53b9c6660cd23b2ae04f2a7c2703f476ce13a200e47",
+      "utf8_bytes": 4067,
+      "characters": 4054,
+      "text_sha256": "35136b21afece47af9f76b916a17626c66adaf1c247d6db5b10c4270e267088d"
+    },
+    {
+      "order": 299,
+      "article_id": "495549",
+      "title": "Carlos Alazraqui",
+      "selection_rank_sha256": "0002cbf43a58519c5b7724bf9c19c0289a8171190bff4714c71b77bfda664692",
+      "utf8_bytes": 6770,
+      "characters": 6759,
+      "text_sha256": "a01ad7438306aee78e2f00aafaf586c8ed2559dd213f659fcb8841fc42087efe"
+    },
+    {
+      "order": 300,
+      "article_id": "74351442",
+      "title": "Kenneth Pobo",
+      "selection_rank_sha256": "0002ceacad658610aa3d89a59abb8cd44857186fa0c50967ab716ce991720fc6",
+      "utf8_bytes": 6407,
+      "characters": 6400,
+      "text_sha256": "0ed96981080105bb7b2bc229932a4751573470034f01e07cb8dea5ebce5389d3"
+    },
+    {
+      "order": 301,
+      "article_id": "51041485",
+      "title": "Irmgard Enderle",
+      "selection_rank_sha256": "0002d04396dd6dadb297d04acd640d7cd9b818f41582d81633fea8508423c9eb",
+      "utf8_bytes": 6996,
+      "characters": 6989,
+      "text_sha256": "d432836460275dafda88f3e4165659afa75965111ceb63cbff1c369c6e23bf17"
+    },
+    {
+      "order": 302,
+      "article_id": "12279127",
+      "title": "USS Concise",
+      "selection_rank_sha256": "0002d548088600a9fef4e433eb2159303b5b3f70aeecf2caefd00e3bf2a7ce82",
+      "utf8_bytes": 1323,
+      "characters": 1323,
+      "text_sha256": "4fd1277fd7ee1fb98116bb3f1d87f9bd1183666cea41507e6146c6c37bfff0b5"
+    },
+    {
+      "order": 303,
+      "article_id": "118781",
+      "title": "Orion Township, Michigan",
+      "selection_rank_sha256": "0002d5ed984a1847eb1196bad4f3331eaf66edcfe24e4f255ad57b9c747c1372",
+      "utf8_bytes": 5455,
+      "characters": 5451,
+      "text_sha256": "50508e763d07101757a24ac915007f323c28c1889f92fdf86bf9b92fdb4278f3"
+    },
+    {
+      "order": 304,
+      "article_id": "8239941",
+      "title": "Widnes",
+      "selection_rank_sha256": "0002d655fd487087f1f1ab684d69803181ef88fa879a18959b304d365717eed4",
+      "utf8_bytes": 35838,
+      "characters": 35740,
+      "text_sha256": "6996c4e56d231f919fffc3fbb04c6e89ab595862b268094fed8eeecc11a75f95"
+    },
+    {
+      "order": 305,
+      "article_id": "41238503",
+      "title": "Alexandria riot (66)",
+      "selection_rank_sha256": "0002d6743dd6b7a014dc38d38d695c2d291e71c2fc26872afd08c5bb59855f92",
+      "utf8_bytes": 2771,
+      "characters": 2763,
+      "text_sha256": "cb7ac6f9cd99633e398d7859e6171f5b9d2013cae1c301000e2fadca2792dfe7"
+    },
+    {
+      "order": 306,
+      "article_id": "29436794",
+      "title": "Virginia Union Panthers",
+      "selection_rank_sha256": "0002ddb07836f5439f0311230abe11f0b8f1bb289bbc27174bee1863e4d7a958",
+      "utf8_bytes": 2090,
+      "characters": 2088,
+      "text_sha256": "4747631a6d2263fe6eeaff102d585af66f4e402e17e220b3fe8ebdb97724211d"
+    },
+    {
+      "order": 307,
+      "article_id": "16257947",
+      "title": "Celebrating Life",
+      "selection_rank_sha256": "0002e413470d80892fae54b812071beb65d379beca30f78f8b931e64ba0653ec",
+      "utf8_bytes": 1215,
+      "characters": 1158,
+      "text_sha256": "1c92db7e0f80b4cae763c990eb4499f4b9c0a1a67e1f1101a9e0e4e2d53d07f8"
+    },
+    {
+      "order": 308,
+      "article_id": "34886791",
+      "title": "Charles Dudley (actor)",
+      "selection_rank_sha256": "0002e5dbb75b0481941cb7e4e74ab44eef5b5d37be3090cf8c9b57be46da112e",
+      "utf8_bytes": 2522,
+      "characters": 2518,
+      "text_sha256": "685c0e8d514f4a9767661241100f7f667d5b87f813c33ff2fb7300d956403acc"
+    },
+    {
+      "order": 309,
+      "article_id": "30028822",
+      "title": "Sufjan Stevens discography",
+      "selection_rank_sha256": "0002eaeb3a8896d8c69436e86527d0f578350df522d92bb285fd086169c66db3",
+      "utf8_bytes": 2876,
+      "characters": 2872,
+      "text_sha256": "874b58214b3c56d230248d34b4ca241dcefee1d371d2fb078e30040e50abdd91"
+    },
+    {
+      "order": 310,
+      "article_id": "47183205",
+      "title": "Chionodes discoocellella",
+      "selection_rank_sha256": "0002eb50f56a862ae41d8d1dab1a48d8fe4f8f80148f68797fa68de1be18e0bb",
+      "utf8_bytes": 763,
+      "characters": 763,
+      "text_sha256": "124ae6e1b4d9428a38f3b4d7c524e9544b57d841d205f75de5836e9494b4a492"
+    },
+    {
+      "order": 311,
+      "article_id": "28483774",
+      "title": "Presença de Anita",
+      "selection_rank_sha256": "0002f19d8c1d8b706d07c450ee8d8183873ff62ee3331c436e58ea96ce6b7767",
+      "utf8_bytes": 2791,
+      "characters": 2772,
+      "text_sha256": "20d5e9ff9bfa3cce33dd3f23527ceab8271159e6afb681475b718499e14e3030"
+    },
+    {
+      "order": 312,
+      "article_id": "17127289",
+      "title": "Bristensee",
+      "selection_rank_sha256": "0002f5ab895b2e990786e470eeb35beb5b5ba77af183991e8ae34cde498c17df",
+      "utf8_bytes": 272,
+      "characters": 272,
+      "text_sha256": "b924c6096b451f5783b852424c5d34df32af3544eb244747aa59216e4172da93"
+    },
+    {
+      "order": 313,
+      "article_id": "54285947",
+      "title": "Golden Melody Award for Best Male Mandarin Singer",
+      "selection_rank_sha256": "0002f6474eea6dd18b595f9400f05f6aa013b663d1619a050143f6f80ce635eb",
+      "utf8_bytes": 701,
+      "characters": 691,
+      "text_sha256": "23cde0a3809a335a24d1d406a6156409967662dbfa4bd555662551528dbd197b"
+    },
+    {
+      "order": 314,
+      "article_id": "21962800",
+      "title": "1986 BC Lions season",
+      "selection_rank_sha256": "0002fa6743b209521855b6f830bc9e705ca7f28b170ca8674e67197d6fd77bb1",
+      "utf8_bytes": 610,
+      "characters": 600,
+      "text_sha256": "65bc0244bcee5ae70dfa2de56e25ac53b929be8027ac63ee795c8033f1b97330"
+    },
+    {
+      "order": 315,
+      "article_id": "10444414",
+      "title": "Tabarja",
+      "selection_rank_sha256": "0002fcd0cf1a5cc2ddb5b03499231df704b034dfb111d913066b3db115682df0",
+      "utf8_bytes": 8774,
+      "characters": 8770,
+      "text_sha256": "bd29a1d25da8a0c54c60b8b24b51c14fcbf88ed30d5c651a61e71cfa36868b21"
+    },
+    {
+      "order": 316,
+      "article_id": "7250079",
+      "title": "John Hollenbeck (musician)",
+      "selection_rank_sha256": "0002fe531250905d4f6dddafa5204f716b36302744c3534670fa26e736ce5731",
+      "utf8_bytes": 3627,
+      "characters": 3625,
+      "text_sha256": "9604831f8c387d1d0d4042474a483a187e11865ba96f55655f36c6b3c48799ce"
+    },
+    {
+      "order": 317,
+      "article_id": "138689",
+      "title": "Dovre, Wisconsin",
+      "selection_rank_sha256": "0002fea11b7e2549a1a63aef02a5f26e44358480b08c5a11f9ebb43cb6338c6f",
+      "utf8_bytes": 2302,
+      "characters": 2302,
+      "text_sha256": "841b8b3f955ca0df656237b6e6e6c60d7d36da2fe7c210d7122c54ed87dbfef1"
+    },
+    {
+      "order": 318,
+      "article_id": "4564208",
+      "title": "Aharon Yariv",
+      "selection_rank_sha256": "0003002a87f1500699f9e2f5a2576f955c80ee1b0a2e5d3cd1d3b188b7cd9faa",
+      "utf8_bytes": 2850,
+      "characters": 2843,
+      "text_sha256": "4c868857d18bb8e898852d0a00540476a5bffc63ccc9d40f06185cb40aa0a005"
+    },
+    {
+      "order": 319,
+      "article_id": "21623307",
+      "title": "Lauretum",
+      "selection_rank_sha256": "0003019a9b276015cc11f078fe2789d12ed929bd808c5ca56b84f3e491344ccc",
+      "utf8_bytes": 886,
+      "characters": 886,
+      "text_sha256": "54172b123e40c7d7e3fe410e4fb6390872129f4f8e0027e279b2d87da1caa221"
+    },
+    {
+      "order": 320,
+      "article_id": "3036790",
+      "title": "899 Jokaste",
+      "selection_rank_sha256": "0003046909e5110c6bed9b2637ce343de5b282d18fb7468641a6f055f3aa6dd6",
+      "utf8_bytes": 434,
+      "characters": 434,
+      "text_sha256": "dbbdcd702b076de968d3ddb6b8e22beb06a28ca0f16bf49cef6f9666c720de09"
+    },
+    {
+      "order": 321,
+      "article_id": "37556863",
+      "title": "Brian Dobie",
+      "selection_rank_sha256": "000305be03a4da5b4e5c559ef4da26824f2723dc15a3ee9fdfb7f70d4567e559",
+      "utf8_bytes": 1256,
+      "characters": 1256,
+      "text_sha256": "02ff63ae10ce6eff1a0c89ff19b28c7f6a4a16c5b88d2f1f066bb9e4847a7867"
+    },
+    {
+      "order": 322,
+      "article_id": "8015068",
+      "title": "Günter Kießling",
+      "selection_rank_sha256": "0003078149ab2c3fac73fb69dcba74b8818802857c81af201d22522980d6f0d3",
+      "utf8_bytes": 1615,
+      "characters": 1602,
+      "text_sha256": "9cbc51cad2f2d67136e4c21bfdd6b8dad6d8a13faf11dfe55acfd8ae65cab1ff"
+    },
+    {
+      "order": 323,
+      "article_id": "4464617",
+      "title": "Wally Rae",
+      "selection_rank_sha256": "00030ccf0f02940077db8c339c49a9121905d3ded5486fac40929c1bba566c14",
+      "utf8_bytes": 1170,
+      "characters": 1168,
+      "text_sha256": "b57e4eeb888a0cda0393e2b6d72f501ed08a8bedcfc56bb56a86e9ab8968fac6"
+    },
+    {
+      "order": 324,
+      "article_id": "59865699",
+      "title": "2016 York Region Shooters season",
+      "selection_rank_sha256": "0003109f8fddf9c441d11e9fb19abbe44f079e9a3f6951163c6afe26b7754312",
+      "utf8_bytes": 1960,
+      "characters": 1960,
+      "text_sha256": "a479abe4073df59e1af01dc3c29b2ca6387e7fc4e0c64c40983ebf5d148bb00a"
+    },
+    {
+      "order": 325,
+      "article_id": "57272937",
+      "title": "Pascal Caron",
+      "selection_rank_sha256": "000315fd087d3d8d247f86e262ec93718ac3c5ac5469831456dce5cfb14f6103",
+      "utf8_bytes": 338,
+      "characters": 337,
+      "text_sha256": "6920c8f11a5c1285fa6371bc86512fd817314be2caf4045381a3d94006a09630"
+    },
+    {
+      "order": 326,
+      "article_id": "59853966",
+      "title": "Cross-country skiing at the 1994 Winter Olympics – Men's 30 kilometre freestyle",
+      "selection_rank_sha256": "000316e63349ead33b2484c7545c77724f394f729fe1c92abae6901480d38c3e",
+      "utf8_bytes": 377,
+      "characters": 377,
+      "text_sha256": "53afb40dd53558a50383f90b2b748fdf54ce45e6c63fa39e1359770cc9b174aa"
+    },
+    {
+      "order": 327,
+      "article_id": "44846773",
+      "title": "St. Patrick's Catholic Church (Washington, D.C.)",
+      "selection_rank_sha256": "0003173b015eef1a1968b24d016e6e4fe620c4fd3d9f4e4657daf3078d9f8b17",
+      "utf8_bytes": 4183,
+      "characters": 4181,
+      "text_sha256": "f02e88e4eed3879574d8c316a8de828b3ed8a2df208ca21b32692e73b8ee64e7"
+    },
+    {
+      "order": 328,
+      "article_id": "16710881",
+      "title": "Domestic violence in Argentina",
+      "selection_rank_sha256": "00031bfb8e8274962ba33424429fe14b67abe8416cc7e551f8968e8b94e12f83",
+      "utf8_bytes": 1997,
+      "characters": 1991,
+      "text_sha256": "a32d9393055a11012a87f228af64c016b41d5185907968b0e9b6ebed3922d11d"
+    },
+    {
+      "order": 329,
+      "article_id": "9266295",
+      "title": "Brandon Cablay",
+      "selection_rank_sha256": "00031d8c895f9e4a8589130170ab5f4c3b35ff2cfe4b09554496f818aa510689",
+      "utf8_bytes": 2171,
+      "characters": 2169,
+      "text_sha256": "aaab090390c116a5d82cdb8e4392ee95dd2fd9556e0f196e45cd62ba75d9bd52"
+    },
+    {
+      "order": 330,
+      "article_id": "7806515",
+      "title": "Paracolic gutters",
+      "selection_rank_sha256": "00031eb96b6a714aad3dc727b9e06b33eca01e87d09e6cd1f62327726c480a6d",
+      "utf8_bytes": 2450,
+      "characters": 2448,
+      "text_sha256": "e13ec92964b55568cff44d24d520053b34bb3c4b820682a407988f3f5eaa0577"
+    },
+    {
+      "order": 331,
+      "article_id": "27448844",
+      "title": "Podslon, Dobrich Province",
+      "selection_rank_sha256": "00031f602b1c980a5c6f9ab3e7667f9b1342c6cc9dfeb0c89b7a22265d47bbbd",
+      "utf8_bytes": 186,
+      "characters": 186,
+      "text_sha256": "13cdc8593d1db6522eb0ee830cd5c392983ba5b547b3ab97667d2a1a4a06b230"
+    },
+    {
+      "order": 332,
+      "article_id": "46737275",
+      "title": "George Lear",
+      "selection_rank_sha256": "0003221bde01758f260076e1211d0c0a0e83e57721630d5f89a968b4f772db1a",
+      "utf8_bytes": 1282,
+      "characters": 1280,
+      "text_sha256": "0a6046e14604e460bb35991614165fbafca3df1fa41226898c63d17f9338abd0"
+    },
+    {
+      "order": 333,
+      "article_id": "59511437",
+      "title": "Castrignano",
+      "selection_rank_sha256": "000322eb00bc829b36faea8cf357d7fc88a902a3fe2bd1931712219643ae5d56",
+      "utf8_bytes": 180,
+      "characters": 179,
+      "text_sha256": "0c860d8287d54ed2b751b7c7b3f4ad5a508460cc16034db8d34fdec4800f51e1"
+    },
+    {
+      "order": 334,
+      "article_id": "30684704",
+      "title": "USS Hopkins (SP-3294)",
+      "selection_rank_sha256": "0003243558e478d8e334dc3e0aa687a6cb6d20e2a189890c678872a7f12ced41",
+      "utf8_bytes": 1294,
+      "characters": 1290,
+      "text_sha256": "fb62ef638cbe5867ab1ffc547cd95e284b7d75a5bf135ba0637e1638f3f93dec"
+    },
+    {
+      "order": 335,
+      "article_id": "34215394",
+      "title": "Andrew Sarauer",
+      "selection_rank_sha256": "00032508d3de0d5a31e3544caacf8b0d3991d9d9559dd7e21cab756fc776eff4",
+      "utf8_bytes": 2292,
+      "characters": 2278,
+      "text_sha256": "66816a50cb1ccd87215ddb9cd24073c6aed3b2d226a8a7924e7b6434786d0d3b"
+    },
+    {
+      "order": 336,
+      "article_id": "30335712",
+      "title": "Kinuyo Yamashita",
+      "selection_rank_sha256": "0003281dd6055f94405990155de0671c39bb93a4974faf4609fd44af88128a49",
+      "utf8_bytes": 3319,
+      "characters": 3314,
+      "text_sha256": "98ebb5c8fb075ca86bd2d8fe272d5f27feac366be43ddad8c684d07078bc2636"
+    },
+    {
+      "order": 337,
+      "article_id": "41579783",
+      "title": "Adarotene",
+      "selection_rank_sha256": "00032ccf289411f5d674480555e7b0cbaf2818e064c64b7d43e50d8b77b6b155",
+      "utf8_bytes": 57,
+      "characters": 57,
+      "text_sha256": "a39834aa6a62790a1650b4feaaf02e1c8bcf17a9bf1af3fd0dbad7a6a2614b05"
+    },
+    {
+      "order": 338,
+      "article_id": "51521593",
+      "title": "Duván Vergara",
+      "selection_rank_sha256": "00032d2d6771c2142821a354a7c756879eb48f8670ab108fb7d02599976b6e96",
+      "utf8_bytes": 1149,
+      "characters": 1136,
+      "text_sha256": "7694df787591ba9039a62c30b47a5e59adbb57fdd1bbdd1adce407507d0b662d"
+    },
+    {
+      "order": 339,
+      "article_id": "33229816",
+      "title": "Volodymyr Biletskyy",
+      "selection_rank_sha256": "0003307e9a18d2602178635710ab5029aaf27def718310bef79daddaa149aaa2",
+      "utf8_bytes": 4894,
+      "characters": 4862,
+      "text_sha256": "b055301461481625a3d4fbdadcec2c27a911523b2524110e77b4990a16ae4571"
+    },
+    {
+      "order": 340,
+      "article_id": "18434227",
+      "title": "L'Architecture Vivante",
+      "selection_rank_sha256": "0003329302ed3533ad90f5777df6979205b226bc49b9227c29a7977d71116b7c",
+      "utf8_bytes": 2645,
+      "characters": 2627,
+      "text_sha256": "91490dc42211acb5db705bd481bc5859ad5c0ec641e28a4300bcea0e525b1fca"
+    },
+    {
+      "order": 341,
+      "article_id": "55104474",
+      "title": "Foliglurax",
+      "selection_rank_sha256": "000332e9784236d7c700bfa6cfd688da5cd02601859e99f7a4392d963937d353",
+      "utf8_bytes": 567,
+      "characters": 567,
+      "text_sha256": "ad1601d088e88e1320bcfcae2eebe7d0b29184570448b6fe7210310be8021171"
+    },
+    {
+      "order": 342,
+      "article_id": "125422",
+      "title": "Kendall Park, New Jersey",
+      "selection_rank_sha256": "0003437e0e28413567b646f00a893def8424e992ec0fff8e702ca0fee4f364b0",
+      "utf8_bytes": 5377,
+      "characters": 5373,
+      "text_sha256": "1e13f60ec43e5750498cf65b13e3296e0c18c91c3c6f39a9b7dc7ca46d08a4cd"
+    },
+    {
+      "order": 343,
+      "article_id": "44508684",
+      "title": "Werner Krolikowski",
+      "selection_rank_sha256": "000344534c30e893e146d58ffc894dd3052c014cf00098fdb99dbafea158146d",
+      "utf8_bytes": 6544,
+      "characters": 6530,
+      "text_sha256": "237d0c6e88b295f016c1d68ba04e331a974823f0a5a224aad44b2cbe84d33939"
+    },
+    {
+      "order": 344,
+      "article_id": "74128287",
+      "title": "Young & Free",
+      "selection_rank_sha256": "000344f0b062cdf420885323c9f974b7c0a9c234031373f2bc948a22b04203fe",
+      "utf8_bytes": 168,
+      "characters": 168,
+      "text_sha256": "4c016761b55c7b7e9e10548c5370458faf4ad2f9969eea8425839bf7ddffc38a"
+    },
+    {
+      "order": 345,
+      "article_id": "51494194",
+      "title": "Days of Our Own",
+      "selection_rank_sha256": "000345743d3392b81e684eb6d34f9d25bd88c5cf983f7dc9c32d676c7abd86ba",
+      "utf8_bytes": 821,
+      "characters": 821,
+      "text_sha256": "b5e88c54731c3f88a4aef9c69da6532fc218d1ce7cf01522f6c67a7fbb7cd3ef"
+    },
+    {
+      "order": 346,
+      "article_id": "30014666",
+      "title": "Eastern Hymns for Western Shores",
+      "selection_rank_sha256": "00034660dd24743a5f2f41b3250ba5ded19a02c3ffa618c815112cdc0d96bcd8",
+      "utf8_bytes": 1337,
+      "characters": 1337,
+      "text_sha256": "3b0f9c8cd15510fd7d1f932fb1ebad01ea28263083fd9f0852abccffbbb261c8"
+    },
+    {
+      "order": 347,
+      "article_id": "52121205",
+      "title": "Surkov leaks",
+      "selection_rank_sha256": "00034b146828acfbffd6cfb64c8e763a74e5329a51dc3258c3dd407f7a7dff07",
+      "utf8_bytes": 6440,
+      "characters": 6426,
+      "text_sha256": "fd133f7ff7e944ae950d0d8cde9f8687a9217d75b40db7b56b007613c4f0ef74"
+    },
+    {
+      "order": 348,
+      "article_id": "17369285",
+      "title": "Elements (Steve Howe album)",
+      "selection_rank_sha256": "000354c88af7fc01f3a950a57baeb9a66a2e43ea9b4b090d9e06a4970fa925ca",
+      "utf8_bytes": 1139,
+      "characters": 1139,
+      "text_sha256": "d6ec88fe55e033704266140007327a66dff9f484003772dc647ee94594119264"
+    },
+    {
+      "order": 349,
+      "article_id": "33383287",
+      "title": "Saroj Dey",
+      "selection_rank_sha256": "000355147223b545a340d6de4d08840352dad65e6e826bf7565e5d3949d800ac",
+      "utf8_bytes": 1764,
+      "characters": 1762,
+      "text_sha256": "4560c8f963b1d17fe3f042ce1ad2eb4d3779d6eefca343558ee4268a2df5c129"
+    },
+    {
+      "order": 350,
+      "article_id": "25296279",
+      "title": "Rafael Iglesias",
+      "selection_rank_sha256": "0003553fac168d1ff7e1d6d5cc575e180d3e33736820f3e6d38a99390843cb27",
+      "utf8_bytes": 455,
+      "characters": 449,
+      "text_sha256": "a1111ab8b7a1bf1cd44d7d9e4854068d43b0bcfe922fc344d811c75e81ef51d8"
+    },
+    {
+      "order": 351,
+      "article_id": "1838030",
+      "title": "The Heidi Chronicles",
+      "selection_rank_sha256": "000358c6029f50ceb79756d5de42d2efe5ab7ace2ff5733e3862ad039d882d43",
+      "utf8_bytes": 4125,
+      "characters": 4125,
+      "text_sha256": "1c19a4babb7ae5a57aee14a69bb68d02d1dee47b3faea4706384594f920183e0"
+    },
+    {
+      "order": 352,
+      "article_id": "29069906",
+      "title": "Kunngutip Qaqqaa",
+      "selection_rank_sha256": "000359a7269e3bf4de26cb003263f5dd1a82d86b9bbc8fa2a98151050872e97c",
+      "utf8_bytes": 128,
+      "characters": 128,
+      "text_sha256": "71a4d800a82cd1e55f91b639ed14bde687113763926f12788416cfae1ef4c7b8"
+    },
+    {
+      "order": 353,
+      "article_id": "15680532",
+      "title": "Fairview Township, Butler County, Kansas",
+      "selection_rank_sha256": "00035c2af7ee95b5027a398511cf4674842596a4236bdbd10ba3b064d149db50",
+      "utf8_bytes": 462,
+      "characters": 462,
+      "text_sha256": "ed72e4ba8c7a137f82d677eae7f8dd7dd72644fe0280c003403e4993f0f2d641"
+    },
+    {
+      "order": 354,
+      "article_id": "50936037",
+      "title": "Bill Reinhardt",
+      "selection_rank_sha256": "00035f163678b5a56557e76478af929062a05a66035e729f75443adcf6f0d9b8",
+      "utf8_bytes": 13199,
+      "characters": 13189,
+      "text_sha256": "684a4fe710afd965b912f25c7028c5fc69514089baaf016ca5b30eebd9a41426"
+    },
+    {
+      "order": 355,
+      "article_id": "59149901",
+      "title": "Leptacris",
+      "selection_rank_sha256": "00036086ce917bf48b567b8fdcadf957e7e4d00412ca5a2efd877fbc3fe29072",
+      "utf8_bytes": 522,
+      "characters": 519,
+      "text_sha256": "d8df921459714d66da67d33cab3f7276730190c030b313f1d086f936f746baa8"
+    },
+    {
+      "order": 356,
+      "article_id": "56048991",
+      "title": "Sarpuria",
+      "selection_rank_sha256": "000360c9627cd4f77a951b07a61b8eda2a3facd6adc0995ab2fca3e85d626dea",
+      "utf8_bytes": 1476,
+      "characters": 1474,
+      "text_sha256": "3d47b593592360c012defbf11eff02267ffbaa50eacd393d92d409ff2b1dfbd1"
+    },
+    {
+      "order": 357,
+      "article_id": "21842146",
+      "title": "Zawojki",
+      "selection_rank_sha256": "0003636fa2ed70378864d79ab4b7d1f4384808f0b6ac1e75411759ea909ddebd",
+      "utf8_bytes": 280,
+      "characters": 280,
+      "text_sha256": "e83a5115cbbb5413353eb7683022edf1ca094a55cd674a70c7b22741ccb8e11b"
+    },
+    {
+      "order": 358,
+      "article_id": "57311215",
+      "title": "Auleutes subfasciatus",
+      "selection_rank_sha256": "000363729b92621b749656f95344d17490a1df6cda11cfd971d59122804b37b0",
+      "utf8_bytes": 225,
+      "characters": 225,
+      "text_sha256": "a5986e588a2fe40a208fbf42cfc7cba6a224e454967c7cb2e8e17f95eac58c43"
+    },
+    {
+      "order": 359,
+      "article_id": "3494476",
+      "title": "TextMate",
+      "selection_rank_sha256": "0003641e113b9f7f7b2801ae63d0b3b4d7e8552ba6f3854aed33074b2ac29bf1",
+      "utf8_bytes": 11408,
+      "characters": 11348,
+      "text_sha256": "7e44715c265ad5ff2def12e175c662ec0b9abdfb3bf735d24d69e0651bde5c96"
+    },
+    {
+      "order": 360,
+      "article_id": "55593510",
+      "title": "List of top 10 albums for 2017 in Australia",
+      "selection_rank_sha256": "000367f1ba812ce3b17c7ed469f7758526022c4627d82f8ccb8b282ebe195a7f",
+      "utf8_bytes": 554,
+      "characters": 554,
+      "text_sha256": "8860b3579ebb5acc2d8ba76a926c599cf5fa952034509827d32204e513d157a7"
+    },
+    {
+      "order": 361,
+      "article_id": "11150249",
+      "title": "Semi-Open Game",
+      "selection_rank_sha256": "0003696dc2b872647161c1f1c9ae3ef98f971dc57ba4dff5c7ee025396eec40c",
+      "utf8_bytes": 1982,
+      "characters": 1980,
+      "text_sha256": "d25ecd1a1c341c7a3e63bd3ea4d6093b933d5f52cb2af9567e72ba807497aac1"
+    },
+    {
+      "order": 362,
+      "article_id": "1004941",
+      "title": "Saint-Pierre-du-Fresne",
+      "selection_rank_sha256": "000372673dec001751014677ed1feb258a2bdd65e27b8497570dc4d65c8ed1c9",
+      "utf8_bytes": 286,
+      "characters": 286,
+      "text_sha256": "cf3245eb044da429a1abffd423044f3d936090a7343d285393a53f556f6af58c"
+    }
+  ],
+  "corpus_protocol": {
+    "source_and_selection_sha256": "bc9de039cbd0e7ad81a092004dbc32e63ecef4dc64db4ab51ba7f75bb9289c15"
+  },
+  "manifest_sha256": "5ed7098d40aee0dd3c28976e3e1b5e546b0b0abbd657f6edc9d9e6f3995dff13"
+}

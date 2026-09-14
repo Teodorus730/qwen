@@ -1,0 +1,4465 @@
+{
+  "schema_version": 1,
+  "canonical": true,
+  "noncanonical_reason": null,
+  "dataset": {
+    "repo": "wikimedia/wikipedia",
+    "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+    "config": "20231101.zh",
+    "split": "train",
+    "dump_date": "20231101"
+  },
+  "language": "zh",
+  "selection": {
+    "algorithm": "sha256(dataset_revision\\0language\\0article_id\\0seed)",
+    "seed": 42,
+    "byte_budget": 1048576,
+    "candidate_count": 512,
+    "source_scan_documents": null
+  },
+  "scanned_documents": 1384748,
+  "selected_raw_utf8_bytes": 1048568,
+  "documents": [
+    {
+      "order": 0,
+      "article_id": "46163",
+      "title": "池州市",
+      "selection_rank_sha256": "00000f64b79244a8efd1ce6c0fdcf6218e7aa463269349e384e6661b6d684344",
+      "utf8_bytes": 12557,
+      "characters": 4875,
+      "text_sha256": "00ce452a6b6455c10a796d4c80d6202b4caf792e64ae5fa1079d9b841df018f0"
+    },
+    {
+      "order": 1,
+      "article_id": "6417699",
+      "title": "邱志恒",
+      "selection_rank_sha256": "000015d6d248fe7e233e5e16d8ca32d0018f1016f3d14bebd9855f6e10101367",
+      "utf8_bytes": 2293,
+      "characters": 891,
+      "text_sha256": "d530423920bd40ba43223205551285429dadea399ebd6bb294af44b376cca15b"
+    },
+    {
+      "order": 2,
+      "article_id": "7653682",
+      "title": "普罗旺谢尔 (上索恩省)",
+      "selection_rank_sha256": "000016aacf8d23048b9223826eded9c2ab5a71143f5863cfc45c34b45818546e",
+      "utf8_bytes": 576,
+      "characters": 226,
+      "text_sha256": "92da4fae5627bcf0d20e16f38c2eefd07a984def1588c7c0ae5849027f28631f"
+    },
+    {
+      "order": 3,
+      "article_id": "3054471",
+      "title": "比纳莱萨",
+      "selection_rank_sha256": "000039f98b45937119fcf6f3e71bd4f0b4cb2fbbfecbffb6962d0c5e4070f11f",
+      "utf8_bytes": 231,
+      "characters": 89,
+      "text_sha256": "622a5e1b92c6382a1b38be06ae119ef43196be841a028103ba0d087e41337e9f"
+    },
+    {
+      "order": 4,
+      "article_id": "3435906",
+      "title": "林元熙",
+      "selection_rank_sha256": "00003ed3308766ef08163ac1a5e7c8d43a8babed76cb0235c98131791f070c56",
+      "utf8_bytes": 2967,
+      "characters": 1377,
+      "text_sha256": "58d78956b6bb1cefbb524118bb2a714a02030050c2d30f9d5a25330ffdd69ed3"
+    },
+    {
+      "order": 5,
+      "article_id": "3204595",
+      "title": "赤橋登子",
+      "selection_rank_sha256": "0000469ed7489aa9fc73c25ca23b3307c9a76a52d0d12eb56f008479b933d1c4",
+      "utf8_bytes": 1658,
+      "characters": 608,
+      "text_sha256": "c93f2f087bbfcf074ea7a77970eb895996f78839842c86d0884f3e14ee5ca8bb"
+    },
+    {
+      "order": 6,
+      "article_id": "5589388",
+      "title": "幽舞越山",
+      "selection_rank_sha256": "000056d106d165d4f6566187b3bf6846cf50303eccc9c98f601c1f99e7bc659d",
+      "utf8_bytes": 554,
+      "characters": 205,
+      "text_sha256": "df7d3842ce89be9eea9e45ad9ac90be941771ce80062ba8ddb3ac48528af194e"
+    },
+    {
+      "order": 7,
+      "article_id": "3937572",
+      "title": "因斯特奧登角",
+      "selection_rank_sha256": "0000650733d35f9adc41793ddd80c344a6f02e3be165366a8d31f6dfa4509519",
+      "utf8_bytes": 305,
+      "characters": 107,
+      "text_sha256": "46fce121ff86898ad23e883020ac5cb3e59fd0b74596597f21e7fdfb83164102"
+    },
+    {
+      "order": 8,
+      "article_id": "5550572",
+      "title": "扎格列布利亞 (比洛吉里亞區)",
+      "selection_rank_sha256": "00006e0437800e37db0079fd40e3cdae971c31ce9245e7e2623140a5635e1955",
+      "utf8_bytes": 500,
+      "characters": 229,
+      "text_sha256": "aedd6ec9278321b51db2ff63fdeab0bc96b9460c6d112c81496aabff3580d194"
+    },
+    {
+      "order": 9,
+      "article_id": "7266160",
+      "title": "德國國防軍陸軍第385步兵師",
+      "selection_rank_sha256": "000070daee92a9b00fab26eae29ab9946171b2bf761286a20d998e0248a6d327",
+      "utf8_bytes": 418,
+      "characters": 170,
+      "text_sha256": "4470a22eb901246e8e5201ee6a93a395eb7c351025cd84cf3720315e14fe98b3"
+    },
+    {
+      "order": 10,
+      "article_id": "3312864",
+      "title": "小行星1390",
+      "selection_rank_sha256": "000074554d3af00af066f360b6e2bcaa004a5ea77e06b0c10fdc0a8920812585",
+      "utf8_bytes": 252,
+      "characters": 122,
+      "text_sha256": "ef736870528b671e3ac9bc9453461dd59263a7cbfeab6855dcae61382527849d"
+    },
+    {
+      "order": 11,
+      "article_id": "2855383",
+      "title": "本溪湖",
+      "selection_rank_sha256": "000076324938053e8c0aca5d86d686033dd0f2585a93a85150ddd0c5b3603e0f",
+      "utf8_bytes": 2005,
+      "characters": 697,
+      "text_sha256": "f3fa82d8da7639668ae1bf886e01be21ebca689d82ab4ed27248b17a2011f451"
+    },
+    {
+      "order": 12,
+      "article_id": "3408903",
+      "title": "赖小民",
+      "selection_rank_sha256": "00009d848c66edbc1257e70c284ab0a38823e1e3c681123979eb5a3b30884e49",
+      "utf8_bytes": 14214,
+      "characters": 4979,
+      "text_sha256": "7ef77777263db8c7c321dea415aedc24599c355d400feadced4823bc147a291c"
+    },
+    {
+      "order": 13,
+      "article_id": "1709767",
+      "title": "科爾狼綿鳚",
+      "selection_rank_sha256": "0000a2f541e0157327d9b124c46a288f3664a3399ba73fb295a5635648d1903c",
+      "utf8_bytes": 483,
+      "characters": 185,
+      "text_sha256": "cbc2a18a683d91c8139880d87fb1fe0c7225e00d85373c96600bbe7e7ae69486"
+    },
+    {
+      "order": 14,
+      "article_id": "3883649",
+      "title": "特賴科恩山",
+      "selection_rank_sha256": "0000b049c6e4934857bc70ba7094bcba757177c267c90385576c7f76c9eb9f6a",
+      "utf8_bytes": 223,
+      "characters": 81,
+      "text_sha256": "4c07887e6b672628437682720c824715914932d44364e9fd1cc5e136c2936780"
+    },
+    {
+      "order": 15,
+      "article_id": "7807627",
+      "title": "三只松鼠海报事件",
+      "selection_rank_sha256": "0000b10a3acf88d25aab168a2bd165b688f66d4d8b148938b3d84f6665c151e3",
+      "utf8_bytes": 5496,
+      "characters": 1948,
+      "text_sha256": "2c240335da9aac6529a90b0520f881175bab46e3afd9c3a23b49aeca51d12abd"
+    },
+    {
+      "order": 16,
+      "article_id": "3301561",
+      "title": "狗吠似金星介",
+      "selection_rank_sha256": "0000b1d062064522918483db78e26b5e6e9f980c99b103264c5797a4aec37cc4",
+      "utf8_bytes": 105,
+      "characters": 41,
+      "text_sha256": "6cd3171fce22ff8fde6faef4c7496ffea1b8e3fd816f9ba250364131ca1f34f7"
+    },
+    {
+      "order": 17,
+      "article_id": "6953417",
+      "title": "凱恩鎮區 (伊利諾伊州格林縣)",
+      "selection_rank_sha256": "0000bab50967736d2048944d328cd9fc737be4fa54432e77c30e7b0e8617eff9",
+      "utf8_bytes": 403,
+      "characters": 161,
+      "text_sha256": "28161552257b3900cae73c134cdb287e3073590c11aae435d5fa378aabd6864a"
+    },
+    {
+      "order": 18,
+      "article_id": "3092476",
+      "title": "邦-塔西伊",
+      "selection_rank_sha256": "0000c22c3feef21c6c7ef93d1dcea80a22077a3dbfc1efbdd2cfd9c549e3e562",
+      "utf8_bytes": 730,
+      "characters": 282,
+      "text_sha256": "3673daa5425fa290ac8a5bfc9ccee91104aa7d334fb665bdba25cb8e2f840e2e"
+    },
+    {
+      "order": 19,
+      "article_id": "7714738",
+      "title": "日本的龍",
+      "selection_rank_sha256": "0000d900f9d0adeac027735533a66763c6eb4260cafad4f0cbac7bdd6608b186",
+      "utf8_bytes": 10396,
+      "characters": 3615,
+      "text_sha256": "6aa980759722a4bc6b5be97c1d9db6a07ab63d342fb3c50aa37eebb3bf7bed9c"
+    },
+    {
+      "order": 20,
+      "article_id": "3170109",
+      "title": "巴比倫密碼",
+      "selection_rank_sha256": "0000e4faf7bd082f4821c176f3ee2fb5c356e3c6291a59a2424c96c9da4ba63a",
+      "utf8_bytes": 2024,
+      "characters": 799,
+      "text_sha256": "20727b02598e4573c47353dcc1d1cdc774dc55fafcf440e8a86eeedb41f48e21"
+    },
+    {
+      "order": 21,
+      "article_id": "8471383",
+      "title": "日春蜓属",
+      "selection_rank_sha256": "0000fef49ada7fef30e1c7f4446792f45c41f13e1335115bcc50fecda7f6aeeb",
+      "utf8_bytes": 116,
+      "characters": 54,
+      "text_sha256": "2ce926ab9d2995ad5c0056a85b4c8718b7ae0152b2592295a2386170e704f08b"
+    },
+    {
+      "order": 22,
+      "article_id": "5967908",
+      "title": "胥各庄站",
+      "selection_rank_sha256": "000122edd489e2fed3676edd769de7c08e8a037d0301eb5cb8b8c79cfa6919df",
+      "utf8_bytes": 527,
+      "characters": 199,
+      "text_sha256": "0266b346bbdc61675ed88aa05993909553d6f85620c3fee1c860ad6b02793a1b"
+    },
+    {
+      "order": 23,
+      "article_id": "3544970",
+      "title": "小行星6238",
+      "selection_rank_sha256": "00012345a05f06d14d4e0b25e133196346eac98206a5cb3b6e9d2920824a26e9",
+      "utf8_bytes": 250,
+      "characters": 109,
+      "text_sha256": "1c4a02118fa3371fadf7b6b1b0994f17809924ca0933448b9ab7016d0b6c1692"
+    },
+    {
+      "order": 24,
+      "article_id": "3071302",
+      "title": "黄沙街站",
+      "selection_rank_sha256": "000124af9dacbc3153843f8050f17deaa1f1b2d081742367b065821960037714",
+      "utf8_bytes": 476,
+      "characters": 182,
+      "text_sha256": "20c7528a12013f28467903398855af3f75d17a8cc45f7a0a73fb8522cac0d68d"
+    },
+    {
+      "order": 25,
+      "article_id": "439828",
+      "title": "高志鵬",
+      "selection_rank_sha256": "0001275c8a9675e2f4462f34d8179ae583788b77d4fe40cc7e4e8215bbf6ad76",
+      "utf8_bytes": 5695,
+      "characters": 2093,
+      "text_sha256": "22ca34dbcd64a1dd63ee8c7c684a368690f5a284c1bdb5acff267cddf5be5f45"
+    },
+    {
+      "order": 26,
+      "article_id": "1442540",
+      "title": "朱元璋 (2006年电视剧)",
+      "selection_rank_sha256": "0001424218d4c3f9303d366924e087b4fadceed1295d455da2451b52e8b1e3ba",
+      "utf8_bytes": 3205,
+      "characters": 1161,
+      "text_sha256": "e24c3b679917eddc00000aff05cccfdf6f33ff83d7c6190405932b4f39c719bd"
+    },
+    {
+      "order": 27,
+      "article_id": "4251778",
+      "title": "周峻",
+      "selection_rank_sha256": "0001438a76d071feb3e7241741c9fab74fb23631772b437cda92ce0c803c2eec",
+      "utf8_bytes": 359,
+      "characters": 125,
+      "text_sha256": "949e0b2acc12f5656a165dfe35712ca54b0d6e63c42a0effa456bb1767411b9c"
+    },
+    {
+      "order": 28,
+      "article_id": "3075880",
+      "title": "巴尔伊",
+      "selection_rank_sha256": "000149307a6c2f9c6cf1c3f21905528ecd9fedcf1cf69873fdc814ebfda3fc13",
+      "utf8_bytes": 371,
+      "characters": 179,
+      "text_sha256": "83644a368a42d5e425aaeff2cc76a8bb32e0d2e8866fa644c95689a8a77c6243"
+    },
+    {
+      "order": 29,
+      "article_id": "5946500",
+      "title": "沈楩",
+      "selection_rank_sha256": "000151d6b8b382a9ca8c7cd0db00d4181e48df69570469d14bca7e958cff6041",
+      "utf8_bytes": 920,
+      "characters": 328,
+      "text_sha256": "5b392b2e1e316706d9690a52e63c1a7d3e751d6fb33fbea82128de116e6c7aa8"
+    },
+    {
+      "order": 30,
+      "article_id": "1231838",
+      "title": "超显性",
+      "selection_rank_sha256": "0001690fae2d71bb8aa8fb297aedc04faecf8e0814b551399e073e0647308143",
+      "utf8_bytes": 1648,
+      "characters": 622,
+      "text_sha256": "02bf82dc1cfddf2e71d11ed7b2346d568069db611cbfb0bee4c66243d35a656c"
+    },
+    {
+      "order": 31,
+      "article_id": "3070733",
+      "title": "努镇",
+      "selection_rank_sha256": "000170dde8edcbc44ceaa511c0d5e2bd2a2508b4685437dafd2c2bcde73ca404",
+      "utf8_bytes": 329,
+      "characters": 161,
+      "text_sha256": "222de5231f6da1b44e8b479d042e4a69ed5a1f3837d429be3fe754965e385661"
+    },
+    {
+      "order": 32,
+      "article_id": "8104732",
+      "title": "东溪街道",
+      "selection_rank_sha256": "0001a819680f19d868147c9dee06824bb8a0693f5d110279295af69e67a74877",
+      "utf8_bytes": 24,
+      "characters": 8,
+      "text_sha256": "a57be1d078379209e0ea3b135cf033b4c0da14fc7d25bd61570eeae9907efdc9"
+    },
+    {
+      "order": 33,
+      "article_id": "1892170",
+      "title": "清姜街道",
+      "selection_rank_sha256": "0001a86c70bb7576808064e9698a7618ac14a9ca04caea5feb5017979a3e161f",
+      "utf8_bytes": 126,
+      "characters": 48,
+      "text_sha256": "e3941a43047b26682ee2c9766db3dcd92b931862b1a09137f23d931016727a38"
+    },
+    {
+      "order": 34,
+      "article_id": "6691797",
+      "title": "烏丸車站",
+      "selection_rank_sha256": "0001aaceb00189a519e69c7602f909fde169434ee74a1ad6c12bb0a5b12a89f7",
+      "utf8_bytes": 1543,
+      "characters": 649,
+      "text_sha256": "d6ea3ee1c40f8616f1f80fdb7f143268736b959bf50a5c200d8375b7d2e773cb"
+    },
+    {
+      "order": 35,
+      "article_id": "2806893",
+      "title": "干城子古城址",
+      "selection_rank_sha256": "0001adbcce7dbc5124469287b9962a940592153d406d5b0ab2ff95f3d7022f36",
+      "utf8_bytes": 296,
+      "characters": 108,
+      "text_sha256": "e3a639ea45e1b0b81001bf40c22eb4ba1545f6da9a7b507ab3de252c3e92de4c"
+    },
+    {
+      "order": 36,
+      "article_id": "1585421",
+      "title": "小行星列表/144001-145000",
+      "selection_rank_sha256": "0001c9c8f25158634db67f3a1e1fb1a3b9f6daadc0543dc43f40739c63fc4e93",
+      "utf8_bytes": 1032,
+      "characters": 992,
+      "text_sha256": "b4ae26e804ae11742cbcee4b2d196346910b2afa2472c9e8cae8bd923c57d395"
+    },
+    {
+      "order": 37,
+      "article_id": "4715053",
+      "title": "強納森·克倫比",
+      "selection_rank_sha256": "0001cef1f43668c9e17d27d144a8a7be539456a60c44a0e2ebe917fbf9e2f6d2",
+      "utf8_bytes": 456,
+      "characters": 196,
+      "text_sha256": "a225ccc80fe08020960f709b95793afe9176cbec028949a5b33debba8c5d9650"
+    },
+    {
+      "order": 38,
+      "article_id": "1806851",
+      "title": "泰勒·史派樂",
+      "selection_rank_sha256": "0001d520e5c7321993c9a06d8d2ed3ef0b0c116129c380fca122a34172177684",
+      "utf8_bytes": 1202,
+      "characters": 505,
+      "text_sha256": "580a58250cb5623955ff0f3ef2aaf03927310b656922adc39baeb023238c7fab"
+    },
+    {
+      "order": 39,
+      "article_id": "3205072",
+      "title": "峡州路",
+      "selection_rank_sha256": "0001e36de6f4c46238339e7f287b84d680d5da86f26671ef2d399570e14181d9",
+      "utf8_bytes": 523,
+      "characters": 193,
+      "text_sha256": "6df5920f250c8b3774537050dd2c889df6120e1fe200b80df6799659d9986c5f"
+    },
+    {
+      "order": 40,
+      "article_id": "7188305",
+      "title": "比鲁姆",
+      "selection_rank_sha256": "0001e395e52053315464c320f4beed4b95823697e1003ab0070bd427cb1d7dd6",
+      "utf8_bytes": 212,
+      "characters": 74,
+      "text_sha256": "e11d32a4c2bd062c3ace4ac2fea20fba1bf854585a1798843963281b8bbff550"
+    },
+    {
+      "order": 41,
+      "article_id": "8523024",
+      "title": "厚首贝丘遗址",
+      "selection_rank_sha256": "0001f5cfecb9457bdc641ea41cbf4130b0e8d85088369aaeeea7a422ec84a638",
+      "utf8_bytes": 298,
+      "characters": 110,
+      "text_sha256": "c321e9bb9a1a9708b04766049991b0e78abd41dfd8ae05f67662912712d8e9f5"
+    },
+    {
+      "order": 42,
+      "article_id": "975654",
+      "title": "我們的出口",
+      "selection_rank_sha256": "0001f928066490c844817f4a9f8d12fd46c8b1982b9c4461ee9289ec41e2515a",
+      "utf8_bytes": 920,
+      "characters": 634,
+      "text_sha256": "6dfc98a47e44244715e61592cc3e7a008ed7a78a34407192d524f92725fdc33c"
+    },
+    {
+      "order": 43,
+      "article_id": "6736633",
+      "title": "孩子的遊戲",
+      "selection_rank_sha256": "0001f9320156dc635613521f04c527f1e09845ddc7a08968466ca8a5cd359534",
+      "utf8_bytes": 1559,
+      "characters": 611,
+      "text_sha256": "947df4d2361f722c50c031270d747327aa68c51de3a5b85a320f91c63b646119"
+    },
+    {
+      "order": 44,
+      "article_id": "5214501",
+      "title": "圖里奇卡河",
+      "selection_rank_sha256": "00020c59af2bb019623b84afd514c1daff96ba8e2d5be2e68cdcdfe6b4bbe64c",
+      "utf8_bytes": 278,
+      "characters": 102,
+      "text_sha256": "fb8615cd2ce49a1e957ce98db292a7abcd6cf1daeda634efb0555d3bc74010ea"
+    },
+    {
+      "order": 45,
+      "article_id": "4124",
+      "title": "中国大陆",
+      "selection_rank_sha256": "000213ff842b755290841037987cc1b612afa33834a19bdda6bd8dee67c2ac09",
+      "utf8_bytes": 7466,
+      "characters": 2644,
+      "text_sha256": "1d36e67104b1db009d5d4bc7b21aa3971d324a0970fe6e0a0d0b44c882035dcb"
+    },
+    {
+      "order": 46,
+      "article_id": "1905200",
+      "title": "文腾街道",
+      "selection_rank_sha256": "00021cd007ba2ca756a5ff735660c5a0f189672c9c407eb9dcb7088c6129769d",
+      "utf8_bytes": 346,
+      "characters": 128,
+      "text_sha256": "843979efd3ca9a15bffb75d165459ed0434fb0308e668ddcd090eacfb580f070"
+    },
+    {
+      "order": 47,
+      "article_id": "3545836",
+      "title": "小行星5790",
+      "selection_rank_sha256": "00021fc3fca0e072e3a1158966786fb1e13e880f05b40386e4528d707cdc1737",
+      "utf8_bytes": 298,
+      "characters": 130,
+      "text_sha256": "f98d8d2e53f30c817fe575e3846227a52b676fa41b5e4c2b074c479bedb8ce64"
+    },
+    {
+      "order": 48,
+      "article_id": "3798222",
+      "title": "米勒冰原島峰 (維多利亞地)",
+      "selection_rank_sha256": "00022a61b51221f946423a46bf8ccc0be2b6be3808ce7dea4a090ee6295cd613",
+      "utf8_bytes": 266,
+      "characters": 90,
+      "text_sha256": "c8517f419163239c34cd0ce1fe44496108e6399e8ec6c1dd840b7a6078239f61"
+    },
+    {
+      "order": 49,
+      "article_id": "6162899",
+      "title": "莫什泰尼鄉",
+      "selection_rank_sha256": "000239feb5399e331b38a68f10abddb1191d98f9a6ce8ea9d8f702738716b401",
+      "utf8_bytes": 233,
+      "characters": 89,
+      "text_sha256": "d51a447706074cad7fc8858f988cbe39bc42e66a5fcda3604beff33ec7707266"
+    },
+    {
+      "order": 50,
+      "article_id": "4692241",
+      "title": "黑頭鱯",
+      "selection_rank_sha256": "00023a2c591706258065dd872f2c322d4f3f45eae492a487d503a0911b3a9076",
+      "utf8_bytes": 335,
+      "characters": 128,
+      "text_sha256": "de4075b46f27991d0e5d6a2653205aa473ba9021b91cc34f2b57f1c2b7194051"
+    },
+    {
+      "order": 51,
+      "article_id": "754225",
+      "title": "普慶坊護土牆倒塌意外",
+      "selection_rank_sha256": "00024358c376ea1bc933538a6967598043c6c4a2a2dbec8d54cb6e8e685cf31b",
+      "utf8_bytes": 1096,
+      "characters": 528,
+      "text_sha256": "34f00f21e5c92530ab2976728cae4eaff0aae23759b729726ff05c66e9df37de"
+    },
+    {
+      "order": 52,
+      "article_id": "1281386",
+      "title": "小麒麟",
+      "selection_rank_sha256": "00024b2c68d3c4bef0bf5235cdd145ac3355be7d90836b06c063b2ca3f3d381c",
+      "utf8_bytes": 4657,
+      "characters": 2172,
+      "text_sha256": "71598ccbdb34e52ff410989c0fd170269c1df4cf2b20cd5f090ca4a9249d10f8"
+    },
+    {
+      "order": 53,
+      "article_id": "4397125",
+      "title": "权增德",
+      "selection_rank_sha256": "0002517bcb3d0fabbfb11e38edcd056cd95fc208a38f66f585acc0182ae505ef",
+      "utf8_bytes": 263,
+      "characters": 105,
+      "text_sha256": "b0235c2d729e1201b622150d938b98020e9a61f60add345da02488feda535e9a"
+    },
+    {
+      "order": 54,
+      "article_id": "425683",
+      "title": "奧西歐拉縣 (密歇根州)",
+      "selection_rank_sha256": "000261008e5bacc71eb9fde292518d41445e94ca0f7c1573799ba5d058a2e9f0",
+      "utf8_bytes": 257,
+      "characters": 111,
+      "text_sha256": "71828620cf2fecae0a9c4d5029b118107608643a78ade795a1125551e3986e3b"
+    },
+    {
+      "order": 55,
+      "article_id": "6292245",
+      "title": "新娘出門",
+      "selection_rank_sha256": "00026e9b109165403fcba0d5dfe55ef34316c3f65fffe1179dfc1043cef03cdb",
+      "utf8_bytes": 417,
+      "characters": 143,
+      "text_sha256": "6393d3da82b57f1c688bf2d53d500db5950da1efd76d0a39b6d0d9fcdc675a46"
+    },
+    {
+      "order": 56,
+      "article_id": "1145335",
+      "title": "佩氏肥腹蛛",
+      "selection_rank_sha256": "00027152d95c7a57562924e9cc3236124c3ce4871d5dffcb8bcac092f7ab5651",
+      "utf8_bytes": 203,
+      "characters": 71,
+      "text_sha256": "ed8c900a354b2092b5af4b27009e31520662186657e8e79a2e3f9c3f4db8cca7"
+    },
+    {
+      "order": 57,
+      "article_id": "7741952",
+      "title": "中华大蚜属",
+      "selection_rank_sha256": "0002749a1706773807e3b660bbd45732e8acf3ca9876ba81a577701fedbcb999",
+      "utf8_bytes": 221,
+      "characters": 135,
+      "text_sha256": "dd7dce5231af6dcbfb4952151ba22ad1ba98fa427ee810e16287f147511cd589"
+    },
+    {
+      "order": 58,
+      "article_id": "1751526",
+      "title": "服部千春",
+      "selection_rank_sha256": "00027e95db56d58b9e70f1b9fcb7e41e2a0c6e3410a88f17b4b0eb95c134c0d2",
+      "utf8_bytes": 2356,
+      "characters": 834,
+      "text_sha256": "48f4f70fef2215816b6e09b29cf59c23cabe969fc12ca6abc91824f9c12446a3"
+    },
+    {
+      "order": 59,
+      "article_id": "1472",
+      "title": "丹麦",
+      "selection_rank_sha256": "0002874b1c65805f18f19bb54a2a74d2c36291710903ab8923db7b19edc38f6c",
+      "utf8_bytes": 51048,
+      "characters": 18660,
+      "text_sha256": "6f857bf3ad7475e1f7ae657a6d60931d8e7304e591c55d3bf7f86a0c86d0e844"
+    },
+    {
+      "order": 60,
+      "article_id": "1739523",
+      "title": "第34屆金馬獎",
+      "selection_rank_sha256": "00028bc62e03c9499dc2095e3c1581cd780f0753e90c66c20c54985130e470b8",
+      "utf8_bytes": 1912,
+      "characters": 712,
+      "text_sha256": "aebdd15f54eeab650d97fd8ade14c418f44425c0238978d1ea6615a4795f9818"
+    },
+    {
+      "order": 61,
+      "article_id": "6470156",
+      "title": "第76屆威尼斯影展",
+      "selection_rank_sha256": "00028e17f8a38db6d6933c00bd5011dc52f3b2861faf45e58d2620fc4a6ee9c2",
+      "utf8_bytes": 1866,
+      "characters": 729,
+      "text_sha256": "a7e408969b9f516feb31096f451afa67d83c9a27f832019e9e7652b46bf297c4"
+    },
+    {
+      "order": 62,
+      "article_id": "371138",
+      "title": "NRZI",
+      "selection_rank_sha256": "0002913593fd7139ef55bdb1d47f518de346997865466cd64bfeb372698eb713",
+      "utf8_bytes": 1156,
+      "characters": 482,
+      "text_sha256": "85a058d01ab7f6b1a9fbb9a750acb071623352c02b4a68672b06b8bb7032773e"
+    },
+    {
+      "order": 63,
+      "article_id": "3408033",
+      "title": "2018年大英國協運動會",
+      "selection_rank_sha256": "00029ded7ab6864ae28a806d86b8021bf4799b78fc152a47d9dd209d8ae81c75",
+      "utf8_bytes": 4188,
+      "characters": 1630,
+      "text_sha256": "60f2f076d6e65f069cff8fdcd6bb1d759c8c219c62d49bd2137709497ae46aff"
+    },
+    {
+      "order": 64,
+      "article_id": "5290925",
+      "title": "臺灣省行政長官公署衛兵開槍事件",
+      "selection_rank_sha256": "0002a05aea39731d9f63c43bad3d7594d56284c7b032d2866c8a44de17731fdc",
+      "utf8_bytes": 10381,
+      "characters": 3543,
+      "text_sha256": "6935f131fb2511f2704fe6a8934a40326e29037fb77987125d967d6f7788a3d2"
+    },
+    {
+      "order": 65,
+      "article_id": "8552328",
+      "title": "布魯克林帕克 (馬里蘭州)",
+      "selection_rank_sha256": "0002bd2330cd4274a3753b821e0f919e9809fdba13eda37ff86fbf0290564d3d",
+      "utf8_bytes": 470,
+      "characters": 186,
+      "text_sha256": "bf7f5ef876299d1e5cf01de25332289084e5d1e0f8d704245783f37812d551c0"
+    },
+    {
+      "order": 66,
+      "article_id": "7217297",
+      "title": "徐涛 (1974年)",
+      "selection_rank_sha256": "0002bdb8a61f6df22a0f10728acd9b817c7eb53e7c59efd5ddedaf543760150c",
+      "utf8_bytes": 550,
+      "characters": 204,
+      "text_sha256": "80f58f84df15bc3f9705ca814c9c42bfd712a604ac1b55be958ebb7c8dfe7cfd"
+    },
+    {
+      "order": 67,
+      "article_id": "2887969",
+      "title": "复旦大学管理学院",
+      "selection_rank_sha256": "0002c957ae0abe9e9995793ff5428f0068e0f0ed32a1ba8247dbc8d3d905a6b9",
+      "utf8_bytes": 3764,
+      "characters": 1466,
+      "text_sha256": "af644a434e1f99e786c08bf7a531aabe21c5a771a35b3d37c45adf3d161af6c4"
+    },
+    {
+      "order": 68,
+      "article_id": "5468681",
+      "title": "2016年法國網球公開賽女子單打比賽",
+      "selection_rank_sha256": "0002c97fc0c7bcbae1c71a663f574e424b4f3c268bc0c5fa488cce7d0d2d4268",
+      "utf8_bytes": 549,
+      "characters": 221,
+      "text_sha256": "562afcd259960463524c40c190c9934f3fec6a79521092bba7ed145478b0444c"
+    },
+    {
+      "order": 69,
+      "article_id": "3098984",
+      "title": "圣叙尔皮斯-德鲁马尼亚克",
+      "selection_rank_sha256": "0002c98d1077fe518c3feb0a8ab1798622e48b6c3cd67c8f942a7293d24230e4",
+      "utf8_bytes": 319,
+      "characters": 125,
+      "text_sha256": "5ca2af3facb390783cbe795b26e683176f32361b36d08b057af290673eecf9be"
+    },
+    {
+      "order": 70,
+      "article_id": "711207",
+      "title": "拉央拉央岛",
+      "selection_rank_sha256": "0002cbb8aa88386e3e783beee1a2cdf0c622ae803cdc163adf196d6035f519f8",
+      "utf8_bytes": 4295,
+      "characters": 1583,
+      "text_sha256": "a87ad869d9e7b4253503210bbe9e97f3b0dfeb1ba70f3cf5083306cdf253559a"
+    },
+    {
+      "order": 71,
+      "article_id": "1157414",
+      "title": "硝酸铬",
+      "selection_rank_sha256": "0002cd774eeeebaed9561ab76ed1a2d4ba6c9f2216907cea65f7bacb77239e92",
+      "utf8_bytes": 555,
+      "characters": 204,
+      "text_sha256": "0b1b66120d824f1f13fdadf283050a12b22fde1a798ce4ea68c2300d2b497256"
+    },
+    {
+      "order": 72,
+      "article_id": "731022",
+      "title": "新金屬",
+      "selection_rank_sha256": "0002fa266ce7cf953f392ee9b88c7be9120e851db94bb3e3ae0e360c15a7fc5a",
+      "utf8_bytes": 3811,
+      "characters": 1554,
+      "text_sha256": "d71f52fa2f61b1994c29428523f8d81beaebde2f3e9405b668ce2b8d6b678d90"
+    },
+    {
+      "order": 73,
+      "article_id": "904549",
+      "title": "黑谷友香",
+      "selection_rank_sha256": "00032c3e055f09e65f9693cd27796ba88162ada7805a2b07483a49688d7bda3a",
+      "utf8_bytes": 3927,
+      "characters": 1725,
+      "text_sha256": "7fb1a218b369221a168b3d7b35b8ed87d8fe9192f32e6a31060825deb7753838"
+    },
+    {
+      "order": 74,
+      "article_id": "8253057",
+      "title": "烏克蘭漢學家協會",
+      "selection_rank_sha256": "00033c4ba30e36307c6eb14bb266cf56ca533c4cbb944356a1ecd0144d2caafe",
+      "utf8_bytes": 1050,
+      "characters": 382,
+      "text_sha256": "55d23026581cab4c87ec56d0d1a4e44fe77f64252bb927e2f1ceacd210637936"
+    },
+    {
+      "order": 75,
+      "article_id": "3577926",
+      "title": "埃琳纳·安娜亚",
+      "selection_rank_sha256": "000343f22ea8502966dbb1e1b062de8793f71eaf54b4defb5d213c41427c8a59",
+      "utf8_bytes": 1610,
+      "characters": 671,
+      "text_sha256": "4b1fa99d5fd009a796e188920c80cb6fc3f3e992094edca5baa81b29e810104c"
+    },
+    {
+      "order": 76,
+      "article_id": "5186848",
+      "title": "博伊科人",
+      "selection_rank_sha256": "000345178cea4b9640b438778de76ee51327ab85f23720887c1d234407517f31",
+      "utf8_bytes": 593,
+      "characters": 378,
+      "text_sha256": "0bf433cee6a2f37064d496d187812a10558f24f79faf19f676b909a7925119ce"
+    },
+    {
+      "order": 77,
+      "article_id": "7174643",
+      "title": "霏细岩",
+      "selection_rank_sha256": "00035d1f5da2d859dbe59115e8af002c21fe78cf74ef9cd6edab5e082af88131",
+      "utf8_bytes": 891,
+      "characters": 301,
+      "text_sha256": "873e70e16eb7856df780e94bf837f780eaa1427f60b9459d0922755bdce99949"
+    },
+    {
+      "order": 78,
+      "article_id": "3830099",
+      "title": "星际弹球之终极弹球",
+      "selection_rank_sha256": "000360ab40f61905c67fd717f0c687d474e234168d248a8b76b0e68c14f5aef0",
+      "utf8_bytes": 1204,
+      "characters": 508,
+      "text_sha256": "7d403e798325d68cbc8fd05585d3bb62ce10775348e017f17f932f1e12789e50"
+    },
+    {
+      "order": 79,
+      "article_id": "3100419",
+      "title": "迈讷维尔",
+      "selection_rank_sha256": "0003720f8d5eead53f4495ead1047c5278b727772d0467e794e80fce00010776",
+      "utf8_bytes": 630,
+      "characters": 246,
+      "text_sha256": "c9eacedb27670bdbe61678b80c35484d81268d27450ca5d6fe74d745fe9bfcf1"
+    },
+    {
+      "order": 80,
+      "article_id": "5186549",
+      "title": "莫爾多瓦語支",
+      "selection_rank_sha256": "0003ac2f711b938e8eef52a835ee1b649a8af504a720a275a4c7beb6b4c88a95",
+      "utf8_bytes": 751,
+      "characters": 265,
+      "text_sha256": "7518f49348263931b3b81cbe019faa3c11a6e5ab8e0f510c8e23494c65f46215"
+    },
+    {
+      "order": 81,
+      "article_id": "1556179",
+      "title": "甲烷湖",
+      "selection_rank_sha256": "0003acdc1faaedcb76b506d9afecd1f7127b07fe90bafe613c625b51b92e55e3",
+      "utf8_bytes": 556,
+      "characters": 206,
+      "text_sha256": "c4145088dc9b818ebde3817d9d78dcadc7e1cc0e0f58f5d4138a2e3d2875b008"
+    },
+    {
+      "order": 82,
+      "article_id": "141754",
+      "title": "李居明 (棒球運動員)",
+      "selection_rank_sha256": "0003afd4173fa2331e4a66cadf5b83f60db225ed532ab971cb7ccc3cbfc19242",
+      "utf8_bytes": 4088,
+      "characters": 1602,
+      "text_sha256": "a8186ed04bfa5237366647c9f2fe18dd99112ef296a4150f9ef7c1120c59daad"
+    },
+    {
+      "order": 83,
+      "article_id": "3085686",
+      "title": "阿默恩多夫",
+      "selection_rank_sha256": "0003b999e392ef7dd9e232bfbb82bb52d03c8be51802fbb4b7f2914251a2eef7",
+      "utf8_bytes": 283,
+      "characters": 119,
+      "text_sha256": "a675c6b7d95413005fe9b5fec36f3e585f67d0d12a85b721eb4bd2c508570414"
+    },
+    {
+      "order": 84,
+      "article_id": "8480731",
+      "title": "姬伞鸟",
+      "selection_rank_sha256": "0003ba2d140c6bbe507d18b1261854bca19ff05796b64e6e0372411aa90897c7",
+      "utf8_bytes": 436,
+      "characters": 176,
+      "text_sha256": "2586701dd3bbf5a024ca6ccf0a79b28a369de76a0f085ac195b916f65aa6617a"
+    },
+    {
+      "order": 85,
+      "article_id": "528650",
+      "title": "拉瓦利縣 (蒙大拿州)",
+      "selection_rank_sha256": "0003cdcd23882e8ad559d563f60a048ac6d4c4046528852c58daee4e8c44effa",
+      "utf8_bytes": 436,
+      "characters": 188,
+      "text_sha256": "397c10c4cf8439625aaf37a25246ebb56541d2aac3c2bef05bae6d5d5e209c85"
+    },
+    {
+      "order": 86,
+      "article_id": "3011079",
+      "title": "费索",
+      "selection_rank_sha256": "0003e8874315e463c9ce0dc8d77e3eef570f0f3d08345b63da6744a415f28f6d",
+      "utf8_bytes": 575,
+      "characters": 227,
+      "text_sha256": "37dfff316d183dcccffda49bf8be58722b90676f37d24fe8d1da56c7f071f859"
+    },
+    {
+      "order": 87,
+      "article_id": "3381099",
+      "title": "艾費爾國家公園",
+      "selection_rank_sha256": "0003ef84d05b3c66eda75f5a33f429ee28f52f119b58c90c90d068e6064bf246",
+      "utf8_bytes": 569,
+      "characters": 405,
+      "text_sha256": "0fc764c285182c4108b34c725ad86df9bf4a06990177a355ea44261923c1a0b4"
+    },
+    {
+      "order": 88,
+      "article_id": "551407",
+      "title": "戀屍",
+      "selection_rank_sha256": "0003f42ce15228d69c1c02143175ca17d294bf22343875560fec6398d9abab53",
+      "utf8_bytes": 14073,
+      "characters": 5122,
+      "text_sha256": "3e053b4726c3d57e951db4617c35b12161981c61877a253ac7383b69e170a308"
+    },
+    {
+      "order": 89,
+      "article_id": "8536465",
+      "title": "盧克·湯普森 (演員)",
+      "selection_rank_sha256": "000402f482ac9719cace4a1f05434f41a1585e0cb692b373e2f3cbe009e6366a",
+      "utf8_bytes": 418,
+      "characters": 175,
+      "text_sha256": "65b70b1e67904540bba67d88b63b375b81b794639dda0d29760254a9c965ad54"
+    },
+    {
+      "order": 90,
+      "article_id": "3721289",
+      "title": "布蘭斯菲爾德山",
+      "selection_rank_sha256": "0004135e3108d75d2f294d8977a50b01ce2fa0c4efbdc0aa2465b937aca6edb2",
+      "utf8_bytes": 207,
+      "characters": 73,
+      "text_sha256": "8909a68d7352d4649319605a8af8d1644ea7da31bff0a7712f42ff94836d50e3"
+    },
+    {
+      "order": 91,
+      "article_id": "6072678",
+      "title": "王雅 (北朝)",
+      "selection_rank_sha256": "0004335a44805ed232ad54a9b53bc5d6a6cacb7219cf7b7c072fb828fdc6f717",
+      "utf8_bytes": 3473,
+      "characters": 1183,
+      "text_sha256": "e429ca0bcae75043fbe02ac3dd7a16a03d26f20618e4bf9c79b91e308b50ff1c"
+    },
+    {
+      "order": 92,
+      "article_id": "5536062",
+      "title": "乌索扎农村居民点",
+      "selection_rank_sha256": "00043b62d2a5bae0f819b3af85aeeb8eee7d1d901ba159aec1df9eb717bb3052",
+      "utf8_bytes": 273,
+      "characters": 101,
+      "text_sha256": "f3d61d97671eb3a15ac7863dd038a0b5ecdf7a7d251a830f27f01e25444e61e3"
+    },
+    {
+      "order": 93,
+      "article_id": "1087714",
+      "title": "保罗·达·席尔瓦",
+      "selection_rank_sha256": "00043fdb5065e30c6a9dbe548b4c878527cefa4d28108fa4e3aa971a759312ae",
+      "utf8_bytes": 2036,
+      "characters": 844,
+      "text_sha256": "a45dfa683de5599756d8af4abaeb89ad95ac0755690949f4446be5fa293e8f95"
+    },
+    {
+      "order": 94,
+      "article_id": "7651608",
+      "title": "顶藓甲螨科",
+      "selection_rank_sha256": "0004454e682928cedd150127d7eeb1f241f168e4e14f96a4542a1f49d7d3a78d",
+      "utf8_bytes": 300,
+      "characters": 182,
+      "text_sha256": "fbecf242f39a20c280137da7367c7660088f923be06cf94d9a66206a0a42edca"
+    },
+    {
+      "order": 95,
+      "article_id": "3631000",
+      "title": "森德伯格山",
+      "selection_rank_sha256": "00045dfcb811ffb0810d659335f713c8012680e92f67decedaa99d017760941a",
+      "utf8_bytes": 227,
+      "characters": 81,
+      "text_sha256": "a913b90f9c809e27f631e5072f3abab0331b6bc49f88d25923c092e586372048"
+    },
+    {
+      "order": 96,
+      "article_id": "437312",
+      "title": "胡夫金字塔",
+      "selection_rank_sha256": "00046fbf66b7e1dd7c792468cdbb2e25d5bcfbd6083da546da57dbe3acf0ccee",
+      "utf8_bytes": 24650,
+      "characters": 8938,
+      "text_sha256": "ffe3c0732fb4c64a017d083ce8e6ed35785622b3dff1e344d19a605b0db04761"
+    },
+    {
+      "order": 97,
+      "article_id": "7938214",
+      "title": "菌瘿伞属",
+      "selection_rank_sha256": "00047409f190cbb46e4764b3b5dae9cb2831ecc3f743c9d669dd67c72c0ccf08",
+      "utf8_bytes": 115,
+      "characters": 51,
+      "text_sha256": "f09287bb6a22d37fbdf356451b091a384f57a25f0079cf411ec8a068377c5689"
+    },
+    {
+      "order": 98,
+      "article_id": "5501379",
+      "title": "布里金齊 (博布羅維齊亞區)",
+      "selection_rank_sha256": "00048413dd5821254dd025f4b4e1d0347acc865a6ffd05c4f3e35e4d74209465",
+      "utf8_bytes": 242,
+      "characters": 96,
+      "text_sha256": "7195b859c024fb0ee5d4d277551543aab57f6320688eebc78eaabd5e913c28b2"
+    },
+    {
+      "order": 99,
+      "article_id": "5722249",
+      "title": "建安街道 (哈尔滨市)",
+      "selection_rank_sha256": "00049519cc2e16706dc7827e63921149e1ef1a892a72475b7d831926f9aaf621",
+      "utf8_bytes": 152,
+      "characters": 56,
+      "text_sha256": "fa251e1f0c504bd6362556d29f0132792aaabfd20593f11ff732a4ffc5ab34ab"
+    },
+    {
+      "order": 100,
+      "article_id": "6456909",
+      "title": "布拉德 (加利福尼亞州)",
+      "selection_rank_sha256": "00049b6bbb14465b0e4834e5f3a4de33de29f15fe8bbf15898b64ae2e3906eda",
+      "utf8_bytes": 256,
+      "characters": 106,
+      "text_sha256": "ba99e2e13c2ec9de220fb0c174d45e6b7405ddedf991b0705321a3370e576849"
+    },
+    {
+      "order": 101,
+      "article_id": "3723519",
+      "title": "利伊冰川",
+      "selection_rank_sha256": "0004a2623a6ecfcace9de0b2f6233e1c7b00db38a141f27fac25d616a925fb21",
+      "utf8_bytes": 249,
+      "characters": 114,
+      "text_sha256": "db9cf9b24afe5b5326030d741c6bb0e49d7db43e1daf510ccaa94b093d95b8a0"
+    },
+    {
+      "order": 102,
+      "article_id": "3634986",
+      "title": "烏爾納姆法典",
+      "selection_rank_sha256": "0004a319118de5a0bd1e8bcc53343ddf18c1dddc57a3c23a7791777ff469ca14",
+      "utf8_bytes": 1057,
+      "characters": 390,
+      "text_sha256": "167a00f51b566bb8fd3d9bb3d6b23d2694b990d5d33a6c56989288de4b0ae989"
+    },
+    {
+      "order": 103,
+      "article_id": "4382298",
+      "title": "景泰公园",
+      "selection_rank_sha256": "0004ac78133bdc8b20a381a78cccb1268fbb5b0a8ec58750c682baa5fc4f0c03",
+      "utf8_bytes": 848,
+      "characters": 308,
+      "text_sha256": "2e52b2686accef4101c339eaf3ec634c96932eef20fd64fe302ab92f9131c3ce"
+    },
+    {
+      "order": 104,
+      "article_id": "7166542",
+      "title": "梁斌",
+      "selection_rank_sha256": "0004ae297b620ad71b1e2511c510fe4afa16f07a3bb69f3b384bf2e635fd5cc3",
+      "utf8_bytes": 170,
+      "characters": 78,
+      "text_sha256": "ed710b03756739f94819779cb945fa21eb95b60132546e574a1aea22ed35cbdb"
+    },
+    {
+      "order": 105,
+      "article_id": "7461290",
+      "title": "堆肥芽胞杆菌属",
+      "selection_rank_sha256": "0004c57eaad87824416bc91f21900f92d4b33304ba607476686dfb8a7c44b994",
+      "utf8_bytes": 227,
+      "characters": 161,
+      "text_sha256": "fdc68156e64afadfbbe44121cd07f7201d3827bfb5836fd1b21e31834725a8d1"
+    },
+    {
+      "order": 106,
+      "article_id": "1181180",
+      "title": "莫斯科庫爾斯克車站",
+      "selection_rank_sha256": "0004d8b9350ceef2ee6e0924d0ad108f2e65c1ff8404ab0969e62a61c271cc99",
+      "utf8_bytes": 5255,
+      "characters": 1885,
+      "text_sha256": "76ae1721731f52121abc395d10b40a9d71bc756ea01c013ed4cd8c9241521ba7"
+    },
+    {
+      "order": 107,
+      "article_id": "3978053",
+      "title": "丹巴达尔佳日本人慰灵碑",
+      "selection_rank_sha256": "0004e2182bdb8a1272ac79e46f22b24694779262195e7f6da67d255e3e4b0c52",
+      "utf8_bytes": 607,
+      "characters": 211,
+      "text_sha256": "484f3470fa5d19bc6230a0466fc42bb543e333a106069a1c5b625a3c3651567b"
+    },
+    {
+      "order": 108,
+      "article_id": "5938430",
+      "title": "成增站",
+      "selection_rank_sha256": "0004e4e1d9c074ff6952a0bfe02a957434f8f92f4fefacfd1cc2e33a2e2ce92b",
+      "utf8_bytes": 994,
+      "characters": 416,
+      "text_sha256": "5effec9913469fd5a83bc2b3df07a17cf4727eb3013226654467bc8c838a10a3"
+    },
+    {
+      "order": 109,
+      "article_id": "275317",
+      "title": "蛇肉",
+      "selection_rank_sha256": "0004f717fb4b8862b7f5e1ad0cb8b93dfc94edb36e38d660cb56248bdb874782",
+      "utf8_bytes": 2711,
+      "characters": 953,
+      "text_sha256": "1ff3c7db59930bbee9ce60e4546cf325cf217920239e0ef5982ff1f65a02bc49"
+    },
+    {
+      "order": 110,
+      "article_id": "3437692",
+      "title": "乐平专区",
+      "selection_rank_sha256": "0004fec105a68bafd0880630699dd550975a19aa10c75177015db16ae78f13df",
+      "utf8_bytes": 864,
+      "characters": 322,
+      "text_sha256": "45e95bab46679018ddb895b9898f176ae055d027c5cdc01ae59e659f7bf2109c"
+    },
+    {
+      "order": 111,
+      "article_id": "388580",
+      "title": "灰果蝠屬",
+      "selection_rank_sha256": "0005039f1df3d59f9997a3111a95ea0e3b827b9b8371ac48c46b982689b2ac64",
+      "utf8_bytes": 342,
+      "characters": 122,
+      "text_sha256": "aea72e4ccddd31ab86317d0ebb4c90a5636034bf551d72203b81510d1e44e503"
+    },
+    {
+      "order": 112,
+      "article_id": "8307193",
+      "title": "龙婉丽",
+      "selection_rank_sha256": "000503d2364c6ca055ace74c26fe4d0124ddcbcc5df8d35c464ac4ea7767fb22",
+      "utf8_bytes": 259,
+      "characters": 93,
+      "text_sha256": "6736fafa75de10d73f9374fca9ad2bba3e5ca454fe3e47269a3677842bbdd531"
+    },
+    {
+      "order": 113,
+      "article_id": "1097462",
+      "title": "新濱碼頭",
+      "selection_rank_sha256": "000508765f8a245d7a9acb2a23d11f8134ec505752efcebb12038a18d4900e4f",
+      "utf8_bytes": 1363,
+      "characters": 491,
+      "text_sha256": "2978fdef5b7cafecb0f6890038531d7e88ec7d3687dff59e429c151752256e2b"
+    },
+    {
+      "order": 114,
+      "article_id": "5572709",
+      "title": "山西省交响乐团",
+      "selection_rank_sha256": "00051f867ad6cbc2003d8e4a3e722fb9bf6e8e7f0ee74acf13b7356f051fd401",
+      "utf8_bytes": 236,
+      "characters": 92,
+      "text_sha256": "1c3185772440879fdce277f9c6cb16c2846800f9285078407ff5bff5e1a52bad"
+    },
+    {
+      "order": 115,
+      "article_id": "6289642",
+      "title": "沙州 (西秦)",
+      "selection_rank_sha256": "000530ce3f60d9afdee3c057623b7de0ee14be5ea09d031f1f95004ba6119933",
+      "utf8_bytes": 569,
+      "characters": 204,
+      "text_sha256": "7c6b156a3eab2dd39b2097eded12bc8784fd32de90509dfe314f80f1d9244f9e"
+    },
+    {
+      "order": 116,
+      "article_id": "1094556",
+      "title": "安尼斯敦 (阿拉巴马州)",
+      "selection_rank_sha256": "0005318ff9dd55a75c5bade65356b7ede8d8758778d5c47c6b54730879b725c8",
+      "utf8_bytes": 2421,
+      "characters": 1038,
+      "text_sha256": "2ad9e913ac38ea38df8267465c5e5d567506aec151685bfa38f608843fa40cc3"
+    },
+    {
+      "order": 117,
+      "article_id": "3751919",
+      "title": "利夫希茨",
+      "selection_rank_sha256": "0005461ba3d4ef2adec912225ed92548646d790b7d5952765b6dcb905a582e90",
+      "utf8_bytes": 734,
+      "characters": 276,
+      "text_sha256": "3173508afac191ebd87ef8c3fe0601d7b393a263f4da601c07ade1c4d0089902"
+    },
+    {
+      "order": 118,
+      "article_id": "650005",
+      "title": "福斯特·弗克洛",
+      "selection_rank_sha256": "00055364259c5cb03c1b651b00e29270df005fe24d487a9d0c59d8f5852073c3",
+      "utf8_bytes": 777,
+      "characters": 284,
+      "text_sha256": "0a15aebef8a45113026b39fe12e3d21749e3be8ecd08d81725ba9c0ac0eb55c7"
+    },
+    {
+      "order": 119,
+      "article_id": "7429611",
+      "title": "云南省各地级行政区最高峰列表",
+      "selection_rank_sha256": "000589985c6445ef5e6abcf9f977b4c031f124140a213606c553f93370a12a04",
+      "utf8_bytes": 127,
+      "characters": 49,
+      "text_sha256": "4dcbed7af818114e60336b370501ae5a8db276cfd513b9621199d99f6ed57c13"
+    },
+    {
+      "order": 120,
+      "article_id": "7803876",
+      "title": "湯尼·奧利瓦",
+      "selection_rank_sha256": "00058f47be7c1231d776d6229ea448525af966259504462567c5154f286c42ab",
+      "utf8_bytes": 3148,
+      "characters": 1225,
+      "text_sha256": "9b636539f5326ad783a48169cacc9ef493b8f0ecab2a189a344d3efd0182d7c0"
+    },
+    {
+      "order": 121,
+      "article_id": "2985574",
+      "title": "普鲁瓦西",
+      "selection_rank_sha256": "000594c7f3f5dd87269a0e5a66c3c307913e23866ed811724ce2fc923555e4b6",
+      "utf8_bytes": 645,
+      "characters": 251,
+      "text_sha256": "c904a2c9ecc711ef6a827795b5cb9a8baa3ee55643422950801a3f03b88c844b"
+    },
+    {
+      "order": 122,
+      "article_id": "5884245",
+      "title": "張紹齡",
+      "selection_rank_sha256": "00059db050d941ab38d00e6bf15d5175e42ab21995a0ca7417a1927165a1b9c2",
+      "utf8_bytes": 467,
+      "characters": 173,
+      "text_sha256": "60c5515bc44e2d3fe951f29d646bce57aec97d628e8ce925c1ad3a256fd8ffda"
+    },
+    {
+      "order": 123,
+      "article_id": "3296657",
+      "title": "无冠高茎紫堇",
+      "selection_rank_sha256": "0005afa6b4cf8b3f686504976c389140fa9dffa75e4d7601845588efa19eedcf",
+      "utf8_bytes": 110,
+      "characters": 44,
+      "text_sha256": "95e75e2de08fb67698b941cb1ae1f38e7b223e946db983fe4a35887b805425a7"
+    },
+    {
+      "order": 124,
+      "article_id": "3245274",
+      "title": "克雷斯图马",
+      "selection_rank_sha256": "0005bda6e9890bf8f90707e4ba37e64c3545edf83fb8b5a1b375124cbb04e431",
+      "utf8_bytes": 224,
+      "characters": 90,
+      "text_sha256": "60abe3152324b229fd8112f9805dc4a896aa45a66ef9033e8b59e5b95a585dfb"
+    },
+    {
+      "order": 125,
+      "article_id": "5936704",
+      "title": "盧謹明",
+      "selection_rank_sha256": "0005c998f6a9e2d49b45cc9d5ee7e6602d168a3317a8867a47eb5ae5ff7c3517",
+      "utf8_bytes": 1179,
+      "characters": 447,
+      "text_sha256": "b5acb17c99a29f7d8943b9e8f6926ffe5d0a8ef0358dcaac5c4d58fff42d8edb"
+    },
+    {
+      "order": 126,
+      "article_id": "493595",
+      "title": "高山祭",
+      "selection_rank_sha256": "0005cd45cbff173aa955d877783c9d29a9714ecb6ca61e2177a976e29f7720f0",
+      "utf8_bytes": 1860,
+      "characters": 650,
+      "text_sha256": "3a40f6fc488daa5959a320a8bec4ab27bd19e1d124167fa55a1ecb5fffe6242e"
+    },
+    {
+      "order": 127,
+      "article_id": "8514882",
+      "title": "纳塔利娅·沃罗比约娃",
+      "selection_rank_sha256": "0005ce9505c47da9c81b0dafd3b51f8b97e63148a0db8df7713c8317925f0b81",
+      "utf8_bytes": 1037,
+      "characters": 405,
+      "text_sha256": "30eb0aa9db0d8575f1c30da8cd5dac4693ff3603c4f41264432389a24ba68825"
+    },
+    {
+      "order": 128,
+      "article_id": "36806",
+      "title": "东突厥斯坦独立运动",
+      "selection_rank_sha256": "0005d142a13014023b65517c6acdcb6711d0ba9aa92a11ac5d5f465a0445ce7d",
+      "utf8_bytes": 59660,
+      "characters": 21209,
+      "text_sha256": "6ffe791776b4a312c4c3c84d90c1ee4c6bf254db43b3f15077ebfa6bda54d587"
+    },
+    {
+      "order": 129,
+      "article_id": "2342",
+      "title": "7月10日",
+      "selection_rank_sha256": "0005db38ca4f3c98d511ca27b0b554a609b1c636c3b42c13ae1c7c1a1fa8d745",
+      "utf8_bytes": 11589,
+      "characters": 4661,
+      "text_sha256": "803dfc509befce19c69ac79788a58dfbc4425bc3cb1df5f4466f81862b259669"
+    },
+    {
+      "order": 130,
+      "article_id": "3053834",
+      "title": "卡莱鲁埃拉",
+      "selection_rank_sha256": "0005e5848c37a0d3eda2b6b2050b0508d5e0b06c5be631cd39f2f460afdfe055",
+      "utf8_bytes": 229,
+      "characters": 87,
+      "text_sha256": "2138ca800bc200d95ba24195a2cf52cec85529a9e5277c629a613c8f67f65185"
+    },
+    {
+      "order": 131,
+      "article_id": "1576730",
+      "title": "王鈇",
+      "selection_rank_sha256": "0005ef23d762c4cda63ebeed15eb96f278252f8c32a25796890514bac4db3f4e",
+      "utf8_bytes": 765,
+      "characters": 277,
+      "text_sha256": "c1e7c91bd0cf1ba3e8832f520da67e1d3e58bf24763ce100b81b33f5104583d8"
+    },
+    {
+      "order": 132,
+      "article_id": "1753476",
+      "title": "直到永远，指挥官",
+      "selection_rank_sha256": "00060267bf3b8fd641d20e01d04d7572789c522cceb80f21149c7448f22af60f",
+      "utf8_bytes": 2640,
+      "characters": 1408,
+      "text_sha256": "6c5c1467cf14e7d107cb726b035d9f25dcb2a94c17db01b7afa12f496c5b4dae"
+    },
+    {
+      "order": 133,
+      "article_id": "7976786",
+      "title": "浮动声调",
+      "selection_rank_sha256": "0006154dec3b8d2e4d5576ed9a43534004595186fec07e1d13dd65f02ec2af4a",
+      "utf8_bytes": 1092,
+      "characters": 425,
+      "text_sha256": "2db9f93f894880aaad82a84a6663f6aaf2e4fa942a8dc07d679f66b7d1deaa77"
+    },
+    {
+      "order": 134,
+      "article_id": "6374665",
+      "title": "誰還有空管那個",
+      "selection_rank_sha256": "00061dfa2ee3e37cb2e483b3f2cc92bfb38ef602cd70f4d9f5597d990beb9953",
+      "utf8_bytes": 945,
+      "characters": 385,
+      "text_sha256": "8fbdaa7dee0bde7c4c6b3b10d7614fdf2beddcea35d11b92011d74513f339a4d"
+    },
+    {
+      "order": 135,
+      "article_id": "8304981",
+      "title": "基斯梅特 (堪薩斯州)",
+      "selection_rank_sha256": "000680a01141ffbcd199d7ad251fd7c8f7ea8ddbabfc3b19284df8e25ba710cb",
+      "utf8_bytes": 395,
+      "characters": 157,
+      "text_sha256": "9729f9579ddda6a916abd28b279f8660a104a458713e76a9eab6758ebc283836"
+    },
+    {
+      "order": 136,
+      "article_id": "6546267",
+      "title": "下後龍溪橋",
+      "selection_rank_sha256": "00069028c68f159fca07df04a29911424bcf7ec3651c183e6337909633e7c0c5",
+      "utf8_bytes": 3623,
+      "characters": 1333,
+      "text_sha256": "3a061288c94f72fe73c4bad35c9f3f9fad33ae1d17545b07024627b73a3cf18c"
+    },
+    {
+      "order": 137,
+      "article_id": "321843",
+      "title": "NGC 460",
+      "selection_rank_sha256": "00069af221fa554188a844a080793434f73a986e798302342e3bb7647ddd5646",
+      "utf8_bytes": 38,
+      "characters": 18,
+      "text_sha256": "c8dc3c45ffdf61187a1f818164df5d8f9394d9d0f8c132ce3ec6d40e770ec5c0"
+    },
+    {
+      "order": 138,
+      "article_id": "7256641",
+      "title": "吉姆·克羅斯",
+      "selection_rank_sha256": "0006a506de00c067ca7c320a95a620b7fe07db7f64d414f45a6582bbbc584e2f",
+      "utf8_bytes": 2684,
+      "characters": 1232,
+      "text_sha256": "16002e640572406fbea7e5e8353995c5551fc5bac7cc0450ae57e35238d81c9f"
+    },
+    {
+      "order": 139,
+      "article_id": "6947910",
+      "title": "安德烈·拉夫科夫",
+      "selection_rank_sha256": "0006b034a4df27f1f8ad926845c6a84ab1b9a89d9c34dc9ca230437e5fe79b97",
+      "utf8_bytes": 907,
+      "characters": 371,
+      "text_sha256": "4c4ea25956ec34bd453dc4caee592356dab98f363c02c3bfe16816d1ec3beb77"
+    },
+    {
+      "order": 140,
+      "article_id": "5960462",
+      "title": "小小大星球PS Vita",
+      "selection_rank_sha256": "0006d1588ab7e08bf0cc51ae0d76acee89bc2d74e29816bf7866c54ab4d56707",
+      "utf8_bytes": 1006,
+      "characters": 484,
+      "text_sha256": "a96e95204d12ccda2ae0f715822ba4c1e0eb75fff6f6a784f3c2c14cd2072b5e"
+    },
+    {
+      "order": 141,
+      "article_id": "660920",
+      "title": "上野村",
+      "selection_rank_sha256": "0006debf76ce4e0339dfdcd9bd3cbf07451828f29ba8224cea9822417ca56250",
+      "utf8_bytes": 282,
+      "characters": 100,
+      "text_sha256": "53f780d17c454c9f74da220502d07700d41832c0fb27287fe5383039255ed96f"
+    },
+    {
+      "order": 142,
+      "article_id": "761611",
+      "title": "10D",
+      "selection_rank_sha256": "0006e428b734b447a0af5c6c3f73799ee2bab4b26d5cad8bfd9a9bcf8b5c561b",
+      "utf8_bytes": 140,
+      "characters": 68,
+      "text_sha256": "ea34e52d4f3977ab4202010f99e32777c7440ecc3d99645ea947614fab7333ba"
+    },
+    {
+      "order": 143,
+      "article_id": "1696014",
+      "title": "白羊座ρ",
+      "selection_rank_sha256": "0006e7bc87a087092eedaa064aff6abf44b75218024c0c1794b01f914df07518",
+      "utf8_bytes": 420,
+      "characters": 187,
+      "text_sha256": "e1055b3095c0b283d4e8239747856d27cb3fdc9b7aead9e323306746463fa8cf"
+    },
+    {
+      "order": 144,
+      "article_id": "792409",
+      "title": "黯黑史詩",
+      "selection_rank_sha256": "0006efbdbabac1cb8b5b1e4342a1071a37013ce126ef9968449120e0287cd5d6",
+      "utf8_bytes": 24349,
+      "characters": 8768,
+      "text_sha256": "05bc9b9a4372d429aae97a3401c59c680e7e3c302cd685f6de3bf3e06b5cfca0"
+    },
+    {
+      "order": 145,
+      "article_id": "5401566",
+      "title": "博拉廷 (盧茨克區)",
+      "selection_rank_sha256": "0006f4683ccb152f7bf94eab2cb4b6bba8d5cc8e98d88e30dd3e06295f5c03e6",
+      "utf8_bytes": 308,
+      "characters": 132,
+      "text_sha256": "98b27bf9350da0393e6c7a36f5f9c64a2ecb52ddbd120e3ece07ccf7c8a18f75"
+    },
+    {
+      "order": 146,
+      "article_id": "6356803",
+      "title": "柉禁",
+      "selection_rank_sha256": "0007015305efb188f6e931e9653008170f3f6688a2ec6d2c019ebe09380bbb45",
+      "utf8_bytes": 4364,
+      "characters": 1514,
+      "text_sha256": "c32a0f431b48c3b28961c75e34a4670388d1a43dec1f9d86d5e4316f3850ddf7"
+    },
+    {
+      "order": 147,
+      "article_id": "6762396",
+      "title": "擬銼蛤科",
+      "selection_rank_sha256": "000703013d06de7ea9f883e89c7668a316cfb5adcc42779905951092e3cb2521",
+      "utf8_bytes": 2146,
+      "characters": 1265,
+      "text_sha256": "467d21a6b5659fdc90bd9fd8c26bef9adc0937278624af8a62824efce718403c"
+    },
+    {
+      "order": 148,
+      "article_id": "2851634",
+      "title": "恩利尔-纳西尔一世",
+      "selection_rank_sha256": "00070495f62a2f4e1ba98f22676a4d5822092a5f0437f564bc15a50fb0e77cb0",
+      "utf8_bytes": 234,
+      "characters": 90,
+      "text_sha256": "a060e53e05fca846152623d31614753d92fa72c866e9075516d346f78078aa32"
+    },
+    {
+      "order": 149,
+      "article_id": "277404",
+      "title": "綠美橋",
+      "selection_rank_sha256": "000704af732e68816d236b20552b3206f767031fbfeb3bf0a670ccdd196b0fe9",
+      "utf8_bytes": 754,
+      "characters": 268,
+      "text_sha256": "b311c8fb3b5cb0317e693fbba0b57fe66215e08081c25a37a32d41039b4d2ce0"
+    },
+    {
+      "order": 150,
+      "article_id": "7467376",
+      "title": "龍運巴士E43線",
+      "selection_rank_sha256": "00070cab074ba2d8420bb33498aacdec9f86a7bd05a99a40213809947681fbd1",
+      "utf8_bytes": 5266,
+      "characters": 1896,
+      "text_sha256": "7436f489455b5a2cbafd22cd1c05f8197bb44aebe5d21c964cd9817cd10dc118"
+    },
+    {
+      "order": 151,
+      "article_id": "4355054",
+      "title": "細甲視星鯰",
+      "selection_rank_sha256": "00073b7d7f6eea54cd7be770d47c9bbdb1198036f2bdbe2cfe6e84a0677b0f3c",
+      "utf8_bytes": 233,
+      "characters": 92,
+      "text_sha256": "e96faeab932a1be8833d6a31b98dbff96127de7fd6a0ba627b469146cfc6822a"
+    },
+    {
+      "order": 152,
+      "article_id": "6612540",
+      "title": "普萊西德萊克斯 (佛羅里達州)",
+      "selection_rank_sha256": "000752ea01bee9266a736404c65b3ade091bcd6e56930b5ab58a3190b866fd39",
+      "utf8_bytes": 276,
+      "characters": 118,
+      "text_sha256": "e4486a4c92e9920ceeb15fe670c0126fde15eb7a435a3e82ed2e37ca8aae0494"
+    },
+    {
+      "order": 153,
+      "article_id": "4353382",
+      "title": "南美兵鯰",
+      "selection_rank_sha256": "0007637672f666cb187fd38f24512947693eb72b532ef95291587d26448797e9",
+      "utf8_bytes": 270,
+      "characters": 102,
+      "text_sha256": "09d61c332ddf5cd2ebe6bacc35a3cb97b23b0c0f7504b5af03fbb759996081a2"
+    },
+    {
+      "order": 154,
+      "article_id": "7000662",
+      "title": "米爾維爾 (伊利諾伊州馬庫平縣)",
+      "selection_rank_sha256": "000765baa93c07eb87d8df83adaa1b44f209ad60dffd4bb9d77a72a2650ffd08",
+      "utf8_bytes": 313,
+      "characters": 117,
+      "text_sha256": "fe23c40aaa38ba0d6c32aa09f8a92c47069dc16afa9e56669ef0b81b720a67be"
+    },
+    {
+      "order": 155,
+      "article_id": "6630783",
+      "title": "少女遊戲",
+      "selection_rank_sha256": "00076620157d3499db1c4a5871a417f80560fe276091e898681d37a11f4a9a04",
+      "utf8_bytes": 3917,
+      "characters": 1385,
+      "text_sha256": "2dcf306fca397f2137dddd5e841c661742bcf25d4df17b46522a3be26cf77e81"
+    },
+    {
+      "order": 156,
+      "article_id": "8331173",
+      "title": "赭肛霸鹟属",
+      "selection_rank_sha256": "00077bd26735e2c5788576c604dff3bb48a1d45893f4dea9063164d4fffe1e05",
+      "utf8_bytes": 110,
+      "characters": 50,
+      "text_sha256": "08e18f24064b747a7c702836f49d1b5c15b502afeac8c2942da9cabe6ca6f87c"
+    },
+    {
+      "order": 157,
+      "article_id": "7234369",
+      "title": "曹孟朴",
+      "selection_rank_sha256": "00077d03eb8e119b6f78d01cf29ca104dd63d7dc8e7bd7f40b9444fb1d314f80",
+      "utf8_bytes": 364,
+      "characters": 136,
+      "text_sha256": "601e4dc585a02d182fd2ff5896af2e687f216227e1cecb65d9c720b351aeebb9"
+    },
+    {
+      "order": 158,
+      "article_id": "4690218",
+      "title": "韓忠羽",
+      "selection_rank_sha256": "00077f842b562f3ffc5793c4e01df18dea102ce70bbabc9adc2b29ff56458f89",
+      "utf8_bytes": 3159,
+      "characters": 1381,
+      "text_sha256": "62ce84816ff6baff447f730ef29ac7d4f3790edf6d0bfb05461368fc0101ff33"
+    },
+    {
+      "order": 159,
+      "article_id": "7568235",
+      "title": "瞿治平",
+      "selection_rank_sha256": "0007813f1b21c4b06b8cd5630fda4d581e6034780bbb12dd94646bd72de43ab6",
+      "utf8_bytes": 227,
+      "characters": 83,
+      "text_sha256": "db5a9d9f909a9876027d8463d6b9d28b2d510bed84f98064414a5ab0d6868b29"
+    },
+    {
+      "order": 160,
+      "article_id": "5882579",
+      "title": "胡說八道真情假期",
+      "selection_rank_sha256": "000786e9f43727ae1f47cc52a6abfcc5f134eb5538015c0fff6bc89ed017d76d",
+      "utf8_bytes": 7863,
+      "characters": 2767,
+      "text_sha256": "9d44dbe41302e446d75a8d1086dc52d9bd9e0a38c3777f711debc70f392241b4"
+    },
+    {
+      "order": 161,
+      "article_id": "3278405",
+      "title": "台湾卷瓣兰",
+      "selection_rank_sha256": "0007873df03729d6fb6a0f9508551ecc9f7064d38102ce8aa2bbdc7285125f36",
+      "utf8_bytes": 116,
+      "characters": 54,
+      "text_sha256": "d6a7b06daaa0c14500e8d0fee9dfa5692c714e3c5e937df79d246fe53c03770e"
+    },
+    {
+      "order": 162,
+      "article_id": "6314846",
+      "title": "Stray Kids影視作品列表",
+      "selection_rank_sha256": "000794dc344023e9e80169c76529bf58b1cec95bf3e0e8d0bc933afedbe08463",
+      "utf8_bytes": 686,
+      "characters": 316,
+      "text_sha256": "490afc4b3f07fbeb23c1a797268d92dcb1f6c2824f0245acac3f4080eec0b6a4"
+    },
+    {
+      "order": 163,
+      "article_id": "3157458",
+      "title": "貝綿蟹科",
+      "selection_rank_sha256": "0007960932e60c120b0a72f062c22b83e04418403cfecc828de89bc4f37db641",
+      "utf8_bytes": 1645,
+      "characters": 1144,
+      "text_sha256": "251b02ce5da8f3e5ad1bea73480beef6c0a76c68185e73ea9f1e8ad12756035b"
+    },
+    {
+      "order": 164,
+      "article_id": "3139443",
+      "title": "秋风江革命游击队活动旧址",
+      "selection_rank_sha256": "000796e71d4c90da10ed5570258741150b42a690abc94dfb9ffdbba048a06aaa",
+      "utf8_bytes": 352,
+      "characters": 126,
+      "text_sha256": "c00f2d589663bf4f963c5e9093c489abbba0707e6da3ea5a7f0d3267c15dba2f"
+    },
+    {
+      "order": 165,
+      "article_id": "701557",
+      "title": "牧羊女 (1889年)",
+      "selection_rank_sha256": "000798a7e67a1716be73bcda30e86d236a89b4fa8dd7c3843afdf626bf48b61b",
+      "utf8_bytes": 463,
+      "characters": 251,
+      "text_sha256": "2d58c4dd1626d0a381cca7b47e6b5b99a060f158c35c3d1c8d1e26b1c1b8db6a"
+    },
+    {
+      "order": 166,
+      "article_id": "1122358",
+      "title": "萬家燈火",
+      "selection_rank_sha256": "00079b4d361145b712fa15f494c3f4c8a1495ab1ac66919609d3e821c28c6c24",
+      "utf8_bytes": 597,
+      "characters": 235,
+      "text_sha256": "2b27882e09580c147bc0d044f9cdc98b0d7565becc771146c1cc22e0bbd9187b"
+    },
+    {
+      "order": 167,
+      "article_id": "7008633",
+      "title": "祖魯棕蝠",
+      "selection_rank_sha256": "00079c1f928d699c89ff6c60916b34d9cb2608115abb2d8a8d5ca4a7ecba0b00",
+      "utf8_bytes": 1008,
+      "characters": 384,
+      "text_sha256": "99f7c7aa97ed487d0c292f1a0834ca8dd7c74aa867f728fcaaf81fd88553df98"
+    },
+    {
+      "order": 168,
+      "article_id": "6282139",
+      "title": "Priest (电视剧)",
+      "selection_rank_sha256": "0007baa0bad2fecafbd7d660ba930274d699fff66b75f553caf1ccb70e98233c",
+      "utf8_bytes": 1115,
+      "characters": 507,
+      "text_sha256": "28490416e0dc990a5088f5dc028a76863eec9092ca321a85d6158ff031056c5b"
+    },
+    {
+      "order": 169,
+      "article_id": "5785209",
+      "title": "傑耶德-胡爾孫湖",
+      "selection_rank_sha256": "0007e2720acee8d55dc3aa6565b06be88b5735b8c628e60d56d9344d27e05658",
+      "utf8_bytes": 395,
+      "characters": 175,
+      "text_sha256": "c4fc9d4452024e7c65b595de95e185f3d94cfea82de8ebdbcf4e205ce9d2b62c"
+    },
+    {
+      "order": 170,
+      "article_id": "134297",
+      "title": "黑名單",
+      "selection_rank_sha256": "0007ee0538bcdf89e1e216676218d3c28273218b9bd440a907c4ab5d94ff1c5b",
+      "utf8_bytes": 3775,
+      "characters": 1307,
+      "text_sha256": "6e7b20bcfbbee0ef0db84da3aaea2583fb23e667b07b2801bbd9b0c3e8a59088"
+    },
+    {
+      "order": 171,
+      "article_id": "988917",
+      "title": "羽叶金合欢",
+      "selection_rank_sha256": "00080cf51a6e21e10ab3c4d08ac7839ea24cf17c8a4edce93c1a2b71d1fec4df",
+      "utf8_bytes": 343,
+      "characters": 127,
+      "text_sha256": "cfce0ff28d565f69aae597415b04b164cee827d879e63bbe75674bf7e5a2e65b"
+    },
+    {
+      "order": 172,
+      "article_id": "7828612",
+      "title": "山下菜菜子",
+      "selection_rank_sha256": "00081ad81dec6bd663b3f4e5aa70efb737a861f76164ca8b1e74c66a3539482c",
+      "utf8_bytes": 1441,
+      "characters": 549,
+      "text_sha256": "648f2238d060d1c844974911fa2290a39feac8f4851dc36315ba1a3fc465e95b"
+    },
+    {
+      "order": 173,
+      "article_id": "726016",
+      "title": "金色年华",
+      "selection_rank_sha256": "000833b91953f47233d05250a0de08a6cbebeeec1307ce828f7e44ea9680a4da",
+      "utf8_bytes": 1783,
+      "characters": 677,
+      "text_sha256": "b7b8dd8d6957d194c85356ab1059d6bf72be1ec46bd6738906ae1139039228b3"
+    },
+    {
+      "order": 174,
+      "article_id": "5374056",
+      "title": "快速装弹器",
+      "selection_rank_sha256": "000845556cd5f22eff108baa596544ea7c5df15f56e7402d34364294e47b55a0",
+      "utf8_bytes": 413,
+      "characters": 147,
+      "text_sha256": "9267dea17d34ac897e7092bf64f1e34e6179626ddc625081671fb70ec29d8cce"
+    },
+    {
+      "order": 175,
+      "article_id": "3265732",
+      "title": "常春油麻藤",
+      "selection_rank_sha256": "000860495e781d215374a91dc74e01e49c830c7d5b9f2388e6a2e2be5c7bee84",
+      "utf8_bytes": 156,
+      "characters": 68,
+      "text_sha256": "eb66be374f672fbd6893040f12237ef1dc92d508af0a8ae44db8c6d4e6c3e66f"
+    },
+    {
+      "order": 176,
+      "article_id": "967358",
+      "title": "香港愛滋病情況",
+      "selection_rank_sha256": "00087ce83fb199139a7c8e0ce4aa917c34ead0889e38caaa043db8f13857c043",
+      "utf8_bytes": 3855,
+      "characters": 1485,
+      "text_sha256": "6df85c43039a3209c9dbd8faea58f5e312f65fec140a8db5026a2efee1e4a683"
+    },
+    {
+      "order": 177,
+      "article_id": "6401057",
+      "title": "約安尼斯·科萊提斯",
+      "selection_rank_sha256": "00088b0a3b2be1e0fc3a196d64bd74ebefba5f4734451bbbd0c8c6d389f3b85f",
+      "utf8_bytes": 3545,
+      "characters": 1299,
+      "text_sha256": "d50e2fd82532ea0b62ffed4e16d5d214a4a8640b5aeb7989fbde172281686557"
+    },
+    {
+      "order": 178,
+      "article_id": "5725704",
+      "title": "柯蔡玉瓊",
+      "selection_rank_sha256": "00088f93fd6c252057a2fd00b3645115cc9bd0050a1b6d0354f264bf70df5cbe",
+      "utf8_bytes": 4565,
+      "characters": 1577,
+      "text_sha256": "03cd5710ba693068070690c8bcc983cd0befdc35a27924e64bd44e7463ae30ac"
+    },
+    {
+      "order": 179,
+      "article_id": "3266545",
+      "title": "模稜函數",
+      "selection_rank_sha256": "000896081ed9942f52b7dde9ec8e365ccdc8b93999ef99bd301c91af7ecd83fe",
+      "utf8_bytes": 2328,
+      "characters": 875,
+      "text_sha256": "026620a3a9c30a129124ec67e3979d2508207bab0a26ddfe533e468a0800f493"
+    },
+    {
+      "order": 180,
+      "article_id": "7625860",
+      "title": "易卜拉欣風電項目",
+      "selection_rank_sha256": "000898e335ebd1cb8847b6a9b22e0f22f13de2d7bc067ac3df6cb65b6fa68f01",
+      "utf8_bytes": 530,
+      "characters": 199,
+      "text_sha256": "9db63825c7dfc9ef5cfad91b0f772dc7d57731e14cebe80dc1b6e9e10bf49b9f"
+    },
+    {
+      "order": 181,
+      "article_id": "5226032",
+      "title": "第一型弦理論",
+      "selection_rank_sha256": "00089c2be25096adfd63dada477a0bf778ceccd567693fb6c2a1624fa404bfd7",
+      "utf8_bytes": 990,
+      "characters": 417,
+      "text_sha256": "565b7d32d7f1ad3ea78b798f6ce5f0b3181dfa4e72376b360cd728d920ae1c58"
+    },
+    {
+      "order": 182,
+      "article_id": "1683288",
+      "title": "7A班戲劇組",
+      "selection_rank_sha256": "00089d8041f2aa3483efe2e18c99b35ffcc4c04e316612b807acfbc5e7dbb08a",
+      "utf8_bytes": 2270,
+      "characters": 838,
+      "text_sha256": "341c8cb819f7887eaafbb36daa447a775019f03ccea5e3cc23931e969ec51586"
+    },
+    {
+      "order": 183,
+      "article_id": "982049",
+      "title": "短柄南星",
+      "selection_rank_sha256": "0008a6d743a9a331f645b16b50056f0160f3678a60f5ac46d2830df0a150a93f",
+      "utf8_bytes": 259,
+      "characters": 99,
+      "text_sha256": "071563a0791785c8378c328568cd4d08b119e84948481845383d44c8fcd3b30f"
+    },
+    {
+      "order": 184,
+      "article_id": "2785750",
+      "title": "和平彝族乡",
+      "selection_rank_sha256": "0008ac774a57c96054093966cf4c9ed99f6b3e15fd447eaf36fe31176dbd5f40",
+      "utf8_bytes": 242,
+      "characters": 90,
+      "text_sha256": "4fc5d0c9ee4cf1342f38ae87be6eb5815f95d00e578f71493d7fa274e550417e"
+    },
+    {
+      "order": 185,
+      "article_id": "4394411",
+      "title": "帕索德印第奧斯縣",
+      "selection_rank_sha256": "0008b8e7d88b74b2586f16db6bc942e3b6c35eebdd2a3524bf865dec2e0b9839",
+      "utf8_bytes": 266,
+      "characters": 120,
+      "text_sha256": "cdb2f09fa979ccad987d725beff7a5abf4db86b9f718e4261b5c32de9054fa65"
+    },
+    {
+      "order": 186,
+      "article_id": "7912797",
+      "title": "中国佬约翰",
+      "selection_rank_sha256": "0008c0cfff775964ad0307b60c7a95e0b13fa79010a5244344c915c6768e885f",
+      "utf8_bytes": 703,
+      "characters": 274,
+      "text_sha256": "eaea5d2dba5905e237a528e49948c4da9ac1ffef7ecab3a6330fb19b31bdb005"
+    },
+    {
+      "order": 187,
+      "article_id": "7123757",
+      "title": "趙承來",
+      "selection_rank_sha256": "0008c24cdd0f575b8957838fb4f8310c0ad8a5bc1400d7d817c886e6afe88c3d",
+      "utf8_bytes": 239,
+      "characters": 95,
+      "text_sha256": "7bb5bc4c3ce443d0260c9dceb9eb36a7e7137599515f179bcac0348dfc61f4cf"
+    },
+    {
+      "order": 188,
+      "article_id": "3742550",
+      "title": "大原 (京都市)",
+      "selection_rank_sha256": "0008c57c640fbb1f12379f4f99d08b9fc84face390a61a66eca160c945462f8a",
+      "utf8_bytes": 1313,
+      "characters": 467,
+      "text_sha256": "9e76856695c17247dbfb5f87a1f325ba24cf5ce8e5372297a559d54410c8af78"
+    },
+    {
+      "order": 189,
+      "article_id": "4758837",
+      "title": "2015年希臘羽毛球國際賽",
+      "selection_rank_sha256": "0008e741d2ebe335e008dc51b61e71952b0e136f4b07dc419029c1e1066f3791",
+      "utf8_bytes": 525,
+      "characters": 245,
+      "text_sha256": "7c191775bc1b3119230ea85bf90357db1b73f1f1e6fb2eccc69fc4162b1e11b6"
+    },
+    {
+      "order": 190,
+      "article_id": "3955653",
+      "title": "多斑無線鰨",
+      "selection_rank_sha256": "0008ef0460a0cb6e462e73d11c62901be6b4c1d1eea35cc326b6baf391134e6b",
+      "utf8_bytes": 255,
+      "characters": 101,
+      "text_sha256": "056bb9773894099a65da92ae5c3c418a996026a8673792d35b18ce977be2cf16"
+    },
+    {
+      "order": 191,
+      "article_id": "4506890",
+      "title": "查利·贝克",
+      "selection_rank_sha256": "0008f05a94b1c60ad9641a64e3205842daa5d74fa3c3c71c1c0420c28530ef5d",
+      "utf8_bytes": 466,
+      "characters": 175,
+      "text_sha256": "b65c16929d1bf2ef6fa877abbcf0a773ba90dadda836f4073c5b7144411be5b2"
+    },
+    {
+      "order": 192,
+      "article_id": "3237891",
+      "title": "米兰迪巴",
+      "selection_rank_sha256": "0008f9e99e6a3bf49369bbc4eee47c968e1648bcb2b58aa0bf0afc04ea5c1fd8",
+      "utf8_bytes": 226,
+      "characters": 90,
+      "text_sha256": "5ff2ced181cee08facb0a9dd77e40a63a4525508f884e69ffcb208f19a5cb6bf"
+    },
+    {
+      "order": 193,
+      "article_id": "370067",
+      "title": "桂平戰鬥",
+      "selection_rank_sha256": "0008fee12a549bbe98954fc4863ab6f2e6c93526ee7e4591ada92c1c7fdb9138",
+      "utf8_bytes": 465,
+      "characters": 169,
+      "text_sha256": "95dc3f86ea67ff62c9f307a9cc8952f288b567296ef14450c72ce02e9ed520a1"
+    },
+    {
+      "order": 194,
+      "article_id": "3235386",
+      "title": "伊帕波兰加",
+      "selection_rank_sha256": "000904538720b95bb71cf3e87304908468d2ee0a76d4600df1220ae26a2e827a",
+      "utf8_bytes": 223,
+      "characters": 91,
+      "text_sha256": "a5ad5a5c30300285977009cd3f69208de31deda72aebfc85e5d17b1b4361d74b"
+    },
+    {
+      "order": 195,
+      "article_id": "6593305",
+      "title": "满清十大酷刑",
+      "selection_rank_sha256": "00090b9c544671c3e2970e85b1544f96368b2fbe811e5e129e06c1900429184b",
+      "utf8_bytes": 1166,
+      "characters": 410,
+      "text_sha256": "82a9e01e7c806a3d81edbcdd1861d1af621d10b6cfc0cdfa51ffe3ad010e8939"
+    },
+    {
+      "order": 196,
+      "article_id": "2983265",
+      "title": "苏洛克",
+      "selection_rank_sha256": "00091103f59d1ff5b1d66f1c9626a245a74731d110de8dac7b12493a6c561b7b",
+      "utf8_bytes": 215,
+      "characters": 87,
+      "text_sha256": "6949ad1f022d1e7ac1b60b7f16e8edbfca073f5ebb43d6fa0fc40f111062572a"
+    },
+    {
+      "order": 197,
+      "article_id": "989106",
+      "title": "象蜡树",
+      "selection_rank_sha256": "00091276b116fde845613f6de8f20b8c9c43f2e612656f089ac96622940c92ac",
+      "utf8_bytes": 393,
+      "characters": 167,
+      "text_sha256": "bb345fb6e7e6f622e3a08c596e80265688df13c0c27ed7a123548553fc054992"
+    },
+    {
+      "order": 198,
+      "article_id": "3692062",
+      "title": "百度百发",
+      "selection_rank_sha256": "00091790d4e3597deb7beb7ff09aa2a330b9ba88f6b1a7c199708181c4aadb64",
+      "utf8_bytes": 689,
+      "characters": 253,
+      "text_sha256": "a8d5d07fdddc7c63ca3b70646b95c420ee05760609d6a2f640e01d02df149dee"
+    },
+    {
+      "order": 199,
+      "article_id": "7476020",
+      "title": "在流放地",
+      "selection_rank_sha256": "0009194526f5b8bbcce74259e869bbf7a457f6c397b7fa74450f2a2227a6837f",
+      "utf8_bytes": 215,
+      "characters": 86,
+      "text_sha256": "919a1edac5eacd025cbb89ee9a37909dd18fd8738b324539cf328abcd928e905"
+    },
+    {
+      "order": 200,
+      "article_id": "1307156",
+      "title": "佛波醇-12-十四烷酰-13-乙酸酯",
+      "selection_rank_sha256": "000933375e509a06c04317a4164a6649d423110439aef445f8acc4de7cbf3401",
+      "utf8_bytes": 1002,
+      "characters": 378,
+      "text_sha256": "5895f58d6c614fbfdf2487efe596c837150664289977805f82397bccbfc13461"
+    },
+    {
+      "order": 201,
+      "article_id": "1469181",
+      "title": "通州 (西魏)",
+      "selection_rank_sha256": "000941e26920c48a286cb25d7cd76e0ca546f418fecab041d8d18511fdd39197",
+      "utf8_bytes": 1956,
+      "characters": 749,
+      "text_sha256": "df672ecbec7c09061ee8e44435e9964148218f5e3c28db585aa4d57b735deeaf"
+    },
+    {
+      "order": 202,
+      "article_id": "3096460",
+      "title": "龚心瀚",
+      "selection_rank_sha256": "00094afda3a4418c298ad671724c62d0e56d612d3376f4709e770223db7bcbb7",
+      "utf8_bytes": 1304,
+      "characters": 470,
+      "text_sha256": "ce04c2327f5eb222e1582d7591be9b7d2b6b2b1eece5bacd2328aa876c6ec10e"
+    },
+    {
+      "order": 203,
+      "article_id": "1614390",
+      "title": "魔王與我",
+      "selection_rank_sha256": "000950009be308d4d79f6f7e52ce9fdaac6f5ba4c240adb5367a60c9bc4f0f1a",
+      "utf8_bytes": 25665,
+      "characters": 9097,
+      "text_sha256": "0ebf26f7d5c2f095be155074588d8041b341ea85a065a1e95a91ce23a3376ba5"
+    },
+    {
+      "order": 204,
+      "article_id": "772932",
+      "title": "聯洲國際",
+      "selection_rank_sha256": "00096e6fccdaa36ee8ffab3eacdeca34a10d95ab85b6ffb15538635424b33563",
+      "utf8_bytes": 515,
+      "characters": 191,
+      "text_sha256": "4bb01e462030b6fa2d53e1800beec2e6f4957eacb481a56e8e35e07ef31f1856"
+    },
+    {
+      "order": 205,
+      "article_id": "3088047",
+      "title": "拉德堡",
+      "selection_rank_sha256": "00099acf873ebb90ae3fe10abd5777efe8313d99a11dfd7326d393d819fb0ad5",
+      "utf8_bytes": 211,
+      "characters": 85,
+      "text_sha256": "c755dd8a973b08bcfe4869f69da7b3606e330cc5d910e8859d5a50134dd90196"
+    },
+    {
+      "order": 206,
+      "article_id": "271739",
+      "title": "明教四大護教法王",
+      "selection_rank_sha256": "0009b3b7892c29997c5f517800f82c877571b3d12c4c863a87ba6bdc6719a253",
+      "utf8_bytes": 395,
+      "characters": 135,
+      "text_sha256": "1741ad2d4095c70ac80a5380955e60c69142609cd1f7c5d743d71c66efb75421"
+    },
+    {
+      "order": 207,
+      "article_id": "7295059",
+      "title": "東多久站",
+      "selection_rank_sha256": "0009b3f460da860c673053b0981c42bfcf21adf7609afbe263979d77e97c2632",
+      "utf8_bytes": 1556,
+      "characters": 644,
+      "text_sha256": "90332ad362d15086b899be65e68529e6df02f17b35297a9358431ea5a85a7e75"
+    },
+    {
+      "order": 208,
+      "article_id": "1363018",
+      "title": "南京南站 (地铁)",
+      "selection_rank_sha256": "0009b9340e4f3b8ab46a599e438d9ded8cefb31eee1c49b908cada87da251546",
+      "utf8_bytes": 4145,
+      "characters": 1543,
+      "text_sha256": "cf629c7467a45ac1dac9b2c49dd9a3cfa2c27721f7c3c40d13f40d0f7fcda773"
+    },
+    {
+      "order": 209,
+      "article_id": "5703183",
+      "title": "石田正澄",
+      "selection_rank_sha256": "0009be51d64501709ec2e80f359bbbba14c829bcb07f0b3bc82d6f723857de17",
+      "utf8_bytes": 2031,
+      "characters": 749,
+      "text_sha256": "7c10c58f0fd2c0e227f25a10afa1269ab0f20d6a7eb9c4dd4bd2d11c5b475e9f"
+    },
+    {
+      "order": 210,
+      "article_id": "6617680",
+      "title": "舒耕德",
+      "selection_rank_sha256": "0009be778cdff03aa493185ec25e279c2b139bb66cb27b526623414da1a72c3a",
+      "utf8_bytes": 4046,
+      "characters": 3499,
+      "text_sha256": "9ebd5009f8340ab2787922df4f80eeec1758ad9330b9f14b4bb6df8bbc308202"
+    },
+    {
+      "order": 211,
+      "article_id": "5028979",
+      "title": "釜山港",
+      "selection_rank_sha256": "0009bec824d7fd68938eec8212f7168aa2390e67411984b6b3c409ef548e583e",
+      "utf8_bytes": 157,
+      "characters": 61,
+      "text_sha256": "ae2d706faeda7b204bfe806d695a68011a89136e1971c26d43218e6623468df4"
+    },
+    {
+      "order": 212,
+      "article_id": "5894754",
+      "title": "祁敏",
+      "selection_rank_sha256": "0009e19a39f69f19d8d5c37650d8b51cce77caa25191b1ea66435c32ada285f4",
+      "utf8_bytes": 488,
+      "characters": 174,
+      "text_sha256": "8b0fa197f581ca37f2fb76115dff9a2e6291ce48ce2ce5d604dc9885901f345f"
+    },
+    {
+      "order": 213,
+      "article_id": "7576773",
+      "title": "2020年夏季奧林匹克運動會跳水女子雙人3公尺跳板比賽",
+      "selection_rank_sha256": "0009fdb116026b9a6e60ed0b402a01c4bc304a1e5423d2362a55a942308d650a",
+      "utf8_bytes": 1028,
+      "characters": 392,
+      "text_sha256": "42c8c6214c3424eaa3d7b2c41d712aedcab1a30dc0bb772510abd12895c21c5e"
+    },
+    {
+      "order": 214,
+      "article_id": "3051383",
+      "title": "科尔梅纳尔-德蒙特马约尔",
+      "selection_rank_sha256": "000a07b18abab6d2ae27240ffa9371155773c5048a59ccb8d1f18f05db959ab1",
+      "utf8_bytes": 234,
+      "characters": 90,
+      "text_sha256": "2d5753ab56683d9d689334a71b96699525a1bc5fbfcfa127a8f614822b476267"
+    },
+    {
+      "order": 215,
+      "article_id": "8388026",
+      "title": "澳大利亞島",
+      "selection_rank_sha256": "000a10de27f2805912ed7a47fedd2718e6b96e75f97399b2676db4a27a0699d8",
+      "utf8_bytes": 446,
+      "characters": 158,
+      "text_sha256": "06cd1b202b5cda276a33915c8d49fb4e2c51d016c9352a3a4b88b69c01601967"
+    },
+    {
+      "order": 216,
+      "article_id": "3235963",
+      "title": "埃尔南多·德·索托",
+      "selection_rank_sha256": "000a1aa2e1e2ddc979736961809f1a3084d5289aae332ca4879a67fe28a5d8e5",
+      "utf8_bytes": 1182,
+      "characters": 877,
+      "text_sha256": "68323008668f36a6d60695db5f8c404b0d860430a49f650c5522dcc35dcc932b"
+    },
+    {
+      "order": 217,
+      "article_id": "5284358",
+      "title": "星語",
+      "selection_rank_sha256": "000a1b4810f5edbedafbc17bed23a15ddc56d9625b7ae7bc01d96c157068244e",
+      "utf8_bytes": 698,
+      "characters": 276,
+      "text_sha256": "c43bc146a4a8987e1e52ecd28005db0fac79919bd270a3451654bc08d19b3b67"
+    },
+    {
+      "order": 218,
+      "article_id": "3337386",
+      "title": "罗桑贡却尼玛",
+      "selection_rank_sha256": "000a1ffcc52d21b7d0248be778f8e2ba3ec79893e2110732ff666267c365e226",
+      "utf8_bytes": 431,
+      "characters": 149,
+      "text_sha256": "21c75acac6fe73884227703afdafeefd59c21451336d66f79f35787e69e52bc5"
+    },
+    {
+      "order": 219,
+      "article_id": "993387",
+      "title": "细枝隐棱芹",
+      "selection_rank_sha256": "000a27d0517414555b53a61c879005d6896e13b5ca931792b6dc5604c9fa5f95",
+      "utf8_bytes": 265,
+      "characters": 93,
+      "text_sha256": "a08feca415228ed417d35c0c716e4a7e9192e09805babe86f6766e6f8b7ce25b"
+    },
+    {
+      "order": 220,
+      "article_id": "2888700",
+      "title": "布里",
+      "selection_rank_sha256": "000a2ddd8bebf05b56b962b8dc9e3bb547ca509da6efc2e592180df09163ac49",
+      "utf8_bytes": 524,
+      "characters": 213,
+      "text_sha256": "4aaeb9cdd6eb3205e1a2933983d5f19e3a888bfac322e6b53a481f3ef5fbc245"
+    },
+    {
+      "order": 221,
+      "article_id": "128713",
+      "title": "时序逻辑电路",
+      "selection_rank_sha256": "000a3ed918b2cc8f5e25aa4b44de1055caa0d90f9d43d64f5b7b61bda57e1d90",
+      "utf8_bytes": 6281,
+      "characters": 2447,
+      "text_sha256": "acba37d38f7dd0538efc3a1a2554222c701d9f3100aa6e39924f9ce74f1ef834"
+    },
+    {
+      "order": 222,
+      "article_id": "1529815",
+      "title": "基督教法西斯主義",
+      "selection_rank_sha256": "000a62e6773c4c20bcfc1a7a8889760e21fd985b62c25a225bd3b0ce0b3dfd80",
+      "utf8_bytes": 413,
+      "characters": 200,
+      "text_sha256": "d1d5039b641ff2aa2e30dcc0750cec725cb61e33850f489354b92101536e82cb"
+    },
+    {
+      "order": 223,
+      "article_id": "8127468",
+      "title": "江浙财阀与国民政府",
+      "selection_rank_sha256": "000a987afb0bd8b9d249ee36b82627e073f2ff0c97d9a6b084afefad3e61e810",
+      "utf8_bytes": 861,
+      "characters": 311,
+      "text_sha256": "b5b9c794827973f44951cc96c5672b92645f0529569e94060fefb352ac7face8"
+    },
+    {
+      "order": 224,
+      "article_id": "1812601",
+      "title": "徐玄振",
+      "selection_rank_sha256": "000a98ae5b4cec1532b7aa76d6cea34440bfd961100eb65b83389f980ec715c2",
+      "utf8_bytes": 2115,
+      "characters": 839,
+      "text_sha256": "a6a8967c7634a3cc7f54755ffc8955c68e76da53b2602cb3175f01523b959fb8"
+    },
+    {
+      "order": 225,
+      "article_id": "798688",
+      "title": "謝爾普霍夫",
+      "selection_rank_sha256": "000a999ed62ddabaf54666a4dbdba0238d9f2a2f82d1856c6b09b187dd1fdfc9",
+      "utf8_bytes": 488,
+      "characters": 220,
+      "text_sha256": "0c928c21d9581350b3b4ee040c14eaaa9c7a83d7b04a886aa2c2e0ce6e72cd2c"
+    },
+    {
+      "order": 226,
+      "article_id": "3100574",
+      "title": "圣艾蒂安迪沃夫赖",
+      "selection_rank_sha256": "000ab0f00fbc7e5d1c0c070a2c42dbeace65a900515a46c1ce3727d02849b192",
+      "utf8_bytes": 628,
+      "characters": 246,
+      "text_sha256": "04453e9acd451f4e7a75f26cc495c165fb958f8f91a02e7686162ba12b40ecf3"
+    },
+    {
+      "order": 227,
+      "article_id": "3093312",
+      "title": "圣瑞斯特 (康塔尔省)",
+      "selection_rank_sha256": "000ab1b2937dce7b0bc924621d68f1a8306b43a0418e5bd65e9174bb1a0711c6",
+      "utf8_bytes": 856,
+      "characters": 326,
+      "text_sha256": "09a9920809dc0f9c374ea7570fa68026c4c7c2eb5a2e2dfccd6228f682487697"
+    },
+    {
+      "order": 228,
+      "article_id": "7923074",
+      "title": "越南人民军第346师",
+      "selection_rank_sha256": "000abf5c057826c968e4469bba20660ec0f3e083c3acfb719d85eefbe7480e0d",
+      "utf8_bytes": 571,
+      "characters": 276,
+      "text_sha256": "3990ef623a6dac59b20a7b4badd21a785b54b9a31306e866a4781b9aad5ad130"
+    },
+    {
+      "order": 229,
+      "article_id": "267057",
+      "title": "安德烈一世",
+      "selection_rank_sha256": "000ad02f5814e298d2e4b033d04df02c7426d15986b02908b9bac2f30c0ba68b",
+      "utf8_bytes": 1876,
+      "characters": 670,
+      "text_sha256": "05657f211cb9280f7c720f9761d3a0d2ac79a4c2d21d4bab62e830f9d92be5e8"
+    },
+    {
+      "order": 230,
+      "article_id": "8292112",
+      "title": "溶血隐秘杆菌",
+      "selection_rank_sha256": "000ad238cf434d641b63f31980cefa453c9b8dbf1614b2f1324a18f8afc43451",
+      "utf8_bytes": 3296,
+      "characters": 1271,
+      "text_sha256": "ac90550cd1a524c8eb9aa206737ac05448f377ee332eeecee5220582d24ac88b"
+    },
+    {
+      "order": 231,
+      "article_id": "1727559",
+      "title": "貝特魯卡",
+      "selection_rank_sha256": "000ad94b4dbbf3bcc4ec76f95d4c1201bb587ef6c6ccd6f06ab0d8d4736e6096",
+      "utf8_bytes": 209,
+      "characters": 79,
+      "text_sha256": "bc82952ad0f008c117cfec722325d4cb2789f8d0af922d1580010ce05ee2ea51"
+    },
+    {
+      "order": 232,
+      "article_id": "919559",
+      "title": "王守澄",
+      "selection_rank_sha256": "000af2401107232c4811175d3fb9b9ea05641338398fb3c5ad99ed2d7310082c",
+      "utf8_bytes": 8269,
+      "characters": 2840,
+      "text_sha256": "f1c9b0add578b7383b6aff0f57ad5c291f816b6b1fe2061090165bd84e0215f6"
+    },
+    {
+      "order": 233,
+      "article_id": "7294021",
+      "title": "鳥嘴潭人工湖",
+      "selection_rank_sha256": "000af25b23260f9aee65e6348d7a776c913ba2443fa0e2c8f527cac4b2e0b453",
+      "utf8_bytes": 4607,
+      "characters": 1615,
+      "text_sha256": "1681dab4e371e19bf7fa94835d43097639987b15901d25efaf1c1e8af2b115bd"
+    },
+    {
+      "order": 234,
+      "article_id": "7157512",
+      "title": "熊猫频道",
+      "selection_rank_sha256": "000af711eea2ac19a3d41f7fd8221002f2d60913c6baa077f76b6cec08dec1ef",
+      "utf8_bytes": 634,
+      "characters": 236,
+      "text_sha256": "9b1ab40b3a33e35e00a14d8203fdb6b32384fa3d5b8bf91c341fe1d0d37e147b"
+    },
+    {
+      "order": 235,
+      "article_id": "7598792",
+      "title": "BOB",
+      "selection_rank_sha256": "000af7e00b67c8cb35ea0a9f635ce1c59dae92d48ca3db0fa794c123874baa55",
+      "utf8_bytes": 1330,
+      "characters": 528,
+      "text_sha256": "b878bc7840d4a782d59bdd1bb85b58263b1d86fc0aa58d81cbd0c943d92f1ee1"
+    },
+    {
+      "order": 236,
+      "article_id": "6568622",
+      "title": "性同意",
+      "selection_rank_sha256": "000b29e195bcc9cc427b9b5d663161399c34bf37fdbac2d614802aef356b315e",
+      "utf8_bytes": 13143,
+      "characters": 4870,
+      "text_sha256": "ac612c0440a91606a43868f95b162d4efa2cf23e1d59d164e6327e4805b3ba41"
+    },
+    {
+      "order": 237,
+      "article_id": "1934257",
+      "title": "马皮米洼地",
+      "selection_rank_sha256": "000b2f3f3f1ce3c3542e12c8d57bf4efac65cfe12751cf88605f2ce3cf9b75de",
+      "utf8_bytes": 441,
+      "characters": 165,
+      "text_sha256": "83f48fb8a124907c4f1036a70b6503144773f81edcab0e2ef3de19fbd191b1f8"
+    },
+    {
+      "order": 238,
+      "article_id": "4509188",
+      "title": "太平林场组",
+      "selection_rank_sha256": "000b307f7fb8b8ac0903f0ec5872ac8416a46e11bab3a1915e8c4f089ccedd33",
+      "utf8_bytes": 309,
+      "characters": 113,
+      "text_sha256": "2f8bacc329fbcff728e8e6a1a682a0431893100990da51c25b6c8f3ee9dbbbc0"
+    },
+    {
+      "order": 239,
+      "article_id": "210592",
+      "title": "袁克文",
+      "selection_rank_sha256": "000b31aa70bbf57633277d3610461779937887f3f05d0327937110bf59b0dfff",
+      "utf8_bytes": 2957,
+      "characters": 1039,
+      "text_sha256": "a161f6aae2c0da18bc755d5a411c35e9916e388d6786c1f83dbdd1ed3cc2ddc0"
+    },
+    {
+      "order": 240,
+      "article_id": "5367229",
+      "title": "古良卡 (科羅斯堅區)",
+      "selection_rank_sha256": "000b366b7ecbf8b0d987699362abb0d10a77d1b3f7e6b27da2c8fe39293d6261",
+      "utf8_bytes": 337,
+      "characters": 143,
+      "text_sha256": "84a62bfe268805197483c86b88d233497739ea83b0318edf29e926122156ebf4"
+    },
+    {
+      "order": 241,
+      "article_id": "3055101",
+      "title": "穆尼利亚",
+      "selection_rank_sha256": "000b415f0a90028b04025dbeb0cec498b762fc346a7b1955e89d40cb1ebfd657",
+      "utf8_bytes": 210,
+      "characters": 80,
+      "text_sha256": "7bb6de2628024ad1e72f764e70cd10d52689a215439065f971faa52440244235"
+    },
+    {
+      "order": 242,
+      "article_id": "5754487",
+      "title": "尹淨漢",
+      "selection_rank_sha256": "000b46da12a7eb060affbc8a39762bf75d9a08814f1447d9bba3b09600bc3638",
+      "utf8_bytes": 3623,
+      "characters": 1771,
+      "text_sha256": "d030b9d81d8222d22f4ac8a0d6cc579acda5aa6decda1288ed4297f4ece3653a"
+    },
+    {
+      "order": 243,
+      "article_id": "364311",
+      "title": "王三元",
+      "selection_rank_sha256": "000b47ee385eae48336fbc8f7d1f6e682f14e0e01a145d1536fdf9d1a8f1761e",
+      "utf8_bytes": 506,
+      "characters": 180,
+      "text_sha256": "e966d42d7c201cb5d351028c15535294a0598faae28bb043fda2faa4950a46d2"
+    },
+    {
+      "order": 244,
+      "article_id": "846401",
+      "title": "端姑米占再纳阿比丁",
+      "selection_rank_sha256": "000b5307569cdf575ff221873429e2bbe6c3ae44d7b96c4b661d0cbfa89d265b",
+      "utf8_bytes": 936,
+      "characters": 380,
+      "text_sha256": "0b0fbca06943fcd4495039293fec45c3fb2e91321ff24673fd797b9af0d62824"
+    },
+    {
+      "order": 245,
+      "article_id": "417346",
+      "title": "娜迪亚·佩特罗娃",
+      "selection_rank_sha256": "000b55eeadb5992033ecd59f8b933db89b07409d854d727026a352ae8a9a30e4",
+      "utf8_bytes": 9046,
+      "characters": 3286,
+      "text_sha256": "77b32ec7b034d25a189424e03dc8344ab39ba28a75304212907e6b8549f2c4d4"
+    },
+    {
+      "order": 246,
+      "article_id": "6128498",
+      "title": "替代偏误",
+      "selection_rank_sha256": "000b56fc10ce5db63a9df91b5782771be5c23afeddd40ca732b351e246e82d5e",
+      "utf8_bytes": 794,
+      "characters": 280,
+      "text_sha256": "f80f36a40d0bf2123c3c5c7157af67e166b3c5d0e487000f6d7ec6a9087199b8"
+    },
+    {
+      "order": 247,
+      "article_id": "8409002",
+      "title": "臺灣林業",
+      "selection_rank_sha256": "000b5fd42b1990ff80964047a5fcb87854561e6012892eab7b01a5a2bcf5c0f9",
+      "utf8_bytes": 23254,
+      "characters": 9022,
+      "text_sha256": "488ae52b8e1efe826ff7689199c99ce378c5b674ff83b8adc46b731c757db812"
+    },
+    {
+      "order": 248,
+      "article_id": "3164808",
+      "title": "中叙关系",
+      "selection_rank_sha256": "000b67271b78a780d29c7af4c2ebe08aa736e04387c394308a3ac299be4555de",
+      "utf8_bytes": 2275,
+      "characters": 829,
+      "text_sha256": "f4a257d0f610398adbed748f431fc1273548575a9fdd12057cdce7763359567a"
+    },
+    {
+      "order": 249,
+      "article_id": "1493610",
+      "title": "近衛步兵第9聯隊",
+      "selection_rank_sha256": "000b84d2de4d8f56aa8f476cf6e9aea59408da5e7c7b1aceda6ac55e73a2e057",
+      "utf8_bytes": 496,
+      "characters": 210,
+      "text_sha256": "4d580d5be188619fb44bb92eba9eeb893b346d21920dd4dd8d55343a818a0972"
+    },
+    {
+      "order": 250,
+      "article_id": "6928960",
+      "title": "貝比·道格倫",
+      "selection_rank_sha256": "000b94e1a67f8bb5ea5ae7c21c3a91aa484f4734537aca6ecb13773adad03291",
+      "utf8_bytes": 2022,
+      "characters": 848,
+      "text_sha256": "c85365d242f912092e87eacad238cf02cdc792f4878c01676834b5d6d4000538"
+    },
+    {
+      "order": 251,
+      "article_id": "7920334",
+      "title": "Ubuntu受限額外程式",
+      "selection_rank_sha256": "000b990cc05883104d95f40c49994c6762d2da82923d5669986f90eaa0858a1a",
+      "utf8_bytes": 1616,
+      "characters": 844,
+      "text_sha256": "7e03513a6c9665bc953861be8fed6c5ddfb3ae3eaf9ae7fbb0b009b1650c3a3a"
+    },
+    {
+      "order": 252,
+      "article_id": "6495059",
+      "title": "韋倫山",
+      "selection_rank_sha256": "000bae6abadf224f709e2c42fe3a282dca43db9d8103f2ddfe43e408131b6899",
+      "utf8_bytes": 319,
+      "characters": 159,
+      "text_sha256": "2637d679ac54d9c4c1e4afc04c64bed543cc337ec761ee80c8fa0896c233d06b"
+    },
+    {
+      "order": 253,
+      "article_id": "6768064",
+      "title": "潘莉",
+      "selection_rank_sha256": "000baf836c6ba3f3937c62e2ac16a27504ddc6869e8dcc2f25de276e2cf58852",
+      "utf8_bytes": 479,
+      "characters": 237,
+      "text_sha256": "893d96e311d13d1b59e907296d239a7124d49b6105970ded3f9969121d6dc7cd"
+    },
+    {
+      "order": 254,
+      "article_id": "392559",
+      "title": "绝对无限",
+      "selection_rank_sha256": "000bb7d62bac9c9ff145cf9d441de8b792e994366f83c74369da4c3e5fec4245",
+      "utf8_bytes": 3897,
+      "characters": 1755,
+      "text_sha256": "045e9c8c9f0331ee8399c7e6b1d62cc857dba3527d84361521b967876570dbc5"
+    },
+    {
+      "order": 255,
+      "article_id": "3118664",
+      "title": "巴勒斯多夫",
+      "selection_rank_sha256": "000bc5b90c1eca96869db02813082c69b0de0b61ec38321dfe1aed5caefe6475",
+      "utf8_bytes": 340,
+      "characters": 148,
+      "text_sha256": "3a8eb1b1b8bd43434311b33d0e9212c9f344d1a82c35e0b3eeef5624ab5c68dd"
+    },
+    {
+      "order": 256,
+      "article_id": "742231",
+      "title": "岳齒獸科",
+      "selection_rank_sha256": "000bc9c06470d13287057a711972889cee4452eb008528eedd9fb09f135cdb36",
+      "utf8_bytes": 4331,
+      "characters": 2269,
+      "text_sha256": "686ba2ac48e7961f7bc73015f107addc3bb1f679f5d992e72684ae93629b04c6"
+    },
+    {
+      "order": 257,
+      "article_id": "253591",
+      "title": "無國籍",
+      "selection_rank_sha256": "000bdcf9efad9be43f5ebb6ec55fc1e067e19290dbf3871a75cace9c15adb591",
+      "utf8_bytes": 9912,
+      "characters": 3484,
+      "text_sha256": "4f3e54096d10c08129a9315ee82a9f928efa784e4aef350fbd2dbc1fba63fdf0"
+    },
+    {
+      "order": 258,
+      "article_id": "1919021",
+      "title": "红领巾水库 (土左旗)",
+      "selection_rank_sha256": "000bebc6d6a6c1f13c715a7e7be04d3d2dce140fb385b65db485cb1c7257f3af",
+      "utf8_bytes": 288,
+      "characters": 114,
+      "text_sha256": "8431397e6429c8aed4b4224868929ada4b42ebae5545b42cec14b71c893bc783"
+    },
+    {
+      "order": 259,
+      "article_id": "8331986",
+      "title": "达尔齐尼站",
+      "selection_rank_sha256": "000bfb9c9a9663afc6414553b7e20bf0edd09221c09ba122255f4a8d752a1a61",
+      "utf8_bytes": 289,
+      "characters": 121,
+      "text_sha256": "86a1200611244fbf054cf54b59932c006e7ed5a61304d81122c99dd9c3b65d6f"
+    },
+    {
+      "order": 260,
+      "article_id": "6981460",
+      "title": "鎮港園社區大學",
+      "selection_rank_sha256": "000c04c8499199601599f739e074ebd5240685563108c1a3c26be05589e34412",
+      "utf8_bytes": 1448,
+      "characters": 542,
+      "text_sha256": "c2f5e74b23febd7fcacf6dc15bc228772dd975570b7ec0e29d4d6e11e9a4209a"
+    },
+    {
+      "order": 261,
+      "article_id": "1899005",
+      "title": "东荆街道",
+      "selection_rank_sha256": "000c157d41e59e96a9b5ac3ac08f8943e76bec99323f8a138625cfb39a031cef",
+      "utf8_bytes": 126,
+      "characters": 48,
+      "text_sha256": "9ec008207c12816b4b76e9e9e3a2e6651cb9a21c89ad9fcc6d5588cf5547058b"
+    },
+    {
+      "order": 262,
+      "article_id": "16581",
+      "title": "三宝 (佛教)",
+      "selection_rank_sha256": "000c175dd92332032fce357655fe5acd52b6349a102cefb5428766e5b681574f",
+      "utf8_bytes": 12227,
+      "characters": 4325,
+      "text_sha256": "7519007450b8f2e291b023a7bfbaddf9a482b0c317f5f02507eaef38632754c0"
+    },
+    {
+      "order": 263,
+      "article_id": "7920542",
+      "title": "廣瀨勝貞",
+      "selection_rank_sha256": "000c25bf93c048fc3f28b4db90e0da57f048ddba52750a98fa6f81d4e23a6168",
+      "utf8_bytes": 449,
+      "characters": 167,
+      "text_sha256": "26b532249d3cf6503cd9f13222cc5119dea1cf1abb3c2c0d33a309fe04aecc32"
+    },
+    {
+      "order": 264,
+      "article_id": "3066690",
+      "title": "瓦祖站",
+      "selection_rank_sha256": "000c4b63f0c8287212b173dd84e8939fbe9e7e9f4619a14b01e32c796ab64604",
+      "utf8_bytes": 1434,
+      "characters": 514,
+      "text_sha256": "886732227c8ce65147d7b607821975b08404cbf5778647393510167e1c7162a7"
+    },
+    {
+      "order": 265,
+      "article_id": "537321",
+      "title": "美洲盃 (消歧義)",
+      "selection_rank_sha256": "000c4f548bd3989a335de57b3bfd2e0a7b69d59cb4a92b5ac3e0e63eb6ef6909",
+      "utf8_bytes": 283,
+      "characters": 99,
+      "text_sha256": "884e85f15604c9f8d0ea1fe8b977ec143bcc9330978279b36eb5a02e1e5154a8"
+    },
+    {
+      "order": 266,
+      "article_id": "8527324",
+      "title": "黄佳祯",
+      "selection_rank_sha256": "000c5bae3202f0e237a13c2d649edf27c5dbea287917e908eeae3a186cb7d205",
+      "utf8_bytes": 682,
+      "characters": 284,
+      "text_sha256": "5097efe894da7ada18e93224575a6efb0ea15692096f7917a48767a5255bbd2e"
+    },
+    {
+      "order": 267,
+      "article_id": "5961320",
+      "title": "新乞丐王子",
+      "selection_rank_sha256": "000c6f08e9335991432d9222d278e908f3f0ae48724d8b1e0fde9499225ba600",
+      "utf8_bytes": 502,
+      "characters": 218,
+      "text_sha256": "d4b64d6e3d3f38afc6884c4b0ddbc9fa6d5774e6547c97fd9278decf988373af"
+    },
+    {
+      "order": 268,
+      "article_id": "56536",
+      "title": "小野洋子",
+      "selection_rank_sha256": "000c73cf81021b6fe3761c4f66460bc19d23f462482b0d98b1b58f17a2e5d92c",
+      "utf8_bytes": 2660,
+      "characters": 1081,
+      "text_sha256": "c55284a2d313116ce8823735f565d121f6f23245f8510e8395f8b1e278d01fa6"
+    },
+    {
+      "order": 269,
+      "article_id": "7240120",
+      "title": "余清芳 (消歧義)",
+      "selection_rank_sha256": "000c79b8951ace91132928bf4132deef9ffcdc90f6a2caa0fdf2329104316555",
+      "utf8_bytes": 147,
+      "characters": 53,
+      "text_sha256": "5c0aba269a8a85ceb956598d942aac600b84ba0273201c7b19de8f679dec4ac3"
+    },
+    {
+      "order": 270,
+      "article_id": "3501010",
+      "title": "愛的嘉卡芭娜",
+      "selection_rank_sha256": "000c7a43a22d821dd11c4c8c89dd232dc27ea7438b5b34dadc76b113a13dc749",
+      "utf8_bytes": 2199,
+      "characters": 999,
+      "text_sha256": "90ea100abf0126a94fbb4965d1d9cb7ce0dd68360e341744b354be069493b69b"
+    },
+    {
+      "order": 271,
+      "article_id": "7822171",
+      "title": "C20H14O4",
+      "selection_rank_sha256": "000c81d271b53c33df1ae19a3f881e48b27d4866f96fbeb908c57e3cafa032c7",
+      "utf8_bytes": 252,
+      "characters": 136,
+      "text_sha256": "d25f0bf6836edf8513cca7b370821d2f6cd807089cd735d72234787fd86a1928"
+    },
+    {
+      "order": 272,
+      "article_id": "6219251",
+      "title": "古德瑞奇城堡",
+      "selection_rank_sha256": "000c908ebd44c685ffb5b73d9cb71d826e60c83e13efc789db92dc5eb9f2c8cb",
+      "utf8_bytes": 4851,
+      "characters": 4402,
+      "text_sha256": "b2076ef414b69897ce08294cca51f52da0579709f119a49b66f0412dc0879c37"
+    },
+    {
+      "order": 273,
+      "article_id": "7910059",
+      "title": "汉斯·埃斯特纳",
+      "selection_rank_sha256": "000c94b97396acb62b6fcf4aadaae84aebe0674f3415b771f5ed57b8b6f2eb73",
+      "utf8_bytes": 459,
+      "characters": 171,
+      "text_sha256": "06e4760bcbae9aef5e7382557688942caa26421bc0af3605d1fb8af6b3c04048"
+    },
+    {
+      "order": 274,
+      "article_id": "2787036",
+      "title": "双土乡",
+      "selection_rank_sha256": "000ca19b914bc8b9393fbfb221298bed3342390f51ae5217075bbd10a1dd1415",
+      "utf8_bytes": 215,
+      "characters": 81,
+      "text_sha256": "e0daabfff053aafcc153e4d99bdd69035640b4f36c0938235043189dcfc72845"
+    },
+    {
+      "order": 275,
+      "article_id": "4658476",
+      "title": "潮流教主",
+      "selection_rank_sha256": "000ca5780b9803dfc5d4b381588fa7d473b6e9bfde7c0e908dbc6f13a4ea8a90",
+      "utf8_bytes": 3631,
+      "characters": 1454,
+      "text_sha256": "77cf8907a8eae1cbc0d853c18c7143c56657fcfaf2f6a84d99691f7e28bc9b58"
+    },
+    {
+      "order": 276,
+      "article_id": "5278344",
+      "title": "布萊恩·奔本",
+      "selection_rank_sha256": "000ca80ecbfc00549ac1ce9a10f4fc3280efad8a3042f3f02c4a8fb4140d3bbd",
+      "utf8_bytes": 303,
+      "characters": 124,
+      "text_sha256": "090390d7413552949fba1169c778551c95def80ee90dd3a0b13a4eb652362c48"
+    },
+    {
+      "order": 277,
+      "article_id": "5932717",
+      "title": "Pano5+1",
+      "selection_rank_sha256": "000ca8feaad9efce966557993313e02cff3dbd9911d9fe26b4f481a9202a5e64",
+      "utf8_bytes": 4467,
+      "characters": 1843,
+      "text_sha256": "92225cc8b6124c492e84ef53dbc6610dcae4a41047f968b9887f4d306f28e205"
+    },
+    {
+      "order": 278,
+      "article_id": "7950357",
+      "title": "西拉雅語群",
+      "selection_rank_sha256": "000caef39ca2972f3ba695366fb42cf9c8b0fb7e62075b570de2f114bbf06dd1",
+      "utf8_bytes": 1967,
+      "characters": 1081,
+      "text_sha256": "2c8a5b1f3113b4372f41d56e6fb70e35380cee6cbc080553f05a0fcd74fa7a41"
+    },
+    {
+      "order": 279,
+      "article_id": "8422785",
+      "title": "毛根蚜属",
+      "selection_rank_sha256": "000cb57ee42c77f87a556d71f86ca789c71cac8de873b8f3ae9f7cb546015bcb",
+      "utf8_bytes": 110,
+      "characters": 52,
+      "text_sha256": "2d3ca841b33d23a8f3b9cdbfb9f3d9b67f6bc702aa6ffc6cc88efda471848309"
+    },
+    {
+      "order": 280,
+      "article_id": "1183353",
+      "title": "海牙密使事件",
+      "selection_rank_sha256": "000ccf25752d963f50acddc383962a1cb514f48bed463edf624c45343dd21a56",
+      "utf8_bytes": 977,
+      "characters": 345,
+      "text_sha256": "b511fe4ae30970f6f7ec30701717cfb4a329cebc71bffdbc4accf34d031bcafb"
+    },
+    {
+      "order": 281,
+      "article_id": "4834879",
+      "title": "章懋 (嘉靖進士)",
+      "selection_rank_sha256": "000ce4eab9f715b8ca02ee7774defe950639c324ecd2e9d4f13dcaeccc6df173",
+      "utf8_bytes": 330,
+      "characters": 122,
+      "text_sha256": "c919726153c56169a1eac764c0bebf47539a1f385879e3f11a85a1b7cafd378d"
+    },
+    {
+      "order": 282,
+      "article_id": "3009597",
+      "title": "觀音內里",
+      "selection_rank_sha256": "000cfc1a9a898605d770674b88b009f73032504877d8543317cf1b80056deec3",
+      "utf8_bytes": 460,
+      "characters": 170,
+      "text_sha256": "e0a9509607d1aa60f951d9a91aab906f4423caae59cae9492df50ae742e813e9"
+    },
+    {
+      "order": 283,
+      "article_id": "5324275",
+      "title": "阿里·卡拉法拉",
+      "selection_rank_sha256": "000d0170de13575a80b6dd146547ffe59044acf08f3c349697c9a058d7b6d380",
+      "utf8_bytes": 454,
+      "characters": 193,
+      "text_sha256": "663222e037cdc9771549abea589e5587db4e1f6a329bd05559e523c12807211d"
+    },
+    {
+      "order": 284,
+      "article_id": "557515",
+      "title": "亚历山大·弗里德里希 (黑森-卡塞尔)",
+      "selection_rank_sha256": "000d1a248b6ad9ce2dbee755938e58ae4afe368134872c9dc8043fa1b0b8cb58",
+      "utf8_bytes": 838,
+      "characters": 329,
+      "text_sha256": "b4ab6f2ce743528c0f818a97d70d69f9549ad539a6bbeb7720b9c5f50c2a3e90"
+    },
+    {
+      "order": 285,
+      "article_id": "3884583",
+      "title": "麥克德莫特冰川",
+      "selection_rank_sha256": "000d29d8a1ceb91dc60b1bd5290218c2051fc1643fb66e8b301650ee0809c6e0",
+      "utf8_bytes": 242,
+      "characters": 86,
+      "text_sha256": "2ce1ce4289561342f8515c21fe230ef8e8b40626ba06c1b399cb69f15f379000"
+    },
+    {
+      "order": 286,
+      "article_id": "7683220",
+      "title": "延津县各级文物保护单位列表",
+      "selection_rank_sha256": "000d33f1d881fb739a2a3eb2b8e0b738e7012327eba5bcab874dc60b5c6ebb2b",
+      "utf8_bytes": 159,
+      "characters": 59,
+      "text_sha256": "11a1242296c3ae11bacaee6858903015194a10d58a5a09288d8df5c8ddd8a470"
+    },
+    {
+      "order": 287,
+      "article_id": "397083",
+      "title": "張榮財",
+      "selection_rank_sha256": "000d4af0aa973389480d3239773951e775819708e6e3d17911def81c29bf4fb7",
+      "utf8_bytes": 3375,
+      "characters": 1205,
+      "text_sha256": "02fb766d42727ed0150ed2ae7ef06b0ac4d5259975453d1168e536e89e69d5f1"
+    },
+    {
+      "order": 288,
+      "article_id": "5555975",
+      "title": "尤夫基夫齊",
+      "selection_rank_sha256": "000d6f31a1ff66a9aba9ddde48bf0333a11760cb5cb2e1c9c3221f5e7e8aa1d8",
+      "utf8_bytes": 428,
+      "characters": 187,
+      "text_sha256": "c11ff3ae1fb317e515482d131d49303caadf390dfce1f4db05d0aa4cbf275a74"
+    },
+    {
+      "order": 289,
+      "article_id": "8170413",
+      "title": "贵州日报",
+      "selection_rank_sha256": "000d84ebf692d1d6e564286cccf4965a32a2e162307af10925aebba70582af7d",
+      "utf8_bytes": 2695,
+      "characters": 1018,
+      "text_sha256": "2fbffe6d97caf708b563f97edb561522d8cbfcd6696aafe57e635e47554d9a65"
+    },
+    {
+      "order": 290,
+      "article_id": "3712377",
+      "title": "新岩信号场",
+      "selection_rank_sha256": "000d8e1b1a78835bcb789b0a6b153b272ba2bc0051cf7fdeb972e66dc8139d7e",
+      "utf8_bytes": 361,
+      "characters": 143,
+      "text_sha256": "736729589dc13e0d64d4a58d0769c017bbcf52797b11aff20b8684af04fa2475"
+    },
+    {
+      "order": 291,
+      "article_id": "4669416",
+      "title": "張承槱",
+      "selection_rank_sha256": "000d93c9c59e9eafd31e491521401a1b8c25007bec10cd0717cc7a140357bea0",
+      "utf8_bytes": 2047,
+      "characters": 751,
+      "text_sha256": "5c0f7840c65c5237c0ecddea1ad3c5d75dca0d46f54eeac0113a3c5d483839f9"
+    },
+    {
+      "order": 292,
+      "article_id": "1521934",
+      "title": "季昭子",
+      "selection_rank_sha256": "000db18fdd95f5d6f04761db208b0d5974d797e7a07695447751dc7292e9d54d",
+      "utf8_bytes": 570,
+      "characters": 196,
+      "text_sha256": "666c1e7be88c5d0311d932fd094383bd240f11f97ecbcf665cd70e44e132e366"
+    },
+    {
+      "order": 293,
+      "article_id": "2884559",
+      "title": "毕家岗子西南泡",
+      "selection_rank_sha256": "000dbe391b497957dc6919b1c8bab9a75ca9f993af4f27d014461aeaf6fe520b",
+      "utf8_bytes": 281,
+      "characters": 101,
+      "text_sha256": "5ca83106d40509366bce4159aaefe974602407bc65a5aa231e0bc1273841370e"
+    },
+    {
+      "order": 294,
+      "article_id": "65080",
+      "title": "均勻分佈",
+      "selection_rank_sha256": "000dc97c7fd4c4be28e86e093344d30d5be32e3a14850e2c5cea994aa5296452",
+      "utf8_bytes": 155,
+      "characters": 67,
+      "text_sha256": "dfe2d774011cbe1f45ab01bb7f2ea7d0cd6696c935c9d433e9b411a78dc2d5ce"
+    },
+    {
+      "order": 295,
+      "article_id": "3231958",
+      "title": "格林納達總理",
+      "selection_rank_sha256": "000ddf121a357c1fefb16b9cce8adc94df58db5560386df36bbc229cd88deecc",
+      "utf8_bytes": 271,
+      "characters": 119,
+      "text_sha256": "644cbb850d750010d78af23a4b2d7171467119c0b9dd5e1cce45fc7fa8140607"
+    },
+    {
+      "order": 296,
+      "article_id": "1901700",
+      "title": "赵棚镇",
+      "selection_rank_sha256": "000de3ca7cac8b93acd1d14355151d079bd211b095be082d8ef8efc4af37fb44",
+      "utf8_bytes": 120,
+      "characters": 46,
+      "text_sha256": "4dbcc02f59cc633ab84aeb0faa5af93250f4c4e27e3671319fe2494d210ee662"
+    },
+    {
+      "order": 297,
+      "article_id": "3334090",
+      "title": "屍開殺戒 塵歸塵",
+      "selection_rank_sha256": "000de681b7595b2fd69df58c42330a8548411361c38d477738f2963b71a8204a",
+      "utf8_bytes": 327,
+      "characters": 149,
+      "text_sha256": "e5693d8431a8949e4df2aa95d96df2d85df435504e566e5e6dec848726d14fc0"
+    },
+    {
+      "order": 298,
+      "article_id": "3320648",
+      "title": "台中市公車213路",
+      "selection_rank_sha256": "000de9850a2a785aa0b620dbcfdb2720e3923ec4bc14b16874842f2f15b5dba4",
+      "utf8_bytes": 2892,
+      "characters": 1142,
+      "text_sha256": "007a2bdc217abe456948764cf043b5a1c7b88b6a04b4bec1b2fd40cc3e03ad7a"
+    },
+    {
+      "order": 299,
+      "article_id": "3987806",
+      "title": "瑟曼山",
+      "selection_rank_sha256": "000df18a0d7b4370a2b8f00aec7fee388ba9a414a1a80d834b5a5477da58cf2b",
+      "utf8_bytes": 256,
+      "characters": 90,
+      "text_sha256": "db681d58bf83d51a2bd2e59eaa2749f59f43bde3b365442a10e1cffac024b325"
+    },
+    {
+      "order": 300,
+      "article_id": "3547664",
+      "title": "小行星7303",
+      "selection_rank_sha256": "000e0ea820ca302eee9b703a047a1005e7684b44deb774b101f2ded6d6587c44",
+      "utf8_bytes": 246,
+      "characters": 102,
+      "text_sha256": "9bf937b3f7118ee24f79ba9c1a0edd50f02b62fea476f4a59c0f92c6a552f79d"
+    },
+    {
+      "order": 301,
+      "article_id": "7339750",
+      "title": "奧諾雷五世",
+      "selection_rank_sha256": "000e146d6a85892c094de547a29c4933b698794338ac68e3d39d6d08887d6824",
+      "utf8_bytes": 232,
+      "characters": 88,
+      "text_sha256": "b8f3ddf806cae682e4368749a179911094fdd6cb6816456713bad4fc8d2fa5c2"
+    },
+    {
+      "order": 302,
+      "article_id": "3105617",
+      "title": "索奈 (安德尔-卢瓦尔省)",
+      "selection_rank_sha256": "000e183b8189c00c02373114cec68f0e891d57147590ba8032833e164a8b4e87",
+      "utf8_bytes": 657,
+      "characters": 259,
+      "text_sha256": "576d437ac45ca06ca2eca8a3b584990f2ae8825352982c04f131304aa5cbd08d"
+    },
+    {
+      "order": 303,
+      "article_id": "8102144",
+      "title": "朱利葉斯·威布蘭德",
+      "selection_rank_sha256": "000e1c6a1ce4cb3a8ca4fbbaf1672414245513beb1b469aa4ad575f6d82f0dea",
+      "utf8_bytes": 333,
+      "characters": 119,
+      "text_sha256": "f55641837d90f426bdf77d94459fdb559ab43ba66e5d4c192725b7820671844b"
+    },
+    {
+      "order": 304,
+      "article_id": "7926946",
+      "title": "神尖條鰍",
+      "selection_rank_sha256": "000e2264502a703593456bdd1bbe2b9929c8de9a3e480fd1ec5befd18e048ad0",
+      "utf8_bytes": 282,
+      "characters": 110,
+      "text_sha256": "65e8b2f5921fc310697a45659c004615a9dc25c7d88014cce7a284e6bcb1c2af"
+    },
+    {
+      "order": 305,
+      "article_id": "5959065",
+      "title": "王之彥",
+      "selection_rank_sha256": "000e35affa2494bca3dba23b29ce49efbda61e54135a3db04aa1aca9e4f8eff4",
+      "utf8_bytes": 916,
+      "characters": 332,
+      "text_sha256": "f7cf944cc580ecb206291b801fd0c283bb4e88c71f9b7773c208e053501e785c"
+    },
+    {
+      "order": 306,
+      "article_id": "6722731",
+      "title": "曼迪联合独立学区",
+      "selection_rank_sha256": "000e3c8202b31212657f0fc3658a8be54df7971de12e179c96818b2d52a7ab8f",
+      "utf8_bytes": 651,
+      "characters": 317,
+      "text_sha256": "8de0d7b93fd3dc45b49dec5887fba4591265fce8678b9b608a6c1af2a1fecfa5"
+    },
+    {
+      "order": 307,
+      "article_id": "3316362",
+      "title": "小行星1344",
+      "selection_rank_sha256": "000e4f6b4d24de75e85fbc48ed0b1533accf256700ea454d14bfb99f228ec524",
+      "utf8_bytes": 244,
+      "characters": 114,
+      "text_sha256": "9c175eb3011eb4c9e20685e85eeeeb2912439dfc5bb1385d95d20a5384697905"
+    },
+    {
+      "order": 308,
+      "article_id": "958449",
+      "title": "蕁麻蛺蝶",
+      "selection_rank_sha256": "000e5e9580d19ec0a0248320ea3e18413145355bf7bd0e1d26017af82b85339f",
+      "utf8_bytes": 799,
+      "characters": 286,
+      "text_sha256": "9f443b37be49274a079bf7f97a9aae642a3b6b1eca173ba83caa24ac09eb7872"
+    },
+    {
+      "order": 309,
+      "article_id": "7971080",
+      "title": "不丹松",
+      "selection_rank_sha256": "000e81d7eb95cd571d3250d92d058472a4abae3bcd50e71ef50566acd8198df2",
+      "utf8_bytes": 1146,
+      "characters": 452,
+      "text_sha256": "b3bc4a0216460ed3d14c36ac5e0b3141a6bae594efc52eb27f4e5246c6d84575"
+    },
+    {
+      "order": 310,
+      "article_id": "3092368",
+      "title": "鲁塞 (罗讷河口省)",
+      "selection_rank_sha256": "000e85b3c2070c6646b788f0fd8d591318e424ff86399bf7e94be4ee73f64939",
+      "utf8_bytes": 637,
+      "characters": 249,
+      "text_sha256": "e3d2ecc6b11517b3e0ffa62899a2b97263ed7ced168dd62e4c0d5aa12ec4bc4b"
+    },
+    {
+      "order": 311,
+      "article_id": "2807487",
+      "title": "城子顶遗址",
+      "selection_rank_sha256": "000e9198aa1a1cee36e0dc5cb92d63a5b7381bb6450ad5cd48e591f3480db05a",
+      "utf8_bytes": 254,
+      "characters": 94,
+      "text_sha256": "b6d4b6a956db3bf68d85ed20359f24449414f616e029e0e1fcc5c1c414e04686"
+    },
+    {
+      "order": 312,
+      "article_id": "5188773",
+      "title": "迪安·巴克利",
+      "selection_rank_sha256": "000ed0787d0159316f5be69bbb967aa4fc7d342521186579a08f04d78791bd43",
+      "utf8_bytes": 466,
+      "characters": 177,
+      "text_sha256": "edc66d37a742289c9ddba8e7e67d72eb7fb60505baa702b9318c40018736f1d3"
+    },
+    {
+      "order": 313,
+      "article_id": "4876907",
+      "title": "馬克·麥克吉文",
+      "selection_rank_sha256": "000ed125bd3262756ec186ed14fc5fbd26cad44143644169d34086bc54464b04",
+      "utf8_bytes": 286,
+      "characters": 105,
+      "text_sha256": "6245c63e1fd1e54c9b8439f572c9ad4d6926634acdc64884ac2ea48d8ee93207"
+    },
+    {
+      "order": 314,
+      "article_id": "7396322",
+      "title": "条纹鼠鲨属",
+      "selection_rank_sha256": "000ee097b1b27f5da70a22ef3c414bb403ee53c4460b92f74243f88d9741c3e8",
+      "utf8_bytes": 1778,
+      "characters": 920,
+      "text_sha256": "85901f906e325b4c2e650e4c2427d9d5ff9a6a9596a39e86168ffb475db07ec4"
+    },
+    {
+      "order": 315,
+      "article_id": "1052296",
+      "title": "迎頭痛擊",
+      "selection_rank_sha256": "000ee7f30f302a58491f5dd26f1e840600df8937be783217ca62d1f3b884cdd3",
+      "utf8_bytes": 816,
+      "characters": 436,
+      "text_sha256": "8da12a8e17eefa6ea7ec40c782d415fc1b649cdd9c7719ba4b48056100c649e7"
+    },
+    {
+      "order": 316,
+      "article_id": "8167695",
+      "title": "张鹏翔 (1939年)",
+      "selection_rank_sha256": "000ef4bfd04db5d5e07b29c90515fa3865fdffa791518770333464ec7ed38531",
+      "utf8_bytes": 507,
+      "characters": 191,
+      "text_sha256": "1beff998386644a21467c71efb1b6cb543f97daa59d6265072853fa0b51ce7ac"
+    },
+    {
+      "order": 317,
+      "article_id": "2982481",
+      "title": "马特劳代赖奇凯",
+      "selection_rank_sha256": "000f04f08104273a0e45d106cfc198402418d0e3493c6a44ba15eaffcc293634",
+      "utf8_bytes": 229,
+      "characters": 93,
+      "text_sha256": "82b7e90eceda9a7550b8beb285014da2371815e764d5cbc15ef9b2d891c96c04"
+    },
+    {
+      "order": 318,
+      "article_id": "6232551",
+      "title": "斯潘塞·特里特·克拉克",
+      "selection_rank_sha256": "000f0adfed45e27f8bca5b91582d7828b26c9cb3504ff077799686858f5f96d5",
+      "utf8_bytes": 1149,
+      "characters": 425,
+      "text_sha256": "5e445b416c37eaa8c4dbc312ceb2c0fd2291b13845fb5ffc67c708ecb1c4bcc1"
+    },
+    {
+      "order": 319,
+      "article_id": "6778702",
+      "title": "克雷托尼亞 (喬治亞州)",
+      "selection_rank_sha256": "000f1f6c4eb965c5472dff28f43f3080aa3f55b2c7b8be3d5cd0eb9e16d1c334",
+      "utf8_bytes": 257,
+      "characters": 109,
+      "text_sha256": "7fea7d905690c155e4da0694bd1674dfefd4bd2e7d1ad92456739074e08c30f2"
+    },
+    {
+      "order": 320,
+      "article_id": "7285401",
+      "title": "尚寢",
+      "selection_rank_sha256": "000f253a0c82f909355c3943cedcd3343ecc33604b827e85cbe77ec33d55e160",
+      "utf8_bytes": 793,
+      "characters": 281,
+      "text_sha256": "85529f8640ae1cc814116ea36920345fbd0703a1bfe02795b9346f9f0e9416b3"
+    },
+    {
+      "order": 321,
+      "article_id": "5373815",
+      "title": "世界貿易中心列表",
+      "selection_rank_sha256": "000f2f54cdd834ae49e73f6087f366589f51a7b5dd17a8883bed5bb0e6be5eb7",
+      "utf8_bytes": 346,
+      "characters": 130,
+      "text_sha256": "1812b3ee7a2a8e015580d6a5cbd4ba4548933bd75b9e2bd3509cfa221e12148c"
+    },
+    {
+      "order": 322,
+      "article_id": "3285094",
+      "title": "芥菜疙瘩",
+      "selection_rank_sha256": "000f3c11d63eb5322498abd7d62407da7bc7c585a5cd14589eea9198ecbb1953",
+      "utf8_bytes": 113,
+      "characters": 51,
+      "text_sha256": "9aa812f473f383bbb2c376c65820d8185b00f9c6767ddac5fcfddbc4902ed298"
+    },
+    {
+      "order": 323,
+      "article_id": "7376412",
+      "title": "腓特烈·奧古斯特 (安哈特-德紹)",
+      "selection_rank_sha256": "000f4046f266eff6165e6b367898ae620ed3c65ffd3f78c949deb4fd5e2baf91",
+      "utf8_bytes": 421,
+      "characters": 172,
+      "text_sha256": "f38a55ee87181493ef55c59d49753d4b323e1aedfc4f3f6758a05e59766321c2"
+    },
+    {
+      "order": 324,
+      "article_id": "1884943",
+      "title": "大辛庄街道 (临清市)",
+      "selection_rank_sha256": "000f48e1373c9b31b9418e96771f8b20ff0c4c336d3a0fb324edd07d7b249b4a",
+      "utf8_bytes": 132,
+      "characters": 50,
+      "text_sha256": "f73dce3147935113abbffb20f420ef88db9140be47a4c0f49ccc0b5e54ea5514"
+    },
+    {
+      "order": 325,
+      "article_id": "8551459",
+      "title": "麥庫爾 (馬里蘭州)",
+      "selection_rank_sha256": "000f523d69ea46eee20c96a7255553eb8cc965491a2707376b85044db2f36d2d",
+      "utf8_bytes": 530,
+      "characters": 208,
+      "text_sha256": "9a15c2926f24314deecceb4fca92f6249ac1df8a8625f62a680354f85274ef69"
+    },
+    {
+      "order": 326,
+      "article_id": "3254069",
+      "title": "市川大野車站",
+      "selection_rank_sha256": "000f537cb64d14c309a4b083cbdc7e1939b01c46ef3647bf11c149f97f652d81",
+      "utf8_bytes": 2187,
+      "characters": 827,
+      "text_sha256": "b6930d6188803a230d63f8729885730d3063bea5db883141b9459e7303685166"
+    },
+    {
+      "order": 327,
+      "article_id": "932579",
+      "title": "瑞典统计局",
+      "selection_rank_sha256": "000f53f0bfe16e31696f6fb43294c8eb0735d44df33e739e98b674e62596b60a",
+      "utf8_bytes": 758,
+      "characters": 330,
+      "text_sha256": "481e6aa12fd533796a8748fc3e7d658bf7228903d9d7243c7b77f7d724f502b9"
+    },
+    {
+      "order": 328,
+      "article_id": "3078144",
+      "title": "卡登贝格",
+      "selection_rank_sha256": "000f5edef3ed8f28013083a48eff31c02dad4092bd33eb01f7c631ec14dbcbc6",
+      "utf8_bytes": 280,
+      "characters": 118,
+      "text_sha256": "487c6ae5adedfa76197c9924cc298d9095477790e8f329e97c93ad163964412b"
+    },
+    {
+      "order": 329,
+      "article_id": "8066384",
+      "title": "第二次费卢杰战役",
+      "selection_rank_sha256": "000f5ee46b03c10360e8cbafa24016b6c469f9516a0845e26d8cd0ceb9f9ed4e",
+      "utf8_bytes": 26826,
+      "characters": 11587,
+      "text_sha256": "cd5deeae164d10c24bef852bbc9f64c9fe1a987337d7a788f2d5c48b9ac0245b"
+    },
+    {
+      "order": 330,
+      "article_id": "1609447",
+      "title": "西明寺 (京都市)",
+      "selection_rank_sha256": "000f63cbed75365882f2372bdcb082c1d28372f805d2f6bc964de9ac462ed809",
+      "utf8_bytes": 465,
+      "characters": 165,
+      "text_sha256": "9c8bb708db90c35cf547d2da1e7eb10e82f9723754b57002a584687af1a65880"
+    },
+    {
+      "order": 331,
+      "article_id": "7535596",
+      "title": "鲍里斯·约托夫",
+      "selection_rank_sha256": "000f6a5e94b330f461cbe42ef4966ebf057cff071d283d0d5bf5ab6646a5fe7f",
+      "utf8_bytes": 493,
+      "characters": 180,
+      "text_sha256": "4ca3d25a3228a9a853fdf65f9c32c82e06bf0c3834e73d1ab9e8d545b62a5085"
+    },
+    {
+      "order": 332,
+      "article_id": "1875244",
+      "title": "宏原站",
+      "selection_rank_sha256": "000f75d1bb13abb62d3a6d968217ec5409d7479ac6d1a1f567fcfb12dbe10383",
+      "utf8_bytes": 439,
+      "characters": 161,
+      "text_sha256": "483b1a41c1ea53a252ee20898d53f05c42a692a6632936838d25d20124a26b5e"
+    },
+    {
+      "order": 333,
+      "article_id": "48821",
+      "title": "前96年",
+      "selection_rank_sha256": "000f852b61546e653d956ea2b5770575b986404ed24d70b085709f8120b8ef0d",
+      "utf8_bytes": 230,
+      "characters": 89,
+      "text_sha256": "a1cc738ec417efbf9b82eb42e1538788359e3c5648134aef2d09debeb5be6d98"
+    },
+    {
+      "order": 334,
+      "article_id": "8167511",
+      "title": "三甲子",
+      "selection_rank_sha256": "000f85fe6b37c57c878a97fb39e5a93849dc543c6fee20d5b6d8bcfee7cc5cfc",
+      "utf8_bytes": 2797,
+      "characters": 1013,
+      "text_sha256": "a82de49375efbeb403864e02d0373f9a9ff3722ce579f4552b303b61949239e7"
+    },
+    {
+      "order": 335,
+      "article_id": "7020634",
+      "title": "武茨湖",
+      "selection_rank_sha256": "000f8bc7447af043d1947086d96783f76506bfeefd5beeda2ba2516e9f2ad49f",
+      "utf8_bytes": 241,
+      "characters": 91,
+      "text_sha256": "d81983da5ba1f7851677230f2ec48313ca1ab95a9b0575670ec32341af2a383b"
+    },
+    {
+      "order": 336,
+      "article_id": "1331371",
+      "title": "TKB-408突击步枪",
+      "selection_rank_sha256": "000f8f5ba661efdb24a5907951a47b9c7d45fcf5af1d093e1fdcdca131b849af",
+      "utf8_bytes": 2354,
+      "characters": 1021,
+      "text_sha256": "7643fd33f0df0f88d74e244cb4966b80e9e7ee318d942aef9c2f85904db75040"
+    },
+    {
+      "order": 337,
+      "article_id": "1614744",
+      "title": "螺紋規",
+      "selection_rank_sha256": "000f931b414f9a11374a17f269c26954163e80a813e8591626fe44b84a3605b4",
+      "utf8_bytes": 949,
+      "characters": 351,
+      "text_sha256": "a4bb0d4fe398f9b3a5eab70c07330679172e1ac4d93b8cbb208b0c1d43cbf76a"
+    },
+    {
+      "order": 338,
+      "article_id": "1593054",
+      "title": "景初曆",
+      "selection_rank_sha256": "000fb6639709753664bec654b71c4c931f2dbd1c4fc462e2002d83f2018b9150",
+      "utf8_bytes": 552,
+      "characters": 220,
+      "text_sha256": "98906f0aa4e3fd906213e26e073e4fde342ca07b625fc5a268b9ecd1d6e39b54"
+    },
+    {
+      "order": 339,
+      "article_id": "7996717",
+      "title": "克里斯托弗·布伦",
+      "selection_rank_sha256": "000fbcf9d96ddc5e28bc8ec44ec7ba74b11223551e3b1af44c2ed53b3fe3a379",
+      "utf8_bytes": 584,
+      "characters": 225,
+      "text_sha256": "a88c346d07f56f5236b67e3eb4cd3abb3b91bc4e85c55d63809e6edebf073908"
+    },
+    {
+      "order": 340,
+      "article_id": "4504238",
+      "title": "DECO卡匣系統",
+      "selection_rank_sha256": "000fbd4e9e330505f9f24ea43ffd0ab71a8141988e622a7500e0133b9303f5b4",
+      "utf8_bytes": 612,
+      "characters": 234,
+      "text_sha256": "5f7b8e76fb8f865da051953cfd6606833de19a1ce7cf1f1ad0df7f3dbd0c2632"
+    },
+    {
+      "order": 341,
+      "article_id": "8449505",
+      "title": "朱見湁",
+      "selection_rank_sha256": "000fc74a9de2823d73c50274c711582f7c891b6195a821a71494c3acbafe176a",
+      "utf8_bytes": 1209,
+      "characters": 441,
+      "text_sha256": "a411665db2c651947fe8b16cfd862085181c3cb9b6833b664897b753b2fb38e4"
+    },
+    {
+      "order": 342,
+      "article_id": "79935",
+      "title": "ㄍ",
+      "selection_rank_sha256": "000fca0e54db6798920eff23cae0edc9ab329c71bfa9abdf20541038d0b751e6",
+      "utf8_bytes": 2978,
+      "characters": 1077,
+      "text_sha256": "0d08013990a5816a101f1752f7a648f43d6638645c876aa675ff76b7fe4776d9"
+    },
+    {
+      "order": 343,
+      "article_id": "7764415",
+      "title": "拉甫卻克古城遺址",
+      "selection_rank_sha256": "000fd80700c2054dd4a20fafd9926172cdc69719dd2a7005e076b5386ccb494b",
+      "utf8_bytes": 590,
+      "characters": 202,
+      "text_sha256": "de4693041e5c3bf12f688a1a6227f0ceff94bd4d35a5d750f04136216689ddfe"
+    },
+    {
+      "order": 344,
+      "article_id": "448586",
+      "title": "沙漠之狐 (桌上遊戲)",
+      "selection_rank_sha256": "000fe20b4de20736a19f9eba49328d24841256421bf8278dae43275560f3414a",
+      "utf8_bytes": 2586,
+      "characters": 973,
+      "text_sha256": "bbd75130c6edfc14391cb10bdb95458d56e7276580459fc9a4614f69925ab883"
+    },
+    {
+      "order": 345,
+      "article_id": "5037132",
+      "title": "新埃科諾米奇內",
+      "selection_rank_sha256": "000fe69e9a5dc00532d92e4516e3995918b6b895877ef6cbf06c87ac21a95f22",
+      "utf8_bytes": 477,
+      "characters": 220,
+      "text_sha256": "99053348f05223d5112b8001c3ec2b3a45bb94fd003c616232cf80a2e1a731ef"
+    },
+    {
+      "order": 346,
+      "article_id": "7079084",
+      "title": "Mojito (歌曲)",
+      "selection_rank_sha256": "000ff46086b43ee279104551633b696e8df6128852f0fcd5de8fefd4d58f8615",
+      "utf8_bytes": 4384,
+      "characters": 1671,
+      "text_sha256": "4efe3a707a7af1c63e5d5bde42429ffc1e2b165fa6d735917dbe5e390a891722"
+    },
+    {
+      "order": 347,
+      "article_id": "1464137",
+      "title": "蘇僕延",
+      "selection_rank_sha256": "00100d3ad3cfa958fade564fe1f3883bedf3d1cafaba4d2b0376a9440db6757d",
+      "utf8_bytes": 1285,
+      "characters": 445,
+      "text_sha256": "13518b5f62acc08bd1c12dd00111f6e96fd7a9c172b37bf58f0ce7fe6e6378d9"
+    },
+    {
+      "order": 348,
+      "article_id": "997142",
+      "title": "秀丽假人参",
+      "selection_rank_sha256": "00100d900125b841ff0b83a2c9ec74c984aa259fce50ff41fdb1c3b84501ab77",
+      "utf8_bytes": 345,
+      "characters": 129,
+      "text_sha256": "b06331fcecbdf09c2b4429279a0a757b4fe732d6dbae4a72baf64670b50ee7e4"
+    },
+    {
+      "order": 349,
+      "article_id": "761309",
+      "title": "爱德华·高尔文",
+      "selection_rank_sha256": "00101bd2c8e85413244f011412b868c13332f97901029ba1f262129781e029e1",
+      "utf8_bytes": 2456,
+      "characters": 919,
+      "text_sha256": "49a502e635178109871b4700820402edb58a6ef74b34ca4da638c69f8153d0e3"
+    },
+    {
+      "order": 350,
+      "article_id": "7460166",
+      "title": "喬·馬斯葛洛夫",
+      "selection_rank_sha256": "001022678f344ae16aa5cb04270a552127001dbadc33e2909474a0bb7758cc6d",
+      "utf8_bytes": 2655,
+      "characters": 1119,
+      "text_sha256": "fa8c6bff8fb986d0e43e2e9c3735fc5ea14ec68b6f84dbde7b1c5217326493d0"
+    },
+    {
+      "order": 351,
+      "article_id": "6386901",
+      "title": "乐都故城",
+      "selection_rank_sha256": "001041d95000d4e2ad1290eab4dbdf9d8d5c98b89378d40d82ef60abb331897d",
+      "utf8_bytes": 239,
+      "characters": 85,
+      "text_sha256": "224bb6f45719df306baed643b71ece40be937c9a1fa82bc4a9f120b822c85f97"
+    },
+    {
+      "order": 352,
+      "article_id": "7936719",
+      "title": "亚网衣属",
+      "selection_rank_sha256": "0010565dca2a3d361d7e8868304ad40fc11ac09fda96e8986e0c8a518f4ba9e2",
+      "utf8_bytes": 115,
+      "characters": 49,
+      "text_sha256": "4bc1013780a6f777b7384a1cbe8adae34e20edea3340193f315f5caf832197a0"
+    },
+    {
+      "order": 353,
+      "article_id": "5559125",
+      "title": "利索沃季",
+      "selection_rank_sha256": "001060c7beae3aea21919e59bc2f66b558d7f77ac0cc54096c3bbbb66726f855",
+      "utf8_bytes": 510,
+      "characters": 237,
+      "text_sha256": "5ead9f3a56181ae9192a708fe4e0eb7624c214e222cc42550e485eca76c140d9"
+    },
+    {
+      "order": 354,
+      "article_id": "4798076",
+      "title": "馬里奧·穆斯奇",
+      "selection_rank_sha256": "001066f5a44d91b04895fe46194c23618a5321c7f592b0147f407bcb53cb4642",
+      "utf8_bytes": 314,
+      "characters": 109,
+      "text_sha256": "969dfb33d9ed0f7887d5dc269ac996f24e5a2dd92c35dbeb48d80c86a3ea3637"
+    },
+    {
+      "order": 355,
+      "article_id": "6112890",
+      "title": "瓦罗泰利会馆",
+      "selection_rank_sha256": "0010744ee62d762c2e3ed6ed476efb186edec63625b43854e6ad1d01e21b97d0",
+      "utf8_bytes": 659,
+      "characters": 287,
+      "text_sha256": "1a048ff18d95b7eabd2a611685dfec75f147286d671f48380b3e5e37d8c734d6"
+    },
+    {
+      "order": 356,
+      "article_id": "3202798",
+      "title": "深圳科学馆",
+      "selection_rank_sha256": "0010778b6737f3c065e269b60b1581e95b615ca64168b944372db90c0afa329f",
+      "utf8_bytes": 869,
+      "characters": 317,
+      "text_sha256": "87a8e3f0709a3f12cb271a63e49e864553051a1da8275866de909b42faa232e6"
+    },
+    {
+      "order": 357,
+      "article_id": "149341",
+      "title": "丁螺環酮",
+      "selection_rank_sha256": "00107b5b60e3eb66ee6aef3d3169e7f903babaef50abe13761e1f424b5970236",
+      "utf8_bytes": 2426,
+      "characters": 1139,
+      "text_sha256": "c71887020dd3ae442e9111f9e14f45a276c093e17c9f9128a4695ea0de9a3548"
+    },
+    {
+      "order": 358,
+      "article_id": "3599964",
+      "title": "2012年荷蘭羽毛球國際賽",
+      "selection_rank_sha256": "00107ef24b372d5a69a308945b05e31e457b0e6b38da8479208d3788858ea7a3",
+      "utf8_bytes": 539,
+      "characters": 229,
+      "text_sha256": "612a536a2293795491d9893473d7cb40dec74d2d0bef2b0f7358794927bcb329"
+    },
+    {
+      "order": 359,
+      "article_id": "6839592",
+      "title": "亞洲通牒",
+      "selection_rank_sha256": "00108a5342a36e75c02d1e70b583070c2f20e384d639f45b9889007054399b87",
+      "utf8_bytes": 224,
+      "characters": 92,
+      "text_sha256": "1ed7bfd43547545269a93fdceeeb96844c253473fbc05c089a3ddd7beab08d6b"
+    },
+    {
+      "order": 360,
+      "article_id": "510239",
+      "title": "帆骨盆龍屬",
+      "selection_rank_sha256": "001095cfc8ab2c4f27c04c7f17d18e27fb2a2831e7641bac7b00d9fae7fcd4ca",
+      "utf8_bytes": 1129,
+      "characters": 655,
+      "text_sha256": "68b9fcb47fe0483629f13d9ad328046ee2890f825a4abd6cd440dc8702ffc1e4"
+    },
+    {
+      "order": 361,
+      "article_id": "4019955",
+      "title": "金榮在",
+      "selection_rank_sha256": "0010973a4ab4c9b8f5009575d361288abd996f26ee5e439eb3b42256b5a14fb8",
+      "utf8_bytes": 2500,
+      "characters": 1180,
+      "text_sha256": "fdc12758ea31e395045e269905192dc0bdf26af817b2dc7cfbcdd5da622d9951"
+    },
+    {
+      "order": 362,
+      "article_id": "6122305",
+      "title": "藤平尚真",
+      "selection_rank_sha256": "00109fb6c46d17ab26f893f9440cfdb4870d3f442c1feb0d154a7127f16c56f6",
+      "utf8_bytes": 3282,
+      "characters": 1246,
+      "text_sha256": "0ed8568cf7553f855778a86b82ed770d16a78cf181492be81a608ad2fa7c49ee"
+    },
+    {
+      "order": 363,
+      "article_id": "797971",
+      "title": "云南中路",
+      "selection_rank_sha256": "0010af44e06e23e5101faf4225985035b2cf52ee26ee529ac41335d6633335d0",
+      "utf8_bytes": 643,
+      "characters": 253,
+      "text_sha256": "74b089de7a9275a6ee3a87fa3e9bb136dafc7cf2f807ab31d0f3414c4d447f7f"
+    },
+    {
+      "order": 364,
+      "article_id": "990243",
+      "title": "澜沧翠雀花",
+      "selection_rank_sha256": "0010bb5222471f765bc0477ae26134cc71f589a5068297049f5b5171b32ba267",
+      "utf8_bytes": 489,
+      "characters": 293,
+      "text_sha256": "06371f3f503bba89265c535e2c16e74abea0c6574e60e9f4a79d2f2834641829"
+    },
+    {
+      "order": 365,
+      "article_id": "4673537",
+      "title": "布莱克书店",
+      "selection_rank_sha256": "0010c512329645215fea54b10e0c22ad38e3e707a9604f6b62f930ea85dd4e98",
+      "utf8_bytes": 1055,
+      "characters": 400,
+      "text_sha256": "5c14fdede6aef657e6d425b52d38ecf7fb31e0d1ff880bac14a6d2a7f5ff8a8f"
+    },
+    {
+      "order": 366,
+      "article_id": "306827",
+      "title": "賈仲名",
+      "selection_rank_sha256": "0010d829cfce2a5e388ac2a3c33b9f0f46b5cdfe058c53be7ea030c5dc2566d6",
+      "utf8_bytes": 569,
+      "characters": 197,
+      "text_sha256": "4b00845d75e47de0d7fab97461baa929f011f4f94596601642c1e6bd1d552129"
+    },
+    {
+      "order": 367,
+      "article_id": "5204003",
+      "title": "科内利奥·索马鲁加",
+      "selection_rank_sha256": "0010da21fed0fdae4cd55280d200f2383f0c619b4b3a2b0e6c84b56faf402672",
+      "utf8_bytes": 4681,
+      "characters": 1854,
+      "text_sha256": "988aa1ab3ff1e4e7ec34ee72c4f6f322c23c94ffb4efc0d1cb86fdaf2b248c3a"
+    },
+    {
+      "order": 368,
+      "article_id": "1798011",
+      "title": "蕭延青",
+      "selection_rank_sha256": "0010f7de3cad8788c5a631d3dbba2e389b6d8bc5f2e754296fe795cf2ce43452",
+      "utf8_bytes": 663,
+      "characters": 259,
+      "text_sha256": "7c67cc70a6ca40ee95c243589bf3149eafb017c019ce46e83344c1115e0d6986"
+    },
+    {
+      "order": 369,
+      "article_id": "2784911",
+      "title": "西外乡",
+      "selection_rank_sha256": "0010fe5b07e3819dddeb9c43e8f83420fc2bf16e0b4f5eafe84162c73740771a",
+      "utf8_bytes": 266,
+      "characters": 98,
+      "text_sha256": "8650e67f5bb6b4b051ba749ba46445c2ca20d3f956e28c5fb59beee1af9390a6"
+    },
+    {
+      "order": 370,
+      "article_id": "3287170",
+      "title": "长柄山姜",
+      "selection_rank_sha256": "00110a4b914688ce40a80990230638300760d9ede7d30671fcb86dbb016ef6e6",
+      "utf8_bytes": 109,
+      "characters": 51,
+      "text_sha256": "2f416a6f114651cae4c62f7b8b049168e53e1a53068b08f460e381976268627a"
+    },
+    {
+      "order": 371,
+      "article_id": "894687",
+      "title": "黄蛋白反应",
+      "selection_rank_sha256": "00110d958fac8a4bf3acd86e731f4390a10fead87e1f1f0eb13bf6986df60d36",
+      "utf8_bytes": 849,
+      "characters": 307,
+      "text_sha256": "7c9570187c6b8c54a598857dd00cf85dd2ba045658190d676f563eb89907ab6f"
+    },
+    {
+      "order": 372,
+      "article_id": "3112241",
+      "title": "尚热内特",
+      "selection_rank_sha256": "00110f9e111624a93153571e1913546cabadb8671de49fcfec932e68b5fb3663",
+      "utf8_bytes": 619,
+      "characters": 243,
+      "text_sha256": "9fdb982d523615356ef3950e3c63047d4ffcb3d8f9a06d0f54662a8ba88c9278"
+    },
+    {
+      "order": 373,
+      "article_id": "8127565",
+      "title": "马蒂亚斯·魏因汉德尔",
+      "selection_rank_sha256": "00111028a3e27ac3615607e6b63f7aa9bfc44f5d0b4e19e1bf82046c79f533cd",
+      "utf8_bytes": 334,
+      "characters": 123,
+      "text_sha256": "fc081b09f273ceb01502e9c2531b0f76fe27782beebab1fd1b5ed206d5e576cc"
+    },
+    {
+      "order": 374,
+      "article_id": "8029487",
+      "title": "夏禮輔",
+      "selection_rank_sha256": "0011268c7f8d12740d01376c02d2e41cbe649b43f9b0dd4533fde7ef4a11bfc4",
+      "utf8_bytes": 3108,
+      "characters": 1112,
+      "text_sha256": "f88ac6a057ed494be090d81d59eadc0e32236dc9c3bc4aa0dc0fce36e63b6d5d"
+    },
+    {
+      "order": 375,
+      "article_id": "8141280",
+      "title": "肯·格林 (1924年)",
+      "selection_rank_sha256": "00113897e0b1e34acb8e11374f41e03361ba02ffcc27a5965745bad11414ffd1",
+      "utf8_bytes": 330,
+      "characters": 122,
+      "text_sha256": "ec89c4e92dea4a4505f36b9af4b0b773a7e9d1336ab0aae9aae005eb21721898"
+    },
+    {
+      "order": 376,
+      "article_id": "1145683",
+      "title": "乳酸依沙吖啶",
+      "selection_rank_sha256": "00113ac052a0d50c39c011e53c7c044c7ce4a278798b5a907231ba5a6cde3553",
+      "utf8_bytes": 382,
+      "characters": 158,
+      "text_sha256": "426bd43f3da29054acc2ee824b75876a65cef8a4ca2be118bf79ee6d3918e3df"
+    },
+    {
+      "order": 377,
+      "article_id": "2784404",
+      "title": "抱龙镇",
+      "selection_rank_sha256": "00113be7b558698c2ffd9af8b1b9c5eb4b87a4c02257767d405aff17d8d09bc1",
+      "utf8_bytes": 120,
+      "characters": 46,
+      "text_sha256": "ea2ce7632ffa768ecc873ed398dc2ff3263b93a11a0c93b08f8a1084bb75dd98"
+    },
+    {
+      "order": 378,
+      "article_id": "1109721",
+      "title": "白塔卷管螺",
+      "selection_rank_sha256": "00116b3f39aeed75ec55ef34ce97ab28bad6652d46e3c279ca6386c530ab1518",
+      "utf8_bytes": 152,
+      "characters": 60,
+      "text_sha256": "a522e0baedda80de2e2dc45165b02a689afc2c0ad8c67c04bf9b2137e042d135"
+    },
+    {
+      "order": 379,
+      "article_id": "3471200",
+      "title": "小龟山灯塔",
+      "selection_rank_sha256": "0011715d5138f91c3038d8dce37275fc2e2320d903aa0fc90b9bbfa441945760",
+      "utf8_bytes": 455,
+      "characters": 163,
+      "text_sha256": "b729832fa70fe5c54db8b1c4bdcf87d4589ef5bd0ff2f1e44896f67d386b58c5"
+    },
+    {
+      "order": 380,
+      "article_id": "5996721",
+      "title": "次旺仁增",
+      "selection_rank_sha256": "00118a7a94430e1b670334c730032bf02eac88131aa8f6171565f381484f7468",
+      "utf8_bytes": 2412,
+      "characters": 882,
+      "text_sha256": "c3b3534aadd6240f453cc6df5d18dcf5457e9d6eb1605a0799bc088141b16e1b"
+    },
+    {
+      "order": 381,
+      "article_id": "719060",
+      "title": "冰球名人堂",
+      "selection_rank_sha256": "0011964bb24289abfc87fc8b2893ad501ca90819777222b82f86bd0e971e9682",
+      "utf8_bytes": 497,
+      "characters": 185,
+      "text_sha256": "ac6d4b06e07225651e785c72c1d71cf9e24aac26cc94e0f6d23d600828620449"
+    },
+    {
+      "order": 382,
+      "article_id": "6453072",
+      "title": "海南热带雨林国家公园",
+      "selection_rank_sha256": "001197af2419df9cd45eda48039b98b45194341b7f2a88d0406e0305edea1e78",
+      "utf8_bytes": 866,
+      "characters": 316,
+      "text_sha256": "1de970a578e8708caad388a4365b56037b4f414964064a0a17f1a12b186ddb45"
+    },
+    {
+      "order": 383,
+      "article_id": "177144",
+      "title": "杜伊斯堡",
+      "selection_rank_sha256": "0011a40b093c2a64e31a4d6a6ac0b723c96aa342ea7406ee50450164c3426713",
+      "utf8_bytes": 11043,
+      "characters": 4322,
+      "text_sha256": "4077e4351614ea21b64bb326f0503b80877be9e61ee19040e2dda062822a5def"
+    },
+    {
+      "order": 384,
+      "article_id": "2956246",
+      "title": "月紋環蝶屬",
+      "selection_rank_sha256": "0011a54968d61ccfa6f0544b3f1c0a80258149ca3fdc05b093f7f309f44ce209",
+      "utf8_bytes": 569,
+      "characters": 429,
+      "text_sha256": "17025e55412dac489ac5e5b226855c68147133bfae17c958e7b8938cad5b9d3a"
+    },
+    {
+      "order": 385,
+      "article_id": "7416313",
+      "title": "Vsftpd",
+      "selection_rank_sha256": "0011a84e363252eb88f4761bdbabcc124afc20a7cfb04622722dc3d59de83240",
+      "utf8_bytes": 491,
+      "characters": 321,
+      "text_sha256": "59afeb185f50981c11387238625af2d0720b8dc462772332ca528345428e1306"
+    },
+    {
+      "order": 386,
+      "article_id": "2805220",
+      "title": "仙翁庙",
+      "selection_rank_sha256": "0011b27a41f4e036dd8f589d4f7fd72bc07d3ced875d025e8dc8ea74cc5e16e1",
+      "utf8_bytes": 319,
+      "characters": 121,
+      "text_sha256": "dc3e18d8ac8f82b2ce63eadfd855c2be9739a97762caec67114fe1e7b978cc8b"
+    },
+    {
+      "order": 387,
+      "article_id": "5743619",
+      "title": "吳厝 (臺中市清水區)",
+      "selection_rank_sha256": "0011b9709b5d001b3a0b36e4d4fb7078eae9bb136ac104f09c3ae840c83df497",
+      "utf8_bytes": 2419,
+      "characters": 855,
+      "text_sha256": "d5ae6b7eb0f4920bee244e8bcc1b7747aeec3b7e40fa20e35ab056a28a720b46"
+    },
+    {
+      "order": 388,
+      "article_id": "7678398",
+      "title": "阿拉伯-努比亚地盾",
+      "selection_rank_sha256": "0011bc1b1aa144aee12feb0a46bb6a961d59d6e835e16f19f206cb2a0aedcaa5",
+      "utf8_bytes": 6244,
+      "characters": 3052,
+      "text_sha256": "c46c25b67585cd223013b1929df306bd9a9fc68dfe02ab558ab73113f32c613c"
+    },
+    {
+      "order": 389,
+      "article_id": "3055641",
+      "title": "塔法利亚",
+      "selection_rank_sha256": "0011c29c849562a5ed00f99b7f9343a23d7c3dbf9a88452a1b44f39b0f9a6f2f",
+      "utf8_bytes": 181,
+      "characters": 73,
+      "text_sha256": "1563b8cfbc4c4e2bfb999fcf83459b06584a5f0eb188b4240317b49564514f06"
+    },
+    {
+      "order": 390,
+      "article_id": "5915957",
+      "title": "許勉仁",
+      "selection_rank_sha256": "0011cbe2f54d1f7b20b86039e0bcb389cec4537aa7a5799136b736e4fe474bb8",
+      "utf8_bytes": 512,
+      "characters": 184,
+      "text_sha256": "5f9fd18ee354d50f491d33e7e3ab9d92278cce66a4f51bc80c3f16a9a791dae7"
+    },
+    {
+      "order": 391,
+      "article_id": "1356187",
+      "title": "WZ-10",
+      "selection_rank_sha256": "0011eb7c2367f9cf0105dd963c8d97478f5ce933422e7bff01a10ec3b89a553f",
+      "utf8_bytes": 173,
+      "characters": 81,
+      "text_sha256": "37792a42cf03c09b886bfb1b84f0465d895c7a6c0bb0cf71b35dbb419eb10ff6"
+    },
+    {
+      "order": 392,
+      "article_id": "321811",
+      "title": "毛丹青",
+      "selection_rank_sha256": "0011f829100f2633d12721064e65529a0960b59561ac531d101bfb697f69cc24",
+      "utf8_bytes": 934,
+      "characters": 356,
+      "text_sha256": "5e9220fed4432b1b045e8d8452ae582bf93ab06be7c3e5186ea2b9e8c92119f6"
+    },
+    {
+      "order": 393,
+      "article_id": "5630269",
+      "title": "蓝佛安",
+      "selection_rank_sha256": "0011fe7d58b231a07c805ffb9fbce76adcb3c22109cf13d52fc155b6c2dbcd62",
+      "utf8_bytes": 2329,
+      "characters": 899,
+      "text_sha256": "9de8b411a49d9a41fb260df722e2260c2bdb1ba8c372fa04ab285ce7d6e9e489"
+    },
+    {
+      "order": 394,
+      "article_id": "1146835",
+      "title": "黑铜狂蛛",
+      "selection_rank_sha256": "001203a063e30454cc9df9e5b1bb9a5b4c8a3862c8f5dd3b9e94b4c7b715b4af",
+      "utf8_bytes": 194,
+      "characters": 70,
+      "text_sha256": "abbfb339c5b4a886167cc6156839685db0d63c9064528421d9bdc2bbd6994c69"
+    },
+    {
+      "order": 395,
+      "article_id": "924268",
+      "title": "阿尔巴尼亚广场",
+      "selection_rank_sha256": "0012139182570e3c81d29b9ba34525711921d781585418c5438cf739ba5037ca",
+      "utf8_bytes": 286,
+      "characters": 122,
+      "text_sha256": "a0885840232cdabf3c6f4cf61e585ba4c3be72f18bb8a220308ac57435dac6e7"
+    },
+    {
+      "order": 396,
+      "article_id": "3923107",
+      "title": "三星Galaxy Note 3 Neo",
+      "selection_rank_sha256": "001215a820458ed3ce30f5439581e47f288a5637468a8df158c7feb1cfffe3ad",
+      "utf8_bytes": 740,
+      "characters": 404,
+      "text_sha256": "134fbeec1e708365c9c0d7e2a5f5101e709d57a7911c81c0c07bb8d5f9fd6d00"
+    },
+    {
+      "order": 397,
+      "article_id": "3429655",
+      "title": "智秀",
+      "selection_rank_sha256": "001235c066d5dbaa2615dc4ffa1a388d85e38fc9a594c71b02d9918559ca5cb3",
+      "utf8_bytes": 694,
+      "characters": 332,
+      "text_sha256": "5318ded972505bb6d152e4a0cbac24b686da28f9bb9cfe8b0d20a9fb698725ad"
+    },
+    {
+      "order": 398,
+      "article_id": "3491664",
+      "title": "屯田站 (京畿道)",
+      "selection_rank_sha256": "00123b922843229480cca1dd71287e7aabb5aa7695fdc78c0ab4f95de18f17ba",
+      "utf8_bytes": 556,
+      "characters": 215,
+      "text_sha256": "4e54f0f36dd47d8622171e0f67c062de3488275e52975a8038a659c0b36137d6"
+    },
+    {
+      "order": 399,
+      "article_id": "6995082",
+      "title": "2019冠狀病毒病印度疫情",
+      "selection_rank_sha256": "00124bfacf7d06277f5fe59b90cf8b5302a6987d7d28f1d20028f2cebfd940ce",
+      "utf8_bytes": 30731,
+      "characters": 11400,
+      "text_sha256": "a86f862ed5804b5b68e127a2aa8490438065a6b65d315b3b7b324e1392cea040"
+    },
+    {
+      "order": 400,
+      "article_id": "3093502",
+      "title": "沙托贝尔纳",
+      "selection_rank_sha256": "00124c787d4d61b4fe00a2bb3fa185ea8fe7959c50bb93f7ce662d4a7f504d77",
+      "utf8_bytes": 644,
+      "characters": 250,
+      "text_sha256": "a68c755e483bbee9ae31ec3677b239954ba7b95a9215caae71f1b6ab7de0cd67"
+    },
+    {
+      "order": 401,
+      "article_id": "7247110",
+      "title": "溜走 (酷娃恰莉和克莉絲汀和皇后歌曲)",
+      "selection_rank_sha256": "00124d0d36d87ef0745ad4756b983220c2a3d09f4f9e0e589b278743cfeae3fa",
+      "utf8_bytes": 3391,
+      "characters": 1288,
+      "text_sha256": "7b4923cf5560b87ffbdf040ad2ab9a7fdb1b0725731a897f023887dacd3ea3d0"
+    },
+    {
+      "order": 402,
+      "article_id": "3348377",
+      "title": "五角化六十面體",
+      "selection_rank_sha256": "00125a6d3f5863badd3c9135e50efd1d30d2bf2ff3e1a60218641f4b227a4171",
+      "utf8_bytes": 3735,
+      "characters": 1472,
+      "text_sha256": "adce6250e8a5db3c1204367cd72b8cb6e88c16a336543840c069e84c8486a2d9"
+    },
+    {
+      "order": 403,
+      "article_id": "1142885",
+      "title": "寿带桥",
+      "selection_rank_sha256": "001262694f1ef6d123b14b1bc6744eb0973ad94bd46cd5e966aca1154cbf00d9",
+      "utf8_bytes": 564,
+      "characters": 206,
+      "text_sha256": "a1d888a05152041877a353455c5000a7b6d277f6b6771e0ca60a52cbab3e3091"
+    },
+    {
+      "order": 404,
+      "article_id": "8528079",
+      "title": "董允耀洋樓",
+      "selection_rank_sha256": "001262ed8b6ac60ca9e39c832eb5f9dff14b0bcb9dd1e46827d5e2c2c21a66e7",
+      "utf8_bytes": 5294,
+      "characters": 1862,
+      "text_sha256": "83bde520fd241a235bda8d3c56418ccc3eb0c0b42a820a759e6208d2d962ea9d"
+    },
+    {
+      "order": 405,
+      "article_id": "8394521",
+      "title": "滨海2号",
+      "selection_rank_sha256": "00126b034f376e9d86721b5f26ce1046600f8c995ea7b6b677a230bbef5b1319",
+      "utf8_bytes": 1254,
+      "characters": 432,
+      "text_sha256": "2a21772749a38b7e38277fae635627b6ee39c6188ed78f352a6a4ec6c829892b"
+    },
+    {
+      "order": 406,
+      "article_id": "6111125",
+      "title": "唐德明 (1963年)",
+      "selection_rank_sha256": "0012736b0e4a7bfc485226686d04e81d10d942caf6605f6fedbc2effb2d41eeb",
+      "utf8_bytes": 746,
+      "characters": 262,
+      "text_sha256": "841f61a7ac3a476074892b665e41417ecd20b373df305847d93ffe3aefc4d901"
+    },
+    {
+      "order": 407,
+      "article_id": "7213416",
+      "title": "烏賊摔角手",
+      "selection_rank_sha256": "001277bff87a817203a08c9a81564eab93bbf901896c120348735c397f15fab0",
+      "utf8_bytes": 1283,
+      "characters": 455,
+      "text_sha256": "6de320a8076a2ab697c2c428b8d4ddb27fc6dde126bd74bdd998e538836800e5"
+    },
+    {
+      "order": 408,
+      "article_id": "1613983",
+      "title": "李渡烧酒作坊遗址",
+      "selection_rank_sha256": "00128cb3832dfb9f444141a2174a211e50b5442c627418e0ff14a5fd8971d9f7",
+      "utf8_bytes": 1812,
+      "characters": 632,
+      "text_sha256": "53a4db1bbd517044480472fe7f920c27c8b0b3e7cc93c0feb5765f11c42909e8"
+    },
+    {
+      "order": 409,
+      "article_id": "5914429",
+      "title": "克莱夫 (消歧义)",
+      "selection_rank_sha256": "0012b4f75eb1d3a7f02daa94b0e5698b4b2bb5e4f3deff322aaa41ff5292ff1f",
+      "utf8_bytes": 152,
+      "characters": 56,
+      "text_sha256": "2f9bf6cfad617ac64725d0a9d92540731f0eabfb8daa4e41d4e3f4fb06cfa343"
+    },
+    {
+      "order": 410,
+      "article_id": "7122019",
+      "title": "摩根鎮區 (愛荷華州富蘭克林縣)",
+      "selection_rank_sha256": "0012b8bc705394b07894dd18379f653eb0aa62476c808990f0f4ac191c0567d1",
+      "utf8_bytes": 323,
+      "characters": 127,
+      "text_sha256": "678d6fb464166a5b1538937a3654361af18f4fd9c56d6ae7b1dfefb046e4f311"
+    },
+    {
+      "order": 411,
+      "article_id": "1701208",
+      "title": "皓月",
+      "selection_rank_sha256": "0012bf3e6a5b85b83ace0d0c190949a2f6c10075554ddd0da4cef234004bb936",
+      "utf8_bytes": 603,
+      "characters": 209,
+      "text_sha256": "88f662978dc6de2c8af773c0f37a81484955f50117fd084466c1b6378e5e749e"
+    },
+    {
+      "order": 412,
+      "article_id": "82681",
+      "title": "萤火虫之墓",
+      "selection_rank_sha256": "0012c0058c97d4aafa3cef55e061626dad45be4d86d129200c1acbc371b076d1",
+      "utf8_bytes": 41755,
+      "characters": 14511,
+      "text_sha256": "53376e70f497a630e1dfc520bdf47feb58f7fb1cbb1a102e8fca82f2e4d4b994"
+    },
+    {
+      "order": 413,
+      "article_id": "7203219",
+      "title": "奧西歐拉鎮區 (愛荷華州克拉克縣)",
+      "selection_rank_sha256": "0012ce5cddf10c9155617a5c116c39aa6b819876801e3c49f549204e099b7a07",
+      "utf8_bytes": 413,
+      "characters": 163,
+      "text_sha256": "8ae76068e0a6ce5165d7fc5d91c806b6f70a7642549611563531a4b41db8f99a"
+    },
+    {
+      "order": 414,
+      "article_id": "8418894",
+      "title": "厄爾斯 (肯塔基州)",
+      "selection_rank_sha256": "00130793e9c91149ab7a5edbadd7d0c6e4632d667fbba89a4b7c8a5cd3185530",
+      "utf8_bytes": 409,
+      "characters": 163,
+      "text_sha256": "56c4ac88d13a17d8911dfb3bde8a356cfc6d222374a4375649c413c1ed429f0c"
+    },
+    {
+      "order": 415,
+      "article_id": "5536052",
+      "title": "特罗斯坦农村居民点",
+      "selection_rank_sha256": "001318b2aeeee786683a2ffd02d3e0f1548cb3125e1f93c78ee1bf032e1f36d8",
+      "utf8_bytes": 281,
+      "characters": 103,
+      "text_sha256": "68186326355694144386c8832adc8ed150a19297cb13e5487667b990d2fe5a86"
+    },
+    {
+      "order": 416,
+      "article_id": "7969655",
+      "title": "克丽丝·冯·萨尔察",
+      "selection_rank_sha256": "00131b9eb63f724b2a80f654814d41b5543acc98a73a08a79bb5d045b117373a",
+      "utf8_bytes": 767,
+      "characters": 283,
+      "text_sha256": "4782c155e1976fce3b3c1a211a5ed362ac1a7498f2c8e7a765a3cb2de76a131e"
+    },
+    {
+      "order": 417,
+      "article_id": "7548779",
+      "title": "郭沫若奖学金",
+      "selection_rank_sha256": "001327830b201baa66ce925043e5463b9d011a2176133c80e9fb638979cdec15",
+      "utf8_bytes": 2313,
+      "characters": 865,
+      "text_sha256": "b38805666aa23edbafa319ef380ab3071d7c6e5d242a6d820cbc45b08f58a79e"
+    },
+    {
+      "order": 418,
+      "article_id": "8179874",
+      "title": "朱音墊",
+      "selection_rank_sha256": "00132821e24875587d0cb64fbfa55f51e6e5973bc629b4ecdc56bec96ab10494",
+      "utf8_bytes": 4202,
+      "characters": 1476,
+      "text_sha256": "e7ff0ac8f4dcb0729b989a13498f82862e39be863dd6e98e29e0db05ff758391"
+    },
+    {
+      "order": 419,
+      "article_id": "7256118",
+      "title": "腺苷受體興奮劑",
+      "selection_rank_sha256": "00132c2b059afb781a91696dce0583fd57b4662e9763cb21a3876e3ae9c5d6ad",
+      "utf8_bytes": 252,
+      "characters": 122,
+      "text_sha256": "ca911b10ba68d1fcbb385c9625c76ebdfe4a761e119cad383c11c5bcb1405c14"
+    },
+    {
+      "order": 420,
+      "article_id": "6318496",
+      "title": "克拉克斯維爾 (阿肯色州)",
+      "selection_rank_sha256": "0013473bbc3c766bc309ec9c71b3edaea9309b31f51ffe27c0a96f9d41942cc4",
+      "utf8_bytes": 399,
+      "characters": 153,
+      "text_sha256": "485419717ca1afda2a02362770ba4b732c0e92743a58b5fb9775b4517660e5a4"
+    },
+    {
+      "order": 421,
+      "article_id": "5533281",
+      "title": "耶里人",
+      "selection_rank_sha256": "00134d20a06d95294f06b29abb266bfaa4211abeef6ab5448bc39774e8d2faae",
+      "utf8_bytes": 654,
+      "characters": 298,
+      "text_sha256": "6f91eb01e0cb6f85622428aaf2ff1d27b5464d66ee980fb8b949cc004cdc9fcd"
+    },
+    {
+      "order": 422,
+      "article_id": "3883655",
+      "title": "埃弗捷耶夫冰川",
+      "selection_rank_sha256": "00134f13d7c62acddd0d9390e097be9221c71e6299d3e6970301eafef04dcb49",
+      "utf8_bytes": 271,
+      "characters": 93,
+      "text_sha256": "89fb1599e08c299101f353e9261ce824f2fa7b7a88861edb10183fde633b23b5"
+    },
+    {
+      "order": 423,
+      "article_id": "5024293",
+      "title": "安迪·钱伯斯",
+      "selection_rank_sha256": "001350b20c8f35de83684028df8750d80fb14e75687b1ba3dd7aa324f8a321d8",
+      "utf8_bytes": 573,
+      "characters": 243,
+      "text_sha256": "bd8da394a00c38830155973a3a9bee05605fee3b72db961c24611e628570beb7"
+    },
+    {
+      "order": 424,
+      "article_id": "689111",
+      "title": "茲維亞德·加姆薩胡爾季阿",
+      "selection_rank_sha256": "001356a611f60cbb1a01ed310321e32bfe539b289e5e3ee3c7a7e77b4dee13c2",
+      "utf8_bytes": 1553,
+      "characters": 556,
+      "text_sha256": "d68f2254891521c86a3b4b78b8c87395adbce3c8e87e100156b3239daa7f0b0e"
+    },
+    {
+      "order": 425,
+      "article_id": "5377182",
+      "title": "何塞·曼努埃尔·雷伊",
+      "selection_rank_sha256": "0013574bb4d0e98b04ed7406004d1f9231be0bfae02822f08e24f6d782ad04c8",
+      "utf8_bytes": 3214,
+      "characters": 1268,
+      "text_sha256": "1ac0dd174c6a09eb3139458b84d508681a898353a7e3de2b73151d835df1971f"
+    },
+    {
+      "order": 426,
+      "article_id": "1421854",
+      "title": "利西察河",
+      "selection_rank_sha256": "001368a2034aa1a6a9a39a09671c00220c7f4cad79b23c8cdb9b0e10a0653373",
+      "utf8_bytes": 229,
+      "characters": 83,
+      "text_sha256": "bf8fcfe13198a7f5e90a265e9ac1555e115f2e57fd16d3ecb8831e4306b54406"
+    },
+    {
+      "order": 427,
+      "article_id": "5415670",
+      "title": "魯堅科",
+      "selection_rank_sha256": "00136d342ba3e448ef965f545c59b3e8027d24427a43421a7a228732d01d5174",
+      "utf8_bytes": 405,
+      "characters": 179,
+      "text_sha256": "7d14ec74aa2b15ddbf7ca45520773579c9b650e2faa2cb9633e6651a29c70c8f"
+    },
+    {
+      "order": 428,
+      "article_id": "3609923",
+      "title": "贊比亞足球協會",
+      "selection_rank_sha256": "00137df2e8ba54b98ec90bd4d7a0478a67fde3ba86045740c1ae684a8f4e5e64",
+      "utf8_bytes": 338,
+      "characters": 128,
+      "text_sha256": "f35d178b9096643c1e117badf2ec2afa269c5992e643303ee753d3844f2f8d1f"
+    },
+    {
+      "order": 429,
+      "article_id": "4413138",
+      "title": "森卡山",
+      "selection_rank_sha256": "00137f633a8e5b3886c28bb70c6ea281ef8cb991873a157d2bfb5db618f2f506",
+      "utf8_bytes": 207,
+      "characters": 77,
+      "text_sha256": "bfed0536ccf32d7c70b3f415fb73d0fa8a2fefd330172245bb5a39ca4705bb26"
+    },
+    {
+      "order": 430,
+      "article_id": "3439242",
+      "title": "阿根廷蛇頸龜",
+      "selection_rank_sha256": "00138358fb322abb7ff8dc173917168ddb6248df507557c1e85531591e6ee28a",
+      "utf8_bytes": 1024,
+      "characters": 378,
+      "text_sha256": "d5a9efcd21756f1ee7f8dab01907c281d89b69321738fbada251d588fe72bc13"
+    },
+    {
+      "order": 431,
+      "article_id": "8154669",
+      "title": "眠 (韩国电影)",
+      "selection_rank_sha256": "001387542499fa2cfb69f79bc9718ce2826dd476ddc9d465850bedbcc9d963c6",
+      "utf8_bytes": 3598,
+      "characters": 1392,
+      "text_sha256": "af4e53445d767561778932678e37f00bb423754a76949402c30fbcd2e3259e4e"
+    },
+    {
+      "order": 432,
+      "article_id": "6865297",
+      "title": "梅尔齐希 (卢森堡)",
+      "selection_rank_sha256": "00138be47f50146efbdcc0ef3f5cdc2ffc42ae77eb1d6041c8bfab2c537908c3",
+      "utf8_bytes": 346,
+      "characters": 144,
+      "text_sha256": "e9239107044c50ca1a5d0bac1b3fe6cf0ae0d57f1af2f4f7418903c90924beaf"
+    },
+    {
+      "order": 433,
+      "article_id": "2948376",
+      "title": "國道32號 (韓國)",
+      "selection_rank_sha256": "0013927b2a9d8eab8cb9961cc3035b65d92453b663dbb7561c24254de8dbdbcc",
+      "utf8_bytes": 206,
+      "characters": 74,
+      "text_sha256": "ef50d4fb202a1b95728ca979dea06190bd22ef67a5800b81681d03dd7a14aa21"
+    },
+    {
+      "order": 434,
+      "article_id": "5190271",
+      "title": "亞齊黨",
+      "selection_rank_sha256": "00139b0f86549a2c0a44d5f857368734b2ae55a550282c5e0133ee30545f1379",
+      "utf8_bytes": 496,
+      "characters": 172,
+      "text_sha256": "39353f855fb7f10110a95bfd7841c1fe6712eeb66707e0eaeaf55af7dcac81d6"
+    },
+    {
+      "order": 435,
+      "article_id": "5452816",
+      "title": "1927年12月8日月食",
+      "selection_rank_sha256": "0013b1fcb1a1224acfb528925f909370a7627283c6c7da150bdee92b2648e33b",
+      "utf8_bytes": 655,
+      "characters": 303,
+      "text_sha256": "712f4b9ba16d6b1de21754afa606539f4a778390fa7d97227be27a2090a18615"
+    },
+    {
+      "order": 436,
+      "article_id": "7155979",
+      "title": "弗里曼 (印地安納州)",
+      "selection_rank_sha256": "0013d24d4ca2d4e16c6c7a5ec3fa72224c94907aa23122190cb0fbc3c6251269",
+      "utf8_bytes": 436,
+      "characters": 172,
+      "text_sha256": "71d31a6c65557c98e13de8a2f51f462c24e9937c84aca7c32db3d01f61e5e915"
+    },
+    {
+      "order": 437,
+      "article_id": "1318330",
+      "title": "洛伦兹·冯·施泰因",
+      "selection_rank_sha256": "0013e12ac692938219ee9219def03b43a0df077e5ea32497e9e9754e8edede40",
+      "utf8_bytes": 4110,
+      "characters": 2718,
+      "text_sha256": "3593a11b8b29cad873b61c9ec2a1cacf008a01be8f25197591705aaeaacbac2e"
+    },
+    {
+      "order": 438,
+      "article_id": "1774903",
+      "title": "道夫·龙格尔",
+      "selection_rank_sha256": "0013e790e9ac21811b17377194a13a7351fb5132240ff33ebc950f7f6b99c2c3",
+      "utf8_bytes": 2132,
+      "characters": 841,
+      "text_sha256": "19c427faff86f3bc888fb681345363b5365e45d754b395f4fee4568bff6c8aa7"
+    },
+    {
+      "order": 439,
+      "article_id": "3404918",
+      "title": "西直门内大街",
+      "selection_rank_sha256": "0013f1e4bce3b562aec6128085529df9db43de0a73f70d0e55af95809170ff75",
+      "utf8_bytes": 1033,
+      "characters": 361,
+      "text_sha256": "0fce4173c027aa19faea0ff6eb4c33ce28c4a6e3a21eebe9c1ec421274695a1a"
+    },
+    {
+      "order": 440,
+      "article_id": "2871035",
+      "title": "馬蘭博",
+      "selection_rank_sha256": "00140fb6e9d66def8dbc3c132ff7abe50ea6e88322b9cfaa9796a8e78771711b",
+      "utf8_bytes": 314,
+      "characters": 166,
+      "text_sha256": "823d8ec0dcc43cbefec3fde58510368c8a27d3569196af573650b5ce65ef07f1"
+    },
+    {
+      "order": 441,
+      "article_id": "1196481",
+      "title": "原昌胤",
+      "selection_rank_sha256": "001418f8a819a14b6b6b72c841049c03f3762d09def1c6d3ef74568602dc423f",
+      "utf8_bytes": 580,
+      "characters": 216,
+      "text_sha256": "0acdbaf8346c6958de47ab0872292993ce784771194dd8e4106b33c0b3ec7e1b"
+    },
+    {
+      "order": 442,
+      "article_id": "8033155",
+      "title": "蓮花車隊 (1954年)",
+      "selection_rank_sha256": "0014262b07041afc8214be1283f765aff7590e3275bce1c02c54c18fdd783ca6",
+      "utf8_bytes": 408,
+      "characters": 154,
+      "text_sha256": "22c806de1a2e0b5afedd04b4c899a9379dd726832341060fa6cbab113d43241b"
+    },
+    {
+      "order": 443,
+      "article_id": "7478334",
+      "title": "庫克山 (烏克蘭喀爾巴阡山脈)",
+      "selection_rank_sha256": "001441d146d9b5c2060a69ec105f37ede61ea0b3702984f23313a144ac860f44",
+      "utf8_bytes": 249,
+      "characters": 94,
+      "text_sha256": "aa531602f270c8605ee7c8c7a2491483bddb1a3e66afc7e76dc3653473547623"
+    },
+    {
+      "order": 444,
+      "article_id": "805457",
+      "title": "ISO 639:b",
+      "selection_rank_sha256": "0014422d26083cd0c0465b93fd4a22bc5f7488dbc038f06d41e4d702675ea8da",
+      "utf8_bytes": 38155,
+      "characters": 36457,
+      "text_sha256": "b77f1b6723fd2b41dea969c043add91ce9430e9e5056e3729ee233c05005451e"
+    },
+    {
+      "order": 445,
+      "article_id": "4784665",
+      "title": "奧爾梅多縣 (馬納比省)",
+      "selection_rank_sha256": "001456262527d232a649cfa3649302fa8e0bee363d8a7d96609da8a3310d5f25",
+      "utf8_bytes": 327,
+      "characters": 175,
+      "text_sha256": "35328c7c6eb40356c2834d710c7b145929ed7cb0bed85d57069d8602854eb814"
+    },
+    {
+      "order": 446,
+      "article_id": "7380034",
+      "title": "耶莱娜·尼科利奇",
+      "selection_rank_sha256": "00146624c956980e541fea0bb37d2bb6ab88df25e7557c0b63d1acf593846d56",
+      "utf8_bytes": 797,
+      "characters": 301,
+      "text_sha256": "f1477ec201c64de1a068d8b4f49985b7fcb3195e2af74371581a83c1e543ad82"
+    },
+    {
+      "order": 447,
+      "article_id": "1800626",
+      "title": "Campus Life ～生於世上真好～",
+      "selection_rank_sha256": "0014675d0f412f3725f5741ea4908e0f2b6e3c1a474d1f28e0f1bb8a32cc32b1",
+      "utf8_bytes": 904,
+      "characters": 446,
+      "text_sha256": "e617027708d26ad1f709e95e1af6f322628c5c778867572c8bfb3fde2d3fe29a"
+    },
+    {
+      "order": 448,
+      "article_id": "5535631",
+      "title": "2017年全英羽毛球首要超級賽",
+      "selection_rank_sha256": "0014735c9bef31e0fd803d5ca822ed4b88fe0644cf09583ad3e5ed479e1974b6",
+      "utf8_bytes": 1501,
+      "characters": 647,
+      "text_sha256": "cd42a2e26906be6eb29c304c27e85b29dda1aef21df1f4747b7024b1e0cf8adb"
+    },
+    {
+      "order": 449,
+      "article_id": "228413",
+      "title": "吳弘達",
+      "selection_rank_sha256": "001474bb109e8587e52a54656ab8f2a579064ddb790650e4ed7592961755eb7b",
+      "utf8_bytes": 2544,
+      "characters": 1107,
+      "text_sha256": "3277c62013dde863ee0693fcfb59f32e332f16549eece2b0fadc55136506ed4a"
+    },
+    {
+      "order": 450,
+      "article_id": "4984200",
+      "title": "比伦凯 (克拉马托尔斯克区)",
+      "selection_rank_sha256": "001478902d3da8020bec3d20a68c6df42be7480ef28441d3f6d1592777fe15ea",
+      "utf8_bytes": 367,
+      "characters": 139,
+      "text_sha256": "1c0ee3349feb91079c557dc22f80abe14b39dabf258354a06d2d515efa5da27a"
+    },
+    {
+      "order": 451,
+      "article_id": "1563885",
+      "title": "三钵罗底",
+      "selection_rank_sha256": "0014b89339a6e3402f0352a9ff1f4e91a36b7d6e0ed90307f6736e684c3ad658",
+      "utf8_bytes": 1407,
+      "characters": 515,
+      "text_sha256": "6189e9b3324a032e26277944fcbd1022f882410bede333c49aa1257ca136c8d2"
+    },
+    {
+      "order": 452,
+      "article_id": "15704",
+      "title": "3月1日",
+      "selection_rank_sha256": "0014baacebc1814b9170d00fe222c3a86d29a821ad26235195134eb0ec904f60",
+      "utf8_bytes": 12905,
+      "characters": 5223,
+      "text_sha256": "e9cfb025117320f1ba859a051abf018f7219efaf4065607ebef9286347fbec8b"
+    },
+    {
+      "order": 453,
+      "article_id": "1783538",
+      "title": "汉滩江站",
+      "selection_rank_sha256": "0014be4c24fb66c8dd1d6f24e91fd0b4dae559576aae04c51a8b9c2dcd859297",
+      "utf8_bytes": 805,
+      "characters": 341,
+      "text_sha256": "d03152f3db541315ff88476f2a211ac800884e3d7491ad6b8d1a63a0360a00a6"
+    },
+    {
+      "order": 454,
+      "article_id": "1206073",
+      "title": "健行路 (中壢區)",
+      "selection_rank_sha256": "0014cea9b84cad48500187e61bd5e5e26dbc7fcc8164623ee67c1debb869bf69",
+      "utf8_bytes": 1256,
+      "characters": 488,
+      "text_sha256": "ae4b0e14748643172a77227f456441f5f7699974b6d61e8e5d105f651e2063cc"
+    },
+    {
+      "order": 455,
+      "article_id": "796022",
+      "title": "廖匡圖",
+      "selection_rank_sha256": "0014e1ceba6c326fd16b07fd82e7ffb4b70136141ae65dbb72c45f7d7479c1a8",
+      "utf8_bytes": 726,
+      "characters": 250,
+      "text_sha256": "bef532fd3d4803d80e177651bfc9e86795be5e452090efd250c363963dac8ca6"
+    },
+    {
+      "order": 456,
+      "article_id": "1884401",
+      "title": "白彦镇",
+      "selection_rank_sha256": "0014ef464ac97b2a581010d03584608a2940bbcc490210ea138e2d53303a44bb",
+      "utf8_bytes": 120,
+      "characters": 46,
+      "text_sha256": "9d112387fb667f090a34a62f5a01bbec494f1014c5e656cd434b396b66ef231a"
+    },
+    {
+      "order": 457,
+      "article_id": "7577272",
+      "title": "火焰湾",
+      "selection_rank_sha256": "0014f722af855d3d1d08f19327319410fa7364852933dcb518e8b51247f8220a",
+      "utf8_bytes": 433,
+      "characters": 160,
+      "text_sha256": "3ac959f26382216ea5046abf91e360cdb5afe906e48b32d0f583684b4c704565"
+    },
+    {
+      "order": 458,
+      "article_id": "3521169",
+      "title": "戴雨果",
+      "selection_rank_sha256": "00150ee081818536d2f5bf4096aea99cec471c03fff64d5e7bbbc11733a0bc72",
+      "utf8_bytes": 3693,
+      "characters": 1997,
+      "text_sha256": "6924dde18abba6c6128cd4198e178c5611a70c0afa9c338a1115c26692b1ed36"
+    },
+    {
+      "order": 459,
+      "article_id": "7994046",
+      "title": "克里斯托夫·拉泰尼昂",
+      "selection_rank_sha256": "001510dec34ccb2762fb602b4b99930a79a9ff8b67e558efed7667d95035cba3",
+      "utf8_bytes": 351,
+      "characters": 128,
+      "text_sha256": "096f8d67e1522c06512b942ba9441e833995fa4f3ec64ed6fe6bb7516f0e5e30"
+    },
+    {
+      "order": 460,
+      "article_id": "4037423",
+      "title": "长项站",
+      "selection_rank_sha256": "00151457f26d05771962b4f1c23fae2afa0853d7f4645ea6acbacd7b2b1526f4",
+      "utf8_bytes": 369,
+      "characters": 143,
+      "text_sha256": "c07412af3141d91a431bbf10c959076c4d935d4822054cc885f771f13e7b069d"
+    },
+    {
+      "order": 461,
+      "article_id": "295124",
+      "title": "爆料",
+      "selection_rank_sha256": "001514f337b1518af7ce0149fdd0a741e1c0fab3488cf72e99bab11115a8dad1",
+      "utf8_bytes": 1008,
+      "characters": 354,
+      "text_sha256": "228b2f9619a9a52f87046451a1dff627df59862870352861ef8f9f6a9957ab22"
+    },
+    {
+      "order": 462,
+      "article_id": "5053807",
+      "title": "1993年冰岛足球超级联赛",
+      "selection_rank_sha256": "00152e9d692efc55b30a40c26e83addef250ba18748fc2996f3b31f6a4b7cee9",
+      "utf8_bytes": 315,
+      "characters": 144,
+      "text_sha256": "c3d1371d3fe67a0a819c7ef66dfa4a0347dd85e1b608ef0e2497c554cadab335"
+    },
+    {
+      "order": 463,
+      "article_id": "488676",
+      "title": "自由竞技俱乐部",
+      "selection_rank_sha256": "00153499a7c4c2e6a0c815851b5d358182c7b58ad2d85d5fd62c9a63bd5a4b45",
+      "utf8_bytes": 319,
+      "characters": 195,
+      "text_sha256": "96da51a665ef9e8ff0bd975840d45954d031fba0293d72da1621cf6f9955a237"
+    },
+    {
+      "order": 464,
+      "article_id": "3018707",
+      "title": "米尔博",
+      "selection_rank_sha256": "001539360693ad321f4f0a5c024440fea612bd93d7fcc25363a31e18e0668637",
+      "utf8_bytes": 7506,
+      "characters": 2932,
+      "text_sha256": "9f22f1d71f3608c2d5445a6258e546c530cced2e7f75e6fe5755a1f8ce4a8a59"
+    },
+    {
+      "order": 465,
+      "article_id": "5987398",
+      "title": "萊翁瓦卡南山",
+      "selection_rank_sha256": "001562b5edf37f3edd4d47b8bea77c1b330d20604fd601da075b850bc707d0d9",
+      "utf8_bytes": 227,
+      "characters": 92,
+      "text_sha256": "49d9ba07357a066dcd465fe6f816954121eb7e2fa64e2d521548962c2a1e2fff"
+    },
+    {
+      "order": 466,
+      "article_id": "6276548",
+      "title": "賴蘭 (阿拉巴馬州)",
+      "selection_rank_sha256": "00156eb558114b4743f34b29345f0508ea9893a2c1d9f91eae676bf956759361",
+      "utf8_bytes": 255,
+      "characters": 95,
+      "text_sha256": "ae789b5f49c65052d42d560c788e7b731bf29e686782851efde3e00ebeadeaff"
+    },
+    {
+      "order": 467,
+      "article_id": "4531583",
+      "title": "無盡夢魘",
+      "selection_rank_sha256": "00157485909cb005545c054a9527ebde63867a425980182068df985e23473484",
+      "utf8_bytes": 4024,
+      "characters": 1525,
+      "text_sha256": "db43f62545d55dc1abc9fb3554d398e249172caf828df6cff578f82c4b71ee6c"
+    },
+    {
+      "order": 468,
+      "article_id": "6178883",
+      "title": "悉尼超級巨蛋",
+      "selection_rank_sha256": "0015830308651d054f7d062ab5cc94604abeae52bc891cc0689eb07f61429f1f",
+      "utf8_bytes": 1807,
+      "characters": 760,
+      "text_sha256": "b1c3498d401db9669647930e4be02a36d2db52a6e73d2bc3f88174e62c6178af"
+    },
+    {
+      "order": 469,
+      "article_id": "226421",
+      "title": "露西 (南方古猿)",
+      "selection_rank_sha256": "001597b611c49bbc9c232ad1c75dc8d150ac73d9fd6887c8a0cd29a3fb7d4a1b",
+      "utf8_bytes": 9649,
+      "characters": 4056,
+      "text_sha256": "be1b56ad3fdb6fcdce8a87ea9b181d4ef0c48a4c5056c4252975ea7eb081ad83"
+    },
+    {
+      "order": 470,
+      "article_id": "8510488",
+      "title": "王石谷墓",
+      "selection_rank_sha256": "00159b7a05a354a1f8f499a279fe91dd25f5b1cc9a59f2af1e8a93e8cd5bd1c7",
+      "utf8_bytes": 701,
+      "characters": 261,
+      "text_sha256": "b16b19604a566934ecee2d13d35cab120d618f13b9a6adf1202b13cd0e477f5e"
+    },
+    {
+      "order": 471,
+      "article_id": "8100288",
+      "title": "默瑟 (宾夕法尼亚州)",
+      "selection_rank_sha256": "00159cadb77a6bcaba630706caea948842bf78b04b14cbd40e8449225a954364",
+      "utf8_bytes": 562,
+      "characters": 219,
+      "text_sha256": "aebc2453e0725548445fcfd14e3ab9083b98371843892ed1584cfd762aeac28c"
+    },
+    {
+      "order": 472,
+      "article_id": "7648860",
+      "title": "美国立法交流委员会",
+      "selection_rank_sha256": "0015a74566b7196bef4234c585e70ce24b77f12dd42f08ddd0e7deecd9da615b",
+      "utf8_bytes": 785,
+      "characters": 309,
+      "text_sha256": "b0b6d1fcf5bb4072c0c31b17e67355be8324c07557697dd9dd28f6ce06736a92"
+    },
+    {
+      "order": 473,
+      "article_id": "1254036",
+      "title": "晋宁路",
+      "selection_rank_sha256": "0015ac5ab01dd07994b126502d21a9a57c0957c2668adf96af650bb09a8f5476",
+      "utf8_bytes": 713,
+      "characters": 261,
+      "text_sha256": "ad5c5213f4327afe5fb55b836e9f0152ecf01111207d04473ddd7d9ed971dc4b"
+    },
+    {
+      "order": 474,
+      "article_id": "7519861",
+      "title": "波利尼 (塞纳-马恩省)",
+      "selection_rank_sha256": "0015b2eb7c781a1d9220b83b18dba5108fc688d4e448331fe2a190f23a9f16e3",
+      "utf8_bytes": 646,
+      "characters": 250,
+      "text_sha256": "74bd188816f2971139f21f88e2915c1f91e12ee75138e6cefa4b9aaf3bb1aea1"
+    },
+    {
+      "order": 475,
+      "article_id": "5542255",
+      "title": "景浦大輔",
+      "selection_rank_sha256": "0015bd4835479b9c5f76f5bd8169a7f26a99819ff89cadc446e5fdebca2287de",
+      "utf8_bytes": 4295,
+      "characters": 1991,
+      "text_sha256": "c0bd0f25af9a650ad8f42d6c9fa92e9f96e6800bbd8d6f69af0bb78ddc64be67"
+    },
+    {
+      "order": 476,
+      "article_id": "1016393",
+      "title": "蝴蝶效應 (專輯)",
+      "selection_rank_sha256": "0015d0e55f0506860acebddbc5b78435e577e594c723d5cc5f10b0fff12f3c38",
+      "utf8_bytes": 3326,
+      "characters": 1431,
+      "text_sha256": "76dce81c1bd69c669d11566cf0e7c151291d2d661f2186e6cb38149cf3361358"
+    },
+    {
+      "order": 477,
+      "article_id": "5484172",
+      "title": "塔拉西夫卡 (普斯托梅特區)",
+      "selection_rank_sha256": "0015d8101a9278eb9a9f50150aca95cfa4ab39e0974510541ed1104426e0634e",
+      "utf8_bytes": 471,
+      "characters": 214,
+      "text_sha256": "0cd12eb22b174d73954c696b404333cf4c139c40e177201224f8781e2690ff58"
+    },
+    {
+      "order": 478,
+      "article_id": "4089737",
+      "title": "1481年十字軍",
+      "selection_rank_sha256": "0015e80c2468160f02bb49ac143e71c286e1bb8bdd0c7820e5f0dffd726a0096",
+      "utf8_bytes": 476,
+      "characters": 172,
+      "text_sha256": "0607ae87ff97cc467ad95ce0a58af15940af0f08d91a3cf8cc9d0054937a2e61"
+    },
+    {
+      "order": 479,
+      "article_id": "8130563",
+      "title": "新埔朱氏家廟",
+      "selection_rank_sha256": "0015ef5a7da9bd86183003fc2c240220cae11cac49d809dc124385021d267a96",
+      "utf8_bytes": 1380,
+      "characters": 504,
+      "text_sha256": "1a88347a484e8a270a8b6782699ab0b223399e292df36dab8f9b08fcee45eacf"
+    },
+    {
+      "order": 480,
+      "article_id": "3324995",
+      "title": "鄭淑璋",
+      "selection_rank_sha256": "0015f2977352e77dab146b44b46a0713cd9213ee26c88eef881ccd7848ac8300",
+      "utf8_bytes": 297,
+      "characters": 107,
+      "text_sha256": "7fa64373add8f6b5a4b822f0e1f62ccc9791205aa35914630d69d6ea57cfcafc"
+    },
+    {
+      "order": 481,
+      "article_id": "6971437",
+      "title": "特里本施泰因山",
+      "selection_rank_sha256": "0015f5a4b0fbc7f0f3ef7d9b536c55b162031320c9d277c6a239e3552dbe5066",
+      "utf8_bytes": 375,
+      "characters": 211,
+      "text_sha256": "a67a506e875f51b1e995e9cc19ac916b3a744068fac31734cf1fb40e02ee805e"
+    },
+    {
+      "order": 482,
+      "article_id": "1440662",
+      "title": "宋若宪",
+      "selection_rank_sha256": "0016068dbb25cb911832236332da56207dfb1c3fb8a95265983250e9a4588c18",
+      "utf8_bytes": 1616,
+      "characters": 556,
+      "text_sha256": "e1f0785c84f3031553f17454d3f477a5ae9b04e758a2775b79ae0e05391759a0"
+    },
+    {
+      "order": 483,
+      "article_id": "3026900",
+      "title": "圣弗朗切斯科-阿尔坎波",
+      "selection_rank_sha256": "001626dc7f11a202878f7f31c10ab1cc7aebf5060dfe5e726a85ba5a0514dc3a",
+      "utf8_bytes": 238,
+      "characters": 104,
+      "text_sha256": "c189eef3d50e5ed76583f89c2a79ea4479828c658c7dc1cc82dad69481565f7f"
+    },
+    {
+      "order": 484,
+      "article_id": "7575196",
+      "title": "美江寺站",
+      "selection_rank_sha256": "00165ed505c687dac9f41ca29a76fc75a60bc2ecb91b6e944a48772d62aeb89f",
+      "utf8_bytes": 1157,
+      "characters": 459,
+      "text_sha256": "661bb4056b70ad60fc907c4f227e2290ff6522dc768baf2c9f9a6f74c9908bce"
+    },
+    {
+      "order": 485,
+      "article_id": "21977",
+      "title": "杜鹃科",
+      "selection_rank_sha256": "00168051e7c6f773e820e1625398d016881c09d9f003f08859a835a4b7555f6d",
+      "utf8_bytes": 2699,
+      "characters": 1121,
+      "text_sha256": "3aa8e716d74cb5a2c9fa3c3f71e3fdc3c7c74ab9864a48003faa2bee61d89dab"
+    },
+    {
+      "order": 486,
+      "article_id": "3061048",
+      "title": "岳山",
+      "selection_rank_sha256": "001697c995f5fd2517ce109d7cf2b19f6f5b60e27d599992151008cfdcec241f",
+      "utf8_bytes": 263,
+      "characters": 99,
+      "text_sha256": "ab9cd2df088a4984cba74ec13b996075f5d3d15a1aa96b0c53375de04a6263e3"
+    },
+    {
+      "order": 487,
+      "article_id": "1794144",
+      "title": "栗雨街道",
+      "selection_rank_sha256": "00169cd6f0b0c60fa4a7b261cc1637b53bd50efdd0a7bdb8818488b9f7a7d524",
+      "utf8_bytes": 331,
+      "characters": 125,
+      "text_sha256": "1f1f54d56115ccdc2d5752332d46901a819319da34c76487e1978fd5a298bcc0"
+    },
+    {
+      "order": 488,
+      "article_id": "1153989",
+      "title": "徐市镇",
+      "selection_rank_sha256": "00169f10cbebfb34ec5ea475a005edf8b99b201d1027d7e3afcb4a304ea53c4d",
+      "utf8_bytes": 2847,
+      "characters": 1021,
+      "text_sha256": "88ec777837d5378eb7bfa47acbe8b038b513ab37fca188c90fd811ea8623290d"
+    },
+    {
+      "order": 489,
+      "article_id": "7165447",
+      "title": "潘起亮",
+      "selection_rank_sha256": "0016a04d9f4a8c015e877f25c9b75137c7be169afd4822486f0c3d47295ebcf9",
+      "utf8_bytes": 962,
+      "characters": 342,
+      "text_sha256": "f46d0a36f10ab8db915345067dd16470bef6107f254baddd213144602031f901"
+    },
+    {
+      "order": 490,
+      "article_id": "4969777",
+      "title": "歐羅什哈佐足球會",
+      "selection_rank_sha256": "0016ab8655beadbd518e13a857ea00017073a9913f2b55ccc6e4f07eff883f84",
+      "utf8_bytes": 221,
+      "characters": 96,
+      "text_sha256": "46a17e1ea771d0cf07dc23a5d2ab9e89914cff59b67f628b34ae5986c31ff945"
+    },
+    {
+      "order": 491,
+      "article_id": "3307852",
+      "title": "小稻弄蝶",
+      "selection_rank_sha256": "0016ac24a5805ecad0057c0d0de38510f3aa54f7fe9eb99de2b9ead983c8992c",
+      "utf8_bytes": 223,
+      "characters": 83,
+      "text_sha256": "c3d015423e367c31824b659ab55d66c0d3113ecca08f9f781d29163d918581d7"
+    },
+    {
+      "order": 492,
+      "article_id": "3082015",
+      "title": "豪斯韦勒",
+      "selection_rank_sha256": "0016be10bc571dff39e0f1eeddff9b2362be181c33d22bce783b7aa4818df644",
+      "utf8_bytes": 303,
+      "characters": 123,
+      "text_sha256": "4f465b9ba00ee01999849d58cdf4007b55333fd4dc06ffb9028ba9927d121dab"
+    }
+  ],
+  "corpus_protocol": {
+    "source_and_selection_sha256": "bc9de039cbd0e7ad81a092004dbc32e63ecef4dc64db4ab51ba7f75bb9289c15"
+  },
+  "manifest_sha256": "3fb1fb4ddcee806555327f954b70eb19493b0f6b377edb000870dc4518f2de28"
+}
