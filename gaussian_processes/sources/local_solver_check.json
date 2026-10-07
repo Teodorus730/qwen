@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "Tiny numerical check only, on saved 8-dimensional token-feature excerpts; not a new research fit.",
+  "n": 61,
+  "dimensions": 8,
+  "documents": 8,
+  "max_prediction_errors": {
+    "0.1": 1.942890293094024e-16,
+    "1.0": 1.249000902703301e-16,
+    "10.0": 1.3877787807814457e-17,
+    "100.0": 6.938893903907228e-18
+  }
+}

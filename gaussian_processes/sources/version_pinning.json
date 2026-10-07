@@ -1,0 +1,72 @@
+{
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "cuda_build": "13.0",
+    "gpu": "Tesla T4",
+    "packages": {
+      "transformers": "5.16.1",
+      "huggingface-hub": "1.29.0"
+    }
+  },
+  "cases": [
+    {
+      "sample_id": "4bc54a831abd2caea1f6c97d927f7e8140498a10d3195ff97f426e4bf7434e3f",
+      "dataset": "controlled",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "ec53298dad06f56ff3eed7075dd93b8380053852332e421b5d6f6cf2e6eec6c1",
+      "dataset": "controlled",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "d575e0ea70cacd869c832dd8090e88b74c31ff9939d323ce94afc9d27f9faaf4",
+      "dataset": "natural_fold0",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "fb44c0b53cf129d7b059019be2cffde045712be55526dfae2fc92d9158363efa",
+      "dataset": "natural_fold0",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "d1a9edbac2c2fc38cc8599c8441640e01cff7472e57e30c3da6b2c274bf31c5b",
+      "dataset": "natural_fold1",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "fb293181231583cc5cd020c0282cc483c3e1220be8aadcb1f35927b3c9240759",
+      "dataset": "natural_fold1",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "916d996c16634ae351dde9e458280cd3b0cde225f760140bb48f9f6483753f5e",
+      "dataset": "natural_fold2",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    },
+    {
+      "sample_id": "ff3e125f8a24969d4aa83a1cae42cadcc199b2b9c13c4701b5a468b7f290c973",
+      "dataset": "natural_fold2",
+      "token_max_difference": 0.0,
+      "mean_difference": 0.0
+    }
+  ],
+  "old_cache_reproduced_under_1e_minus6": true,
+  "seconds": 32.94012831099985,
+  "job_id": "d559b446ef014d9f898519872452ced5",
+  "passed": true,
+  "pair_forwards": 8,
+  "isolated_subprocess_exit_code": 0,
+  "library_install_exit_code": 0,
+  "total_seconds": 62.37099441600003,
+  "isolation": "Pinned Transformers/Hub installed under a separate directory; parent Colab packages unchanged.",
+  "scope": "Same eight selected texts; changes two packages together while retaining the current CUDA/PyTorch build."
+}

@@ -1,0 +1,115 @@
+{
+  "version": "fresh_product_20261003_v2",
+  "config": {
+    "teacher": {
+      "id": "Qwen/Qwen3.5-2B-Base",
+      "revision": "b1485b2fa6dfa1287294f269f5fb618e03d52d7c"
+    },
+    "student": {
+      "id": "Qwen/Qwen3.5-0.8B-Base",
+      "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68"
+    },
+    "encoder": {
+      "id": "BAAI/bge-base-en-v1.5",
+      "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "pool_kind": "mmlu",
+    "domains": [
+      "high_school_biology",
+      "high_school_physics",
+      "high_school_statistics",
+      "logical_fallacies",
+      "professional_medicine",
+      "moral_disputes"
+    ],
+    "domain_sources": [],
+    "samples_per_domain": 100,
+    "mmlu_revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+    "seed": 100,
+    "data_seed": 20261003,
+    "qwen_max_length": 256,
+    "encoder_max_length": 256,
+    "shuffle_buffer_size": 1000,
+    "validation_per_domain": 20,
+    "holdout_per_domain": 20,
+    "initial_strategy": "cluster",
+    "n_clusters": 4,
+    "points_per_cluster": 5,
+    "initial_per_domain": 4,
+    "kernel": "gp_matern32",
+    "target_transform": "raw",
+    "acquisition": "sigma",
+    "budget": 192,
+    "batch_size": 12,
+    "epsilon": 0.05,
+    "posterior_draws": 256,
+    "top_per_domain": 10,
+    "search": {
+      "enabled": false,
+      "acquisition": "ucb",
+      "kappa": 5.0,
+      "budget": 192
+    },
+    "compare_policies": false,
+    "comparison_budget": 192,
+    "kappa_values": [
+      2.0,
+      5.0,
+      10.0
+    ],
+    "validate": true,
+    "umap_neighbors": 15,
+    "umap_min_dist": 0.1,
+    "cache_dir": "/content/qwen_bge_live",
+    "archive_path": "/content/qwen_bge_live_results.zip",
+    "encoder_pooling": "cls"
+  },
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "variants": [
+    "mini_mean",
+    "bge_mean",
+    "bge_cls"
+  ],
+  "encoders": {
+    "mini": {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    },
+    "bge": {
+      "id": "BAAI/bge-base-en-v1.5",
+      "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    }
+  },
+  "pool": "Six new MMLU subjects, 100 texts each; native controlled loader hash selection before labels. No prior normalized-text or visible-Qwen-prefix overlap; exclude old-text cosine >= .92. Assert exact equality with native product pool before Qwen inference.",
+  "exclusion_pools": [
+    "controlled",
+    "natural_fold0",
+    "natural_fold1",
+    "natural_fold2",
+    "probe"
+  ],
+  "holdouts": "Fixed grouped train/validation/test, identical across variants and seeds; all 15 acquisition runs finish before any holdout measurement.",
+  "primary": "Validation macro-domain absolute theta error, epsilon 0.05. Test is confirmation only.",
+  "promotion_gate": {
+    "minimum_relative_theta_gain": 0.1,
+    "maximum_relative_mae_regression": 0.02,
+    "worst_hits_not_lower": true
+  },
+  "costs": "192 observed training documents per branch including the 120 cluster start; shared physical Qwen cache is counted separately.",
+  "label_metric": "Pinned Qwen pair; natural-log full-vocabulary JS, all valid positions including last; no activation features.",
+  "packages": {
+    "transformers": "5.16.1",
+    "huggingface-hub": "1.29.0"
+  },
+  "limitations": [
+    "One new subject pool is not broad proof of superiority.",
+    "Five seeds reflect sampling variation on the same texts.",
+    "Previous promotion failure remains a failure; this is new evidence."
+  ]
+}

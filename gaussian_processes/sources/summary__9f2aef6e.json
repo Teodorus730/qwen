@@ -1,0 +1,238 @@
+{
+  "protocol": {
+    "job_id": "bce67f7cd3414102b45e05adfab7872d",
+    "dataset": "controlled",
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "initial": "Original KMeans 4 clusters x 5 nearest points per each of 6 domains = 120",
+    "budget": 192,
+    "transform": "raw",
+    "kernel": "gp_matern32",
+    "environment": {
+      "python": "3.13.15",
+      "torch": "2.11.0+cu130",
+      "cuda": true,
+      "gpu": "Tesla T4",
+      "free_gib": 14.46075439453125,
+      "total_gib": 14.56317138671875
+    },
+    "methods": [
+      "cluster_only120",
+      "cluster_random12",
+      "cluster_sigma1",
+      "cluster_sigma4",
+      "cluster_sigma12",
+      "stratified_random_from_zero192"
+    ],
+    "scope": "Offline replay on the actual product split; zero new physical model-pair measurements.",
+    "primary": "Validation macro-domain theta error at epsilon=0.05; worst-domain decision separately.",
+    "batch_promotion_gate": {
+      "theta_relative_improvement": 0.1,
+      "maximum_relative_mae_regression": 0.02,
+      "worst_domain_hits_not_lower": true
+    },
+    "notes": [
+      "This test pool has already been inspected.",
+      "Mean and seed SD describe algorithmic randomness, not independent datasets.",
+      "Random-from-zero is a separate equal-budget sampling control; it skips the cluster start.",
+      "Empirical fraction is reported only for the random-from-zero control.",
+      "GP fitting time is real; offline replay does not measure Qwen inference savings."
+    ]
+  },
+  "cases": 30,
+  "regression": {
+    "labeled_identical": true,
+    "mu_max_difference": 0.0,
+    "sigma_max_difference": 0.0
+  },
+  "aggregates": [
+    {
+      "method": "cluster_only120",
+      "part": "validation",
+      "n": 5,
+      "budget": 120,
+      "theta_error": 0.14541594258821214,
+      "theta_seed_sd": 0.013262009152303607,
+      "worst_correct": 5,
+      "fit_seconds": 0.15846642999997584,
+      "mae": 0.00808226737118118,
+      "mae_seed_sd": 0.00019831986435804694,
+      "r2": 0.4235367320275271,
+      "r2_seed_sd": 0.02521740428589791
+    },
+    {
+      "method": "cluster_only120",
+      "part": "test",
+      "n": 5,
+      "budget": 120,
+      "theta_error": 0.12341828448962802,
+      "theta_seed_sd": 0.012162869920739177,
+      "worst_correct": 5,
+      "fit_seconds": 0.15846642999997584,
+      "mae": 0.008954605906259848,
+      "mae_seed_sd": 0.00027000870558055294,
+      "r2": 0.4002467961268466,
+      "r2_seed_sd": 0.018872463693019276
+    },
+    {
+      "method": "cluster_random12",
+      "part": "validation",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.13902239067819838,
+      "theta_seed_sd": 0.01621649129675102,
+      "worst_correct": 5,
+      "fit_seconds": 1.472366446400042,
+      "mae": 0.007881910736740206,
+      "mae_seed_sd": 0.00042319342294377726,
+      "r2": 0.4552844435438955,
+      "r2_seed_sd": 0.047700265985884296
+    },
+    {
+      "method": "cluster_random12",
+      "part": "test",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.10493817104969665,
+      "theta_seed_sd": 0.00957443079880726,
+      "worst_correct": 5,
+      "fit_seconds": 1.472366446400042,
+      "mae": 0.008479494118757059,
+      "mae_seed_sd": 0.00015742968428067872,
+      "r2": 0.4467525641189381,
+      "r2_seed_sd": 0.018258554060848982
+    },
+    {
+      "method": "cluster_sigma1",
+      "part": "validation",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.11759057388848995,
+      "theta_seed_sd": 0.009157571374626706,
+      "worst_correct": 5,
+      "fit_seconds": 15.142820577399812,
+      "mae": 0.007359812351328281,
+      "mae_seed_sd": 7.827397556533248e-05,
+      "r2": 0.5117309235639868,
+      "r2_seed_sd": 0.012567703954912761
+    },
+    {
+      "method": "cluster_sigma1",
+      "part": "test",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.08716259426938511,
+      "theta_seed_sd": 0.005332359045737332,
+      "worst_correct": 5,
+      "fit_seconds": 15.142820577399812,
+      "mae": 0.008233576284026083,
+      "mae_seed_sd": 0.0001462616983752267,
+      "r2": 0.47711300958044334,
+      "r2_seed_sd": 0.01395270693386277
+    },
+    {
+      "method": "cluster_sigma4",
+      "part": "validation",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.11858393879495718,
+      "theta_seed_sd": 0.008596532389582395,
+      "worst_correct": 5,
+      "fit_seconds": 4.30076427779984,
+      "mae": 0.00736774634704534,
+      "mae_seed_sd": 8.987355735938201e-05,
+      "r2": 0.5118045609085274,
+      "r2_seed_sd": 0.013963548003278148
+    },
+    {
+      "method": "cluster_sigma4",
+      "part": "test",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.08757747515806533,
+      "theta_seed_sd": 0.005055143301570132,
+      "worst_correct": 5,
+      "fit_seconds": 4.30076427779984,
+      "mae": 0.008234349770113746,
+      "mae_seed_sd": 0.00014560795064545343,
+      "r2": 0.4775117576234402,
+      "r2_seed_sd": 0.012918399413452918
+    },
+    {
+      "method": "cluster_sigma12",
+      "part": "validation",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.11809042329668935,
+      "theta_seed_sd": 0.008092964076214994,
+      "worst_correct": 5,
+      "fit_seconds": 1.3438562678001063,
+      "mae": 0.007363517334685962,
+      "mae_seed_sd": 8.538614543843628e-05,
+      "r2": 0.5122301297613847,
+      "r2_seed_sd": 0.015459926428770969
+    },
+    {
+      "method": "cluster_sigma12",
+      "part": "test",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.08683193767166433,
+      "theta_seed_sd": 0.005265434316517618,
+      "worst_correct": 5,
+      "fit_seconds": 1.3438562678001063,
+      "mae": 0.00824463128879733,
+      "mae_seed_sd": 0.0001451445350740789,
+      "r2": 0.4779433097106109,
+      "r2_seed_sd": 0.012215385020038485
+    },
+    {
+      "method": "stratified_random_from_zero192",
+      "part": "validation",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.12588567298179762,
+      "theta_seed_sd": 0.014012623497286785,
+      "worst_correct": 5,
+      "fit_seconds": 0.2758991759999844,
+      "mae": 0.007672499027924551,
+      "mae_seed_sd": 0.00012603896496458036,
+      "r2": 0.4695248310405427,
+      "r2_seed_sd": 0.006232305976246926,
+      "empirical_theta_error": 0.08625
+    },
+    {
+      "method": "stratified_random_from_zero192",
+      "part": "test",
+      "n": 5,
+      "budget": 192,
+      "theta_error": 0.08795561019869061,
+      "theta_seed_sd": 0.014064359273767578,
+      "worst_correct": 5,
+      "fit_seconds": 0.2758991759999844,
+      "mae": 0.008198132228899327,
+      "mae_seed_sd": 0.00014299232685493682,
+      "r2": 0.47962678237396883,
+      "r2_seed_sd": 0.015157522280775762,
+      "empirical_theta_error": 0.11666666666666665
+    }
+  ],
+  "validation_gates": {
+    "cluster_sigma1": {
+      "theta_improves_10_percent": false,
+      "mae_not_worse_over_2_percent": true,
+      "worst_hits_not_lower": true
+    },
+    "cluster_sigma4": {
+      "theta_improves_10_percent": false,
+      "mae_not_worse_over_2_percent": true,
+      "worst_hits_not_lower": true
+    }
+  },
+  "seconds": 136.89248919099998
+}

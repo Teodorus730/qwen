@@ -1,0 +1,67 @@
+{
+  "version": "independent_encoder_exact_js_v1",
+  "models": {
+    "teacher": {
+      "id": "Qwen/Qwen3.5-2B-Base",
+      "revision": "b1485b2fa6dfa1287294f269f5fb618e03d52d7c"
+    },
+    "student": {
+      "id": "Qwen/Qwen3.5-0.8B-Base",
+      "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68"
+    },
+    "encoder": {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    }
+  },
+  "data_seed": 20261001,
+  "mmlu_revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+  "mmlu_domains": [
+    "abstract_algebra",
+    "anatomy",
+    "astronomy",
+    "college_computer_science",
+    "high_school_mathematics",
+    "professional_law"
+  ],
+  "natural_sources": {
+    "fineweb_edu": {
+      "dataset": "HuggingFaceFW/fineweb-edu",
+      "config": "sample-10BT",
+      "revision": "b889e174ec04ddb4ddeab6555a3b6fb5f3023a25"
+    },
+    "finemath_4plus": {
+      "dataset": "HuggingFaceTB/finemath",
+      "config": "finemath-4plus",
+      "revision": "a7dd0df51a9178c8a86c29fcd797c2be9b77379c"
+    }
+  },
+  "qwen_max_length": 256,
+  "encoder_max_length": 256,
+  "natural_min_tokens": 128,
+  "natural_population": 1200,
+  "natural_per_fold": 300,
+  "shuffle_buffer": 20000,
+  "region_chars": 30000,
+  "scan_limit": 25000,
+  "near_duplicate_cosine": 0.92,
+  "algorithm_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "budgets": [
+    96,
+    192
+  ],
+  "target_definition": "Full vocabulary JSD, natural log, all valid positions including last; no Qwen activation features",
+  "primary_acquisition": "sigma",
+  "reference_acquisitions": [
+    "random",
+    "stratified_random",
+    "ucb5"
+  ],
+  "test_policy": "Freeze data and methods before test; use train CV for tuning; report paired seeds separately from dataset folds"
+}

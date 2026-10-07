@@ -1,0 +1,17 @@
+{
+  "version": "encoder_product_replay_20261003_v1",
+  "datasets": ["controlled"],
+  "seeds": [100, 101, 102, 103, 104],
+  "variants": ["mini_mean", "bge_mean", "bge_cls"],
+  "budget": 192,
+  "initial": "Original product KMeans: 4 clusters x 5 nearest points per each of 6 domains",
+  "acquisition": "sigma",
+  "batch_size": 12,
+  "split": "Original product train/validation/test and groups, not the research split",
+  "encoder_text": "Original full text truncated at 256 encoder tokens, matching actual product",
+  "primary": "Validation macro-domain absolute theta error at epsilon 0.05",
+  "gate": {"relative_theta_improvement": 0.10, "maximum_relative_mae_regression": 0.02, "worst_hits_not_lower": true},
+  "measurement": "Frozen exact full-vocabulary JS labels; zero new Qwen forwards",
+  "baseline": "Original product MiniLM features and exact seed100 sigma12 prediction regression",
+  "limitations": ["Previously inspected evaluation texts", "Offline replay, not a fresh live Qwen benchmark", "Passing requires a later fresh closed pool before broad claims"]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "token_protocol_v1",
+  "datasets": [
+    "controlled",
+    "natural_fold0",
+    "natural_fold1",
+    "natural_fold2"
+  ],
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "budgets": [
+    96,
+    192
+  ],
+  "encoder": "same fixed MiniLM, max_length 256, last layer",
+  "alignment": "character-overlap weighted last-layer feature; L2; pooled fallback for unmatched spans",
+  "token_targets": "full-vocabulary JS at all valid Qwen positions; averaging exactly recovers text target",
+  "token_ridge": "document weight one; train GroupKFold3 tuned by document-mean MAE; alpha [.1,1,10,100]",
+  "token_gp": "Matern3/2; same pooled-GP kernel family/bounds/target normalization; max768 observations, equal per-doc cap",
+  "holdout": "same frozen document splits and measured text indices as pooled benchmark",
+  "uncertainty": "no approximate aggregate sigma or theta; compare means only",
+  "limitation": "bidirectional encoder contextualizes whole encoder window; fallback/coverage explicitly reported"
+}

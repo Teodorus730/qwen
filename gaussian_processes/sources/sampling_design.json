@@ -1,0 +1,531 @@
+{
+  "job_id": "bce67f7cd3414102b45e05adfab7872d",
+  "passed": true,
+  "cases": 30,
+  "estimand": "Finite fixed train population (60 texts per domain), not test or all 100 domain texts.",
+  "design": "Simple random sampling without replacement within each train domain: n=32 of N=60.",
+  "interval": "Conservative equal-tail 95% confidence set by inversion of the exact hypergeometric distribution.",
+  "limitations": [
+    "No such unbiasedness or interval is claimed for cluster or adaptive sigma samples.",
+    "Coverage count on one finite pool is a diagnostic, not a new coverage guarantee.",
+    "GP entries are point-estimate controls; their sigma is not a design-based confidence interval."
+  ],
+  "interval_coverage_count": 30,
+  "means": {
+    "sampling_error": 0.03055555555555555,
+    "gp_error": 0.043347378542197605,
+    "gp_with_observed_labels_error": 0.042424034340869124
+  },
+  "rows": [
+    {
+      "seed": 100,
+      "domain": "abstract_algebra",
+      "N": 60,
+      "n": 32,
+      "successes": 23,
+      "estimate": 0.71875,
+      "exact_interval95": [
+        0.6,
+        0.8166666666666667
+      ],
+      "actual_train_prevalence": 0.7333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.014583333333333282,
+      "gp_error": 0.00838113534449314,
+      "gp_with_observed_labels_error": 0.004106779879547329
+    },
+    {
+      "seed": 100,
+      "domain": "anatomy",
+      "N": 60,
+      "n": 32,
+      "successes": 25,
+      "estimate": 0.78125,
+      "exact_interval95": [
+        0.6666666666666666,
+        0.8666666666666667
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.009930071918436312,
+      "gp_with_observed_labels_error": 0.02094326985228845
+    },
+    {
+      "seed": 100,
+      "domain": "astronomy",
+      "N": 60,
+      "n": 32,
+      "successes": 21,
+      "estimate": 0.65625,
+      "exact_interval95": [
+        0.5333333333333333,
+        0.7666666666666667
+      ],
+      "actual_train_prevalence": 0.65,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.006249999999999978,
+      "gp_error": 0.035140253779239794,
+      "gp_with_observed_labels_error": 0.034897053630460695
+    },
+    {
+      "seed": 100,
+      "domain": "college_computer_science",
+      "N": 60,
+      "n": 32,
+      "successes": 25,
+      "estimate": 0.78125,
+      "exact_interval95": [
+        0.6666666666666666,
+        0.8666666666666667
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.0791201507670839,
+      "gp_with_observed_labels_error": 0.05955468914961348
+    },
+    {
+      "seed": 100,
+      "domain": "high_school_mathematics",
+      "N": 60,
+      "n": 32,
+      "successes": 31,
+      "estimate": 0.96875,
+      "exact_interval95": [
+        0.8833333333333333,
+        0.9833333333333333
+      ],
+      "actual_train_prevalence": 0.95,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.010445664588123349,
+      "gp_with_observed_labels_error": 0.004577774753519059
+    },
+    {
+      "seed": 100,
+      "domain": "professional_law",
+      "N": 60,
+      "n": 32,
+      "successes": 6,
+      "estimate": 0.1875,
+      "exact_interval95": [
+        0.11666666666666667,
+        0.3
+      ],
+      "actual_train_prevalence": 0.13333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.05416666666666667,
+      "gp_error": 0.12885309137061476,
+      "gp_with_observed_labels_error": 0.13080001529046645
+    },
+    {
+      "seed": 101,
+      "domain": "abstract_algebra",
+      "N": 60,
+      "n": 32,
+      "successes": 23,
+      "estimate": 0.71875,
+      "exact_interval95": [
+        0.6,
+        0.8166666666666667
+      ],
+      "actual_train_prevalence": 0.7333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.014583333333333282,
+      "gp_error": 0.052567079436132924,
+      "gp_with_observed_labels_error": 0.056361151924076425
+    },
+    {
+      "seed": 101,
+      "domain": "anatomy",
+      "N": 60,
+      "n": 32,
+      "successes": 27,
+      "estimate": 0.84375,
+      "exact_interval95": [
+        0.7333333333333333,
+        0.9166666666666666
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.043749999999999956,
+      "gp_error": 0.027636495072421052,
+      "gp_with_observed_labels_error": 0.029812852566652337
+    },
+    {
+      "seed": 101,
+      "domain": "astronomy",
+      "N": 60,
+      "n": 32,
+      "successes": 21,
+      "estimate": 0.65625,
+      "exact_interval95": [
+        0.5333333333333333,
+        0.7666666666666667
+      ],
+      "actual_train_prevalence": 0.65,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.006249999999999978,
+      "gp_error": 0.01505228529526792,
+      "gp_with_observed_labels_error": 0.014629298104085309
+    },
+    {
+      "seed": 101,
+      "domain": "college_computer_science",
+      "N": 60,
+      "n": 32,
+      "successes": 24,
+      "estimate": 0.75,
+      "exact_interval95": [
+        0.6333333333333333,
+        0.8333333333333334
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.050000000000000044,
+      "gp_error": 0.14127883260420937,
+      "gp_with_observed_labels_error": 0.13952772958683446
+    },
+    {
+      "seed": 101,
+      "domain": "high_school_mathematics",
+      "N": 60,
+      "n": 32,
+      "successes": 30,
+      "estimate": 0.9375,
+      "exact_interval95": [
+        0.85,
+        0.9666666666666667
+      ],
+      "actual_train_prevalence": 0.95,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.012499999999999956,
+      "gp_error": 0.022887575849690478,
+      "gp_with_observed_labels_error": 0.022887805703837416
+    },
+    {
+      "seed": 101,
+      "domain": "professional_law",
+      "N": 60,
+      "n": 32,
+      "successes": 3,
+      "estimate": 0.09375,
+      "exact_interval95": [
+        0.05,
+        0.2
+      ],
+      "actual_train_prevalence": 0.13333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.03958333333333333,
+      "gp_error": 0.027331767763368903,
+      "gp_with_observed_labels_error": 0.027166768266179364
+    },
+    {
+      "seed": 102,
+      "domain": "abstract_algebra",
+      "N": 60,
+      "n": 32,
+      "successes": 27,
+      "estimate": 0.84375,
+      "exact_interval95": [
+        0.7333333333333333,
+        0.9166666666666666
+      ],
+      "actual_train_prevalence": 0.7333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.11041666666666672,
+      "gp_error": 0.09786520469771831,
+      "gp_with_observed_labels_error": 0.09431329426922641
+    },
+    {
+      "seed": 102,
+      "domain": "anatomy",
+      "N": 60,
+      "n": 32,
+      "successes": 25,
+      "estimate": 0.78125,
+      "exact_interval95": [
+        0.6666666666666666,
+        0.8666666666666667
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.030715535332533905,
+      "gp_with_observed_labels_error": 0.030755162071899877
+    },
+    {
+      "seed": 102,
+      "domain": "astronomy",
+      "N": 60,
+      "n": 32,
+      "successes": 21,
+      "estimate": 0.65625,
+      "exact_interval95": [
+        0.5333333333333333,
+        0.7666666666666667
+      ],
+      "actual_train_prevalence": 0.65,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.006249999999999978,
+      "gp_error": 0.01686891386032796,
+      "gp_with_observed_labels_error": 0.019332802007927308
+    },
+    {
+      "seed": 102,
+      "domain": "college_computer_science",
+      "N": 60,
+      "n": 32,
+      "successes": 26,
+      "estimate": 0.8125,
+      "exact_interval95": [
+        0.7,
+        0.8833333333333333
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.012499999999999956,
+      "gp_error": 0.04639116638024998,
+      "gp_with_observed_labels_error": 0.03866460511900893
+    },
+    {
+      "seed": 102,
+      "domain": "high_school_mathematics",
+      "N": 60,
+      "n": 32,
+      "successes": 31,
+      "estimate": 0.96875,
+      "exact_interval95": [
+        0.8833333333333333,
+        0.9833333333333333
+      ],
+      "actual_train_prevalence": 0.95,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.025394980154513913,
+      "gp_with_observed_labels_error": 0.0254143734890947
+    },
+    {
+      "seed": 102,
+      "domain": "professional_law",
+      "N": 60,
+      "n": 32,
+      "successes": 7,
+      "estimate": 0.21875,
+      "exact_interval95": [
+        0.13333333333333333,
+        0.3333333333333333
+      ],
+      "actual_train_prevalence": 0.13333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.08541666666666667,
+      "gp_error": 0.11723668334097262,
+      "gp_with_observed_labels_error": 0.11008676803664799
+    },
+    {
+      "seed": 103,
+      "domain": "abstract_algebra",
+      "N": 60,
+      "n": 32,
+      "successes": 22,
+      "estimate": 0.6875,
+      "exact_interval95": [
+        0.5666666666666667,
+        0.7833333333333333
+      ],
+      "actual_train_prevalence": 0.7333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.04583333333333328,
+      "gp_error": 0.005554082072948052,
+      "gp_with_observed_labels_error": 0.021513347260940563
+    },
+    {
+      "seed": 103,
+      "domain": "anatomy",
+      "N": 60,
+      "n": 32,
+      "successes": 27,
+      "estimate": 0.84375,
+      "exact_interval95": [
+        0.7333333333333333,
+        0.9166666666666666
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.043749999999999956,
+      "gp_error": 0.054372797647519566,
+      "gp_with_observed_labels_error": 0.04548590776896588
+    },
+    {
+      "seed": 103,
+      "domain": "astronomy",
+      "N": 60,
+      "n": 32,
+      "successes": 21,
+      "estimate": 0.65625,
+      "exact_interval95": [
+        0.5333333333333333,
+        0.7666666666666667
+      ],
+      "actual_train_prevalence": 0.65,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.006249999999999978,
+      "gp_error": 0.000555503926813472,
+      "gp_with_observed_labels_error": 0.0025712617725782705
+    },
+    {
+      "seed": 103,
+      "domain": "college_computer_science",
+      "N": 60,
+      "n": 32,
+      "successes": 26,
+      "estimate": 0.8125,
+      "exact_interval95": [
+        0.7,
+        0.8833333333333333
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.012499999999999956,
+      "gp_error": 0.030171295122785602,
+      "gp_with_observed_labels_error": 0.019080649322779974
+    },
+    {
+      "seed": 103,
+      "domain": "high_school_mathematics",
+      "N": 60,
+      "n": 32,
+      "successes": 30,
+      "estimate": 0.9375,
+      "exact_interval95": [
+        0.85,
+        0.9666666666666667
+      ],
+      "actual_train_prevalence": 0.95,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.012499999999999956,
+      "gp_error": 0.017672058443571448,
+      "gp_with_observed_labels_error": 0.021067694517365232
+    },
+    {
+      "seed": 103,
+      "domain": "professional_law",
+      "N": 60,
+      "n": 32,
+      "successes": 3,
+      "estimate": 0.09375,
+      "exact_interval95": [
+        0.05,
+        0.2
+      ],
+      "actual_train_prevalence": 0.13333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.03958333333333333,
+      "gp_error": 0.020730665196116854,
+      "gp_with_observed_labels_error": 0.021239703112487074
+    },
+    {
+      "seed": 104,
+      "domain": "abstract_algebra",
+      "N": 60,
+      "n": 32,
+      "successes": 22,
+      "estimate": 0.6875,
+      "exact_interval95": [
+        0.5666666666666667,
+        0.7833333333333333
+      ],
+      "actual_train_prevalence": 0.7333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.04583333333333328,
+      "gp_error": 0.020718395967962988,
+      "gp_with_observed_labels_error": 0.02071839596938352
+    },
+    {
+      "seed": 104,
+      "domain": "anatomy",
+      "N": 60,
+      "n": 32,
+      "successes": 25,
+      "estimate": 0.78125,
+      "exact_interval95": [
+        0.6666666666666666,
+        0.8666666666666667
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.042568811785031135,
+      "gp_with_observed_labels_error": 0.042231018252426256
+    },
+    {
+      "seed": 104,
+      "domain": "astronomy",
+      "N": 60,
+      "n": 32,
+      "successes": 19,
+      "estimate": 0.59375,
+      "exact_interval95": [
+        0.4666666666666667,
+        0.7
+      ],
+      "actual_train_prevalence": 0.65,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.05625000000000002,
+      "gp_error": 0.02836525233080811,
+      "gp_with_observed_labels_error": 0.02836525233080822
+    },
+    {
+      "seed": 104,
+      "domain": "college_computer_science",
+      "N": 60,
+      "n": 32,
+      "successes": 25,
+      "estimate": 0.78125,
+      "exact_interval95": [
+        0.6666666666666666,
+        0.8666666666666667
+      ],
+      "actual_train_prevalence": 0.8,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.018750000000000044,
+      "gp_error": 0.07165837642012285,
+      "gp_with_observed_labels_error": 0.07165837642012296
+    },
+    {
+      "seed": 104,
+      "domain": "high_school_mathematics",
+      "N": 60,
+      "n": 32,
+      "successes": 29,
+      "estimate": 0.90625,
+      "exact_interval95": [
+        0.8,
+        0.95
+      ],
+      "actual_train_prevalence": 0.95,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.043749999999999956,
+      "gp_error": 0.0402712299268837,
+      "gp_with_observed_labels_error": 0.0402712299268837
+    },
+    {
+      "seed": 104,
+      "domain": "professional_law",
+      "N": 60,
+      "n": 32,
+      "successes": 5,
+      "estimate": 0.15625,
+      "exact_interval95": [
+        0.08333333333333333,
+        0.26666666666666666
+      ],
+      "actual_train_prevalence": 0.13333333333333333,
+      "interval_contains_true_train_prevalence": true,
+      "sampling_error": 0.02291666666666667,
+      "gp_error": 0.07468599986996602,
+      "gp_with_observed_labels_error": 0.07468599986996605
+    }
+  ]
+}

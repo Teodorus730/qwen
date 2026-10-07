@@ -1,0 +1,69 @@
+{
+  "job_id": "33b208ff545942b38120c7f3a5372a7b",
+  "cases": 15,
+  "aggregates": [
+    {
+      "variant": "mini_mean",
+      "part": "validation",
+      "mae": 0.008837319608949802,
+      "r2": 0.2955265509323543,
+      "theta_error": 0.10111753133287502,
+      "worst_correct": 5
+    },
+    {
+      "variant": "mini_mean",
+      "part": "test",
+      "mae": 0.00857557227016705,
+      "r2": 0.4792247930355855,
+      "theta_error": 0.05881927799716628,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_mean",
+      "part": "validation",
+      "mae": 0.008293689312717858,
+      "r2": 0.38720288132110925,
+      "theta_error": 0.10827830141054606,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_mean",
+      "part": "test",
+      "mae": 0.008529139573531536,
+      "r2": 0.5079168885852207,
+      "theta_error": 0.06477710217638054,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_cls",
+      "part": "validation",
+      "mae": 0.0077881421199388345,
+      "r2": 0.4410155478424869,
+      "theta_error": 0.09771021047126476,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_cls",
+      "part": "test",
+      "mae": 0.008144849060830388,
+      "r2": 0.5317863680070125,
+      "theta_error": 0.056609145475138546,
+      "worst_correct": 5
+    }
+  ],
+  "gates": {
+    "bge_mean": {
+      "theta_improves_10_percent": false,
+      "mae_not_worse_2_percent": true,
+      "worst_hits_not_lower": true
+    },
+    "bge_cls": {
+      "theta_improves_10_percent": false,
+      "mae_not_worse_2_percent": true,
+      "worst_hits_not_lower": true
+    }
+  },
+  "validation_chosen": "mini_mean",
+  "selection_uses_test": false,
+  "new_physical_pair_measurements": 575
+}

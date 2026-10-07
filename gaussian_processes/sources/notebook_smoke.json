@@ -1,0 +1,10 @@
+{
+  "job_id": "4fe3eec5b22d4b7792b6e7f31ae6b259",
+  "passed": true,
+  "methods": 8,
+  "arrays_identical": true,
+  "product_cases": 15,
+  "product_prediction_max_difference": 0.0,
+  "notebook_sha256": "ad6c575fddcbd6c14d39a3c2313e93a843b4fd084c460065378659a3e34e4a69",
+  "scope": "Exact notebook run_phase function, one real 8-method predictor stage, and full 15-case product stage including archive reception. Feature/label caches from verified experiment; upload/pip/download cells not exercised by this smoke."
+}

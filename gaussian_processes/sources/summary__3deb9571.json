@@ -1,0 +1,731 @@
+[
+  {
+    "domain": "__all__",
+    "n": 120,
+    "top_k": 30,
+    "mae": 0.005655065372896691,
+    "mean_exact": 0.04839618505599598,
+    "mean_approx": 0.042741119683099286,
+    "spearman": 0.9921730675741369,
+    "top10_overlap": 0.9,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.13333333333333333,
+        "difference_pp": 3.3333333333333326
+      },
+      "0.05": {
+        "exact": 0.55,
+        "approx": 0.7583333333333333,
+        "difference_pp": 20.833333333333325
+      },
+      "0.07": {
+        "exact": 0.95,
+        "approx": 0.9833333333333333,
+        "difference_pp": 3.3333333333333326
+      }
+    }
+  },
+  {
+    "domain": "__all__",
+    "n": 120,
+    "top_k": 100,
+    "mae": 0.0031757271382957695,
+    "mean_exact": 0.04839618505599598,
+    "mean_approx": 0.04522045791770021,
+    "spearman": 0.996728939509688,
+    "top10_overlap": 0.9,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.125,
+        "difference_pp": 2.4999999999999996
+      },
+      "0.05": {
+        "exact": 0.55,
+        "approx": 0.6416666666666667,
+        "difference_pp": 9.166666666666668
+      },
+      "0.07": {
+        "exact": 0.95,
+        "approx": 0.9833333333333333,
+        "difference_pp": 3.3333333333333326
+      }
+    }
+  },
+  {
+    "domain": "__all__",
+    "n": 120,
+    "top_k": 256,
+    "mae": 0.0019229226823275288,
+    "mean_exact": 0.04839618505599598,
+    "mean_approx": 0.04647326237366845,
+    "spearman": 0.9984998958260988,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.11666666666666667,
+        "difference_pp": 1.6666666666666663
+      },
+      "0.05": {
+        "exact": 0.55,
+        "approx": 0.6166666666666667,
+        "difference_pp": 6.666666666666665
+      },
+      "0.07": {
+        "exact": 0.95,
+        "approx": 0.9583333333333334,
+        "difference_pp": 0.8333333333333415
+      }
+    }
+  },
+  {
+    "domain": "abstract_algebra",
+    "n": 10,
+    "top_k": 30,
+    "mae": 0.004002595320343971,
+    "mean_exact": 0.04597181286662817,
+    "mean_approx": 0.0419692175462842,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.1,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.7,
+        "approx": 0.9,
+        "difference_pp": 20.000000000000007
+      },
+      "0.07": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "abstract_algebra",
+    "n": 10,
+    "top_k": 100,
+    "mae": 0.0022569544613361358,
+    "mean_exact": 0.04597181286662817,
+    "mean_approx": 0.04371485840529203,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.1,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.7,
+        "approx": 0.8,
+        "difference_pp": 10.000000000000009
+      },
+      "0.07": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "abstract_algebra",
+    "n": 10,
+    "top_k": 256,
+    "mae": 0.0013797029852867127,
+    "mean_exact": 0.04597181286662817,
+    "mean_approx": 0.044592109881341456,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.1,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.7,
+        "approx": 0.8,
+        "difference_pp": 10.000000000000009
+      },
+      "0.07": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "anatomy",
+    "n": 10,
+    "top_k": 30,
+    "mae": 0.005544086545705795,
+    "mean_exact": 0.04081256296485662,
+    "mean_approx": 0.03526847641915083,
+    "spearman": 0.9878787878787878,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.2,
+        "approx": 0.3,
+        "difference_pp": 9.999999999999998
+      },
+      "0.05": {
+        "exact": 0.8,
+        "approx": 0.9,
+        "difference_pp": 9.999999999999998
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "anatomy",
+    "n": 10,
+    "top_k": 100,
+    "mae": 0.003218407742679119,
+    "mean_exact": 0.04081256296485662,
+    "mean_approx": 0.0375941552221775,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.2,
+        "approx": 0.3,
+        "difference_pp": 9.999999999999998
+      },
+      "0.05": {
+        "exact": 0.8,
+        "approx": 0.8,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "anatomy",
+    "n": 10,
+    "top_k": 256,
+    "mae": 0.0019629215821623802,
+    "mean_exact": 0.04081256296485662,
+    "mean_approx": 0.03884964138269424,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.2,
+        "approx": 0.3,
+        "difference_pp": 9.999999999999998
+      },
+      "0.05": {
+        "exact": 0.8,
+        "approx": 0.8,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "astronomy",
+    "n": 10,
+    "top_k": 30,
+    "mae": 0.005946614034473896,
+    "mean_exact": 0.04203464780002832,
+    "mean_approx": 0.03608803376555443,
+    "spearman": 0.9757575757575757,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.1,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.9,
+        "approx": 1.0,
+        "difference_pp": 9.999999999999998
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "astronomy",
+    "n": 10,
+    "top_k": 100,
+    "mae": 0.003405643254518509,
+    "mean_exact": 0.04203464780002832,
+    "mean_approx": 0.03862900454550981,
+    "spearman": 0.9878787878787878,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.1,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "astronomy",
+    "n": 10,
+    "top_k": 256,
+    "mae": 0.0021222632378339766,
+    "mean_exact": 0.04203464780002832,
+    "mean_approx": 0.03991238456219435,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.1,
+        "approx": 0.1,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "college_computer_science",
+    "n": 10,
+    "top_k": 30,
+    "mae": 0.004453291930258274,
+    "mean_exact": 0.041132892668247226,
+    "mean_approx": 0.03667960073798895,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.3,
+        "approx": 0.4,
+        "difference_pp": 10.000000000000004
+      },
+      "0.05": {
+        "exact": 0.7,
+        "approx": 0.8,
+        "difference_pp": 10.000000000000009
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "college_computer_science",
+    "n": 10,
+    "top_k": 100,
+    "mae": 0.002424304373562336,
+    "mean_exact": 0.041132892668247226,
+    "mean_approx": 0.03870858829468489,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.3,
+        "approx": 0.4,
+        "difference_pp": 10.000000000000004
+      },
+      "0.05": {
+        "exact": 0.7,
+        "approx": 0.7,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "college_computer_science",
+    "n": 10,
+    "top_k": 256,
+    "mae": 0.0014512216672301292,
+    "mean_exact": 0.041132892668247226,
+    "mean_approx": 0.03968167100101709,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.3,
+        "approx": 0.4,
+        "difference_pp": 10.000000000000004
+      },
+      "0.05": {
+        "exact": 0.7,
+        "approx": 0.7,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "finemath_4plus",
+    "n": 30,
+    "top_k": 30,
+    "mae": 0.005448388556639354,
+    "mean_exact": 0.05134174885849158,
+    "mean_approx": 0.045893360301852225,
+    "spearman": 0.9813125695216908,
+    "top10_overlap": 0.9,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.5,
+        "approx": 0.7,
+        "difference_pp": 19.999999999999996
+      },
+      "0.07": {
+        "exact": 0.9333333333333333,
+        "approx": 0.9666666666666667,
+        "difference_pp": 3.3333333333333326
+      }
+    }
+  },
+  {
+    "domain": "finemath_4plus",
+    "n": 30,
+    "top_k": 100,
+    "mae": 0.0030464882651964824,
+    "mean_exact": 0.05134174885849158,
+    "mean_approx": 0.0482952605932951,
+    "spearman": 0.9906562847608454,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.5,
+        "approx": 0.6,
+        "difference_pp": 9.999999999999998
+      },
+      "0.07": {
+        "exact": 0.9333333333333333,
+        "approx": 0.9666666666666667,
+        "difference_pp": 3.3333333333333326
+      }
+    }
+  },
+  {
+    "domain": "finemath_4plus",
+    "n": 30,
+    "top_k": 256,
+    "mae": 0.0018599608292182287,
+    "mean_exact": 0.05134174885849158,
+    "mean_approx": 0.04948178802927335,
+    "spearman": 0.9942157953281423,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.5,
+        "approx": 0.5333333333333333,
+        "difference_pp": 3.3333333333333326
+      },
+      "0.07": {
+        "exact": 0.9333333333333333,
+        "approx": 0.9333333333333333,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "fineweb_edu",
+    "n": 30,
+    "top_k": 30,
+    "mae": 0.007535496850808462,
+    "mean_exact": 0.05611634291708469,
+    "mean_approx": 0.04858084606627623,
+    "spearman": 0.9835372636262512,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.36666666666666664,
+        "approx": 0.6666666666666666,
+        "difference_pp": 30.0
+      },
+      "0.07": {
+        "exact": 0.9333333333333333,
+        "approx": 1.0,
+        "difference_pp": 6.666666666666665
+      }
+    }
+  },
+  {
+    "domain": "fineweb_edu",
+    "n": 30,
+    "top_k": 100,
+    "mae": 0.0042585056275129315,
+    "mean_exact": 0.05611634291708469,
+    "mean_approx": 0.05185783728957176,
+    "spearman": 0.9870967741935484,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.36666666666666664,
+        "approx": 0.5666666666666667,
+        "difference_pp": 20.0
+      },
+      "0.07": {
+        "exact": 0.9333333333333333,
+        "approx": 1.0,
+        "difference_pp": 6.666666666666665
+      }
+    }
+  },
+  {
+    "domain": "fineweb_edu",
+    "n": 30,
+    "top_k": 256,
+    "mae": 0.0025617219507694244,
+    "mean_exact": 0.05611634291708469,
+    "mean_approx": 0.05355462096631527,
+    "spearman": 0.9919911012235817,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.36666666666666664,
+        "approx": 0.5333333333333333,
+        "difference_pp": 16.666666666666668
+      },
+      "0.07": {
+        "exact": 0.9333333333333333,
+        "approx": 0.9333333333333333,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "high_school_mathematics",
+    "n": 10,
+    "top_k": 30,
+    "mae": 0.002932980377227068,
+    "mean_exact": 0.029531460627913474,
+    "mean_approx": 0.026598480250686406,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.5,
+        "approx": 0.7,
+        "difference_pp": 19.999999999999996
+      },
+      "0.05": {
+        "exact": 0.9,
+        "approx": 1.0,
+        "difference_pp": 9.999999999999998
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "high_school_mathematics",
+    "n": 10,
+    "top_k": 100,
+    "mae": 0.0016665337607264519,
+    "mean_exact": 0.029531460627913474,
+    "mean_approx": 0.027864926867187022,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.5,
+        "approx": 0.6,
+        "difference_pp": 9.999999999999998
+      },
+      "0.05": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "high_school_mathematics",
+    "n": 10,
+    "top_k": 256,
+    "mae": 0.0010377072729170322,
+    "mean_exact": 0.029531460627913474,
+    "mean_approx": 0.028493753354996442,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.5,
+        "approx": 0.5,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.9,
+        "approx": 0.9,
+        "difference_pp": 0.0
+      },
+      "0.07": {
+        "exact": 1.0,
+        "approx": 1.0,
+        "difference_pp": 0.0
+      }
+    }
+  },
+  {
+    "domain": "professional_law",
+    "n": 10,
+    "top_k": 30,
+    "mae": 0.006029560044407844,
+    "mean_exact": 0.05889656841754913,
+    "mean_approx": 0.05286700837314129,
+    "spearman": 0.9878787878787878,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.0,
+        "approx": 0.4,
+        "difference_pp": 40.0
+      },
+      "0.07": {
+        "exact": 0.9,
+        "approx": 1.0,
+        "difference_pp": 9.999999999999998
+      }
+    }
+  },
+  {
+    "domain": "professional_law",
+    "n": 10,
+    "top_k": 100,
+    "mae": 0.0032219003885984423,
+    "mean_exact": 0.05889656841754913,
+    "mean_approx": 0.05567466802895069,
+    "spearman": 0.9878787878787878,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.0,
+        "approx": 0.1,
+        "difference_pp": 10.0
+      },
+      "0.07": {
+        "exact": 0.9,
+        "approx": 1.0,
+        "difference_pp": 9.999999999999998
+      }
+    }
+  },
+  {
+    "domain": "professional_law",
+    "n": 10,
+    "top_k": 256,
+    "mae": 0.001856207102537155,
+    "mean_exact": 0.05889656841754913,
+    "mean_approx": 0.05704036131501198,
+    "spearman": 0.9999999999999999,
+    "top10_overlap": 1.0,
+    "theta": {
+      "0.03": {
+        "exact": 0.0,
+        "approx": 0.0,
+        "difference_pp": 0.0
+      },
+      "0.05": {
+        "exact": 0.0,
+        "approx": 0.1,
+        "difference_pp": 10.0
+      },
+      "0.07": {
+        "exact": 0.9,
+        "approx": 1.0,
+        "difference_pp": 9.999999999999998
+      }
+    }
+  }
+]

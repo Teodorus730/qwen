@@ -1,0 +1,96 @@
+{
+  "job_id": "111389dac9b84a32bc3d478e85051f5c",
+  "notebook_sha256": "ae10ec1a51042b86ae74a61c1acaa18234ad70ba386df3f1348c46a0e26689f2",
+  "chosen": "bge_cls",
+  "executed_code_cells": 15,
+  "code_cells_total": 16,
+  "pip_skipped": true,
+  "download_replaced_by_file_output": true,
+  "mu_max_difference": 0.0,
+  "sigma_max_difference": 0.0,
+  "actual_measurements_from_verified_cache": true,
+  "new_physical_pair_measurements": 0,
+  "events": [
+    {
+      "cell": 1,
+      "skipped": "pip: pinned versions verified separately"
+    },
+    {
+      "cell": 3,
+      "executed": true
+    },
+    {
+      "cell": 4,
+      "executed": true
+    },
+    {
+      "cell": 6,
+      "executed": true
+    },
+    {
+      "cell": 8,
+      "executed": true
+    },
+    {
+      "cell": 10,
+      "executed": true
+    },
+    {
+      "cell": 12,
+      "executed": true
+    },
+    {
+      "cell": 14,
+      "executed": true
+    },
+    {
+      "cell": 16,
+      "executed": true
+    },
+    {
+      "display_type": "Series",
+      "rows": 6
+    },
+    {
+      "cell": 17,
+      "executed": true
+    },
+    {
+      "display_type": "DataFrame",
+      "rows": 6
+    },
+    {
+      "display_type": "DataFrame",
+      "rows": 60
+    },
+    {
+      "cell": 18,
+      "executed": true
+    },
+    {
+      "cell": 20,
+      "executed": true
+    },
+    {
+      "cell": 22,
+      "executed": true
+    },
+    {
+      "display_type": "DataFrame",
+      "rows": 14
+    },
+    {
+      "cell": 23,
+      "executed": true
+    },
+    {
+      "cell": 25,
+      "executed": true
+    },
+    {
+      "cell": 27,
+      "executed": true
+    }
+  ],
+  "product_archive_bytes": 3369972
+}

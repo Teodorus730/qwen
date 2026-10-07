@@ -1,0 +1,513 @@
+{
+  "protocol": {
+    "job_id": "ee5cc0060a5140c4bc585dca44661c80",
+    "environment": {
+      "python": "3.13.15",
+      "torch": "2.11.0+cu130",
+      "gpu": "Tesla T4",
+      "free_gib": 14.32403564453125,
+      "total_gib": 14.56317138671875
+    },
+    "datasets": [
+      "controlled",
+      "natural_fold0",
+      "natural_fold1",
+      "natural_fold2"
+    ],
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "budget": 192,
+    "methods": [
+      "original_text",
+      "qwen_visible_prefix"
+    ],
+    "kernel": "gp_matern32",
+    "target": "raw exact JSD",
+    "hypothesis": "The encoder seeing text beyond the measured Qwen prefix may damage prediction.",
+    "intervention": "Crop text at the maximum cached consumed-token character end before independent MiniLM encoding.",
+    "kept_fixed": "Texts/labels/row IDs/split/train groups/random labeled indices/pooling/encoder revision/kernel/target.",
+    "primary": "Validation macro-domain theta absolute error at epsilon=0.05.",
+    "promotion_gate": {
+      "theta_relative_improvement": 0.1,
+      "improved_datasets_at_least": 3,
+      "maximum_dataset_theta_regression": 0.02,
+      "maximum_relative_mae_regression": 0.05
+    },
+    "scope": "Only a frozen-label pooled GP control; no adaptive selection or token-model rerun.",
+    "limitations": [
+      "Previously inspected research pools; seed SD is algorithmic randomness.",
+      "Independent encoder retains its own 256-token cap and may omit part of a Qwen prefix.",
+      "Qwen offsets are preprocessing boundaries, not Qwen activations.",
+      "This experiment does not isolate the choice of encoder architecture."
+    ],
+    "physical_qwen_measurements": 0
+  },
+  "cases": 40,
+  "span_reports": [
+    {
+      "dataset": "controlled",
+      "n": 600,
+      "changed_texts": 39,
+      "encoder_still_truncated": 21,
+      "feature_mean_l2_change": 0.0033668873021170374
+    },
+    {
+      "dataset": "natural_fold0",
+      "n": 600,
+      "changed_texts": 126,
+      "encoder_still_truncated": 0,
+      "feature_mean_l2_change": 0.032562053969619816
+    },
+    {
+      "dataset": "natural_fold1",
+      "n": 600,
+      "changed_texts": 131,
+      "encoder_still_truncated": 0,
+      "feature_mean_l2_change": 0.03522862451012241
+    },
+    {
+      "dataset": "natural_fold2",
+      "n": 600,
+      "changed_texts": 131,
+      "encoder_still_truncated": 0,
+      "feature_mean_l2_change": 0.036812664756706755
+    }
+  ],
+  "regressions": [
+    {
+      "dataset": "controlled",
+      "seed": 100,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 100,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 101,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 101,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 102,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 102,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 103,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 103,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 104,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "controlled",
+      "seed": 104,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 100,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 100,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 101,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 101,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 102,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 102,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 103,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 103,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 104,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "seed": 104,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 100,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 100,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 101,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 101,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 102,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 102,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 103,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 103,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 104,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "seed": 104,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 100,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 100,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 101,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 101,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 102,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 102,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 103,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 103,
+      "part": "test",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 104,
+      "part": "validation",
+      "max_error": 0.0
+    },
+    {
+      "dataset": "natural_fold2",
+      "seed": 104,
+      "part": "test",
+      "max_error": 0.0
+    }
+  ],
+  "aggregates": [
+    {
+      "dataset": "controlled",
+      "method": "original_text",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.008203752537646361,
+      "mae_seed_sd": 0.0004175310930759075,
+      "theta_error": 0.11761738293123061,
+      "theta_seed_sd": 0.024478542380632618
+    },
+    {
+      "dataset": "controlled",
+      "method": "original_text",
+      "part": "test",
+      "n": 5,
+      "mae": 0.008379187119317915,
+      "mae_seed_sd": 0.0003821894471701444,
+      "theta_error": 0.10639680805411478,
+      "theta_seed_sd": 0.017373262161358257
+    },
+    {
+      "dataset": "controlled",
+      "method": "qwen_visible_prefix",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.008209052959755086,
+      "mae_seed_sd": 0.00041535149655925503,
+      "theta_error": 0.11747111611582699,
+      "theta_seed_sd": 0.024573692924761862
+    },
+    {
+      "dataset": "controlled",
+      "method": "qwen_visible_prefix",
+      "part": "test",
+      "n": 5,
+      "mae": 0.00837607813734706,
+      "mae_seed_sd": 0.00037491474656375456,
+      "theta_error": 0.10665058487161783,
+      "theta_seed_sd": 0.01777025738056079
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "original_text",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.009510976790326146,
+      "mae_seed_sd": 0.0004993275372831369,
+      "theta_error": 0.1623520464596433,
+      "theta_seed_sd": 0.029621767190758836
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "original_text",
+      "part": "test",
+      "n": 5,
+      "mae": 0.009471890434803006,
+      "mae_seed_sd": 0.0003450969919404494,
+      "theta_error": 0.14069627566713455,
+      "theta_seed_sd": 0.028702855732413803
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "qwen_visible_prefix",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.009517376266383005,
+      "mae_seed_sd": 0.000548980467025121,
+      "theta_error": 0.16045541976343053,
+      "theta_seed_sd": 0.029055638191119088
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "qwen_visible_prefix",
+      "part": "test",
+      "n": 5,
+      "mae": 0.009464322201037947,
+      "mae_seed_sd": 0.00037523857406619374,
+      "theta_error": 0.13739223926715644,
+      "theta_seed_sd": 0.029302498676832534
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "original_text",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.010120323782683247,
+      "mae_seed_sd": 0.00030479034955103177,
+      "theta_error": 0.0904617016747889,
+      "theta_seed_sd": 0.019515186919842928
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "original_text",
+      "part": "test",
+      "n": 5,
+      "mae": 0.010592350934805251,
+      "mae_seed_sd": 0.0006075161715986624,
+      "theta_error": 0.13856232618780645,
+      "theta_seed_sd": 0.01578084171722932
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "qwen_visible_prefix",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.00995884097948648,
+      "mae_seed_sd": 0.0003046919780251142,
+      "theta_error": 0.08862085172911656,
+      "theta_seed_sd": 0.020984094735193456
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "qwen_visible_prefix",
+      "part": "test",
+      "n": 5,
+      "mae": 0.01074386818645339,
+      "mae_seed_sd": 0.0006406443989264775,
+      "theta_error": 0.1378272573285791,
+      "theta_seed_sd": 0.015830076170749816
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "original_text",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.00828854779032516,
+      "mae_seed_sd": 8.289782199863684e-05,
+      "theta_error": 0.13000591691318064,
+      "theta_seed_sd": 0.010219995968300517
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "original_text",
+      "part": "test",
+      "n": 5,
+      "mae": 0.011486941113908118,
+      "mae_seed_sd": 0.00042700646299207324,
+      "theta_error": 0.1709557397682977,
+      "theta_seed_sd": 0.013606714121872658
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "qwen_visible_prefix",
+      "part": "validation",
+      "n": 5,
+      "mae": 0.008304318005200947,
+      "mae_seed_sd": 9.156895106830858e-05,
+      "theta_error": 0.13080291852149972,
+      "theta_seed_sd": 0.010654368857505413
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "qwen_visible_prefix",
+      "part": "test",
+      "n": 5,
+      "mae": 0.011525025749403582,
+      "mae_seed_sd": 0.00043370846440480567,
+      "theta_error": 0.1701742609205988,
+      "theta_seed_sd": 0.013694579696968865
+    }
+  ],
+  "validation_gates": [
+    {
+      "dataset": "controlled",
+      "theta_improvement": 0.0012435816182813086,
+      "theta_regression": -0.00014626681540362563,
+      "relative_mae_regression": 0.0006460972688293598
+    },
+    {
+      "dataset": "natural_fold0",
+      "theta_improvement": 0.011682185334720874,
+      "theta_regression": -0.0018966266962127665,
+      "relative_mae_regression": 0.0006728516111371707
+    },
+    {
+      "dataset": "natural_fold1",
+      "theta_improvement": 0.020349494997233375,
+      "theta_regression": -0.0018408499456723376,
+      "relative_mae_regression": -0.015956288224007076
+    },
+    {
+      "dataset": "natural_fold2",
+      "theta_improvement": -0.006130502574366092,
+      "theta_regression": 0.0007970016083190812,
+      "relative_mae_regression": 0.0019026511368125387
+    }
+  ],
+  "candidate_for_product_check": false,
+  "seconds": 25.839685573999986
+}

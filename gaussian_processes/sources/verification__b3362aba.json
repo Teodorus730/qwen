@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "job_id": "bce67f7cd3414102b45e05adfab7872d",
+  "cases": 30,
+  "logged_fits": 540,
+  "acquisition_events_checked": 510,
+  "numerical_max_difference": 1.0842021724855044e-18,
+  "original_product_regression_identical": true,
+  "default_batch_changed": false,
+  "scope": "Independent arithmetic, RNG and stored-sigma decision audit; does not independently refit GP."
+}

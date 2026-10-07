@@ -1,0 +1,120 @@
+{
+  "job_id": "1dadaf87b404496382425d40db519cfa",
+  "measurement_protocol": {
+    "version": "independent_encoder_exact_js_v1",
+    "models": {
+      "teacher": {
+        "id": "Qwen/Qwen3.5-2B-Base",
+        "revision": "b1485b2fa6dfa1287294f269f5fb618e03d52d7c"
+      },
+      "student": {
+        "id": "Qwen/Qwen3.5-0.8B-Base",
+        "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68"
+      },
+      "encoder": {
+        "id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      }
+    },
+    "data_seed": 20261001,
+    "mmlu_revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+    "mmlu_domains": [
+      "abstract_algebra",
+      "anatomy",
+      "astronomy",
+      "college_computer_science",
+      "high_school_mathematics",
+      "professional_law"
+    ],
+    "natural_sources": {
+      "fineweb_edu": {
+        "dataset": "HuggingFaceFW/fineweb-edu",
+        "config": "sample-10BT",
+        "revision": "b889e174ec04ddb4ddeab6555a3b6fb5f3023a25"
+      },
+      "finemath_4plus": {
+        "dataset": "HuggingFaceTB/finemath",
+        "config": "finemath-4plus",
+        "revision": "a7dd0df51a9178c8a86c29fcd797c2be9b77379c"
+      }
+    },
+    "qwen_max_length": 256,
+    "encoder_max_length": 256,
+    "natural_min_tokens": 128,
+    "natural_population": 1200,
+    "natural_per_fold": 300,
+    "shuffle_buffer": 20000,
+    "region_chars": 30000,
+    "scan_limit": 25000,
+    "near_duplicate_cosine": 0.92,
+    "algorithm_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "budgets": [
+      96,
+      192
+    ],
+    "target_definition": "Full vocabulary JSD, natural log, all valid positions including last; no Qwen activation features",
+    "primary_acquisition": "sigma",
+    "reference_acquisitions": [
+      "random",
+      "stratified_random",
+      "ucb5"
+    ],
+    "test_policy": "Freeze data and methods before test; use train CV for tuning; report paired seeds separately from dataset folds"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "torch": "2.11.0+cu130",
+    "cuda_available": true,
+    "gpu": "Tesla T4",
+    "free_gib": 14.46075439453125,
+    "total_gib": 14.56317138671875
+  },
+  "hypothesis": "A log target may improve predictive distribution and domain CDF accuracy.",
+  "target": "log(exact_full_vocabulary_jsd + 1e-8)",
+  "point_prediction": "exp(log_mu + log_sigma**2 / 2) - 1e-8; no clipping",
+  "domain_probability": "Phi((log(epsilon + 1e-8) - log_mu) / log_sigma)",
+  "paired_design": "Same texts, independent embeddings, train/validation/test and labeled indices.",
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "budgets": [
+    96,
+    192
+  ],
+  "datasets": [
+    "controlled",
+    "natural_fold0",
+    "natural_fold1",
+    "natural_fold2"
+  ],
+  "primary": "Validation macro-domain theta absolute error at epsilon=0.05, budget=192.",
+  "promotion_gate": {
+    "theta_relative_improvement": 0.1,
+    "improved_datasets_at_least": 3,
+    "maximum_dataset_theta_regression": 0.02,
+    "maximum_dataset_relative_mae_regression": 0.05
+  },
+  "controls": [
+    "Previously verified raw Matérn-3/2 GP",
+    "Empirical per-domain fraction in the same random labeled set"
+  ],
+  "limitations": [
+    "These frozen research test sets have already been inspected.",
+    "Fixed labels do not test adaptive selection with log-space sigma.",
+    "The live fixed-label diagnostic is one seed and one dataset.",
+    "Seed SD is not uncertainty across independent datasets."
+  ],
+  "physical_qwen_measurements": 0
+}

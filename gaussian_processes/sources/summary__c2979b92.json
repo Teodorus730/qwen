@@ -1,0 +1,102 @@
+{
+  "job_id": "b4c75aaa5dab43b1b83a7ee7c5e7b5c7",
+  "protocol": {
+    "version": "encoder_product_replay_20261003_v1",
+    "datasets": [
+      "controlled"
+    ],
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "variants": [
+      "mini_mean",
+      "bge_mean",
+      "bge_cls"
+    ],
+    "budget": 192,
+    "initial": "Original product KMeans: 4 clusters x 5 nearest points per each of 6 domains",
+    "acquisition": "sigma",
+    "batch_size": 12,
+    "split": "Original product train/validation/test and groups, not the research split",
+    "encoder_text": "Original full text truncated at 256 encoder tokens, matching actual product",
+    "primary": "Validation macro-domain absolute theta error at epsilon 0.05",
+    "gate": {
+      "relative_theta_improvement": 0.1,
+      "maximum_relative_mae_regression": 0.02,
+      "worst_hits_not_lower": true
+    },
+    "measurement": "Frozen exact full-vocabulary JS labels; zero new Qwen forwards",
+    "baseline": "Original product MiniLM features and exact seed100 sigma12 prediction regression",
+    "limitations": [
+      "Previously inspected evaluation texts",
+      "Offline replay, not a fresh live Qwen benchmark",
+      "Passing requires a later fresh closed pool before broad claims"
+    ]
+  },
+  "cases": 15,
+  "regression": {
+    "labeled_identical": true,
+    "mu_max_difference": 0.0,
+    "sigma_max_difference": 0.0
+  },
+  "aggregates": [
+    {
+      "variant": "mini_mean",
+      "part": "validation",
+      "mae": 0.007363517334685962,
+      "theta_error": 0.11809042329668935,
+      "worst_correct": 5
+    },
+    {
+      "variant": "mini_mean",
+      "part": "test",
+      "mae": 0.00824463128879733,
+      "theta_error": 0.08683193767166433,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_mean",
+      "part": "validation",
+      "mae": 0.008084908188051099,
+      "theta_error": 0.09640737157308844,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_mean",
+      "part": "test",
+      "mae": 0.007805624096760291,
+      "theta_error": 0.07748805817893614,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_cls",
+      "part": "validation",
+      "mae": 0.007951908278873354,
+      "theta_error": 0.09056490653683956,
+      "worst_correct": 5
+    },
+    {
+      "variant": "bge_cls",
+      "part": "test",
+      "mae": 0.007735990557633682,
+      "theta_error": 0.07725465383888917,
+      "worst_correct": 5
+    }
+  ],
+  "gates": {
+    "bge_mean": {
+      "theta_improves_10_percent": true,
+      "mae_not_worse_2_percent": false,
+      "worst_hits_not_lower": true
+    },
+    "bge_cls": {
+      "theta_improves_10_percent": true,
+      "mae_not_worse_2_percent": false,
+      "worst_hits_not_lower": true
+    }
+  }
+}

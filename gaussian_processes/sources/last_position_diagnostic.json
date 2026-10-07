@@ -1,0 +1,722 @@
+[
+  {
+    "sample_id": "31ade86fd8b011fca1b71880310a13bff58a089d77fe25486b583cf499515f9b",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": 0.0007107537239789963,
+    "top30_last_position_effect": 0.0006916914135217667
+  },
+  {
+    "sample_id": "e0563fe54862d40f8ae9292b34e72525187022b9b1a482eedfcb5c3a4ed11568",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.0006633996963500977,
+    "top30_last_position_effect": -0.0006433092057704926
+  },
+  {
+    "sample_id": "c1550275aa7b38cd858caf98787c188a5b11795df91465bb5bc83a0ae6dcc70a",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.0008198805153369904,
+    "top30_last_position_effect": -0.0008022710680961609
+  },
+  {
+    "sample_id": "3fe242086f1e299a93254216f026b6c49b745f30a99f946915fe2c362af25807",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.0002000667154788971,
+    "top30_last_position_effect": -0.00018817558884620667
+  },
+  {
+    "sample_id": "73b84336114afac591729a966e54bc30ea1eeb4bf915180507d87ebce5e72b69",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.00037708505988121033,
+    "top30_last_position_effect": -0.0003420114517211914
+  },
+  {
+    "sample_id": "64f3592eea1bbec7d70bc8b798aca04f4728f0746d6a0dbcf2a0c868863e58dd",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.000356040894985199,
+    "top30_last_position_effect": -0.00032374635338783264
+  },
+  {
+    "sample_id": "2f7c856588fca2574668bd8f26f72c92b29d4ea4973353c2d6b4a3b24aef7e18",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": 4.6197324991226196e-05,
+    "top30_last_position_effect": 7.42785632610321e-05
+  },
+  {
+    "sample_id": "54bcf6030b6efb274c89e5dfe4a47964d3f400cb7ec50e6176d0d0e9bd2ba449",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.0002711191773414612,
+    "top30_last_position_effect": -0.0002386048436164856
+  },
+  {
+    "sample_id": "129f5ef6ba541a2aa2d2b1f08bd30e7fe346b44faa4871610383dac98e80f5dd",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.00030378252267837524,
+    "top30_last_position_effect": -0.0002941340208053589
+  },
+  {
+    "sample_id": "f51b346f503feb82aab0471c7d56df30de2246c88e9e191d37c6f6a798d1f55f",
+    "domain": "abstract_algebra",
+    "exact_last_position_effect": -0.0013222843408584595,
+    "top30_last_position_effect": -0.001278124749660492
+  },
+  {
+    "sample_id": "236f5f2e6bbfea5fff63ed1519b216d969c1d6805db508097716f0c7ff4a78ad",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0006332062184810638,
+    "top30_last_position_effect": -0.0005612373352050781
+  },
+  {
+    "sample_id": "54d763e61a466e4ae64b32d1ec772634d854e2d807d64b0ac00b7e171cbef62f",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.00045120716094970703,
+    "top30_last_position_effect": -0.0003974810242652893
+  },
+  {
+    "sample_id": "70464743e54e7826206f66e444154c8716c5d921be94292e67b07a8aa402456d",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0005991235375404358,
+    "top30_last_position_effect": -0.00046351179480552673
+  },
+  {
+    "sample_id": "f98cff7c65e7ae858a90cfccdfadbdaa5b5dc59cfdaaad9eba961d4cfc39ffae",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0006804540753364563,
+    "top30_last_position_effect": -0.0005718879401683807
+  },
+  {
+    "sample_id": "ccd7e2eab0bceb6804ce1c35ccac5957c63d7f43a3e99358efcc49543f9cfc36",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0006996132433414459,
+    "top30_last_position_effect": -0.000607956200838089
+  },
+  {
+    "sample_id": "d7c66b3999f317239d797036410b24e93ac3a9a5e41f1f774c0787bf7b87a16e",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0006530135869979858,
+    "top30_last_position_effect": -0.0005884431302547455
+  },
+  {
+    "sample_id": "ee9b5267b15e8a0df25d6308c02fc117084588b8af04a9bcddcecc375867b58c",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0003226175904273987,
+    "top30_last_position_effect": -0.0001915954053401947
+  },
+  {
+    "sample_id": "ea70d8c3b000ef855130b1d418ede3e2d82662016e8ab96f6482f064c11b154f",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.0005675964057445526,
+    "top30_last_position_effect": -0.0005240775644779205
+  },
+  {
+    "sample_id": "e8d12e9865ee05cea92f6c440d1cf152f4f52c64ead9fe5c4ce133f06c4f0d23",
+    "domain": "anatomy",
+    "exact_last_position_effect": 0.0003176853060722351,
+    "top30_last_position_effect": 0.00040700100362300873
+  },
+  {
+    "sample_id": "4520bf8ae6b891445c596e6d3fa4cc031d99e31064e982d256e81644d52a2744",
+    "domain": "anatomy",
+    "exact_last_position_effect": -0.000568639487028122,
+    "top30_last_position_effect": -0.0004848465323448181
+  },
+  {
+    "sample_id": "1fb226cd1fb4c4da56d7e7d1ec67c6fe256e2c645c8aaa1e41fcf71bd1d6a4aa",
+    "domain": "astronomy",
+    "exact_last_position_effect": 0.0006127208471298218,
+    "top30_last_position_effect": 0.0006284080445766449
+  },
+  {
+    "sample_id": "a8413cf0d09fc7df8ee8eb91b8144aa515dec6c93941c6d440986a45597ac7c1",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.0008425042033195496,
+    "top30_last_position_effect": -0.0006644874811172485
+  },
+  {
+    "sample_id": "cfffa43878a875ddf09df600daf1aae7c3045857eb56795937a9b52abf0b4d70",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.0008241236209869385,
+    "top30_last_position_effect": -0.0006314851343631744
+  },
+  {
+    "sample_id": "39bb8c9ff2aae5f9bfe36188c5ec7bef165e79c13d0f6a984a7f59c7eb117556",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.00027471408247947693,
+    "top30_last_position_effect": -0.00022596120834350586
+  },
+  {
+    "sample_id": "32a79307423bef4fe4bb127f580ab2ec081902aa6b96abaf16f660a3c2d3c86e",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.00045733898878097534,
+    "top30_last_position_effect": -0.0003680773079395294
+  },
+  {
+    "sample_id": "938bf3eae0a70ff5f3615a44b3182f782a8ced2959199b42712179dd6b41aa46",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.00022946298122406006,
+    "top30_last_position_effect": -0.00020620599389076233
+  },
+  {
+    "sample_id": "7e73e06cf29e89fb2f1fabc8dfdc250cb02d5620eecb9855a4aa4309c7981c64",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.000488918274641037,
+    "top30_last_position_effect": -0.0003804042935371399
+  },
+  {
+    "sample_id": "42f5a940c28d3e57fda391935ec573631098121253efb54e0c2c79e1de8c2626",
+    "domain": "astronomy",
+    "exact_last_position_effect": 5.706027150154114e-05,
+    "top30_last_position_effect": 8.852407336235046e-05
+  },
+  {
+    "sample_id": "88babce7b5e7d9a4b837dd6d9f0f241200c977273e74646243663fd7af6d2416",
+    "domain": "astronomy",
+    "exact_last_position_effect": 0.000516112893819809,
+    "top30_last_position_effect": 0.0005779974162578583
+  },
+  {
+    "sample_id": "2303ac2b6267450a4edddfd1e1c84a2b897bffdbae853351e558f47f9482e762",
+    "domain": "astronomy",
+    "exact_last_position_effect": -0.0003915168344974518,
+    "top30_last_position_effect": -0.00036601722240448
+  },
+  {
+    "sample_id": "b575b069a22f6e2aad2c2f0faa52350a5e9b00c03b827d804bc2f2c7f059a2b6",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -0.0006615370512008667,
+    "top30_last_position_effect": -0.000573333352804184
+  },
+  {
+    "sample_id": "0b1242892cfca5612890fa726c1a50b70591632e164547493c21afd5e7487972",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -0.00022334791719913483,
+    "top30_last_position_effect": -0.00019643642008304596
+  },
+  {
+    "sample_id": "0a44bb423d815794ebb932880db2e5f139836d8b76de6e3e66f05cfe652d9752",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -0.0006311722099781036,
+    "top30_last_position_effect": -0.0005518719553947449
+  },
+  {
+    "sample_id": "1d61e963fcd87dfdd9aa6ec912e59e2b13eb03a847cb61c2120aa24c6bedd317",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -0.00020937994122505188,
+    "top30_last_position_effect": -0.00019077956676483154
+  },
+  {
+    "sample_id": "8f5cba388a2ef497dd1b4d39f85a96adc4729b826ad898edc016732ba6fe112e",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -6.671622395515442e-05,
+    "top30_last_position_effect": -6.846897304058075e-05
+  },
+  {
+    "sample_id": "34803a36f8c259dd4cb7974e07b2fb6bfcfc6c0ae0c1d407e3afe390953609d1",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -2.384372055530548e-05,
+    "top30_last_position_effect": -2.9377639293670654e-05
+  },
+  {
+    "sample_id": "0d5c36ca9f6078f0e262dd5163ddf76aeaac0d8f6709450961db2d53597439b2",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": 0.0008311979472637177,
+    "top30_last_position_effect": 0.0008153505623340607
+  },
+  {
+    "sample_id": "cad5820b695929be358612039f6bce296833031feca9a957ab6f95ccd6ccf7a9",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -0.0005361549556255341,
+    "top30_last_position_effect": -0.0004999227821826935
+  },
+  {
+    "sample_id": "5c389d0653be10f5b36a1d31ad0db9da368c2e51dd33adab35e3301853d4cd9a",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -0.00024981237947940826,
+    "top30_last_position_effect": -0.00021972693502902985
+  },
+  {
+    "sample_id": "3cf11a32ff7f8691ca7eee88daef9ac7dca857905677296df317bb9f63b519a1",
+    "domain": "college_computer_science",
+    "exact_last_position_effect": -7.253885269165039e-05,
+    "top30_last_position_effect": -0.00010778754949569702
+  },
+  {
+    "sample_id": "6fc8b37f5c7dfdfc22d8b50fe31b8e1718082281c493ad9b6a71d6ec119f2a6d",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -0.00032730400562286377,
+    "top30_last_position_effect": -0.0002752412110567093
+  },
+  {
+    "sample_id": "80d587a9cc94aeafd857513a60fd6ffc706e6ae42bb6c91ee8337c7de87d59ff",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -0.0002590864896774292,
+    "top30_last_position_effect": -0.00022959336638450623
+  },
+  {
+    "sample_id": "c8de286e4af32098ed04f299be181f22f4bbd837f03c4202224354b9332b2caf",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -0.0001139417290687561,
+    "top30_last_position_effect": -9.13906842470169e-05
+  },
+  {
+    "sample_id": "9fa0850d9a85537c970e3b91774f49f938caf35bd4815ae1ca04e4878ef616c9",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -0.0003991536796092987,
+    "top30_last_position_effect": -0.00037657469511032104
+  },
+  {
+    "sample_id": "b544e562d712a2e3729c83912c3b9a3c7ed55fb47ca9440744162720aa246df2",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": 4.542991518974304e-05,
+    "top30_last_position_effect": 4.769209772348404e-05
+  },
+  {
+    "sample_id": "fb68b0a5c9aa6b43e1ba28ce86e6c36d4a46a78f550de75410f259041fe8f8c8",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -5.400925874710083e-05,
+    "top30_last_position_effect": -6.891787052154541e-05
+  },
+  {
+    "sample_id": "188ff1bce163353392d3b484762a377b2324a8e9f0aaf776d50eab836d3cdf44",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": 4.020705819129944e-05,
+    "top30_last_position_effect": 1.6782432794570923e-05
+  },
+  {
+    "sample_id": "c0d28c4ca0979b4e07a1951ade8e6ee51f3546ee6f82c181a5839546aa63cad3",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -0.000132732093334198,
+    "top30_last_position_effect": -0.00012187846004962921
+  },
+  {
+    "sample_id": "b3a80654bd098630d74846f0f68a8bb86cf5e28853583bc4d8f323c3fc9ec84d",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": -0.00019795820116996765,
+    "top30_last_position_effect": -0.0001930147409439087
+  },
+  {
+    "sample_id": "dbfb0578f44a728cbb739b8cb36d22d2a3c2c496c699d37d606ab8b71edc7145",
+    "domain": "high_school_mathematics",
+    "exact_last_position_effect": 5.566515028476715e-05,
+    "top30_last_position_effect": 4.0531158447265625e-05
+  },
+  {
+    "sample_id": "47b6b9bafcfefc6019d3288db082609728e2470fe2c6ca523ecf3d977c8be70d",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.0002028346061706543,
+    "top30_last_position_effect": -0.00018202513456344604
+  },
+  {
+    "sample_id": "22571396f520da60f1f7c2f8037e616628a8d1c8251f307cf22519210c910fa5",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.0002082623541355133,
+    "top30_last_position_effect": -0.0001911744475364685
+  },
+  {
+    "sample_id": "7eef27b9693c2aab432fcb8be37b02fd19185d065d293034b524cf2848244b63",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.00019555911421775818,
+    "top30_last_position_effect": -0.00017745047807693481
+  },
+  {
+    "sample_id": "27971e0575417a993b9e481c460f9c93d2551e800d8a23fd3fa3fb3be3a52c23",
+    "domain": "professional_law",
+    "exact_last_position_effect": 0.00032335519790649414,
+    "top30_last_position_effect": 0.0002975836396217346
+  },
+  {
+    "sample_id": "56fc1ea70407732ef5dd91672814cd954442e58ebc882f24627fbed0317f6103",
+    "domain": "professional_law",
+    "exact_last_position_effect": -5.4255127906799316e-05,
+    "top30_last_position_effect": -8.36402177810669e-05
+  },
+  {
+    "sample_id": "039354a7cdceb33662a430e8b3877e843204d1ada6181183876b27b9f767d43e",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.0001321248710155487,
+    "top30_last_position_effect": -0.00011911243200302124
+  },
+  {
+    "sample_id": "6aec3c836ecf99b5fbddf7d4a83315057c8524470257c8da101ea5c8115697dd",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.000209856778383255,
+    "top30_last_position_effect": -0.00018848106265068054
+  },
+  {
+    "sample_id": "5b96e756cd883ebb3c76fa8aa8b16aabd438a91e1bcb3ac57f05d847609f0d5b",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.00016330182552337646,
+    "top30_last_position_effect": -0.00014808028936386108
+  },
+  {
+    "sample_id": "993394d7cff3aec009bec38a6c965a3b9e9e02711a7bc79c097338d577699624",
+    "domain": "professional_law",
+    "exact_last_position_effect": -0.0007545948028564453,
+    "top30_last_position_effect": -0.0006603598594665527
+  },
+  {
+    "sample_id": "cd737f2d6a660e6fccf14c9f4b45b6070ec0b11cf93692db186aec1296e790b3",
+    "domain": "professional_law",
+    "exact_last_position_effect": -5.166977643966675e-06,
+    "top30_last_position_effect": -4.4286251068115234e-05
+  },
+  {
+    "sample_id": "0a666e87e140b6da46196b19506f0858da0ea4285e6842e42a9bc76287387fc6",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00019966810941696167,
+    "top30_last_position_effect": -0.00017883256077766418
+  },
+  {
+    "sample_id": "1aaa9d1e9244413e69206c0adc147f4c0c54de6ec723d82511e66f3df29cf457",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00017216801643371582,
+    "top30_last_position_effect": -0.00015798956155776978
+  },
+  {
+    "sample_id": "fd4a854a9d1f36983c2aa130be00f8593e70ef6070b9863516dc3135e576862e",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00012627989053726196,
+    "top30_last_position_effect": -0.00011348724365234375
+  },
+  {
+    "sample_id": "5e5340bc8eb9aa24ec6edbc5aa4cbf1f8d169eb25e3787661b9c0b41ae4ff504",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 0.00045489147305488586,
+    "top30_last_position_effect": 0.0004921592772006989
+  },
+  {
+    "sample_id": "ed4add5ef46083c6958164dde5a218a818d2cc74ee48a05782329c8aa4138e37",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00017433613538742065,
+    "top30_last_position_effect": -0.00016518309712409973
+  },
+  {
+    "sample_id": "a15ee6108127c61ba3300278dc23a60c05e4f2c2c7593acda4daa81aa7cfa9d7",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00020214170217514038,
+    "top30_last_position_effect": -0.00018839165568351746
+  },
+  {
+    "sample_id": "e1bdd32e80b796182aa489dec64d68f7c4cbf78b34a6139e2b8925ca66bd840b",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 0.0005462281405925751,
+    "top30_last_position_effect": 0.0005958192050457001
+  },
+  {
+    "sample_id": "df087f045a6c19ccc6cf3fbcbaf97b1175dd1bee90dbe9e0616f6e3088584ae2",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -7.559731602668762e-05,
+    "top30_last_position_effect": -8.951127529144287e-05
+  },
+  {
+    "sample_id": "2edd83de061c059b625f873a13aa3556f64cc801a53fa6877e0633d2fa38cf98",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -6.951391696929932e-05,
+    "top30_last_position_effect": -0.00010414421558380127
+  },
+  {
+    "sample_id": "9fe778174dae60fb99bef90488f8675d8e45ab9e96056ece40626d07189597e0",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -8.122995495796204e-05,
+    "top30_last_position_effect": -9.13478434085846e-05
+  },
+  {
+    "sample_id": "4409b58c48ac54294b6c6cdfbd29a0e0d8f5a611a2fc2392e66f489e7fa38431",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 0.00012328848242759705,
+    "top30_last_position_effect": 0.00013628602027893066
+  },
+  {
+    "sample_id": "60fdd50f4ce1af7bf7a1fd98e3605293c145540439e5d619ca5883e31eadad4a",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00017976760864257812,
+    "top30_last_position_effect": -0.00014663860201835632
+  },
+  {
+    "sample_id": "fc18e4b497f5767f015fde3605d0042acca9b30a272367f65e1f4d3da43d3df5",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -6.209313869476318e-05,
+    "top30_last_position_effect": -9.781494736671448e-05
+  },
+  {
+    "sample_id": "d9c6f807df7164e98ce0cce0002659e2afcefd15cd46824552877e8d0d2cafe5",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -8.27014446258545e-06,
+    "top30_last_position_effect": -3.290921449661255e-05
+  },
+  {
+    "sample_id": "92e900da73dc170521ac23c0b6e2c3be914101142bb3b6549779a8b9f47a3f93",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -7.583945989608765e-05,
+    "top30_last_position_effect": -5.326420068740845e-05
+  },
+  {
+    "sample_id": "2453fa2d9039300b43847566c6035422cef46df15cb9a89b6040fc9885c66d08",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -7.055699825286865e-05,
+    "top30_last_position_effect": -4.4673681259155273e-05
+  },
+  {
+    "sample_id": "f13fdc7aed2a4f2d8a7c5851a1486db9cb92799ac8641ae83dc3288cee7f6d14",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00013449415564537048,
+    "top30_last_position_effect": -0.00012259185314178467
+  },
+  {
+    "sample_id": "2910865987fa1b07994cbbd7660588dbaad7ac9d237902a170180f16ee9e14d0",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 0.00014685094356536865,
+    "top30_last_position_effect": 9.224191308021545e-05
+  },
+  {
+    "sample_id": "0ceb4b8938a36274db3444fe933e41502fedcad53b85d60add763010b8cb1eaa",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00024650245904922485,
+    "top30_last_position_effect": -0.00023681670427322388
+  },
+  {
+    "sample_id": "9448b53c29a68cf46b0f46698c055dad94f795b34a2e963c1dd561e1e66f8144",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00015616044402122498,
+    "top30_last_position_effect": -0.00014860928058624268
+  },
+  {
+    "sample_id": "b991e9f2f8ef4046a2cd045315346333fab6f61267f26498ff9f25e77de79f43",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00014088675379753113,
+    "top30_last_position_effect": -0.00014268606901168823
+  },
+  {
+    "sample_id": "5a17d769e1ab5bf7dcd45ff13ee7f0170c3d758740fba2d46d4af52ee7c7b6f4",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -7.392838597297668e-05,
+    "top30_last_position_effect": -6.7196786403656e-05
+  },
+  {
+    "sample_id": "f5c212d3d27790418d802f0679d5ccabcc170426dba5ab18f069ccf5a59e1682",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.00017030537128448486,
+    "top30_last_position_effect": -0.0001626834273338318
+  },
+  {
+    "sample_id": "7a08bad391d576a0ae027b87c08b7e8317cf8561f0dc891f83b68ccecb7de1f3",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 3.9983540773391724e-05,
+    "top30_last_position_effect": 2.0332634449005127e-05
+  },
+  {
+    "sample_id": "22c16cdf572aeb77d8a02cb7b514eb5b82996fecdf8bb2383a1d1e26a02f2ba3",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -1.4349818229675293e-05,
+    "top30_last_position_effect": 5.520880222320557e-06
+  },
+  {
+    "sample_id": "fb43809cb8fd0f605f93d06aa54f0d01debfd03bea4054501db366c528e68708",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -8.413195610046387e-05,
+    "top30_last_position_effect": -0.00010731443762779236
+  },
+  {
+    "sample_id": "5d66686dcaf34b6e0cf0c2f0e1ce1fbfee427e90784c1e4110c2f52002d48f3a",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 3.475695848464966e-06,
+    "top30_last_position_effect": 1.3493001461029053e-05
+  },
+  {
+    "sample_id": "b4de185c544ada0530c80d7b7d8658ada32286cd6e954cae1534f98fb8524c2a",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": -0.0001047961413860321,
+    "top30_last_position_effect": -8.712336421012878e-05
+  },
+  {
+    "sample_id": "3d989560b8b07cacfd67cb2cec7981d6444adb21e97857d8d45c478c257a0e12",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 5.508586764335632e-05,
+    "top30_last_position_effect": 9.036436676979065e-05
+  },
+  {
+    "sample_id": "1929a66aab4b13dc612a346bd174cf46f0f44432c841b18515faf9800a1f6adc",
+    "domain": "fineweb_edu",
+    "exact_last_position_effect": 2.2254884243011475e-05,
+    "top30_last_position_effect": -8.121132850646973e-06
+  },
+  {
+    "sample_id": "d8c8e4df4848937be953000d0ebacb3b4e4e5d565727e1faa4105e679ccb6e20",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -2.3733824491500854e-05,
+    "top30_last_position_effect": -2.3484230041503906e-05
+  },
+  {
+    "sample_id": "81adf95f0b6497eaa3e7d77d758274a8060b80d9de76a6d4e36974cbee272f2b",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.0001574382185935974,
+    "top30_last_position_effect": -0.00014640390872955322
+  },
+  {
+    "sample_id": "01e98f36423a22d9cd0ad1251515a29cb4a7eeac49ae60237d2c299989bb37e7",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -5.7384371757507324e-05,
+    "top30_last_position_effect": -5.203858017921448e-05
+  },
+  {
+    "sample_id": "507e7a1b3171561f2499b09066c66e171e05f20b2765f5ecaf71748d7ae06c75",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 2.294406294822693e-05,
+    "top30_last_position_effect": 3.077089786529541e-05
+  },
+  {
+    "sample_id": "220009d051359abff7d318c0c64ac46d5ad5093f18ebc70e8c1abee057228475",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00010585039854049683,
+    "top30_last_position_effect": -8.501484990119934e-05
+  },
+  {
+    "sample_id": "85aa8deb7425e5f63a0f73febb2d42e2f8fdd487797cb8f706313ec711e773fb",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.0001432560384273529,
+    "top30_last_position_effect": -0.00013305991888046265
+  },
+  {
+    "sample_id": "0f3a927843daaee18b177551ad5e4d71643b2e87c4d3dd50a3df239c8808e73d",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00014322996139526367,
+    "top30_last_position_effect": -0.0001395009458065033
+  },
+  {
+    "sample_id": "4a4be693abedc685d904f97f49da2eb30f44b1f6d10d8e8b0c787924dfd19496",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 3.980472683906555e-05,
+    "top30_last_position_effect": 2.7563422918319702e-05
+  },
+  {
+    "sample_id": "e19282bbf8dee26b0d2b451b185f1b19fb14c297cefe834df9519d6c9ef3b417",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 8.814036846160889e-05,
+    "top30_last_position_effect": 5.5909156799316406e-05
+  },
+  {
+    "sample_id": "a65b88dcafbed045fcd8e421ebd53fd47e126ea1c419c1f8a26cf9384ce762d1",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 9.652972221374512e-05,
+    "top30_last_position_effect": 3.8117170333862305e-05
+  },
+  {
+    "sample_id": "0b90a4f27411b9bbd7b8aba6499fe978b0747c2ef83358afa095fd323481a375",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00020463764667510986,
+    "top30_last_position_effect": -0.00018624961376190186
+  },
+  {
+    "sample_id": "c04b115b5be99f4c15947db2945188f4877e87259bff7ae2259d629564f23a80",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 0.00013700872659683228,
+    "top30_last_position_effect": 0.00015822425484657288
+  },
+  {
+    "sample_id": "b69a96c2cd9c6655c48d97171f4d87da9cdd5509569430eb28f148fa44ddbf5d",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00015681982040405273,
+    "top30_last_position_effect": -0.0001541636884212494
+  },
+  {
+    "sample_id": "9a7c94daed61dafc1f6877e7c7fed6e8fefb65bf4d4b1bcddbcb24c3c146d435",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -7.970631122589111e-05,
+    "top30_last_position_effect": -6.690248847007751e-05
+  },
+  {
+    "sample_id": "aa3acb6b4646e3955da5ae85311fa13a097a93369f5a266d8cb03bcc3c2297f8",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00013221800327301025,
+    "top30_last_position_effect": -0.00011856108903884888
+  },
+  {
+    "sample_id": "f54c3bcfa48cbdd2fcfa564b4fb0bd964a5f56f3da14aa963943026894356845",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.0001516006886959076,
+    "top30_last_position_effect": -0.00013224035501480103
+  },
+  {
+    "sample_id": "1e8200517576887a4a4454a4bd1ca6c022eca1cc2929a98142446b3c3a89d37e",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00018631666898727417,
+    "top30_last_position_effect": -0.0001634359359741211
+  },
+  {
+    "sample_id": "dc9f0eda86804d1b1ac3fe78c3f0fa89ab124ef4804984912496ea80f7bb41ab",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00020185112953186035,
+    "top30_last_position_effect": -0.00018943101167678833
+  },
+  {
+    "sample_id": "6e442ba68fcf77f8eed481dcfb5d3a31cde1e5ea04cf95d6d4e053085dbd1dda",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 0.0003481172025203705,
+    "top30_last_position_effect": 0.00035897642374038696
+  },
+  {
+    "sample_id": "61cdaf82295ac27ca8e595a5208c9154d4c922a4f9d4716b3e70798d0bb87d4e",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00019224360585212708,
+    "top30_last_position_effect": -0.0001788884401321411
+  },
+  {
+    "sample_id": "0c655d1277a0f4b71f729be94f4ff3036326c697f13f4e92aafad6a2f2dcf2de",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00010268017649650574,
+    "top30_last_position_effect": -0.00014180690050125122
+  },
+  {
+    "sample_id": "ed596dbf6a5103463f43b7e62dad12faad8f135d8033cc8f4cf3302629ce72f0",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00041653960943222046,
+    "top30_last_position_effect": -0.0003802180290222168
+  },
+  {
+    "sample_id": "757d114aa8b3fa3fc49b15e8760b766e96a38cfc0d30e585e712d572d6948d7c",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.0002360902726650238,
+    "top30_last_position_effect": -0.00021389126777648926
+  },
+  {
+    "sample_id": "146af4928b35332a227ed4ecab173e8036366d4e7253a90be03c0b3c8a3837bf",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": 0.0007220283150672913,
+    "top30_last_position_effect": 0.0007444247603416443
+  },
+  {
+    "sample_id": "17ff4e29ff355baf37d926d0a6995b2d55246657040afad3729ed0a5d6996c03",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00033626705408096313,
+    "top30_last_position_effect": -0.00034671276807785034
+  },
+  {
+    "sample_id": "ebd4df943950339ce2e02fa0aa205b1021735cd9085063e2e75df316c5085a10",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.0001188330352306366,
+    "top30_last_position_effect": -0.00010951794683933258
+  },
+  {
+    "sample_id": "bb3dc522b34f47df1c2ce42b058873695a82221b6bfb2c0a15d5915cc774a8a5",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00019104033708572388,
+    "top30_last_position_effect": -0.0001672208309173584
+  },
+  {
+    "sample_id": "ad980c8cf39e59c82ebc0bc604237e5ce8445a30b28db600947bb2cb17a358bb",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -0.00023850798606872559,
+    "top30_last_position_effect": -0.00020378828048706055
+  },
+  {
+    "sample_id": "27fe371aebb738c53e6c5b082f03c08955e68c91300c621c3d6604078481c775",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -7.706880569458008e-05,
+    "top30_last_position_effect": -0.00013336539268493652
+  },
+  {
+    "sample_id": "b0ecc1786137d6fe779f6f424bd84df4fcb1f2c025ef1188471f4b7dc9fad07e",
+    "domain": "finemath_4plus",
+    "exact_last_position_effect": -5.122646689414978e-05,
+    "top30_last_position_effect": -6.918981671333313e-05
+  }
+]

@@ -1,0 +1,1183 @@
+[
+  {
+    "kind": "pls_gp_matern32",
+    "dataset": "controlled",
+    "seed": 100,
+    "budget": 96,
+    "labeled": [
+      89,
+      85,
+      19,
+      76,
+      180,
+      124,
+      146,
+      150,
+      297,
+      223,
+      225,
+      257,
+      392,
+      314,
+      347,
+      335,
+      447,
+      418,
+      468,
+      435,
+      598,
+      510,
+      520,
+      506,
+      281,
+      101,
+      306,
+      492,
+      494,
+      159,
+      28,
+      294,
+      75,
+      14,
+      558,
+      446,
+      361,
+      470,
+      562,
+      17,
+      508,
+      391,
+      187,
+      323,
+      577,
+      12,
+      293,
+      559,
+      396,
+      99,
+      390,
+      313,
+      440,
+      62,
+      204,
+      86,
+      579,
+      336,
+      469,
+      152,
+      195,
+      548,
+      215,
+      459,
+      581,
+      286,
+      164,
+      573,
+      354,
+      420,
+      594,
+      455,
+      397,
+      580,
+      541,
+      176,
+      269,
+      174,
+      206,
+      142,
+      419,
+      65,
+      35,
+      20,
+      332,
+      149,
+      325,
+      365,
+      78,
+      26,
+      115,
+      401,
+      376,
+      210,
+      193,
+      566
+    ],
+    "selected_components": 4,
+    "train_group_cv_mae": [
+      0.01037722266945991,
+      0.010363288196621025,
+      0.010522224482407192,
+      0.010510830763275655
+    ],
+    "kernel": "4.59**2 * Matern(length_scale=82.2, nu=1.5) + WhiteKernel(noise_level=0.0443)",
+    "seconds": 0.5493802639994101,
+    "warnings": [
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 60.886588343864844. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 64.1262469942307. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 92.4468555148597. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 84.63708125987412. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 95.9748687150267. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 125.10992074853573. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-05. Decreasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 122.27148294629433. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 127.80499458082453. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 158.0927408150041. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-05. Decreasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 153.27001692500647. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-05. Decreasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 155.13880388737954. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-05. Decreasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 82.21860178568271. Increasing the bound and calling fit again may find a better value."
+    ],
+    "metrics": {
+      "validation": {
+        "__all__": {
+          "n": 120,
+          "mae": 0.008946862180466964,
+          "rmse": 0.01110542249517085,
+          "r2": 0.37797782263545054,
+          "spearman": 0.6164803111327175,
+          "std_ratio": 0.786822301277704,
+          "train_mean_mae": 0.011280792472340788,
+          "theta": {
+            "0.03": {
+              "predicted": 0.11702551905108724,
+              "empirical": 0.21666666666666667,
+              "absolute_error": 0.09964114761557943,
+              "brier": 0.15800424002946947
+            },
+            "0.05": {
+              "predicted": 0.7413480723411889,
+              "empirical": 0.725,
+              "absolute_error": 0.016348072341188957,
+              "brier": 0.12383773431545762
+            },
+            "0.07": {
+              "predicted": 0.9926002380942902,
+              "empirical": 0.9666666666666667,
+              "absolute_error": 0.025933571427623536,
+              "brier": 0.02916919404606684
+            }
+          }
+        },
+        "abstract_algebra": {
+          "n": 20,
+          "mae": 0.007060546286393935,
+          "rmse": 0.008241399622149956,
+          "r2": -0.08465383552122896,
+          "spearman": 0.27518796992481204,
+          "std_ratio": 1.0107993545816751,
+          "train_mean_mae": 0.00512891789788709,
+          "theta": {
+            "0.03": {
+              "predicted": 0.07557525284019913,
+              "empirical": 0.0,
+              "absolute_error": 0.07557525284019913,
+              "brier": 0.026844096463368928
+            },
+            "0.05": {
+              "predicted": 0.7713101762313547,
+              "empirical": 0.85,
+              "absolute_error": 0.0786898237686453,
+              "brier": 0.10721230295576875
+            },
+            "0.07": {
+              "predicted": 0.9999973903984409,
+              "empirical": 1.0,
+              "absolute_error": 2.6096015590670874e-06,
+              "brier": 1.2970220815551084e-10
+            }
+          }
+        },
+        "anatomy": {
+          "n": 20,
+          "mae": 0.008982603932130497,
+          "rmse": 0.010321817169219512,
+          "r2": 0.23188640091709845,
+          "spearman": 0.3804511278195489,
+          "std_ratio": 0.6354983788182418,
+          "train_mean_mae": 0.009099789476022125,
+          "theta": {
+            "0.03": {
+              "predicted": 0.09081777691530339,
+              "empirical": 0.25,
+              "absolute_error": 0.1591822230846966,
+              "brier": 0.16390544390181633
+            },
+            "0.05": {
+              "predicted": 0.8768787361252723,
+              "empirical": 0.9,
+              "absolute_error": 0.023121263874727682,
+              "brier": 0.1259066386484097
+            },
+            "0.07": {
+              "predicted": 0.9999781484442914,
+              "empirical": 0.95,
+              "absolute_error": 0.04997814844429149,
+              "brier": 0.0500000095254861
+            }
+          }
+        },
+        "astronomy": {
+          "n": 20,
+          "mae": 0.01174177674823708,
+          "rmse": 0.01485683312480608,
+          "r2": -0.6735819261939902,
+          "spearman": -0.1969924812030075,
+          "std_ratio": 0.670227113510513,
+          "train_mean_mae": 0.009387974964024928,
+          "theta": {
+            "0.03": {
+              "predicted": 0.031045214615131496,
+              "empirical": 0.15,
+              "absolute_error": 0.1189547853848685,
+              "brier": 0.15445150762471202
+            },
+            "0.05": {
+              "predicted": 0.8208356185811698,
+              "empirical": 0.75,
+              "absolute_error": 0.07083561858116982,
+              "brier": 0.3034313952676658
+            },
+            "0.07": {
+              "predicted": 0.9999052989135213,
+              "empirical": 1.0,
+              "absolute_error": 9.470108647868791e-05,
+              "brier": 1.469580360375086e-07
+            }
+          }
+        },
+        "college_computer_science": {
+          "n": 20,
+          "mae": 0.006745093817224057,
+          "rmse": 0.008370871963403942,
+          "r2": 0.5044350057548654,
+          "spearman": 0.7022556390977444,
+          "std_ratio": 0.6341969722112399,
+          "train_mean_mae": 0.010343778361048963,
+          "theta": {
+            "0.03": {
+              "predicted": 0.11461389992625344,
+              "empirical": 0.25,
+              "absolute_error": 0.13538610007374657,
+              "brier": 0.110215041273377
+            },
+            "0.05": {
+              "predicted": 0.8453861051532254,
+              "empirical": 0.75,
+              "absolute_error": 0.09538610515322543,
+              "brier": 0.15730330737433046
+            },
+            "0.07": {
+              "predicted": 0.9999999746894396,
+              "empirical": 1.0,
+              "absolute_error": 2.5310560425317874e-08,
+              "brier": 1.2634882981419013e-14
+            }
+          }
+        },
+        "high_school_mathematics": {
+          "n": 20,
+          "mae": 0.012318501491819556,
+          "rmse": 0.014329150737542066,
+          "r2": -1.4332205407117065,
+          "spearman": -0.06766917293233082,
+          "std_ratio": 0.8783336200259868,
+          "train_mean_mae": 0.008205769925067824,
+          "theta": {
+            "0.03": {
+              "predicted": 0.3901009505588853,
+              "empirical": 0.65,
+              "absolute_error": 0.25989904944111475,
+              "brier": 0.4926093509135388
+            },
+            "0.05": {
+              "predicted": 0.9934784267639427,
+              "empirical": 1.0,
+              "absolute_error": 0.0065215732360572876,
+              "brier": 0.0004726120794706241
+            },
+            "0.07": {
+              "predicted": 0.9999999999999964,
+              "empirical": 1.0,
+              "absolute_error": 3.552713678800501e-15,
+              "brier": 2.611930783138414e-28
+            }
+          }
+        },
+        "professional_law": {
+          "n": 20,
+          "mae": 0.006832650806996661,
+          "rmse": 0.00833068584124216,
+          "r2": 0.006723244488635038,
+          "spearman": 0.43458646616541347,
+          "std_ratio": 0.7803849046474834,
+          "train_mean_mae": 0.007148815724341308,
+          "theta": {
+            "0.03": {
+              "predicted": 1.9450750766409208e-08,
+              "empirical": 0.0,
+              "absolute_error": 1.9450750766409208e-08,
+              "brier": 3.6148033203258166e-15
+            },
+            "0.05": {
+              "predicted": 0.14019937119216752,
+              "empirical": 0.1,
+              "absolute_error": 0.040199371192167516,
+              "brier": 0.04870014956710044
+            },
+            "0.07": {
+              "predicted": 0.9557206161200511,
+              "empirical": 0.85,
+              "absolute_error": 0.10572061612005113,
+              "brier": 0.12501500766316406
+            }
+          }
+        }
+      },
+      "test": {
+        "__all__": {
+          "n": 120,
+          "mae": 0.00922619633308609,
+          "rmse": 0.011415962759826297,
+          "r2": 0.3469156620585341,
+          "spearman": 0.6363497465101743,
+          "std_ratio": 0.8476189082179366,
+          "train_mean_mae": 0.01197903916084518,
+          "theta": {
+            "0.03": {
+              "predicted": 0.09524339673130014,
+              "empirical": 0.21666666666666667,
+              "absolute_error": 0.12142326993536653,
+              "brier": 0.15706611042047952
+            },
+            "0.05": {
+              "predicted": 0.6778836387490598,
+              "empirical": 0.7166666666666667,
+              "absolute_error": 0.038783027917606905,
+              "brier": 0.1786774634063513
+            },
+            "0.07": {
+              "predicted": 0.9646520919873712,
+              "empirical": 0.9666666666666667,
+              "absolute_error": 0.0020145746792954444,
+              "brier": 0.04073228700664573
+            }
+          }
+        },
+        "abstract_algebra": {
+          "n": 20,
+          "mae": 0.009964487729576078,
+          "rmse": 0.012832491890488297,
+          "r2": -0.3321534982887002,
+          "spearman": 0.12481203007518797,
+          "std_ratio": 0.6167061060548393,
+          "train_mean_mae": 0.010149973997955813,
+          "theta": {
+            "0.03": {
+              "predicted": 0.00906554833009696,
+              "empirical": 0.15,
+              "absolute_error": 0.14093445166990304,
+              "brier": 0.14993955059694591
+            },
+            "0.05": {
+              "predicted": 0.8128850111001688,
+              "empirical": 0.85,
+              "absolute_error": 0.037114988899831225,
+              "brier": 0.21077763685279655
+            },
+            "0.07": {
+              "predicted": 0.9999368766944332,
+              "empirical": 1.0,
+              "absolute_error": 6.312330556679235e-05,
+              "brier": 6.801097780830452e-08
+            }
+          }
+        },
+        "anatomy": {
+          "n": 20,
+          "mae": 0.006414477373215247,
+          "rmse": 0.007826149810896525,
+          "r2": 0.1488400196813373,
+          "spearman": 0.5533834586466165,
+          "std_ratio": 0.7445320929305214,
+          "train_mean_mae": 0.007342270435765385,
+          "theta": {
+            "0.03": {
+              "predicted": 0.1599679908492338,
+              "empirical": 0.2,
+              "absolute_error": 0.04003200915076621,
+              "brier": 0.09796676725324209
+            },
+            "0.05": {
+              "predicted": 0.9445716459958025,
+              "empirical": 0.9,
+              "absolute_error": 0.044571645995802434,
+              "brier": 0.13522310664171058
+            },
+            "0.07": {
+              "predicted": 0.9999999631140721,
+              "empirical": 1.0,
+              "absolute_error": 3.68859278676581e-08,
+              "brier": 2.7210708421868102e-14
+            }
+          }
+        },
+        "astronomy": {
+          "n": 20,
+          "mae": 0.011611985248342619,
+          "rmse": 0.013755531346301446,
+          "r2": -0.10397988943507475,
+          "spearman": 0.26165413533834586,
+          "std_ratio": 0.4462754272793738,
+          "train_mean_mae": 0.010039319900365976,
+          "theta": {
+            "0.03": {
+              "predicted": 0.004221684622576642,
+              "empirical": 0.2,
+              "absolute_error": 0.19577831537742338,
+              "brier": 0.19562317495560205
+            },
+            "0.05": {
+              "predicted": 0.7130461192311035,
+              "empirical": 0.75,
+              "absolute_error": 0.0369538807688965,
+              "brier": 0.283149305048608
+            },
+            "0.07": {
+              "predicted": 0.9999998997480086,
+              "empirical": 0.95,
+              "absolute_error": 0.04999989974800867,
+              "brier": 0.05000000000009164
+            }
+          }
+        },
+        "college_computer_science": {
+          "n": 20,
+          "mae": 0.009609339897738581,
+          "rmse": 0.01183546570356158,
+          "r2": -0.21720267300213125,
+          "spearman": 0.3714285714285714,
+          "std_ratio": 0.6977674909004555,
+          "train_mean_mae": 0.008939745515171025,
+          "theta": {
+            "0.03": {
+              "predicted": 0.01582013575061936,
+              "empirical": 0.2,
+              "absolute_error": 0.18417986424938065,
+              "brier": 0.1947726148244879
+            },
+            "0.05": {
+              "predicted": 0.6244888745489691,
+              "empirical": 0.8,
+              "absolute_error": 0.17551112545103098,
+              "brier": 0.3121966279460336
+            },
+            "0.07": {
+              "predicted": 0.9999979378058793,
+              "empirical": 1.0,
+              "absolute_error": 2.062194120688865e-06,
+              "brier": 2.93889398764521e-11
+            }
+          }
+        },
+        "high_school_mathematics": {
+          "n": 20,
+          "mae": 0.008096766586279804,
+          "rmse": 0.009836661433526607,
+          "r2": -0.13109102690841756,
+          "spearman": 0.46917293233082696,
+          "std_ratio": 1.0339573935569177,
+          "train_mean_mae": 0.007406239720682303,
+          "theta": {
+            "0.03": {
+              "predicted": 0.3823850208322813,
+              "empirical": 0.55,
+              "absolute_error": 0.16761497916771873,
+              "brier": 0.30409455489259923
+            },
+            "0.05": {
+              "predicted": 0.9449162072927428,
+              "empirical": 0.95,
+              "absolute_error": 0.005083792707257118,
+              "brier": 0.07414073471131238
+            },
+            "0.07": {
+              "predicted": 0.9999999996498129,
+              "empirical": 1.0,
+              "absolute_error": 3.501871015387792e-10,
+              "brier": 2.4257809354457956e-18
+            }
+          }
+        },
+        "professional_law": {
+          "n": 20,
+          "mae": 0.009660121163364219,
+          "rmse": 0.011400480964560557,
+          "r2": -0.8150187835339802,
+          "spearman": -0.23458646616541348,
+          "std_ratio": 0.7519071418938202,
+          "train_mean_mae": 0.006574442577274407,
+          "theta": {
+            "0.03": {
+              "predicted": 2.992720809693901e-12,
+              "empirical": 0.0,
+              "absolute_error": 2.992720809693901e-12,
+              "brier": 1.4130569034483162e-22
+            },
+            "0.05": {
+              "predicted": 0.027393974325571828,
+              "empirical": 0.05,
+              "absolute_error": 0.022606025674428175,
+              "brier": 0.05657736923764678
+            },
+            "0.07": {
+              "predicted": 0.787977874912021,
+              "empirical": 0.85,
+              "absolute_error": 0.062022125087978996,
+              "brier": 0.19439365399938877
+            }
+          }
+        }
+      }
+    },
+    "geometry": "Euclidean PLS scores, train fitted scale; matched median-relative kernel bounds"
+  },
+  {
+    "kind": "pls_gp_matern32",
+    "dataset": "controlled",
+    "seed": 100,
+    "budget": 192,
+    "labeled": [
+      89,
+      85,
+      19,
+      76,
+      180,
+      124,
+      146,
+      150,
+      297,
+      223,
+      225,
+      257,
+      392,
+      314,
+      347,
+      335,
+      447,
+      418,
+      468,
+      435,
+      598,
+      510,
+      520,
+      506,
+      281,
+      101,
+      306,
+      492,
+      494,
+      159,
+      28,
+      294,
+      75,
+      14,
+      558,
+      446,
+      361,
+      470,
+      562,
+      17,
+      508,
+      391,
+      187,
+      323,
+      577,
+      12,
+      293,
+      559,
+      396,
+      99,
+      390,
+      313,
+      440,
+      62,
+      204,
+      86,
+      579,
+      336,
+      469,
+      152,
+      195,
+      548,
+      215,
+      459,
+      581,
+      286,
+      164,
+      573,
+      354,
+      420,
+      594,
+      455,
+      397,
+      580,
+      541,
+      176,
+      269,
+      174,
+      206,
+      142,
+      419,
+      65,
+      35,
+      20,
+      332,
+      149,
+      325,
+      365,
+      78,
+      26,
+      115,
+      401,
+      376,
+      210,
+      193,
+      566,
+      298,
+      3,
+      46,
+      303,
+      576,
+      512,
+      301,
+      360,
+      337,
+      221,
+      502,
+      265,
+      400,
+      522,
+      463,
+      119,
+      557,
+      556,
+      536,
+      364,
+      399,
+      501,
+      80,
+      289,
+      260,
+      272,
+      291,
+      238,
+      525,
+      296,
+      27,
+      383,
+      29,
+      553,
+      395,
+      450,
+      273,
+      179,
+      202,
+      485,
+      472,
+      319,
+      66,
+      398,
+      113,
+      406,
+      482,
+      597,
+      322,
+      2,
+      416,
+      427,
+      422,
+      527,
+      207,
+      182,
+      102,
+      320,
+      242,
+      478,
+      567,
+      121,
+      387,
+      114,
+      270,
+      417,
+      160,
+      79,
+      228,
+      443,
+      69,
+      158,
+      385,
+      104,
+      111,
+      457,
+      125,
+      329,
+      153,
+      445,
+      464,
+      318,
+      213,
+      381,
+      94,
+      39,
+      529,
+      442,
+      282,
+      44,
+      452,
+      507,
+      258,
+      112,
+      45,
+      299
+    ],
+    "selected_components": 2,
+    "train_group_cv_mae": [
+      0.009074293056181416,
+      0.010255527552285138,
+      0.010768174966543267,
+      0.011312004696046376
+    ],
+    "kernel": "3.99**2 * Matern(length_scale=56.6, nu=1.5) + WhiteKernel(noise_level=0.291)",
+    "seconds": 0.7182797080004093,
+    "warnings": [
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 57.841994060570244. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 56.43175025564372. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 58.602894376469514. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 76.57301425336769. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 81.54936696946443. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 80.24507694432873. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 104.25248793600646. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 105.63932283900178. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 111.39101468753715. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 133.2195878845604. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 132.465091856679. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 135.97617803594076. Increasing the bound and calling fit again may find a better value.",
+      "The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified upper bound 56.6332995934807. Increasing the bound and calling fit again may find a better value."
+    ],
+    "metrics": {
+      "validation": {
+        "__all__": {
+          "n": 120,
+          "mae": 0.00820795709881066,
+          "rmse": 0.010327801830503386,
+          "r2": 0.4620381352248618,
+          "spearman": 0.6896381693173137,
+          "std_ratio": 0.7551362020112533,
+          "train_mean_mae": 0.01126293851217876,
+          "theta": {
+            "0.03": {
+              "predicted": 0.17061591058854111,
+              "empirical": 0.21666666666666667,
+              "absolute_error": 0.04605075607812556,
+              "brier": 0.12485917734749284
+            },
+            "0.05": {
+              "predicted": 0.7141821034235301,
+              "empirical": 0.725,
+              "absolute_error": 0.01081789657646992,
+              "brier": 0.10759174696292877
+            },
+            "0.07": {
+              "predicted": 0.9744334331483806,
+              "empirical": 0.9666666666666667,
+              "absolute_error": 0.007766766481713927,
+              "brier": 0.028796107625907584
+            }
+          }
+        },
+        "abstract_algebra": {
+          "n": 20,
+          "mae": 0.006592740823505342,
+          "rmse": 0.008063087514592534,
+          "r2": -0.03822613384978335,
+          "spearman": 0.4631578947368421,
+          "std_ratio": 0.6199610253055249,
+          "train_mean_mae": 0.005047467350959778,
+          "theta": {
+            "0.03": {
+              "predicted": 0.14988019215716958,
+              "empirical": 0.0,
+              "absolute_error": 0.14988019215716958,
+              "brier": 0.038273123186024986
+            },
+            "0.05": {
+              "predicted": 0.8601454039765745,
+              "empirical": 0.85,
+              "absolute_error": 0.010145403976574485,
+              "brier": 0.07721511096841788
+            },
+            "0.07": {
+              "predicted": 0.9994406285794517,
+              "empirical": 1.0,
+              "absolute_error": 0.0005593714205482936,
+              "brier": 1.209212162969318e-06
+            }
+          }
+        },
+        "anatomy": {
+          "n": 20,
+          "mae": 0.009329321728047029,
+          "rmse": 0.010903917249477816,
+          "r2": 0.14280777381025578,
+          "spearman": 0.4015037593984962,
+          "std_ratio": 0.5936714219537262,
+          "train_mean_mae": 0.009346335437148811,
+          "theta": {
+            "0.03": {
+              "predicted": 0.15304377982580547,
+              "empirical": 0.25,
+              "absolute_error": 0.09695622017419453,
+              "brier": 0.14822140348940194
+            },
+            "0.05": {
+              "predicted": 0.8066411953797819,
+              "empirical": 0.9,
+              "absolute_error": 0.09335880462021817,
+              "brier": 0.13987926362709024
+            },
+            "0.07": {
+              "predicted": 0.9955462545094779,
+              "empirical": 0.95,
+              "absolute_error": 0.04554625450947791,
+              "brier": 0.04994698612665629
+            }
+          }
+        },
+        "astronomy": {
+          "n": 20,
+          "mae": 0.00935002482774926,
+          "rmse": 0.01216853013082827,
+          "r2": -0.12271811519125975,
+          "spearman": 0.2526315789473684,
+          "std_ratio": 0.6782042802979651,
+          "train_mean_mae": 0.010016986238770186,
+          "theta": {
+            "0.03": {
+              "predicted": 0.08377300759258813,
+              "empirical": 0.15,
+              "absolute_error": 0.06622699240741187,
+              "brier": 0.14115606366853634
+            },
+            "0.05": {
+              "predicted": 0.6669274681707075,
+              "empirical": 0.75,
+              "absolute_error": 0.08307253182929253,
+              "brier": 0.22889409462533866
+            },
+            "0.07": {
+              "predicted": 0.9854093599997574,
+              "empirical": 1.0,
+              "absolute_error": 0.014590640000242572,
+              "brier": 0.0010832248261895684
+            }
+          }
+        },
+        "college_computer_science": {
+          "n": 20,
+          "mae": 0.007302753169127103,
+          "rmse": 0.008427682791600123,
+          "r2": 0.4976856508975337,
+          "spearman": 0.7353383458646616,
+          "std_ratio": 0.5719174154465165,
+          "train_mean_mae": 0.010249589266521591,
+          "theta": {
+            "0.03": {
+              "predicted": 0.14553706540745828,
+              "empirical": 0.25,
+              "absolute_error": 0.10446293459254172,
+              "brier": 0.1489102714255815
+            },
+            "0.05": {
+              "predicted": 0.7925178904524797,
+              "empirical": 0.75,
+              "absolute_error": 0.04251789045247967,
+              "brier": 0.09857704769261474
+            },
+            "0.07": {
+              "predicted": 0.997140462985737,
+              "empirical": 1.0,
+              "absolute_error": 0.0028595370142630028,
+              "brier": 6.569428528627384e-05
+            }
+          }
+        },
+        "high_school_mathematics": {
+          "n": 20,
+          "mae": 0.009533132630492202,
+          "rmse": 0.011595913105219846,
+          "r2": -0.5934941591577068,
+          "spearman": 0.012030075187969924,
+          "std_ratio": 0.6389171058847533,
+          "train_mean_mae": 0.0076291034477903984,
+          "theta": {
+            "0.03": {
+              "predicted": 0.489569743143233,
+              "empirical": 0.65,
+              "absolute_error": 0.16043025685676704,
+              "brier": 0.2725652473187772
+            },
+            "0.05": {
+              "predicted": 0.9735017716656887,
+              "empirical": 1.0,
+              "absolute_error": 0.026498228334311258,
+              "brier": 0.002115410339005833
+            },
+            "0.07": {
+              "predicted": 0.9999835479928173,
+              "empirical": 1.0,
+              "absolute_error": 1.6452007182699013e-05,
+              "brier": 1.1841178981437914e-09
+            }
+          }
+        },
+        "professional_law": {
+          "n": 20,
+          "mae": 0.007139769413943025,
+          "rmse": 0.010124622892974288,
+          "r2": -0.4671228143185211,
+          "spearman": 0.13383458646616542,
+          "std_ratio": 0.6741117933282136,
+          "train_mean_mae": 0.006969216396100819,
+          "theta": {
+            "0.03": {
+              "predicted": 0.0018916754049921468,
+              "empirical": 0.0,
+              "absolute_error": 0.0018916754049921468,
+              "brier": 2.8954996635184924e-05
+            },
+            "0.05": {
+              "predicted": 0.1853588908959481,
+              "empirical": 0.1,
+              "absolute_error": 0.08535889089594809,
+              "brier": 0.09886955452510524
+            },
+            "0.07": {
+              "predicted": 0.8690803448230418,
+              "empirical": 0.85,
+              "absolute_error": 0.019080344823041773,
+              "brier": 0.12167953012103253
+            }
+          }
+        }
+      },
+      "test": {
+        "__all__": {
+          "n": 120,
+          "mae": 0.008380491043211096,
+          "rmse": 0.010680662531820973,
+          "r2": 0.4283363624155846,
+          "spearman": 0.6542537676227516,
+          "std_ratio": 0.8301749305689695,
+          "train_mean_mae": 0.011907623320197066,
+          "theta": {
+            "0.03": {
+              "predicted": 0.17295268089471125,
+              "empirical": 0.21666666666666667,
+              "absolute_error": 0.04371398577195543,
+              "brier": 0.13056446852234554
+            },
+            "0.05": {
+              "predicted": 0.7059472328261995,
+              "empirical": 0.7166666666666667,
+              "absolute_error": 0.01071943384046714,
+              "brier": 0.12694810911541585
+            },
+            "0.07": {
+              "predicted": 0.9554502495033923,
+              "empirical": 0.9666666666666667,
+              "absolute_error": 0.011216417163274373,
+              "brier": 0.03483958043770433
+            }
+          }
+        },
+        "abstract_algebra": {
+          "n": 20,
+          "mae": 0.007374667335108423,
+          "rmse": 0.00995891454428578,
+          "r2": 0.19766399038345117,
+          "spearman": 0.49022556390977434,
+          "std_ratio": 0.4080432418967065,
+          "train_mean_mae": 0.009742721263319255,
+          "theta": {
+            "0.03": {
+              "predicted": 0.15627525011069326,
+              "empirical": 0.15,
+              "absolute_error": 0.00627525011069327,
+              "brier": 0.12181219879424636
+            },
+            "0.05": {
+              "predicted": 0.8753657057223968,
+              "empirical": 0.85,
+              "absolute_error": 0.025365705722396825,
+              "brier": 0.1100321120105187
+            },
+            "0.07": {
+              "predicted": 0.9996822165623588,
+              "empirical": 1.0,
+              "absolute_error": 0.00031778343764121697,
+              "brier": 3.5078922241195793e-07
+            }
+          }
+        },
+        "anatomy": {
+          "n": 20,
+          "mae": 0.007539460811322828,
+          "rmse": 0.009581022750516588,
+          "r2": -0.27567082904774187,
+          "spearman": 0.15789473684210525,
+          "std_ratio": 0.5916808193216401,
+          "train_mean_mae": 0.007144258103022973,
+          "theta": {
+            "0.03": {
+              "predicted": 0.24490045276939068,
+              "empirical": 0.2,
+              "absolute_error": 0.04490045276939067,
+              "brier": 0.14367057713081383
+            },
+            "0.05": {
+              "predicted": 0.9170524142454578,
+              "empirical": 0.9,
+              "absolute_error": 0.01705241424545778,
+              "brier": 0.1175624943833287
+            },
+            "0.07": {
+              "predicted": 0.9995798198997875,
+              "empirical": 1.0,
+              "absolute_error": 0.0004201801002124972,
+              "brier": 2.0915275594713212e-06
+            }
+          }
+        },
+        "astronomy": {
+          "n": 20,
+          "mae": 0.011909334025493204,
+          "rmse": 0.014465008273760125,
+          "r2": -0.22079795512922695,
+          "spearman": 0.2541353383458646,
+          "std_ratio": 0.5597852542607137,
+          "train_mean_mae": 0.010787027864716947,
+          "theta": {
+            "0.03": {
+              "predicted": 0.058245302586873285,
+              "empirical": 0.2,
+              "absolute_error": 0.14175469741312674,
+              "brier": 0.17482861452771462
+            },
+            "0.05": {
+              "predicted": 0.6273166916020743,
+              "empirical": 0.75,
+              "absolute_error": 0.12268330839792574,
+              "brier": 0.2311452768703599
+            },
+            "0.07": {
+              "predicted": 0.9811483661273455,
+              "empirical": 0.95,
+              "absolute_error": 0.031148366127345506,
+              "brier": 0.052286321448761816
+            }
+          }
+        },
+        "college_computer_science": {
+          "n": 20,
+          "mae": 0.008034799971510711,
+          "rmse": 0.010178003333639482,
+          "r2": 0.09984484610186906,
+          "spearman": 0.4947368421052631,
+          "std_ratio": 0.7441158692807627,
+          "train_mean_mae": 0.009070769093398537,
+          "theta": {
+            "0.03": {
+              "predicted": 0.09536450904398715,
+              "empirical": 0.2,
+              "absolute_error": 0.10463549095601286,
+              "brier": 0.14636980885468306
+            },
+            "0.05": {
+              "predicted": 0.7233988901455922,
+              "empirical": 0.8,
+              "absolute_error": 0.07660110985440782,
+              "brier": 0.2002730968304261
+            },
+            "0.07": {
+              "predicted": 0.97989085788771,
+              "empirical": 1.0,
+              "absolute_error": 0.02010914211228998,
+              "brier": 0.003679526764639384
+            }
+          }
+        },
+        "high_school_mathematics": {
+          "n": 20,
+          "mae": 0.006410340054973017,
+          "rmse": 0.008402498752251334,
+          "r2": 0.17468635973008384,
+          "spearman": 0.4526315789473684,
+          "std_ratio": 0.5220434680631726,
+          "train_mean_mae": 0.007163121156168707,
+          "theta": {
+            "0.03": {
+              "predicted": 0.4825902094667921,
+              "empirical": 0.55,
+              "absolute_error": 0.06740979053320795,
+              "brier": 0.1967052054627198
+            },
+            "0.05": {
+              "predicted": 0.9833654357228797,
+              "empirical": 0.95,
+              "absolute_error": 0.033365435722879755,
+              "brier": 0.04890380184796489
+            },
+            "0.07": {
+              "predicted": 0.9999946147613361,
+              "empirical": 1.0,
+              "absolute_error": 5.385238663890846e-06,
+              "brier": 2.1922402590485448e-10
+            }
+          }
+        },
+        "professional_law": {
+          "n": 20,
+          "mae": 0.0090143440608584,
+          "rmse": 0.010490621304977724,
+          "r2": -0.5368702232319662,
+          "spearman": -0.25112781954887214,
+          "std_ratio": 0.6786188790426725,
+          "train_mean_mae": 0.006825644907075911,
+          "theta": {
+            "0.03": {
+              "predicted": 0.00034036139053104675,
+              "empirical": 0.0,
+              "absolute_error": 0.00034036139053104675,
+              "brier": 4.0636389566463175e-07
+            },
+            "0.05": {
+              "predicted": 0.10918425951879714,
+              "empirical": 0.05,
+              "absolute_error": 0.05918425951879713,
+              "brier": 0.05377187274989672
+            },
+            "0.07": {
+              "predicted": 0.7724056217818157,
+              "empirical": 0.85,
+              "absolute_error": 0.07759437821818427,
+              "brier": 0.15306919187681892
+            }
+          }
+        }
+      }
+    },
+    "geometry": "Euclidean PLS scores, train fitted scale; matched median-relative kernel bounds"
+  }
+]

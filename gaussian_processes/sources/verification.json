@@ -1,0 +1,754 @@
+{
+  "passed": true,
+  "pool": 120,
+  "before_holdout": {
+    "pool_size": 120,
+    "branch_budgets": {
+      "map": 24
+    },
+    "unique_observed_texts": 24,
+    "new_physical_pair_measurements": 24,
+    "measurement_seconds": 10.077964722000615,
+    "holdout_evaluation_texts": 0,
+    "feature_model": {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    },
+    "full_pool_labels_required": false
+  },
+  "after_holdout": {
+    "pool_size": 120,
+    "branch_budgets": {
+      "map": 24
+    },
+    "unique_observed_texts": 104,
+    "new_physical_pair_measurements": 104,
+    "measurement_seconds": 39.80145779100167,
+    "holdout_evaluation_texts": 80,
+    "feature_model": {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    },
+    "full_pool_labels_required": false
+  },
+  "raw_test": {
+    "__all__": {
+      "n": 40,
+      "mae": 0.006852983755163189,
+      "rmse": 0.008540583130017286,
+      "r2": -0.3249531041232798,
+      "spearman": 0.04090056285178237,
+      "std_ratio": 0.26954519822583434,
+      "train_mean_mae": 0.006270278885494918,
+      "theta": {
+        "0.03": {
+          "predicted": 0.11153883148657054,
+          "empirical": 0.125,
+          "absolute_error": 0.013461168513429461,
+          "brier": 0.10804744925292002
+        },
+        "0.05": {
+          "predicted": 0.7840108082068011,
+          "empirical": 0.975,
+          "absolute_error": 0.19098919179319884,
+          "brier": 0.0640776316022216
+        },
+        "0.07": {
+          "predicted": 0.9972412633377175,
+          "empirical": 1.0,
+          "absolute_error": 0.002758736662282546,
+          "brier": 1.2392844756174784e-05
+        }
+      },
+      "map_theta": {
+        "predicted": 0.7840108082068011,
+        "empirical": 0.975,
+        "absolute_error_pp": 19.098919179319886,
+        "brier": 0.0640776316022216
+      }
+    },
+    "abstract_algebra": {
+      "n": 20,
+      "mae": 0.007937594652340733,
+      "rmse": 0.00959474224633398,
+      "r2": -0.42478042231800694,
+      "spearman": -0.15939849624060148,
+      "std_ratio": 0.22292636093504037,
+      "train_mean_mae": 0.007075910769741645,
+      "theta": {
+        "0.03": {
+          "predicted": 0.08539679732110542,
+          "empirical": 0.1,
+          "absolute_error": 0.014603202678894589,
+          "brier": 0.08868185984470535
+        },
+        "0.05": {
+          "predicted": 0.7430855712413343,
+          "empirical": 0.95,
+          "absolute_error": 0.20691442875866561,
+          "brier": 0.09686433481527557
+        },
+        "0.07": {
+          "predicted": 0.9960364489788869,
+          "empirical": 1.0,
+          "absolute_error": 0.003963551021113121,
+          "brier": 2.212326798957302e-05
+        }
+      },
+      "map_theta": {
+        "predicted": 0.7430855712413343,
+        "empirical": 0.95,
+        "absolute_error_pp": 20.69144287586656,
+        "brier": 0.09686433481527557
+      }
+    },
+    "anatomy": {
+      "n": 20,
+      "mae": 0.005768372857985643,
+      "rmse": 0.007336487008636062,
+      "r2": -0.22855977852956078,
+      "spearman": 0.11278195488721804,
+      "std_ratio": 0.14632914020124727,
+      "train_mean_mae": 0.005657293984236625,
+      "theta": {
+        "0.03": {
+          "predicted": 0.1376808656520357,
+          "empirical": 0.15,
+          "absolute_error": 0.012319134347964306,
+          "brier": 0.12741303866113468
+        },
+        "0.05": {
+          "predicted": 0.8249360451722682,
+          "empirical": 1.0,
+          "absolute_error": 0.17506395482773185,
+          "brier": 0.031290928389167645
+        },
+        "0.07": {
+          "predicted": 0.998446077696548,
+          "empirical": 1.0,
+          "absolute_error": 0.0015539223034519711,
+          "brier": 2.6624215227765522e-06
+        }
+      },
+      "map_theta": {
+        "predicted": 0.8249360451722682,
+        "empirical": 1.0,
+        "absolute_error_pp": 17.506395482773186,
+        "brier": 0.031290928389167645
+      }
+    }
+  },
+  "cluster_initial": 40,
+  "cluster_budget": 40,
+  "log_test": {
+    "__all__": {
+      "n": 40,
+      "mae": 0.006388479471216554,
+      "rmse": 0.008064660152647219,
+      "r2": -0.1814017233715024,
+      "spearman": 0.10431519699812385,
+      "std_ratio": 0.06955841611142172,
+      "train_mean_mae": 0.0063162818124207366,
+      "map_theta": {
+        "predicted": 0.8260952315544285,
+        "empirical": 0.975,
+        "absolute_error_pp": 14.890476844557144,
+        "brier": 0.046512147932101525
+      }
+    },
+    "abstract_algebra": {
+      "n": 20,
+      "mae": 0.006801862146862551,
+      "rmse": 0.00853042418379723,
+      "r2": -0.1262182719947187,
+      "spearman": -0.05864661654135337,
+      "std_ratio": 0.05589644025047795,
+      "train_mean_mae": 0.0070209446984032765,
+      "map_theta": {
+        "predicted": 0.8160447303381677,
+        "empirical": 0.95,
+        "absolute_error_pp": 13.395526966183224,
+        "brier": 0.06613921744842571
+      }
+    },
+    "anatomy": {
+      "n": 20,
+      "mae": 0.0059750967955705565,
+      "rmse": 0.007570293917667868,
+      "r2": -0.3081136275549936,
+      "spearman": 0.21654135338345865,
+      "std_ratio": 0.03467587323493966,
+      "train_mean_mae": 0.005685121938586235,
+      "map_theta": {
+        "predicted": 0.8361457327706896,
+        "empirical": 1.0,
+        "absolute_error_pp": 16.38542672293104,
+        "brier": 0.02688507841577733
+      }
+    }
+  },
+  "checks": [
+    "actual pretrained Qwen logits",
+    "independent MiniLM features",
+    "fresh measurement cache",
+    "only24 train labels before holdout",
+    "80 holdout labels excluded from fit",
+    "one global GP",
+    "native streaming MMLU matches frozen manifest",
+    "cluster4x5 per domain",
+    "log-target valid",
+    "rerun has no extra cost",
+    "unbounded finite GP targets1..1e9"
+  ],
+  "unbounded_test": {
+    "target_min": 1.0,
+    "target_max": 1000000001.0,
+    "passed": true
+  },
+  "gpu": "Tesla T4",
+  "full_product": {
+    "config": {
+      "seed": 100,
+      "kernel": "gp_matern32",
+      "target_transform": "raw",
+      "acquisition": "sigma",
+      "budget": 192,
+      "batch_size": 12,
+      "initial_strategy": "cluster",
+      "initial_per_domain": 4,
+      "n_clusters": 4,
+      "points_per_cluster": 5,
+      "epsilon": 0.05,
+      "posterior_draws": 256,
+      "top_per_domain": 10
+    },
+    "pool": 600,
+    "initial": 120,
+    "costs": {
+      "pool_size": 600,
+      "branch_budgets": {
+        "map": 192
+      },
+      "unique_observed_texts": 432,
+      "new_physical_pair_measurements": 432,
+      "measurement_seconds": 168.4111705180003,
+      "holdout_evaluation_texts": 240,
+      "feature_model": {
+        "id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "full_pool_labels_required": false
+    },
+    "validation": {
+      "__all__": {
+        "n": 120,
+        "mae": 0.007436374573819221,
+        "rmse": 0.00939349950894476,
+        "r2": 0.5198437938924806,
+        "spearman": 0.7286200430585457,
+        "std_ratio": 0.6220490476193303,
+        "train_mean_mae": 0.010798903026928505,
+        "theta": {
+          "0.03": {
+            "predicted": 0.18822333717039927,
+            "empirical": 0.20833333333333334,
+            "absolute_error": 0.020109996162934074,
+            "brier": 0.11225226317381111
+          },
+          "0.05": {
+            "predicted": 0.7026677790555788,
+            "empirical": 0.7333333333333333,
+            "absolute_error": 0.030665554277754525,
+            "brier": 0.11118809344211072
+          },
+          "0.07": {
+            "predicted": 0.9740200710523019,
+            "empirical": 0.975,
+            "absolute_error": 0.00097992894769805,
+            "brier": 0.020543892948538926
+          }
+        },
+        "map_theta": {
+          "predicted": 0.7026677790555788,
+          "empirical": 0.7333333333333333,
+          "absolute_error_pp": 3.0665554277754525,
+          "brier": 0.11118809344211072
+        }
+      },
+      "abstract_algebra": {
+        "n": 20,
+        "mae": 0.005758490417353121,
+        "rmse": 0.008671240693282106,
+        "r2": -0.2672823362294583,
+        "spearman": 0.007518796992481202,
+        "std_ratio": 0.5598508163245697,
+        "train_mean_mae": 0.005397129765090841,
+        "theta": {
+          "0.03": {
+            "predicted": 0.13210248416114265,
+            "empirical": 0.0,
+            "absolute_error": 0.13210248416114265,
+            "brier": 0.023933168480716846
+          },
+          "0.05": {
+            "predicted": 0.7181279652768899,
+            "empirical": 0.9,
+            "absolute_error": 0.1818720347231101,
+            "brier": 0.10943135431299097
+          },
+          "0.07": {
+            "predicted": 0.9914789108774741,
+            "empirical": 1.0,
+            "absolute_error": 0.008521089122525916,
+            "brier": 0.00014823447050567128
+          }
+        },
+        "map_theta": {
+          "predicted": 0.7181279652768899,
+          "empirical": 0.9,
+          "absolute_error_pp": 18.18720347231101,
+          "brier": 0.10943135431299097
+        }
+      },
+      "anatomy": {
+        "n": 20,
+        "mae": 0.00751682026517809,
+        "rmse": 0.00885398254038253,
+        "r2": 0.21598334222152737,
+        "spearman": 0.5203007518796992,
+        "std_ratio": 0.4843757502411938,
+        "train_mean_mae": 0.009018512194355326,
+        "theta": {
+          "0.03": {
+            "predicted": 0.2130299633260803,
+            "empirical": 0.25,
+            "absolute_error": 0.03697003667391971,
+            "brier": 0.143559951608506
+          },
+          "0.05": {
+            "predicted": 0.8013121894269044,
+            "empirical": 0.9,
+            "absolute_error": 0.09868781057309561,
+            "brier": 0.11901674116678729
+          },
+          "0.07": {
+            "predicted": 0.9929372399335492,
+            "empirical": 1.0,
+            "absolute_error": 0.007062760066450791,
+            "brier": 0.00016334953789314436
+          }
+        },
+        "map_theta": {
+          "predicted": 0.8013121894269044,
+          "empirical": 0.9,
+          "absolute_error_pp": 9.868781057309562,
+          "brier": 0.11901674116678729
+        }
+      },
+      "astronomy": {
+        "n": 20,
+        "mae": 0.008138491267527265,
+        "rmse": 0.00990117217173776,
+        "r2": 0.08019360488238314,
+        "spearman": 0.40751879699248117,
+        "std_ratio": 0.6400916034278735,
+        "train_mean_mae": 0.00785942804068327,
+        "theta": {
+          "0.03": {
+            "predicted": 0.1471953760334499,
+            "empirical": 0.1,
+            "absolute_error": 0.04719537603344989,
+            "brier": 0.10056927040916253
+          },
+          "0.05": {
+            "predicted": 0.6771299908185188,
+            "empirical": 0.75,
+            "absolute_error": 0.07287000918148123,
+            "brier": 0.19063943186362145
+          },
+          "0.07": {
+            "predicted": 0.977446826138291,
+            "empirical": 1.0,
+            "absolute_error": 0.022553173861708964,
+            "brier": 0.0012578303865769733
+          }
+        },
+        "map_theta": {
+          "predicted": 0.6771299908185188,
+          "empirical": 0.75,
+          "absolute_error_pp": 7.287000918148124,
+          "brier": 0.19063943186362145
+        }
+      },
+      "college_computer_science": {
+        "n": 20,
+        "mae": 0.008233384354250129,
+        "rmse": 0.009349431387158038,
+        "r2": 0.3827917736190043,
+        "spearman": 0.6947368421052631,
+        "std_ratio": 0.5030918672380414,
+        "train_mean_mae": 0.010133355762809512,
+        "theta": {
+          "0.03": {
+            "predicted": 0.18354530309424308,
+            "empirical": 0.25,
+            "absolute_error": 0.06645469690575692,
+            "brier": 0.14758224327080044
+          },
+          "0.05": {
+            "predicted": 0.7478224526964425,
+            "empirical": 0.75,
+            "absolute_error": 0.002177547303557459,
+            "brier": 0.11336500124901516
+          },
+          "0.07": {
+            "predicted": 0.9861671482868083,
+            "empirical": 1.0,
+            "absolute_error": 0.013832851713191707,
+            "brier": 0.000588963079504615
+          }
+        },
+        "map_theta": {
+          "predicted": 0.7478224526964425,
+          "empirical": 0.75,
+          "absolute_error_pp": 0.21775473035574588,
+          "brier": 0.11336500124901516
+        }
+      },
+      "high_school_mathematics": {
+        "n": 20,
+        "mae": 0.008628459476060397,
+        "rmse": 0.01003431150743366,
+        "r2": -0.464214214119679,
+        "spearman": 0.13082706766917293,
+        "std_ratio": 0.6167634672489519,
+        "train_mean_mae": 0.007127031286884295,
+        "theta": {
+          "0.03": {
+            "predicted": 0.42829855271590506,
+            "empirical": 0.65,
+            "absolute_error": 0.22170144728409497,
+            "brier": 0.2564411483536867
+          },
+          "0.05": {
+            "predicted": 0.9195676502157673,
+            "empirical": 1.0,
+            "absolute_error": 0.08043234978423275,
+            "brier": 0.010923042758116081
+          },
+          "0.07": {
+            "predicted": 0.9985441048215181,
+            "empirical": 1.0,
+            "absolute_error": 0.0014558951784818808,
+            "brier": 7.290737355491547e-06
+          }
+        },
+        "map_theta": {
+          "predicted": 0.9195676502157673,
+          "empirical": 1.0,
+          "absolute_error_pp": 8.043234978423275,
+          "brier": 0.010923042758116081
+        }
+      },
+      "professional_law": {
+        "n": 20,
+        "mae": 0.0063426016625463336,
+        "rmse": 0.009471593904684507,
+        "r2": -0.31042994319743045,
+        "spearman": 0.3398496240601503,
+        "std_ratio": 0.5407227048329978,
+        "train_mean_mae": 0.006531959120184183,
+        "theta": {
+          "0.03": {
+            "predicted": 0.025168343691574353,
+            "empirical": 0.0,
+            "absolute_error": 0.025168343691574353,
+            "brier": 0.0014277969199941276
+          },
+          "0.05": {
+            "predicted": 0.3520464258989496,
+            "empirical": 0.1,
+            "absolute_error": 0.25204642589894954,
+            "brier": 0.1237529893021333
+          },
+          "0.07": {
+            "predicted": 0.8975461962561715,
+            "empirical": 0.85,
+            "absolute_error": 0.04754619625617151,
+            "brier": 0.12109768947939765
+          }
+        },
+        "map_theta": {
+          "predicted": 0.3520464258989496,
+          "empirical": 0.1,
+          "absolute_error_pp": 25.204642589894956,
+          "brier": 0.1237529893021333
+        }
+      }
+    },
+    "test": {
+      "__all__": {
+        "n": 120,
+        "mae": 0.008378594420696732,
+        "rmse": 0.010352958219172967,
+        "r2": 0.4730546668260144,
+        "spearman": 0.678567956108063,
+        "std_ratio": 0.5902109021310985,
+        "train_mean_mae": 0.011942243150487126,
+        "theta": {
+          "0.03": {
+            "predicted": 0.20330323081602303,
+            "empirical": 0.20833333333333334,
+            "absolute_error": 0.005030102517310314,
+            "brier": 0.1255412612275381
+          },
+          "0.05": {
+            "predicted": 0.7259115013789262,
+            "empirical": 0.7,
+            "absolute_error": 0.025911501378926283,
+            "brier": 0.1274601225884683
+          },
+          "0.07": {
+            "predicted": 0.975847891201258,
+            "empirical": 0.9666666666666667,
+            "absolute_error": 0.009181224534591359,
+            "brier": 0.028035499962845066
+          }
+        },
+        "map_theta": {
+          "predicted": 0.7259115013789262,
+          "empirical": 0.7,
+          "absolute_error_pp": 2.5911501378926283,
+          "brier": 0.1274601225884683
+        }
+      },
+      "abstract_algebra": {
+        "n": 20,
+        "mae": 0.009016629020748472,
+        "rmse": 0.010691347244013813,
+        "r2": 0.07442117066414855,
+        "spearman": 0.4060150375939849,
+        "std_ratio": 0.5391961675404431,
+        "train_mean_mae": 0.011141371036258835,
+        "theta": {
+          "0.03": {
+            "predicted": 0.2086795300487687,
+            "empirical": 0.15,
+            "absolute_error": 0.05867953004876872,
+            "brier": 0.145538146792101
+          },
+          "0.05": {
+            "predicted": 0.78333421886687,
+            "empirical": 0.85,
+            "absolute_error": 0.06666578113312993,
+            "brier": 0.11419731174225187
+          },
+          "0.07": {
+            "predicted": 0.9927300531075846,
+            "empirical": 1.0,
+            "absolute_error": 0.0072699468924154464,
+            "brier": 0.00012147139056496994
+          }
+        },
+        "map_theta": {
+          "predicted": 0.78333421886687,
+          "empirical": 0.85,
+          "absolute_error_pp": 6.666578113312993,
+          "brier": 0.11419731174225187
+        }
+      },
+      "anatomy": {
+        "n": 20,
+        "mae": 0.006301476310762467,
+        "rmse": 0.007959861912856248,
+        "r2": -0.144457333972152,
+        "spearman": 0.21804511278195485,
+        "std_ratio": 0.5801108317771546,
+        "train_mean_mae": 0.0062152623198926445,
+        "theta": {
+          "0.03": {
+            "predicted": 0.2883111774351038,
+            "empirical": 0.2,
+            "absolute_error": 0.0883111774351038,
+            "brier": 0.15893828867402968
+          },
+          "0.05": {
+            "predicted": 0.8635472482927158,
+            "empirical": 0.95,
+            "absolute_error": 0.08645275170728417,
+            "brier": 0.0720586633303208
+          },
+          "0.07": {
+            "predicted": 0.9964836984992391,
+            "empirical": 1.0,
+            "absolute_error": 0.0035163015007608767,
+            "brier": 3.996164044056155e-05
+          }
+        },
+        "map_theta": {
+          "predicted": 0.8635472482927158,
+          "empirical": 0.95,
+          "absolute_error_pp": 8.645275170728418,
+          "brier": 0.0720586633303208
+        }
+      },
+      "astronomy": {
+        "n": 20,
+        "mae": 0.010346995606425087,
+        "rmse": 0.013288690726904471,
+        "r2": -0.05937030372351515,
+        "spearman": 0.14285714285714285,
+        "std_ratio": 0.35452171356527484,
+        "train_mean_mae": 0.010990528394354552,
+        "theta": {
+          "0.03": {
+            "predicted": 0.1769180432237834,
+            "empirical": 0.2,
+            "absolute_error": 0.023081956776216606,
+            "brier": 0.1395451499076668
+          },
+          "0.05": {
+            "predicted": 0.7862797547884425,
+            "empirical": 0.8,
+            "absolute_error": 0.013720245211557569,
+            "brier": 0.17397453138321523
+          },
+          "0.07": {
+            "predicted": 0.9926873083521695,
+            "empirical": 0.95,
+            "absolute_error": 0.042687308352169495,
+            "brier": 0.04977237393619583
+          }
+        },
+        "map_theta": {
+          "predicted": 0.7862797547884425,
+          "empirical": 0.8,
+          "absolute_error_pp": 1.372024521155757,
+          "brier": 0.17397453138321523
+        }
+      },
+      "college_computer_science": {
+        "n": 20,
+        "mae": 0.00760883621602975,
+        "rmse": 0.008824874643758168,
+        "r2": 0.3736616315406083,
+        "spearman": 0.6466165413533834,
+        "std_ratio": 0.49363068629105505,
+        "train_mean_mae": 0.009730783333951557,
+        "theta": {
+          "0.03": {
+            "predicted": 0.13346298241404358,
+            "empirical": 0.15,
+            "absolute_error": 0.01653701758595641,
+            "brier": 0.09107570880694307
+          },
+          "0.05": {
+            "predicted": 0.6818377929635256,
+            "empirical": 0.65,
+            "absolute_error": 0.031837792963525624,
+            "brier": 0.18705742387798832
+          },
+          "0.07": {
+            "predicted": 0.9787776037465978,
+            "empirical": 1.0,
+            "absolute_error": 0.021222396253402165,
+            "brier": 0.0010514179004984736
+          }
+        },
+        "map_theta": {
+          "predicted": 0.6818377929635256,
+          "empirical": 0.65,
+          "absolute_error_pp": 3.1837792963525624,
+          "brier": 0.18705742387798832
+        }
+      },
+      "high_school_mathematics": {
+        "n": 20,
+        "mae": 0.007455831550749303,
+        "rmse": 0.00950748726471937,
+        "r2": 0.2054955109051806,
+        "spearman": 0.4947368421052631,
+        "std_ratio": 0.5585518085708612,
+        "train_mean_mae": 0.008071525988021962,
+        "theta": {
+          "0.03": {
+            "predicted": 0.3921047686315696,
+            "empirical": 0.55,
+            "absolute_error": 0.15789523136843042,
+            "brier": 0.21751081575607137
+          },
+          "0.05": {
+            "predicted": 0.8985731784774288,
+            "empirical": 0.9,
+            "absolute_error": 0.001426821522571231,
+            "brier": 0.07950098716165463
+          },
+          "0.07": {
+            "predicted": 0.998004296649035,
+            "empirical": 1.0,
+            "absolute_error": 0.0019957033509649946,
+            "brier": 8.203155521758709e-06
+          }
+        },
+        "map_theta": {
+          "predicted": 0.8985731784774288,
+          "empirical": 0.9,
+          "absolute_error_pp": 0.1426821522571231,
+          "brier": 0.07950098716165463
+        }
+      },
+      "professional_law": {
+        "n": 20,
+        "mae": 0.0095417978194653,
+        "rmse": 0.010980807254553814,
+        "r2": -0.8569325351521271,
+        "spearman": 0.15789473684210525,
+        "std_ratio": 0.41903124509656225,
+        "train_mean_mae": 0.006756949983537197,
+        "theta": {
+          "0.03": {
+            "predicted": 0.020342883142869025,
+            "empirical": 0.0,
+            "absolute_error": 0.020342883142869025,
+            "brier": 0.0006394574284166446
+          },
+          "0.05": {
+            "predicted": 0.3418968148845746,
+            "empirical": 0.05,
+            "absolute_error": 0.2918968148845746,
+            "brier": 0.13797181803537906
+          },
+          "0.07": {
+            "predicted": 0.8964043868529226,
+            "empirical": 0.85,
+            "absolute_error": 0.046404386852922586,
+            "brier": 0.11721957175384883
+          }
+        },
+        "map_theta": {
+          "predicted": 0.3418968148845746,
+          "empirical": 0.05,
+          "absolute_error_pp": 29.18968148845746,
+          "brier": 0.13797181803537906
+        }
+      }
+    },
+    "domain_map": {
+      "abstract_algebra": 0.78333421886687,
+      "anatomy": 0.8635472482927158,
+      "astronomy": 0.7862797547884425,
+      "college_computer_science": 0.6818377929635256,
+      "high_school_mathematics": 0.8985731784774288,
+      "professional_law": 0.3418968148845746
+    },
+    "worst_domain": "professional_law",
+    "empty_cache_confirmed": true,
+    "archive": "live_check/live_result.zip"
+  },
+  "notebook_plot_cell_executed": true,
+  "plots": [
+    "live_check/plot_1.png",
+    "live_check/plot_2.png",
+    "live_check/plot_3.png"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": 15,
+  "fits": 105,
+  "acquisition_events": 90,
+  "numerical_max_difference": 1.734723475976807e-18,
+  "baseline_prediction_regression": {
+    "labeled_identical": true,
+    "mu_max_difference": 0.0,
+    "sigma_max_difference": 0.0
+  },
+  "gates": {
+    "bge_mean": {
+      "theta_improves_10_percent": true,
+      "mae_not_worse_2_percent": false,
+      "worst_hits_not_lower": true
+    },
+    "bge_cls": {
+      "theta_improves_10_percent": true,
+      "mae_not_worse_2_percent": false,
+      "worst_hits_not_lower": true
+    }
+  },
+  "scope": "File audit on actual product split and every sigma step; clustering called by original product code in verified Colab job; zero local GP fits."
+}

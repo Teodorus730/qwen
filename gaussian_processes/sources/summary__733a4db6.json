@@ -1,0 +1,415 @@
+{
+  "job_id": "b78abbd5539c47b0899d13970b3e8ee4",
+  "scope": "Diagnostic of the already-inspected old product pool; not independent confirmation.",
+  "cases": 20,
+  "records": [
+    {
+      "seed": 100,
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007436374573819221,
+          "r2": 0.5198437938924806,
+          "theta_error": 0.11468102957740445
+        },
+        "test": {
+          "mae": 0.008378594420696732,
+          "r2": 0.4730546668260144,
+          "theta_error": 0.08200003457044051
+        }
+      }
+    },
+    {
+      "seed": 100,
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.00805710535014644,
+          "r2": 0.4204946593312987,
+          "theta_error": 0.07809183759251379
+        },
+        "test": {
+          "mae": 0.007786329833087645,
+          "r2": 0.53443166151638,
+          "theta_error": 0.06752639028164054
+        }
+      }
+    },
+    {
+      "seed": 100,
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007798726194328574,
+          "r2": 0.45146518195718344,
+          "theta_error": 0.1527509220792412
+        },
+        "test": {
+          "mae": 0.00829118785016547,
+          "r2": 0.4955061969919945,
+          "theta_error": 0.09922003415113763
+        }
+      }
+    },
+    {
+      "seed": 100,
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.007881853315826715,
+          "r2": 0.4391197092519662,
+          "theta_error": 0.10094631313045521
+        },
+        "test": {
+          "mae": 0.007356019555336105,
+          "r2": 0.5596514446856242,
+          "theta_error": 0.07594649517106102
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007334920620641531,
+          "r2": 0.5274105036669199,
+          "theta_error": 0.11522429238046124
+        },
+        "test": {
+          "mae": 0.008293462789418699,
+          "r2": 0.4722359298224279,
+          "theta_error": 0.08951550267953035
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.007979900859594427,
+          "r2": 0.43612459834503214,
+          "theta_error": 0.08009932730658792
+        },
+        "test": {
+          "mae": 0.007840528379110919,
+          "r2": 0.5182849715358833,
+          "theta_error": 0.06797466493576902
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007486691680878471,
+          "r2": 0.4850112185472225,
+          "theta_error": 0.11367760485296212
+        },
+        "test": {
+          "mae": 0.008772969761582225,
+          "r2": 0.45324778649751796,
+          "theta_error": 0.0854404021902964
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.008026242751754644,
+          "r2": 0.4348949721075084,
+          "theta_error": 0.06207758068665026
+        },
+        "test": {
+          "mae": 0.007936850309040748,
+          "r2": 0.514752139940587,
+          "theta_error": 0.056035063513308385
+        }
+      }
+    },
+    {
+      "seed": 102,
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007253705522828391,
+          "r2": 0.5176103764497967,
+          "theta_error": 0.10950625167575441
+        },
+        "test": {
+          "mae": 0.008013355439090446,
+          "r2": 0.4997739826405374,
+          "theta_error": 0.08491502773591648
+        }
+      }
+    },
+    {
+      "seed": 102,
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.007855485670008969,
+          "r2": 0.4642062516291934,
+          "theta_error": 0.06073892718105339
+        },
+        "test": {
+          "mae": 0.007707614920134054,
+          "r2": 0.5157285554648288,
+          "theta_error": 0.07301511873124446
+        }
+      }
+    },
+    {
+      "seed": 102,
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.0076960376361356695,
+          "r2": 0.47525460844694045,
+          "theta_error": 0.15581087196424234
+        },
+        "test": {
+          "mae": 0.00850308835566725,
+          "r2": 0.463085123284251,
+          "theta_error": 0.1135098809183032
+        }
+      }
+    },
+    {
+      "seed": 102,
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.007867940218382474,
+          "r2": 0.4596824358039714,
+          "theta_error": 0.113151410701105
+        },
+        "test": {
+          "mae": 0.007769134741129685,
+          "r2": 0.5366212238335444,
+          "theta_error": 0.0986540614920783
+        }
+      }
+    },
+    {
+      "seed": 103,
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007329847111528034,
+          "r2": 0.5091380647748298,
+          "theta_error": 0.13090786408578498
+        },
+        "test": {
+          "mae": 0.00833696512472867,
+          "r2": 0.47291866821532746,
+          "theta_error": 0.094713182077572
+        }
+      }
+    },
+    {
+      "seed": 103,
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.008039062982981392,
+          "r2": 0.42522152516658096,
+          "theta_error": 0.09350436811172842
+        },
+        "test": {
+          "mae": 0.007859645409421299,
+          "r2": 0.519743798100634,
+          "theta_error": 0.06705890608012384
+        }
+      }
+    },
+    {
+      "seed": 103,
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007577933816120936,
+          "r2": 0.48220710064289696,
+          "theta_error": 0.12647495808057035
+        },
+        "test": {
+          "mae": 0.00854164329108204,
+          "r2": 0.474374151616736,
+          "theta_error": 0.08874286828436935
+        }
+      }
+    },
+    {
+      "seed": 103,
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.008242948500825116,
+          "r2": 0.4059286182404642,
+          "theta_error": 0.07070314111399778
+        },
+        "test": {
+          "mae": 0.007831737530809806,
+          "r2": 0.5287141991923466,
+          "theta_error": 0.0577667146636889
+        }
+      }
+    },
+    {
+      "seed": 104,
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007462738844612631,
+          "r2": 0.4871479100228965,
+          "theta_error": 0.12013267876404173
+        },
+        "test": {
+          "mae": 0.008200778670052106,
+          "r2": 0.47173330104874733,
+          "theta_error": 0.08301594129486227
+        }
+      }
+    },
+    {
+      "seed": 104,
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.00766161141901085,
+          "r2": 0.45034140734259165,
+          "theta_error": 0.07786472815841572
+        },
+        "test": {
+          "mae": 0.007788282749345079,
+          "r2": 0.5190321910667312,
+          "theta_error": 0.0820358709841116
+        }
+      }
+    },
+    {
+      "seed": 104,
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "metrics": {
+        "validation": {
+          "mae": 0.007992931175963485,
+          "r2": 0.4574631844288338,
+          "theta_error": 0.1495930514927918
+        },
+        "test": {
+          "mae": 0.008709200021236459,
+          "r2": 0.4445932136776608,
+          "theta_error": 0.11736281268439668
+        }
+      }
+    },
+    {
+      "seed": 104,
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "metrics": {
+        "validation": {
+          "mae": 0.007740556607577816,
+          "r2": 0.4644682244879791,
+          "theta_error": 0.10594608705198956
+        },
+        "test": {
+          "mae": 0.007786210651852065,
+          "r2": 0.5347799217324353,
+          "theta_error": 0.09787093435430931
+        }
+      }
+    }
+  ],
+  "aggregates": [
+    {
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "part": "validation",
+      "mae": 0.007363517334685962,
+      "r2": 0.5122301297613847,
+      "theta_error": 0.11809042329668935
+    },
+    {
+      "sampling": "mini_mean",
+      "encoder": "mini_mean",
+      "part": "test",
+      "mae": 0.00824463128879733,
+      "r2": 0.4779433097106109,
+      "theta_error": 0.08683193767166433
+    },
+    {
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "part": "validation",
+      "mae": 0.007918633256348416,
+      "r2": 0.43927768836293934,
+      "theta_error": 0.07805983767005985
+    },
+    {
+      "sampling": "mini_mean",
+      "encoder": "bge_cls",
+      "part": "test",
+      "mae": 0.0077964802582197994,
+      "r2": 0.5214442355368913,
+      "theta_error": 0.07152219020257788
+    },
+    {
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "part": "validation",
+      "mae": 0.007710464100685427,
+      "r2": 0.47028025880461544,
+      "theta_error": 0.1396614816939616
+    },
+    {
+      "sampling": "bge_cls",
+      "encoder": "mini_mean",
+      "part": "test",
+      "mae": 0.008563617855946688,
+      "r2": 0.466161294413632,
+      "theta_error": 0.10085519964570064
+    },
+    {
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "part": "validation",
+      "mae": 0.007951908278873354,
+      "r2": 0.44081879197837787,
+      "theta_error": 0.09056490653683956
+    },
+    {
+      "sampling": "bge_cls",
+      "encoder": "bge_cls",
+      "part": "test",
+      "mae": 0.007735990557633682,
+      "r2": 0.5349037858769075,
+      "theta_error": 0.07725465383888917
+    }
+  ],
+  "same_encoder_sampling_regression_tolerance": 1e-12,
+  "new_qwen_measurements": 0
+}

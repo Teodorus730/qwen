@@ -1,0 +1,9 @@
+{
+  "scipy_js_squared_max_error": 7.957549305603884e-08,
+  "full_topk_equals_exact_max_error": 5.960464477539063e-08,
+  "identical_logits_max_js": 0.0,
+  "disjoint_limit": 0.6931471824645996,
+  "positions_checked": 23,
+  "last_position_included": true,
+  "passed": true
+}

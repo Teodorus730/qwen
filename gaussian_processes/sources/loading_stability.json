@@ -1,0 +1,180 @@
+{
+  "job_id": "9b63af9568244db6b831a2bd7cd5758e",
+  "passed": true,
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "cuda_build": "13.0",
+    "gpu": "Tesla T4",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": true,
+    "deterministic": false,
+    "packages": {
+      "transformers": "5.17.0",
+      "huggingface-hub": "1.31.0",
+      "accelerate": "1.15.0"
+    },
+    "optional_kernels": {
+      "causal_conv1d": false,
+      "fla": false
+    }
+  },
+  "cases": [
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "4bc54a831abd2caea1f6c97d927f7e8140498a10d3195ff97f426e4bf7434e3f",
+      "dataset": "controlled",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.002527683973312378,
+      "old_cache_mean_difference": -9.42125916481018e-06,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "ec53298dad06f56ff3eed7075dd93b8380053852332e421b5d6f6cf2e6eec6c1",
+      "dataset": "controlled",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0020794272422790527,
+      "old_cache_mean_difference": -1.7896294593811035e-05,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "d575e0ea70cacd869c832dd8090e88b74c31ff9939d323ce94afc9d27f9faaf4",
+      "dataset": "natural_fold0",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.005562633275985718,
+      "old_cache_mean_difference": -4.727020859718323e-05,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "fb44c0b53cf129d7b059019be2cffde045712be55526dfae2fc92d9158363efa",
+      "dataset": "natural_fold0",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0046969205141067505,
+      "old_cache_mean_difference": 4.474073648452759e-06,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "d1a9edbac2c2fc38cc8599c8441640e01cff7472e57e30c3da6b2c274bf31c5b",
+      "dataset": "natural_fold1",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.002557814121246338,
+      "old_cache_mean_difference": -1.6860663890838623e-05,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "fb293181231583cc5cd020c0282cc483c3e1220be8aadcb1f35927b3c9240759",
+      "dataset": "natural_fold1",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0016420483589172363,
+      "old_cache_mean_difference": 3.919005393981934e-06,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "916d996c16634ae351dde9e458280cd3b0cde225f760140bb48f9f6483753f5e",
+      "dataset": "natural_fold2",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0018985234200954437,
+      "old_cache_mean_difference": -1.95428729057312e-05,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "cpu_then_cuda",
+      "sample_id": "ff3e125f8a24969d4aa83a1cae42cadcc199b2b9c13c4701b5a468b7f290c973",
+      "dataset": "natural_fold2",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0028238296508789062,
+      "old_cache_mean_difference": -9.354203939437866e-06,
+      "epsilon005_decision_identical": true
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "4bc54a831abd2caea1f6c97d927f7e8140498a10d3195ff97f426e4bf7434e3f",
+      "dataset": "controlled",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.002527683973312378,
+      "old_cache_mean_difference": -9.42125916481018e-06,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "ec53298dad06f56ff3eed7075dd93b8380053852332e421b5d6f6cf2e6eec6c1",
+      "dataset": "controlled",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0020794272422790527,
+      "old_cache_mean_difference": -1.7896294593811035e-05,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "d575e0ea70cacd869c832dd8090e88b74c31ff9939d323ce94afc9d27f9faaf4",
+      "dataset": "natural_fold0",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.005562633275985718,
+      "old_cache_mean_difference": -4.727020859718323e-05,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "fb44c0b53cf129d7b059019be2cffde045712be55526dfae2fc92d9158363efa",
+      "dataset": "natural_fold0",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0046969205141067505,
+      "old_cache_mean_difference": 4.474073648452759e-06,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "d1a9edbac2c2fc38cc8599c8441640e01cff7472e57e30c3da6b2c274bf31c5b",
+      "dataset": "natural_fold1",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.002557814121246338,
+      "old_cache_mean_difference": -1.6860663890838623e-05,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "fb293181231583cc5cd020c0282cc483c3e1220be8aadcb1f35927b3c9240759",
+      "dataset": "natural_fold1",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0016420483589172363,
+      "old_cache_mean_difference": 3.919005393981934e-06,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "916d996c16634ae351dde9e458280cd3b0cde225f760140bb48f9f6483753f5e",
+      "dataset": "natural_fold2",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0018985234200954437,
+      "old_cache_mean_difference": -1.95428729057312e-05,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    },
+    {
+      "loading": "device_map_cuda",
+      "sample_id": "ff3e125f8a24969d4aa83a1cae42cadcc199b2b9c13c4701b5a468b7f290c973",
+      "dataset": "natural_fold2",
+      "repeat_max_difference": 0.0,
+      "old_cache_token_max_difference": 0.0028238296508789062,
+      "old_cache_mean_difference": -9.354203939437866e-06,
+      "epsilon005_decision_identical": true,
+      "other_loading_token_max_difference": 0.0
+    }
+  ],
+  "pair_forwards": 32,
+  "epsilon005_same_for_all_audited": true,
+  "semantics": "Comparisons isolate loading mode within this environment; historic CUDA/package changes are not isolated here.",
+  "seconds": 53.59009985900002
+}

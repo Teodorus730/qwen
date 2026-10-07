@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 15,
+  "checked_acquisition_steps": 90,
+  "maximum_metric_difference": 0.0,
+  "physical_new_qwen_measurements": 575,
+  "promotion_gates_verified": true,
+  "validation_chosen": "mini_mean",
+  "text_overlap_with_previous_pools": 0
+}

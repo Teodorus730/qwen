@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "job_id": "ee5cc0060a5140c4bc585dca44661c80",
+  "cases": 40,
+  "numerical_max_difference": 2.168404344971009e-19,
+  "feature_checks": [
+    {
+      "dataset": "controlled",
+      "unchanged_documents": 561,
+      "unchanged_feature_max_difference": 0.0
+    },
+    {
+      "dataset": "natural_fold0",
+      "unchanged_documents": 474,
+      "unchanged_feature_max_difference": 0.0
+    },
+    {
+      "dataset": "natural_fold1",
+      "unchanged_documents": 469,
+      "unchanged_feature_max_difference": 1.2665987014770508e-07
+    },
+    {
+      "dataset": "natural_fold2",
+      "unchanged_documents": 469,
+      "unchanged_feature_max_difference": 1.4901161193847656e-07
+    }
+  ],
+  "candidate_for_product_check": false,
+  "default_changed": false
+}
