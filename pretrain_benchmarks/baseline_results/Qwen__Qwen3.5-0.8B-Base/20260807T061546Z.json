@@ -1,0 +1,526 @@
+{
+  "run_id": "20260807T061546Z",
+  "timestamp_utc": "2026-08-07T06:15:46.838065+00:00",
+  "model_id": "Qwen/Qwen3.5-0.8B-Base",
+  "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+  "backend": "xpu",
+  "device": "xpu:0",
+  "accelerator_name": "Intel(R) Arc(TM) A770 Graphics",
+  "dtype": "bfloat16",
+  "torch": "2.13.0+xpu",
+  "transformers": "5.10.2",
+  "lm_eval": "0.4.12",
+  "package_versions": {
+    "torch": "2.13.0+xpu",
+    "transformers": "5.10.2",
+    "lm-eval": "0.4.12",
+    "datasets": "4.8.5",
+    "huggingface_hub": "1.23.0",
+    "tokenizers": "0.22.2",
+    "accelerate": "1.14.0",
+    "safetensors": "0.8.0"
+  },
+  "tasks": [
+    "wikitext",
+    "lambada_openai",
+    "hellaswag",
+    "arc_easy",
+    "piqa"
+  ],
+  "num_fewshot": 0,
+  "seed": 42,
+  "batch_size_policy": "auto",
+  "model_args": "pretrained=Qwen/Qwen3.5-0.8B-Base,revision=dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68,dtype=bfloat16,backend=causal,max_length=2048",
+  "command": [
+    "C:\\Users\\pervo\\PycharmProjects\\qwen2\\.venv\\Scripts\\python.exe",
+    "-m",
+    "lm_eval",
+    "--model",
+    "hf",
+    "--model_args",
+    "pretrained=Qwen/Qwen3.5-0.8B-Base,revision=dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68,dtype=bfloat16,backend=causal,max_length=2048",
+    "--tasks",
+    "wikitext,lambada_openai,hellaswag,arc_easy,piqa",
+    "--device",
+    "xpu:0",
+    "--batch_size",
+    "auto",
+    "--num_fewshot",
+    "0",
+    "--seed",
+    "42",
+    "--output_path",
+    "pretrain_benchmarks\\results\\Qwen__Qwen3.5-0.8B-Base\\20260807T061546Z"
+  ],
+  "task_versions": {
+    "arc_easy": 1.0,
+    "hellaswag": 1.0,
+    "lambada_openai": 1.0,
+    "piqa": 1.0,
+    "wikitext": 2.0
+  },
+  "dataset_identifiers": {
+    "arc_easy": {
+      "dataset_path": "allenai/ai2_arc",
+      "dataset_name": "ARC-Easy",
+      "dataset_kwargs": {},
+      "dataset_revision": null
+    },
+    "hellaswag": {
+      "dataset_path": "Rowan/hellaswag",
+      "dataset_name": null,
+      "dataset_kwargs": {},
+      "dataset_revision": null
+    },
+    "lambada_openai": {
+      "dataset_path": "EleutherAI/lambada_openai",
+      "dataset_name": "default",
+      "dataset_kwargs": {},
+      "dataset_revision": null
+    },
+    "piqa": {
+      "dataset_path": "baber/piqa",
+      "dataset_name": null,
+      "dataset_kwargs": {},
+      "dataset_revision": null
+    },
+    "wikitext": {
+      "dataset_path": "EleutherAI/wikitext_document_level",
+      "dataset_name": "wikitext-2-raw-v1",
+      "dataset_kwargs": {},
+      "dataset_revision": null
+    }
+  },
+  "lm_eval_aggregate": {
+    "results": {
+      "wikitext": {
+        "name": "wikitext",
+        "alias": "wikitext",
+        "sample_len": 62,
+        "word_perplexity,none": 19.2195992561004,
+        "word_perplexity_stderr,none": "N/A",
+        "byte_perplexity,none": 1.7380673704772327,
+        "byte_perplexity_stderr,none": "N/A",
+        "bits_per_byte,none": 0.7974840045744408,
+        "bits_per_byte_stderr,none": "N/A"
+      },
+      "lambada_openai": {
+        "name": "lambada_openai",
+        "alias": "lambada_openai",
+        "sample_len": 5153,
+        "perplexity,none": 11.66613371683548,
+        "perplexity_stderr,none": 0.3577547892813593,
+        "acc,none": 0.5076654376091597,
+        "acc_stderr,none": 0.006965158982245362
+      },
+      "hellaswag": {
+        "name": "hellaswag",
+        "alias": "hellaswag",
+        "sample_len": 10042,
+        "acc,none": 0.42013543118900615,
+        "acc_stderr,none": 0.0049257170080997115,
+        "acc_norm,none": 0.5483967337183828,
+        "acc_norm_stderr,none": 0.004966351835028203
+      },
+      "arc_easy": {
+        "name": "arc_easy",
+        "alias": "arc_easy",
+        "sample_len": 2376,
+        "acc,none": 0.70496632996633,
+        "acc_stderr,none": 0.009358110551087423,
+        "acc_norm,none": 0.6746632996632996,
+        "acc_norm_stderr,none": 0.0096134277089962
+      },
+      "piqa": {
+        "name": "piqa",
+        "alias": "piqa",
+        "sample_len": 1838,
+        "acc,none": 0.7018498367791077,
+        "acc_stderr,none": 0.010672964114008296,
+        "acc_norm,none": 0.7154515778019587,
+        "acc_norm_stderr,none": 0.01052721846413062
+      }
+    },
+    "group_subtasks": {},
+    "configs": {
+      "arc_easy": {
+        "task": "arc_easy",
+        "dataset_path": "allenai/ai2_arc",
+        "dataset_name": "ARC-Easy",
+        "training_split": "train",
+        "validation_split": "validation",
+        "test_split": "test",
+        "doc_to_text": "Question: {{question}}\nAnswer:",
+        "doc_to_target": "{{choices.label.index(answerKey)}}",
+        "unsafe_code": false,
+        "doc_to_choice": "{{choices.text}}",
+        "description": "",
+        "target_delimiter": " ",
+        "fewshot_delimiter": "\n\n",
+        "fewshot_config": {
+          "sampler": "default",
+          "split": null,
+          "process_docs": null,
+          "fewshot_indices": null,
+          "samples": null,
+          "doc_to_text": "Question: {{question}}\nAnswer:",
+          "doc_to_choice": "{{choices.text}}",
+          "doc_to_target": "{{choices.label.index(answerKey)}}",
+          "gen_prefix": null,
+          "fewshot_delimiter": "\n\n",
+          "target_delimiter": " "
+        },
+        "num_fewshot": 0,
+        "metric_list": [
+          {
+            "metric": "acc",
+            "aggregation": "mean",
+            "higher_is_better": true
+          },
+          {
+            "metric": "acc_norm",
+            "aggregation": "mean",
+            "higher_is_better": true
+          }
+        ],
+        "output_type": "multiple_choice",
+        "repeats": 1,
+        "should_decontaminate": true,
+        "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+        "metadata": {
+          "version": 1.0,
+          "pretrained": "Qwen/Qwen3.5-0.8B-Base",
+          "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+          "dtype": "bfloat16",
+          "backend": "causal",
+          "max_length": 2048,
+          "config_source": "C:\\Users\\pervo\\PycharmProjects\\qwen2\\.venv\\Lib\\site-packages\\lm_eval\\tasks\\arc\\arc_easy.yaml"
+        }
+      },
+      "hellaswag": {
+        "task": "hellaswag",
+        "dataset_path": "Rowan/hellaswag",
+        "training_split": "train",
+        "validation_split": "validation",
+        "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+        "doc_to_text": "{{query}}",
+        "doc_to_target": "{{label}}",
+        "unsafe_code": false,
+        "doc_to_choice": "choices",
+        "description": "",
+        "target_delimiter": " ",
+        "fewshot_delimiter": "\n\n",
+        "fewshot_config": {
+          "sampler": "default",
+          "split": null,
+          "process_docs": "<function process_docs at 0x000001FF76192A20>",
+          "fewshot_indices": null,
+          "samples": null,
+          "doc_to_text": "{{query}}",
+          "doc_to_choice": "choices",
+          "doc_to_target": "{{label}}",
+          "gen_prefix": null,
+          "fewshot_delimiter": "\n\n",
+          "target_delimiter": " "
+        },
+        "num_fewshot": 0,
+        "metric_list": [
+          {
+            "metric": "acc",
+            "aggregation": "mean",
+            "higher_is_better": true
+          },
+          {
+            "metric": "acc_norm",
+            "aggregation": "mean",
+            "higher_is_better": true
+          }
+        ],
+        "output_type": "multiple_choice",
+        "repeats": 1,
+        "should_decontaminate": false,
+        "metadata": {
+          "version": 1.0,
+          "pretrained": "Qwen/Qwen3.5-0.8B-Base",
+          "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+          "dtype": "bfloat16",
+          "backend": "causal",
+          "max_length": 2048,
+          "config_source": "C:\\Users\\pervo\\PycharmProjects\\qwen2\\.venv\\Lib\\site-packages\\lm_eval\\tasks\\hellaswag\\hellaswag.yaml"
+        }
+      },
+      "lambada_openai": {
+        "task": "lambada_openai",
+        "dataset_path": "EleutherAI/lambada_openai",
+        "dataset_name": "default",
+        "test_split": "test",
+        "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+        "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+        "unsafe_code": false,
+        "description": "",
+        "target_delimiter": " ",
+        "fewshot_delimiter": "\n\n",
+        "fewshot_config": {
+          "sampler": "default",
+          "split": null,
+          "process_docs": null,
+          "fewshot_indices": null,
+          "samples": null,
+          "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+          "doc_to_choice": null,
+          "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+          "gen_prefix": null,
+          "fewshot_delimiter": "\n\n",
+          "target_delimiter": " "
+        },
+        "num_fewshot": 0,
+        "metric_list": [
+          {
+            "metric": "perplexity",
+            "aggregation": "perplexity",
+            "higher_is_better": false
+          },
+          {
+            "metric": "acc",
+            "aggregation": "mean",
+            "higher_is_better": true
+          }
+        ],
+        "output_type": "loglikelihood",
+        "repeats": 1,
+        "should_decontaminate": true,
+        "doc_to_decontamination_query": "{{text}}",
+        "metadata": {
+          "version": 1.0,
+          "pretrained": "Qwen/Qwen3.5-0.8B-Base",
+          "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+          "dtype": "bfloat16",
+          "backend": "causal",
+          "max_length": 2048,
+          "config_source": "C:\\Users\\pervo\\PycharmProjects\\qwen2\\.venv\\Lib\\site-packages\\lm_eval\\tasks\\lambada\\lambada_openai.yaml"
+        }
+      },
+      "piqa": {
+        "task": "piqa",
+        "dataset_path": "baber/piqa",
+        "training_split": "train",
+        "validation_split": "validation",
+        "doc_to_text": "Question: {{goal}}\nAnswer:",
+        "doc_to_target": "label",
+        "unsafe_code": false,
+        "doc_to_choice": "{{[sol1, sol2]}}",
+        "description": "",
+        "target_delimiter": " ",
+        "fewshot_delimiter": "\n\n",
+        "fewshot_config": {
+          "sampler": "default",
+          "split": null,
+          "process_docs": null,
+          "fewshot_indices": null,
+          "samples": null,
+          "doc_to_text": "Question: {{goal}}\nAnswer:",
+          "doc_to_choice": "{{[sol1, sol2]}}",
+          "doc_to_target": "label",
+          "gen_prefix": null,
+          "fewshot_delimiter": "\n\n",
+          "target_delimiter": " "
+        },
+        "num_fewshot": 0,
+        "metric_list": [
+          {
+            "metric": "acc",
+            "aggregation": "mean",
+            "higher_is_better": true
+          },
+          {
+            "metric": "acc_norm",
+            "aggregation": "mean",
+            "higher_is_better": true
+          }
+        ],
+        "output_type": "multiple_choice",
+        "repeats": 1,
+        "should_decontaminate": true,
+        "doc_to_decontamination_query": "goal",
+        "metadata": {
+          "version": 1.0,
+          "pretrained": "Qwen/Qwen3.5-0.8B-Base",
+          "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+          "dtype": "bfloat16",
+          "backend": "causal",
+          "max_length": 2048,
+          "config_source": "C:\\Users\\pervo\\PycharmProjects\\qwen2\\.venv\\Lib\\site-packages\\lm_eval\\tasks\\piqa\\piqa.yaml"
+        }
+      },
+      "wikitext": {
+        "task": "wikitext",
+        "dataset_path": "EleutherAI/wikitext_document_level",
+        "dataset_name": "wikitext-2-raw-v1",
+        "training_split": "train",
+        "validation_split": "validation",
+        "test_split": "test",
+        "doc_to_text": "",
+        "doc_to_target": "def wikitext_detokenizer(doc):\n    string = doc[\"page\"]\n    # contractions\n    string = string.replace(\"s '\", \"s'\")\n    string = re.sub(r\"/' [0-9]/\", r\"/'[0-9]/\", string)\n    # number separators\n    string = string.replace(\" @-@ \", \"-\")\n    string = string.replace(\" @,@ \", \",\")\n    string = string.replace(\" @.@ \", \".\")\n    # punctuation\n    string = string.replace(\" : \", \": \")\n    string = string.replace(\" ; \", \"; \")\n    string = string.replace(\" . \", \". \")\n    string = string.replace(\" ! \", \"! \")\n    string = string.replace(\" ? \", \"? \")\n    string = string.replace(\" , \", \", \")\n    # double brackets\n    string = re.sub(r\"\\(\\s*([^\\)]*?)\\s*\\)\", r\"(\\1)\", string)\n    string = re.sub(r\"\\[\\s*([^\\]]*?)\\s*\\]\", r\"[\\1]\", string)\n    string = re.sub(r\"{\\s*([^}]*?)\\s*}\", r\"{\\1}\", string)\n    string = re.sub(r\"\\\"\\s*([^\\\"]*?)\\s*\\\"\", r'\"\\1\"', string)\n    string = re.sub(r\"'\\s*([^']*?)\\s*'\", r\"'\\1'\", string)\n    # miscellaneous\n    string = string.replace(\"= = = =\", \"====\")\n    string = string.replace(\"= = =\", \"===\")\n    string = string.replace(\"= =\", \"==\")\n    string = string.replace(\" \" + chr(176) + \" \", chr(176))\n    string = string.replace(\" \\n\", \"\\n\")\n    string = string.replace(\"\\n \", \"\\n\")\n    string = string.replace(\" N \", \" 1 \")\n    string = string.replace(\" 's\", \"'s\")\n\n    return string\n",
+        "unsafe_code": false,
+        "process_results": "def process_results(doc, results):\n    (loglikelihood,) = results\n    # IMPORTANT: wikitext counts number of words in *original doc before detokenization*\n    _words = len(re.split(r\"\\s+\", doc[\"page\"]))\n    _bytes = len(doc[\"page\"].encode(\"utf-8\"))\n    return {\n        \"word_perplexity\": (loglikelihood, _words),\n        \"byte_perplexity\": (loglikelihood, _bytes),\n        \"bits_per_byte\": (loglikelihood, _bytes),\n    }\n",
+        "description": "",
+        "target_delimiter": " ",
+        "fewshot_delimiter": "\n\n",
+        "fewshot_config": {
+          "sampler": "default",
+          "split": null,
+          "process_docs": null,
+          "fewshot_indices": null,
+          "samples": null,
+          "doc_to_text": "",
+          "doc_to_choice": null,
+          "doc_to_target": "<function wikitext_detokenizer at 0x000001FF7526FA60>",
+          "gen_prefix": null,
+          "fewshot_delimiter": "\n\n",
+          "target_delimiter": " "
+        },
+        "num_fewshot": 0,
+        "metric_list": [
+          {
+            "metric": "word_perplexity"
+          },
+          {
+            "metric": "byte_perplexity"
+          },
+          {
+            "metric": "bits_per_byte"
+          }
+        ],
+        "output_type": "loglikelihood_rolling",
+        "repeats": 1,
+        "should_decontaminate": true,
+        "doc_to_decontamination_query": "{{page}}",
+        "metadata": {
+          "version": 2.0,
+          "pretrained": "Qwen/Qwen3.5-0.8B-Base",
+          "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+          "dtype": "bfloat16",
+          "backend": "causal",
+          "max_length": 2048,
+          "config_source": "C:\\Users\\pervo\\PycharmProjects\\qwen2\\.venv\\Lib\\site-packages\\lm_eval\\tasks\\wikitext\\wikitext.yaml"
+        }
+      }
+    },
+    "versions": {
+      "arc_easy": 1.0,
+      "hellaswag": 1.0,
+      "lambada_openai": 1.0,
+      "piqa": 1.0,
+      "wikitext": 2.0
+    },
+    "n-shot": {
+      "arc_easy": 0,
+      "hellaswag": 0,
+      "lambada_openai": 0,
+      "piqa": 0,
+      "wikitext": 0
+    },
+    "higher_is_better": {
+      "arc_easy": {
+        "acc": true,
+        "acc_norm": true
+      },
+      "hellaswag": {
+        "acc": true,
+        "acc_norm": true
+      },
+      "lambada_openai": {
+        "perplexity": false,
+        "acc": true
+      },
+      "piqa": {
+        "acc": true,
+        "acc_norm": true
+      },
+      "wikitext": {
+        "word_perplexity": false,
+        "byte_perplexity": false,
+        "bits_per_byte": false
+      }
+    },
+    "n-samples": {
+      "wikitext": {
+        "original": 62,
+        "effective": 62
+      },
+      "lambada_openai": {
+        "original": 5153,
+        "effective": 5153
+      },
+      "hellaswag": {
+        "original": 10042,
+        "effective": 10042
+      },
+      "arc_easy": {
+        "original": 2376,
+        "effective": 2376
+      },
+      "piqa": {
+        "original": 1838,
+        "effective": 1838
+      }
+    },
+    "config": {
+      "model": "hf",
+      "model_args": {
+        "pretrained": "Qwen/Qwen3.5-0.8B-Base",
+        "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+        "dtype": "bfloat16",
+        "backend": "causal",
+        "max_length": 2048
+      },
+      "model_num_parameters": 752393024,
+      "model_dtype": "torch.bfloat16",
+      "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "model_sha": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "batch_size": "auto",
+      "batch_sizes": [
+        32
+      ],
+      "device": "xpu:0",
+      "use_cache": null,
+      "limit": null,
+      "bootstrap_iters": 100000,
+      "gen_kwargs": {},
+      "random_seed": 42,
+      "numpy_seed": 42,
+      "torch_seed": 42,
+      "fewshot_seed": 42
+    },
+    "git_hash": "beb8740",
+    "date": 1786083357.7116418,
+    "pretty_env_info": "PyTorch version: 2.13.0+xpu\nIs debug build: False\nCUDA used to build PyTorch: None\nROCM used to build PyTorch: N/A\n\nOS: Microsoft Windows 11 Pro (10.0.26200 64-bit)\nGCC version: Could not collect\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: N/A\n\nPython version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)] (64-bit runtime)\nPython platform: Windows-10-10.0.26200-SP0\nIs CUDA available: False\nCUDA runtime version: No CUDA\nCUDA_MODULE_LOADING set to: N/A\nGPU models and configuration: No CUDA\nNvidia driver version: No CUDA\ncuDNN version: No CUDA\nIs XPU available: True\nXPU used to build PyTorch: 20260000\nIntel GPU driver version:\n* 32.0.101.8509 (20260502000000.******+***)\nIntel GPU models onboard:\n* Intel(R) Arc(TM) A770 Graphics\nIntel GPU models detected:\n* [0] _XpuDeviceProperties(name='Intel(R) Arc(TM) A770 Graphics', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0x56A0, uuid=8680a056-0800-0000-0300-000000000000, driver_version='1.14.36605', total_memory=15930MB, local_mem_size=64KB, last_level_cache_size=16384KB, max_compute_units=512, memory_clock_rate=0MHz, memory_bus_width=64-bit, gpu_eu_count=512, gpu_subslice_count=64, max_work_group_size=1024, max_num_sub_groups=128, sub_group_sizes=[8 16 32], has_fp16=1, has_fp64=0, has_atomic64=1, is_integrated_gpu=0)\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nName: 12th Gen Intel(R) Core(TM) i5-12400F\nManufacturer: GenuineIntel\nFamily: 205\nArchitecture: 9\nProcessorType: 3\nDeviceID: CPU0\nCurrentClockSpeed: 2500\nMaxClockSpeed: 2500\nL2CacheSize: 7680\nL2CacheSpeed: None\nRevision: None\n\nVersions of relevant libraries:\n[pip3] dpcpp-cpp-rt==2026.0.0\n[pip3] intel-cmplr-lib-rt==2026.0.0\n[pip3] intel-cmplr-lib-ur==2026.0.0\n[pip3] intel-cmplr-lic-rt==2026.0.0\n[pip3] intel-opencl-rt==2026.0.0\n[pip3] intel-openmp==2026.0.0\n[pip3] intel-pti==0.17.0\n[pip3] intel-sycl-rt==2026.0.0\n[pip3] mkl==2026.0.0\n[pip3] numpy==2.4.6\n[pip3] onemkl-license==2026.0.0\n[pip3] onemkl-sycl-blas==2026.0.0\n[pip3] onemkl-sycl-dft==2026.0.0\n[pip3] onemkl-sycl-lapack==2026.0.0\n[pip3] onemkl-sycl-rng==2026.0.0\n[pip3] onemkl-sycl-sparse==2026.0.0\n[pip3] tbb==2023.0.0\n[pip3] tcmlib==1.5.0\n[pip3] torch==2.13.0+xpu\n[pip3] triton-xpu==3.7.2\n[pip3] umf==1.1.0\n[conda] Could not collect",
+    "transformers_version": "5.10.2",
+    "lm_eval_version": "0.4.12",
+    "upper_git_hash": null,
+    "tokenizer_pad_token": [
+      "<|endoftext|>",
+      "248044"
+    ],
+    "tokenizer_eos_token": [
+      "<|endoftext|>",
+      "248044"
+    ],
+    "tokenizer_bos_token": [
+      null,
+      "None"
+    ],
+    "eot_token_id": 248044,
+    "max_length": 2048,
+    "task_hashes": {},
+    "model_source": "hf",
+    "model_name": "Qwen/Qwen3.5-0.8B-Base",
+    "model_name_sanitized": "Qwen__Qwen3.5-0.8B-Base",
+    "system_instruction": null,
+    "system_instruction_sha": null,
+    "fewshot_as_multiturn": null,
+    "chat_template": null,
+    "chat_template_sha": null,
+    "total_evaluation_time_seconds": "2685.7567341999384"
+  }
+}

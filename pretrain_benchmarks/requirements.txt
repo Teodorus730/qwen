@@ -1,0 +1,6 @@
+lm-eval[hf]
+transformers>=5.8.0
+accelerate
+langdetect
+immutabledict
+nltk

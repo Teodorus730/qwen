@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "dataset": {
+    "repo": "wikimedia/wikipedia",
+    "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+    "dump_date": "20231101",
+    "split": "train",
+    "configs": {"en": "20231101.en", "zh": "20231101.zh", "ru": "20231101.ru"}
+  },
+  "selection": {
+    "algorithm": "sha256(dataset_revision\\0language\\0article_id\\0seed)",
+    "seed": 42,
+    "candidate_count": 512,
+    "raw_utf8_byte_budget_per_language": 1048576
+  },
+  "scoring": {
+    "max_length": 2048,
+    "document_boundary": "BOS, or EOS when tokenizer has no BOS; boundary token is unscored",
+    "window_stride": 2047,
+    "batch_size_policy": "sequential_single_chunk"
+  }
+}

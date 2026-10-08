@@ -1,0 +1,112 @@
+absl-py==2.5.0
+accelerate @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/accelerate-1.14.0-py3-none-any.whl#sha256=e94390c2863b873be18f623f9df48a0d8fe5eff13ea7f1a00092b0a7904888c6
+aiohappyeyeballs==2.7.1
+aiohttp==3.14.1
+aiosignal==1.4.0
+annotated-doc==0.0.4
+anyio==4.14.2
+attrs==26.1.0
+certifi==2026.6.17
+chardet==6.0.0.post1
+charset-normalizer==3.4.9
+click==8.4.2
+colorama==0.4.6
+contourpy==1.3.3
+cycler==0.12.1
+DataProperty==1.1.1
+datasets @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/datasets-4.8.5-py3-none-any.whl#sha256=5079900781719c0e063a8efdd2cd95a31ad0c63209178669cd23cf1b926149ff
+defusedxml==0.7.1
+dill==0.4.1
+dpcpp-cpp-rt==2026.0.0
+evaluate==0.4.6
+filelock==3.29.0
+fonttools==4.63.0
+frozenlist==1.8.0
+fsspec==2026.2.0
+h11==0.16.0
+hf-xet==1.5.2
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/huggingface_hub-1.23.0-py3-none-any.whl#sha256=b1d604788f5adc7f0eb246e03e0ec19011ca06e38400218c347dccc3dffa64a2
+idna==3.18
+intel-cmplr-lib-rt==2026.0.0
+intel-cmplr-lib-ur==2026.0.0
+intel-cmplr-lic-rt==2026.0.0
+intel-opencl-rt==2026.0.0
+intel-openmp==2026.0.0
+intel-pti==0.17.0
+intel-sycl-rt==2026.0.0
+Jinja2==3.1.6
+joblib==1.5.3
+kiwisolver==1.5.0
+lm_eval==0.4.12
+lxml==6.1.1
+markdown-it-py==4.2.0
+MarkupSafe==3.0.3
+matplotlib @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/matplotlib-3.11.0-cp311-cp311-win_amd64.whl#sha256=70a5b3e9a5dab708c0f039709ae7c68d5b4d254e291ef76492cdba230c8bb5e4
+mbstrdecoder==1.1.5
+mdurl==0.1.2
+mkl==2026.0.0
+more-itertools==11.1.0
+mpmath==1.3.0
+multidict==6.7.1
+multiprocess==0.70.19
+narwhals==2.24.0
+networkx==3.6.1
+nltk==3.10.2
+numpy==2.4.6
+onemkl-license==2026.0.0
+onemkl-sycl-blas==2026.0.0
+onemkl-sycl-dft==2026.0.0
+onemkl-sycl-lapack==2026.0.0
+onemkl-sycl-rng==2026.0.0
+onemkl-sycl-sparse==2026.0.0
+packaging==26.2
+pandas==3.0.3
+pathvalidate==3.3.1
+peft @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/peft-0.19.1-py3-none-any.whl#sha256=2113f72a81621b5913ef28f9022204c742df111890c5f49d812716a4a301e356
+pillow==12.3.0
+portalocker==4.1.0
+propcache==0.5.2
+psutil==7.2.2
+pyarrow==25.0.0
+pyelftools==0.32
+Pygments==2.20.0
+pyparsing==3.3.2
+pytablewriter==1.2.1
+python-dateutil==2.9.0.post0
+pytz==2026.3.post1
+PyYAML @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/pyyaml-6.0.3-cp311-cp311-win_amd64.whl#sha256=9f3bfb4965eb874431221a3ff3fdcddc7e74e3b07799e0e84ca4a0f867d449bf
+regex==2026.7.10
+requests==2.34.2
+rich==15.0.0
+rouge_score==0.1.2
+sacrebleu==2.6.0
+safetensors @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/safetensors-0.8.0-cp310-abi3-win_amd64.whl#sha256=096ec1a98435df7beb08853bb5aa9081a84f23d0adc67ed1a0a10550f608373f
+scikit-learn==1.9.0
+scipy==1.17.1
+shellingham==1.5.4
+six==1.17.0
+sqlitedict==2.1.0
+sympy==1.14.0
+tabledata==1.3.5
+tabulate==0.10.0
+tbb==2023.0.0
+tcmlib==1.5.0
+tcolorpy==0.1.7
+threadpoolctl==3.6.0
+tokenizers==0.22.2
+torch==2.13.0+xpu
+tqdm @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/tqdm-4.68.4-py3-none-any.whl#sha256=5168118b2368f48c561afda8020fd79195b1bdb0bdf8086b88442c267a315dc2
+transformers @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/transformers-5.10.2-py3-none-any.whl#sha256=8a669db546f82c7c3618cb46ceb0f0afd89292bc70f319c058f8332ec63e268d
+triton-xpu==3.7.2
+typepy==1.3.5
+typer==0.27.0
+typing_extensions==4.15.0
+tzdata==2026.3
+umf==1.1.0
+urllib3==2.7.0
+uv @ file:///C:/Users/pervo/PycharmProjects/qwen2/.venv/wheelhouse/uv-0.11.29-py3-none-win_amd64.whl#sha256=abc641b24be42dc5d62f63ecb3500c07a0fb3c596e407963708f59114f0816ad
+word2number==1.1
+xxhash==3.8.1
+yarl==1.24.2

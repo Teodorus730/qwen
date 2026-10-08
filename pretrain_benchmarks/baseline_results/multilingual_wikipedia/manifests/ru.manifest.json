@@ -1,0 +1,1891 @@
+{
+  "schema_version": 1,
+  "canonical": true,
+  "noncanonical_reason": null,
+  "dataset": {
+    "repo": "wikimedia/wikipedia",
+    "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+    "config": "20231101.ru",
+    "split": "train",
+    "dump_date": "20231101"
+  },
+  "language": "ru",
+  "selection": {
+    "algorithm": "sha256(dataset_revision\\0language\\0article_id\\0seed)",
+    "seed": 42,
+    "byte_budget": 1048576,
+    "candidate_count": 512,
+    "source_scan_documents": null
+  },
+  "scanned_documents": 1945063,
+  "selected_raw_utf8_bytes": 1048527,
+  "documents": [
+    {
+      "order": 0,
+      "article_id": "4091128",
+      "title": "Цукудян, Джордже",
+      "selection_rank_sha256": "000014eb9930027ba1893bbf037bee7bd78ec36bc4b93d24086d5e894fdfb20b",
+      "utf8_bytes": 2679,
+      "characters": 1499,
+      "text_sha256": "3cab2032002dcc8ca00cb5b4090d375cccdbeb1c131a0b263f0048d8b47ade3b"
+    },
+    {
+      "order": 1,
+      "article_id": "5009380",
+      "title": "Абрамичева, Кристина Игоревна",
+      "selection_rank_sha256": "000016e8b3a3cce44ea6c9cb7042c2326ff7e0627d1e69b00fd36bebbdb25466",
+      "utf8_bytes": 3946,
+      "characters": 2193,
+      "text_sha256": "7209379e0cc9f87e5e9029ce78f851ab35582a8e694e0b36a00b98b3cd294b51"
+    },
+    {
+      "order": 2,
+      "article_id": "8270183",
+      "title": "Святой Бернард (значения)",
+      "selection_rank_sha256": "00001b4bebe54801ac1328a0a412782ecdb6b1770b966c7d7a9cb1667547dd0a",
+      "utf8_bytes": 1241,
+      "characters": 670,
+      "text_sha256": "30439dbd60fdf411563d21bea55e6043e39487b72b5091eb1fc6b2881f6d220d"
+    },
+    {
+      "order": 3,
+      "article_id": "4030577",
+      "title": "Восстание в Джамму и Кашмире",
+      "selection_rank_sha256": "00001c9c31e8a6326e7bf4d4fc98fa508ff2b532d2ad55e3564d87eeb3631b2e",
+      "utf8_bytes": 3003,
+      "characters": 1649,
+      "text_sha256": "7feeb0101bae3a06888e0633f6bd1bcb9971f2157b143c35d53958fd944555ab"
+    },
+    {
+      "order": 4,
+      "article_id": "5216652",
+      "title": "XVideos",
+      "selection_rank_sha256": "0000202780acf053b6940ee7a97f0be17858d84894b7bb2f5a2cb4ade8b17b09",
+      "utf8_bytes": 3337,
+      "characters": 1932,
+      "text_sha256": "23e218c9353e3a68ec49d5d2c0b740aef228055aeefd4eb4b06e80721f515ec3"
+    },
+    {
+      "order": 5,
+      "article_id": "6977456",
+      "title": "Седов, Сергей",
+      "selection_rank_sha256": "0000219aed263ad35b58d9fe9a0ba2abe191843fccb8e91a818ed0617339bdc1",
+      "utf8_bytes": 349,
+      "characters": 199,
+      "text_sha256": "d66823dd8320df43b051e0ccf59b092a4907f9c565b615ba87ca4a9ce19397b6"
+    },
+    {
+      "order": 6,
+      "article_id": "3620980",
+      "title": "Вризас, Зисис",
+      "selection_rank_sha256": "0000281b236f7d2ac29b80ef7f7bfb9474e45d5b99b984c4a1ef43e46e3c0bd5",
+      "utf8_bytes": 3533,
+      "characters": 2011,
+      "text_sha256": "90c2fa0e61de8d8a56232527aff316d12e660d804f3ccb311c2f955862327a14"
+    },
+    {
+      "order": 7,
+      "article_id": "4586675",
+      "title": "Копровский, Хилари",
+      "selection_rank_sha256": "00002971410c560db02275df86cb26cdb30c13ca9bcc850292e8649d3ae99c5d",
+      "utf8_bytes": 5502,
+      "characters": 3039,
+      "text_sha256": "2d804793d3c764765fcc9f0c132ee4c82dfb70979930b0317ebdd21367ed6ad8"
+    },
+    {
+      "order": 8,
+      "article_id": "1289579",
+      "title": "Шаповальянц, Андрей Георгиевич",
+      "selection_rank_sha256": "000048a8dd0d287048ef21a8f0126b0af40bb568483f3600b9a1a7896f9f1201",
+      "utf8_bytes": 4478,
+      "characters": 2479,
+      "text_sha256": "01a1857e10bf16dda9de1d99516db42780a2fa60f41acc4644bdcb19caf39bde"
+    },
+    {
+      "order": 9,
+      "article_id": "6555755",
+      "title": "Гороховище (Ленинградская область)",
+      "selection_rank_sha256": "00004a02d87e696c1ab7a0a1559bf023cd5f728e6da551644e0f25399b255de0",
+      "utf8_bytes": 2850,
+      "characters": 1609,
+      "text_sha256": "6e489d41ad8979ae81e612abcefeee6508ad7256254e2c32cbf711ec40158830"
+    },
+    {
+      "order": 10,
+      "article_id": "4412963",
+      "title": "Каратауские петроглифы",
+      "selection_rank_sha256": "00004d00c155565276755060664fa2f507c181792e2b7e4982e624b62c79cde0",
+      "utf8_bytes": 4134,
+      "characters": 2254,
+      "text_sha256": "132882d3afab78e407677252d85ac6757b609431312a01b3a1174865fbcf8393"
+    },
+    {
+      "order": 11,
+      "article_id": "7091609",
+      "title": "Качесово (Омская область)",
+      "selection_rank_sha256": "00004f3b0dbc8e767fe0277ee2b9dac5647729b01caacfc7765132c08790d018",
+      "utf8_bytes": 674,
+      "characters": 370,
+      "text_sha256": "61a2bb37228154bae9b2e6458a12bbc0fe27fa16e3ad6e6bc5dbc09947fe1f6c"
+    },
+    {
+      "order": 12,
+      "article_id": "2233741",
+      "title": "Деревная (Дрогичинский район)",
+      "selection_rank_sha256": "00005fe53c0d52f0384111afbe17d67f7f4260c2df9fb1dc16261d11efc328a8",
+      "utf8_bytes": 13744,
+      "characters": 7604,
+      "text_sha256": "c8436f9a7a9656671ec08e68ee5f49fdb4f2b69485079ec1f008e9544ae7590f"
+    },
+    {
+      "order": 13,
+      "article_id": "10305419",
+      "title": "Футбол на летних Олимпийских играх 2000 — квалификация",
+      "selection_rank_sha256": "0000645065c1e461bbe4246b3ae305c3c0fc84b655672d9e60a08afa5c16ebe2",
+      "utf8_bytes": 1493,
+      "characters": 836,
+      "text_sha256": "cd48da2c5a88ae18d5ea7042e6edfb21b4eb909d6fc0d4fa5b68e3c47585ff55"
+    },
+    {
+      "order": 14,
+      "article_id": "9446659",
+      "title": "Пески (Демянский район)",
+      "selection_rank_sha256": "0000649a34f8f00ada5b07f4eb213b9040d33d722e00d36b300c07b2ce256622",
+      "utf8_bytes": 2311,
+      "characters": 1270,
+      "text_sha256": "40a174bbabbe805eef722ab09241a108a821cb6d06c56bc8feb2e1585c1e3b54"
+    },
+    {
+      "order": 15,
+      "article_id": "1173809",
+      "title": "Пескейра",
+      "selection_rank_sha256": "00006abf4141202ef6122fac8b12a97618ab6483aeb24136faf4c336de666774",
+      "utf8_bytes": 1817,
+      "characters": 1034,
+      "text_sha256": "9b64741910c8813b70c6a6f6eb6b9a0ff3d259bd316d7ab10eec7eb2748f13fc"
+    },
+    {
+      "order": 16,
+      "article_id": "8899248",
+      "title": "Меджидов, Гаджи Абдулгапизович",
+      "selection_rank_sha256": "000072656970cce12dfaaeac740b520779c849924b201f12db02edda89918111",
+      "utf8_bytes": 1952,
+      "characters": 1103,
+      "text_sha256": "4720b6a7d015c85aef33b77e40a9dd50f6d9f73e3fdfca7337829ddf92afddbe"
+    },
+    {
+      "order": 17,
+      "article_id": "2618603",
+      "title": "Calotriton arnoldi",
+      "selection_rank_sha256": "0000841838245e0fe4b0fb12990b6bbcbbbde7d4287cbf62565142e7604b9613",
+      "utf8_bytes": 2024,
+      "characters": 1327,
+      "text_sha256": "d6f089f7ab7896d25f3594f51da03ad82a91f6a8c2d00426acdb891df81777bf"
+    },
+    {
+      "order": 18,
+      "article_id": "667655",
+      "title": "UTC−11:00",
+      "selection_rank_sha256": "00008978c1b0c9ff00345233f7a7ee448cc314a1746bda3996925d75e334a0e4",
+      "utf8_bytes": 352,
+      "characters": 206,
+      "text_sha256": "1a5dc2f732045aebfe442b1b5e44bdb3bbe4b806cb6e23d7f056f1e31c6effad"
+    },
+    {
+      "order": 19,
+      "article_id": "4328683",
+      "title": "Постановления ЕСПЧ по делам с участием Латвии",
+      "selection_rank_sha256": "00009092da9318d25bf08e4a94a2299403827abf24b8d7655f271666eb1fbd7e",
+      "utf8_bytes": 1624,
+      "characters": 954,
+      "text_sha256": "85760320fa4ff940becca5dddc5493ecc3b03b3a90afcee5e956f1ccd26b37d6"
+    },
+    {
+      "order": 20,
+      "article_id": "6892177",
+      "title": "TCDD",
+      "selection_rank_sha256": "0000982992f46ec11a3ee5681887ebcbb1e79b23591ca40f8775cf4fe3946a1b",
+      "utf8_bytes": 171,
+      "characters": 99,
+      "text_sha256": "e7bdbe7b9ec6668eb28be78997ec121b6733a8df5b81dedd4d8636f260da4671"
+    },
+    {
+      "order": 21,
+      "article_id": "4542858",
+      "title": "Музыкальный современник",
+      "selection_rank_sha256": "00009949b6096c6b4eab305c0735ba70a50d05e51a641f278ce04105ddc6b6ed",
+      "utf8_bytes": 933,
+      "characters": 526,
+      "text_sha256": "6b1322e55545788cb06347816ee56961e35d8455629add133dc6cca72418d0af"
+    },
+    {
+      "order": 22,
+      "article_id": "1778641",
+      "title": "Крок (кантон)",
+      "selection_rank_sha256": "00009a119b207f785799e18a518266d07feb43a20d045105accb45cceb10d1ca",
+      "utf8_bytes": 1539,
+      "characters": 883,
+      "text_sha256": "132c07eeb7d42b2e9bf865140f208a176552ddf160b6ddd14cf018e59709589d"
+    },
+    {
+      "order": 23,
+      "article_id": "9981091",
+      "title": "Эквитабл-билдинг",
+      "selection_rank_sha256": "00009bfe2d182338a38fc435266004e4f94bd5aae79c72d817186e447566ed83",
+      "utf8_bytes": 2828,
+      "characters": 1607,
+      "text_sha256": "face10a08f022ff2999f2cdb04fe6c66ef365d95f8981cc049f216b8cee14220"
+    },
+    {
+      "order": 24,
+      "article_id": "5990293",
+      "title": "Никитов, Сергей Аполлонович",
+      "selection_rank_sha256": "0000aad96d607ce430195a74599818650862aabd401b803cca267f7a8d2a7c64",
+      "utf8_bytes": 3244,
+      "characters": 1814,
+      "text_sha256": "c185fdadcf0fd82f4db9c0ff41ef7d06948d43d77d1b3038678f789555c515f7"
+    },
+    {
+      "order": 25,
+      "article_id": "6857286",
+      "title": "Цинодикт",
+      "selection_rank_sha256": "0000b5a7f4d1c9599fb4680fb6e6c97aa3eef684e7886228a39f0abad9f048a1",
+      "utf8_bytes": 2363,
+      "characters": 1654,
+      "text_sha256": "72f377bbf22d8ae62e9e9bf605ea93bac12342840d82bba5874a1de2a8091cc2"
+    },
+    {
+      "order": 26,
+      "article_id": "573337",
+      "title": "Вильрот",
+      "selection_rank_sha256": "0000b6ec2bdc58c1a3cb538d6f5451f7376d9dea497a40389361de0c0dd9ebcd",
+      "utf8_bytes": 488,
+      "characters": 276,
+      "text_sha256": "1704296a0b20512cc5ef2edde2ebb33e22c354888406ea8ef1c94b12453713ea"
+    },
+    {
+      "order": 27,
+      "article_id": "8278323",
+      "title": "Маймун-Диз",
+      "selection_rank_sha256": "0000beabe1d94a3a2eb3fbb0c28503612e0c1fb4f11bba4b20cf88c62431874e",
+      "utf8_bytes": 4088,
+      "characters": 2243,
+      "text_sha256": "9e8717df09b2c9075ef70000b97f9345f9110744ed04e7cb39290519496f9e0f"
+    },
+    {
+      "order": 28,
+      "article_id": "4201148",
+      "title": "Задёжа",
+      "selection_rank_sha256": "0000c461d7d42b39f9486792cec454dad595f0489c9040a4b59a8b63357ccc6a",
+      "utf8_bytes": 236,
+      "characters": 126,
+      "text_sha256": "5ddddcd58cecabef3c709450df551bb570b3581fa4f805698499f4f536e54ee2"
+    },
+    {
+      "order": 29,
+      "article_id": "303706",
+      "title": "Xetra",
+      "selection_rank_sha256": "0000d23504b3b5b99126bc2e287b243d2c7d41cf4a3f9d92d58e60bc087e3a9b",
+      "utf8_bytes": 800,
+      "characters": 503,
+      "text_sha256": "fee86954ede9e4d9059ec45f60667d49286ff0e819e301ba4dd7e3a0ff7d73c8"
+    },
+    {
+      "order": 30,
+      "article_id": "10136963",
+      "title": "Осиновец (Архангельская область)",
+      "selection_rank_sha256": "0000daeddb7b1cee0c7981909e3e30f38bbe5cf4be022c01511458f059f97f80",
+      "utf8_bytes": 2377,
+      "characters": 1306,
+      "text_sha256": "985f3a1bd363e885d39913247d205a4bb3d8ff4986ac5c49e1f3bdffc4e829c9"
+    },
+    {
+      "order": 31,
+      "article_id": "8342948",
+      "title": "Мельников, Юрий",
+      "selection_rank_sha256": "0000dd567c669df40cff69efe66ab468a1254e097155e92ae1da48d3e7febd63",
+      "utf8_bytes": 586,
+      "characters": 332,
+      "text_sha256": "abc3e178a1930fe9dc91dc80a88615ffcf600f4f3178c20828bbc59dad67c477"
+    },
+    {
+      "order": 32,
+      "article_id": "3212133",
+      "title": "Грин, Дэнни (гангстер)",
+      "selection_rank_sha256": "0000ebffc3cc24d0819c1266cbe5013c202caa9d2ac478fdfb73fd7754f50098",
+      "utf8_bytes": 2059,
+      "characters": 1196,
+      "text_sha256": "3878dab9bad3ea97ffc8e7a38b96da31444d0e150c7795ac9f57eb90a6d5c4a2"
+    },
+    {
+      "order": 33,
+      "article_id": "21668",
+      "title": "Игральные карты",
+      "selection_rank_sha256": "0000fcbfeb79ec894134f90eab139a3d6d9f91731101d0d9fa2572d8589ed077",
+      "utf8_bytes": 17292,
+      "characters": 9747,
+      "text_sha256": "a50bb4e0a10acae11e79642b73d43f21f6dbbc7a5fdcf342ed96f7c7f516a45b"
+    },
+    {
+      "order": 34,
+      "article_id": "9252379",
+      "title": "Еремеево (Тамбовская область)",
+      "selection_rank_sha256": "000103664ee093e60804968a671b4242fc6dde4816bb98906ef9fce2ebc6ba6b",
+      "utf8_bytes": 2282,
+      "characters": 1262,
+      "text_sha256": "86ef19df0e0e1e775c89d4f939d11c8369dad3f8ad3343dbb91eb2dad1adb582"
+    },
+    {
+      "order": 35,
+      "article_id": "4855634",
+      "title": "Памятник военнопленным Шталага 369",
+      "selection_rank_sha256": "0001067ed963a0e923a2b2f824c74dd3c47086946fd092765016d6bb7b550dc9",
+      "utf8_bytes": 1659,
+      "characters": 995,
+      "text_sha256": "f8b4678cf98d1e184c0fef6ca75448e10e04948cbd9b703298d93fabda853dce"
+    },
+    {
+      "order": 36,
+      "article_id": "3288958",
+      "title": "Чум (значения)",
+      "selection_rank_sha256": "000116a1c3c89ddf91c6bebd1f1f883623be2e00e9fcdd52cedf7ea5e350e37d",
+      "utf8_bytes": 1054,
+      "characters": 574,
+      "text_sha256": "931610984a0514c7e5e21334b869c17f918e624961c7f90d2c0eaf00ac8d81cf"
+    },
+    {
+      "order": 37,
+      "article_id": "710406",
+      "title": "Сегвей",
+      "selection_rank_sha256": "00011a301bcf12d7bdea9667752d6409b8bc79aa2fceb5be8943a0cf2ffc8743",
+      "utf8_bytes": 12473,
+      "characters": 6860,
+      "text_sha256": "9e98c21843b22123d5b2f032c20931594abe96a8f17d81159ddc4f5ae1f43e27"
+    },
+    {
+      "order": 38,
+      "article_id": "7661469",
+      "title": "Мошков, Михаил Фёдорович",
+      "selection_rank_sha256": "00011a9cb6dedb2fe3a8b0b3d7355d3459d7882965074bb1bbc8752c5b63b491",
+      "utf8_bytes": 1338,
+      "characters": 746,
+      "text_sha256": "c4eb89abb0ef15b8e31402432d1993bdcf79659ffa442dd136f35270529af9cf"
+    },
+    {
+      "order": 39,
+      "article_id": "1923427",
+      "title": "Гремячки",
+      "selection_rank_sha256": "00011f704173199c96c4796f7f66cbb50c9a33316e85358928ec6be7579eebd0",
+      "utf8_bytes": 357,
+      "characters": 195,
+      "text_sha256": "fcb3d000e605d246a0494360f5ecddc1a42e5742d8d3e7922bc21120725e4c9e"
+    },
+    {
+      "order": 40,
+      "article_id": "10380650",
+      "title": "Шерифы в США",
+      "selection_rank_sha256": "00014dcc464e9415e4e4150146192aee2fe7e0010053ac8f38da2d03534fc79f",
+      "utf8_bytes": 87628,
+      "characters": 47477,
+      "text_sha256": "1e3d021e1db06c155433671ca7a40be36f43d7267b17c4f20bac59ab8a82e5e0"
+    },
+    {
+      "order": 41,
+      "article_id": "4990058",
+      "title": "Сотников, Иван Владимирович",
+      "selection_rank_sha256": "000153ed32ed6a2574a8ba9e744bd3b89afd41329e5f2aabcc92158d901b7fa3",
+      "utf8_bytes": 5873,
+      "characters": 3336,
+      "text_sha256": "fa9a99e3ce47a86156a6e35f678104d302c51c1629cbb8a3b71d698d1cf89ebb"
+    },
+    {
+      "order": 42,
+      "article_id": "2270431",
+      "title": "Морской охотник (игра)",
+      "selection_rank_sha256": "00015b2fec52d8bcc5cd8d6da26007be36d31e4d4874085aa2db840b0c23aa59",
+      "utf8_bytes": 1112,
+      "characters": 632,
+      "text_sha256": "eb7613074520d39e6f35895a8b3d0abf3961877f5101b270bcd6d872cbd41217"
+    },
+    {
+      "order": 43,
+      "article_id": "6870851",
+      "title": "Янкопулос, Джордж",
+      "selection_rank_sha256": "00017cdf1d118cb07d609c5a0914e72810f7a2d4562c8421f8eb42f3ac5b7fcc",
+      "utf8_bytes": 17637,
+      "characters": 11845,
+      "text_sha256": "df4e0810fa7f937898b60a5fc5fa4004a9471b972bb725d0714691e757993e2c"
+    },
+    {
+      "order": 44,
+      "article_id": "8831570",
+      "title": "Anaglyptini",
+      "selection_rank_sha256": "000181339498edc643184ebc777614b59f22fdcbe086226a52debf61435b026c",
+      "utf8_bytes": 2741,
+      "characters": 1933,
+      "text_sha256": "e0490c4c66ec38b470a6794ea1c7087b6ac34c8f73812db0dfeee193bb74501a"
+    },
+    {
+      "order": 45,
+      "article_id": "9012010",
+      "title": "Раудоне (Швенчёнский район)",
+      "selection_rank_sha256": "00018b24b4f43507c4210f8b34ae562293133e32b3338e9a834268e98e3934c3",
+      "utf8_bytes": 842,
+      "characters": 464,
+      "text_sha256": "efa04a32d008fde9a857be0c03a5b42e9a5b4ada54c4fc3babe9e57e2c8a9a64"
+    },
+    {
+      "order": 46,
+      "article_id": "309480",
+      "title": "Лантан-фторидный аккумулятор",
+      "selection_rank_sha256": "00018d5facd48a4d7eb368b467df6d66a4dcdfc1f2e0c204338a9e58e7409ed2",
+      "utf8_bytes": 3655,
+      "characters": 2351,
+      "text_sha256": "0e5f96f046cf506e03c7f101d9db8833162a5d0efbaa78897db4ee214f98e211"
+    },
+    {
+      "order": 47,
+      "article_id": "11651",
+      "title": "Калибр (значения)",
+      "selection_rank_sha256": "0001911b111f0268f5ff71be3e544783b52f488e2759702dc83342360aa5e53c",
+      "utf8_bytes": 4067,
+      "characters": 2288,
+      "text_sha256": "1de283cbcd3959d960b54bc4a38f9d2ed11634ccd16d5e088005790899360802"
+    },
+    {
+      "order": 48,
+      "article_id": "4684718",
+      "title": "Полумарафон Янчжоу",
+      "selection_rank_sha256": "00019a589262e60e879b0e8ea654966397558e9511eca3d0ac4b9c941c57263d",
+      "utf8_bytes": 669,
+      "characters": 393,
+      "text_sha256": "52d4e32d5094cafc166e1c2b7b77a8e204bf8bd0433c9305e414303aaddc0cf7"
+    },
+    {
+      "order": 49,
+      "article_id": "7943893",
+      "title": "Лодкоклювые мухоловки",
+      "selection_rank_sha256": "00019d36161884d3fa390410b9f1589a0c8298ed29fe8c4cd66255c608333654",
+      "utf8_bytes": 1555,
+      "characters": 872,
+      "text_sha256": "7441530e3a611a3accf6b82e0bdbc0094b8510f0b68b4cf81d2964dc65323efa"
+    },
+    {
+      "order": 50,
+      "article_id": "572985",
+      "title": "Роммерсхайм",
+      "selection_rank_sha256": "0001ad4c0875b70f200281cc20a3e6f0c3be5c4cd0a3e199220802b992709840",
+      "utf8_bytes": 468,
+      "characters": 267,
+      "text_sha256": "fb40e1e38aab60351e1b12f94d404666295d0133b776ea8bedc286c376a8fcfa"
+    },
+    {
+      "order": 51,
+      "article_id": "8803729",
+      "title": "Батыева, Эльвира Салиховна",
+      "selection_rank_sha256": "0001b1aada2d34dc8d7640a6ce8a4d6628ef026529feae3364bc19f0e52f0889",
+      "utf8_bytes": 6163,
+      "characters": 3478,
+      "text_sha256": "604bf6834e980330c17e71dc4a9e942b7c5e5dc7196e145e6bd3821df2073456"
+    },
+    {
+      "order": 52,
+      "article_id": "2299887",
+      "title": "Биоспелеология",
+      "selection_rank_sha256": "0001bc6455337184b12d67b48988f1c78f2f02263de0cfdd5cb943187484e93d",
+      "utf8_bytes": 2100,
+      "characters": 1168,
+      "text_sha256": "0723b79415738a924fc5ceea0ad1ee4573ae229f06ef71c86ccde05302b7108a"
+    },
+    {
+      "order": 53,
+      "article_id": "10214542",
+      "title": "Карабаба (значения)",
+      "selection_rank_sha256": "0001bd19e24ac99efb7d3d5309b527ddc1392bbb005ce2104802a1deba79802a",
+      "utf8_bytes": 531,
+      "characters": 288,
+      "text_sha256": "5ce59da9a65d9020ecfacb1bfb23f7cd1df2fee3aa3a95dc8d827301a2d9bc0e"
+    },
+    {
+      "order": 54,
+      "article_id": "8162982",
+      "title": "Аверкиев, Дмитрий Сергеевич",
+      "selection_rank_sha256": "0001bd971f54941fb0132b7d9fb2f3ad839de34c4959e65afa95c7e773139c3c",
+      "utf8_bytes": 16020,
+      "characters": 8704,
+      "text_sha256": "874fc380b9094eba4c5f05348888ac9c5c324829badfd773609cf9b3fa4b476d"
+    },
+    {
+      "order": 55,
+      "article_id": "2226588",
+      "title": "RDK 250",
+      "selection_rank_sha256": "0001cd41d9a284d1bc84511aa858650c0fabbd5c5b65e5a662af871e0688bae5",
+      "utf8_bytes": 48732,
+      "characters": 26804,
+      "text_sha256": "bbe015a667a7392c73fb213e3222f55eb23b804f2235ddbe946c09fcd046db17"
+    },
+    {
+      "order": 56,
+      "article_id": "3498370",
+      "title": "Константинов, Евгений Валерьевич",
+      "selection_rank_sha256": "0001cf34209d0f53403102e5716575781e0845980a141ffd76b5f2d0806e647a",
+      "utf8_bytes": 5408,
+      "characters": 3026,
+      "text_sha256": "fe45147d5c0fd360f1442a0b42c7b3aee893bef1d6430992381f7ddb766231fd"
+    },
+    {
+      "order": 57,
+      "article_id": "10352545",
+      "title": "Баркос, Ушуэ",
+      "selection_rank_sha256": "0001d64357d94da194f6538cf4a630bea7e514e3ae0a530d708bcb94dd773ab0",
+      "utf8_bytes": 1362,
+      "characters": 769,
+      "text_sha256": "637b5791a9e3eeef4d6ae52d72c2b0698a8802dc001e7ad900aff785a69ffe73"
+    },
+    {
+      "order": 58,
+      "article_id": "4079865",
+      "title": "Астафьевское",
+      "selection_rank_sha256": "0001e7b98538ae526367b315e7febc3ecc68ad36aa613d551a8360dbc71b7523",
+      "utf8_bytes": 414,
+      "characters": 224,
+      "text_sha256": "67c038a9abf65a07c886780741873e2f12df106ad487f9dea616892b9213cc19"
+    },
+    {
+      "order": 59,
+      "article_id": "2687847",
+      "title": "Алиев, Саид Давыдович",
+      "selection_rank_sha256": "0001ea250d6c0d565ba3c5666f3865ce548080a2c8e14f11128819775e873f2e",
+      "utf8_bytes": 4081,
+      "characters": 2284,
+      "text_sha256": "6364a9475a4412b95b06b4a27179f7039a5bf7b89bdce08ef873a7ce4bcc3281"
+    },
+    {
+      "order": 60,
+      "article_id": "3334590",
+      "title": "Казаново (Дубровский район)",
+      "selection_rank_sha256": "0001ec1914163d18b69c65ef4a843802d9c0ca0eac3f85f7bdb3eb61b515baed",
+      "utf8_bytes": 1180,
+      "characters": 672,
+      "text_sha256": "fca1cd92a4a8af120cafc354f1abea9b6084c3e0bbd684f153004efc28bb7365"
+    },
+    {
+      "order": 61,
+      "article_id": "8933634",
+      "title": "Живицкий, Дмитрий Алексеевич",
+      "selection_rank_sha256": "0001f6769fcf3bef34a150332c6dd251d4d651971122b75b1dfbd5f88f86de83",
+      "utf8_bytes": 3496,
+      "characters": 1925,
+      "text_sha256": "ba276a16422c8db414846c38b0482062cfd501ff253be35648b1b96a212c650d"
+    },
+    {
+      "order": 62,
+      "article_id": "8133142",
+      "title": "Амброс, Владимир (значения)",
+      "selection_rank_sha256": "0001f7ad2eac04e165a97f266080673687545fde9a3e34955aba0a815e9e7205",
+      "utf8_bytes": 268,
+      "characters": 153,
+      "text_sha256": "16bba4a7bdb3298b1f4eeaf6c4362f4da69dbfe3b2b6b4d4832c8a7d6bc4238c"
+    },
+    {
+      "order": 63,
+      "article_id": "1531205",
+      "title": "Ночные обезьяны",
+      "selection_rank_sha256": "0001ff930593f3acba6d3a3a9e46db41e4b113abb15f4ce2815cca9ccd2458b2",
+      "utf8_bytes": 14222,
+      "characters": 7801,
+      "text_sha256": "89185952b9904767d999608f22423c608bae3f31b3dcf05c2fac1fa1549b0ab6"
+    },
+    {
+      "order": 64,
+      "article_id": "8857277",
+      "title": "Окаш, Ибрагим",
+      "selection_rank_sha256": "00020a4eee9bcd988055397cece51c08d949fb6fead66fee3c9dbebfdf23c385",
+      "utf8_bytes": 1753,
+      "characters": 1011,
+      "text_sha256": "22b98ac6e8a29711efa87f645c0558f2b37f17adb343ced95eab27f1873501c4"
+    },
+    {
+      "order": 65,
+      "article_id": "9032092",
+      "title": "Хатчинс, Галина",
+      "selection_rank_sha256": "00020f10180a032aaeb7aae04a856636bb012a05d27c96fd219333c572fbeedc",
+      "utf8_bytes": 7113,
+      "characters": 3962,
+      "text_sha256": "728ed5dc86a6c4f5bccf24f9791272aea8b129d364887a2fcffe3cd3b6abd2e9"
+    },
+    {
+      "order": 66,
+      "article_id": "3135075",
+      "title": "Левино (Тотемский район)",
+      "selection_rank_sha256": "000216980ef156c293d936cc42a1c6f34f70b326924360c1e199a005fea6ed67",
+      "utf8_bytes": 1491,
+      "characters": 819,
+      "text_sha256": "0b249c7f5e7beb8c054d5b8fe932eb0ca4761ff36423c09149c33b2ba8d24f49"
+    },
+    {
+      "order": 67,
+      "article_id": "4020924",
+      "title": "Джандар",
+      "selection_rank_sha256": "000220a93563a7e8e337a4d615319791ababc0ee3d39e7483368faf0ca3409b9",
+      "utf8_bytes": 544,
+      "characters": 294,
+      "text_sha256": "3d52ae6dc080e6136212f893c9566bac965d55db11779575022bc1b1e08fe3d4"
+    },
+    {
+      "order": 68,
+      "article_id": "1479194",
+      "title": "Волга (радиолокационная станция)",
+      "selection_rank_sha256": "000229b3381a7c82d7304294d0e052420fe350e82c9ef8f977e58f87441f2d33",
+      "utf8_bytes": 12938,
+      "characters": 7061,
+      "text_sha256": "75d154b0b4f445d089da511d73390001d6ed3c9415587c3a058dde87de9c58fb"
+    },
+    {
+      "order": 69,
+      "article_id": "5589881",
+      "title": "Форштадт (село)",
+      "selection_rank_sha256": "00023efa1c4333c7fe08be9b3b8e4b982643f6a162991914b59b35acf354e6c9",
+      "utf8_bytes": 1050,
+      "characters": 583,
+      "text_sha256": "fdee7d3aed8065d36abee9a6a73c79f79bcf0a81796743ff7b406f894568951e"
+    },
+    {
+      "order": 70,
+      "article_id": "4962064",
+      "title": "Комаровка (Приморский край)",
+      "selection_rank_sha256": "000241361b3fe9a1ec579e257d33d3ef45bd27457d4600d8cda66c0aeba931b2",
+      "utf8_bytes": 1308,
+      "characters": 714,
+      "text_sha256": "518c5bf9de6181f0854c29e8946056bfbe918096b13515dc5a8db37462479230"
+    },
+    {
+      "order": 71,
+      "article_id": "4570695",
+      "title": "Ауэзовский район",
+      "selection_rank_sha256": "00024579e81e36c3be8c83e50e0c8e94bdb9b5529c0465fe26b8c40fa3f337a9",
+      "utf8_bytes": 4633,
+      "characters": 2779,
+      "text_sha256": "b7122ea7cc7e12f2d7afff5c8739d1e6309dfa8654d4448b49122d124c8425a9"
+    },
+    {
+      "order": 72,
+      "article_id": "6983456",
+      "title": "JoJo’s Bizarre Adventure (OVA)",
+      "selection_rank_sha256": "0002499dfa85d1ee5bd7fe8d57b1cdb3b0e25dbb201ef283a86b92619c54a5d9",
+      "utf8_bytes": 11632,
+      "characters": 6572,
+      "text_sha256": "3b5d96e3260cc4aa656f8c2550d70124c51af89f6368cb5cdcfb18f91ab20766"
+    },
+    {
+      "order": 73,
+      "article_id": "7631679",
+      "title": "Шеффилд, Джастас",
+      "selection_rank_sha256": "00024cfd319ad45623759ce07ad8ad00a7144f83f13370aac3473ba4c1bf6b1a",
+      "utf8_bytes": 3097,
+      "characters": 1737,
+      "text_sha256": "fedb3a2b5168352dcd585b2fc8e570bb6765a5f39e71467aac7e15abbfee834c"
+    },
+    {
+      "order": 74,
+      "article_id": "5349629",
+      "title": "Мотидзуки, Сигэёси",
+      "selection_rank_sha256": "00025dcbcfad8bcd4c06a07f5937bad13af79a94f41390a1cf8e724c0343ecd5",
+      "utf8_bytes": 1401,
+      "characters": 780,
+      "text_sha256": "edf152083f469dcc369eba575ede00434d223402a278d494f6a7aaf8b1ab5b76"
+    },
+    {
+      "order": 75,
+      "article_id": "4154342",
+      "title": "Восточная Золотая Липа",
+      "selection_rank_sha256": "000261b23e38054ae7fc2321419c8ed21e42fe3b304d74b692b50369ff562013",
+      "utf8_bytes": 1626,
+      "characters": 904,
+      "text_sha256": "d8c37918f62904001a356506c171bcf002ad1f3336325108fef5ca2418cf5a59"
+    },
+    {
+      "order": 76,
+      "article_id": "4455716",
+      "title": "Посольство Литвы в Польше",
+      "selection_rank_sha256": "000267fa444a8a57533ae16ff7534cfadb3d619ae3cdc9804941a025eada476f",
+      "utf8_bytes": 3104,
+      "characters": 1830,
+      "text_sha256": "949d940419b621331af3e9e784e512a69edd408aeda5cc262fafcff15aeb7855"
+    },
+    {
+      "order": 77,
+      "article_id": "5396511",
+      "title": "Летисия (значения)",
+      "selection_rank_sha256": "000276579633754a9154c852bef5fd58c3b7d65cc0efde726fd28be9412508cf",
+      "utf8_bytes": 434,
+      "characters": 242,
+      "text_sha256": "39b8c8b310ed757d663bc5baf82b24541ba577b41c02ecf7340b04591d6f0901"
+    },
+    {
+      "order": 78,
+      "article_id": "408369",
+      "title": "Асплунд",
+      "selection_rank_sha256": "00027eeee72973af2d9fa2da47588b72d5c9ecf4b216e3f43ca288d14a964183",
+      "utf8_bytes": 405,
+      "characters": 233,
+      "text_sha256": "783b893f93e75d568ca54f7d4929388337ccd61e4bae9a27bfbd442eaee4d4d5"
+    },
+    {
+      "order": 79,
+      "article_id": "5766118",
+      "title": "Моралес, Леонель",
+      "selection_rank_sha256": "00027f0706480b4db9800cc03243c8bf0f65b6723ac6c23340fdbc62267ee405",
+      "utf8_bytes": 3171,
+      "characters": 1791,
+      "text_sha256": "844e01efe64dcbee767c65f33f708be593c75c76872debff13794b188d4421f6"
+    },
+    {
+      "order": 80,
+      "article_id": "5955867",
+      "title": "Манты (род)",
+      "selection_rank_sha256": "000289919f44281a00a9bc341794c0bf7f7da55991d9a2fb0addaf8e2f2007cf",
+      "utf8_bytes": 34699,
+      "characters": 19193,
+      "text_sha256": "01c0dcda6c76829a6df86c2c16fb26c4083caf59debc1579337c654e6aaed07a"
+    },
+    {
+      "order": 81,
+      "article_id": "9009449",
+      "title": "Джон Эрскин, 3-й граф Мар",
+      "selection_rank_sha256": "00028e7c5666e8c498668593f06b1b6f0f3d03215e879bcc0f7f44d42b2b3214",
+      "utf8_bytes": 5939,
+      "characters": 3391,
+      "text_sha256": "16e5fcb245f930d5178e36b7e737f8a72a71dabc14a6224198ce0c8c7c521314"
+    },
+    {
+      "order": 82,
+      "article_id": "3683081",
+      "title": "Проспект Калинина (Москва)",
+      "selection_rank_sha256": "00029391ce11434391652460f9fdcfdfb06599150db176dc7ddfd5a4f9230229",
+      "utf8_bytes": 17860,
+      "characters": 9824,
+      "text_sha256": "2f964341b48454e0f7c21ba45c37e0a1368f3f90bb7f63c58f415533445081d7"
+    },
+    {
+      "order": 83,
+      "article_id": "1548834",
+      "title": "Давид, Эрмина",
+      "selection_rank_sha256": "00029625b7191a7a65ce8077df2ec32d4f21eac7c25129da38396fcc23b1a4ef",
+      "utf8_bytes": 3297,
+      "characters": 2130,
+      "text_sha256": "faf8014ba3c50813469fecafecdd794e182c999c57c87eda70c2a0c17147d2c1"
+    },
+    {
+      "order": 84,
+      "article_id": "4378008",
+      "title": "Феррейра Фильо, Мариано",
+      "selection_rank_sha256": "00029ad821b8f7dce7f0e6177b28cb9e3afdc5c7541e2cad3f523f75ec609d92",
+      "utf8_bytes": 4359,
+      "characters": 2461,
+      "text_sha256": "39e240ca6eeaa37c3b08a2993a995a4fb3809a948dd8cc54a5c01ef5539871cf"
+    },
+    {
+      "order": 85,
+      "article_id": "4104268",
+      "title": "Прохожая из Сан-Суси",
+      "selection_rank_sha256": "00029e85d7adb6d465e2382166c1eaf02563fef115b0904afdb44536309dd7f7",
+      "utf8_bytes": 8007,
+      "characters": 4523,
+      "text_sha256": "208a01a20d1ab7062f6b7319baaaf7b8a016e46571e5342c64436ea309617d52"
+    },
+    {
+      "order": 86,
+      "article_id": "9071718",
+      "title": "Карруж, Маргарита де",
+      "selection_rank_sha256": "0002a9e88db66785a60ea0272cb10e5f29cd07b1aeba4b215225869c26fe977a",
+      "utf8_bytes": 2077,
+      "characters": 1153,
+      "text_sha256": "04ef1cdfab335bcccd1da90797cf4cf9ccabee34556c9ebb9d80dfe9e9d9a785"
+    },
+    {
+      "order": 87,
+      "article_id": "1481212",
+      "title": "Синоним (таксономия)",
+      "selection_rank_sha256": "0002c1ec89d0ef0c863c5704cdef976ef856fe3c9ce6b9932bd2c6adc8a34ea1",
+      "utf8_bytes": 11792,
+      "characters": 6460,
+      "text_sha256": "e3474aee1d35135ff2f959f9bc1175d7e8b71a13ad2f381583c88ae3ca6d9d8d"
+    },
+    {
+      "order": 88,
+      "article_id": "3670987",
+      "title": "WildC.A.T.s",
+      "selection_rank_sha256": "0002d25b097ba97e0926e1694494f92428525d5463170ff54fb5d1700f4e7735",
+      "utf8_bytes": 9351,
+      "characters": 6045,
+      "text_sha256": "ed412b36a151ca42f16ca215ea47c42d5c3bdb572651cbc48a243c7da74ccfac"
+    },
+    {
+      "order": 89,
+      "article_id": "4601830",
+      "title": "Дискография Kool & the Gang",
+      "selection_rank_sha256": "0002d693887a4148a6566e7e701caef21bbff6ff6110c2896c6c66b393df33e5",
+      "utf8_bytes": 3670,
+      "characters": 2320,
+      "text_sha256": "da1d824507c93275515b66e68254a136d75af8f0310a13dba3e86df23ff7fd1c"
+    },
+    {
+      "order": 90,
+      "article_id": "6112213",
+      "title": "Гэмбл и Хафф",
+      "selection_rank_sha256": "0002dc3a586abb865521172d866dd7b5eb5ea41054dab0a70bd2af03cca9a94d",
+      "utf8_bytes": 1468,
+      "characters": 876,
+      "text_sha256": "f169ef4d7899552f38757e26555ae83f16f8c3a0c64dd87460adbf07a555b037"
+    },
+    {
+      "order": 91,
+      "article_id": "7942293",
+      "title": "Отделение № 4 Опытного Хозяйства СибНИИСХОЗа",
+      "selection_rank_sha256": "0002e5d3c2c3692d8df936f81c4aa7d9a42cf419581550608c6ee778668b810d",
+      "utf8_bytes": 2093,
+      "characters": 1158,
+      "text_sha256": "8661fff0bc41801cac5be027e7bdec050eb423591736306f157668a5a03052ad"
+    },
+    {
+      "order": 92,
+      "article_id": "2971427",
+      "title": "Броненосцы типа «Девастейшн»",
+      "selection_rank_sha256": "0002f77d559ca3733458d523863de8954e7c246e8b94140755fb9034c29654cc",
+      "utf8_bytes": 4925,
+      "characters": 2679,
+      "text_sha256": "1238c66d056fc3d411bea6c822b7364031545f92dd192f4eff104610f3a9f528"
+    },
+    {
+      "order": 93,
+      "article_id": "547349",
+      "title": "Среднегерманский канал",
+      "selection_rank_sha256": "00030d1067405da25437520de98b05a1b48f30d5b64b51b363cc2ec067dc5f48",
+      "utf8_bytes": 2541,
+      "characters": 1436,
+      "text_sha256": "fd885a98cc83d609cba857ea137719732bed7f1ed5a82805adfa4d93ef52fe20"
+    },
+    {
+      "order": 94,
+      "article_id": "7333710",
+      "title": "Ноябрьская группа",
+      "selection_rank_sha256": "00030e8a4b9daa8456f84abf54989294b2868fe78cd66834997df41442a4f01d",
+      "utf8_bytes": 3867,
+      "characters": 2201,
+      "text_sha256": "1773742d979b21d59305d45caf2ec0c1924e4a7b898a90c579c00287fa11f8f8"
+    },
+    {
+      "order": 95,
+      "article_id": "3139040",
+      "title": "Малая Лосиха",
+      "selection_rank_sha256": "0003160b5c83a1702111ec4b26f1e8e52f3d64acc51db649bcfaa59b7c156785",
+      "utf8_bytes": 1106,
+      "characters": 609,
+      "text_sha256": "ef80dc4b7aefd4960c3b342c000847df0af3fe659273d4b5b36df0271810e9b6"
+    },
+    {
+      "order": 96,
+      "article_id": "10047536",
+      "title": "Пески (Осташковский район)",
+      "selection_rank_sha256": "00032c7c989b1e4cf50a13f9dbb19ec7ce50dd9aeb98b096fc46108512705213",
+      "utf8_bytes": 2380,
+      "characters": 1305,
+      "text_sha256": "1951f643c7239e1b2dd7ca99721110b618aa6375a6fbaf0b5b0e617c93076008"
+    },
+    {
+      "order": 97,
+      "article_id": "1017663",
+      "title": "Гурник (футбольный клуб, Забже)",
+      "selection_rank_sha256": "00032d967fbe238e9e845e3606663aededc2a7360f0f053c1f428eb9a00d260b",
+      "utf8_bytes": 2523,
+      "characters": 1705,
+      "text_sha256": "7894e2fcef918cd135bb50992a2e24efc74cb0154e78054d51966444c96028ec"
+    },
+    {
+      "order": 98,
+      "article_id": "7940127",
+      "title": "Джеймс, Кендра",
+      "selection_rank_sha256": "00033622619535345d3f930042bfcaf73abc5acdd4416ad18f75d884972c1e52",
+      "utf8_bytes": 2905,
+      "characters": 1864,
+      "text_sha256": "25207714ec8807e14a152c2312e780014b77fe19778ff344f09e55998bd77e14"
+    },
+    {
+      "order": 99,
+      "article_id": "10316928",
+      "title": "Шакулова",
+      "selection_rank_sha256": "0003467dc83c0ecb5367d1457d383fc6674b402d52e46bcafc61f3d1b933f6b7",
+      "utf8_bytes": 508,
+      "characters": 295,
+      "text_sha256": "9e3ff61aa9962a7a8a07cd84aff395773332cca97e0c3e52eb445dec4c6659b5"
+    },
+    {
+      "order": 100,
+      "article_id": "4466",
+      "title": "Мовсес Хоренаци",
+      "selection_rank_sha256": "00035f58e1aca6a7102654b4861b8245ec92148b563e3d7cef78e4b47c630103",
+      "utf8_bytes": 20296,
+      "characters": 11177,
+      "text_sha256": "748bcca02f61c28f9489fd48dc69491fa81a70215b5d33970af869d9d3d19b57"
+    },
+    {
+      "order": 101,
+      "article_id": "5135889",
+      "title": "Пидкивка, Роман Юрьевич",
+      "selection_rank_sha256": "000366c6f563ac1404d983e0ac0aa8fec51ce68430f4822c2c9d71e0605d672e",
+      "utf8_bytes": 1420,
+      "characters": 788,
+      "text_sha256": "14ce0335061bc4b4e9b46fbf69a50d7bdacd337f9c83915d087db7babcbf7cbf"
+    },
+    {
+      "order": 102,
+      "article_id": "1599297",
+      "title": "Пластизоль",
+      "selection_rank_sha256": "000367e3f9eb16b30b94e97d65070f3d10047ed9eca13a2b88d5597ec55da734",
+      "utf8_bytes": 20060,
+      "characters": 10852,
+      "text_sha256": "1266c862051c39b3be0c4ebaba7192c7a82f26b2f7a28aa7fe00c8f6c81b7a08"
+    },
+    {
+      "order": 103,
+      "article_id": "1656942",
+      "title": "Проходки для кровли",
+      "selection_rank_sha256": "0003681c59e474dce04430d74fc62fd0d19fb7f98b46bc5c3a9fb4096ce13e13",
+      "utf8_bytes": 2402,
+      "characters": 1320,
+      "text_sha256": "348ec91d6750427b039060caf0ff513c51a592d30d9a6220674c4bbba864b5d3"
+    },
+    {
+      "order": 104,
+      "article_id": "5244664",
+      "title": "Матиос, Анатолий Васильевич",
+      "selection_rank_sha256": "000380f82a43e8d5909d1f85ea0c8ae35db39497a439d5efa370d06672d89ddf",
+      "utf8_bytes": 12256,
+      "characters": 6800,
+      "text_sha256": "8f755e9c2fb7fb972f691bff08d6891753878e6d66d84a053adefff2c666509d"
+    },
+    {
+      "order": 105,
+      "article_id": "919420",
+      "title": "Канализационный люк",
+      "selection_rank_sha256": "00038b868b92c26f0a4b14fbc1bff62f1aea61acfe65f358c260588e8dceaed9",
+      "utf8_bytes": 28561,
+      "characters": 15794,
+      "text_sha256": "bdfeb27188a002326903a22a440f64406ff328c03b6245e20c341ad4886aa0ad"
+    },
+    {
+      "order": 106,
+      "article_id": "2101033",
+      "title": "Чемпионат Европы по футболу 2012 (отборочный турнир)",
+      "selection_rank_sha256": "000390febfda7ae5c5cb91b3aa88fd161883046096d7ddb0dc4ce0dd0111654e",
+      "utf8_bytes": 7496,
+      "characters": 4226,
+      "text_sha256": "a15d41ba4f14c486e01bdf65fe061b944a248c721502a826b9892e7a1316dc1a"
+    },
+    {
+      "order": 107,
+      "article_id": "6654416",
+      "title": "Чхве Сун Силь",
+      "selection_rank_sha256": "0003a15d520133c13857aa406113fec72e988c65abc33662a16fb43d5d7ffb02",
+      "utf8_bytes": 4033,
+      "characters": 2222,
+      "text_sha256": "fd3e0a86a6f3c6e81d56de7a4863b74bcf4cf2286d0aeee003f02ff6b1e45157"
+    },
+    {
+      "order": 108,
+      "article_id": "6983979",
+      "title": "Ага Хан Кермани",
+      "selection_rank_sha256": "0003b3c7356b5cc5a41be495a2a9baa359f5ef7a0b6f088078f06b4f481fa7d6",
+      "utf8_bytes": 7721,
+      "characters": 4253,
+      "text_sha256": "15b3f1328d4cc410b2487055002ea93e073354c4a9f4afe650b52c2cbbd42a91"
+    },
+    {
+      "order": 109,
+      "article_id": "4197662",
+      "title": "Голод в Москве (1612)",
+      "selection_rank_sha256": "0003cf21f120c04d664407b4b83298b8ba13b7e0ffe2088939fcfc91bfc0e0f4",
+      "utf8_bytes": 9517,
+      "characters": 5256,
+      "text_sha256": "554c3c70bfc16b034a98fe1ca2ceea2e4f99d75d1588efbab0baf48189b92d02"
+    },
+    {
+      "order": 110,
+      "article_id": "10072093",
+      "title": "Петраково (Октябрьское)",
+      "selection_rank_sha256": "0003d148bd69ad4689b360a08689c4a0d7dba8e30a3e34c869e12c72a04df233",
+      "utf8_bytes": 1508,
+      "characters": 824,
+      "text_sha256": "b7d4834ba1f493d03106a153d1a42b154417b2935179d4ee258c56f3f00a777a"
+    },
+    {
+      "order": 111,
+      "article_id": "3598456",
+      "title": "Пеннелл, Фрэнсис Уиттиер",
+      "selection_rank_sha256": "0003d8131aea2bcae8ab5cb430a6c66997176614e1457cb7579a7c679fdf0d88",
+      "utf8_bytes": 1641,
+      "characters": 1010,
+      "text_sha256": "c5c924c42c18344f50f24b4cf57f4d57478dd4fc334c6a1a64e009412a4e4326"
+    },
+    {
+      "order": 112,
+      "article_id": "8920330",
+      "title": "Новая Калиновка",
+      "selection_rank_sha256": "0003e5969fff4538134332f279ab5a292b1865ddf696d5238bf0e5fd780b48fa",
+      "utf8_bytes": 2436,
+      "characters": 1345,
+      "text_sha256": "ddb6f2adf9209f5e684a3a23b6cc41a98a9c5f720afc671641c6efb448373477"
+    },
+    {
+      "order": 113,
+      "article_id": "889114",
+      "title": "Конский волос",
+      "selection_rank_sha256": "0003ec7f23aa3fd6e00077abd90eb97ddfbb49564f93eb7850e50be5b6ae28e0",
+      "utf8_bytes": 319,
+      "characters": 170,
+      "text_sha256": "9613e3cb1acab1835b133d86346214508fd2d5ab64092bd0d26f9375ba158a1b"
+    },
+    {
+      "order": 114,
+      "article_id": "7554201",
+      "title": "Багульный",
+      "selection_rank_sha256": "0003f444a1ecdcb138087ea0e0e78363c72cd51781a779972872d88378274510",
+      "utf8_bytes": 550,
+      "characters": 299,
+      "text_sha256": "fee6f2f6af283390e31050376ac13a30b66663ce9e5ee7c78882188b1083fc34"
+    },
+    {
+      "order": 115,
+      "article_id": "1046728",
+      "title": "Паредес",
+      "selection_rank_sha256": "0003f4e79d18ed5de819ea8b4cca3f571aea7df9cb01e1cc54e3b9bab84438e3",
+      "utf8_bytes": 867,
+      "characters": 498,
+      "text_sha256": "51e743b21d1013687ea77b7f7287f2ae4c2d72930e189aa12ca52b2c89a6aa3e"
+    },
+    {
+      "order": 116,
+      "article_id": "2104993",
+      "title": "Башкатов",
+      "selection_rank_sha256": "0003f80ffc756906cec831e1c81a316280932e29c73dc05e10edc14fa2cc2d2a",
+      "utf8_bytes": 756,
+      "characters": 426,
+      "text_sha256": "b540043880131852f3c9397a5b0d96d9f43a8b947d30356c203cee36e9bb4956"
+    },
+    {
+      "order": 117,
+      "article_id": "4410149",
+      "title": "Жажда любви",
+      "selection_rank_sha256": "0003f82d411d146ca49c48448793caf41a9d04b21c8a9d510a80f3c0f3d685da",
+      "utf8_bytes": 1402,
+      "characters": 775,
+      "text_sha256": "2b8a45904ca63c344c96cbc378bb4a7b4b89b860e80817fc08093ca7df16a604"
+    },
+    {
+      "order": 118,
+      "article_id": "3895447",
+      "title": "Нурта",
+      "selection_rank_sha256": "000400da8f0e81d1009b375f058289cb038996e6758d3a64b29c12dd7b1a4288",
+      "utf8_bytes": 3122,
+      "characters": 1704,
+      "text_sha256": "7742143cbd244ccf280963f4dff5f462ba3e1597f1d1a01cdb67ad2f40e3c710"
+    },
+    {
+      "order": 119,
+      "article_id": "8858377",
+      "title": "Baeopogon clamans",
+      "selection_rank_sha256": "000410bbad183ee435212fd728d5c05fb4497e14341adeafe7043edab8e6b112",
+      "utf8_bytes": 3158,
+      "characters": 1776,
+      "text_sha256": "d31e07f22eaf773bb6cfa536646b79bbe1aa7ec4db1d38f050d16e5b958914bc"
+    },
+    {
+      "order": 120,
+      "article_id": "2304261",
+      "title": "Койшибаев, Макалим",
+      "selection_rank_sha256": "000413c1731f04a446af01f935ccc93d71708a5a183f5cf573c0aa59129b1c9f",
+      "utf8_bytes": 2924,
+      "characters": 1632,
+      "text_sha256": "ef0e08aeee1e836a100159f5b68cdb5095f5037d3b735e4ca3dc977ce7cf9b67"
+    },
+    {
+      "order": 121,
+      "article_id": "8687901",
+      "title": "V507 Возничего",
+      "selection_rank_sha256": "00042e45dbbec0e92dcbbb7dc9088451996ac1bb3b65ceb54ffaaa135c2a8a7f",
+      "utf8_bytes": 739,
+      "characters": 419,
+      "text_sha256": "d531cf00ac0b1a9330baface60eaded5fda90703186f8da5fa8b57bc1cbba746"
+    },
+    {
+      "order": 122,
+      "article_id": "2457136",
+      "title": "Филоновщина (Лебединский район)",
+      "selection_rank_sha256": "000439f0f468580209638d7b0223071b034e0265be0f65ac714875f92446b7aa",
+      "utf8_bytes": 609,
+      "characters": 342,
+      "text_sha256": "017972afdc45f7e27c65239e96cff929858920a6f710823f604b0aad79af2c99"
+    },
+    {
+      "order": 123,
+      "article_id": "8624989",
+      "title": "Вогренар, Янник",
+      "selection_rank_sha256": "00043bb029319df39cd617425dbc2034879140d5f87256d4b1247447800dfe23",
+      "utf8_bytes": 4514,
+      "characters": 2572,
+      "text_sha256": "1b235b0e8526838a30a1f1dce312fbc6c0a21ea6bfa5994d9abb0f8363190fe6"
+    },
+    {
+      "order": 124,
+      "article_id": "143835",
+      "title": "Палембанг",
+      "selection_rank_sha256": "0004462ab8b519006a646de72390e54863a489c3ae6256643ed33961ba6efc7e",
+      "utf8_bytes": 1446,
+      "characters": 817,
+      "text_sha256": "d112a62ed3d97eb39a9dcb7e629297f5097e4e6d23ce114a49f54284fc84433e"
+    },
+    {
+      "order": 125,
+      "article_id": "5062446",
+      "title": "Виллет-сюр-Эн",
+      "selection_rank_sha256": "0004511de4d0a19070f9521c47b28691ed150a6e0a9afbd0865ee421df887a18",
+      "utf8_bytes": 2208,
+      "characters": 1276,
+      "text_sha256": "a2df23c786221dcfda9e618bb04240976fd6da2b742eba548be1ca29376a81c6"
+    },
+    {
+      "order": 126,
+      "article_id": "6805810",
+      "title": "Батальон «Телемарк»",
+      "selection_rank_sha256": "0004535a9fcbd1cbfb5c1f43d31a2889117a0a39012d61d394eebd4f25fca7fe",
+      "utf8_bytes": 7654,
+      "characters": 4283,
+      "text_sha256": "436f605432f3b911d64e5140c87d8d39a41d141f1527e2172ad5ac0ff254a67f"
+    },
+    {
+      "order": 127,
+      "article_id": "3196133",
+      "title": "Выговский, Даниил Евстафьевич",
+      "selection_rank_sha256": "00045425a24088091f302bb4b69fda195b9efa512da85b3a90fc40e6ae85d6f6",
+      "utf8_bytes": 2463,
+      "characters": 1360,
+      "text_sha256": "54d676e952e2467b2d8bfa666aa101bd5c47a8571cb5274fbf902d7c9850a834"
+    },
+    {
+      "order": 128,
+      "article_id": "4929584",
+      "title": "Кузьминки (городской округ Егорьевск)",
+      "selection_rank_sha256": "00045ac59fa57bc96354c363abb3440b875972544e3ba6a5a51bf67418050d4a",
+      "utf8_bytes": 2340,
+      "characters": 1324,
+      "text_sha256": "afe7254a7ccc58b74038aa21af73636f89aa0aac866adcaa22e56ddb11efb914"
+    },
+    {
+      "order": 129,
+      "article_id": "624374",
+      "title": "Ряпина",
+      "selection_rank_sha256": "00046fcaa7cee2d2a1329a98fe2b4f345bed3c8167c357f0406620b02d22bacf",
+      "utf8_bytes": 2638,
+      "characters": 1493,
+      "text_sha256": "f36d03a72a5772fa56d2467757d2edd8097de7aa638e088f269f100d25b020f9"
+    },
+    {
+      "order": 130,
+      "article_id": "1274995",
+      "title": "Маккинси, Беверли",
+      "selection_rank_sha256": "00048485e05cadf693b5d8a1a8cdbf3e56514f4c2939bf3e21b1f63600025910",
+      "utf8_bytes": 2101,
+      "characters": 1178,
+      "text_sha256": "0fc175edd65e5396fbf406cfd69611065fe646cf61336839672f65e65f6da4fa"
+    },
+    {
+      "order": 131,
+      "article_id": "3675588",
+      "title": "Чудо-женщина (мультфильм)",
+      "selection_rank_sha256": "0004a1f9233ea73c0392affa25e54108c137e5b8f7fac1e3112780e795523a5e",
+      "utf8_bytes": 2349,
+      "characters": 1301,
+      "text_sha256": "b570c5ce0ed0b82d978a88bdc9522b1e1f3d81ff84e412e5d71cac6fb8f1bed7"
+    },
+    {
+      "order": 132,
+      "article_id": "8917120",
+      "title": "Рашитов, Улугбек Исматуллаевич",
+      "selection_rank_sha256": "0004a34a474201a9fb3efa1a3db21ec912439dd1324d25677cf096ca66b89790",
+      "utf8_bytes": 3901,
+      "characters": 2181,
+      "text_sha256": "4ffd1f2af1861d44d59f23edb06125303902c4938624b36821ac4c58a0f1c4b0"
+    },
+    {
+      "order": 133,
+      "article_id": "8640203",
+      "title": "Есминя-Михельсоне, Лизете",
+      "selection_rank_sha256": "0004b1e92bee9d8b92e1b6d2f6f1e75c14b1b752b4b09ec3eeb90d5732c51417",
+      "utf8_bytes": 2174,
+      "characters": 1227,
+      "text_sha256": "125ae152090bcb6f7ae86ae117aeb3919d1120d1412153b20e1aabc73b0b883f"
+    },
+    {
+      "order": 134,
+      "article_id": "4618556",
+      "title": "Саломея и Иудифь",
+      "selection_rank_sha256": "0004b5be940e7dfdcfacbcec615ac2a3dfd4cedebdadbd7040b3bb91c7eca9ea",
+      "utf8_bytes": 3774,
+      "characters": 2272,
+      "text_sha256": "db06ad75f0e2682dc73798b485dff2462cfd54359a9b27682191f3795dbf1584"
+    },
+    {
+      "order": 135,
+      "article_id": "4552715",
+      "title": "Амберьё-ан-Бюже (значения)",
+      "selection_rank_sha256": "0004bb464a42346713783038a5da659fe8e1b3c9c8d6704b18405df67a23185a",
+      "utf8_bytes": 387,
+      "characters": 214,
+      "text_sha256": "bca473c3165bf582172a3657d3c690d759c59800848bc5ed05cd8f22684df71a"
+    },
+    {
+      "order": 136,
+      "article_id": "2557247",
+      "title": "Эльжбета Рыкса",
+      "selection_rank_sha256": "0004f1c09fd5ccf3a5df560283cb4f5ff8e4a31ab9ad2891af91ba5cfba53e68",
+      "utf8_bytes": 4399,
+      "characters": 2523,
+      "text_sha256": "cffed091bc592eab06637f1b4fb7478a288f7b63a2c31f047763b6d5f2113086"
+    },
+    {
+      "order": 137,
+      "article_id": "7330845",
+      "title": "Кайсер, Курт",
+      "selection_rank_sha256": "000500969e01989aec00114019789df300a6fc9cc954e3de437720f64c629592",
+      "utf8_bytes": 6043,
+      "characters": 3363,
+      "text_sha256": "0a2e533eb2b2bbca8feacca08e1f42b8cf57c368b94eccea23c2523cac804a96"
+    },
+    {
+      "order": 138,
+      "article_id": "1147657",
+      "title": "Железный человек (фильм, 2008)",
+      "selection_rank_sha256": "00052095a325275ab6405df2f03bb89f2bf55b3a2eb8a29136870ca82d5102a7",
+      "utf8_bytes": 42007,
+      "characters": 23480,
+      "text_sha256": "f2b373b8502278d2f18173bc4929a6a0c4db80d575e30b94782885b32fd7965f"
+    },
+    {
+      "order": 139,
+      "article_id": "4955149",
+      "title": "Сель (Верхняя Сона)",
+      "selection_rank_sha256": "0005377b8df34da0e261f7d44a6b8afb5686a4ef7a519caf6b296e3d1f4e8a7f",
+      "utf8_bytes": 1778,
+      "characters": 1023,
+      "text_sha256": "15106ac3271cd808f90ebf6749949602797cd7cc65407358cf02f6399d075374"
+    },
+    {
+      "order": 140,
+      "article_id": "1095713",
+      "title": "Ермачки",
+      "selection_rank_sha256": "000538e22f6faa02c622f6e6688b4c4f95b6d213060eab604c2b7eedf38c74e9",
+      "utf8_bytes": 1930,
+      "characters": 1074,
+      "text_sha256": "c3396ca00e5bab52e2f561bf3c6b402565582fef8fd2bdc8bc0db8df57a5831a"
+    },
+    {
+      "order": 141,
+      "article_id": "8677292",
+      "title": "Нечипоренко, Степан Игнатьевич",
+      "selection_rank_sha256": "0005437b52c56f6f65edf2084f1ee928b1dd1e23a0ff110851c39e7bc93c3f1a",
+      "utf8_bytes": 9901,
+      "characters": 5452,
+      "text_sha256": "0e3fc54640ea8f4897606a2c0fc19b9e0315e833221dbed46171dab767c03fbe"
+    },
+    {
+      "order": 142,
+      "article_id": "7303674",
+      "title": "Коцтикау",
+      "selection_rank_sha256": "000548362923039ce1ae25831de5c51de44a599f4ddab1a165ed3074c777f952",
+      "utf8_bytes": 713,
+      "characters": 397,
+      "text_sha256": "c8c523d677a13951f1eabeb6255182240746aa50d514c19d52406675829e5792"
+    },
+    {
+      "order": 143,
+      "article_id": "3315230",
+      "title": "Summer’s End",
+      "selection_rank_sha256": "000559efd3fa963943d284c2a6239a78a472e5156bf25905cb6e1f7da535685f",
+      "utf8_bytes": 477,
+      "characters": 285,
+      "text_sha256": "27055d8dd6769b91eb2e07ba5acf4020c272b258123359c3ef009a3f127e5569"
+    },
+    {
+      "order": 144,
+      "article_id": "5485386",
+      "title": "Холкомб, Сайлас Александр",
+      "selection_rank_sha256": "00056be75ab77ccaa08a8332fded14f1f007100eadfaef9f8361eeafd22b79b8",
+      "utf8_bytes": 2652,
+      "characters": 1501,
+      "text_sha256": "5d50110fd60212d92970b3bd6ff173e07ede3ab257500007ff4a4e23ee3bc0ab"
+    },
+    {
+      "order": 145,
+      "article_id": "8465918",
+      "title": "Стэнхоуп, Джон",
+      "selection_rank_sha256": "00056c53d8fadbf0b5dfef884d8856b1a0ed8dcf053e7a990501f3916672bf41",
+      "utf8_bytes": 4431,
+      "characters": 2842,
+      "text_sha256": "55bc5c33ebf9fad0fa27b8d4df2bac7e02f75973b2025d8b46a7d2a57aa02aed"
+    },
+    {
+      "order": 146,
+      "article_id": "1131513",
+      "title": "Парадела (Пенакова)",
+      "selection_rank_sha256": "00056d441cc7ba686ffff3a5f1f456bfdfa0f64c51573f8368effe11f90b70d7",
+      "utf8_bytes": 818,
+      "characters": 449,
+      "text_sha256": "281abfce0d7825e16c11d7c9eeb724c57604126821aee851d5ee1700dca87327"
+    },
+    {
+      "order": 147,
+      "article_id": "5339694",
+      "title": "Y’all Ready Know",
+      "selection_rank_sha256": "00057e8553d1d94cc5e6e8832e51aaa0b31b91fa653c2479d3b36962c6ba134c",
+      "utf8_bytes": 802,
+      "characters": 476,
+      "text_sha256": "45933bfd31d0561714b74b5d2a00945e5cd025c77773ab028d704b35b2fdd0d4"
+    },
+    {
+      "order": 148,
+      "article_id": "574584",
+      "title": "Хайнценберг (Кирн)",
+      "selection_rank_sha256": "0005880f354b3caaa0fecca0ae786fd5a1fafcc87b58f16ab1b2cae26ba192ad",
+      "utf8_bytes": 461,
+      "characters": 261,
+      "text_sha256": "81f7185e903efa05a37ba53e6dd9b8d6b2036cafee1475bb601414d1440138bd"
+    },
+    {
+      "order": 149,
+      "article_id": "6686450",
+      "title": "Кочнев, Дмитрий Васильевич",
+      "selection_rank_sha256": "0005886834ce6280adc335a8860940847b948cf4790623214ff4f27ecb434224",
+      "utf8_bytes": 6595,
+      "characters": 3695,
+      "text_sha256": "28ad0079e4c211fb5d317230a0b2abb77b7a7187644bc4a45406ad2f7f88c9fc"
+    },
+    {
+      "order": 150,
+      "article_id": "6492392",
+      "title": "Гарусёнок",
+      "selection_rank_sha256": "000592cc113218f32c9de5e2eecc3fa0170c63ddc67a52e4ae6ff516d6adb93e",
+      "utf8_bytes": 454,
+      "characters": 247,
+      "text_sha256": "f51777199b78546ffca13ef4841f3be114365cf2cc3399210fc8343431b47903"
+    },
+    {
+      "order": 151,
+      "article_id": "6582140",
+      "title": "Фальков, Михаил",
+      "selection_rank_sha256": "0005a9b893288b106e248e3a853ec418aa13a7fda8b8b19818bca9b2630d1ab7",
+      "utf8_bytes": 46636,
+      "characters": 25872,
+      "text_sha256": "bba059f637d2ea572304eb0a55f31626eead1ebaa689737543273b226b696203"
+    },
+    {
+      "order": 152,
+      "article_id": "8587398",
+      "title": "Михайловка (Кипецкое муниципальное образование)",
+      "selection_rank_sha256": "0005b7a84e2151004d33e28f32748a2e83c784cdda6d4f0a2e59ec11d1123764",
+      "utf8_bytes": 2519,
+      "characters": 1394,
+      "text_sha256": "1076edc8828edffc9a3e5e9511c5bbf6f28bd5eb110582a7eb12de26db007da3"
+    },
+    {
+      "order": 153,
+      "article_id": "9466238",
+      "title": "Локомотивная I",
+      "selection_rank_sha256": "0005c5b0319eca956181425e6b3a0ef32ee0bd011be22cf8ab9e02b1514b9cc6",
+      "utf8_bytes": 816,
+      "characters": 443,
+      "text_sha256": "0c87db2ee7366822c40a8d2dc4e15711384a7e827e7847f6bc60a67044a82948"
+    },
+    {
+      "order": 154,
+      "article_id": "2159108",
+      "title": "Матвеев, Николай Прохорович",
+      "selection_rank_sha256": "0005cdb97a8c9c224be1b90edcbade2a305e070df7ebc8e277ddd2e50cf8ec1b",
+      "utf8_bytes": 2653,
+      "characters": 1497,
+      "text_sha256": "de80a6842f8f156697ab2f21a9758c78d25fff3f4c2dfbb64ba0543dd0832984"
+    },
+    {
+      "order": 155,
+      "article_id": "561354",
+      "title": "Бондаренко, Владимир Григорьевич",
+      "selection_rank_sha256": "0005e620a6394c415439e9f27fdc6ac3d8c149676c4c9ad13805b6c0ab3dcf72",
+      "utf8_bytes": 8434,
+      "characters": 5065,
+      "text_sha256": "d9902fe7603d12e01db432271deebc4aa20f08c16c19b7c615a9f3355a99503b"
+    },
+    {
+      "order": 156,
+      "article_id": "2148933",
+      "title": "Сельское поселение Подсолнечное",
+      "selection_rank_sha256": "0005f1eecbdae50bed30c827cd29b61e4f0af4ef903f7c28b7a3fdd0842da1bf",
+      "utf8_bytes": 840,
+      "characters": 453,
+      "text_sha256": "d43a05cdb3aab0df7a8512ebbf2393b4eaf87d0ddad7f5ce35daeecabcbbf481"
+    },
+    {
+      "order": 157,
+      "article_id": "451976",
+      "title": "Ширах, Бальдур фон",
+      "selection_rank_sha256": "0005f26712aa8102143634477054e7c5fbfdf1606af1b2e86c405de8d173b007",
+      "utf8_bytes": 14485,
+      "characters": 8071,
+      "text_sha256": "08350267cf5c744f0e0376d4ce0cc6802551244fc2bd4179b6f6c8655c9e2d44"
+    },
+    {
+      "order": 158,
+      "article_id": "2381735",
+      "title": "Сокрушительный (эсминец, 1937)",
+      "selection_rank_sha256": "0005f667d06b299b9deeb9a6c698fd6b0088c94bdb218c96ffb9a4b70ff8cb72",
+      "utf8_bytes": 10415,
+      "characters": 5807,
+      "text_sha256": "e6bb009c68536b1fdd53b0a3fccb63f16a435595bf6fe92982c9a0f4cdf1fe43"
+    },
+    {
+      "order": 159,
+      "article_id": "2337620",
+      "title": "Грабко, Олег Всеволодович",
+      "selection_rank_sha256": "0005fe7ecfc5e75ee63b2f87670f833156dd57b9b244c9954e9f0df5183da0a5",
+      "utf8_bytes": 17696,
+      "characters": 9993,
+      "text_sha256": "f1e1f777c62086bc1e328b48c6cfe295903ccb52643043b7c24d9b3589f714e7"
+    },
+    {
+      "order": 160,
+      "article_id": "6446734",
+      "title": "Лириа (футбольный клуб)",
+      "selection_rank_sha256": "000606bef8e593ee779a67d23a98c7d4babf8a532084f3b3e98532d239cd16a6",
+      "utf8_bytes": 1852,
+      "characters": 1025,
+      "text_sha256": "9908d567ce52ada83ddfd252e9d82c105c302e7a83ad2ce7bf29f59e486954db"
+    },
+    {
+      "order": 161,
+      "article_id": "242291",
+      "title": "G",
+      "selection_rank_sha256": "000615645280affc6b323979c305c8dbe37e3f005444798a802644c0bde02b2a",
+      "utf8_bytes": 5591,
+      "characters": 3154,
+      "text_sha256": "4f092d833f3b46daf382ac49392df6e4beac036eb56f1fbfe2b913815e148b71"
+    },
+    {
+      "order": 162,
+      "article_id": "2039132",
+      "title": "Pop ’til You Drop!",
+      "selection_rank_sha256": "000615fe962281b7bb64e5ba39acbb99eced6953c475068c123e4a19e11010df",
+      "utf8_bytes": 3466,
+      "characters": 2158,
+      "text_sha256": "63563b767344cff4b983e24831fdfd9c35a5b419d1f76853e7d173d1ff77f2f0"
+    },
+    {
+      "order": 163,
+      "article_id": "2077759",
+      "title": "Кюхнер, Марк",
+      "selection_rank_sha256": "00061abd1fd36563ea63567760043ad634dddd7a2b2bef84933e51de29bb1e26",
+      "utf8_bytes": 1414,
+      "characters": 792,
+      "text_sha256": "ab2d53ec445232569cfcd9fda25127cb3a80e912668f38166ab83334bd115689"
+    },
+    {
+      "order": 164,
+      "article_id": "4650627",
+      "title": "Чурюков, Василий Николаевич",
+      "selection_rank_sha256": "00061e16315553dd4171b4e346c86c1ea7e54d2fef7ec5ccce2834902d0ab2b8",
+      "utf8_bytes": 8039,
+      "characters": 4471,
+      "text_sha256": "467bbf2ec7dd85bbbf70f642db78c87cb3d6976379cfddb70f5befa635eab59c"
+    },
+    {
+      "order": 165,
+      "article_id": "8268374",
+      "title": "Джонкер, Эфрайн",
+      "selection_rank_sha256": "0006260759be998ecbc48eac2b5cfa32f8bb60cd8b19a0fafd05c6e7be97da75",
+      "utf8_bytes": 2681,
+      "characters": 1556,
+      "text_sha256": "4dd235aa1363b3222f2a06a6fd448280947963ae2b68957952810533246f3de2"
+    },
+    {
+      "order": 166,
+      "article_id": "5213928",
+      "title": "Эрнандес, Армандо",
+      "selection_rank_sha256": "000628a6181dad6b81113741ed06efecfb854fd762912bcf801fd38d515e7d07",
+      "utf8_bytes": 5060,
+      "characters": 2820,
+      "text_sha256": "5538e8a5aaf38e153e0cb04ae6b813cf6d92642223b461aef86729e156e9cb43"
+    },
+    {
+      "order": 167,
+      "article_id": "1132299",
+      "title": "Вила-даз-Авиш",
+      "selection_rank_sha256": "00062e4737abd34db9a5c099685aac07ea15ee279c792da08c6fd45abce3bd7d",
+      "utf8_bytes": 973,
+      "characters": 536,
+      "text_sha256": "0f609a14045a6c1a73b10cca82fdb1c02c7a118cba437758baf8576a035d1506"
+    },
+    {
+      "order": 168,
+      "article_id": "2312350",
+      "title": "CLIST",
+      "selection_rank_sha256": "00063592cbb3b63e8511e0b6a0e707653de9c9e8ce4f7054f66d7cf91a689363",
+      "utf8_bytes": 2186,
+      "characters": 1655,
+      "text_sha256": "e5910ff95e422a259c4b32ee99d6fbdc0f63b9dc9e3e76d8c5cb52546f3e852c"
+    },
+    {
+      "order": 169,
+      "article_id": "5300370",
+      "title": "Вильчик",
+      "selection_rank_sha256": "00063bd7cc9079fc321479e53bfb3c720c6dfe654377f67dd66f77ec4a1dfd78",
+      "utf8_bytes": 269,
+      "characters": 155,
+      "text_sha256": "6ce05a6457d958ef36b2fd9b84b1b20ff07f5aa90464086c20dd8b8d32b7dc25"
+    },
+    {
+      "order": 170,
+      "article_id": "7151650",
+      "title": "Манукянц, Михаил Сергеевич",
+      "selection_rank_sha256": "00063cc22f1182592d7cd8bdd14d073305bd19fcb89b8916cb3c0ca4a66f2c41",
+      "utf8_bytes": 2300,
+      "characters": 1265,
+      "text_sha256": "44b46431f38b19f09fa88e727c2ecc75fa153e02657d52660d4d5b37d2238dd6"
+    },
+    {
+      "order": 171,
+      "article_id": "25152",
+      "title": "Главная бухгалтерская книга",
+      "selection_rank_sha256": "00063ce4502c7982c788c8a3e8e0e02e44d9f77fff4416768ad45439447d5da1",
+      "utf8_bytes": 7444,
+      "characters": 4042,
+      "text_sha256": "ed9dcd5186d627434c813ffb123a18ea6d797a12ac0829637e6aafd1193963b1"
+    },
+    {
+      "order": 172,
+      "article_id": "6212657",
+      "title": "Конституция Аргентины 1819 года",
+      "selection_rank_sha256": "000648e0b18a6760a634216163672343a9bd5298d26d674f795206308e77dac6",
+      "utf8_bytes": 3649,
+      "characters": 2005,
+      "text_sha256": "a1d5df59d1ea54af1e7173b13395dcffcace1338cde573c737d0cc9ea20f3f43"
+    },
+    {
+      "order": 173,
+      "article_id": "2825295",
+      "title": "Денисовка (Полтавская область)",
+      "selection_rank_sha256": "000661a941ab97dd362117a262c2f6bd8e235824fa47eecfc9e47808b175873c",
+      "utf8_bytes": 2366,
+      "characters": 1323,
+      "text_sha256": "6f41239777099e4e1b7107f268ed63de4b6d8b5d04ca3c19e0ec2b6230142c20"
+    },
+    {
+      "order": 174,
+      "article_id": "6061690",
+      "title": "Степановка 2-я",
+      "selection_rank_sha256": "00066f75f60ce8cdd19964064aca952ea7d9b33e636a30fc951fc563ce6f5253",
+      "utf8_bytes": 604,
+      "characters": 333,
+      "text_sha256": "50923ea7316d9a8e9f11bdb16ed531531f93b27694bf5b3023d67d6c965175b0"
+    },
+    {
+      "order": 175,
+      "article_id": "5442802",
+      "title": "Иодат плутония(IV)",
+      "selection_rank_sha256": "0006761a667bcd8f478d9dc4c06be19531fd64b725b08af11c8faaa7ef22605e",
+      "utf8_bytes": 1386,
+      "characters": 783,
+      "text_sha256": "abff1c5337d798c668bbdd57126fc22a7043e194da0e3a6fc8c290a87954f662"
+    },
+    {
+      "order": 176,
+      "article_id": "5868050",
+      "title": "Лётно-Хвалынское",
+      "selection_rank_sha256": "000679931e281a9d19202605b642e6dc21e8683fc117d143f398e4f306d9383e",
+      "utf8_bytes": 2078,
+      "characters": 1149,
+      "text_sha256": "e2c79a9e7408a8d4a0eba3f66733143210b0a6788f09924a9e7aeb99774c6b7f"
+    },
+    {
+      "order": 177,
+      "article_id": "2664373",
+      "title": "Opisthopsis",
+      "selection_rank_sha256": "00068ca5157cf27db0e63f2338e629e386b4c6e73b939d6f4fff1488daba72cc",
+      "utf8_bytes": 812,
+      "characters": 507,
+      "text_sha256": "45f299d87564369041a1af2a41b96c498aaf8e837c47055d9b499020a2637669"
+    },
+    {
+      "order": 178,
+      "article_id": "6886902",
+      "title": "Сенкевич, Николай",
+      "selection_rank_sha256": "00068d7905082fa2736245866163b7ef095a861120a411115b77ae41f71703c6",
+      "utf8_bytes": 325,
+      "characters": 185,
+      "text_sha256": "db3b69d14342957197dfe92ba7554b1062e3a0bc1bda16eaaa733bbe12429c5e"
+    },
+    {
+      "order": 179,
+      "article_id": "1170043",
+      "title": "Аратака",
+      "selection_rank_sha256": "000690c9d47f3f911bce76d73257de126b9bbc602eaa8c0db0be39fef0f40f1b",
+      "utf8_bytes": 1629,
+      "characters": 923,
+      "text_sha256": "fc6147d1a86888d3f36bd6951e073ec3c2c196aa6f83ccf73641991bc561dafb"
+    },
+    {
+      "order": 180,
+      "article_id": "8535197",
+      "title": "Лок, Эрик",
+      "selection_rank_sha256": "0006a2010d08fc69e4739ef71aba94867f0f1d7dfdb008c02c926ba45e2523c2",
+      "utf8_bytes": 24678,
+      "characters": 13819,
+      "text_sha256": "759fa40ff5b99b3e10dccca067dc5067bb1738bf6c1da3da6dda4dd021fa2037"
+    },
+    {
+      "order": 181,
+      "article_id": "3152572",
+      "title": "Стантон (тауншип, Миннесота)",
+      "selection_rank_sha256": "0006ab577d560b0a3200fc9c16660cb90751b0276cfcc9d4aa66ccab23ae7276",
+      "utf8_bytes": 3045,
+      "characters": 1815,
+      "text_sha256": "cc860de19d113e8f61d273e3333b7084cbca96297519efc289aeb00e047acfe4"
+    },
+    {
+      "order": 182,
+      "article_id": "218835",
+      "title": "NGC 2955",
+      "selection_rank_sha256": "0006b98527f87216d53e664c1e87754af552e1820cc1d93e927ae6ea9416fc8a",
+      "utf8_bytes": 3999,
+      "characters": 2314,
+      "text_sha256": "17ddfad62c6d9de835c4d57cc5247781b1243cc6fb468227dfcd1d222aedef8b"
+    },
+    {
+      "order": 183,
+      "article_id": "5100790",
+      "title": "Унегбу",
+      "selection_rank_sha256": "0006bad67f4094c6bc63d8f3fd149c6972f7558335eefb32284fe6e031fab5f5",
+      "utf8_bytes": 958,
+      "characters": 659,
+      "text_sha256": "a114f5ec5b0fb2beb4fd07a996c21dbaf32ca55032833378100d327ec0ee1264"
+    },
+    {
+      "order": 184,
+      "article_id": "6480983",
+      "title": "Ваки ибн аль-Джаррах",
+      "selection_rank_sha256": "0006cc44f7fbfd8ae6f9cc966205b87e6e70b8739f9042d2cc9dc3aca818fb2e",
+      "utf8_bytes": 2011,
+      "characters": 1124,
+      "text_sha256": "056d4ecdadb6b23a30517c7ed1bd2d11fd5fd26e3f98848d67232ea8403692ec"
+    },
+    {
+      "order": 185,
+      "article_id": "10264224",
+      "title": "Полово (Ярославская область)",
+      "selection_rank_sha256": "0006e525bcdd40724caea5db4fb5a4a8528001251f19cd45a39feba22faa2c78",
+      "utf8_bytes": 2659,
+      "characters": 1463,
+      "text_sha256": "c9dde22e84530343917e6c152ebeb2ad3a990c3e4d0014a45c5535883d69c870"
+    },
+    {
+      "order": 186,
+      "article_id": "9791563",
+      "title": "Тот, Бела (футболист)",
+      "selection_rank_sha256": "0006f3f8c7656994603388747cde4e0563a91c049d1619e36b9240a52afe15a1",
+      "utf8_bytes": 1337,
+      "characters": 760,
+      "text_sha256": "5bbde44cf7178d2cba0b67b61a817dd62cfe0ee4836580300be03d79991420c7"
+    },
+    {
+      "order": 187,
+      "article_id": "4197007",
+      "title": "Лейхт, Степан Андреевич",
+      "selection_rank_sha256": "000700001e8edc35ea3d22b03f1b04412abb34affc4d1c57a2a34294ea6e3100",
+      "utf8_bytes": 5341,
+      "characters": 3013,
+      "text_sha256": "3b752f001bdaa03c7beb22562727a078f1fa290a15c686ae25d4252310125a28"
+    },
+    {
+      "order": 188,
+      "article_id": "6357088",
+      "title": "Водное поло на летней Универсиаде 1981",
+      "selection_rank_sha256": "00070dc41c2b2fc7b58282630fa3ce21ef9724d85cc2dc9e625bc44ad7ec722b",
+      "utf8_bytes": 571,
+      "characters": 340,
+      "text_sha256": "e511e752b186c1945949eaed0640813aa134f1b00254d43281115e64e1681dba"
+    },
+    {
+      "order": 189,
+      "article_id": "934196",
+      "title": "Циклы Миланковича",
+      "selection_rank_sha256": "00070f66468f6054075f5e852acd468a16e7c706d8204fc5cbe32fc7a6f9b58b",
+      "utf8_bytes": 7796,
+      "characters": 4245,
+      "text_sha256": "d8862671ec1a933f0c956726f2c8e6eb4696d9ec29fa15145b5595fa93fca616"
+    },
+    {
+      "order": 190,
+      "article_id": "7146752",
+      "title": "Санный спорт на зимних Олимпийских играх 2018 — квалификация",
+      "selection_rank_sha256": "00071397bd71ba06ebc6d92c8f28b076c07959141aeeb5cb376b26e6f17e9c7b",
+      "utf8_bytes": 1940,
+      "characters": 1075,
+      "text_sha256": "cea4d76c53def307d6d76555ab6159ca3dea74a94166d0c0f5e0528b823f349e"
+    },
+    {
+      "order": 191,
+      "article_id": "5802757",
+      "title": "Университет Святейшего Сердца",
+      "selection_rank_sha256": "0007146ad1d671d36ecfce9425bcc9446dab62f9694482276da55072539bd737",
+      "utf8_bytes": 1519,
+      "characters": 824,
+      "text_sha256": "86afbd07b414576756b944b0bccd877e0c63cd75c78c37c947adc25a666a6b3c"
+    },
+    {
+      "order": 192,
+      "article_id": "379613",
+      "title": "Сибирский физико-технический институт",
+      "selection_rank_sha256": "00072517b590af8596bc76cedef96f86ed24fd953909a5b1b625ddfa28cfbafc",
+      "utf8_bytes": 13669,
+      "characters": 7602,
+      "text_sha256": "378513ed03e228b53131d421130c2be7e0c17bc85925dd9b2c081b860959b0b5"
+    },
+    {
+      "order": 193,
+      "article_id": "2222880",
+      "title": "6-й индивидуальный чемпионат мира по фридайвингу",
+      "selection_rank_sha256": "00074b3684f9f1c7e495b79349b7b19cc1b014041973caa65704588d7a321682",
+      "utf8_bytes": 1667,
+      "characters": 983,
+      "text_sha256": "dba53ea5ad0c3ce3df6a2bc0e475d4e4e783eb00bc55fc20a0a47f3b049c8e29"
+    },
+    {
+      "order": 194,
+      "article_id": "278317",
+      "title": "Тонатиу (звезда)",
+      "selection_rank_sha256": "00075cba9d748c082f1f385f001b35ba22ca6509497164613bea2cf6bd2d39ba",
+      "utf8_bytes": 2650,
+      "characters": 1513,
+      "text_sha256": "152b3dbc5fe2c048f2a40e10716bb530f5b1a6d187c6430e56b59aaf53333779"
+    },
+    {
+      "order": 195,
+      "article_id": "3339879",
+      "title": "Микулаш IV Брунтальский",
+      "selection_rank_sha256": "00075e7c767ef5e38ffc0673c12586d3c37ece35444cc843fe96252f4e528ac5",
+      "utf8_bytes": 1983,
+      "characters": 1331,
+      "text_sha256": "93b30d34f7b994d6d6df2e35c21b93235dc507ae8a6fd2329b2e40c1f535084a"
+    },
+    {
+      "order": 196,
+      "article_id": "1592359",
+      "title": "Воеводские",
+      "selection_rank_sha256": "00075f9f06fee63830aabab39a96f00d85b537a43cd28abc668d98d894d3af31",
+      "utf8_bytes": 4421,
+      "characters": 2469,
+      "text_sha256": "8a194285561eda78b66a84345a1d672319c2dc54bb3f187ae7afecc18eb8ea02"
+    },
+    {
+      "order": 197,
+      "article_id": "4373718",
+      "title": "Формация",
+      "selection_rank_sha256": "000760d3454b4c141fdbc2f395efda2a051e1de8ed561b7917497d93b3fcd5ba",
+      "utf8_bytes": 900,
+      "characters": 489,
+      "text_sha256": "ce3402c794e3f1087e22d310a12ab541ae395538185fa59cd00aa717f91c6e14"
+    },
+    {
+      "order": 198,
+      "article_id": "8233928",
+      "title": "Песковская, Юлия Анатольевна",
+      "selection_rank_sha256": "0007631ff72919fea37d503a81f11fa975a32805c15f960ecbf6a0b21adbdf89",
+      "utf8_bytes": 4917,
+      "characters": 2713,
+      "text_sha256": "8059f56467e6f009def0aaaadb518e1eb2e1684087bbc8d14e6055e0a6a19586"
+    },
+    {
+      "order": 199,
+      "article_id": "4093614",
+      "title": "Rosa 'Vivid'",
+      "selection_rank_sha256": "00076951949de3e32e580d1ff7d74e0bc20a563780baddeef096080d3a7e21e7",
+      "utf8_bytes": 634,
+      "characters": 375,
+      "text_sha256": "d2fa24c71c7108d79fd2ed77af208b61ff8bab0e136ff8bf950085f609c3d2c6"
+    },
+    {
+      "order": 200,
+      "article_id": "4876425",
+      "title": "Исаковка (Красноярский край)",
+      "selection_rank_sha256": "00077b839765c53bd2e7c43f277baa249832752eb31b67ec6ec9f8f39f17ebe4",
+      "utf8_bytes": 941,
+      "characters": 527,
+      "text_sha256": "207f9547d1eaa7c74ca8fcc0645e29c57641664a1c47a225f25393b6495e164d"
+    },
+    {
+      "order": 201,
+      "article_id": "3735287",
+      "title": "Николаева, Наталья Викторовна",
+      "selection_rank_sha256": "00077d9b20b356f6d9aed5e379478dc482843b2762c7a85368e8b65283832290",
+      "utf8_bytes": 12796,
+      "characters": 7025,
+      "text_sha256": "b946427f328d347a40fef056bb7e3151c8d1dff856254e5bc0d6a028cadb2ca2"
+    },
+    {
+      "order": 202,
+      "article_id": "6151757",
+      "title": "International Philosophical Quarterly",
+      "selection_rank_sha256": "0007974f02ab441cde75eb47dae3be8a1d9646d5adbb1ad94c6d0a814f8135fc",
+      "utf8_bytes": 929,
+      "characters": 590,
+      "text_sha256": "bf2ad1b35ef4a3caafa76282dae07d6fd52c1e9542691204afb257aae295818a"
+    },
+    {
+      "order": 203,
+      "article_id": "3124343",
+      "title": "Барбоза Родригис, Жуан",
+      "selection_rank_sha256": "0007af6258f4188f9586aefba19399190815e8f586206217dbdb7f689c302e92",
+      "utf8_bytes": 1735,
+      "characters": 1123,
+      "text_sha256": "3b5f114676d91b6babd229dea81f7831ec1602f23e538a7522e3b82a95f7805c"
+    },
+    {
+      "order": 204,
+      "article_id": "6442328",
+      "title": "Домин",
+      "selection_rank_sha256": "0007e0baa699c7a7d29a8dc8e64263d220490c79097d8029ee3692ec8937976e",
+      "utf8_bytes": 381,
+      "characters": 219,
+      "text_sha256": "4318c346e1d82ae7de53cac71761dc04958cbecacdb7c2f1b15787675f393403"
+    },
+    {
+      "order": 205,
+      "article_id": "4912118",
+      "title": "Каликст III (значения)",
+      "selection_rank_sha256": "0007ef5510c02b36231c3e1f3cea1f5e673c756c5126799459036d0582fa39ec",
+      "utf8_bytes": 271,
+      "characters": 172,
+      "text_sha256": "7bff7328fca385aff7c033e6a7da5d6d8504fddff4ab940f39b1c5a5ad0fc146"
+    },
+    {
+      "order": 206,
+      "article_id": "10082750",
+      "title": "Шалленберг",
+      "selection_rank_sha256": "0007fa679352af398ffd560e59afcbaf0f7c40f12967130ee590a4d3e9aa0e3f",
+      "utf8_bytes": 457,
+      "characters": 260,
+      "text_sha256": "170e918a905845c7090acd1dd7777d422356313386228b5fd0062f9232f08b9f"
+    }
+  ],
+  "corpus_protocol": {
+    "source_and_selection_sha256": "bc9de039cbd0e7ad81a092004dbc32e63ecef4dc64db4ab51ba7f75bb9289c15"
+  },
+  "manifest_sha256": "71699507f3875030f6776e75288f58824864428d2ae45f41cfc66735552580a5"
+}

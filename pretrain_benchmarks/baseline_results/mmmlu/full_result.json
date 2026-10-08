@@ -1,0 +1,4045 @@
+{
+  "schema_version": 1,
+  "result_type": "exact deterministic merge of complementary canonical Stage 1 and Stage 2 selections; not a third model run",
+  "model_id": "Qwen/Qwen3.5-0.8B-Base",
+  "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+  "dataset_id": "openai/MMMLU",
+  "dataset_revision": "325a01dc3e173cac1578df94120499aaca2e2504",
+  "locales": 14,
+  "subjects_per_locale": 57,
+  "strata": 798,
+  "progressive_manifest_sha256": "001b5824114013b92629413abc142a5a201dfa89be0ac9a3df4f9c374d5cc306",
+  "stages": {
+    "stage1": {
+      "artifact": "20260809T113000Z/stage_summary.json",
+      "selection_sha256": "d5d1fc9851094bc498df5eaaa2f4293bf849e64f58e0fe4d2b094ef90dc15aaf",
+      "sample_count": 9828,
+      "correct_count_acc": 3989,
+      "correct_count_acc_norm": 3989
+    },
+    "stage2": {
+      "artifact": "20260810T134134Z/stage_summary.json",
+      "raw_runner_run_id": "20260810T134139Z",
+      "raw_runner_path": "pretrain_benchmarks\\results\\Qwen__Qwen3.5-0.8B-Base\\20260810T134139Z",
+      "selection_sha256": "b69444c25dde246edda2edbce6b189e85127f562a1823cae5a12f8fb38e14b80",
+      "sample_count": 186760,
+      "correct_count_acc": 74988,
+      "correct_count_acc_norm": 74988
+    }
+  },
+  "full": {
+    "sample_count": 196588,
+    "correct_count_acc": 78977,
+    "correct_count_acc_norm": 78977,
+    "acc": 0.40173866156632143,
+    "acc_norm": 0.40173866156632143,
+    "per_task": {
+      "mmmlu_ar_xy_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 30,
+        "correct_count_acc_norm": 30
+      },
+      "mmmlu_ar_xy_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 42,
+        "correct_count_acc_norm": 42
+      },
+      "mmmlu_ar_xy_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_ar_xy_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_ar_xy_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 120,
+        "correct_count_acc_norm": 120
+      },
+      "mmmlu_ar_xy_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_ar_xy_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_ar_xy_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_ar_xy_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 35,
+        "correct_count_acc_norm": 35
+      },
+      "mmmlu_ar_xy_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_ar_xy_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_ar_xy_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_ar_xy_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 99,
+        "correct_count_acc_norm": 99
+      },
+      "mmmlu_ar_xy_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_ar_xy_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_ar_xy_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 147,
+        "correct_count_acc_norm": 147
+      },
+      "mmmlu_ar_xy_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 39,
+        "correct_count_acc_norm": 39
+      },
+      "mmmlu_ar_xy_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 22,
+        "correct_count_acc_norm": 22
+      },
+      "mmmlu_ar_xy_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 150,
+        "correct_count_acc_norm": 150
+      },
+      "mmmlu_ar_xy_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 94,
+        "correct_count_acc_norm": 94
+      },
+      "mmmlu_ar_xy_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 42,
+        "correct_count_acc_norm": 42
+      },
+      "mmmlu_ar_xy_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_ar_xy_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 101,
+        "correct_count_acc_norm": 101
+      },
+      "mmmlu_ar_xy_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_ar_xy_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 172,
+        "correct_count_acc_norm": 172
+      },
+      "mmmlu_ar_xy_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_ar_xy_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 100,
+        "correct_count_acc_norm": 100
+      },
+      "mmmlu_ar_xy_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 50,
+        "correct_count_acc_norm": 50
+      },
+      "mmmlu_ar_xy_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 237,
+        "correct_count_acc_norm": 237
+      },
+      "mmmlu_ar_xy_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_ar_xy_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 82,
+        "correct_count_acc_norm": 82
+      },
+      "mmmlu_ar_xy_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 110,
+        "correct_count_acc_norm": 110
+      },
+      "mmmlu_ar_xy_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 94,
+        "correct_count_acc_norm": 94
+      },
+      "mmmlu_ar_xy_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_ar_xy_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_ar_xy_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 54,
+        "correct_count_acc_norm": 54
+      },
+      "mmmlu_ar_xy_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 68,
+        "correct_count_acc_norm": 68
+      },
+      "mmmlu_ar_xy_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 39,
+        "correct_count_acc_norm": 39
+      },
+      "mmmlu_ar_xy_management": {
+        "sample_count": 103,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_ar_xy_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 159,
+        "correct_count_acc_norm": 159
+      },
+      "mmmlu_ar_xy_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 49,
+        "correct_count_acc_norm": 49
+      },
+      "mmmlu_ar_xy_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 306,
+        "correct_count_acc_norm": 306
+      },
+      "mmmlu_ar_xy_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 169,
+        "correct_count_acc_norm": 169
+      },
+      "mmmlu_ar_xy_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 213,
+        "correct_count_acc_norm": 213
+      },
+      "mmmlu_ar_xy_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 157,
+        "correct_count_acc_norm": 157
+      },
+      "mmmlu_ar_xy_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 134,
+        "correct_count_acc_norm": 134
+      },
+      "mmmlu_ar_xy_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 130,
+        "correct_count_acc_norm": 130
+      },
+      "mmmlu_ar_xy_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 95,
+        "correct_count_acc_norm": 95
+      },
+      "mmmlu_ar_xy_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 489,
+        "correct_count_acc_norm": 489
+      },
+      "mmmlu_ar_xy_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_ar_xy_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 215,
+        "correct_count_acc_norm": 215
+      },
+      "mmmlu_ar_xy_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_ar_xy_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 142,
+        "correct_count_acc_norm": 142
+      },
+      "mmmlu_ar_xy_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 120,
+        "correct_count_acc_norm": 120
+      },
+      "mmmlu_ar_xy_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_ar_xy_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_ar_xy_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_bn_bd_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_bn_bd_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_bn_bd_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 41,
+        "correct_count_acc_norm": 41
+      },
+      "mmmlu_bn_bd_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 29,
+        "correct_count_acc_norm": 29
+      },
+      "mmmlu_bn_bd_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_bn_bd_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 35,
+        "correct_count_acc_norm": 35
+      },
+      "mmmlu_bn_bd_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 27,
+        "correct_count_acc_norm": 27
+      },
+      "mmmlu_bn_bd_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 24,
+        "correct_count_acc_norm": 24
+      },
+      "mmmlu_bn_bd_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 21,
+        "correct_count_acc_norm": 21
+      },
+      "mmmlu_bn_bd_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_bn_bd_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 23,
+        "correct_count_acc_norm": 23
+      },
+      "mmmlu_bn_bd_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 39,
+        "correct_count_acc_norm": 39
+      },
+      "mmmlu_bn_bd_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_bn_bd_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_bn_bd_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 49,
+        "correct_count_acc_norm": 49
+      },
+      "mmmlu_bn_bd_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 110,
+        "correct_count_acc_norm": 110
+      },
+      "mmmlu_bn_bd_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_bn_bd_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_bn_bd_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 112,
+        "correct_count_acc_norm": 112
+      },
+      "mmmlu_bn_bd_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_bn_bd_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_bn_bd_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 46,
+        "correct_count_acc_norm": 46
+      },
+      "mmmlu_bn_bd_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_bn_bd_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_bn_bd_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 94,
+        "correct_count_acc_norm": 94
+      },
+      "mmmlu_bn_bd_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_bn_bd_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_bn_bd_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_bn_bd_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 131,
+        "correct_count_acc_norm": 131
+      },
+      "mmmlu_bn_bd_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_bn_bd_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 72,
+        "correct_count_acc_norm": 72
+      },
+      "mmmlu_bn_bd_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_bn_bd_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_bn_bd_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_bn_bd_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_bn_bd_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_bn_bd_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_bn_bd_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_bn_bd_management": {
+        "sample_count": 103,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_bn_bd_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 89,
+        "correct_count_acc_norm": 89
+      },
+      "mmmlu_bn_bd_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 42,
+        "correct_count_acc_norm": 42
+      },
+      "mmmlu_bn_bd_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 201,
+        "correct_count_acc_norm": 201
+      },
+      "mmmlu_bn_bd_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 106,
+        "correct_count_acc_norm": 106
+      },
+      "mmmlu_bn_bd_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 213,
+        "correct_count_acc_norm": 213
+      },
+      "mmmlu_bn_bd_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_bn_bd_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 88,
+        "correct_count_acc_norm": 88
+      },
+      "mmmlu_bn_bd_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_bn_bd_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_bn_bd_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 412,
+        "correct_count_acc_norm": 412
+      },
+      "mmmlu_bn_bd_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 68,
+        "correct_count_acc_norm": 68
+      },
+      "mmmlu_bn_bd_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 169,
+        "correct_count_acc_norm": 169
+      },
+      "mmmlu_bn_bd_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_bn_bd_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 95,
+        "correct_count_acc_norm": 95
+      },
+      "mmmlu_bn_bd_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_bn_bd_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_bn_bd_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_bn_bd_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_de_de_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_de_de_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_de_de_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 64,
+        "correct_count_acc_norm": 64
+      },
+      "mmmlu_de_de_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_de_de_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 139,
+        "correct_count_acc_norm": 139
+      },
+      "mmmlu_de_de_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_de_de_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_de_de_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_de_de_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_de_de_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_de_de_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_de_de_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 64,
+        "correct_count_acc_norm": 64
+      },
+      "mmmlu_de_de_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 117,
+        "correct_count_acc_norm": 117
+      },
+      "mmmlu_de_de_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_de_de_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 76,
+        "correct_count_acc_norm": 76
+      },
+      "mmmlu_de_de_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 144,
+        "correct_count_acc_norm": 144
+      },
+      "mmmlu_de_de_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_de_de_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 30,
+        "correct_count_acc_norm": 30
+      },
+      "mmmlu_de_de_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 177,
+        "correct_count_acc_norm": 177
+      },
+      "mmmlu_de_de_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 97,
+        "correct_count_acc_norm": 97
+      },
+      "mmmlu_de_de_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_de_de_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 92,
+        "correct_count_acc_norm": 92
+      },
+      "mmmlu_de_de_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 105,
+        "correct_count_acc_norm": 105
+      },
+      "mmmlu_de_de_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_de_de_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 169,
+        "correct_count_acc_norm": 169
+      },
+      "mmmlu_de_de_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_de_de_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 114,
+        "correct_count_acc_norm": 114
+      },
+      "mmmlu_de_de_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_de_de_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 310,
+        "correct_count_acc_norm": 310
+      },
+      "mmmlu_de_de_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_de_de_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 75,
+        "correct_count_acc_norm": 75
+      },
+      "mmmlu_de_de_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 131,
+        "correct_count_acc_norm": 131
+      },
+      "mmmlu_de_de_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 106,
+        "correct_count_acc_norm": 106
+      },
+      "mmmlu_de_de_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_de_de_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_de_de_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_de_de_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_de_de_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_de_de_management": {
+        "sample_count": 103,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_de_de_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 162,
+        "correct_count_acc_norm": 162
+      },
+      "mmmlu_de_de_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_de_de_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 378,
+        "correct_count_acc_norm": 378
+      },
+      "mmmlu_de_de_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 159,
+        "correct_count_acc_norm": 159
+      },
+      "mmmlu_de_de_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 223,
+        "correct_count_acc_norm": 223
+      },
+      "mmmlu_de_de_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 169,
+        "correct_count_acc_norm": 169
+      },
+      "mmmlu_de_de_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 162,
+        "correct_count_acc_norm": 162
+      },
+      "mmmlu_de_de_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 148,
+        "correct_count_acc_norm": 148
+      },
+      "mmmlu_de_de_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_de_de_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 490,
+        "correct_count_acc_norm": 490
+      },
+      "mmmlu_de_de_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 104,
+        "correct_count_acc_norm": 104
+      },
+      "mmmlu_de_de_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 243,
+        "correct_count_acc_norm": 243
+      },
+      "mmmlu_de_de_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_de_de_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 144,
+        "correct_count_acc_norm": 144
+      },
+      "mmmlu_de_de_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 139,
+        "correct_count_acc_norm": 139
+      },
+      "mmmlu_de_de_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_de_de_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_de_de_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_es_la_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_es_la_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_es_la_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_es_la_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_es_la_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 139,
+        "correct_count_acc_norm": 139
+      },
+      "mmmlu_es_la_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_es_la_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_es_la_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_es_la_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_es_la_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_es_la_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_es_la_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_es_la_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 114,
+        "correct_count_acc_norm": 114
+      },
+      "mmmlu_es_la_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 42,
+        "correct_count_acc_norm": 42
+      },
+      "mmmlu_es_la_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 84,
+        "correct_count_acc_norm": 84
+      },
+      "mmmlu_es_la_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 158,
+        "correct_count_acc_norm": 158
+      },
+      "mmmlu_es_la_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_es_la_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_es_la_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 193,
+        "correct_count_acc_norm": 193
+      },
+      "mmmlu_es_la_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 104,
+        "correct_count_acc_norm": 104
+      },
+      "mmmlu_es_la_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_es_la_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 99,
+        "correct_count_acc_norm": 99
+      },
+      "mmmlu_es_la_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 114,
+        "correct_count_acc_norm": 114
+      },
+      "mmmlu_es_la_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 99,
+        "correct_count_acc_norm": 99
+      },
+      "mmmlu_es_la_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 174,
+        "correct_count_acc_norm": 174
+      },
+      "mmmlu_es_la_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 89,
+        "correct_count_acc_norm": 89
+      },
+      "mmmlu_es_la_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 122,
+        "correct_count_acc_norm": 122
+      },
+      "mmmlu_es_la_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_es_la_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 326,
+        "correct_count_acc_norm": 326
+      },
+      "mmmlu_es_la_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 90,
+        "correct_count_acc_norm": 90
+      },
+      "mmmlu_es_la_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 94,
+        "correct_count_acc_norm": 94
+      },
+      "mmmlu_es_la_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 132,
+        "correct_count_acc_norm": 132
+      },
+      "mmmlu_es_la_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_es_la_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 71,
+        "correct_count_acc_norm": 71
+      },
+      "mmmlu_es_la_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_es_la_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_es_la_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_es_la_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_es_la_management": {
+        "sample_count": 103,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_es_la_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 165,
+        "correct_count_acc_norm": 165
+      },
+      "mmmlu_es_la_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_es_la_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 394,
+        "correct_count_acc_norm": 394
+      },
+      "mmmlu_es_la_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 174,
+        "correct_count_acc_norm": 174
+      },
+      "mmmlu_es_la_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 215,
+        "correct_count_acc_norm": 215
+      },
+      "mmmlu_es_la_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 180,
+        "correct_count_acc_norm": 180
+      },
+      "mmmlu_es_la_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 168,
+        "correct_count_acc_norm": 168
+      },
+      "mmmlu_es_la_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 158,
+        "correct_count_acc_norm": 158
+      },
+      "mmmlu_es_la_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 97,
+        "correct_count_acc_norm": 97
+      },
+      "mmmlu_es_la_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 525,
+        "correct_count_acc_norm": 525
+      },
+      "mmmlu_es_la_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_es_la_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 263,
+        "correct_count_acc_norm": 263
+      },
+      "mmmlu_es_la_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_es_la_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 147,
+        "correct_count_acc_norm": 147
+      },
+      "mmmlu_es_la_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 137,
+        "correct_count_acc_norm": 137
+      },
+      "mmmlu_es_la_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_es_la_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_es_la_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 89,
+        "correct_count_acc_norm": 89
+      },
+      "mmmlu_fr_fr_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_fr_fr_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_fr_fr_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_fr_fr_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_fr_fr_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 142,
+        "correct_count_acc_norm": 142
+      },
+      "mmmlu_fr_fr_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_fr_fr_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 41,
+        "correct_count_acc_norm": 41
+      },
+      "mmmlu_fr_fr_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_fr_fr_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_fr_fr_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_fr_fr_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_fr_fr_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_fr_fr_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 118,
+        "correct_count_acc_norm": 118
+      },
+      "mmmlu_fr_fr_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 46,
+        "correct_count_acc_norm": 46
+      },
+      "mmmlu_fr_fr_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_fr_fr_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 149,
+        "correct_count_acc_norm": 149
+      },
+      "mmmlu_fr_fr_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 46,
+        "correct_count_acc_norm": 46
+      },
+      "mmmlu_fr_fr_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 29,
+        "correct_count_acc_norm": 29
+      },
+      "mmmlu_fr_fr_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 194,
+        "correct_count_acc_norm": 194
+      },
+      "mmmlu_fr_fr_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 105,
+        "correct_count_acc_norm": 105
+      },
+      "mmmlu_fr_fr_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_fr_fr_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 90,
+        "correct_count_acc_norm": 90
+      },
+      "mmmlu_fr_fr_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 114,
+        "correct_count_acc_norm": 114
+      },
+      "mmmlu_fr_fr_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_fr_fr_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 172,
+        "correct_count_acc_norm": 172
+      },
+      "mmmlu_fr_fr_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 90,
+        "correct_count_acc_norm": 90
+      },
+      "mmmlu_fr_fr_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 121,
+        "correct_count_acc_norm": 121
+      },
+      "mmmlu_fr_fr_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_fr_fr_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 320,
+        "correct_count_acc_norm": 320
+      },
+      "mmmlu_fr_fr_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 87,
+        "correct_count_acc_norm": 87
+      },
+      "mmmlu_fr_fr_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 92,
+        "correct_count_acc_norm": 92
+      },
+      "mmmlu_fr_fr_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 134,
+        "correct_count_acc_norm": 134
+      },
+      "mmmlu_fr_fr_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 111,
+        "correct_count_acc_norm": 111
+      },
+      "mmmlu_fr_fr_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 65,
+        "correct_count_acc_norm": 65
+      },
+      "mmmlu_fr_fr_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_fr_fr_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 68,
+        "correct_count_acc_norm": 68
+      },
+      "mmmlu_fr_fr_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_fr_fr_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 26,
+        "correct_count_acc_norm": 26
+      },
+      "mmmlu_fr_fr_management": {
+        "sample_count": 103,
+        "correct_count_acc": 68,
+        "correct_count_acc_norm": 68
+      },
+      "mmmlu_fr_fr_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 156,
+        "correct_count_acc_norm": 156
+      },
+      "mmmlu_fr_fr_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_fr_fr_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 385,
+        "correct_count_acc_norm": 385
+      },
+      "mmmlu_fr_fr_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 178,
+        "correct_count_acc_norm": 178
+      },
+      "mmmlu_fr_fr_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 217,
+        "correct_count_acc_norm": 217
+      },
+      "mmmlu_fr_fr_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 171,
+        "correct_count_acc_norm": 171
+      },
+      "mmmlu_fr_fr_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 150,
+        "correct_count_acc_norm": 150
+      },
+      "mmmlu_fr_fr_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 143,
+        "correct_count_acc_norm": 143
+      },
+      "mmmlu_fr_fr_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 100,
+        "correct_count_acc_norm": 100
+      },
+      "mmmlu_fr_fr_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 516,
+        "correct_count_acc_norm": 516
+      },
+      "mmmlu_fr_fr_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_fr_fr_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 272,
+        "correct_count_acc_norm": 272
+      },
+      "mmmlu_fr_fr_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_fr_fr_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 144,
+        "correct_count_acc_norm": 144
+      },
+      "mmmlu_fr_fr_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 136,
+        "correct_count_acc_norm": 136
+      },
+      "mmmlu_fr_fr_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_fr_fr_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_fr_fr_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 90,
+        "correct_count_acc_norm": 90
+      },
+      "mmmlu_hi_in_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 25,
+        "correct_count_acc_norm": 25
+      },
+      "mmmlu_hi_in_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 25,
+        "correct_count_acc_norm": 25
+      },
+      "mmmlu_hi_in_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_hi_in_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_hi_in_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 106,
+        "correct_count_acc_norm": 106
+      },
+      "mmmlu_hi_in_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_hi_in_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_hi_in_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 35,
+        "correct_count_acc_norm": 35
+      },
+      "mmmlu_hi_in_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 20,
+        "correct_count_acc_norm": 20
+      },
+      "mmmlu_hi_in_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 65,
+        "correct_count_acc_norm": 65
+      },
+      "mmmlu_hi_in_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 25,
+        "correct_count_acc_norm": 25
+      },
+      "mmmlu_hi_in_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_hi_in_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_hi_in_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_hi_in_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_hi_in_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 121,
+        "correct_count_acc_norm": 121
+      },
+      "mmmlu_hi_in_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_hi_in_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 23,
+        "correct_count_acc_norm": 23
+      },
+      "mmmlu_hi_in_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_hi_in_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_hi_in_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_hi_in_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_hi_in_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_hi_in_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_hi_in_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 116,
+        "correct_count_acc_norm": 116
+      },
+      "mmmlu_hi_in_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_hi_in_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_hi_in_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_hi_in_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 139,
+        "correct_count_acc_norm": 139
+      },
+      "mmmlu_hi_in_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_hi_in_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 56,
+        "correct_count_acc_norm": 56
+      },
+      "mmmlu_hi_in_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_hi_in_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_hi_in_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 41,
+        "correct_count_acc_norm": 41
+      },
+      "mmmlu_hi_in_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_hi_in_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_hi_in_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_hi_in_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 26,
+        "correct_count_acc_norm": 26
+      },
+      "mmmlu_hi_in_management": {
+        "sample_count": 103,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_hi_in_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 91,
+        "correct_count_acc_norm": 91
+      },
+      "mmmlu_hi_in_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_hi_in_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 207,
+        "correct_count_acc_norm": 207
+      },
+      "mmmlu_hi_in_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 113,
+        "correct_count_acc_norm": 113
+      },
+      "mmmlu_hi_in_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 212,
+        "correct_count_acc_norm": 212
+      },
+      "mmmlu_hi_in_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 110,
+        "correct_count_acc_norm": 110
+      },
+      "mmmlu_hi_in_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 89,
+        "correct_count_acc_norm": 89
+      },
+      "mmmlu_hi_in_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_hi_in_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_hi_in_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 437,
+        "correct_count_acc_norm": 437
+      },
+      "mmmlu_hi_in_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_hi_in_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 185,
+        "correct_count_acc_norm": 185
+      },
+      "mmmlu_hi_in_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 26,
+        "correct_count_acc_norm": 26
+      },
+      "mmmlu_hi_in_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_hi_in_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_hi_in_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 29,
+        "correct_count_acc_norm": 29
+      },
+      "mmmlu_hi_in_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_hi_in_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_id_id_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 27,
+        "correct_count_acc_norm": 27
+      },
+      "mmmlu_id_id_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_id_id_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_id_id_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_id_id_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 136,
+        "correct_count_acc_norm": 136
+      },
+      "mmmlu_id_id_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 64,
+        "correct_count_acc_norm": 64
+      },
+      "mmmlu_id_id_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_id_id_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 41,
+        "correct_count_acc_norm": 41
+      },
+      "mmmlu_id_id_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_id_id_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_id_id_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_id_id_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_id_id_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 112,
+        "correct_count_acc_norm": 112
+      },
+      "mmmlu_id_id_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 35,
+        "correct_count_acc_norm": 35
+      },
+      "mmmlu_id_id_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 84,
+        "correct_count_acc_norm": 84
+      },
+      "mmmlu_id_id_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 155,
+        "correct_count_acc_norm": 155
+      },
+      "mmmlu_id_id_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_id_id_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_id_id_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 179,
+        "correct_count_acc_norm": 179
+      },
+      "mmmlu_id_id_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 100,
+        "correct_count_acc_norm": 100
+      },
+      "mmmlu_id_id_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_id_id_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_id_id_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 122,
+        "correct_count_acc_norm": 122
+      },
+      "mmmlu_id_id_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 84,
+        "correct_count_acc_norm": 84
+      },
+      "mmmlu_id_id_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 193,
+        "correct_count_acc_norm": 193
+      },
+      "mmmlu_id_id_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 85,
+        "correct_count_acc_norm": 85
+      },
+      "mmmlu_id_id_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 121,
+        "correct_count_acc_norm": 121
+      },
+      "mmmlu_id_id_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 49,
+        "correct_count_acc_norm": 49
+      },
+      "mmmlu_id_id_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 291,
+        "correct_count_acc_norm": 291
+      },
+      "mmmlu_id_id_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 75,
+        "correct_count_acc_norm": 75
+      },
+      "mmmlu_id_id_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_id_id_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 135,
+        "correct_count_acc_norm": 135
+      },
+      "mmmlu_id_id_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 110,
+        "correct_count_acc_norm": 110
+      },
+      "mmmlu_id_id_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_id_id_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_id_id_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_id_id_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 71,
+        "correct_count_acc_norm": 71
+      },
+      "mmmlu_id_id_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_id_id_management": {
+        "sample_count": 103,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_id_id_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 164,
+        "correct_count_acc_norm": 164
+      },
+      "mmmlu_id_id_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 50,
+        "correct_count_acc_norm": 50
+      },
+      "mmmlu_id_id_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 386,
+        "correct_count_acc_norm": 386
+      },
+      "mmmlu_id_id_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 171,
+        "correct_count_acc_norm": 171
+      },
+      "mmmlu_id_id_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 220,
+        "correct_count_acc_norm": 220
+      },
+      "mmmlu_id_id_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 166,
+        "correct_count_acc_norm": 166
+      },
+      "mmmlu_id_id_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 153,
+        "correct_count_acc_norm": 153
+      },
+      "mmmlu_id_id_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 140,
+        "correct_count_acc_norm": 140
+      },
+      "mmmlu_id_id_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 89,
+        "correct_count_acc_norm": 89
+      },
+      "mmmlu_id_id_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 488,
+        "correct_count_acc_norm": 488
+      },
+      "mmmlu_id_id_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_id_id_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 238,
+        "correct_count_acc_norm": 238
+      },
+      "mmmlu_id_id_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 54,
+        "correct_count_acc_norm": 54
+      },
+      "mmmlu_id_id_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 140,
+        "correct_count_acc_norm": 140
+      },
+      "mmmlu_id_id_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 134,
+        "correct_count_acc_norm": 134
+      },
+      "mmmlu_id_id_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_id_id_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 71,
+        "correct_count_acc_norm": 71
+      },
+      "mmmlu_id_id_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 91,
+        "correct_count_acc_norm": 91
+      },
+      "mmmlu_it_it_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 30,
+        "correct_count_acc_norm": 30
+      },
+      "mmmlu_it_it_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_it_it_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_it_it_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_it_it_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 139,
+        "correct_count_acc_norm": 139
+      },
+      "mmmlu_it_it_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_it_it_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 35,
+        "correct_count_acc_norm": 35
+      },
+      "mmmlu_it_it_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 41,
+        "correct_count_acc_norm": 41
+      },
+      "mmmlu_it_it_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_it_it_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 75,
+        "correct_count_acc_norm": 75
+      },
+      "mmmlu_it_it_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_it_it_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_it_it_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 122,
+        "correct_count_acc_norm": 122
+      },
+      "mmmlu_it_it_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 39,
+        "correct_count_acc_norm": 39
+      },
+      "mmmlu_it_it_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_it_it_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 158,
+        "correct_count_acc_norm": 158
+      },
+      "mmmlu_it_it_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_it_it_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 39,
+        "correct_count_acc_norm": 39
+      },
+      "mmmlu_it_it_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 179,
+        "correct_count_acc_norm": 179
+      },
+      "mmmlu_it_it_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_it_it_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_it_it_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 91,
+        "correct_count_acc_norm": 91
+      },
+      "mmmlu_it_it_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_it_it_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 100,
+        "correct_count_acc_norm": 100
+      },
+      "mmmlu_it_it_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 184,
+        "correct_count_acc_norm": 184
+      },
+      "mmmlu_it_it_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 91,
+        "correct_count_acc_norm": 91
+      },
+      "mmmlu_it_it_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 112,
+        "correct_count_acc_norm": 112
+      },
+      "mmmlu_it_it_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_it_it_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 318,
+        "correct_count_acc_norm": 318
+      },
+      "mmmlu_it_it_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_it_it_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 94,
+        "correct_count_acc_norm": 94
+      },
+      "mmmlu_it_it_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 131,
+        "correct_count_acc_norm": 131
+      },
+      "mmmlu_it_it_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 101,
+        "correct_count_acc_norm": 101
+      },
+      "mmmlu_it_it_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_it_it_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_it_it_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_it_it_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_it_it_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_it_it_management": {
+        "sample_count": 103,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_it_it_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 160,
+        "correct_count_acc_norm": 160
+      },
+      "mmmlu_it_it_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 54,
+        "correct_count_acc_norm": 54
+      },
+      "mmmlu_it_it_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 383,
+        "correct_count_acc_norm": 383
+      },
+      "mmmlu_it_it_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 164,
+        "correct_count_acc_norm": 164
+      },
+      "mmmlu_it_it_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 217,
+        "correct_count_acc_norm": 217
+      },
+      "mmmlu_it_it_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 176,
+        "correct_count_acc_norm": 176
+      },
+      "mmmlu_it_it_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 152,
+        "correct_count_acc_norm": 152
+      },
+      "mmmlu_it_it_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 140,
+        "correct_count_acc_norm": 140
+      },
+      "mmmlu_it_it_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 97,
+        "correct_count_acc_norm": 97
+      },
+      "mmmlu_it_it_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 526,
+        "correct_count_acc_norm": 526
+      },
+      "mmmlu_it_it_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 114,
+        "correct_count_acc_norm": 114
+      },
+      "mmmlu_it_it_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 249,
+        "correct_count_acc_norm": 249
+      },
+      "mmmlu_it_it_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_it_it_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 136,
+        "correct_count_acc_norm": 136
+      },
+      "mmmlu_it_it_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 131,
+        "correct_count_acc_norm": 131
+      },
+      "mmmlu_it_it_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_it_it_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 74,
+        "correct_count_acc_norm": 74
+      },
+      "mmmlu_it_it_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_ja_jp_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 25,
+        "correct_count_acc_norm": 25
+      },
+      "mmmlu_ja_jp_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_ja_jp_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_ja_jp_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_ja_jp_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 123,
+        "correct_count_acc_norm": 123
+      },
+      "mmmlu_ja_jp_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_ja_jp_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_ja_jp_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_ja_jp_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_ja_jp_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 71,
+        "correct_count_acc_norm": 71
+      },
+      "mmmlu_ja_jp_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_ja_jp_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_ja_jp_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 107,
+        "correct_count_acc_norm": 107
+      },
+      "mmmlu_ja_jp_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_ja_jp_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 72,
+        "correct_count_acc_norm": 72
+      },
+      "mmmlu_ja_jp_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 158,
+        "correct_count_acc_norm": 158
+      },
+      "mmmlu_ja_jp_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 42,
+        "correct_count_acc_norm": 42
+      },
+      "mmmlu_ja_jp_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_ja_jp_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 154,
+        "correct_count_acc_norm": 154
+      },
+      "mmmlu_ja_jp_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 98,
+        "correct_count_acc_norm": 98
+      },
+      "mmmlu_ja_jp_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_ja_jp_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 82,
+        "correct_count_acc_norm": 82
+      },
+      "mmmlu_ja_jp_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 101,
+        "correct_count_acc_norm": 101
+      },
+      "mmmlu_ja_jp_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_ja_jp_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 167,
+        "correct_count_acc_norm": 167
+      },
+      "mmmlu_ja_jp_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 86,
+        "correct_count_acc_norm": 86
+      },
+      "mmmlu_ja_jp_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 94,
+        "correct_count_acc_norm": 94
+      },
+      "mmmlu_ja_jp_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 42,
+        "correct_count_acc_norm": 42
+      },
+      "mmmlu_ja_jp_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 249,
+        "correct_count_acc_norm": 249
+      },
+      "mmmlu_ja_jp_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_ja_jp_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_ja_jp_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 132,
+        "correct_count_acc_norm": 132
+      },
+      "mmmlu_ja_jp_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_ja_jp_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_ja_jp_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 87,
+        "correct_count_acc_norm": 87
+      },
+      "mmmlu_ja_jp_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_ja_jp_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_ja_jp_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_ja_jp_management": {
+        "sample_count": 103,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_ja_jp_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 156,
+        "correct_count_acc_norm": 156
+      },
+      "mmmlu_ja_jp_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_ja_jp_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 331,
+        "correct_count_acc_norm": 331
+      },
+      "mmmlu_ja_jp_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 157,
+        "correct_count_acc_norm": 157
+      },
+      "mmmlu_ja_jp_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 214,
+        "correct_count_acc_norm": 214
+      },
+      "mmmlu_ja_jp_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 156,
+        "correct_count_acc_norm": 156
+      },
+      "mmmlu_ja_jp_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 135,
+        "correct_count_acc_norm": 135
+      },
+      "mmmlu_ja_jp_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 135,
+        "correct_count_acc_norm": 135
+      },
+      "mmmlu_ja_jp_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 88,
+        "correct_count_acc_norm": 88
+      },
+      "mmmlu_ja_jp_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 500,
+        "correct_count_acc_norm": 500
+      },
+      "mmmlu_ja_jp_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 88,
+        "correct_count_acc_norm": 88
+      },
+      "mmmlu_ja_jp_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 243,
+        "correct_count_acc_norm": 243
+      },
+      "mmmlu_ja_jp_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_ja_jp_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 130,
+        "correct_count_acc_norm": 130
+      },
+      "mmmlu_ja_jp_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 124,
+        "correct_count_acc_norm": 124
+      },
+      "mmmlu_ja_jp_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_ja_jp_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 72,
+        "correct_count_acc_norm": 72
+      },
+      "mmmlu_ja_jp_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_ko_kr_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_ko_kr_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_ko_kr_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_ko_kr_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 49,
+        "correct_count_acc_norm": 49
+      },
+      "mmmlu_ko_kr_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 116,
+        "correct_count_acc_norm": 116
+      },
+      "mmmlu_ko_kr_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 50,
+        "correct_count_acc_norm": 50
+      },
+      "mmmlu_ko_kr_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_ko_kr_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_ko_kr_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_ko_kr_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 72,
+        "correct_count_acc_norm": 72
+      },
+      "mmmlu_ko_kr_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 29,
+        "correct_count_acc_norm": 29
+      },
+      "mmmlu_ko_kr_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 65,
+        "correct_count_acc_norm": 65
+      },
+      "mmmlu_ko_kr_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 108,
+        "correct_count_acc_norm": 108
+      },
+      "mmmlu_ko_kr_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_ko_kr_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_ko_kr_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 136,
+        "correct_count_acc_norm": 136
+      },
+      "mmmlu_ko_kr_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_ko_kr_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_ko_kr_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 156,
+        "correct_count_acc_norm": 156
+      },
+      "mmmlu_ko_kr_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_ko_kr_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 46,
+        "correct_count_acc_norm": 46
+      },
+      "mmmlu_ko_kr_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 86,
+        "correct_count_acc_norm": 86
+      },
+      "mmmlu_ko_kr_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_ko_kr_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 86,
+        "correct_count_acc_norm": 86
+      },
+      "mmmlu_ko_kr_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 167,
+        "correct_count_acc_norm": 167
+      },
+      "mmmlu_ko_kr_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_ko_kr_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 118,
+        "correct_count_acc_norm": 118
+      },
+      "mmmlu_ko_kr_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 47,
+        "correct_count_acc_norm": 47
+      },
+      "mmmlu_ko_kr_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 273,
+        "correct_count_acc_norm": 273
+      },
+      "mmmlu_ko_kr_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 75,
+        "correct_count_acc_norm": 75
+      },
+      "mmmlu_ko_kr_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 75,
+        "correct_count_acc_norm": 75
+      },
+      "mmmlu_ko_kr_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 122,
+        "correct_count_acc_norm": 122
+      },
+      "mmmlu_ko_kr_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 99,
+        "correct_count_acc_norm": 99
+      },
+      "mmmlu_ko_kr_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 56,
+        "correct_count_acc_norm": 56
+      },
+      "mmmlu_ko_kr_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 82,
+        "correct_count_acc_norm": 82
+      },
+      "mmmlu_ko_kr_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 56,
+        "correct_count_acc_norm": 56
+      },
+      "mmmlu_ko_kr_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_ko_kr_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_ko_kr_management": {
+        "sample_count": 103,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_ko_kr_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 148,
+        "correct_count_acc_norm": 148
+      },
+      "mmmlu_ko_kr_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 45,
+        "correct_count_acc_norm": 45
+      },
+      "mmmlu_ko_kr_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 328,
+        "correct_count_acc_norm": 328
+      },
+      "mmmlu_ko_kr_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 156,
+        "correct_count_acc_norm": 156
+      },
+      "mmmlu_ko_kr_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 217,
+        "correct_count_acc_norm": 217
+      },
+      "mmmlu_ko_kr_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 156,
+        "correct_count_acc_norm": 156
+      },
+      "mmmlu_ko_kr_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 143,
+        "correct_count_acc_norm": 143
+      },
+      "mmmlu_ko_kr_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 122,
+        "correct_count_acc_norm": 122
+      },
+      "mmmlu_ko_kr_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_ko_kr_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 503,
+        "correct_count_acc_norm": 503
+      },
+      "mmmlu_ko_kr_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_ko_kr_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 241,
+        "correct_count_acc_norm": 241
+      },
+      "mmmlu_ko_kr_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_ko_kr_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 129,
+        "correct_count_acc_norm": 129
+      },
+      "mmmlu_ko_kr_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 126,
+        "correct_count_acc_norm": 126
+      },
+      "mmmlu_ko_kr_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 50,
+        "correct_count_acc_norm": 50
+      },
+      "mmmlu_ko_kr_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 70,
+        "correct_count_acc_norm": 70
+      },
+      "mmmlu_ko_kr_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_pt_br_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_pt_br_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_pt_br_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_pt_br_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 50,
+        "correct_count_acc_norm": 50
+      },
+      "mmmlu_pt_br_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 143,
+        "correct_count_acc_norm": 143
+      },
+      "mmmlu_pt_br_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_pt_br_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 41,
+        "correct_count_acc_norm": 41
+      },
+      "mmmlu_pt_br_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_pt_br_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_pt_br_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_pt_br_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 30,
+        "correct_count_acc_norm": 30
+      },
+      "mmmlu_pt_br_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_pt_br_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 115,
+        "correct_count_acc_norm": 115
+      },
+      "mmmlu_pt_br_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_pt_br_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 80,
+        "correct_count_acc_norm": 80
+      },
+      "mmmlu_pt_br_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 142,
+        "correct_count_acc_norm": 142
+      },
+      "mmmlu_pt_br_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 50,
+        "correct_count_acc_norm": 50
+      },
+      "mmmlu_pt_br_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 30,
+        "correct_count_acc_norm": 30
+      },
+      "mmmlu_pt_br_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 197,
+        "correct_count_acc_norm": 197
+      },
+      "mmmlu_pt_br_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 110,
+        "correct_count_acc_norm": 110
+      },
+      "mmmlu_pt_br_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 54,
+        "correct_count_acc_norm": 54
+      },
+      "mmmlu_pt_br_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_pt_br_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 117,
+        "correct_count_acc_norm": 117
+      },
+      "mmmlu_pt_br_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 89,
+        "correct_count_acc_norm": 89
+      },
+      "mmmlu_pt_br_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 188,
+        "correct_count_acc_norm": 188
+      },
+      "mmmlu_pt_br_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 97,
+        "correct_count_acc_norm": 97
+      },
+      "mmmlu_pt_br_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 114,
+        "correct_count_acc_norm": 114
+      },
+      "mmmlu_pt_br_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_pt_br_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 332,
+        "correct_count_acc_norm": 332
+      },
+      "mmmlu_pt_br_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 85,
+        "correct_count_acc_norm": 85
+      },
+      "mmmlu_pt_br_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 99,
+        "correct_count_acc_norm": 99
+      },
+      "mmmlu_pt_br_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 131,
+        "correct_count_acc_norm": 131
+      },
+      "mmmlu_pt_br_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 117,
+        "correct_count_acc_norm": 117
+      },
+      "mmmlu_pt_br_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_pt_br_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 82,
+        "correct_count_acc_norm": 82
+      },
+      "mmmlu_pt_br_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_pt_br_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_pt_br_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_pt_br_management": {
+        "sample_count": 103,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_pt_br_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 163,
+        "correct_count_acc_norm": 163
+      },
+      "mmmlu_pt_br_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_pt_br_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 378,
+        "correct_count_acc_norm": 378
+      },
+      "mmmlu_pt_br_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 165,
+        "correct_count_acc_norm": 165
+      },
+      "mmmlu_pt_br_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 212,
+        "correct_count_acc_norm": 212
+      },
+      "mmmlu_pt_br_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 183,
+        "correct_count_acc_norm": 183
+      },
+      "mmmlu_pt_br_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 151,
+        "correct_count_acc_norm": 151
+      },
+      "mmmlu_pt_br_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 151,
+        "correct_count_acc_norm": 151
+      },
+      "mmmlu_pt_br_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 109,
+        "correct_count_acc_norm": 109
+      },
+      "mmmlu_pt_br_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 505,
+        "correct_count_acc_norm": 505
+      },
+      "mmmlu_pt_br_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 106,
+        "correct_count_acc_norm": 106
+      },
+      "mmmlu_pt_br_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 264,
+        "correct_count_acc_norm": 264
+      },
+      "mmmlu_pt_br_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 56,
+        "correct_count_acc_norm": 56
+      },
+      "mmmlu_pt_br_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 139,
+        "correct_count_acc_norm": 139
+      },
+      "mmmlu_pt_br_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 135,
+        "correct_count_acc_norm": 135
+      },
+      "mmmlu_pt_br_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_pt_br_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_pt_br_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_sw_ke_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_sw_ke_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_sw_ke_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 65,
+        "correct_count_acc_norm": 65
+      },
+      "mmmlu_sw_ke_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 24,
+        "correct_count_acc_norm": 24
+      },
+      "mmmlu_sw_ke_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 101,
+        "correct_count_acc_norm": 101
+      },
+      "mmmlu_sw_ke_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 45,
+        "correct_count_acc_norm": 45
+      },
+      "mmmlu_sw_ke_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 22,
+        "correct_count_acc_norm": 22
+      },
+      "mmmlu_sw_ke_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_sw_ke_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_sw_ke_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_sw_ke_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_sw_ke_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 49,
+        "correct_count_acc_norm": 49
+      },
+      "mmmlu_sw_ke_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_sw_ke_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_sw_ke_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_sw_ke_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 134,
+        "correct_count_acc_norm": 134
+      },
+      "mmmlu_sw_ke_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 49,
+        "correct_count_acc_norm": 49
+      },
+      "mmmlu_sw_ke_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 26,
+        "correct_count_acc_norm": 26
+      },
+      "mmmlu_sw_ke_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 112,
+        "correct_count_acc_norm": 112
+      },
+      "mmmlu_sw_ke_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_sw_ke_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 30,
+        "correct_count_acc_norm": 30
+      },
+      "mmmlu_sw_ke_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_sw_ke_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_sw_ke_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_sw_ke_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 132,
+        "correct_count_acc_norm": 132
+      },
+      "mmmlu_sw_ke_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 86,
+        "correct_count_acc_norm": 86
+      },
+      "mmmlu_sw_ke_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 77,
+        "correct_count_acc_norm": 77
+      },
+      "mmmlu_sw_ke_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_sw_ke_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 153,
+        "correct_count_acc_norm": 153
+      },
+      "mmmlu_sw_ke_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 68,
+        "correct_count_acc_norm": 68
+      },
+      "mmmlu_sw_ke_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_sw_ke_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 74,
+        "correct_count_acc_norm": 74
+      },
+      "mmmlu_sw_ke_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 57,
+        "correct_count_acc_norm": 57
+      },
+      "mmmlu_sw_ke_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_sw_ke_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_sw_ke_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 46,
+        "correct_count_acc_norm": 46
+      },
+      "mmmlu_sw_ke_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_sw_ke_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 26,
+        "correct_count_acc_norm": 26
+      },
+      "mmmlu_sw_ke_management": {
+        "sample_count": 103,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_sw_ke_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 92,
+        "correct_count_acc_norm": 92
+      },
+      "mmmlu_sw_ke_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_sw_ke_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 254,
+        "correct_count_acc_norm": 254
+      },
+      "mmmlu_sw_ke_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 116,
+        "correct_count_acc_norm": 116
+      },
+      "mmmlu_sw_ke_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 217,
+        "correct_count_acc_norm": 217
+      },
+      "mmmlu_sw_ke_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 116,
+        "correct_count_acc_norm": 116
+      },
+      "mmmlu_sw_ke_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 111,
+        "correct_count_acc_norm": 111
+      },
+      "mmmlu_sw_ke_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 100,
+        "correct_count_acc_norm": 100
+      },
+      "mmmlu_sw_ke_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 76,
+        "correct_count_acc_norm": 76
+      },
+      "mmmlu_sw_ke_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 469,
+        "correct_count_acc_norm": 469
+      },
+      "mmmlu_sw_ke_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 62,
+        "correct_count_acc_norm": 62
+      },
+      "mmmlu_sw_ke_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 188,
+        "correct_count_acc_norm": 188
+      },
+      "mmmlu_sw_ke_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 31,
+        "correct_count_acc_norm": 31
+      },
+      "mmmlu_sw_ke_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 82,
+        "correct_count_acc_norm": 82
+      },
+      "mmmlu_sw_ke_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_sw_ke_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 39,
+        "correct_count_acc_norm": 39
+      },
+      "mmmlu_sw_ke_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_sw_ke_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_yo_ng_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_yo_ng_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_yo_ng_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_yo_ng_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_yo_ng_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 93,
+        "correct_count_acc_norm": 93
+      },
+      "mmmlu_yo_ng_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 54,
+        "correct_count_acc_norm": 54
+      },
+      "mmmlu_yo_ng_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 26,
+        "correct_count_acc_norm": 26
+      },
+      "mmmlu_yo_ng_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 32,
+        "correct_count_acc_norm": 32
+      },
+      "mmmlu_yo_ng_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 29,
+        "correct_count_acc_norm": 29
+      },
+      "mmmlu_yo_ng_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 59,
+        "correct_count_acc_norm": 59
+      },
+      "mmmlu_yo_ng_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_yo_ng_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_yo_ng_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 85,
+        "correct_count_acc_norm": 85
+      },
+      "mmmlu_yo_ng_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_yo_ng_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 52,
+        "correct_count_acc_norm": 52
+      },
+      "mmmlu_yo_ng_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 127,
+        "correct_count_acc_norm": 127
+      },
+      "mmmlu_yo_ng_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_yo_ng_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 27,
+        "correct_count_acc_norm": 27
+      },
+      "mmmlu_yo_ng_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 95,
+        "correct_count_acc_norm": 95
+      },
+      "mmmlu_yo_ng_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 74,
+        "correct_count_acc_norm": 74
+      },
+      "mmmlu_yo_ng_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_yo_ng_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 48,
+        "correct_count_acc_norm": 48
+      },
+      "mmmlu_yo_ng_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 56,
+        "correct_count_acc_norm": 56
+      },
+      "mmmlu_yo_ng_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 60,
+        "correct_count_acc_norm": 60
+      },
+      "mmmlu_yo_ng_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 111,
+        "correct_count_acc_norm": 111
+      },
+      "mmmlu_yo_ng_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 81,
+        "correct_count_acc_norm": 81
+      },
+      "mmmlu_yo_ng_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 73,
+        "correct_count_acc_norm": 73
+      },
+      "mmmlu_yo_ng_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_yo_ng_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 137,
+        "correct_count_acc_norm": 137
+      },
+      "mmmlu_yo_ng_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_yo_ng_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_yo_ng_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 72,
+        "correct_count_acc_norm": 72
+      },
+      "mmmlu_yo_ng_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 64,
+        "correct_count_acc_norm": 64
+      },
+      "mmmlu_yo_ng_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_yo_ng_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 66,
+        "correct_count_acc_norm": 66
+      },
+      "mmmlu_yo_ng_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 46,
+        "correct_count_acc_norm": 46
+      },
+      "mmmlu_yo_ng_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 45,
+        "correct_count_acc_norm": 45
+      },
+      "mmmlu_yo_ng_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 29,
+        "correct_count_acc_norm": 29
+      },
+      "mmmlu_yo_ng_management": {
+        "sample_count": 103,
+        "correct_count_acc": 19,
+        "correct_count_acc_norm": 19
+      },
+      "mmmlu_yo_ng_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 72,
+        "correct_count_acc_norm": 72
+      },
+      "mmmlu_yo_ng_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 45,
+        "correct_count_acc_norm": 45
+      },
+      "mmmlu_yo_ng_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 230,
+        "correct_count_acc_norm": 230
+      },
+      "mmmlu_yo_ng_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 123,
+        "correct_count_acc_norm": 123
+      },
+      "mmmlu_yo_ng_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 221,
+        "correct_count_acc_norm": 221
+      },
+      "mmmlu_yo_ng_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 117,
+        "correct_count_acc_norm": 117
+      },
+      "mmmlu_yo_ng_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 95,
+        "correct_count_acc_norm": 95
+      },
+      "mmmlu_yo_ng_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 102,
+        "correct_count_acc_norm": 102
+      },
+      "mmmlu_yo_ng_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 79,
+        "correct_count_acc_norm": 79
+      },
+      "mmmlu_yo_ng_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 458,
+        "correct_count_acc_norm": 458
+      },
+      "mmmlu_yo_ng_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_yo_ng_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 175,
+        "correct_count_acc_norm": 175
+      },
+      "mmmlu_yo_ng_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 28,
+        "correct_count_acc_norm": 28
+      },
+      "mmmlu_yo_ng_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 71,
+        "correct_count_acc_norm": 71
+      },
+      "mmmlu_yo_ng_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_yo_ng_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 40,
+        "correct_count_acc_norm": 40
+      },
+      "mmmlu_yo_ng_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 45,
+        "correct_count_acc_norm": 45
+      },
+      "mmmlu_yo_ng_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_zh_cn_abstract_algebra": {
+        "sample_count": 100,
+        "correct_count_acc": 37,
+        "correct_count_acc_norm": 37
+      },
+      "mmmlu_zh_cn_anatomy": {
+        "sample_count": 135,
+        "correct_count_acc": 68,
+        "correct_count_acc_norm": 68
+      },
+      "mmmlu_zh_cn_astronomy": {
+        "sample_count": 152,
+        "correct_count_acc": 84,
+        "correct_count_acc_norm": 84
+      },
+      "mmmlu_zh_cn_business_ethics": {
+        "sample_count": 100,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_zh_cn_clinical_knowledge": {
+        "sample_count": 265,
+        "correct_count_acc": 144,
+        "correct_count_acc_norm": 144
+      },
+      "mmmlu_zh_cn_college_biology": {
+        "sample_count": 144,
+        "correct_count_acc": 78,
+        "correct_count_acc_norm": 78
+      },
+      "mmmlu_zh_cn_college_chemistry": {
+        "sample_count": 100,
+        "correct_count_acc": 44,
+        "correct_count_acc_norm": 44
+      },
+      "mmmlu_zh_cn_college_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 33,
+        "correct_count_acc_norm": 33
+      },
+      "mmmlu_zh_cn_college_mathematics": {
+        "sample_count": 100,
+        "correct_count_acc": 36,
+        "correct_count_acc_norm": 36
+      },
+      "mmmlu_zh_cn_college_medicine": {
+        "sample_count": 173,
+        "correct_count_acc": 82,
+        "correct_count_acc_norm": 82
+      },
+      "mmmlu_zh_cn_college_physics": {
+        "sample_count": 102,
+        "correct_count_acc": 38,
+        "correct_count_acc_norm": 38
+      },
+      "mmmlu_zh_cn_computer_security": {
+        "sample_count": 100,
+        "correct_count_acc": 61,
+        "correct_count_acc_norm": 61
+      },
+      "mmmlu_zh_cn_conceptual_physics": {
+        "sample_count": 235,
+        "correct_count_acc": 120,
+        "correct_count_acc_norm": 120
+      },
+      "mmmlu_zh_cn_econometrics": {
+        "sample_count": 114,
+        "correct_count_acc": 43,
+        "correct_count_acc_norm": 43
+      },
+      "mmmlu_zh_cn_electrical_engineering": {
+        "sample_count": 145,
+        "correct_count_acc": 74,
+        "correct_count_acc_norm": 74
+      },
+      "mmmlu_zh_cn_elementary_mathematics": {
+        "sample_count": 378,
+        "correct_count_acc": 158,
+        "correct_count_acc_norm": 158
+      },
+      "mmmlu_zh_cn_formal_logic": {
+        "sample_count": 126,
+        "correct_count_acc": 53,
+        "correct_count_acc_norm": 53
+      },
+      "mmmlu_zh_cn_global_facts": {
+        "sample_count": 100,
+        "correct_count_acc": 34,
+        "correct_count_acc_norm": 34
+      },
+      "mmmlu_zh_cn_high_school_biology": {
+        "sample_count": 310,
+        "correct_count_acc": 194,
+        "correct_count_acc_norm": 194
+      },
+      "mmmlu_zh_cn_high_school_chemistry": {
+        "sample_count": 203,
+        "correct_count_acc": 111,
+        "correct_count_acc_norm": 111
+      },
+      "mmmlu_zh_cn_high_school_computer_science": {
+        "sample_count": 100,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_zh_cn_high_school_european_history": {
+        "sample_count": 165,
+        "correct_count_acc": 103,
+        "correct_count_acc_norm": 103
+      },
+      "mmmlu_zh_cn_high_school_geography": {
+        "sample_count": 198,
+        "correct_count_acc": 120,
+        "correct_count_acc_norm": 120
+      },
+      "mmmlu_zh_cn_high_school_government_and_politics": {
+        "sample_count": 193,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_zh_cn_high_school_macroeconomics": {
+        "sample_count": 390,
+        "correct_count_acc": 194,
+        "correct_count_acc_norm": 194
+      },
+      "mmmlu_zh_cn_high_school_mathematics": {
+        "sample_count": 270,
+        "correct_count_acc": 86,
+        "correct_count_acc_norm": 86
+      },
+      "mmmlu_zh_cn_high_school_microeconomics": {
+        "sample_count": 238,
+        "correct_count_acc": 135,
+        "correct_count_acc_norm": 135
+      },
+      "mmmlu_zh_cn_high_school_physics": {
+        "sample_count": 151,
+        "correct_count_acc": 58,
+        "correct_count_acc_norm": 58
+      },
+      "mmmlu_zh_cn_high_school_psychology": {
+        "sample_count": 545,
+        "correct_count_acc": 341,
+        "correct_count_acc_norm": 341
+      },
+      "mmmlu_zh_cn_high_school_statistics": {
+        "sample_count": 216,
+        "correct_count_acc": 85,
+        "correct_count_acc_norm": 85
+      },
+      "mmmlu_zh_cn_high_school_us_history": {
+        "sample_count": 204,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_zh_cn_high_school_world_history": {
+        "sample_count": 237,
+        "correct_count_acc": 158,
+        "correct_count_acc_norm": 158
+      },
+      "mmmlu_zh_cn_human_aging": {
+        "sample_count": 223,
+        "correct_count_acc": 127,
+        "correct_count_acc_norm": 127
+      },
+      "mmmlu_zh_cn_human_sexuality": {
+        "sample_count": 131,
+        "correct_count_acc": 83,
+        "correct_count_acc_norm": 83
+      },
+      "mmmlu_zh_cn_international_law": {
+        "sample_count": 121,
+        "correct_count_acc": 92,
+        "correct_count_acc_norm": 92
+      },
+      "mmmlu_zh_cn_jurisprudence": {
+        "sample_count": 108,
+        "correct_count_acc": 69,
+        "correct_count_acc_norm": 69
+      },
+      "mmmlu_zh_cn_logical_fallacies": {
+        "sample_count": 163,
+        "correct_count_acc": 96,
+        "correct_count_acc_norm": 96
+      },
+      "mmmlu_zh_cn_machine_learning": {
+        "sample_count": 112,
+        "correct_count_acc": 45,
+        "correct_count_acc_norm": 45
+      },
+      "mmmlu_zh_cn_management": {
+        "sample_count": 103,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_zh_cn_marketing": {
+        "sample_count": 234,
+        "correct_count_acc": 169,
+        "correct_count_acc_norm": 169
+      },
+      "mmmlu_zh_cn_medical_genetics": {
+        "sample_count": 100,
+        "correct_count_acc": 55,
+        "correct_count_acc_norm": 55
+      },
+      "mmmlu_zh_cn_miscellaneous": {
+        "sample_count": 783,
+        "correct_count_acc": 401,
+        "correct_count_acc_norm": 401
+      },
+      "mmmlu_zh_cn_moral_disputes": {
+        "sample_count": 346,
+        "correct_count_acc": 184,
+        "correct_count_acc_norm": 184
+      },
+      "mmmlu_zh_cn_moral_scenarios": {
+        "sample_count": 895,
+        "correct_count_acc": 224,
+        "correct_count_acc_norm": 224
+      },
+      "mmmlu_zh_cn_nutrition": {
+        "sample_count": 306,
+        "correct_count_acc": 172,
+        "correct_count_acc_norm": 172
+      },
+      "mmmlu_zh_cn_philosophy": {
+        "sample_count": 311,
+        "correct_count_acc": 147,
+        "correct_count_acc_norm": 147
+      },
+      "mmmlu_zh_cn_prehistory": {
+        "sample_count": 324,
+        "correct_count_acc": 147,
+        "correct_count_acc_norm": 147
+      },
+      "mmmlu_zh_cn_professional_accounting": {
+        "sample_count": 282,
+        "correct_count_acc": 107,
+        "correct_count_acc_norm": 107
+      },
+      "mmmlu_zh_cn_professional_law": {
+        "sample_count": 1534,
+        "correct_count_acc": 512,
+        "correct_count_acc_norm": 512
+      },
+      "mmmlu_zh_cn_professional_medicine": {
+        "sample_count": 272,
+        "correct_count_acc": 117,
+        "correct_count_acc_norm": 117
+      },
+      "mmmlu_zh_cn_professional_psychology": {
+        "sample_count": 612,
+        "correct_count_acc": 280,
+        "correct_count_acc_norm": 280
+      },
+      "mmmlu_zh_cn_public_relations": {
+        "sample_count": 110,
+        "correct_count_acc": 51,
+        "correct_count_acc_norm": 51
+      },
+      "mmmlu_zh_cn_security_studies": {
+        "sample_count": 245,
+        "correct_count_acc": 146,
+        "correct_count_acc_norm": 146
+      },
+      "mmmlu_zh_cn_sociology": {
+        "sample_count": 201,
+        "correct_count_acc": 131,
+        "correct_count_acc_norm": 131
+      },
+      "mmmlu_zh_cn_us_foreign_policy": {
+        "sample_count": 100,
+        "correct_count_acc": 63,
+        "correct_count_acc_norm": 63
+      },
+      "mmmlu_zh_cn_virology": {
+        "sample_count": 166,
+        "correct_count_acc": 67,
+        "correct_count_acc_norm": 67
+      },
+      "mmmlu_zh_cn_world_religions": {
+        "sample_count": 171,
+        "correct_count_acc": 105,
+        "correct_count_acc_norm": 105
+      }
+    }
+  },
+  "protocol": {
+    "lm_eval": "0.4.12",
+    "backend": "xpu",
+    "dtype": "bfloat16",
+    "num_fewshot": 0,
+    "max_length": 4096,
+    "batch_size": "stage1=4; stage2=2",
+    "limit": null
+  },
+  "git_provenance": {
+    "stage1": "173d234",
+    "stage2": {
+      "canonical_head_commit": "c9406f87c7e3dfcc2cdd87c0269812fd9b3d2ba8",
+      "dirty_at_launch": "not recorded in raw metadata"
+    }
+  }
+}
