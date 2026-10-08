@@ -1,0 +1,159 @@
+{
+  "decision": "positive_domain_ranking_on_this_pool",
+  "primary_ranking": {
+    "mean": 0.02805928849047375,
+    "conditional_95": [
+      0.006969389109879421,
+      0.049617850332708914
+    ],
+    "positive_seeds": 15,
+    "scope": "Prespecified task confirmation, conditional on one pool; seeds are not independent generalization replicates; secondary intervals unadjusted."
+  },
+  "status": "fresh_task_confirmation_completed",
+  "pool_size": 600,
+  "seeds": 20,
+  "budget_each": 192,
+  "study_primary": "Mean paired domain-ranking Spearman improvement GP minus direct stratified SRS32/domain at budget192 on this fresh pool.",
+  "gp_theta_mae_pp": 3.992808670590757,
+  "srs_theta_mae_pp": 4.095833333333333,
+  "theta_improvement_srs_minus_gp": {
+    "mean": 0.1030246627425773,
+    "conditional_95": [
+      -0.6903213650819029,
+      0.9394851091337414
+    ],
+    "positive_seeds": 9,
+    "scope": "Prespecified task confirmation, conditional on one pool; seeds are not independent generalization replicates; secondary intervals unadjusted."
+  },
+  "gp_domain_spearman": 0.9714285714285715,
+  "srs_domain_spearman": 0.9433692829380977,
+  "ranking_improvement_gp_minus_srs": {
+    "mean": 0.02805928849047375,
+    "conditional_95": [
+      0.006969389109879421,
+      0.049617850332708914
+    ],
+    "positive_seeds": 15,
+    "scope": "Prespecified task confirmation, conditional on one pool; seeds are not independent generalization replicates; secondary intervals unadjusted."
+  },
+  "gp_worst_regret_pp": 0.0,
+  "srs_worst_regret_pp": 0.8,
+  "gp_worst_correct": 20,
+  "srs_worst_correct": 4,
+  "gp_common_mae": 0.008675597907998342,
+  "srs_domain_mean_common_mae": 0.009633587073062382,
+  "continuous_improvement_domain_mean_minus_gp": {
+    "mean": 0.0009579891650640354,
+    "conditional_95": [
+      0.0007648412524550885,
+      0.0011613424697201427
+    ],
+    "positive_seeds": 20,
+    "scope": "Prespecified task confirmation, conditional on one pool; seeds are not independent generalization replicates; secondary intervals unadjusted."
+  },
+  "continuous_improvement_on_same_labels": {
+    "mean": 0.0008042528014903348,
+    "conditional_95": [
+      0.0006729896170885775,
+      0.0009323613241561257
+    ],
+    "positive_seeds": 20,
+    "scope": "Prespecified task confirmation, conditional on one pool; seeds are not independent generalization replicates; secondary intervals unadjusted."
+  },
+  "blind_search_improvement": {
+    "mean": 0.10272163816129105,
+    "conditional_95": [
+      0.08771272669438551,
+      0.11854215855344981
+    ],
+    "positive_seeds": 20,
+    "scope": "Prespecified task confirmation, conditional on one pool; seeds are not independent generalization replicates; secondary intervals unadjusted."
+  },
+  "per_domain": {
+    "college_biology": {
+      "unselected_n": 67.6,
+      "unselected_spearman": 0.4934260587286813,
+      "unselected_r2": 0.23277750400876718,
+      "predicted_top10_unselected_recall": 0.31499999999999995,
+      "random_expected_recall": 0.14817432631120991,
+      "predicted_top10_true_jsd": 0.05230208845809101,
+      "random_expected_true_jsd": 0.04395033894616644,
+      "measured_top10_recall_gp": 0.265,
+      "measured_top10_recall_srs": 0.29999999999999993
+    },
+    "college_medicine": {
+      "unselected_n": 67.9,
+      "unselected_spearman": 0.5826072616967369,
+      "unselected_r2": 0.28184836278108066,
+      "predicted_top10_unselected_recall": 0.37,
+      "random_expected_recall": 0.14750923788322554,
+      "predicted_top10_true_jsd": 0.0546778772585094,
+      "random_expected_true_jsd": 0.043911294468483394,
+      "measured_top10_recall_gp": 0.13000000000000003,
+      "measured_top10_recall_srs": 0.34
+    },
+    "high_school_european_history": {
+      "unselected_n": 68.55,
+      "unselected_spearman": 0.2320357673533425,
+      "unselected_r2": -0.04718576316797492,
+      "predicted_top10_unselected_recall": 0.18000000000000005,
+      "random_expected_recall": 0.146040339998558,
+      "predicted_top10_true_jsd": 0.07588837822899222,
+      "random_expected_true_jsd": 0.07096381256243507,
+      "measured_top10_recall_gp": 0.14500000000000005,
+      "measured_top10_recall_srs": 0.34
+    },
+    "high_school_government_and_politics": {
+      "unselected_n": 67.6,
+      "unselected_spearman": 0.35220789929492813,
+      "unselected_r2": 0.03535088793786705,
+      "predicted_top10_unselected_recall": 0.205,
+      "random_expected_recall": 0.1481637115273004,
+      "predicted_top10_true_jsd": 0.05358417727053165,
+      "random_expected_true_jsd": 0.04893295164859419,
+      "measured_top10_recall_gp": 0.21500000000000002,
+      "measured_top10_recall_srs": 0.29000000000000004
+    },
+    "moral_scenarios": {
+      "unselected_n": 67.7,
+      "unselected_spearman": 0.06058239291705778,
+      "unselected_r2": -0.5033840497568391,
+      "predicted_top10_unselected_recall": 0.13,
+      "random_expected_recall": 0.1478931185619275,
+      "predicted_top10_true_jsd": 0.06181374531239272,
+      "random_expected_true_jsd": 0.06142199327422234,
+      "measured_top10_recall_gp": 0.31500000000000006,
+      "measured_top10_recall_srs": 0.28500000000000003
+    },
+    "professional_psychology": {
+      "unselected_n": 68.65,
+      "unselected_spearman": 0.2736675990147297,
+      "unselected_r2": -0.01709788770519279,
+      "predicted_top10_unselected_recall": 0.30000000000000004,
+      "random_expected_recall": 0.1458894367500323,
+      "predicted_top10_true_jsd": 0.061602716036140905,
+      "random_expected_true_jsd": 0.05542258851729803,
+      "measured_top10_recall_gp": 0.32500000000000007,
+      "measured_top10_recall_srs": 0.28500000000000003
+    }
+  },
+  "mean_unselected_top10_recall_gp": 0.25000000000000006,
+  "mean_unselected_top10_recall_random_expectation": 0.14727836183870893,
+  "mean_measured_top10_recall_gp": 0.23250000000000007,
+  "mean_measured_top10_recall_srs": 0.3066666666666667,
+  "seconds": 4.855743199994322,
+  "provenance": {
+    "study_sha256": "1069464094d28a7220a91822b81574b91264408e21a45fa130c5c55daef8d743",
+    "oracle_sha256": "a19250505be4761b62d30f76ae1e112495bfd73b5d07eee1f8162b1e20c80839",
+    "script_sha256": "2b7ea1adf5553701294ab199cfc3501ec7b449ca950f8723ae29ee00dff568b6"
+  },
+  "limitations": [
+    "One new finite MMLU pool; random seeds quantify conditional design variability, not20 independent generalization replications.",
+    "Targets are raw-prefix document-mean JSD and finite-pool fractions, not downstream answer accuracy.",
+    "Freshness is relative to accessible historical input snapshots; no claim about model pretraining data.",
+    "The no-holdout benchmark eligibility differs from the default product360/120/120 split and is declared before labels.",
+    "No hyperparameter, kappa, kernel, encoder, epsilon or transform sweeps. Frozen sources preserved.",
+    "This study changes the primary question to the original task domain ordering, after the first confirmation; the old theta experiment and result remain unchanged.",
+    "Mu-guided top predictions are a separate prespecified diagnostic; no claim that the production mapping acquisition was changed to mu."
+  ]
+}

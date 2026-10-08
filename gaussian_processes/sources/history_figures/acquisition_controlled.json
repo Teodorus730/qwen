@@ -1,0 +1,93 @@
+{
+  "figure": "acquisition_controlled.png",
+  "anchor": "section-22",
+  "caption_ru": "Controlled acquisition: при 96 метках разные правила выбора дают разные результаты по поиску train top-10 и по test-карте θ. Среднее ± SD пяти seeds.",
+  "sources": [
+    {
+      "path": "october_benchmark/results/analysis/summary.json",
+      "sha256": "c80a3bce9f1b39eac9369884269952c133f7cc00e27e499d8f8ed0296d9bb20e"
+    }
+  ],
+  "plotted_data": {
+    "dataset": "controlled",
+    "budget_documents": 96,
+    "start_documents": 24,
+    "batch_documents": 12,
+    "policies": [
+      {
+        "dataset": "controlled",
+        "policy": "random",
+        "runs": 5,
+        "recall10": 0.18,
+        "recall10_sd": 0.130384048104053,
+        "recall20": 0.21000000000000002,
+        "recall20_sd": 0.10839741694339403,
+        "discovery_auc": 0.10666666666666669,
+        "discovery_auc_sd": 0.12351900438573994,
+        "test_mae": 0.009046177780934266,
+        "test_mae_sd": 0.000299055531379047,
+        "val_mae": 0.008770403413563685,
+        "val_mae_sd": 0.00022383640848211095,
+        "theta_macro_error_pp": 12.070310181042448,
+        "theta_macro_error_pp_sd": 3.8955917118599235
+      },
+      {
+        "dataset": "controlled",
+        "policy": "stratified_random",
+        "runs": 5,
+        "recall10": 0.33999999999999997,
+        "recall10_sd": 0.054772255750516634,
+        "recall20": 0.3,
+        "recall20_sd": 0.07905694150420949,
+        "discovery_auc": 0.22333333333333333,
+        "discovery_auc_sd": 0.11248456684264639,
+        "test_mae": 0.008966629478685434,
+        "test_mae_sd": 0.0005303300401489266,
+        "val_mae": 0.008555523588427,
+        "val_mae_sd": 0.0005777375014828884,
+        "theta_macro_error_pp": 14.358704519971132,
+        "theta_macro_error_pp_sd": 2.604653003851541
+      },
+      {
+        "dataset": "controlled",
+        "policy": "sigma",
+        "runs": 5,
+        "recall10": 0.12000000000000002,
+        "recall10_sd": 0.08366600265340757,
+        "recall20": 0.18,
+        "recall20_sd": 0.0570087712549569,
+        "discovery_auc": 0.07500000000000001,
+        "discovery_auc_sd": 0.09033118078616167,
+        "test_mae": 0.008115522355590645,
+        "test_mae_sd": 0.00017165385355852021,
+        "val_mae": 0.00822386437929158,
+        "val_mae_sd": 0.000337241689398348,
+        "theta_macro_error_pp": 9.754153617642269,
+        "theta_macro_error_pp_sd": 0.9867363752498787
+      },
+      {
+        "dataset": "controlled",
+        "policy": "ucb5",
+        "runs": 5,
+        "recall10": 0.58,
+        "recall10_sd": 0.04472135954999579,
+        "recall20": 0.52,
+        "recall20_sd": 0.07582875444051551,
+        "discovery_auc": 0.3466666666666667,
+        "discovery_auc_sd": 0.061969974808594036,
+        "test_mae": 0.008465593282362403,
+        "test_mae_sd": 0.0003958966288116671,
+        "val_mae": 0.008655321564069004,
+        "val_mae_sd": 0.0003932420044273078,
+        "theta_macro_error_pp": 9.014566986061253,
+        "theta_macro_error_pp_sd": 2.526869088194348
+      }
+    ],
+    "recall_definition": "Measured true top10 of train among 96 selected, including initial24",
+    "theta_definition": "Test macro domain theta error via GP CDF"
+  },
+  "runtime": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.1.3"
+  }
+}

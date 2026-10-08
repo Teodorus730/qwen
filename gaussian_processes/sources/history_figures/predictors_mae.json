@@ -1,0 +1,325 @@
+{
+  "figure": "predictors_mae.png",
+  "anchor": "section-21",
+  "caption_ru": "Test MAE одиннадцати предикторов при 192 метках; среднее ± SD пяти seeds. График не включает token- и PLS-предикторы.",
+  "sources": [
+    {
+      "path": "october_benchmark/results/analysis/summary.json",
+      "sha256": "c80a3bce9f1b39eac9369884269952c133f7cc00e27e499d8f8ed0296d9bb20e"
+    }
+  ],
+  "plotted_data": [
+    {
+      "dataset": "controlled",
+      "method": "global_mean",
+      "mae": 0.012015939760377578,
+      "mae_sd": 0.00013474387107793783,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "subject_mean",
+      "mae": 0.008683731212748033,
+      "mae_sd": 0.00023309301539426453,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "length_only",
+      "mae": 0.00899330384972269,
+      "mae_sd": 0.00016201298629079202,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "ridge",
+      "mae": 0.00896451962176053,
+      "mae_sd": 0.0005841364126931219,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "bayesian_ridge",
+      "mae": 0.00854003744097065,
+      "mae_sd": 0.0003708104011749816,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "knn",
+      "mae": 0.008132817040741102,
+      "mae_sd": 0.0002898916484556079,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "krr",
+      "mae": 0.008385554792434278,
+      "mae_sd": 0.0003949257932683923,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "extra_trees",
+      "mae": 0.00875491150158147,
+      "mae_sd": 0.00024377850451597687,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "gp_rbf",
+      "mae": 0.00841854683032403,
+      "mae_sd": 0.00040465881869746135,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "gp_matern32",
+      "mae": 0.008379187119317915,
+      "mae_sd": 0.0003821894471701444,
+      "runs": 5
+    },
+    {
+      "dataset": "controlled",
+      "method": "gp_matern52",
+      "mae": 0.008393218598063568,
+      "mae_sd": 0.0003929936098498029,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "global_mean",
+      "mae": 0.010698859200476566,
+      "mae_sd": 0.00010552531748429796,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "subject_mean",
+      "mae": 0.00904441625106708,
+      "mae_sd": 0.0001590830845351541,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "length_only",
+      "mae": 0.010052852088120075,
+      "mae_sd": 0.00011177335957647382,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "ridge",
+      "mae": 0.011045737873991369,
+      "mae_sd": 0.0010056135464734492,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "bayesian_ridge",
+      "mae": 0.00950249597964926,
+      "mae_sd": 0.0005047860178212363,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "knn",
+      "mae": 0.009202969063146675,
+      "mae_sd": 0.0003084397717122599,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "krr",
+      "mae": 0.0095882197844397,
+      "mae_sd": 0.00042576298144995987,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "extra_trees",
+      "mae": 0.009805018359912614,
+      "mae_sd": 0.0002029967424144844,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "gp_rbf",
+      "mae": 0.009484267336425937,
+      "mae_sd": 0.00034592776366829006,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "gp_matern32",
+      "mae": 0.009471890434803006,
+      "mae_sd": 0.0003450969919404494,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold0",
+      "method": "gp_matern52",
+      "mae": 0.009472893352062053,
+      "mae_sd": 0.0003443773389253249,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "global_mean",
+      "mae": 0.011757267137937663,
+      "mae_sd": 0.00016923095131992353,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "subject_mean",
+      "mae": 0.010838492480689887,
+      "mae_sd": 0.00024050589338746076,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "length_only",
+      "mae": 0.011331249163331359,
+      "mae_sd": 0.00010294546096432743,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "ridge",
+      "mae": 0.012017897462263113,
+      "mae_sd": 0.0007494465967590533,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "bayesian_ridge",
+      "mae": 0.01082050668210141,
+      "mae_sd": 0.0007030049823970831,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "knn",
+      "mae": 0.011783425806752823,
+      "mae_sd": 0.001889412613157227,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "krr",
+      "mae": 0.01095623296802705,
+      "mae_sd": 0.0007858206996032401,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "extra_trees",
+      "mae": 0.010708354521431915,
+      "mae_sd": 0.0002908817314816412,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "gp_rbf",
+      "mae": 0.010595631739277366,
+      "mae_sd": 0.0006036187854567041,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "gp_matern32",
+      "mae": 0.010592350934805251,
+      "mae_sd": 0.0006075161715986624,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold1",
+      "method": "gp_matern52",
+      "mae": 0.010598277625260128,
+      "mae_sd": 0.0006079510885240237,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "global_mean",
+      "mae": 0.013574454016666598,
+      "mae_sd": 5.4259839803576645e-05,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "subject_mean",
+      "mae": 0.011891511707429797,
+      "mae_sd": 0.00018064862924741272,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "length_only",
+      "mae": 0.01252026620821898,
+      "mae_sd": 0.00028198482518053674,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "ridge",
+      "mae": 0.01255384002144284,
+      "mae_sd": 0.0006153882370048107,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "bayesian_ridge",
+      "mae": 0.011648262556817866,
+      "mae_sd": 0.0005269032828660011,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "knn",
+      "mae": 0.011389750689607904,
+      "mae_sd": 0.0006732196065920232,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "krr",
+      "mae": 0.011515678294270446,
+      "mae_sd": 0.00040452179146519506,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "extra_trees",
+      "mae": 0.012475852532051404,
+      "mae_sd": 0.0003318381617288068,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "gp_rbf",
+      "mae": 0.011472996107806693,
+      "mae_sd": 0.0004254626752308266,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "gp_matern32",
+      "mae": 0.011486941113908118,
+      "mae_sd": 0.00042700646299207324,
+      "runs": 5
+    },
+    {
+      "dataset": "natural_fold2",
+      "method": "gp_matern52",
+      "mae": 0.011481822726387002,
+      "mae_sd": 0.0004267188726602934,
+      "runs": 5
+    }
+  ],
+  "runtime": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.1.3"
+  }
+}

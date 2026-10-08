@@ -1,0 +1,51 @@
+{
+  "figure": "map_confirmations.png",
+  "anchor": "section-56",
+  "caption_ru": "Два подтверждающих новых пула 7 октября: средняя θ-MAE и условные 95% интервалы парной разности SRS−GP. Справа отдельно показан положительный основной результат ранжирования доменов пула B; он не заменяет проверки θ-MAE.",
+  "sources": [
+    {
+      "path": "confirmation_aligned_20261007/engine/results/data_sealed/analysis/summary.json",
+      "sha256": "de5cb4f3e14fda4e51adafa0c8d7ce69d2f2c835ba32818d38cfc420c4d880cc"
+    },
+    {
+      "path": "gp_task_confirmation_20261007/engine/results/data_sealed/task_analysis/summary.json",
+      "sha256": "1fac2d6e31ca7544ca1f3c9fb42d38cbdee6301f4165e4cdfe74d3c76b8e228e"
+    }
+  ],
+  "plotted_data": {
+    "A": {
+      "primary": "theta_macro_mae",
+      "gp_mae_pp": 4.893329516324863,
+      "srs_mae_pp": 4.557291666666666,
+      "srs_minus_gp_mae_pp": -0.3360378496581962,
+      "conditional_95_pp": [
+        -1.011286495104424,
+        0.39765598595510354
+      ]
+    },
+    "B": {
+      "primary": "domain_spearman",
+      "gp_mae_pp": 3.992808670590757,
+      "srs_mae_pp": 4.095833333333333,
+      "srs_minus_gp_mae_pp": 0.1030246627425773,
+      "conditional_95_pp": [
+        -0.6903213650819029,
+        0.9394851091337414
+      ],
+      "gp_spearman": 0.9714285714285715,
+      "srs_spearman": 0.9433692829380977,
+      "gp_minus_srs_spearman": 0.02805928849047375,
+      "ranking_conditional_95": [
+        0.006969389109879421,
+        0.049617850332708914
+      ]
+    },
+    "budget_documents_each": 192,
+    "pool_documents_each": 600,
+    "selection_plans_each_pool": 20
+  },
+  "runtime": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.1.3"
+  }
+}

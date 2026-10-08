@@ -1,0 +1,499 @@
+{
+  "decision": "positive_search_signal_on_this_opened_pool",
+  "methods": {
+    "gp": {
+      "next_top10_recall": 0.26999999999999996,
+      "full_top10_recall_after_252": 0.5016666666666667,
+      "mean_new_jsd": 0.06065872789515804,
+      "new_token_positions": 7243.85,
+      "total_token_positions": 28493.85,
+      "unselected_mae": 0.00826967092903787,
+      "unselected_r2": 0.4921045549855753,
+      "fit_seconds": 0.18625189500162379,
+      "prediction_seconds": 0.028260045001661637,
+      "selection_seconds": 0.0005322950004483573,
+      "by_domain": {
+        "college_biology": {
+          "remaining_top10_recall": 0.32,
+          "full_top10_recall_after_252": 0.5700000000000001,
+          "mean_new_jsd": 0.051452029636129736,
+          "new_token_positions": 981.65,
+          "unselected_mae": 0.009722090948970941,
+          "unselected_r2": 0.1980801497962627
+        },
+        "college_medicine": {
+          "remaining_top10_recall": 0.38,
+          "full_top10_recall_after_252": 0.63,
+          "mean_new_jsd": 0.052864211592823264,
+          "new_token_positions": 1177.6,
+          "unselected_mae": 0.008636331958092462,
+          "unselected_r2": 0.18821228691053496
+        },
+        "high_school_european_history": {
+          "remaining_top10_recall": 0.305,
+          "full_top10_recall_after_252": 0.5349999999999999,
+          "mean_new_jsd": 0.08332808626815676,
+          "new_token_positions": 2508.5,
+          "unselected_mae": 0.007936558549625902,
+          "unselected_r2": 0.4084487065682015
+        },
+        "high_school_government_and_politics": {
+          "remaining_top10_recall": 0.20500000000000002,
+          "full_top10_recall_after_252": 0.41500000000000004,
+          "mean_new_jsd": 0.05190958997234703,
+          "new_token_positions": 682.05,
+          "unselected_mae": 0.008570475885296294,
+          "unselected_r2": -0.08034677126727903
+        },
+        "moral_scenarios": {
+          "remaining_top10_recall": 0.13500000000000004,
+          "full_top10_recall_after_252": 0.385,
+          "mean_new_jsd": 0.0618330560810864,
+          "new_token_positions": 1075.95,
+          "unselected_mae": 0.0039907015138862375,
+          "unselected_r2": -0.32332874335712203
+        },
+        "professional_psychology": {
+          "remaining_top10_recall": 0.275,
+          "full_top10_recall_after_252": 0.475,
+          "mean_new_jsd": 0.06256539382040502,
+          "new_token_positions": 818.1,
+          "unselected_mae": 0.01076186671835539,
+          "unselected_r2": 0.0849197076350007
+        }
+      }
+    },
+    "krr": {
+      "next_top10_recall": 0.265,
+      "full_top10_recall_after_252": 0.5083333333333333,
+      "mean_new_jsd": 0.061109160909739633,
+      "new_token_positions": 7303.1,
+      "total_token_positions": 28553.1,
+      "unselected_mae": 0.008187946038398683,
+      "unselected_r2": 0.4986292144736561,
+      "fit_seconds": 0.10713590000159456,
+      "prediction_seconds": 0.006776430002355482,
+      "selection_seconds": 0.0005140150009538047,
+      "by_domain": {
+        "college_biology": {
+          "remaining_top10_recall": 0.31500000000000006,
+          "full_top10_recall_after_252": 0.5900000000000001,
+          "mean_new_jsd": 0.05238996709696949,
+          "new_token_positions": 983.0,
+          "unselected_mae": 0.009831798112939372,
+          "unselected_r2": 0.1972026337795988
+        },
+        "college_medicine": {
+          "remaining_top10_recall": 0.38499999999999995,
+          "full_top10_recall_after_252": 0.635,
+          "mean_new_jsd": 0.053477102387696505,
+          "new_token_positions": 1198.45,
+          "unselected_mae": 0.008738716248962249,
+          "unselected_r2": 0.2001410755091307
+        },
+        "high_school_european_history": {
+          "remaining_top10_recall": 0.265,
+          "full_top10_recall_after_252": 0.5199999999999999,
+          "mean_new_jsd": 0.08335099201649428,
+          "new_token_positions": 2500.2,
+          "unselected_mae": 0.007771383081263694,
+          "unselected_r2": 0.4069419855272205
+        },
+        "high_school_government_and_politics": {
+          "remaining_top10_recall": 0.195,
+          "full_top10_recall_after_252": 0.41500000000000004,
+          "mean_new_jsd": 0.05209567081183196,
+          "new_token_positions": 682.55,
+          "unselected_mae": 0.00827417224386239,
+          "unselected_r2": -0.002971389582994921
+        },
+        "moral_scenarios": {
+          "remaining_top10_recall": 0.14000000000000004,
+          "full_top10_recall_after_252": 0.4,
+          "mean_new_jsd": 0.061635771133005626,
+          "new_token_positions": 1068.6,
+          "unselected_mae": 0.0038532505198607637,
+          "unselected_r2": -0.22143829019051084
+        },
+        "professional_psychology": {
+          "remaining_top10_recall": 0.29,
+          "full_top10_recall_after_252": 0.48999999999999994,
+          "mean_new_jsd": 0.06370546201243997,
+          "new_token_positions": 870.3,
+          "unselected_mae": 0.010658356023503625,
+          "unselected_r2": 0.09231247434229219
+        }
+      }
+    },
+    "bayesian_ridge": {
+      "next_top10_recall": 0.26416666666666666,
+      "full_top10_recall_after_252": 0.5025000000000001,
+      "mean_new_jsd": 0.060404756376519805,
+      "new_token_positions": 7151.7,
+      "total_token_positions": 28401.7,
+      "unselected_mae": 0.00927424360967324,
+      "unselected_r2": 0.36953177460920755,
+      "fit_seconds": 0.026106750000326428,
+      "prediction_seconds": 0.0029556050030805636,
+      "selection_seconds": 0.0005343300013919361,
+      "by_domain": {
+        "college_biology": {
+          "remaining_top10_recall": 0.29,
+          "full_top10_recall_after_252": 0.5399999999999999,
+          "mean_new_jsd": 0.05151614844799042,
+          "new_token_positions": 936.3,
+          "unselected_mae": 0.010687653360038681,
+          "unselected_r2": -0.0019410272662239714
+        },
+        "college_medicine": {
+          "remaining_top10_recall": 0.425,
+          "full_top10_recall_after_252": 0.6599999999999999,
+          "mean_new_jsd": 0.05393390785902739,
+          "new_token_positions": 1161.75,
+          "unselected_mae": 0.009537941043989334,
+          "unselected_r2": -0.015012964765148651
+        },
+        "high_school_european_history": {
+          "remaining_top10_recall": 0.28500000000000003,
+          "full_top10_recall_after_252": 0.53,
+          "mean_new_jsd": 0.0824711323902011,
+          "new_token_positions": 2507.0,
+          "unselected_mae": 0.009382448137065036,
+          "unselected_r2": 0.25013847636679143
+        },
+        "high_school_government_and_politics": {
+          "remaining_top10_recall": 0.18000000000000005,
+          "full_top10_recall_after_252": 0.4,
+          "mean_new_jsd": 0.05117441920563579,
+          "new_token_positions": 677.9,
+          "unselected_mae": 0.009989824069732176,
+          "unselected_r2": -0.4806512438522789
+        },
+        "moral_scenarios": {
+          "remaining_top10_recall": 0.15000000000000002,
+          "full_top10_recall_after_252": 0.41999999999999993,
+          "mean_new_jsd": 0.06193580033257604,
+          "new_token_positions": 1070.95,
+          "unselected_mae": 0.004111627206250561,
+          "unselected_r2": -0.4396770158276785
+        },
+        "professional_psychology": {
+          "remaining_top10_recall": 0.255,
+          "full_top10_recall_after_252": 0.465,
+          "mean_new_jsd": 0.061397130023688073,
+          "new_token_positions": 797.8,
+          "unselected_mae": 0.011935967840963648,
+          "unselected_r2": -0.08656666917950478
+        }
+      }
+    },
+    "cluster_mean": {
+      "next_top10_recall": 0.18833333333333332,
+      "full_top10_recall_after_252": 0.4283333333333334,
+      "mean_new_jsd": 0.055486576752737174,
+      "new_token_positions": 6976.2,
+      "total_token_positions": 28226.2,
+      "unselected_mae": 0.009491155400155932,
+      "unselected_r2": 0.31609013173044737,
+      "fit_seconds": 0.06805500499904156,
+      "prediction_seconds": 8.640500163892284e-05,
+      "selection_seconds": 0.0004950350004946813,
+      "by_domain": {
+        "college_biology": {
+          "remaining_top10_recall": 0.15500000000000003,
+          "full_top10_recall_after_252": 0.445,
+          "mean_new_jsd": 0.04403665882535279,
+          "new_token_positions": 819.15,
+          "unselected_mae": 0.011547743741926022,
+          "unselected_r2": -0.13023591211635951
+        },
+        "college_medicine": {
+          "remaining_top10_recall": 0.28,
+          "full_top10_recall_after_252": 0.48,
+          "mean_new_jsd": 0.04957330010831355,
+          "new_token_positions": 1193.1,
+          "unselected_mae": 0.009390307979722446,
+          "unselected_r2": 0.014552389456990056
+        },
+        "high_school_european_history": {
+          "remaining_top10_recall": 0.18,
+          "full_top10_recall_after_252": 0.41,
+          "mean_new_jsd": 0.07220050681382417,
+          "new_token_positions": 2386.7,
+          "unselected_mae": 0.011064516323049452,
+          "unselected_r2": -0.19577721140928764
+        },
+        "high_school_government_and_politics": {
+          "remaining_top10_recall": 0.24999999999999994,
+          "full_top10_recall_after_252": 0.47000000000000003,
+          "mean_new_jsd": 0.05208578545600175,
+          "new_token_positions": 690.85,
+          "unselected_mae": 0.008785002112478723,
+          "unselected_r2": -0.08612679798763216
+        },
+        "moral_scenarios": {
+          "remaining_top10_recall": 0.13000000000000003,
+          "full_top10_recall_after_252": 0.395,
+          "mean_new_jsd": 0.06106827741488815,
+          "new_token_positions": 1053.6,
+          "unselected_mae": 0.0038267310328493473,
+          "unselected_r2": -0.1924548851776322
+        },
+        "professional_psychology": {
+          "remaining_top10_recall": 0.135,
+          "full_top10_recall_after_252": 0.37000000000000005,
+          "mean_new_jsd": 0.053954931898042555,
+          "new_token_positions": 832.8,
+          "unselected_mae": 0.012332631210909608,
+          "unselected_r2": -0.15169958483444518
+        }
+      }
+    },
+    "domain_mean": {
+      "next_top10_recall": 0.13083333333333333,
+      "full_top10_recall_after_252": 0.4083333333333333,
+      "mean_new_jsd": 0.05158011360714833,
+      "new_token_positions": 6429.95,
+      "total_token_positions": 27679.95,
+      "unselected_mae": 0.009226424886497516,
+      "unselected_r2": 0.34406437844178905,
+      "fit_seconds": 8.73999742907472e-06,
+      "prediction_seconds": 0.00020022000098833813,
+      "selection_seconds": 0.000466080001933733,
+      "by_domain": {
+        "college_biology": {
+          "remaining_top10_recall": 0.17500000000000004,
+          "full_top10_recall_after_252": 0.475,
+          "mean_new_jsd": 0.042959678974002595,
+          "new_token_positions": 890.25,
+          "unselected_mae": 0.011087017217890691,
+          "unselected_r2": -0.029632479757223985
+        },
+        "college_medicine": {
+          "remaining_top10_recall": 0.0,
+          "full_top10_recall_after_252": 0.34,
+          "mean_new_jsd": 0.03680675825104117,
+          "new_token_positions": 855.25,
+          "unselected_mae": 0.010244970710653648,
+          "unselected_r2": -0.08801471757489784
+        },
+        "high_school_european_history": {
+          "remaining_top10_recall": 0.12500000000000003,
+          "full_top10_recall_after_252": 0.38,
+          "mean_new_jsd": 0.06789752112701536,
+          "new_token_positions": 2238.95,
+          "unselected_mae": 0.010244168096345246,
+          "unselected_r2": -0.09717717426809024
+        },
+        "high_school_government_and_politics": {
+          "remaining_top10_recall": 0.30999999999999994,
+          "full_top10_recall_after_252": 0.53,
+          "mean_new_jsd": 0.05276973780244589,
+          "new_token_positions": 741.7,
+          "unselected_mae": 0.008446790413290727,
+          "unselected_r2": -0.02825282602651229
+        },
+        "moral_scenarios": {
+          "remaining_top10_recall": 0.10500000000000002,
+          "full_top10_recall_after_252": 0.38,
+          "mean_new_jsd": 0.0608187740109861,
+          "new_token_positions": 1034.3,
+          "unselected_mae": 0.0036137217948528227,
+          "unselected_r2": -0.047926165339234474
+        },
+        "professional_psychology": {
+          "remaining_top10_recall": 0.07,
+          "full_top10_recall_after_252": 0.34500000000000003,
+          "mean_new_jsd": 0.04822821147739887,
+          "new_token_positions": 669.5,
+          "unselected_mae": 0.011721881085951978,
+          "unselected_r2": -0.06322300264813878
+        }
+      }
+    },
+    "random": {
+      "next_top10_recall": 0.15166666666666667,
+      "full_top10_recall_after_252": 0.41083333333333333,
+      "mean_new_jsd": 0.05392990740016103,
+      "new_token_positions": 6680.35,
+      "total_token_positions": 27930.35,
+      "by_domain": {
+        "college_biology": {
+          "remaining_top10_recall": 0.17,
+          "full_top10_recall_after_252": 0.41,
+          "mean_new_jsd": 0.04531334723345936,
+          "new_token_positions": 782.55
+        },
+        "college_medicine": {
+          "remaining_top10_recall": 0.16000000000000003,
+          "full_top10_recall_after_252": 0.4600000000000001,
+          "mean_new_jsd": 0.04387251515872776,
+          "new_token_positions": 924.7
+        },
+        "high_school_european_history": {
+          "remaining_top10_recall": 0.13000000000000003,
+          "full_top10_recall_after_252": 0.42000000000000004,
+          "mean_new_jsd": 0.06896356107667088,
+          "new_token_positions": 2407.7
+        },
+        "high_school_government_and_politics": {
+          "remaining_top10_recall": 0.16,
+          "full_top10_recall_after_252": 0.41,
+          "mean_new_jsd": 0.04897685695439578,
+          "new_token_positions": 717.95
+        },
+        "moral_scenarios": {
+          "remaining_top10_recall": 0.13999999999999999,
+          "full_top10_recall_after_252": 0.38,
+          "mean_new_jsd": 0.061749721392989156,
+          "new_token_positions": 1056.95
+        },
+        "professional_psychology": {
+          "remaining_top10_recall": 0.15000000000000002,
+          "full_top10_recall_after_252": 0.38499999999999995,
+          "mean_new_jsd": 0.05470344258472324,
+          "new_token_positions": 790.5
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "gp_minus_random_expectation": {
+      "mean": 0.12294117647058825,
+      "conditional_95": [
+        0.10794117647058825,
+        0.13877450980392153
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "gp_minus_random_draw": {
+      "mean": 0.11833333333333332,
+      "conditional_95": [
+        0.0925,
+        0.14333333333333337
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "krr_minus_random_expectation": {
+      "mean": 0.11794117647058822,
+      "conditional_95": [
+        0.09627450980392158,
+        0.13877450980392156
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "krr_minus_random_draw": {
+      "mean": 0.11333333333333331,
+      "conditional_95": [
+        0.08166666666666665,
+        0.14583333333333334
+      ],
+      "positive_seeds": 17,
+      "n": 20
+    },
+    "bayesian_ridge_minus_random_expectation": {
+      "mean": 0.1171078431372549,
+      "conditional_95": [
+        0.1037745098039216,
+        0.13044117647058823
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "bayesian_ridge_minus_random_draw": {
+      "mean": 0.1125,
+      "conditional_95": [
+        0.09,
+        0.13416666666666663
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "cluster_mean_minus_random_expectation": {
+      "mean": 0.04127450980392157,
+      "conditional_95": [
+        0.02627450980392156,
+        0.05544117647058824
+      ],
+      "positive_seeds": 18,
+      "n": 20
+    },
+    "cluster_mean_minus_random_draw": {
+      "mean": 0.03666666666666667,
+      "conditional_95": [
+        0.0175,
+        0.054166666666666675
+      ],
+      "positive_seeds": 14,
+      "n": 20
+    },
+    "domain_mean_minus_random_expectation": {
+      "mean": -0.01622549019607844,
+      "conditional_95": [
+        -0.025392156862745107,
+        -0.00539215686274511
+      ],
+      "positive_seeds": 4,
+      "n": 20
+    },
+    "domain_mean_minus_random_draw": {
+      "mean": -0.020833333333333343,
+      "conditional_95": [
+        -0.03916666666666668,
+        -0.002500000000000007
+      ],
+      "positive_seeds": 4,
+      "n": 20
+    },
+    "gp_minus_krr": {
+      "mean": 0.005000000000000009,
+      "conditional_95": [
+        -0.00916666666666666,
+        0.02000000000000001
+      ],
+      "positive_seeds": 8,
+      "n": 20
+    },
+    "gp_minus_bayesian_ridge": {
+      "mean": 0.0058333333333333345,
+      "conditional_95": [
+        -0.010833333333333334,
+        0.022500000000000003
+      ],
+      "positive_seeds": 9,
+      "n": 20
+    },
+    "gp_minus_cluster_mean": {
+      "mean": 0.08166666666666669,
+      "conditional_95": [
+        0.0583125,
+        0.10583333333333336
+      ],
+      "positive_seeds": 19,
+      "n": 20
+    },
+    "random252_theta_error_minus_hybrid192_pp": {
+      "mean": -0.8569444444444436,
+      "conditional_95": [
+        -1.417482638888888,
+        -0.33754588293650706
+      ],
+      "positive_seeds": 5,
+      "n": 20
+    }
+  },
+  "exact_random_expected_recall": 0.14705882352941177,
+  "theta_initial192_error_pp": 4.095833333333333,
+  "theta_random252_error_pp": 3.23888888888889,
+  "truth_theta": {
+    "college_biology": 0.7,
+    "college_medicine": 0.73,
+    "high_school_european_history": 0.01,
+    "high_school_government_and_politics": 0.5,
+    "moral_scenarios": 0.0,
+    "professional_psychology": 0.45
+  }
+}

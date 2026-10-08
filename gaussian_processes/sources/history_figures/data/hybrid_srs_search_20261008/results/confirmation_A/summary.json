@@ -1,0 +1,499 @@
+{
+  "decision": "positive_search_signal_on_this_opened_pool",
+  "methods": {
+    "gp": {
+      "next_top10_recall": 0.27416666666666667,
+      "full_top10_recall_after_252": 0.515,
+      "mean_new_jsd": 0.05496651294951639,
+      "new_token_positions": 6225.8,
+      "total_token_positions": 25231.0,
+      "unselected_mae": 0.009084888040256998,
+      "unselected_r2": 0.5255032538429093,
+      "fit_seconds": 0.2056403299990052,
+      "prediction_seconds": 0.031215200000588084,
+      "selection_seconds": 0.0005926800018642098,
+      "by_domain": {
+        "elementary_mathematics": {
+          "remaining_top10_recall": 0.20500000000000002,
+          "full_top10_recall_after_252": 0.51,
+          "mean_new_jsd": 0.033570192828774444,
+          "new_token_positions": 865.3,
+          "unselected_mae": 0.00813575402877188,
+          "unselected_r2": -0.22059501031778012
+        },
+        "high_school_microeconomics": {
+          "remaining_top10_recall": 0.42000000000000004,
+          "full_top10_recall_after_252": 0.6599999999999999,
+          "mean_new_jsd": 0.05039414200931787,
+          "new_token_positions": 633.45,
+          "unselected_mae": 0.008001503502202842,
+          "unselected_r2": 0.1281799315682619
+        },
+        "high_school_us_history": {
+          "remaining_top10_recall": 0.34500000000000003,
+          "full_top10_recall_after_252": 0.53,
+          "mean_new_jsd": 0.08229598725214601,
+          "new_token_positions": 2423.85,
+          "unselected_mae": 0.00935474626546648,
+          "unselected_r2": -0.021957153217207544
+        },
+        "international_law": {
+          "remaining_top10_recall": 0.195,
+          "full_top10_recall_after_252": 0.45,
+          "mean_new_jsd": 0.05323147836141288,
+          "new_token_positions": 945.3,
+          "unselected_mae": 0.009324076387666533,
+          "unselected_r2": 0.06099853175857726
+        },
+        "prehistory": {
+          "remaining_top10_recall": 0.225,
+          "full_top10_recall_after_252": 0.47000000000000003,
+          "mean_new_jsd": 0.0554673555586487,
+          "new_token_positions": 755.5,
+          "unselected_mae": 0.010034207453991233,
+          "unselected_r2": 0.007871953078507321
+        },
+        "virology": {
+          "remaining_top10_recall": 0.255,
+          "full_top10_recall_after_252": 0.47000000000000003,
+          "mean_new_jsd": 0.05483992168679833,
+          "new_token_positions": 602.4,
+          "unselected_mae": 0.009659040603443029,
+          "unselected_r2": 0.09942051596915462
+        }
+      }
+    },
+    "krr": {
+      "next_top10_recall": 0.2683333333333333,
+      "full_top10_recall_after_252": 0.5108333333333334,
+      "mean_new_jsd": 0.05495975974015892,
+      "new_token_positions": 6229.55,
+      "total_token_positions": 25234.75,
+      "unselected_mae": 0.00912835082827653,
+      "unselected_r2": 0.5248783381471904,
+      "fit_seconds": 0.11586728499823948,
+      "prediction_seconds": 0.006970585000817664,
+      "selection_seconds": 0.000504714998533018,
+      "by_domain": {
+        "elementary_mathematics": {
+          "remaining_top10_recall": 0.21500000000000002,
+          "full_top10_recall_after_252": 0.515,
+          "mean_new_jsd": 0.03373214232735336,
+          "new_token_positions": 857.95,
+          "unselected_mae": 0.008240100299246234,
+          "unselected_r2": -0.22400664412286414
+        },
+        "high_school_microeconomics": {
+          "remaining_top10_recall": 0.4050000000000001,
+          "full_top10_recall_after_252": 0.6399999999999999,
+          "mean_new_jsd": 0.049815259585157035,
+          "new_token_positions": 616.85,
+          "unselected_mae": 0.008026853130624597,
+          "unselected_r2": 0.12568789516427142
+        },
+        "high_school_us_history": {
+          "remaining_top10_recall": 0.34500000000000003,
+          "full_top10_recall_after_252": 0.54,
+          "mean_new_jsd": 0.0832129163853824,
+          "new_token_positions": 2440.1,
+          "unselected_mae": 0.009522571126976947,
+          "unselected_r2": -0.026768619990357102
+        },
+        "international_law": {
+          "remaining_top10_recall": 0.18,
+          "full_top10_recall_after_252": 0.43999999999999995,
+          "mean_new_jsd": 0.052916763583198176,
+          "new_token_positions": 939.35,
+          "unselected_mae": 0.009332949700308759,
+          "unselected_r2": 0.05499044144050956
+        },
+        "prehistory": {
+          "remaining_top10_recall": 0.21000000000000005,
+          "full_top10_recall_after_252": 0.45499999999999996,
+          "mean_new_jsd": 0.055149049451574686,
+          "new_token_positions": 764.55,
+          "unselected_mae": 0.00992319912372382,
+          "unselected_r2": 0.021475377196354856
+        },
+        "virology": {
+          "remaining_top10_recall": 0.255,
+          "full_top10_recall_after_252": 0.475,
+          "mean_new_jsd": 0.054932427108287815,
+          "new_token_positions": 610.75,
+          "unselected_mae": 0.009724431588778823,
+          "unselected_r2": 0.09918230013789413
+        }
+      }
+    },
+    "bayesian_ridge": {
+      "next_top10_recall": 0.25999999999999995,
+      "full_top10_recall_after_252": 0.5125,
+      "mean_new_jsd": 0.05429207543687274,
+      "new_token_positions": 6214.75,
+      "total_token_positions": 25219.95,
+      "unselected_mae": 0.009937443552369123,
+      "unselected_r2": 0.45137153058376167,
+      "fit_seconds": 0.02667077500082087,
+      "prediction_seconds": 0.003052670002216473,
+      "selection_seconds": 0.000487785001314478,
+      "by_domain": {
+        "elementary_mathematics": {
+          "remaining_top10_recall": 0.20500000000000002,
+          "full_top10_recall_after_252": 0.52,
+          "mean_new_jsd": 0.033501357641071074,
+          "new_token_positions": 839.1,
+          "unselected_mae": 0.009275690976607852,
+          "unselected_r2": -0.6313015943641086
+        },
+        "high_school_microeconomics": {
+          "remaining_top10_recall": 0.37500000000000006,
+          "full_top10_recall_after_252": 0.6199999999999999,
+          "mean_new_jsd": 0.04906035827472806,
+          "new_token_positions": 643.1,
+          "unselected_mae": 0.008852568841687612,
+          "unselected_r2": -0.07183274200727244
+        },
+        "high_school_us_history": {
+          "remaining_top10_recall": 0.26999999999999996,
+          "full_top10_recall_after_252": 0.5150000000000001,
+          "mean_new_jsd": 0.07988121921196578,
+          "new_token_positions": 2429.95,
+          "unselected_mae": 0.010403860883065535,
+          "unselected_r2": -0.13044971335642955
+        },
+        "international_law": {
+          "remaining_top10_recall": 0.21000000000000002,
+          "full_top10_recall_after_252": 0.45999999999999996,
+          "mean_new_jsd": 0.05342586978338659,
+          "new_token_positions": 950.15,
+          "unselected_mae": 0.009886453096976736,
+          "unselected_r2": -0.06362655964303489
+        },
+        "prehistory": {
+          "remaining_top10_recall": 0.23000000000000004,
+          "full_top10_recall_after_252": 0.48,
+          "mean_new_jsd": 0.054825234990566976,
+          "new_token_positions": 734.7,
+          "unselected_mae": 0.010800349147655198,
+          "unselected_r2": -0.14768650918636267
+        },
+        "virology": {
+          "remaining_top10_recall": 0.2700000000000001,
+          "full_top10_recall_after_252": 0.4800000000000001,
+          "mean_new_jsd": 0.05505841271951793,
+          "new_token_positions": 617.75,
+          "unselected_mae": 0.01040573836822181,
+          "unselected_r2": -0.03917793533328091
+        }
+      }
+    },
+    "cluster_mean": {
+      "next_top10_recall": 0.17250000000000001,
+      "full_top10_recall_after_252": 0.4333333333333333,
+      "mean_new_jsd": 0.049916715359625725,
+      "new_token_positions": 5922.35,
+      "total_token_positions": 24927.55,
+      "unselected_mae": 0.00995143684999315,
+      "unselected_r2": 0.45649083761260745,
+      "fit_seconds": 0.06779443500126944,
+      "prediction_seconds": 8.219499941333197e-05,
+      "selection_seconds": 0.00046395000026677735,
+      "by_domain": {
+        "elementary_mathematics": {
+          "remaining_top10_recall": 0.17500000000000002,
+          "full_top10_recall_after_252": 0.47000000000000003,
+          "mean_new_jsd": 0.03140344267711044,
+          "new_token_positions": 742.5,
+          "unselected_mae": 0.0079145608958869,
+          "unselected_r2": -0.16365617124357248
+        },
+        "high_school_microeconomics": {
+          "remaining_top10_recall": 0.18,
+          "full_top10_recall_after_252": 0.44000000000000006,
+          "mean_new_jsd": 0.04257519639097154,
+          "new_token_positions": 674.55,
+          "unselected_mae": 0.008927948760667662,
+          "unselected_r2": -0.09090599450602917
+        },
+        "high_school_us_history": {
+          "remaining_top10_recall": 0.18000000000000002,
+          "full_top10_recall_after_252": 0.47000000000000003,
+          "mean_new_jsd": 0.0752531841211021,
+          "new_token_positions": 2410.85,
+          "unselected_mae": 0.011014304188646785,
+          "unselected_r2": -0.16768496612849143
+        },
+        "international_law": {
+          "remaining_top10_recall": 0.16,
+          "full_top10_recall_after_252": 0.40499999999999997,
+          "mean_new_jsd": 0.048217113940045235,
+          "new_token_positions": 874.3,
+          "unselected_mae": 0.010347231243088562,
+          "unselected_r2": -0.21196344617080926
+        },
+        "prehistory": {
+          "remaining_top10_recall": 0.09500000000000001,
+          "full_top10_recall_after_252": 0.365,
+          "mean_new_jsd": 0.04987196951173246,
+          "new_token_positions": 658.65,
+          "unselected_mae": 0.010792549353522234,
+          "unselected_r2": -0.16574429030444351
+        },
+        "virology": {
+          "remaining_top10_recall": 0.24500000000000002,
+          "full_top10_recall_after_252": 0.45,
+          "mean_new_jsd": 0.05217938551679254,
+          "new_token_positions": 561.5,
+          "unselected_mae": 0.010712026658146759,
+          "unselected_r2": -0.08177343958059259
+        }
+      }
+    },
+    "domain_mean": {
+      "next_top10_recall": 0.15833333333333333,
+      "full_top10_recall_after_252": 0.44333333333333325,
+      "mean_new_jsd": 0.04920649351396908,
+      "new_token_positions": 6103.9,
+      "total_token_positions": 25109.1,
+      "unselected_mae": 0.009624994374897533,
+      "unselected_r2": 0.49468230666654894,
+      "fit_seconds": 8.354998863069341e-06,
+      "prediction_seconds": 0.00017549000040162355,
+      "selection_seconds": 0.0004333149998274166,
+      "by_domain": {
+        "elementary_mathematics": {
+          "remaining_top10_recall": 0.165,
+          "full_top10_recall_after_252": 0.45499999999999996,
+          "mean_new_jsd": 0.02987537071108818,
+          "new_token_positions": 666.45,
+          "unselected_mae": 0.007505784751564907,
+          "unselected_r2": -0.0198923794187836
+        },
+        "high_school_microeconomics": {
+          "remaining_top10_recall": 0.14500000000000002,
+          "full_top10_recall_after_252": 0.37500000000000006,
+          "mean_new_jsd": 0.042966249315068136,
+          "new_token_positions": 703.6,
+          "unselected_mae": 0.008675661385538713,
+          "unselected_r2": -0.030449115549943007
+        },
+        "high_school_us_history": {
+          "remaining_top10_recall": 0.24500000000000002,
+          "full_top10_recall_after_252": 0.535,
+          "mean_new_jsd": 0.07406881667673589,
+          "new_token_positions": 2439.8,
+          "unselected_mae": 0.010871165436658297,
+          "unselected_r2": -0.09036327508343588
+        },
+        "international_law": {
+          "remaining_top10_recall": 0.16000000000000003,
+          "full_top10_recall_after_252": 0.4749999999999999,
+          "mean_new_jsd": 0.04911223704926669,
+          "new_token_positions": 1008.6,
+          "unselected_mae": 0.009564217551429893,
+          "unselected_r2": -0.03196833330868117
+        },
+        "prehistory": {
+          "remaining_top10_recall": 0.03,
+          "full_top10_recall_after_252": 0.33999999999999997,
+          "mean_new_jsd": 0.048442262029275304,
+          "new_token_positions": 776.6,
+          "unselected_mae": 0.010101457560856088,
+          "unselected_r2": -0.049451482947907355
+        },
+        "virology": {
+          "remaining_top10_recall": 0.20500000000000002,
+          "full_top10_recall_after_252": 0.48,
+          "mean_new_jsd": 0.05077402530238032,
+          "new_token_positions": 508.85,
+          "unselected_mae": 0.011031679563337306,
+          "unselected_r2": -0.07041362692161843
+        }
+      }
+    },
+    "random": {
+      "next_top10_recall": 0.14416666666666664,
+      "full_top10_recall_after_252": 0.4166666666666667,
+      "mean_new_jsd": 0.04899186078614245,
+      "new_token_positions": 5946.8,
+      "total_token_positions": 24952.0,
+      "by_domain": {
+        "elementary_mathematics": {
+          "remaining_top10_recall": 0.16999999999999998,
+          "full_top10_recall_after_252": 0.4750000000000001,
+          "mean_new_jsd": 0.03144873552955687,
+          "new_token_positions": 740.35
+        },
+        "high_school_microeconomics": {
+          "remaining_top10_recall": 0.155,
+          "full_top10_recall_after_252": 0.395,
+          "mean_new_jsd": 0.0410706885997206,
+          "new_token_positions": 667.15
+        },
+        "high_school_us_history": {
+          "remaining_top10_recall": 0.135,
+          "full_top10_recall_after_252": 0.39499999999999996,
+          "mean_new_jsd": 0.07337389193475245,
+          "new_token_positions": 2386.5
+        },
+        "international_law": {
+          "remaining_top10_recall": 0.14,
+          "full_top10_recall_after_252": 0.42000000000000004,
+          "mean_new_jsd": 0.04919772610999644,
+          "new_token_positions": 927.25
+        },
+        "prehistory": {
+          "remaining_top10_recall": 0.11500000000000002,
+          "full_top10_recall_after_252": 0.4149999999999999,
+          "mean_new_jsd": 0.05031192364171148,
+          "new_token_positions": 678.9
+        },
+        "virology": {
+          "remaining_top10_recall": 0.15,
+          "full_top10_recall_after_252": 0.4000000000000001,
+          "mean_new_jsd": 0.04854819890111685,
+          "new_token_positions": 546.65
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "gp_minus_random_expectation": {
+      "mean": 0.12710784313725493,
+      "conditional_95": [
+        0.11127450980392155,
+        0.14294117647058824
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "gp_minus_random_draw": {
+      "mean": 0.13,
+      "conditional_95": [
+        0.10833333333333336,
+        0.1516666666666667
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "krr_minus_random_expectation": {
+      "mean": 0.12127450980392156,
+      "conditional_95": [
+        0.10044117647058821,
+        0.14210784313725489
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "krr_minus_random_draw": {
+      "mean": 0.12416666666666668,
+      "conditional_95": [
+        0.09416666666666666,
+        0.15666666666666668
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "bayesian_ridge_minus_random_expectation": {
+      "mean": 0.11294117647058824,
+      "conditional_95": [
+        0.09377450980392157,
+        0.1329411764705882
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "bayesian_ridge_minus_random_draw": {
+      "mean": 0.11583333333333337,
+      "conditional_95": [
+        0.08916666666666667,
+        0.14250000000000002
+      ],
+      "positive_seeds": 20,
+      "n": 20
+    },
+    "cluster_mean_minus_random_expectation": {
+      "mean": 0.025441176470588234,
+      "conditional_95": [
+        0.0012745098039215654,
+        0.0496078431372549
+      ],
+      "positive_seeds": 11,
+      "n": 20
+    },
+    "cluster_mean_minus_random_draw": {
+      "mean": 0.028333333333333342,
+      "conditional_95": [
+        -0.002499999999999993,
+        0.06000000000000001
+      ],
+      "positive_seeds": 13,
+      "n": 20
+    },
+    "domain_mean_minus_random_expectation": {
+      "mean": 0.01127450980392156,
+      "conditional_95": [
+        0.002107843137254893,
+        0.020441176470588227
+      ],
+      "positive_seeds": 14,
+      "n": 20
+    },
+    "domain_mean_minus_random_draw": {
+      "mean": 0.014166666666666664,
+      "conditional_95": [
+        -0.005000000000000002,
+        0.03416666666666666
+      ],
+      "positive_seeds": 11,
+      "n": 20
+    },
+    "gp_minus_krr": {
+      "mean": 0.005833333333333348,
+      "conditional_95": [
+        -0.00916666666666666,
+        0.021666666666666688
+      ],
+      "positive_seeds": 8,
+      "n": 20
+    },
+    "gp_minus_bayesian_ridge": {
+      "mean": 0.014166666666666683,
+      "conditional_95": [
+        0.0008333333333333373,
+        0.02833333333333335
+      ],
+      "positive_seeds": 12,
+      "n": 20
+    },
+    "gp_minus_cluster_mean": {
+      "mean": 0.10166666666666668,
+      "conditional_95": [
+        0.07333333333333332,
+        0.13000000000000006
+      ],
+      "positive_seeds": 17,
+      "n": 20
+    },
+    "random252_theta_error_minus_hybrid192_pp": {
+      "mean": -1.033482142857142,
+      "conditional_95": [
+        -1.6642423115079361,
+        -0.4229613095238088
+      ],
+      "positive_seeds": 4,
+      "n": 20
+    }
+  },
+  "exact_random_expected_recall": 0.14705882352941177,
+  "theta_initial192_error_pp": 4.557291666666666,
+  "theta_random252_error_pp": 3.523809523809524,
+  "truth_theta": {
+    "elementary_mathematics": 0.98,
+    "high_school_microeconomics": 0.8,
+    "high_school_us_history": 0.02,
+    "international_law": 0.55,
+    "prehistory": 0.52,
+    "virology": 0.55
+  }
+}

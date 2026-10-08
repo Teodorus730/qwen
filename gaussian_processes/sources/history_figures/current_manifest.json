@@ -1,0 +1,16 @@
+{
+  "source_sha256": {
+    "hybrid_srs_search_20261008/results/task_B/summary.json": "6899093deb04c301f10f10870d68ab959ef48f8341ee5611b5672a1b6cdd3c11",
+    "hybrid_srs_search_20261008/results/confirmation_A/summary.json": "f645966953d3b2fc1994f5918befa43a54074025528c23bdb0544ff64c20eca1",
+    "hybrid_fresh_confirmation_20261008/received_run/results/summary.json": "0bd3dc8902405d1aa205ab980b124fa2d4096e1823c1e0395631651f2f8cd996"
+  },
+  "plots": {
+    "search_three_pools.png": "0fe4ef659d85283fd4d51b6ef13e5be25c6c7f0c8ecaf917ec009a697420a817",
+    "fresh_search_and_gate.png": "04f0bb158c0a6f95f32d833b62351921a1420064f8249f688b9529350e6e7f8a",
+    "fresh_domain_search.png": "5d5b8de57fa65225e3a2b6fd83a477fa007e9e0c98bb34e646349634c9ffdad6",
+    "fresh_map_tradeoff.png": "bc4a0e56c6ec5ac9f0af9a2984de293a27ff771f0f57577cef15919b53c30877",
+    "fresh_cost_components.png": "720472bbb64a72d01b26fc948d3e14e0e7be19a647ae8ec80d235dd9c89f96aa"
+  },
+  "script_sha256": "97ebf1bcdbcefb0b7632f2469847ed15d6a3868d74b2eb95489b771c30d02684",
+  "scope": "Figures from existing audited results; no new experiments or model fits"
+}

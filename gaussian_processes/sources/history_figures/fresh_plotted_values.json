@@ -1,0 +1,192 @@
+{
+  "search_three_pools.png": {
+    "methods": [
+      "gp",
+      "krr",
+      "bayesian_ridge",
+      "cluster_mean",
+      "random"
+    ],
+    "pools": [
+      "A",
+      "B",
+      "C"
+    ],
+    "recall_percent": [
+      [
+        27.416666666666668,
+        26.999999999999996,
+        33.666666666666664
+      ],
+      [
+        26.833333333333332,
+        26.5,
+        34.0
+      ],
+      [
+        25.999999999999996,
+        26.416666666666664,
+        32.49999999999999
+      ],
+      [
+        17.25,
+        18.833333333333332,
+        20.333333333333332
+      ],
+      [
+        14.416666666666664,
+        15.166666666666668,
+        15.0
+      ]
+    ],
+    "exact_random_percent": 14.705882352941176,
+    "sources": [
+      "hybrid_srs_search_20261008/results/task_B/summary.json",
+      "hybrid_srs_search_20261008/results/confirmation_A/summary.json",
+      "hybrid_fresh_confirmation_20261008/received_run/results/summary.json"
+    ]
+  },
+  "fresh_search_and_gate.png": {
+    "methods": [
+      "krr",
+      "gp",
+      "bayesian_ridge",
+      "cluster_mean",
+      "domain_mean",
+      "random"
+    ],
+    "recall_percent": [
+      34.0,
+      33.666666666666664,
+      32.49999999999999,
+      20.333333333333332,
+      13.333333333333336,
+      15.0
+    ],
+    "conditional95_percent": [
+      [
+        32.166666666666664,
+        35.83333333333333
+      ],
+      [
+        31.58333333333333,
+        35.5
+      ],
+      [
+        30.666666666666664,
+        34.333333333333336
+      ],
+      [
+        18.250000000000004,
+        22.25
+      ],
+      [
+        12.083333333333336,
+        14.749999999999996
+      ],
+      [
+        13.083333333333336,
+        16.833333333333332
+      ]
+    ],
+    "krr_minus_gp_percent": {
+      "mean": 0.3333333333333348,
+      "low": -0.9999999999999981,
+      "high": 1.7500000000000004,
+      "margin": -1.6666666666666667
+    },
+    "source": "hybrid_fresh_confirmation_20261008/received_run/results/summary.json"
+  },
+  "fresh_domain_search.png": {
+    "domains": [
+      "computer_security",
+      "conceptual_physics",
+      "econometrics",
+      "formal_logic",
+      "machine_learning",
+      "public_relations"
+    ],
+    "methods": [
+      "gp",
+      "krr",
+      "random"
+    ],
+    "recall_percent": [
+      [
+        24.999999999999993,
+        26.000000000000007,
+        37.5,
+        45.0,
+        32.00000000000001,
+        36.50000000000001
+      ],
+      [
+        26.499999999999996,
+        25.000000000000007,
+        37.0,
+        46.00000000000001,
+        31.000000000000007,
+        38.50000000000001
+      ],
+      [
+        15.5,
+        13.500000000000004,
+        12.5,
+        16.499999999999996,
+        13.5,
+        18.5
+      ]
+    ],
+    "source": "hybrid_fresh_confirmation_20261008/received_run/results/summary.json"
+  },
+  "fresh_map_tradeoff.png": {
+    "parts": [
+      "initial192",
+      "random252"
+    ],
+    "theta_mae_pp": [
+      5.692708333333334,
+      4.2976190476190474
+    ],
+    "conditional95_pp": [
+      [
+        5.045807291666666,
+        6.377083333333333
+      ],
+      [
+        3.677738095238096,
+        4.965079365079365
+      ]
+    ],
+    "source": "hybrid_fresh_confirmation_20261008/received_run/results/summary.json"
+  },
+  "fresh_cost_components.png": {
+    "methods": [
+      "gp",
+      "krr",
+      "random"
+    ],
+    "predictor_cpu_seconds": [
+      0.36935372105001535,
+      0.20797780029999444,
+      null
+    ],
+    "qwen252_seconds": [
+      102.88845234930018,
+      102.87126474345018,
+      102.94128953125019
+    ],
+    "bge600_seconds": [
+      13.983159181000019,
+      13.983159181000019,
+      0.0
+    ],
+    "component_sum_seconds": [
+      117.24096525135022,
+      117.0624017247502,
+      102.94128953125019
+    ],
+    "random_selection_time": "not measured",
+    "source": "hybrid_fresh_confirmation_20261008/received_run/results/summary.json"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "status": "fresh_confirmation_completed",
+  "study_sha256": "83812c15c3f0d199a54bd0d63fe5c3dd35a9431a5c2deebdf69a5af260bcd112",
+  "setup_sha256": "b3b56309b64e0435324be3407be6411ef202285149891a73325520a3b80b96ef",
+  "oracle_sha256": "f9b72dc9b25be3c069a3be07fa5c031f7c2251fd8c79ca8f15f8646d09348742",
+  "decision": "inconclusive_on_this_pool",
+  "pool_size": 600,
+  "n_seeds": 20,
+  "budget_each_arm": 192,
+  "primary_improvement_srs_minus_gp": {
+    "n": 20,
+    "mean_pp": -0.3360378496581962,
+    "conditional_percentile_95": [
+      -1.011286495104424,
+      0.39765598595510354
+    ],
+    "mc_se_pp": 0.3780650094343097,
+    "central_seed_range_pp": [
+      -2.2329671441440704,
+      2.7111030688817954
+    ],
+    "positive_seed_count": 8,
+    "scope": "Conditional on one fixed finite pool; seed repetitions are not independent data replications."
+  },
+  "means": {
+    "gp": {
+      "mae_pp": 4.893329516324863,
+      "worst_regret_pp": 0.0
+    },
+    "direct_srs": {
+      "mae_pp": 4.557291666666666,
+      "worst_regret_pp": 0.0
+    },
+    "same_labels_ht": {
+      "mae_pp": 11.683333333333334,
+      "worst_regret_pp": 0.0
+    },
+    "same_labels_ratio": {
+      "mae_pp": 6.172860037565919,
+      "worst_regret_pp": 0.0
+    }
+  },
+  "truth": {
+    "elementary_mathematics": 0.98,
+    "high_school_microeconomics": 0.8,
+    "high_school_us_history": 0.02,
+    "international_law": 0.55,
+    "prehistory": 0.52,
+    "virology": 0.55
+  },
+  "exact_expected_srs_macro_mae_pp": 4.338330572990926,
+  "exact_expected_srs_domain_mae_pp": {
+    "elementary_mathematics": 1.8408080808080807,
+    "high_school_microeconomics": 4.740038189732236,
+    "high_school_us_history": 1.8408080808080807,
+    "international_law": 5.863065844918622,
+    "prehistory": 5.8821973967599135,
+    "virology": 5.863065844918622
+  },
+  "secondary_same_label_difference": {
+    "n": 20,
+    "mean_pp": 1.2795305212410568,
+    "conditional_percentile_95": [
+      0.1287702931187033,
+      2.3702287745459234
+    ],
+    "mc_se_pp": 0.580741220979735,
+    "central_seed_range_pp": [
+      -3.1152604875810392,
+      5.68022958951653
+    ],
+    "positive_seed_count": 14,
+    "scope": "Conditional on one fixed finite pool; seed repetitions are not independent data replications."
+  },
+  "jsd_common_unselected": {
+    "gp": {
+      "mae": 0.009231847118802334,
+      "r2": 0.5095501682880109
+    },
+    "direct_mean": {
+      "mae": 0.009660139618416212,
+      "r2": 0.4892220419329085
+    }
+  },
+  "total_final_and_equivalence_fits": 27,
+  "actual_new_fits_this_invocation": 27,
+  "seconds_this_invocation": 5.704785000001721,
+  "observed_domain_bias_pp": {
+    "gp": {
+      "elementary_mathematics": -7.7765782869771245,
+      "high_school_microeconomics": -4.127140174976075,
+      "high_school_us_history": 5.249181619324976,
+      "international_law": -0.8939157592775709,
+      "prehistory": -5.5880642471816175,
+      "virology": -1.5802546009342602
+    },
+    "direct_srs": {
+      "elementary_mathematics": -0.6562499999999982,
+      "high_school_microeconomics": 0.7812499999999959,
+      "high_school_us_history": 0.5,
+      "international_law": -2.1875000000000044,
+      "prehistory": 1.5937499999999987,
+      "virology": -1.562500000000004
+    }
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "versions": {
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.6.1",
+      "threadpoolctl": "3.7.0"
+    }
+  },
+  "limitations": [
+    "One new finite MMLU pool; random seeds quantify conditional design variability, not20 independent generalization replications.",
+    "Targets are raw-prefix document-mean JSD and finite-pool fractions, not downstream answer accuracy.",
+    "Freshness is relative to accessible historical input snapshots; no claim about model pretraining data.",
+    "The no-holdout benchmark eligibility differs from the default product360/120/120 split and is declared before labels.",
+    "No hyperparameter, kappa, kernel, encoder, epsilon or transform sweeps. Frozen sources preserved."
+  ]
+}
